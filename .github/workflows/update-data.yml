@@ -2,8 +2,8 @@ name: Update build data & release
 
 on:
   schedule:
-    # Daily at 08:00 UTC — after the WCL cron pipeline finishes (~4:00 UTC start + ~2.5hr)
-    - cron: "0 8 * * *"
+    # Daily at 16:00 UTC (noon EDT) — well after the WCL cron pipeline finishes
+    - cron: "0 16 * * *"
   workflow_dispatch: # Manual trigger
 
 jobs:
