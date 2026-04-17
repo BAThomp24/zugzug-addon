@@ -1,0 +1,61 @@
+name: Update build data & release
+
+on:
+  schedule:
+    # Daily at 08:00 UTC — after the WCL cron pipeline finishes (~4:00 UTC start + ~2.5hr)
+    - cron: "0 8 * * *"
+  workflow_dispatch: # Manual trigger
+
+jobs:
+  update-and-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Fetch API and generate Data.lua
+        run: npx tsx scripts/update-data.ts
+
+      - name: Get current date for version tag
+        id: version
+        run: echo "tag=v$(date -u +%Y.%m.%d)" >> "$GITHUB_OUTPUT"
+
+      - name: Check if data actually changed
+        id: diff
+        run: |
+          if git diff --quiet ZugZug/Data.lua; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit updated Data.lua
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ZugZug/Data.lua
+          git commit -m "data: update builds ${{ steps.version.outputs.tag }}"
+          git push
+
+      - name: Create release zip
+        if: steps.diff.outputs.changed == 'true'
+        run: zip -r ZugZug.zip ZugZug/
+
+      - name: Create GitHub Release
+        if: steps.diff.outputs.changed == 'true'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.version.outputs.tag }}
+          name: Build Data ${{ steps.version.outputs.tag }}
+          body: |
+            Daily build data update from [ZUGZUG.io](https://zugzug.info).
+
+            Download `ZugZug.zip` and extract into your `Interface/AddOns/` folder, or install via CurseForge/WoWUp.
+          files: ZugZug.zip

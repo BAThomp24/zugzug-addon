@@ -113,6 +113,25 @@ function ZZ:GetCurrentBuilds()
   local raidBuilds = roleData.raid and roleData.raid[diff]
   local mpBuilds = roleData.mythicPlus and roleData.mythicPlus[bucket]
 
+  -- Filter to current spec only
+  local specName = self.specName
+  if specName then
+    if raidBuilds then
+      local filtered = {}
+      for _, b in ipairs(raidBuilds) do
+        if b.spec == specName then filtered[#filtered + 1] = b end
+      end
+      raidBuilds = filtered
+    end
+    if mpBuilds then
+      local filtered = {}
+      for _, b in ipairs(mpBuilds) do
+        if b.spec == specName then filtered[#filtered + 1] = b end
+      end
+      mpBuilds = filtered
+    end
+  end
+
   return raidBuilds, mpBuilds
 end
 
