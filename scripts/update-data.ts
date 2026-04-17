@@ -14,7 +14,9 @@ import { fileURLToPath } from "node:url";
 
 // ─── Config ─────────────────────────────────────────────────────────────────
 
-const API_URL = "https://zugzug.info/api/data";
+// Use the worker URL directly — zugzug.info goes through Cloudflare Pages
+// which has bot protection that blocks CI fetches.
+const API_URL = "https://zugzug-cron.zugzugio.workers.dev/api/data";
 
 // ─── Types (mirror shared/src/types.ts — kept minimal) ─────────────────────
 
