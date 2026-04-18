@@ -167,22 +167,13 @@ local function createBuildCard(parent)
   metaText:SetTextColor(COLORS.muted.r, COLORS.muted.g, COLORS.muted.b)
   card.metaText = metaText
 
-  -- Click → import
+  -- Click → import via hidden edit box (copies to clipboard)
   card:SetScript("OnClick", function(self)
     if not self.importString or self.importString == "" then
       print("|cff00ccffZugZug:|r No import string for this build.")
       return
     end
-    if C_ClassTalents and C_ClassTalents.ImportLoadout then
-      local success = C_ClassTalents.ImportLoadout(self.importString)
-      if success then
-        print("|cff00ccffZugZug:|r Imported " .. (self.buildLabel or "build") .. " — review and click Apply.")
-      else
-        print("|cff00ccffZugZug:|r Import failed — the string may be outdated.")
-      end
-    else
-      print("|cff00ccffZugZug:|r Talent import API not available.")
-    end
+    ZZ:CopyImportString(self.importString, self.buildLabel or "build")
   end)
 
   -- Hover
@@ -207,7 +198,7 @@ local function createBuildCard(parent)
       end
     end
     GameTooltip:AddLine(" ")
-    GameTooltip:AddLine("Click to import talents", COLORS.muted.r, COLORS.muted.g, COLORS.muted.b)
+    GameTooltip:AddLine("Click to copy import string", COLORS.muted.r, COLORS.muted.g, COLORS.muted.b)
     GameTooltip:Show()
   end)
 
@@ -374,6 +365,82 @@ function ZZ:RefreshUI()
 end
 
 ----------------------------------------------------------------------
+-- Copy popup — shows an edit box with pre-selected text for Ctrl+C
+----------------------------------------------------------------------
+
+local copyPopup = nil
+
+local function createCopyPopup()
+  if copyPopup then return copyPopup end
+
+  local f = CreateFrame("Frame", "ZugZugCopyPopup", UIParent, "BackdropTemplate")
+  f:SetSize(380, 70)
+  f:SetPoint("CENTER", UIParent, "CENTER", 0, 200)
+  f:SetFrameStrata("DIALOG")
+  f:SetBackdrop({
+    bgFile = "Interface\\Buttons\\WHITE8x8",
+    edgeFile = "Interface\\Buttons\\WHITE8x8",
+    edgeSize = 1,
+  })
+  f:SetBackdropColor(0.1, 0.1, 0.12, 0.95)
+  f:SetBackdropBorderColor(0, 0.8, 1, 0.8)
+  f:EnableMouse(true)
+  f:SetMovable(true)
+  f:RegisterForDrag("LeftButton")
+  f:SetScript("OnDragStart", f.StartMoving)
+  f:SetScript("OnDragStop", f.StopMovingOrSizing)
+
+  local title = f:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+  title:SetPoint("TOPLEFT", f, "TOPLEFT", 8, -6)
+  title:SetTextColor(0, 0.8, 1)
+  f.title = title
+
+  local editBox = CreateFrame("EditBox", nil, f, "BackdropTemplate")
+  editBox:SetPoint("TOPLEFT", f, "TOPLEFT", 8, -22)
+  editBox:SetPoint("BOTTOMRIGHT", f, "BOTTOMRIGHT", -30, 8)
+  editBox:SetFontObject(ChatFontNormal)
+  editBox:SetAutoFocus(true)
+  editBox:SetBackdrop({
+    bgFile = "Interface\\Buttons\\WHITE8x8",
+    edgeFile = "Interface\\Buttons\\WHITE8x8",
+    edgeSize = 1,
+  })
+  editBox:SetBackdropColor(0.05, 0.05, 0.07, 1)
+  editBox:SetBackdropBorderColor(0.2, 0.2, 0.25, 1)
+  editBox:SetTextInsets(4, 4, 2, 2)
+  editBox:SetScript("OnEscapePressed", function() f:Hide() end)
+  editBox:SetScript("OnEnterPressed", function() f:Hide() end)
+  f.editBox = editBox
+
+  local closeBtn = CreateFrame("Button", nil, f)
+  closeBtn:SetSize(18, 18)
+  closeBtn:SetPoint("TOPRIGHT", f, "TOPRIGHT", -4, -4)
+  closeBtn:SetNormalFontObject(GameFontNormalSmall)
+  closeBtn:SetText("X")
+  closeBtn:GetFontString():SetTextColor(0.6, 0.6, 0.6)
+  closeBtn:SetScript("OnClick", function() f:Hide() end)
+  closeBtn:SetScript("OnEnter", function(self)
+    self:GetFontString():SetTextColor(1, 0.3, 0.3)
+  end)
+  closeBtn:SetScript("OnLeave", function(self)
+    self:GetFontString():SetTextColor(0.6, 0.6, 0.6)
+  end)
+
+  f:Hide()
+  copyPopup = f
+  return f
+end
+
+function ZZ:CopyImportString(importString, label)
+  local popup = createCopyPopup()
+  popup.title:SetText("|cff00ccffZugZug:|r " .. label .. "  —  Ctrl+C to copy, then paste into Import Loadout")
+  popup.editBox:SetText(importString)
+  popup:Show()
+  popup.editBox:SetFocus()
+  popup.editBox:HighlightText()
+end
+
+----------------------------------------------------------------------
 -- Hook into talent frame
 ----------------------------------------------------------------------
 
@@ -384,19 +451,8 @@ local function hookTalentFrame()
 
     createBar(talentFrame)
 
-    -- Find the search bar to anchor to its right.
-    -- In TWW/Midnight the search box is talentFrame.SearchBox or
-    -- within the bottom bar area.  We try several known locations.
-    local searchBar = talentFrame.SearchBox
-        or talentFrame.SearchPreviewContainer
-        or (talentFrame.BottomBar and talentFrame.BottomBar.SearchBox)
-
-    if searchBar then
-      bar:SetPoint("LEFT", searchBar, "RIGHT", 8, 0)
-    else
-      -- Fallback: anchor to bottom-left of the talent frame with some offset
-      bar:SetPoint("BOTTOMLEFT", talentFrame, "BOTTOMLEFT", 260, 5)
-    end
+    -- Anchor below the talent frame so we never overlap the Apply button
+    bar:SetPoint("TOPLEFT", talentFrame, "BOTTOMLEFT", 0, -2)
 
     -- Show/hide with talent frame
     talentFrame:HookScript("OnShow", function()
