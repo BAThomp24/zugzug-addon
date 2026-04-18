@@ -451,8 +451,8 @@ local function hookTalentFrame()
 
     createBar(talentFrame)
 
-    -- Anchor below the talent frame so we never overlap the Apply button
-    bar:SetPoint("TOPLEFT", talentFrame, "BOTTOMLEFT", 0, -2)
+    -- Anchor centered below the talent frame, clear of spec tabs and Apply button
+    bar:SetPoint("TOP", talentFrame, "BOTTOM", 0, -4)
 
     -- Show/hide with talent frame
     talentFrame:HookScript("OnShow", function()
