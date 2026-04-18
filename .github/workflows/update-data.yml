@@ -29,7 +29,7 @@ jobs:
       - name: Check if data actually changed
         id: diff
         run: |
-          if git diff --quiet ZugZug/Data.lua; then
+          if git diff --quiet Data.lua; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
@@ -40,13 +40,13 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add ZugZug/Data.lua
+          git add Data.lua
           git commit -m "data: update builds ${{ steps.version.outputs.tag }}"
           git push
 
       - name: Create release zip
         if: steps.diff.outputs.changed == 'true'
-        run: zip -r ZugZug.zip ZugZug/
+        run: zip -r ZugZug.zip ZugZug.toc Core.lua UI.lua Data.lua
 
       - name: Create GitHub Release
         if: steps.diff.outputs.changed == 'true'
