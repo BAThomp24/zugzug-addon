@@ -2,7 +2,7 @@
 ## Title: ZugZug
 ## Notes: ZUGZUG.io build recommendations in your talent frame — raid & M+ builds with boss/dungeon context.
 ## Author: ZUGZUG.io
-## Version: 0.1.0
+## Version: @project-version@
 ## SavedVariables: ZugZugDB
 ## DefaultState: enabled
 

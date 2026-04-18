@@ -1,0 +1,7 @@
+package-as: ZugZug
+
+ignore:
+  - scripts
+  - README.md
+  - ZugZug.zip
+  - .github
