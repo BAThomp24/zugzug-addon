@@ -3,7 +3,7 @@
 -- Initialization, saved variables, slash commands, class/spec detection.
 ----------------------------------------------------------------------
 
-local ADDON_NAME = "ZugZug"
+local ADDON_NAME = select(1, ...)
 
 -- Saved variables (persisted between sessions)
 ZugZugDB = ZugZugDB or {}
@@ -113,22 +113,26 @@ function ZZ:GetCurrentBuilds()
   local raidBuilds = roleData.raid and roleData.raid[diff]
   local mpBuilds = roleData.mythicPlus and roleData.mythicPlus[bucket]
 
-  -- Filter to current spec only
+  -- Sort current spec's builds first, then other specs
   local specName = self.specName
   if specName then
+    local function specSort(a, b)
+      local aMatch = a.spec == specName
+      local bMatch = b.spec == specName
+      if aMatch ~= bMatch then return aMatch end
+      return false -- preserve original order within same group
+    end
     if raidBuilds then
-      local filtered = {}
-      for _, b in ipairs(raidBuilds) do
-        if b.spec == specName then filtered[#filtered + 1] = b end
-      end
-      raidBuilds = filtered
+      local sorted = {}
+      for _, b in ipairs(raidBuilds) do sorted[#sorted + 1] = b end
+      table.sort(sorted, specSort)
+      raidBuilds = sorted
     end
     if mpBuilds then
-      local filtered = {}
-      for _, b in ipairs(mpBuilds) do
-        if b.spec == specName then filtered[#filtered + 1] = b end
-      end
-      mpBuilds = filtered
+      local sorted = {}
+      for _, b in ipairs(mpBuilds) do sorted[#sorted + 1] = b end
+      table.sort(sorted, specSort)
+      mpBuilds = sorted
     end
   end
 

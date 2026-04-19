@@ -44,11 +44,13 @@ type KeyLevelBucket = "all" | "15+" | "18+" | "20+";
 interface BossResult {
   name: string;
   bestBuildIndexByDifficulty: Record<Difficulty, number>;
+  buildCountsByDifficulty: Record<Difficulty, number[]>;
 }
 
 interface DungeonResult {
   name: string;
   bestBuildIndexByBucket: Record<KeyLevelBucket, number>;
+  buildCountsByBucket: Record<KeyLevelBucket, number[]>;
 }
 
 interface ClassData {
@@ -153,18 +155,31 @@ function extractRaidBuilds(
   const builds = classData.raid.builds.filter((b) => b.id !== "other" && b.importString);
   const bosses = classData.raid.bosses;
 
+  // Compute per-difficulty popularity from boss counts
+  const totalsByBuild = builds.map(() => 0);
+  let grandTotal = 0;
+  for (const boss of bosses) {
+    const counts = boss.buildCountsByDifficulty?.[difficulty] ?? [];
+    for (let i = 0; i < builds.length; i++) {
+      const n = counts[i] ?? 0;
+      totalsByBuild[i]! += n;
+      grandTotal += n;
+    }
+  }
+
   return builds.map((build, buildIdx) => {
-    // Which bosses is this build the best for at this difficulty?
     const bestFor = bosses
       .filter((boss) => boss.bestBuildIndexByDifficulty?.[difficulty] === buildIdx)
       .map((boss) => boss.name);
+
+    const pop = grandTotal > 0 ? Math.round(((totalsByBuild[buildIdx] ?? 0) / grandTotal) * 100) : 0;
 
     return {
       spec: build.spec,
       hero: build.hero,
       label: build.label,
       importString: build.importString,
-      popularity: Math.round(build.popularity),
+      popularity: pop,
       trend: build.trend,
       bosses: bestFor.length > 0 ? bestFor : undefined,
     };
@@ -183,17 +198,31 @@ function extractMpBuilds(
   );
   const dungeons = classData.mythicPlus.dungeons;
 
+  // Compute per-bucket popularity from dungeon counts
+  const totalsByBuild = builds.map(() => 0);
+  let grandTotal = 0;
+  for (const dungeon of dungeons) {
+    const counts = dungeon.buildCountsByBucket?.[bucket] ?? [];
+    for (let i = 0; i < builds.length; i++) {
+      const n = counts[i] ?? 0;
+      totalsByBuild[i]! += n;
+      grandTotal += n;
+    }
+  }
+
   return builds.map((build, buildIdx) => {
     const bestFor = dungeons
       .filter((dg) => dg.bestBuildIndexByBucket?.[bucket] === buildIdx)
       .map((dg) => dg.name);
+
+    const pop = grandTotal > 0 ? Math.round(((totalsByBuild[buildIdx] ?? 0) / grandTotal) * 100) : 0;
 
     return {
       spec: build.spec,
       hero: build.hero,
       label: build.label,
       importString: build.importString,
-      popularity: Math.round(build.popularity),
+      popularity: pop,
       trend: build.trend,
       dungeons: bestFor.length > 0 ? bestFor : undefined,
     };
