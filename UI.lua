@@ -200,6 +200,21 @@ local function parseImportString(importString)
   }
 end
 
+----------------------------------------------------------------------
+-- Pending spec switch — stores build to apply after spec change
+----------------------------------------------------------------------
+
+local pendingBuild = nil -- { importString, label }
+
+--- Find the specIndex (1-based) for a given specID on the player's class.
+local function specIndexForID(targetSpecID)
+  for i = 1, GetNumSpecializations() do
+    local specID = GetSpecializationInfo(i)
+    if specID == targetSpecID then return i end
+  end
+  return nil
+end
+
 --- Apply a parsed loadout to the player's active talent config.
 function ZZ:ApplyBuild(importString, label)
   local parsed, err = parseImportString(importString)
@@ -208,11 +223,27 @@ function ZZ:ApplyBuild(importString, label)
     return false
   end
 
-  -- Verify spec matches
+  -- If the build is for a different spec, switch first
   local currentSpecID = PlayerUtil.GetCurrentSpecID()
   if parsed.specID ~= currentSpecID then
-    print("|cff00ccffZugZug:|r This build is for a different spec.")
-    return false
+    local specIdx = specIndexForID(parsed.specID)
+    if not specIdx then
+      print("|cff00ccffZugZug:|r Could not find spec for this build.")
+      return false
+    end
+    pendingBuild = { importString = importString, label = label }
+    print("|cff00ccffZugZug:|r Switching spec to apply " .. (label or "build") .. "...")
+    if InCombatLockdown() then
+      print("|cff00ccffZugZug:|r Cannot switch spec in combat.")
+      pendingBuild = nil
+      return false
+    end
+    -- Close the talent frame — Blizzard blocks spec switches while it's open
+    if PlayerSpellsFrame and PlayerSpellsFrame:IsShown() then
+      HideUIPanel(PlayerSpellsFrame)
+    end
+    C_SpecializationInfo.SetSpecialization(specIdx)
+    return true
   end
 
   local configID = C_ClassTalents.GetActiveConfigID()
@@ -283,6 +314,15 @@ function ZZ:ApplyBuild(importString, label)
 
   print("|cff00ccffZugZug:|r Failed to commit. Try with the talent frame open.")
   return false
+end
+
+--- Apply a pending build after a spec switch completes.
+function ZZ:ApplyPendingBuild()
+  if not pendingBuild then return end
+  local build = pendingBuild
+  pendingBuild = nil
+  print("|cff00ccffZugZug:|r Spec switched — applying " .. (build.label or "build") .. "...")
+  ZZ:ApplyBuild(build.importString, build.label)
 end
 
 ----------------------------------------------------------------------

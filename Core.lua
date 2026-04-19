@@ -238,5 +238,10 @@ frame:SetScript("OnEvent", function(_, event, arg1)
   if event == "ACTIVE_TALENT_GROUP_CHANGED" then
     refreshPlayerInfo()
     if ZZ.RefreshUI then ZZ:RefreshUI() end
+    -- Apply any build that was waiting for a spec switch
+    if ZZ.ApplyPendingBuild then
+      -- Delay slightly to let the talent tree fully load after spec change
+      C_Timer.After(0.5, function() ZZ:ApplyPendingBuild() end)
+    end
   end
 end)
