@@ -10,6 +10,7 @@ ZugZugDB = ZugZugDB or {}
 
 -- Addon-wide state
 local ZZ = {
+  addonName = ADDON_NAME, -- folder name, used for texture paths
   classToken = nil,   -- e.g. "WARLOCK"
   specId = nil,       -- WoW spec ID (e.g. 265)
   specName = nil,     -- e.g. "Affliction"
@@ -174,12 +175,23 @@ local function handleSlashCommand(msg)
     return
   end
 
+  if cmd == "suggest" then
+    ZugZugDB.suggestDisabled = not ZugZugDB.suggestDisabled
+    if ZugZugDB.suggestDisabled then
+      print("|cff00ccffZugZug:|r Smart suggest |cffFF6666disabled|r")
+    else
+      print("|cff00ccffZugZug:|r Smart suggest |cff4DFF4Denabled|r")
+    end
+    return
+  end
+
   if cmd == "status" then
     print("|cff00ccffZugZug:|r Status")
     print("  Class: " .. (ZZ.classToken or "unknown"))
     print("  Spec: " .. (ZZ.specName or "unknown") .. " (" .. (ZZ.role or "?") .. ")")
     print("  Raid difficulty: " .. (ZugZugDB.raidDifficulty or "mythic"))
     print("  M+ key level: " .. (ZugZugDB.mpBucket or "all"))
+    print("  Smart suggest: " .. (ZugZugDB.suggestDisabled and "|cffFF6666off|r" or "|cff4DFF4Don|r"))
     if ZZ.data then
       print("  Data: loaded (" .. (ZZ.data.lastUpdate or "?") .. ")")
     else
@@ -189,10 +201,12 @@ local function handleSlashCommand(msg)
   end
 
   -- Default: show help
-  print("|cff00ccffZugZug|r — ZUGZUG.io talent builds")
+  print("|cff00ccffZugZug|r — ZUGZUG.info talent builds")
   print("  /zugzug status — show current settings")
   print("  /zugzug diff <heroic|mythic> — set raid difficulty")
   print("  /zugzug key <all|15+|18+|20+> — set M+ key level filter")
+  print("  /zugzug suggest — toggle smart suggest on/off")
+  print("  /zugzug minimap — toggle minimap button")
 end
 
 ----------------------------------------------------------------------
@@ -232,6 +246,13 @@ frame:SetScript("OnEvent", function(_, event, arg1)
         "|cff00ccffZugZug:|r Loaded %d raid + %d M+ builds for %s %s. Type /zz for help.",
         rCount, mCount, ZZ.specName or "?", ZZ.role or "?"
       ))
+
+      -- Notify if build data was updated since last session
+      local currentVersion = ZZ.data.lastUpdate
+      if currentVersion and ZugZugDB.lastDataVersion and ZugZugDB.lastDataVersion ~= currentVersion then
+        print("|cff00ccffZugZug:|r |cff8fbf3fBuild data updated!|r Meta may have shifted — check your builds.")
+      end
+      ZugZugDB.lastDataVersion = currentVersion
     end
   end
 

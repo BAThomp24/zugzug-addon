@@ -138,6 +138,93 @@ end
 
 local SERIALIZATION_VERSION = 2
 
+----------------------------------------------------------------------
+-- Build diff — count how many talents differ from current loadout
+----------------------------------------------------------------------
+
+--- Count talent differences between an import string and the current config.
+--- Returns nil if the build is for a different spec or can't be compared.
+local function countTalentDiff(importString)
+  if not importString or importString == "" then return nil end
+  if not ExportUtil or not ExportUtil.MakeImportDataStream then return nil end
+
+  local importStream = ExportUtil.MakeImportDataStream(importString)
+  if not importStream then return nil end
+
+  local version = importStream:ExtractValue(8)
+  if version ~= SERIALIZATION_VERSION then return nil end
+
+  local specID = importStream:ExtractValue(16)
+
+  -- Only compare same-spec builds
+  local currentSpecID = PlayerUtil and PlayerUtil.GetCurrentSpecID and PlayerUtil.GetCurrentSpecID()
+  if not currentSpecID or specID ~= currentSpecID then return nil end
+
+  -- Skip 128-bit tree hash
+  for i = 1, 16 do importStream:ExtractValue(8) end
+
+  local treeID = C_ClassTalents.GetTraitTreeForSpec(specID)
+  if not treeID then return nil end
+
+  local configID = C_ClassTalents.GetActiveConfigID()
+  if not configID then return nil end
+
+  local treeNodes = C_Traits.GetTreeNodes(treeID)
+  if not treeNodes or #treeNodes == 0 then return nil end
+
+  local diffCount = 0
+
+  for _, nodeID in ipairs(treeNodes) do
+    local isSelected = importStream:ExtractValue(1) == 1
+    local nodeInfo = C_Traits.GetNodeInfo(configID, nodeID)
+    local currentRank = nodeInfo and nodeInfo.currentRank or 0
+
+    if isSelected then
+      local isPurchased = importStream:ExtractValue(1) == 1
+      local ranksPurchased = 0
+      local choiceIndex = nil
+
+      if isPurchased then
+        local isPartial = importStream:ExtractValue(1) == 1
+        if isPartial then
+          ranksPurchased = importStream:ExtractValue(6)
+        else
+          ranksPurchased = nodeInfo and nodeInfo.maxRanks or 1
+        end
+        local isChoice = importStream:ExtractValue(1) == 1
+        if isChoice then
+          choiceIndex = importStream:ExtractValue(2)
+        end
+      end
+
+      if isPurchased then
+        -- Node should be purchased in the build
+        if currentRank == 0 then
+          -- Not purchased currently → differs
+          diffCount = diffCount + 1
+        elseif ranksPurchased > 0 and currentRank ~= ranksPurchased then
+          -- Different rank count
+          diffCount = diffCount + 1
+        elseif choiceIndex and nodeInfo and nodeInfo.entryIDs then
+          -- Choice node — check if the same entry is selected
+          local targetEntryID = nodeInfo.entryIDs[choiceIndex + 1]
+          local activeEntryID = nodeInfo.activeEntry and nodeInfo.activeEntry.entryID
+          if targetEntryID and activeEntryID ~= targetEntryID then
+            diffCount = diffCount + 1
+          end
+        end
+      end
+    else
+      -- Node is not selected in the build but is currently purchased
+      if currentRank > 0 then
+        diffCount = diffCount + 1
+      end
+    end
+  end
+
+  return diffCount
+end
+
 --- Parse a talent import string into structured node data.
 local function parseImportString(importString)
   if not ExportUtil or not ExportUtil.MakeImportDataStream then
@@ -309,6 +396,10 @@ function ZZ:ApplyBuild(importString, label)
 
   if C_ClassTalents.CommitConfig(configID) then
     print("|cff00ccffZugZug:|r Applying " .. (label or "build") .. "...")
+    -- Auto-rename the loadout to the build label
+    if label and C_ClassTalents.RenameConfig then
+      C_ClassTalents.RenameConfig(configID, label)
+    end
     return true
   end
 
@@ -358,10 +449,48 @@ local function createDropdownItem(parent, index)
   specIcon:SetPoint("LEFT", item, "LEFT", 8, 0)
   item.specIcon = specIcon
 
+  -- Favorite star (right side)
+  local starBtn = CreateFrame("Button", nil, item)
+  starBtn:SetSize(16, 16)
+  starBtn:SetPoint("RIGHT", item, "RIGHT", -6, 0)
+  local starText = starBtn:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+  starText:SetPoint("CENTER")
+  starText:SetText("\226\152\134") -- ☆
+  starText:SetTextColor(COLORS.muted.r, COLORS.muted.g, COLORS.muted.b)
+  starBtn.starText = starText
+  item.starBtn = starBtn
+
+  starBtn:SetScript("OnClick", function()
+    if not item.importString then return end
+    ZugZugDB.favorites = ZugZugDB.favorites or {}
+    if ZugZugDB.favorites[item.importString] then
+      ZugZugDB.favorites[item.importString] = nil
+    else
+      ZugZugDB.favorites[item.importString] = true
+    end
+    -- Refresh the dropdown to re-sort
+    if item.contentType then
+      ZZ:PopulateDropdown(item.contentType)
+    end
+  end)
+  starBtn:SetScript("OnEnter", function(self)
+    self.starText:SetTextColor(1, 0.85, 0.2)
+    item:SetBackdropColor(COLORS.hover.r, COLORS.hover.g, COLORS.hover.b, 1)
+  end)
+  starBtn:SetScript("OnLeave", function(self)
+    local isFav = ZugZugDB.favorites and ZugZugDB.favorites[item.importString]
+    if isFav then
+      self.starText:SetTextColor(1, 0.85, 0.2)
+    else
+      self.starText:SetTextColor(COLORS.muted.r, COLORS.muted.g, COLORS.muted.b)
+    end
+    item:SetBackdropColor(0, 0, 0, 0)
+  end)
+
   -- Top line: spec + hero tree
   local specText = item:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
   specText:SetPoint("TOPLEFT", item, "TOPLEFT", 30, -5)
-  specText:SetPoint("TOPRIGHT", item, "TOPRIGHT", -8, -5)
+  specText:SetPoint("TOPRIGHT", item, "TOPRIGHT", -24, -5)
   specText:SetJustifyH("LEFT")
   specText:SetWordWrap(false)
   item.specText = specText
@@ -381,6 +510,16 @@ local function createDropdownItem(parent, index)
     GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
     GameTooltip:SetText("Click to apply build", COLORS.text.r, COLORS.text.g, COLORS.text.b)
     GameTooltip:AddLine("Shift+click to copy import string", COLORS.muted.r, COLORS.muted.g, COLORS.muted.b)
+    GameTooltip:AddLine("Click star to pin/unpin", COLORS.muted.r, COLORS.muted.g, COLORS.muted.b)
+    -- Show talent diff count for same-spec builds
+    local diff = countTalentDiff(self.importString)
+    if diff then
+      if diff == 0 then
+        GameTooltip:AddLine("Currently active", 0.36, 0.79, 0.65)
+      else
+        GameTooltip:AddLine(diff .. " talent " .. (diff == 1 and "change" or "changes"), 0.95, 0.75, 0.3)
+      end
+    end
     if self.contextList and #self.contextList > 0 then
       GameTooltip:AddLine(" ")
       GameTooltip:AddLine("Best for:", 1, 0.82, 0.2)
@@ -442,11 +581,22 @@ local function populateDropdownItem(item, build, contentType, sectionColor, isCu
 
   item.importString = build.importString
   item.buildLabel = build.label
+  item.contentType = contentType
 
   if contentType == "raid" then
     item.contextList = build.bosses
   else
     item.contextList = build.dungeons
+  end
+
+  -- Update star visual
+  local isFav = ZugZugDB.favorites and ZugZugDB.favorites[build.importString]
+  if isFav then
+    item.starBtn.starText:SetText("\226\152\133") -- ★
+    item.starBtn.starText:SetTextColor(1, 0.85, 0.2)
+  else
+    item.starBtn.starText:SetText("\226\152\134") -- ☆
+    item.starBtn.starText:SetTextColor(COLORS.muted.r, COLORS.muted.g, COLORS.muted.b)
   end
 
   item:Show()
@@ -652,6 +802,19 @@ function ZZ:PopulateDropdown(contentType)
     item:Hide()
   end
 
+  -- Sort favorites to the top (preserving spec grouping within fav/non-fav)
+  if builds and #builds > 0 and ZugZugDB.favorites then
+    local sorted = {}
+    for _, b in ipairs(builds) do sorted[#sorted + 1] = b end
+    table.sort(sorted, function(a, b)
+      local aFav = ZugZugDB.favorites[a.importString] and true or false
+      local bFav = ZugZugDB.favorites[b.importString] and true or false
+      if aFav ~= bFav then return aFav end
+      return false -- preserve original order within same group
+    end)
+    builds = sorted
+  end
+
   if not builds or #builds == 0 then
     menu:SetSize(DROPDOWN_WIDTH, 30)
     if not menu.emptyText then
@@ -708,6 +871,18 @@ function ZZ:PopulateDropdown(contentType)
   end
 
   menu:SetSize(DROPDOWN_WIDTH, -yOffset + PADDING)
+end
+
+----------------------------------------------------------------------
+-- Get or create the bar (used by minimap button for standalone mode)
+----------------------------------------------------------------------
+
+function ZZ:GetOrCreateBar()
+  if not bar then
+    createBar(UIParent)
+    bar:Hide()
+  end
+  return bar
 end
 
 ----------------------------------------------------------------------

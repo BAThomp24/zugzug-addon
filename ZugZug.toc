@@ -9,3 +9,5 @@
 Data.lua
 Core.lua
 UI.lua
+Suggest.lua
+Minimap.lua

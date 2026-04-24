@@ -46,7 +46,7 @@ jobs:
 
       - name: Create release zip
         if: steps.diff.outputs.changed == 'true'
-        run: zip -r ZugZug.zip ZugZug.toc Core.lua UI.lua Data.lua
+        run: zip -r ZugZug.zip ZugZug.toc Core.lua UI.lua Suggest.lua Minimap.lua Data.lua icon.png
 
       - name: Create GitHub Release
         if: steps.diff.outputs.changed == 'true'
