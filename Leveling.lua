@@ -495,7 +495,8 @@ frame:RegisterEvent("ACTIVE_TALENT_GROUP_CHANGED")
 
 frame:SetScript("OnEvent", function(_, event)
   if event == "PLAYER_LOGIN" then
-    -- Only enable for non-max-level characters (or characters with incomplete builds)
+    local level = UnitLevel("player")
+    if level and level >= MAX_LEVEL then return end
     loadOrderForCurrentSpec()
     -- Delay initial check to let talent data load
     C_Timer.After(2, function()
