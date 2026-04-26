@@ -26,8 +26,13 @@ _G.ZugZug = ZZ
 ----------------------------------------------------------------------
 
 local DEFAULTS = {
-  raidDifficulty = "mythic",  -- "heroic" | "mythic"
-  mpBucket = "all",           -- "all" | "15+" | "18+" | "20+"
+  raidDifficulty = "mythic",       -- "heroic" | "mythic"
+  mpBucket = "all",                -- "all" | "15+" | "18+" | "20+"
+  suggestEnabled = true,           -- master toggle
+  suggestRaidDiff = "auto",         -- "auto" | "heroic" | "mythic"
+  suggestMpBucket = "all",         -- which bucket data to suggest in dungeons
+  suggestSpecFilter = "all",       -- "all" | "raid" | "dungeon" | "none"
+  suggestFadeTimer = 15,           -- seconds before popup auto-hides
 }
 
 local function ensureDefaults()
@@ -114,29 +119,6 @@ function ZZ:GetCurrentBuilds()
   local raidBuilds = roleData.raid and roleData.raid[diff]
   local mpBuilds = roleData.mythicPlus and roleData.mythicPlus[bucket]
 
-  -- Sort current spec's builds first, then other specs
-  local specName = self.specName
-  if specName then
-    local function specSort(a, b)
-      local aMatch = a.spec == specName
-      local bMatch = b.spec == specName
-      if aMatch ~= bMatch then return aMatch end
-      return false -- preserve original order within same group
-    end
-    if raidBuilds then
-      local sorted = {}
-      for _, b in ipairs(raidBuilds) do sorted[#sorted + 1] = b end
-      table.sort(sorted, specSort)
-      raidBuilds = sorted
-    end
-    if mpBuilds then
-      local sorted = {}
-      for _, b in ipairs(mpBuilds) do sorted[#sorted + 1] = b end
-      table.sort(sorted, specSort)
-      mpBuilds = sorted
-    end
-  end
-
   return raidBuilds, mpBuilds
 end
 
@@ -176,11 +158,11 @@ local function handleSlashCommand(msg)
   end
 
   if cmd == "suggest" then
-    ZugZugDB.suggestDisabled = not ZugZugDB.suggestDisabled
-    if ZugZugDB.suggestDisabled then
-      print("|cff00ccffZugZug:|r Smart suggest |cffFF6666disabled|r")
-    else
+    ZugZugDB.suggestEnabled = not ZugZugDB.suggestEnabled
+    if ZugZugDB.suggestEnabled then
       print("|cff00ccffZugZug:|r Smart suggest |cff4DFF4Denabled|r")
+    else
+      print("|cff00ccffZugZug:|r Smart suggest |cffFF6666disabled|r")
     end
     return
   end
@@ -191,7 +173,7 @@ local function handleSlashCommand(msg)
     print("  Spec: " .. (ZZ.specName or "unknown") .. " (" .. (ZZ.role or "?") .. ")")
     print("  Raid difficulty: " .. (ZugZugDB.raidDifficulty or "mythic"))
     print("  M+ key level: " .. (ZugZugDB.mpBucket or "all"))
-    print("  Smart suggest: " .. (ZugZugDB.suggestDisabled and "|cffFF6666off|r" or "|cff4DFF4Don|r"))
+    print("  Smart suggest: " .. (ZugZugDB.suggestEnabled and "|cff4DFF4Don|r" or "|cffFF6666off|r"))
     if ZZ.data then
       print("  Data: loaded (" .. (ZZ.data.lastUpdate or "?") .. ")")
     else
@@ -200,9 +182,24 @@ local function handleSlashCommand(msg)
     return
   end
 
+  if cmd == "settings" or cmd == "options" or cmd == "config" then
+    local ok, err = pcall(function()
+      if ZZ.settingsCategory then
+        Settings.OpenToCategory(ZZ.settingsCategory:GetID())
+      else
+        Settings.OpenToCategory("ZugZug")
+      end
+    end)
+    if not ok then
+      print("|cff00ccffZugZug:|r Settings error: " .. tostring(err))
+    end
+    return
+  end
+
   -- Default: show help
   print("|cff00ccffZugZug|r — ZUGZUG.info talent builds")
   print("  /zugzug status — show current settings")
+  print("  /zugzug settings — open settings panel")
   print("  /zugzug diff <heroic|mythic> — set raid difficulty")
   print("  /zugzug key <all|15+|18+|20+> — set M+ key level filter")
   print("  /zugzug suggest — toggle smart suggest on/off")

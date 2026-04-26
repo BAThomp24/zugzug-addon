@@ -10,8 +10,10 @@ local ZZ = _G.ZugZug
 ----------------------------------------------------------------------
 
 local RAID_DIFFICULTY_MAP = {
+  [14] = "heroic",  -- Normal → use heroic data
   [15] = "heroic",
   [16] = "mythic",
+  [17] = "heroic",  -- LFR → use heroic data
 }
 
 -- Map keystone level to our bucket
@@ -26,46 +28,64 @@ end
 -- Build matching — find the best build for a given boss/dungeon
 ----------------------------------------------------------------------
 
---- Normalize names for fuzzy matching (strip punctuation, lowercase).
+--- Normalize names for fuzzy matching (punctuation→space, collapse, lowercase).
+--- Uses function-call syntax to avoid WoW taint issues.
 local function normName(name)
   if not name then return "" end
-  return name:lower():gsub("[^%w%s]", ""):gsub("%s+", " "):trim()
+  local s = string.lower(name)
+  s = string.gsub(s, "[^%w%s]", " ")
+  s = string.gsub(s, "%s+", " ")
+  s = strtrim(s)
+  return s
 end
 
---- String.trim polyfill
-if not string.trim then
-  function string:trim()
-    return self:match("^%s*(.-)%s*$")
+--- Match a target name against a data name.
+--- Tries exact match first, then normalized fuzzy match (pcall-safe).
+local function namesMatch(targetName, dataName)
+  if targetName == dataName then return true end
+  local ok, normTarget = pcall(normName, targetName)
+  if ok then
+    return normName(dataName) == normTarget
   end
+  return false
+end
+
+--- Check if we should filter to current spec only for a given content type.
+local function specOnly(contentType)
+  local filter = ZugZugDB.suggestSpecFilter or "all"
+  if filter == "all" then return true end
+  if filter == "none" then return false end
+  return filter == contentType
 end
 
 --- Find the best build for a boss name in raid data.
---- Returns the build table or nil.
 local function findBestBuildForBoss(builds, bossName)
   if not builds or #builds == 0 then return nil end
 
-  local normBoss = normName(bossName)
   local specName = ZZ.specName
+  local currentOnly = specOnly("raid")
 
   -- Pass 1: same spec, lists this boss as "best for"
   for _, build in ipairs(builds) do
     if build.spec == specName and build.bosses then
       for _, b in ipairs(build.bosses) do
-        if normName(b) == normBoss then return build end
+        if namesMatch(bossName, b) then return build end
       end
     end
   end
 
-  -- Pass 2: any spec, lists this boss as "best for"
-  for _, build in ipairs(builds) do
-    if build.bosses then
-      for _, b in ipairs(build.bosses) do
-        if normName(b) == normBoss then return build end
+  -- Pass 2: any spec, lists this boss (skip if spec-only)
+  if not currentOnly then
+    for _, build in ipairs(builds) do
+      if build.bosses then
+        for _, b in ipairs(build.bosses) do
+          if namesMatch(bossName, b) then return build end
+        end
       end
     end
   end
 
-  -- Pass 3: highest popularity same-spec build (no boss-specific data)
+  -- Pass 3: highest popularity same-spec build
   local best = nil
   for _, build in ipairs(builds) do
     if build.spec == specName then
@@ -82,23 +102,25 @@ end
 local function findBestBuildForDungeon(builds, dungeonName)
   if not builds or #builds == 0 then return nil end
 
-  local normDungeon = normName(dungeonName)
   local specName = ZZ.specName
+  local currentOnly = specOnly("dungeon")
 
   -- Pass 1: same spec, lists this dungeon
   for _, build in ipairs(builds) do
     if build.spec == specName and build.dungeons then
       for _, d in ipairs(build.dungeons) do
-        if normName(d) == normDungeon then return build end
+        if namesMatch(dungeonName, d) then return build end
       end
     end
   end
 
-  -- Pass 2: any spec, lists this dungeon
-  for _, build in ipairs(builds) do
-    if build.dungeons then
-      for _, d in ipairs(build.dungeons) do
-        if normName(d) == normDungeon then return build end
+  -- Pass 2: any spec, lists this dungeon (skip if spec-only)
+  if not currentOnly then
+    for _, build in ipairs(builds) do
+      if build.dungeons then
+        for _, d in ipairs(build.dungeons) do
+          if namesMatch(dungeonName, d) then return build end
+        end
       end
     end
   end
@@ -114,6 +136,102 @@ local function findBestBuildForDungeon(builds, dungeonName)
   end
 
   return best
+end
+
+----------------------------------------------------------------------
+-- Raid boss order tracking via Encounter Journal
+----------------------------------------------------------------------
+
+local raidBossOrder = {}    -- { {encounterID=N, name="Boss"}, ... }
+local killedEncounters = {} -- { [encounterID] = true }
+local currentRaidDiff = nil -- resolved difficulty key for current instance
+
+--- Build the boss order for the current raid from the Encounter Journal.
+local function buildBossOrder()
+  raidBossOrder = {}
+  killedEncounters = {}
+
+  local ok, err = pcall(function()
+    local journalInstanceID = EJ_GetCurrentInstance()
+    if not journalInstanceID or journalInstanceID == 0 then return end
+
+    EJ_SelectInstance(journalInstanceID)
+    for i = 1, 20 do
+      local name, _, journalEncounterID, _, _, _, dungeonEncounterID = EJ_GetEncounterInfoByIndex(i)
+      if not name then break end
+      -- dungeonEncounterID matches BOSS_KILL's encounterID
+      local id = dungeonEncounterID or journalEncounterID
+      table.insert(raidBossOrder, { encounterID = id, name = name })
+    end
+  end)
+
+  if not ok then
+    print("|cff00ccffZugZug:|r Failed to read encounter journal: " .. tostring(err))
+  end
+end
+
+--- Get the name of the next unkilled boss.
+local function getNextBossName()
+  for _, boss in ipairs(raidBossOrder) do
+    if not killedEncounters[boss.encounterID] then
+      return boss.name
+    end
+  end
+  return nil  -- all bosses killed or no boss order
+end
+
+--- Get builds for the current raid difficulty.
+local function getRaidBuilds()
+  if not ZZ.data or not ZZ.classToken or not ZZ.role then return nil, nil end
+
+  local diff = currentRaidDiff
+  if not diff then return nil, nil end
+
+  -- Resolve suggest difficulty preference
+  local suggestDiff = ZugZugDB.suggestRaidDiff or "auto"
+  if suggestDiff ~= "auto" then
+    diff = suggestDiff
+  end
+
+  local classEntry = ZZ.data.classes[ZZ.classToken]
+  if not classEntry then return nil, nil end
+  local roleData = classEntry[ZZ.role]
+  if not roleData or not roleData.raid then return nil, nil end
+
+  return roleData.raid[diff], diff
+end
+
+--- Suggest a raid build for a specific boss name.
+local function suggestForBoss(bossName)
+  local builds, diff = getRaidBuilds()
+  if not builds then return end
+
+  local best = findBestBuildForBoss(builds, bossName)
+  if best then
+    local diffLabel = diff == "mythic" and "Mythic" or "Heroic"
+    showSuggestion("Best for " .. bossName .. " (" .. diffLabel .. ")", best, "raid")
+  end
+end
+
+--- Suggest the most popular raid build for current spec (fallback).
+local function suggestGenericRaid()
+  local builds, diff = getRaidBuilds()
+  if not builds then return end
+
+  local specName = ZZ.specName
+  local best = nil
+  for _, build in ipairs(builds) do
+    if build.spec == specName then
+      if not best or build.popularity > best.popularity then
+        best = build
+      end
+    end
+  end
+
+  if best then
+    local diffLabel = diff == "mythic" and "Mythic" or "Heroic"
+    showSuggestion("Best " .. diffLabel .. " raid build", best, "raid")
+  end
 end
 
 ----------------------------------------------------------------------
@@ -144,7 +262,7 @@ local function createSuggestFrame()
   f:SetScript("OnDragStart", f.StartMoving)
   f:SetScript("OnDragStop", f.StopMovingOrSizing)
 
-  -- Header: "ZugZug: Best for [content]"
+  -- Header
   local header = f:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
   header:SetPoint("TOPLEFT", f, "TOPLEFT", 10, -8)
   header:SetPoint("TOPRIGHT", f, "TOPRIGHT", -30, -8)
@@ -222,10 +340,13 @@ local function createSuggestFrame()
   closeBtn:SetScript("OnEnter", function(self) self:GetFontString():SetTextColor(1, 0.3, 0.3) end)
   closeBtn:SetScript("OnLeave", function(self) self:GetFontString():SetTextColor(0.5, 0.5, 0.5) end)
 
-  -- Auto-hide after 15 seconds
+  -- Auto-hide after configured seconds
   f:SetScript("OnShow", function(self)
     if self.hideTimer then self.hideTimer:Cancel() end
-    self.hideTimer = C_Timer.NewTimer(15, function() self:Hide() end)
+    local fadeTime = ZugZugDB.suggestFadeTimer or 15
+    if fadeTime > 0 then
+      self.hideTimer = C_Timer.NewTimer(fadeTime, function() self:Hide() end)
+    end
   end)
   f:SetScript("OnHide", function(self)
     if self.hideTimer then self.hideTimer:Cancel() end
@@ -239,10 +360,8 @@ end
 --- Show a build suggestion popup.
 local function showSuggestion(contentLabel, build, contentType)
   if not build or not build.importString or build.importString == "" then return end
-  -- Don't suggest in combat
   if InCombatLockdown() then return end
-  -- Don't suggest if disabled
-  if ZugZugDB.suggestDisabled then return end
+  if not ZugZugDB.suggestEnabled then return end
 
   local f = createSuggestFrame()
   f.currentBuild = build
@@ -260,38 +379,11 @@ local function showSuggestion(contentLabel, build, contentType)
 end
 
 ----------------------------------------------------------------------
--- Boss name index — built once from Data.lua for fast target lookups
-----------------------------------------------------------------------
-
-local bossIndex = {}  -- normName → raw boss name (for display)
-
-local function buildBossIndex()
-  if not ZZ.data or not ZZ.data.classes or not ZZ.classToken then return end
-  local classEntry = ZZ.data.classes[ZZ.classToken]
-  if not classEntry then return end
-  local roleData = classEntry[ZZ.role]
-  if not roleData or not roleData.raid then return end
-
-  for _, diff in ipairs({"heroic", "mythic"}) do
-    local builds = roleData.raid[diff]
-    if builds then
-      for _, build in ipairs(builds) do
-        if build.bosses then
-          for _, name in ipairs(build.bosses) do
-            bossIndex[normName(name)] = name
-          end
-        end
-      end
-    end
-  end
-end
-
-----------------------------------------------------------------------
 -- Event handlers
 ----------------------------------------------------------------------
 
-local lastSuggestBoss = nil     -- debounce: last suggested boss name
-local lastSuggestDungeon = nil  -- debounce: last suggested dungeon name
+local suggestBossCooldown = false
+local lastSuggestDungeon = nil
 
 local eventFrame = CreateFrame("Frame")
 eventFrame:RegisterEvent("PLAYER_LOGIN")
@@ -299,90 +391,147 @@ eventFrame:RegisterEvent("PLAYER_LOGIN")
 eventFrame:SetScript("OnEvent", function(_, event, ...)
   if event == "PLAYER_LOGIN" then
     if ZZ.data then
-      buildBossIndex()
       eventFrame:RegisterEvent("PLAYER_TARGET_CHANGED")
       eventFrame:RegisterEvent("ZONE_CHANGED_NEW_AREA")
+      eventFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
       eventFrame:RegisterEvent("BOSS_KILL")
     end
     eventFrame:UnregisterEvent("PLAYER_LOGIN")
     return
   end
 
-  -- ── Raid: suggest when targeting a boss ──
+  -- ── Raid: on entering a raid, build boss order and suggest first boss ──
+  if event == "PLAYER_ENTERING_WORLD" then
+    local ok, err = pcall(function()
+      local _, instanceType, difficultyID = GetInstanceInfo()
+      local diff = RAID_DIFFICULTY_MAP[difficultyID]
+
+      if instanceType == "raid" and diff then
+        currentRaidDiff = diff
+        suggestBossCooldown = false
+        killedEncounters = {}
+        -- Build boss order from Encounter Journal
+        buildBossOrder()
+
+        if #raidBossOrder > 0 then
+          local firstBoss = raidBossOrder[1].name
+          suggestForBoss(firstBoss)
+          suggestBossCooldown = true
+          C_Timer.After(30, function() suggestBossCooldown = false end)
+        end
+      else
+        -- Left raid — reset state
+        raidBossOrder = {}
+        killedEncounters = {}
+        currentRaidDiff = nil
+        suggestBossCooldown = false
+      end
+    end)
+    if not ok then
+      print("|cff00ccffZugZug:|r ENTERING_WORLD error: " .. tostring(err))
+    end
+    -- Fall through to dungeon detection below
+  end
+
+  -- ── Raid: suggest when targeting a boss-level mob ──
   if event == "PLAYER_TARGET_CHANGED" then
-    if not ZZ.data or not ZZ.classToken then return end
-    if InCombatLockdown() then return end
+    local ok, err = pcall(function()
+      if not ZZ.data or not ZZ.classToken or not ZZ.role then return end
+      if InCombatLockdown() then return end
+      if not UnitExists("target") then return end
+      if suggestBossCooldown then return end
 
-    local targetName = UnitName("target")
-    if not targetName then return end
-    -- Only care about enemies (not friendly NPCs / players)
-    if not UnitCanAttack("player", "target") then return end
+      -- Must be in a mapped raid difficulty
+      local difficultyID = select(3, GetInstanceInfo())
+      local diff = RAID_DIFFICULTY_MAP[difficultyID]
+      if not diff then return end
 
-    -- Check if the target is a known raid boss
-    local norm = normName(targetName)
-    local bossName = bossIndex[norm]
-    if not bossName then return end
+      -- Must be a boss-level mob (skull = -1)
+      if UnitLevel("target") ~= -1 then return end
 
-    -- Debounce: don't re-suggest for the same boss
-    if lastSuggestBoss == bossName then return end
-    lastSuggestBoss = bossName
+      -- Suggest based on next unkilled boss if we have boss order
+      local nextBoss = getNextBossName()
+      if nextBoss then
+        suggestForBoss(nextBoss)
+      else
+        suggestGenericRaid()
+      end
 
-    -- Determine raid difficulty from the current instance
-    local _, _, difficultyID = GetInstanceInfo()
-    local diff = RAID_DIFFICULTY_MAP[difficultyID]
-    if not diff then
-      -- Fallback to saved preference if we can't detect
-      diff = ZugZugDB.raidDifficulty or "mythic"
-    end
-
-    local classEntry = ZZ.data.classes[ZZ.classToken]
-    if not classEntry then return end
-    local roleData = classEntry[ZZ.role]
-    if not roleData or not roleData.raid then return end
-    local builds = roleData.raid[diff]
-
-    local best = findBestBuildForBoss(builds, bossName)
-    if best then
-      showSuggestion("Best for " .. bossName, best, "raid")
+      suggestBossCooldown = true
+      C_Timer.After(30, function() suggestBossCooldown = false end)
+    end)
+    if not ok then
+      print("|cff00ccffZugZug:|r TARGET error: " .. tostring(err))
     end
     return
   end
 
-  -- ── Raid: suggest next boss after a kill ──
+  -- ── Raid: after a boss kill, suggest the next boss ──
   if event == "BOSS_KILL" then
-    -- Reset so re-targeting the next boss will trigger a new suggestion
-    lastSuggestBoss = nil
+    local encounterID, encounterName = ...
+    local ok, err = pcall(function()
+      if encounterID then
+        killedEncounters[encounterID] = true
+      end
+      suggestBossCooldown = false
+
+      -- Suggest build for the next boss
+      local nextBoss = getNextBossName()
+      if nextBoss then
+        -- Small delay so it doesn't flash during loot
+        C_Timer.After(3, function()
+          suggestForBoss(nextBoss)
+          suggestBossCooldown = true
+          C_Timer.After(30, function() suggestBossCooldown = false end)
+        end)
+      end
+    end)
+    if not ok then
+      print("|cff00ccffZugZug:|r BOSS_KILL error: " .. tostring(err))
+    end
     return
   end
 
-  -- ── M+: suggest when zoning into a dungeon ──
-  if event == "ZONE_CHANGED_NEW_AREA" then
-    if not ZZ.data or not ZZ.classToken then return end
+  -- ── M+/Dungeon: suggest when zoning into a dungeon ──
+  if event == "ZONE_CHANGED_NEW_AREA" or event == "PLAYER_ENTERING_WORLD" then
+    local ok, err = pcall(function()
+      if not ZZ.data or not ZZ.classToken then return end
 
-    -- Check if we're in a challenge mode dungeon
-    local mapID = C_ChallengeMode.GetActiveChallengeMapID()
-    if not mapID then return end
+      local _, instanceType, difficultyID = GetInstanceInfo()
 
-    local dungeonName = C_ChallengeMode.GetMapUIInfo(mapID)
-    if not dungeonName then return end
+      local mapID = C_ChallengeMode.GetActiveChallengeMapID()
+      local dungeonName, level
 
-    -- Debounce
-    if lastSuggestDungeon == dungeonName then return end
-    lastSuggestDungeon = dungeonName
+      if mapID then
+        dungeonName = C_ChallengeMode.GetMapUIInfo(mapID)
+        level = select(1, C_ChallengeMode.GetActiveKeystoneInfo()) or 0
+      elseif instanceType == "party" then
+        dungeonName = GetInstanceInfo()
+        level = 0
+      else
+        return
+      end
 
-    -- Get keystone level for bucket selection
-    local level = select(1, C_ChallengeMode.GetActiveKeystoneInfo()) or 0
-    local bucket = keystoneToBucket(level)
+      if not dungeonName then return end
+      if lastSuggestDungeon == dungeonName then return end
+      lastSuggestDungeon = dungeonName
 
-    local classEntry = ZZ.data.classes[ZZ.classToken]
-    if not classEntry then return end
-    local roleData = classEntry[ZZ.role]
-    if not roleData or not roleData.mythicPlus then return end
-    local builds = roleData.mythicPlus[bucket]
+      local bucket = level > 0 and keystoneToBucket(level) or (ZugZugDB.suggestMpBucket or "all")
 
-    local best = findBestBuildForDungeon(builds, dungeonName)
-    if best then
-      showSuggestion("Best for " .. dungeonName .. " +" .. level, best, "mp")
+      local classEntry = ZZ.data.classes[ZZ.classToken]
+      if not classEntry then return end
+      local roleData = classEntry[ZZ.role]
+      if not roleData or not roleData.mythicPlus then return end
+      local builds = roleData.mythicPlus[bucket]
+
+      local best = findBestBuildForDungeon(builds, dungeonName)
+      if best then
+        local label = level > 0 and ("Best for " .. dungeonName .. " +" .. level) or ("Best for " .. dungeonName)
+        showSuggestion(label, best, "mp")
+      end
+    end)
+    if not ok then
+      print("|cff00ccffZugZug:|r ZONE error: " .. tostring(err))
     end
     return
   end
@@ -394,17 +543,11 @@ end)
 
 local resetFrame = CreateFrame("Frame")
 resetFrame:RegisterEvent("CHALLENGE_MODE_COMPLETED")
-resetFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
 resetFrame:RegisterEvent("ACTIVE_TALENT_GROUP_CHANGED")
 resetFrame:SetScript("OnEvent", function(_, event)
   if event == "CHALLENGE_MODE_COMPLETED" then
     lastSuggestDungeon = nil
-  elseif event == "PLAYER_ENTERING_WORLD" then
-    lastSuggestBoss = nil
-    lastSuggestDungeon = nil
   elseif event == "ACTIVE_TALENT_GROUP_CHANGED" then
-    -- Rebuild boss index for new role/spec
-    buildBossIndex()
-    lastSuggestBoss = nil
+    suggestBossCooldown = false
   end
 end)

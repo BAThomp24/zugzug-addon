@@ -770,6 +770,38 @@ local function createBar(parent)
     end
   end)
 
+  -- Leveling button — only visible below max level
+  local levelBtn = CreateFrame("Button", nil, bar, "BackdropTemplate")
+  levelBtn:SetSize(90, BAR_HEIGHT - 4)
+  levelBtn:SetPoint("LEFT", mpBtn, "RIGHT", DROPDOWN_GAP, 0)
+  levelBtn:SetBackdrop({
+    bgFile = "Interface\\Buttons\\WHITE8x8",
+    edgeFile = "Interface\\Buttons\\WHITE8x8",
+    edgeSize = 1,
+  })
+  levelBtn:SetBackdropColor(0.2, 0.5, 0.2, 0.9)
+  levelBtn:SetBackdropBorderColor(0.3, 0.3, 0.35, 1)
+
+  local levelText = levelBtn:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+  levelText:SetPoint("CENTER")
+  levelText:SetText("Leveling Guide")
+  levelText:SetTextColor(0.85, 1, 0.85)
+  levelBtn.label = levelText
+
+  levelBtn:SetScript("OnEnter", function(self)
+    self:SetBackdropBorderColor(COLORS.accent.r, COLORS.accent.g, COLORS.accent.b, 1)
+  end)
+  levelBtn:SetScript("OnLeave", function(self)
+    self:SetBackdropBorderColor(0.3, 0.3, 0.35, 1)
+  end)
+  levelBtn:SetScript("OnClick", function()
+    if ZZ.ToggleLevelingBanner then
+      ZZ:ToggleLevelingBanner()
+    end
+  end)
+  levelBtn:Hide()
+  bar.levelBtn = levelBtn
+
   -- Close dropdown when clicking elsewhere
   bar:SetScript("OnHide", function()
     closeActiveDropdown()
@@ -802,15 +834,20 @@ function ZZ:PopulateDropdown(contentType)
     item:Hide()
   end
 
-  -- Sort favorites to the top (preserving spec grouping within fav/non-fav)
-  if builds and #builds > 0 and ZugZugDB.favorites then
+  -- Sort: starred first, then current spec, then by popularity descending
+  if builds and #builds > 0 then
+    local favs = ZugZugDB.favorites or {}
+    local specName = ZZ.specName
     local sorted = {}
     for _, b in ipairs(builds) do sorted[#sorted + 1] = b end
     table.sort(sorted, function(a, b)
-      local aFav = ZugZugDB.favorites[a.importString] and true or false
-      local bFav = ZugZugDB.favorites[b.importString] and true or false
+      local aFav = favs[a.importString] and true or false
+      local bFav = favs[b.importString] and true or false
       if aFav ~= bFav then return aFav end
-      return false -- preserve original order within same group
+      local aSpec = (a.spec == specName)
+      local bSpec = (b.spec == specName)
+      if aSpec ~= bSpec then return aSpec end
+      return (a.popularity or 0) > (b.popularity or 0)
     end)
     builds = sorted
   end
@@ -898,6 +935,19 @@ function ZZ:RefreshUI()
 
   local bucket = ZugZugDB.mpBucket or "all"
   bar.mpBtn.settingText:SetText(bucket)
+
+  -- Show leveling button only below max level
+  local level = UnitLevel("player")
+  local showLeveling = level and level < 80 and ZugZugLevelingData ~= nil
+  if bar.levelBtn then
+    bar.levelBtn:SetShown(showLeveling)
+    -- Widen bar to fit the leveling button
+    if showLeveling then
+      bar:SetWidth(DROPDOWN_WIDTH * 2 + DROPDOWN_GAP * 2 + 90 + PADDING * 2)
+    else
+      bar:SetWidth(DROPDOWN_WIDTH * 2 + DROPDOWN_GAP + PADDING * 2)
+    end
+  end
 
   -- If a dropdown is open, refresh it
   if activeDropdown == raidMenu and raidMenu:IsShown() then
