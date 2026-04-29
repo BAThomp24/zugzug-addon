@@ -360,27 +360,20 @@ local function createSuggestFrame()
   return f
 end
 
---- Detect the player's active hero talent tree name via C_Traits subtree API.
+--- Detect the player's active hero talent tree name via C_ClassTalents.GetActiveHeroTalentSpec (11.0+).
+--- Returns the hero name string, or nil + reason ("none" = no hero selected, "unavailable" = API failed).
 local function getActiveHeroName()
-  local specID = PlayerUtil and PlayerUtil.GetCurrentSpecID and PlayerUtil.GetCurrentSpecID()
-  if not specID then return nil end
-  local configID = C_ClassTalents and C_ClassTalents.GetActiveConfigID and C_ClassTalents.GetActiveConfigID()
-  if not configID then return nil end
-  local ok, treeID = pcall(function()
-    return C_ClassTalents.GetTraitTreeForSpec(specID)
-  end)
-  if not ok or not treeID then return nil end
-  local ok2, subTrees = pcall(function()
-    return C_Traits.GetTreeSubTrees and C_Traits.GetTreeSubTrees(treeID) or {}
-  end)
-  if not ok2 then return nil end
-  for _, subTreeID in ipairs(subTrees or {}) do
-    local ok3, info = pcall(C_Traits.GetSubTreeInfo, configID, subTreeID)
-    if ok3 and info and info.isActive and info.name then
-      return info.name
-    end
+  if not (C_ClassTalents and C_ClassTalents.GetActiveHeroTalentSpec) then
+    return nil, "unavailable"
   end
-  return nil
+  local ok, subTreeID = pcall(C_ClassTalents.GetActiveHeroTalentSpec)
+  if not ok then return nil, "unavailable" end
+  if not subTreeID then return nil, "none" end
+  local configID = C_ClassTalents.GetActiveConfigID and C_ClassTalents.GetActiveConfigID()
+  if not configID then return nil, "unavailable" end
+  local ok2, info = pcall(C_Traits.GetSubTreeInfo, configID, subTreeID)
+  if not ok2 or not info then return nil, "unavailable" end
+  return info.name
 end
 
 --- Returns true if the player's current spec+hero already matches the build.
@@ -388,9 +381,13 @@ local function isAlreadyOnBuild(build)
   if not build then return false end
   if build.spec ~= ZZ.specName then return false end
   if not build.hero or build.hero == "" then return true end
-  local heroName = getActiveHeroName()
-  if not heroName then return true end  -- can't detect hero; spec match is sufficient
-  return heroName == build.hero
+  local heroName, reason = getActiveHeroName()
+  if heroName then
+    return heroName == build.hero
+  end
+  -- reason == "none": player has no hero selected; show suggestion
+  -- reason == "unavailable": API failed; show suggestion (better to over-suggest)
+  return false
 end
 
 --- Show a build suggestion popup.

@@ -938,7 +938,8 @@ function ZZ:RefreshUI()
 
   -- Show leveling button only below max level
   local level = UnitLevel("player")
-  local showLeveling = level and level < 80 and ZugZugLevelingData ~= nil
+  local maxLevel = GetMaxPlayerLevel and GetMaxPlayerLevel() or 80
+  local showLeveling = level and level < maxLevel and ZugZugLevelingData ~= nil
   if bar.levelBtn then
     bar.levelBtn:SetShown(showLeveling)
     -- Widen bar to fit the leveling button

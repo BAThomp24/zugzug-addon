@@ -284,28 +284,11 @@ local function createBanner()
   titleText:SetTextColor(COLORS.text.r, COLORS.text.g, COLORS.text.b)
   f.titleText = titleText
 
-  -- Left side: Pick + Pick All
-  local pickBtn = createSkinButton(f, 60, 22, "Pick",
-    { r = 0.2, g = 0.5, b = 0.2, a = 0.9 },
-    { r = 0.85, g = 1, b = 0.85 })
-  pickBtn:SetPoint("BOTTOMLEFT", f, "BOTTOMLEFT", 10, 6)
-  pickBtn:SetScript("OnClick", function()
-    local idx, pick = findNextPick()
-    if pick then
-      local ok = purchaseNode(pick)
-      if ok then
-        C_Timer.After(0.3, function() ZZ:RefreshLeveling() end)
-      else
-        print("|cff00ccffZugZug:|r Could not purchase " .. pick.name .. " — it may not be available yet.")
-      end
-    end
-  end)
-  f.pickBtn = pickBtn
-
+  -- Left side: Pick All
   local pickAllBtn = createSkinButton(f, 66, 22, "Pick All",
     { r = 0.15, g = 0.4, b = 0.15, a = 0.9 },
     { r = 0.85, g = 1, b = 0.85 })
-  pickAllBtn:SetPoint("LEFT", pickBtn, "RIGHT", 6, 0)
+  pickAllBtn:SetPoint("BOTTOMLEFT", f, "BOTTOMLEFT", 10, 6)
   pickAllBtn:SetScript("OnClick", function()
     if not levelingOrder then return end
 
@@ -413,7 +396,12 @@ local function findNextUnpurchased()
   return nil, nil
 end
 
-local function updateBanner(pick)
+local function updateBanner(pick, forceShow)
+  local hasPoints = hasUnspentPoints()
+  -- Auto-triggered banners (level up, config update) only show when there are points to spend.
+  -- forceShow=true bypasses this for the manual toggle button.
+  if not forceShow and not hasPoints then return end
+
   local banner = createBanner()
   local completed, total = countCompleted()
 
@@ -424,18 +412,6 @@ local function updateBanner(pick)
   end
   banner.progressText:SetText(completed .. " of " .. total)
 
-  -- Disable Pick if node can't be purchased right now
-  local canPick = false
-  if pick then
-    local specID = PlayerUtil and PlayerUtil.GetCurrentSpecID and PlayerUtil.GetCurrentSpecID()
-    local configID = specID and C_ClassTalents.GetActiveConfigID()
-    if configID then
-      local state = getNodePurchaseState(configID, pick.nodeID)
-      canPick = state and state.canPurchaseRank
-    end
-  end
-  local hasPoints = hasUnspentPoints()
-  banner.pickBtn:SetEnabled(canPick)
   banner.pickAllBtn:SetEnabled(hasPoints and pick ~= nil)
 
   -- Only show Reset below max level
@@ -480,7 +456,7 @@ function ZZ:ToggleLevelingBanner()
 
   -- Show banner with next unpurchased node (regardless of unspent points)
   local idx, pick = findNextUnpurchased()
-  updateBanner(pick)
+  updateBanner(pick, true)
 end
 
 ----------------------------------------------------------------------
