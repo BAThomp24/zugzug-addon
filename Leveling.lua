@@ -22,7 +22,7 @@ local COLORS = {
 -- State
 ----------------------------------------------------------------------
 
-local MAX_LEVEL = 80
+local MAX_LEVEL = GetMaxPlayerLevel and GetMaxPlayerLevel() or 90
 local levelingOrder = nil      -- current spec's pick order (array)
 local currentIndex = 0         -- how far through the order we are
 local bannerFrame = nil        -- the UI frame

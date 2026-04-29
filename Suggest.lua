@@ -5,6 +5,9 @@
 
 local ZZ = _G.ZugZug
 
+-- Forward declaration so callers above the definition can reference it.
+local showSuggestion
+
 ----------------------------------------------------------------------
 -- Difficulty mapping: WoW difficultyID → ZugZug difficulty key
 ----------------------------------------------------------------------
@@ -357,11 +360,45 @@ local function createSuggestFrame()
   return f
 end
 
+--- Detect the player's active hero talent tree name via C_Traits subtree API.
+local function getActiveHeroName()
+  local specID = PlayerUtil and PlayerUtil.GetCurrentSpecID and PlayerUtil.GetCurrentSpecID()
+  if not specID then return nil end
+  local configID = C_ClassTalents and C_ClassTalents.GetActiveConfigID and C_ClassTalents.GetActiveConfigID()
+  if not configID then return nil end
+  local ok, treeID = pcall(function()
+    return C_ClassTalents.GetTraitTreeForSpec(specID)
+  end)
+  if not ok or not treeID then return nil end
+  local ok2, subTrees = pcall(function()
+    return C_Traits.GetTreeSubTrees and C_Traits.GetTreeSubTrees(treeID) or {}
+  end)
+  if not ok2 then return nil end
+  for _, subTreeID in ipairs(subTrees or {}) do
+    local ok3, info = pcall(C_Traits.GetSubTreeInfo, configID, subTreeID)
+    if ok3 and info and info.isActive and info.name then
+      return info.name
+    end
+  end
+  return nil
+end
+
+--- Returns true if the player's current spec+hero already matches the build.
+local function isAlreadyOnBuild(build)
+  if not build then return false end
+  if build.spec ~= ZZ.specName then return false end
+  if not build.hero or build.hero == "" then return true end
+  local heroName = getActiveHeroName()
+  if not heroName then return true end  -- can't detect hero; spec match is sufficient
+  return heroName == build.hero
+end
+
 --- Show a build suggestion popup.
-local function showSuggestion(contentLabel, build, contentType)
+showSuggestion = function(contentLabel, build, contentType)
   if not build or not build.importString or build.importString == "" then return end
   if InCombatLockdown() then return end
   if not ZugZugDB.suggestEnabled then return end
+  if isAlreadyOnBuild(build) then return end
 
   local f = createSuggestFrame()
   f.currentBuild = build
