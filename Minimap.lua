@@ -141,14 +141,16 @@ function ZZ:ToggleBar()
   if bar:IsShown() then
     bar:Hide()
   else
-    -- If talent frame is open, bar is already anchored to it — just show
+    -- If talent frame is open, reparent and anchor to it
     if PlayerSpellsFrame and PlayerSpellsFrame.TalentsFrame and PlayerSpellsFrame.TalentsFrame:IsShown() then
+      bar:SetParent(PlayerSpellsFrame.TalentsFrame)
       bar:ClearAllPoints()
       bar:SetPoint("TOP", PlayerSpellsFrame.TalentsFrame, "BOTTOM", 0, -4)
       bar:Show()
       ZZ:RefreshUI()
     else
-      -- Standalone mode: anchor near bottom of screen
+      -- Standalone mode: reparent to UIParent so it isn't hidden by a closed talent frame
+      bar:SetParent(UIParent)
       bar:ClearAllPoints()
       bar:SetPoint("BOTTOM", UIParent, "BOTTOM", 0, 120)
       bar:Show()

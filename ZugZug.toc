@@ -1,4 +1,4 @@
-## Interface: 120001
+## Interface: 120005
 ## Title: ZugZug
 ## Notes: ZUGZUG.io build recommendations in your talent frame — raid & M+ builds with boss/dungeon context.
 ## Author: ZUGZUG.io
