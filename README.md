@@ -1,21 +1,38 @@
-# ZugZug — WoW Talent Builds for Raid & Mythic+
+# ZugZug — WoW Talent Builds for Leveling, Raid & Mythic+
 
-**Top talent builds from WarcraftLogs, in your talent frame. One-click import for raid bosses and Mythic+ dungeons. Updated daily.**
+**Talent guidance from level 10 to 80 — a step-by-step leveling talent picker, plus top raid and Mythic+ builds from WarcraftLogs, all in your talent frame. One-click import. Updated daily.**
 
-Stop alt-tabbing to Wowhead, Icy Veins, or Raidbots to find the right talents. ZugZug brings the most popular talent builds from [zugzug.info](https://zugzug.info) — sourced from thousands of top WarcraftLogs parses across every spec — directly into your in-game talent UI.
+Stop alt-tabbing to Wowhead, Icy Veins, or Raidbots to find the right talents. ZugZug brings level-by-level talent guidance for every spec and the most popular endgame talent builds from [zugzug.info](https://zugzug.info) — sourced from thousands of top WarcraftLogs parses — directly into your in-game talent UI.
 
-> *Keywords: WoW talent builds, World of Warcraft addon, Mythic+ builds, raid builds, talent loadouts, WarcraftLogs builds, talent import strings, Midnight builds, talent calculator alternative*
+> *Keywords: WoW leveling guide, talent builds, World of Warcraft leveling addon, Mythic+ builds, raid builds, talent loadouts, WarcraftLogs builds, talent import strings, Midnight builds, leveling talents, talent calculator alternative*
 
 ## What It Does
 
-ZugZug adds a build bar to the bottom of your talent window showing the dominant raid and M+ talent builds for your current class, spec, and role. Click any build to apply it instantly — no copy/paste of import strings, no leaving the game.
+ZugZug guides your talent choices through your **entire character lifecycle**:
+
+- 🌱 **Leveling (10–79):** A floating banner shows the next talent to pick at every level, following a curated build order through your class, spec, and hero trees
+- 🏰 **Raid (80):** Per-boss talent build recommendations from top WarcraftLogs parses, with one-click import
+- ⚔️ **Mythic+ (80):** Per-dungeon and per-key-level build recommendations, also one-click import
+
+Click any build to apply it instantly — no copy/paste of import strings, no leaving the game.
+
+## Leveling Guide
+
+Below max level, ZugZug shows a **"next talent to pick"** banner with a curated talent order specific to your spec. The pick order follows community leveling guides (Wowhead, Icy Veins) and respects WoW's tree gate rows and prerequisite chains:
+
+- **Phase 1 (10–20):** Class tree
+- **Phase 2 (~20–70):** Spec tree
+- **Phase 3 (71–80):** Hero tree
+
+Every WoW class and spec is supported — 39 specs total, all with hand-tuned leveling pick orders.
+
+## Endgame Builds
 
 - **Raid builds** with per-boss recommendations — see which build is best for each encounter
-- **Mythic+ builds** with per-dungeon recommendations — know which build dominates each key
+- **Mythic+ builds** with per-dungeon and per-key-level recommendations
 - **All classes, all roles** — DPS, Healer, and Tank builds for every spec
 - **One-click apply** — click a build to load it into your talent config and Apply
-- **Shift+click to copy** the raw import string for use in Raidbots or wowhead
-- **Leveling guide** with recommended builds and talent ordering below max level
+- **Shift+click to copy** the raw import string for use in Raidbots or Wowhead
 
 ## Why ZugZug
 
