@@ -1,10 +1,13 @@
 ## Interface: 120005
-## Title: ZugZug
-## Notes: ZUGZUG.io build recommendations in your talent frame — raid & M+ builds with boss/dungeon context.
+## Title: ZugZug Talent Builds
+## Notes: Top raid & Mythic+ talent builds from WarcraftLogs — one-click import in your talent frame. Daily updates from zugzug.info.
 ## Author: ZUGZUG.io
 ## Version: @project-version@
 ## SavedVariables: ZugZugDB
 ## DefaultState: enabled
+## X-Website: https://zugzug.info
+## X-Curse-Project-ID: zugzugcompanion
+## X-Category: Class
 
 Data.lua
 LevelingData.lua
