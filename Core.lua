@@ -34,7 +34,8 @@ local DEFAULTS = {
   suggestSpecFilter = "all",       -- "all" | "raid" | "dungeon" | "none"
   suggestFadeTimer = 15,           -- seconds before popup auto-hides
   barLocked = true,                -- lock the bar against dragging
-  barPosition = nil,               -- { point, relativePoint, x, y } in UIParent coords; nil = default anchor
+  barClamped = true,               -- when true, bar follows talent frame; when false, bar uses absolute screen position
+  barPosition = nil,               -- { point, relativePoint, x, y, clamped }; nil = default anchor
 }
 
 local function ensureDefaults()

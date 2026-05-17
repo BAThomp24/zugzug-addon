@@ -681,6 +681,19 @@ local raidMenu = nil
 local mpMenu = nil
 local barAttachedTo = nil -- talent frame the bar was last attached to, for reset
 
+-- Re-anchor the bar to `parentFrame` while preserving its current screen position.
+-- Used to convert between clamped (talent-frame-relative) and unclamped (UIParent-relative)
+-- coordinate spaces without visually moving the bar.
+local function reanchorTo(parentFrame)
+  if not bar or not parentFrame then return false end
+  local barLeft, barTop = bar:GetLeft(), bar:GetTop()
+  local refLeft, refTop = parentFrame:GetLeft(), parentFrame:GetTop()
+  if not barLeft or not refLeft then return false end
+  bar:ClearAllPoints()
+  bar:SetPoint("TOPLEFT", parentFrame, "TOPLEFT", barLeft - refLeft, barTop - refTop)
+  return true
+end
+
 local function saveBarPosition()
   if not bar then return end
   local point, _, relativePoint, x, y = bar:GetPoint(1)
@@ -690,16 +703,32 @@ local function saveBarPosition()
     relativePoint = relativePoint,
     x = x,
     y = y,
+    clamped = ZugZugDB.barClamped ~= false,
   }
 end
 
 local function applyBarPosition(parentFrame)
   if not bar then return end
   bar:ClearAllPoints()
-  if ZugZugDB.barPosition then
-    local p = ZugZugDB.barPosition
-    bar:SetPoint(p.point or "CENTER", UIParent, p.relativePoint or p.point or "CENTER", p.x or 0, p.y or 0)
-  elseif parentFrame then
+
+  local clamped = ZugZugDB.barClamped ~= false
+  local p = ZugZugDB.barPosition
+
+  if p then
+    -- Apply using the anchor parent the position was SAVED against
+    local savedAnchor = (p.clamped and parentFrame) or UIParent
+    bar:SetPoint(p.point or "CENTER", savedAnchor, p.relativePoint or p.point or "CENTER", p.x or 0, p.y or 0)
+
+    -- If user's current clamped setting differs from how the position was saved,
+    -- convert: re-anchor to the correct parent at the same visual location, then
+    -- re-save with the new clamped flag.
+    if p.clamped ~= clamped then
+      local newAnchor = (clamped and parentFrame) or UIParent
+      if reanchorTo(newAnchor) then
+        saveBarPosition()
+      end
+    end
+  elseif clamped and parentFrame then
     bar:SetPoint("TOP", parentFrame, "BOTTOM", 0, -4)
   else
     bar:SetPoint("BOTTOM", UIParent, "BOTTOM", 0, 120)
@@ -717,6 +746,20 @@ end
 
 function ZZ:UpdateBarLockState()
   updateBarLockVisual()
+end
+
+function ZZ:UpdateBarClampState()
+  if not bar then return end
+  -- Re-anchor the bar to the new mode's parent at its current visual location.
+  -- This also handles the default-position case: toggling off clamp at the default
+  -- spot snaps the bar's anchor to UIParent so it stops following the talent frame.
+  -- If the bar isn't laid out yet (talent frame hidden), the next applyBarPosition()
+  -- will resolve it from the default for the current mode.
+  local clamped = ZugZugDB.barClamped ~= false
+  local newAnchor = (clamped and barAttachedTo) or UIParent
+  if newAnchor and reanchorTo(newAnchor) then
+    saveBarPosition()
+  end
 end
 
 function ZZ:ResetBarPosition()
@@ -753,6 +796,12 @@ local function createBar(parent)
   end)
   bar:SetScript("OnDragStop", function(self)
     self:StopMovingOrSizing()
+    -- After StartMoving, the bar's anchor is relative to UIParent. If clamped mode
+    -- is on, re-anchor to the talent frame at the same screen position so the bar
+    -- follows the talent frame from now on.
+    if ZugZugDB.barClamped ~= false and barAttachedTo then
+      reanchorTo(barAttachedTo)
+    end
     saveBarPosition()
   end)
 

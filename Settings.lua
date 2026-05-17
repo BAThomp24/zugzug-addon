@@ -168,9 +168,15 @@ local function CreateSettingsPanel()
     if ZZ and ZZ.UpdateBarLockState then ZZ:UpdateBarLockState() end
   end)
 
+  local clampToggle = CreateToggle(panel, 16, startY - 310, "Clamp to Talent Page", "barClamped", function()
+    local ZZ = _G.ZugZug
+    if ZZ and ZZ.UpdateBarClampState then ZZ:UpdateBarClampState() end
+  end)
+  clampToggle.text:SetText("Clamp to Talent Page  |cff888888(follow talent frame when it moves)|r")
+
   local resetBtn = CreateFrame("Button", nil, panel, "UIPanelButtonTemplate")
   resetBtn:SetSize(140, 22)
-  resetBtn:SetPoint("TOPLEFT", panel, "TOPLEFT", 16, startY - 315)
+  resetBtn:SetPoint("TOPLEFT", panel, "TOPLEFT", 16, startY - 345)
   resetBtn:SetText("Reset Position")
   resetBtn:SetScript("OnClick", function()
     local ZZ = _G.ZugZug
