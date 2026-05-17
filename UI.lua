@@ -1045,10 +1045,11 @@ function ZZ:RefreshUI()
   local bucket = ZugZugDB.mpBucket or "all"
   bar.mpBtn.settingText:SetText(bucket)
 
-  -- Show leveling button only below max level
+  -- Show leveling button only below max level and only if the leveling feature is enabled
   local level = UnitLevel("player")
   local maxLevel = GetMaxPlayerLevel and GetMaxPlayerLevel() or 80
-  local showLeveling = level and level < maxLevel and ZugZugLevelingData ~= nil
+  local levelingOn = ZugZugDB.levelingEnabled ~= false
+  local showLeveling = levelingOn and level and level < maxLevel and ZugZugLevelingData ~= nil
   if bar.levelBtn then
     bar.levelBtn:SetShown(showLeveling)
     -- Widen bar to fit the leveling button

@@ -183,6 +183,17 @@ local function CreateSettingsPanel()
     if ZZ and ZZ.ResetBarPosition then ZZ:ResetBarPosition() end
   end)
 
+  -- Leveling section
+  local levelingLabel = panel:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
+  levelingLabel:SetPoint("TOPLEFT", panel, "TOPLEFT", 16, startY - 390)
+  levelingLabel:SetText("|cff8fbf3fLeveling|r")
+
+  local levelingToggle = CreateToggle(panel, 16, startY - 420, "Enable Leveling Guide", "levelingEnabled", function()
+    local ZZ = _G.ZugZug
+    if ZZ and ZZ.UpdateLevelingEnabled then ZZ:UpdateLevelingEnabled() end
+  end)
+  levelingToggle.text:SetText("Enable Leveling Guide  |cff888888(banner + bar button below max level)|r")
+
   return panel
 end
 

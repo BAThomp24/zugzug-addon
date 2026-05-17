@@ -423,6 +423,11 @@ end
 
 --- Auto-refresh: hides banner when no unspent points, shows when there are.
 function ZZ:RefreshLeveling()
+  if ZugZugDB.levelingEnabled == false then
+    if bannerFrame then bannerFrame:Hide() end
+    return
+  end
+
   if not levelingOrder then
     if bannerFrame then bannerFrame:Hide() end
     return
@@ -439,6 +444,11 @@ end
 
 --- Explicit toggle from the Leveling button on the builds bar.
 function ZZ:ToggleLevelingBanner()
+  if ZugZugDB.levelingEnabled == false then
+    print("|cff00ccffZugZug:|r Leveling guide is disabled in settings.")
+    return
+  end
+
   local banner = _G["ZugZugLevelingBanner"]
   if banner and banner:IsShown() then
     banner:Hide()
@@ -457,6 +467,20 @@ function ZZ:ToggleLevelingBanner()
   -- Show banner with next unpurchased node (regardless of unspent points)
   local idx, pick = findNextUnpurchased()
   updateBanner(pick, true)
+end
+
+--- Called when the settings toggle flips. Hides the banner when disabled,
+--- or attempts to show it when re-enabled.
+function ZZ:UpdateLevelingEnabled()
+  if ZugZugDB.levelingEnabled == false then
+    if bannerFrame then bannerFrame:Hide() end
+  else
+    if not levelingOrder then
+      loadOrderForCurrentSpec()
+    end
+    ZZ:RefreshLeveling()
+  end
+  if ZZ.RefreshUI then ZZ:RefreshUI() end
 end
 
 ----------------------------------------------------------------------
