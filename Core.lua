@@ -33,6 +33,8 @@ local DEFAULTS = {
   suggestMpBucket = "all",         -- which bucket data to suggest in dungeons
   suggestSpecFilter = "all",       -- "all" | "raid" | "dungeon" | "none"
   suggestFadeTimer = 15,           -- seconds before popup auto-hides
+  barLocked = true,                -- lock the bar against dragging
+  barPosition = nil,               -- { point, relativePoint, x, y } in UIParent coords; nil = default anchor
 }
 
 local function ensureDefaults()

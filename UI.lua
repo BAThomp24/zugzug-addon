@@ -679,6 +679,52 @@ end
 local bar = nil
 local raidMenu = nil
 local mpMenu = nil
+local barAttachedTo = nil -- talent frame the bar was last attached to, for reset
+
+local function saveBarPosition()
+  if not bar then return end
+  local point, _, relativePoint, x, y = bar:GetPoint(1)
+  if not point then return end
+  ZugZugDB.barPosition = {
+    point = point,
+    relativePoint = relativePoint,
+    x = x,
+    y = y,
+  }
+end
+
+local function applyBarPosition(parentFrame)
+  if not bar then return end
+  bar:ClearAllPoints()
+  if ZugZugDB.barPosition then
+    local p = ZugZugDB.barPosition
+    bar:SetPoint(p.point or "CENTER", UIParent, p.relativePoint or p.point or "CENTER", p.x or 0, p.y or 0)
+  elseif parentFrame then
+    bar:SetPoint("TOP", parentFrame, "BOTTOM", 0, -4)
+  else
+    bar:SetPoint("BOTTOM", UIParent, "BOTTOM", 0, 120)
+  end
+end
+
+local function updateBarLockVisual()
+  if not bar then return end
+  if ZugZugDB.barLocked then
+    bar:SetBackdropBorderColor(COLORS.border.r, COLORS.border.g, COLORS.border.b, COLORS.border.a)
+  else
+    bar:SetBackdropBorderColor(COLORS.accent.r, COLORS.accent.g, COLORS.accent.b, 1)
+  end
+end
+
+function ZZ:UpdateBarLockState()
+  updateBarLockVisual()
+end
+
+function ZZ:ResetBarPosition()
+  ZugZugDB.barPosition = nil
+  if bar then
+    applyBarPosition(barAttachedTo)
+  end
+end
 
 local function createBar(parent)
   if bar then return bar end
@@ -696,6 +742,19 @@ local function createBar(parent)
   })
   bar:SetBackdropColor(COLORS.bg.r, COLORS.bg.g, COLORS.bg.b, COLORS.bg.a)
   bar:SetBackdropBorderColor(COLORS.border.r, COLORS.border.g, COLORS.border.b, COLORS.border.a)
+
+  bar:SetMovable(true)
+  bar:SetClampedToScreen(true)
+  bar:EnableMouse(true)
+  bar:RegisterForDrag("LeftButton")
+  bar:SetScript("OnDragStart", function(self)
+    if ZugZugDB.barLocked then return end
+    self:StartMoving()
+  end)
+  bar:SetScript("OnDragStop", function(self)
+    self:StopMovingOrSizing()
+    saveBarPosition()
+  end)
 
   -- Header text
   local header = bar:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
@@ -807,6 +866,7 @@ local function createBar(parent)
     closeActiveDropdown()
   end)
 
+  updateBarLockVisual()
   bar:Hide()
   return bar
 end
@@ -969,11 +1029,15 @@ local function hookTalentFrame()
 
     createBar(talentFrame)
 
-    -- Anchor centered below the talent frame
-    bar:SetPoint("TOP", talentFrame, "BOTTOM", 0, -4)
+    -- Remember which talent frame to fall back to on reset
+    barAttachedTo = talentFrame
+
+    -- Default anchor below talent frame (or saved position if any)
+    applyBarPosition(talentFrame)
 
     -- Show/hide with talent frame
     talentFrame:HookScript("OnShow", function()
+      applyBarPosition(talentFrame)
       bar:Show()
       ZZ:RefreshUI()
     end)
@@ -1025,8 +1089,7 @@ initFrame:SetScript("OnEvent", function()
         if bar:IsShown() then
           bar:Hide()
         else
-          bar:ClearAllPoints()
-          bar:SetPoint("BOTTOM", UIParent, "BOTTOM", 0, 120)
+          applyBarPosition(barAttachedTo)
           bar:Show()
           ZZ:RefreshUI()
         end

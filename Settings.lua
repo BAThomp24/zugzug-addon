@@ -22,7 +22,7 @@ local function CreateLabel(parent, x, y, text)
   return fs
 end
 
-local function CreateToggle(parent, x, y, label, dbKey)
+local function CreateToggle(parent, x, y, label, dbKey, onChange)
   local cb = CreateFrame("CheckButton", nil, parent, "UICheckButtonTemplate")
   cb:SetPoint("TOPLEFT", parent, "TOPLEFT", x, y)
   cb.text = cb:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
@@ -31,6 +31,7 @@ local function CreateToggle(parent, x, y, label, dbKey)
   cb:SetChecked(ZugZugDB[dbKey])
   cb:SetScript("OnClick", function(self)
     ZugZugDB[dbKey] = self:GetChecked()
+    if onChange then onChange(self:GetChecked()) end
   end)
   return cb
 end
@@ -156,6 +157,25 @@ local function CreateSettingsPanel()
 
   -- Fade timer
   CreateSliderSetting(panel, 16, startY - 190, "Auto-Hide Timer", "suggestFadeTimer", 0, 30, 1)
+
+  -- Frame section
+  local frameLabel = panel:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
+  frameLabel:SetPoint("TOPLEFT", panel, "TOPLEFT", 16, startY - 250)
+  frameLabel:SetText("|cff8fbf3fFrame|r")
+
+  CreateToggle(panel, 16, startY - 280, "Lock Frame Position", "barLocked", function()
+    local ZZ = _G.ZugZug
+    if ZZ and ZZ.UpdateBarLockState then ZZ:UpdateBarLockState() end
+  end)
+
+  local resetBtn = CreateFrame("Button", nil, panel, "UIPanelButtonTemplate")
+  resetBtn:SetSize(140, 22)
+  resetBtn:SetPoint("TOPLEFT", panel, "TOPLEFT", 16, startY - 315)
+  resetBtn:SetText("Reset Position")
+  resetBtn:SetScript("OnClick", function()
+    local ZZ = _G.ZugZug
+    if ZZ and ZZ.ResetBarPosition then ZZ:ResetBarPosition() end
+  end)
 
   return panel
 end
