@@ -41,16 +41,17 @@ local function CreateDropdownSetting(parent, x, y, label, dbKey, options, descri
   fs:SetPoint("TOPLEFT", parent, "TOPLEFT", x, y)
   fs:SetText(label)
 
-  -- Optional one-line description below the label
+  local dropdown = CreateFrame("Frame", "ZugZugDropdown_" .. dbKey, parent, "UIDropDownMenuTemplate")
+  dropdown:SetPoint("LEFT", fs, "LEFT", 200, -2)
+
+  -- Optional description, anchored below the dropdown widget so it doesn't overlap.
   if description then
     local desc = parent:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")
-    desc:SetPoint("TOPLEFT", fs, "BOTTOMLEFT", 0, -2)
+    desc:SetPoint("TOPLEFT", fs, "BOTTOMLEFT", 0, -22)
+    desc:SetJustifyH("LEFT")
     desc:SetText(description)
     desc:SetTextColor(0.55, 0.55, 0.60)
   end
-
-  local dropdown = CreateFrame("Frame", "ZugZugDropdown_" .. dbKey, parent, "UIDropDownMenuTemplate")
-  dropdown:SetPoint("LEFT", fs, "LEFT", 200, -2)
 
   local function Initialize(self, level)
     for _, opt in ipairs(options) do
@@ -153,10 +154,10 @@ local function CreateSettingsPanel()
     { value = "15+",  label = "Keys 15+" },
     { value = "18+",  label = "Keys 18+" },
     { value = "20+",  label = "Keys 20+" },
-  }, "Fallback for dungeons with no active keystone. With a key inserted, the actual key level is used.")
+  }, "What key level to use for build percentages. Will be used for auto suggestions as well.")
 
-  -- Spec filter
-  CreateDropdownSetting(panel, 16, startY - 138, "Only Suggest Current Spec", "suggestSpecFilter", {
+  -- Spec filter (shifted down 20px to leave room for description above)
+  CreateDropdownSetting(panel, 16, startY - 158, "Only Suggest Current Spec", "suggestSpecFilter", {
     { value = "all",     label = "All Content" },
     { value = "raid",    label = "Raid Only" },
     { value = "dungeon", label = "Dungeon Only" },
@@ -164,19 +165,19 @@ local function CreateSettingsPanel()
   })
 
   -- Fade timer
-  CreateSliderSetting(panel, 16, startY - 190, "Auto-Hide Timer", "suggestFadeTimer", 0, 30, 1)
+  CreateSliderSetting(panel, 16, startY - 210, "Auto-Hide Timer", "suggestFadeTimer", 0, 30, 1)
 
   -- Frame section
   local frameLabel = panel:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
-  frameLabel:SetPoint("TOPLEFT", panel, "TOPLEFT", 16, startY - 250)
+  frameLabel:SetPoint("TOPLEFT", panel, "TOPLEFT", 16, startY - 270)
   frameLabel:SetText("|cff8fbf3fFrame|r")
 
-  CreateToggle(panel, 16, startY - 280, "Lock Frame Position", "barLocked", function()
+  CreateToggle(panel, 16, startY - 300, "Lock Frame Position", "barLocked", function()
     local ZZ = _G.ZugZug
     if ZZ and ZZ.UpdateBarLockState then ZZ:UpdateBarLockState() end
   end)
 
-  local clampToggle = CreateToggle(panel, 16, startY - 310, "Clamp to Talent Page", "barClamped", function()
+  local clampToggle = CreateToggle(panel, 16, startY - 330, "Clamp to Talent Page", "barClamped", function()
     local ZZ = _G.ZugZug
     if ZZ and ZZ.UpdateBarClampState then ZZ:UpdateBarClampState() end
   end)
@@ -184,7 +185,7 @@ local function CreateSettingsPanel()
 
   local resetBtn = CreateFrame("Button", nil, panel, "UIPanelButtonTemplate")
   resetBtn:SetSize(140, 22)
-  resetBtn:SetPoint("TOPLEFT", panel, "TOPLEFT", 16, startY - 345)
+  resetBtn:SetPoint("TOPLEFT", panel, "TOPLEFT", 16, startY - 365)
   resetBtn:SetText("Reset Position")
   resetBtn:SetScript("OnClick", function()
     local ZZ = _G.ZugZug
@@ -193,10 +194,10 @@ local function CreateSettingsPanel()
 
   -- Leveling section
   local levelingLabel = panel:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
-  levelingLabel:SetPoint("TOPLEFT", panel, "TOPLEFT", 16, startY - 390)
+  levelingLabel:SetPoint("TOPLEFT", panel, "TOPLEFT", 16, startY - 410)
   levelingLabel:SetText("|cff8fbf3fLeveling|r")
 
-  local levelingToggle = CreateToggle(panel, 16, startY - 420, "Enable Leveling Guide", "levelingEnabled", function()
+  local levelingToggle = CreateToggle(panel, 16, startY - 440, "Enable Leveling Guide", "levelingEnabled", function()
     local ZZ = _G.ZugZug
     if ZZ and ZZ.UpdateLevelingEnabled then ZZ:UpdateLevelingEnabled() end
   end)
