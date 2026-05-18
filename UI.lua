@@ -53,12 +53,34 @@ local function getSpecIcon(specName)
   return nil
 end
 
-local BAR_HEIGHT = 32
-local DROPDOWN_WIDTH = 200
-local DROPDOWN_BTN_HEIGHT = 28
-local DROPDOWN_ITEM_HEIGHT = 40
-local DROPDOWN_GAP = 8
-local PADDING = 6
+local BAR_HEIGHT = 60
+local HEADER_HEIGHT = 36
+local DROPDOWN_WIDTH = 185
+local LEVELING_BTN_WIDTH = 190
+local DROPDOWN_BTN_HEIGHT = 60
+local DROPDOWN_ITEM_HEIGHT = 50
+local DROPDOWN_GAP = 6
+local PADDING = 10
+
+-- Returns the player's class color {r, g, b} or accent green as fallback
+local function getClassColor()
+  local token = _G.ZugZug and _G.ZugZug.classToken
+  local color = token and RAID_CLASS_COLORS and RAID_CLASS_COLORS[token]
+  if color then return color.r, color.g, color.b end
+  return 0.56, 0.75, 0.25
+end
+
+-- Returns popularity pill colors: { bg = {r,g,b}, edge = {r,g,b}, text = {r,g,b} }
+local function getPopularityPill(pct)
+  if not pct then pct = 0 end
+  if pct >= 40 then
+    return { bgR=0.12, bgG=0.24, bgB=0.12, edR=0.23, edG=0.43, edB=0.23, txR=0.40, txG=0.85, txB=0.40 }
+  elseif pct >= 20 then
+    return { bgR=0.16, bgG=0.12, bgB=0.08, edR=0.35, edG=0.27, edB=0.13, txR=1.00, txG=0.75, txB=0.20 }
+  else
+    return { bgR=0.16, bgG=0.08, bgB=0.08, edR=0.35, edG=0.13, edB=0.13, txR=0.88, txG=0.42, txB=0.42 }
+  end
+end
 
 ----------------------------------------------------------------------
 -- Copy popup — edit box with pre-selected text for Ctrl+C
@@ -224,6 +246,10 @@ local function countTalentDiff(importString)
 
   return diffCount
 end
+
+-- Expose for Suggest.lua so it can detect whether the player is actually on a build
+-- (not just on the same spec + hero).
+ZZ.CountTalentDiff = countTalentDiff
 
 --- Parse a talent import string into structured node data.
 local function parseImportString(importString)
@@ -445,9 +471,25 @@ local function createDropdownItem(parent, index)
 
   -- Spec icon
   local specIcon = item:CreateTexture(nil, "ARTWORK")
-  specIcon:SetSize(18, 18)
-  specIcon:SetPoint("LEFT", item, "LEFT", 8, 0)
+  specIcon:SetSize(22, 22)
+  specIcon:SetPoint("LEFT", item, "LEFT", 10, 0)
   item.specIcon = specIcon
+
+  -- Popularity pill (right side, well clear of trend + star)
+  local pill = CreateFrame("Frame", nil, item, "BackdropTemplate")
+  pill:SetSize(42, 14)
+  pill:SetPoint("RIGHT", item, "RIGHT", -84, 4)
+  pill:SetBackdrop({ bgFile = "Interface\\Buttons\\WHITE8x8", edgeFile = "Interface\\Buttons\\WHITE8x8", edgeSize = 1 })
+  local pillText = pill:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+  pillText:SetPoint("CENTER")
+  pill.text = pillText
+  item.pill = pill
+
+  -- Trend indicator (between pill and star)
+  local trendText = item:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+  trendText:SetPoint("LEFT", pill, "RIGHT", 6, 0)
+  trendText:SetJustifyH("LEFT")
+  item.trendText = trendText
 
   -- Favorite star (right side)
   local starBtn = CreateFrame("Button", nil, item)
@@ -488,17 +530,17 @@ local function createDropdownItem(parent, index)
   end)
 
   -- Top line: spec + hero tree
-  local specText = item:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-  specText:SetPoint("TOPLEFT", item, "TOPLEFT", 30, -5)
-  specText:SetPoint("TOPRIGHT", item, "TOPRIGHT", -24, -5)
+  local specText = item:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+  specText:SetPoint("TOPLEFT", item, "TOPLEFT", 38, -8)
+  specText:SetPoint("TOPRIGHT", item, "TOPRIGHT", -110, -8)
   specText:SetJustifyH("LEFT")
   specText:SetWordWrap(false)
   item.specText = specText
 
-  -- Bottom line: label + popularity + trend
+  -- Bottom line: build label only (popularity moved to pill)
   local metaText = item:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-  metaText:SetPoint("BOTTOMLEFT", item, "BOTTOMLEFT", 30, 5)
-  metaText:SetPoint("BOTTOMRIGHT", item, "BOTTOMRIGHT", -8, 5)
+  metaText:SetPoint("BOTTOMLEFT", item, "BOTTOMLEFT", 38, 8)
+  metaText:SetPoint("BOTTOMRIGHT", item, "BOTTOMRIGHT", -110, 8)
   metaText:SetJustifyH("LEFT")
   metaText:SetWordWrap(false)
   metaText:SetTextColor(COLORS.muted.r, COLORS.muted.g, COLORS.muted.b)
@@ -558,6 +600,13 @@ local function populateDropdownItem(item, build, contentType, sectionColor, isCu
   if icon then
     item.specIcon:SetTexture(icon)
     item.specIcon:Show()
+    if isCurrentSpec then
+      item.specIcon:SetDesaturated(false)
+      item.specIcon:SetAlpha(1)
+    else
+      item.specIcon:SetDesaturated(true)
+      item.specIcon:SetAlpha(0.55)
+    end
   else
     item.specIcon:Hide()
   end
@@ -573,11 +622,50 @@ local function populateDropdownItem(item, build, contentType, sectionColor, isCu
     item.specText:SetTextColor(COLORS.muted.r, COLORS.muted.g, COLORS.muted.b)
   end
 
-  local trendStr = TREND_ICONS[build.trend] or ""
-  local meta = build.label .. "  |cff888888" .. build.popularity .. "%|r" .. trendStr
-  item.metaText:SetText(meta)
+  -- Bottom row: just the build label (popularity moved to pill)
+  item.metaText:SetText(build.label or "")
+  if isCurrentSpec then
+    item.metaText:SetTextColor(0.78, 0.78, 0.82)
+  else
+    item.metaText:SetTextColor(0.5, 0.5, 0.55)
+  end
 
-  item.accentBar:SetColorTexture(sectionColor.r, sectionColor.g, sectionColor.b, isCurrentSpec and 0.8 or 0.3)
+  -- Popularity pill (colored by tier)
+  if item.pill and build.popularity then
+    local p = getPopularityPill(build.popularity)
+    item.pill:SetBackdropColor(p.bgR, p.bgG, p.bgB, 1)
+    item.pill:SetBackdropBorderColor(p.edR, p.edG, p.edB, 1)
+    item.pill.text:SetTextColor(p.txR, p.txG, p.txB)
+    item.pill.text:SetText(build.popularity .. "%")
+    item.pill:Show()
+  elseif item.pill then
+    item.pill:Hide()
+  end
+
+  -- Trend arrow
+  if item.trendText then
+    local trend = build.trend
+    if trend == "up" then
+      item.trendText:SetText("\226\150\178")
+      item.trendText:SetTextColor(0.30, 1, 0.30)
+    elseif trend == "down" then
+      item.trendText:SetText("\226\150\188")
+      item.trendText:SetTextColor(1, 0.40, 0.40)
+    elseif trend == "new" then
+      item.trendText:SetText("NEW")
+      item.trendText:SetTextColor(0.30, 0.85, 1)
+    else
+      item.trendText:SetText("")
+    end
+  end
+
+  -- Left accent bar: class color for current spec, dim section color otherwise
+  if isCurrentSpec then
+    local cr, cg, cb = getClassColor()
+    item.accentBar:SetColorTexture(cr, cg, cb, 1)
+  else
+    item.accentBar:SetColorTexture(sectionColor.r, sectionColor.g, sectionColor.b, 0.25)
+  end
 
   item.importString = build.importString
   item.buildLabel = build.label
@@ -633,30 +721,53 @@ local function createDropdownButton(parent, label, color)
   btn:SetBackdropColor(COLORS.bgLight.r, COLORS.bgLight.g, COLORS.bgLight.b, 1)
   btn:SetBackdropBorderColor(COLORS.border.r, COLORS.border.g, COLORS.border.b, 1)
 
-  -- Section label (left)
+  -- Left accent bar (gold for raid, green for M+)
+  local accent = btn:CreateTexture(nil, "OVERLAY")
+  accent:SetSize(3, DROPDOWN_BTN_HEIGHT)
+  accent:SetPoint("LEFT", btn, "LEFT", 0, 0)
+  accent:SetColorTexture(color.r, color.g, color.b, 1)
+  btn.accent = accent
+
+  -- Section label (top-left, big & bold)
   local labelText = btn:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-  labelText:SetPoint("LEFT", btn, "LEFT", 8, 0)
+  labelText:SetPoint("TOPLEFT", btn, "TOPLEFT", 12, -8)
   labelText:SetTextColor(color.r, color.g, color.b)
   labelText:SetText(label)
   btn.labelText = labelText
 
-  -- Setting / subtitle (right)
-  local settingText = btn:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-  settingText:SetPoint("RIGHT", btn, "RIGHT", -8, 0)
-  settingText:SetTextColor(COLORS.muted.r, COLORS.muted.g, COLORS.muted.b)
-  btn.settingText = settingText
+  -- Filter pill at top-right showing current difficulty/key level
+  local pill = CreateFrame("Frame", nil, btn, "BackdropTemplate")
+  pill:SetSize(50, 14)
+  pill:SetPoint("TOPRIGHT", btn, "TOPRIGHT", -8, -7)
+  pill:SetBackdrop({ bgFile = "Interface\\Buttons\\WHITE8x8", edgeFile = "Interface\\Buttons\\WHITE8x8", edgeSize = 1 })
+  pill:SetBackdropColor(color.r * 0.25, color.g * 0.25, color.b * 0.25, 1)
+  pill:SetBackdropBorderColor(color.r * 0.7, color.g * 0.7, color.b * 0.7, 1)
+  local pillText = pill:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+  pillText:SetPoint("CENTER")
+  pillText:SetTextColor(color.r, color.g, color.b)
+  pill.text = pillText
+  btn.pill = pill
+  btn.settingText = pillText  -- kept under old name for RefreshUI compat
 
-  -- Arrow
-  local arrow = btn:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-  arrow:SetPoint("RIGHT", settingText, "LEFT", -4, 0)
-  arrow:SetText("\226\150\188") -- ▼
-  arrow:SetTextColor(COLORS.muted.r, COLORS.muted.g, COLORS.muted.b)
-  btn.arrow = arrow
+  -- Bottom: current build label (set in RefreshUI) + click hint
+  local buildText = btn:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
+  buildText:SetPoint("BOTTOMLEFT", btn, "BOTTOMLEFT", 12, 18)
+  buildText:SetPoint("BOTTOMRIGHT", btn, "BOTTOMRIGHT", -8, 18)
+  buildText:SetJustifyH("LEFT")
+  buildText:SetWordWrap(false)
+  buildText:SetText("")
+  btn.buildText = buildText
+
+  local hintText = btn:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")
+  hintText:SetPoint("BOTTOMLEFT", btn, "BOTTOMLEFT", 12, 5)
+  hintText:SetText("click for builds \226\150\188") -- ▼
+  hintText:SetTextColor(0.45, 0.45, 0.5)
+  btn.hintText = hintText
 
   -- Hover + tooltip
   btn:SetScript("OnEnter", function(self)
     self:SetBackdropColor(COLORS.hover.r, COLORS.hover.g, COLORS.hover.b, 1)
-    self:SetBackdropBorderColor(color.r, color.g, color.b, 0.5)
+    self:SetBackdropBorderColor(color.r, color.g, color.b, 0.6)
     if self.tooltipHint then
       GameTooltip:SetOwner(self, "ANCHOR_TOP")
       GameTooltip:SetText(self.tooltipHint, COLORS.muted.r, COLORS.muted.g, COLORS.muted.b)
@@ -772,10 +883,8 @@ end
 local function createBar(parent)
   if bar then return bar end
 
-  local HEADER_HEIGHT = 28
-
   bar = CreateFrame("Frame", "ZugZugBar", parent, "BackdropTemplate")
-  bar:SetHeight(BAR_HEIGHT + HEADER_HEIGHT)
+  bar:SetHeight(BAR_HEIGHT + HEADER_HEIGHT + PADDING)
   bar:SetWidth(DROPDOWN_WIDTH * 2 + DROPDOWN_GAP + PADDING * 2)
   bar:SetFrameStrata("HIGH")
   bar:SetBackdrop({
@@ -790,30 +899,117 @@ local function createBar(parent)
   bar:SetClampedToScreen(true)
   bar:EnableMouse(true)
   bar:RegisterForDrag("LeftButton")
+
+  -- Custom drag: tracks cursor manually so we can axis-lock when shift is held.
+  local dragStartCursorX, dragStartCursorY
+  local dragStartBarLeft, dragStartBarBottom
+  local dragAxis = nil  -- "x", "y", or nil
+
   bar:SetScript("OnDragStart", function(self)
     if ZugZugDB.barLocked then return end
-    self:StartMoving()
+    dragStartCursorX, dragStartCursorY = GetCursorPosition()
+    dragStartBarLeft = self:GetLeft() or 0
+    dragStartBarBottom = self:GetBottom() or 0
+    dragAxis = nil
+    self:SetScript("OnUpdate", function(s)
+      local cx, cy = GetCursorPosition()
+      local scale = s:GetEffectiveScale()
+      local dx = (cx - dragStartCursorX) / scale
+      local dy = (cy - dragStartCursorY) / scale
+      if IsShiftKeyDown() then
+        -- Lock axis once movement clears a small threshold; whichever axis
+        -- the cursor has travelled further on wins.
+        if not dragAxis and (math.abs(dx) + math.abs(dy)) > 8 then
+          dragAxis = (math.abs(dx) > math.abs(dy)) and "x" or "y"
+        end
+        if dragAxis == "x" then dy = 0 end
+        if dragAxis == "y" then dx = 0 end
+      else
+        dragAxis = nil
+      end
+      s:ClearAllPoints()
+      s:SetPoint("BOTTOMLEFT", UIParent, "BOTTOMLEFT", dragStartBarLeft + dx, dragStartBarBottom + dy)
+    end)
   end)
   bar:SetScript("OnDragStop", function(self)
-    self:StopMovingOrSizing()
-    -- After StartMoving, the bar's anchor is relative to UIParent. If clamped mode
-    -- is on, re-anchor to the talent frame at the same screen position so the bar
-    -- follows the talent frame from now on.
+    self:SetScript("OnUpdate", nil)
+    dragAxis = nil
     if ZugZugDB.barClamped ~= false and barAttachedTo then
       reanchorTo(barAttachedTo)
     end
     saveBarPosition()
   end)
 
-  -- Header text
-  local header = bar:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-  header:SetPoint("TOP", bar, "TOP", 0, -6)
-  header:SetText("|cff8fbf3fZUGZUG.info|r  |cff888888Builds|r")
-  bar.header = header
+  -- Class-colored top stripe (3px, full width)
+  local classStripe = bar:CreateTexture(nil, "OVERLAY")
+  classStripe:SetHeight(3)
+  classStripe:SetPoint("TOPLEFT", bar, "TOPLEFT", 1, -1)
+  classStripe:SetPoint("TOPRIGHT", bar, "TOPRIGHT", -1, -1)
+  local cr, cg, cb = getClassColor()
+  classStripe:SetColorTexture(cr, cg, cb, 1)
+  bar.classStripe = classStripe
 
-  -- Raid dropdown button
+  -- Darker header strip background
+  local headerBg = bar:CreateTexture(nil, "BACKGROUND")
+  headerBg:SetHeight(HEADER_HEIGHT - 3)
+  headerBg:SetPoint("TOPLEFT", bar, "TOPLEFT", 1, -4)
+  headerBg:SetPoint("TOPRIGHT", bar, "TOPRIGHT", -1, -4)
+  headerBg:SetColorTexture(0.05, 0.05, 0.07, 0.85)
+
+  -- Logo (bigger, sits in the header area)
+  local addonFolder = ZZ.addonName or "ZugZug"
+  local logo = bar:CreateTexture(nil, "ARTWORK")
+  logo:SetSize(40, 40)
+  logo:SetPoint("TOPLEFT", bar, "TOPLEFT", PADDING - 2, -2)
+  logo:SetTexture("Interface\\AddOns\\" .. addonFolder .. "\\icon.png")
+  bar.logo = logo
+
+  -- Wordmark
+  local wordmark = bar:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+  wordmark:SetPoint("LEFT", logo, "RIGHT", 6, 0)
+  wordmark:SetText("|cff8fbf3fZUGZUG|r |cff666666\194\183|r |cffaaaaaaBuilds|r")
+  bar.wordmark = wordmark
+
+  -- Settings cog (top-right) — uses a Blizzard gear icon texture
+  local cogBtn = CreateFrame("Button", nil, bar, "BackdropTemplate")
+  cogBtn:SetSize(22, 22)
+  cogBtn:SetPoint("TOPRIGHT", bar, "TOPRIGHT", -PADDING, -7)
+  cogBtn:SetBackdrop({ bgFile = "Interface\\Buttons\\WHITE8x8", edgeFile = "Interface\\Buttons\\WHITE8x8", edgeSize = 1 })
+  cogBtn:SetBackdropColor(0.10, 0.10, 0.13, 1)
+  cogBtn:SetBackdropBorderColor(0.30, 0.30, 0.35, 1)
+  local cogIcon = cogBtn:CreateTexture(nil, "OVERLAY")
+  cogIcon:SetSize(16, 16)
+  cogIcon:SetPoint("CENTER")
+  cogIcon:SetTexture("Interface\\Buttons\\UI-OptionsButton")
+  cogIcon:SetVertexColor(COLORS.accent.r, COLORS.accent.g, COLORS.accent.b)
+  cogBtn:SetScript("OnEnter", function(self)
+    self:SetBackdropBorderColor(COLORS.accent.r, COLORS.accent.g, COLORS.accent.b, 1)
+    GameTooltip:SetOwner(self, "ANCHOR_TOP")
+    GameTooltip:SetText("Open ZugZug settings", 1, 1, 1)
+    GameTooltip:Show()
+  end)
+  cogBtn:SetScript("OnLeave", function(self)
+    self:SetBackdropBorderColor(0.30, 0.30, 0.35, 1)
+    GameTooltip:Hide()
+  end)
+  cogBtn:SetScript("OnClick", function()
+    local ok = pcall(function()
+      if ZZ.settingsCategory then
+        Settings.OpenToCategory(ZZ.settingsCategory:GetID())
+      else
+        Settings.OpenToCategory("ZugZug")
+      end
+    end)
+    if not ok then print("|cff00ccffZugZug:|r Could not open settings.") end
+  end)
+  bar.cogBtn = cogBtn
+
+  -- Kept under old name for any references
+  bar.header = wordmark
+
+  -- Raid dropdown button (anchored below header)
   local raidBtn = createDropdownButton(bar, "RAID", COLORS.raid)
-  raidBtn:SetPoint("BOTTOMLEFT", bar, "BOTTOMLEFT", PADDING, PADDING + 2)
+  raidBtn:SetPoint("TOPLEFT", bar, "TOPLEFT", PADDING, -(HEADER_HEIGHT + 4))
   raidBtn.tooltipHint = "Right-click to cycle difficulty"
   bar.raidBtn = raidBtn
 
@@ -845,7 +1041,7 @@ local function createBar(parent)
       closeActiveDropdown()
       ZZ:PopulateDropdown("raid")
       raidMenu:ClearAllPoints()
-      raidMenu:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 2)
+      raidMenu:SetPoint("BOTTOM", bar, "TOP", 0, 4)
       raidMenu:Show()
       activeDropdown = raidMenu
     end
@@ -872,35 +1068,70 @@ local function createBar(parent)
       closeActiveDropdown()
       ZZ:PopulateDropdown("mp")
       mpMenu:ClearAllPoints()
-      mpMenu:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 2)
+      mpMenu:SetPoint("BOTTOM", bar, "TOP", 0, 4)
       mpMenu:Show()
       activeDropdown = mpMenu
     end
   end)
 
-  -- Leveling button — only visible below max level
+  -- Leveling button — wider, two-line: shows next-talent name + inline progress bar
   local levelBtn = CreateFrame("Button", nil, bar, "BackdropTemplate")
-  levelBtn:SetSize(90, BAR_HEIGHT - 4)
+  levelBtn:SetSize(LEVELING_BTN_WIDTH, DROPDOWN_BTN_HEIGHT)
   levelBtn:SetPoint("LEFT", mpBtn, "RIGHT", DROPDOWN_GAP, 0)
   levelBtn:SetBackdrop({
     bgFile = "Interface\\Buttons\\WHITE8x8",
     edgeFile = "Interface\\Buttons\\WHITE8x8",
     edgeSize = 1,
   })
-  levelBtn:SetBackdropColor(0.2, 0.5, 0.2, 0.9)
-  levelBtn:SetBackdropBorderColor(0.3, 0.3, 0.35, 1)
+  levelBtn:SetBackdropColor(0.08, 0.18, 0.08, 1)
+  levelBtn:SetBackdropBorderColor(COLORS.border.r, COLORS.border.g, COLORS.border.b, 1)
 
-  local levelText = levelBtn:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-  levelText:SetPoint("CENTER")
-  levelText:SetText("Leveling Guide")
-  levelText:SetTextColor(0.85, 1, 0.85)
-  levelBtn.label = levelText
+  local lvlAccent = levelBtn:CreateTexture(nil, "OVERLAY")
+  lvlAccent:SetSize(3, DROPDOWN_BTN_HEIGHT)
+  lvlAccent:SetPoint("LEFT", levelBtn, "LEFT", 0, 0)
+  lvlAccent:SetColorTexture(0.63, 0.88, 0.63, 1)
+
+  local lvlLabel = levelBtn:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+  lvlLabel:SetPoint("TOPLEFT", levelBtn, "TOPLEFT", 12, -8)
+  lvlLabel:SetText("LEVELING")
+  lvlLabel:SetTextColor(0.63, 0.88, 0.63)
+  levelBtn.label = lvlLabel
+
+  -- "Next: <talent>" line in the middle
+  local lvlNextText = levelBtn:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
+  lvlNextText:SetPoint("TOPLEFT", levelBtn, "TOPLEFT", 12, -22)
+  lvlNextText:SetPoint("RIGHT", levelBtn, "RIGHT", -8, 0)
+  lvlNextText:SetJustifyH("LEFT")
+  lvlNextText:SetWordWrap(false)
+  lvlNextText:SetText("")
+  levelBtn.nextText = lvlNextText
+
+  -- Progress bar track at bottom
+  local lvlBarTrack = levelBtn:CreateTexture(nil, "ARTWORK")
+  lvlBarTrack:SetHeight(4)
+  lvlBarTrack:SetPoint("BOTTOMLEFT", levelBtn, "BOTTOMLEFT", 12, 8)
+  lvlBarTrack:SetPoint("BOTTOMRIGHT", levelBtn, "BOTTOMRIGHT", -42, 8)
+  lvlBarTrack:SetColorTexture(0.10, 0.10, 0.13, 1)
+  levelBtn.barTrack = lvlBarTrack
+
+  local lvlBarFill = levelBtn:CreateTexture(nil, "OVERLAY")
+  lvlBarFill:SetHeight(4)
+  lvlBarFill:SetPoint("BOTTOMLEFT", lvlBarTrack, "BOTTOMLEFT", 0, 0)
+  lvlBarFill:SetColorTexture(0.63, 0.88, 0.63, 1)
+  lvlBarFill:SetWidth(1)
+  levelBtn.barFill = lvlBarFill
+
+  local lvlProgText = levelBtn:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")
+  lvlProgText:SetPoint("RIGHT", levelBtn, "RIGHT", -8, -19)
+  lvlProgText:SetText("")
+  lvlProgText:SetTextColor(0.50, 0.70, 0.50)
+  levelBtn.progText = lvlProgText
 
   levelBtn:SetScript("OnEnter", function(self)
     self:SetBackdropBorderColor(COLORS.accent.r, COLORS.accent.g, COLORS.accent.b, 1)
   end)
   levelBtn:SetScript("OnLeave", function(self)
-    self:SetBackdropBorderColor(0.3, 0.3, 0.35, 1)
+    self:SetBackdropBorderColor(COLORS.border.r, COLORS.border.g, COLORS.border.b, 1)
   end)
   levelBtn:SetScript("OnClick", function()
     if ZZ.ToggleLevelingBanner then
@@ -981,25 +1212,60 @@ function ZZ:PopulateDropdown(contentType)
     menu.separators = {}
   end
 
-  local yOffset = -PADDING
+  -- Reset section headers
+  menu.headers = menu.headers or {}
+  for _, h in ipairs(menu.headers) do h.frame:Hide() end
+
+  local DROPDOWN_MENU_WIDTH = 430
+  local SECTION_HEADER_HEIGHT = 20
+
+  local yOffset = -4
   local lastSpec = nil
-  local sepIdx = 0
+  local headerIdx = 0
+
   for i, build in ipairs(builds) do
-    -- Add a separator line between different specs
-    if lastSpec and build.spec ~= lastSpec then
-      sepIdx = sepIdx + 1
-      if not menu.separators[sepIdx] then
-        local sep = menu:CreateTexture(nil, "ARTWORK")
-        sep:SetHeight(1)
-        sep:SetColorTexture(COLORS.border.r, COLORS.border.g, COLORS.border.b, 0.6)
-        menu.separators[sepIdx] = sep
+    -- Add a section header when the spec changes
+    if build.spec ~= lastSpec then
+      headerIdx = headerIdx + 1
+      if not menu.headers[headerIdx] then
+        local hf = CreateFrame("Frame", nil, menu)
+        hf:SetHeight(SECTION_HEADER_HEIGHT)
+        local bg = hf:CreateTexture(nil, "BACKGROUND")
+        bg:SetAllPoints()
+        bg:SetColorTexture(0.04, 0.04, 0.06, 0.95)
+        hf.bg = bg
+        local accent = hf:CreateTexture(nil, "OVERLAY")
+        accent:SetSize(3, SECTION_HEADER_HEIGHT)
+        accent:SetPoint("LEFT", hf, "LEFT", 0, 0)
+        hf.accent = accent
+        local label = hf:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+        label:SetPoint("LEFT", hf, "LEFT", 12, 0)
+        hf.label = label
+        local tag = hf:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")
+        tag:SetPoint("LEFT", label, "RIGHT", 8, 0)
+        hf.tag = tag
+        menu.headers[headerIdx] = { frame = hf }
       end
-      local sep = menu.separators[sepIdx]
-      sep:ClearAllPoints()
-      sep:SetPoint("TOPLEFT", menu, "TOPLEFT", PADDING + 8, yOffset - 2)
-      sep:SetPoint("TOPRIGHT", menu, "TOPRIGHT", -PADDING - 8, yOffset - 2)
-      sep:Show()
-      yOffset = yOffset - 5
+      local hf = menu.headers[headerIdx].frame
+      hf:ClearAllPoints()
+      hf:SetPoint("TOPLEFT", menu, "TOPLEFT", 0, yOffset)
+      hf:SetPoint("TOPRIGHT", menu, "TOPRIGHT", 0, yOffset)
+      local isCurr = (build.spec == ZZ.specName)
+      if isCurr then
+        local cr, cg, cb = getClassColor()
+        hf.accent:SetColorTexture(cr, cg, cb, 1)
+        hf.label:SetText(build.spec or "")
+        hf.label:SetTextColor(cr, cg, cb)
+        hf.tag:SetText("CURRENT SPEC")
+        hf.tag:SetTextColor(0.5, 0.5, 0.55)
+      else
+        hf.accent:SetColorTexture(0.25, 0.25, 0.30, 1)
+        hf.label:SetText(build.spec or "")
+        hf.label:SetTextColor(0.45, 0.45, 0.5)
+        hf.tag:SetText("")
+      end
+      hf:Show()
+      yOffset = yOffset - SECTION_HEADER_HEIGHT
     end
     lastSpec = build.spec
 
@@ -1008,15 +1274,15 @@ function ZZ:PopulateDropdown(contentType)
     end
     local item = menu.items[i]
     item:ClearAllPoints()
-    item:SetPoint("TOPLEFT", menu, "TOPLEFT", PADDING, yOffset)
-    item:SetPoint("TOPRIGHT", menu, "TOPRIGHT", -PADDING, yOffset)
+    item:SetPoint("TOPLEFT", menu, "TOPLEFT", 0, yOffset)
+    item:SetPoint("TOPRIGHT", menu, "TOPRIGHT", 0, yOffset)
 
     local isCurrentSpec = (build.spec == ZZ.specName)
     populateDropdownItem(item, build, contentType, sectionColor, isCurrentSpec)
     yOffset = yOffset - DROPDOWN_ITEM_HEIGHT
   end
 
-  menu:SetSize(DROPDOWN_WIDTH, -yOffset + PADDING)
+  menu:SetSize(DROPDOWN_MENU_WIDTH, -yOffset + 4)
 end
 
 ----------------------------------------------------------------------
@@ -1035,15 +1301,52 @@ end
 -- Refresh bar labels
 ----------------------------------------------------------------------
 
+--- Find the top build of a list (highest popularity, optionally restricted to current spec).
+local function topBuildLabel(builds, preferSpec)
+  if not builds or #builds == 0 then return "" end
+  local best = nil
+  for _, b in ipairs(builds) do
+    if not preferSpec or b.spec == preferSpec then
+      if not best or (b.popularity or 0) > (best.popularity or 0) then
+        best = b
+      end
+    end
+  end
+  if not best then
+    for _, b in ipairs(builds) do
+      if not best or (b.popularity or 0) > (best.popularity or 0) then
+        best = b
+      end
+    end
+  end
+  if not best then return "" end
+  if best.spec and best.label then
+    return best.spec .. " \194\183 " .. best.label
+  end
+  return best.label or best.spec or ""
+end
+
 function ZZ:RefreshUI()
   if not bar then return end
 
-  -- Update button labels
-  local diff = ZugZugDB.raidDifficulty or "mythic"
-  bar.raidBtn.settingText:SetText(diff:sub(1,1):upper() .. diff:sub(2))
+  -- Refresh class color (for spec swaps)
+  local cr, cg, cb = getClassColor()
+  if bar.classStripe then bar.classStripe:SetColorTexture(cr, cg, cb, 1) end
 
+  -- Filter pills
+  local diff = ZugZugDB.raidDifficulty or "mythic"
+  bar.raidBtn.settingText:SetText(diff == "mythic" and "Mythic" or "Heroic")
   local bucket = ZugZugDB.mpBucket or "all"
   bar.mpBtn.settingText:SetText(bucket)
+
+  -- Current top-build labels (bottom row of each section button)
+  local raidBuilds, mpBuilds = ZZ:GetCurrentBuilds()
+  if bar.raidBtn.buildText then
+    bar.raidBtn.buildText:SetText(topBuildLabel(raidBuilds, ZZ.specName))
+  end
+  if bar.mpBtn.buildText then
+    bar.mpBtn.buildText:SetText(topBuildLabel(mpBuilds, ZZ.specName))
+  end
 
   -- Show leveling button only below max level and only if the leveling feature is enabled
   local level = UnitLevel("player")
@@ -1052,9 +1355,20 @@ function ZZ:RefreshUI()
   local showLeveling = levelingOn and level and level < maxLevel and ZugZugLevelingData ~= nil
   if bar.levelBtn then
     bar.levelBtn:SetShown(showLeveling)
+    -- Populate next-talent + progress from the leveling system
+    if showLeveling and ZZ.GetLevelingStatus then
+      local status = ZZ:GetLevelingStatus()
+      if status then
+        bar.levelBtn.nextText:SetText(status.nextName and ("Next: " .. status.nextName) or "Build complete")
+        local pct = status.total > 0 and (status.completed / status.total) or 0
+        local trackW = bar.levelBtn.barTrack:GetWidth()
+        bar.levelBtn.barFill:SetWidth(math.max(1, math.floor(trackW * pct)))
+        bar.levelBtn.progText:SetText(status.completed .. " / " .. status.total)
+      end
+    end
     -- Widen bar to fit the leveling button
     if showLeveling then
-      bar:SetWidth(DROPDOWN_WIDTH * 2 + DROPDOWN_GAP * 2 + 90 + PADDING * 2)
+      bar:SetWidth(DROPDOWN_WIDTH * 2 + LEVELING_BTN_WIDTH + DROPDOWN_GAP * 2 + PADDING * 2)
     else
       bar:SetWidth(DROPDOWN_WIDTH * 2 + DROPDOWN_GAP + PADDING * 2)
     end
@@ -1067,6 +1381,131 @@ function ZZ:RefreshUI()
     ZZ:PopulateDropdown("mp")
   end
 end
+
+----------------------------------------------------------------------
+-- Cast bar — shows above the build bar while the talent-change cast is active
+----------------------------------------------------------------------
+
+-- Known spell IDs for talent loadout / spec swap casts. Add more if observed.
+local TALENT_CHANGE_SPELL_IDS = {
+  [384255] = true, -- Changing Talents
+  [200749] = true, -- Activate Specialization
+  [222695] = true, -- Changing Talents (older)
+}
+
+local function isTalentChangeCast(spellID, spellName)
+  if spellID and TALENT_CHANGE_SPELL_IDS[spellID] then return true end
+  if spellName then
+    local n = spellName:lower()
+    if n:find("changing talent") or n:find("activate spec") or n:find("changing spec") then
+      return true
+    end
+  end
+  return false
+end
+
+local castBar = nil
+
+local function getCastBar()
+  if castBar then return castBar end
+  if not bar then return nil end
+
+  local cb = CreateFrame("StatusBar", "ZugZugCastBar", bar, "BackdropTemplate")
+  cb:SetHeight(22)
+  cb:SetFrameStrata("HIGH")
+  -- Flat solid fill (no Blizzard 3D gradient)
+  cb:SetStatusBarTexture("Interface\\Buttons\\WHITE8x8")
+  cb:SetMinMaxValues(0, 1)
+  cb:SetStatusBarColor(COLORS.accent.r, COLORS.accent.g, COLORS.accent.b, 1)
+  cb:SetBackdrop({
+    bgFile = "Interface\\Buttons\\WHITE8x8",
+    edgeFile = "Interface\\Buttons\\WHITE8x8",
+    edgeSize = 1,
+  })
+  cb:SetBackdropColor(0.05, 0.05, 0.07, 0.95)
+  cb:SetBackdropBorderColor(0.30, 0.30, 0.35, 1)
+
+  -- Anchor: match bar width, sit just above the bar (same spot as the dropdown menus)
+  cb:ClearAllPoints()
+  cb:SetPoint("BOTTOMLEFT", bar, "TOPLEFT", 0, 4)
+  cb:SetPoint("BOTTOMRIGHT", bar, "TOPRIGHT", 0, 4)
+
+  local text = cb:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+  text:SetPoint("LEFT", cb, "LEFT", 10, 0)
+  text:SetTextColor(1, 1, 1)
+  cb.text = text
+
+  local timeText = cb:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+  timeText:SetPoint("RIGHT", cb, "RIGHT", -10, 0)
+  timeText:SetTextColor(0.85, 0.85, 0.90)
+  cb.timeText = timeText
+
+  cb:Hide()
+  castBar = cb
+  return cb
+end
+
+local function hideCastBar()
+  if castBar then
+    castBar:SetScript("OnUpdate", nil)
+    castBar:Hide()
+  end
+end
+
+local function showCastBar()
+  local cb = getCastBar()
+  if not cb then return end
+
+  local name, _, _, startTime, endTime, _, _, _, spellID = UnitCastingInfo("player")
+  if not name or not startTime or not endTime then
+    hideCastBar()
+    return
+  end
+  if not isTalentChangeCast(spellID, name) then
+    hideCastBar()
+    return
+  end
+
+  cb.startTime = startTime
+  cb.endTime = endTime
+  cb.text:SetText(name)
+  cb:SetValue(0)
+  cb:Show()
+  cb:SetScript("OnUpdate", function(self)
+    local now = GetTime() * 1000
+    local total = self.endTime - self.startTime
+    if total <= 0 then
+      self:Hide()
+      self:SetScript("OnUpdate", nil)
+      return
+    end
+    local elapsed = now - self.startTime
+    if elapsed >= total then
+      self:Hide()
+      self:SetScript("OnUpdate", nil)
+      return
+    end
+    self:SetValue(elapsed / total)
+    self.timeText:SetText(string.format("%.1fs", (total - elapsed) / 1000))
+  end)
+end
+
+local castEventFrame = CreateFrame("Frame")
+castEventFrame:RegisterEvent("UNIT_SPELLCAST_START")
+castEventFrame:RegisterEvent("UNIT_SPELLCAST_STOP")
+castEventFrame:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
+castEventFrame:RegisterEvent("UNIT_SPELLCAST_FAILED")
+castEventFrame:RegisterEvent("UNIT_SPELLCAST_INTERRUPTED")
+castEventFrame:SetScript("OnEvent", function(_, event, unit, _, spellID)
+  if unit ~= "player" then return end
+  if event == "UNIT_SPELLCAST_START" then
+    if isTalentChangeCast(spellID) then
+      showCastBar()
+    end
+  else
+    hideCastBar()
+  end
+end)
 
 ----------------------------------------------------------------------
 -- Hook into talent frame

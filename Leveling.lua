@@ -235,60 +235,148 @@ local function createSkinButton(parent, width, height, label, bgColor, textColor
   return btn
 end
 
+-- Class color helper (matches UI.lua)
+local function getClassColor()
+  local token = ZZ and ZZ.classToken
+  local color = token and RAID_CLASS_COLORS and RAID_CLASS_COLORS[token]
+  if color then return color.r, color.g, color.b end
+  return 0.56, 0.75, 0.25
+end
+
 local function createBanner()
   if bannerFrame then return bannerFrame end
 
   local f = CreateFrame("Frame", "ZugZugLevelingBanner", UIParent, "BackdropTemplate")
-  f:SetSize(420, 52)
+  f:SetSize(600, 180)
   f:SetPoint("TOP", UIParent, "TOP", 0, -120)
   f:SetFrameStrata("HIGH")
+  f:SetClampedToScreen(true)
   f:SetBackdrop(BACKDROP_INFO)
   f:SetBackdropColor(COLORS.bg.r, COLORS.bg.g, COLORS.bg.b, COLORS.bg.a)
-  f:SetBackdropBorderColor(COLORS.accent.r, COLORS.accent.g, COLORS.accent.b, 0.7)
+  f:SetBackdropBorderColor(COLORS.border.r, COLORS.border.g, COLORS.border.b, 1)
   f:EnableMouse(true)
   f:SetMovable(true)
   f:RegisterForDrag("LeftButton")
   f:SetScript("OnDragStart", f.StartMoving)
   f:SetScript("OnDragStop", f.StopMovingOrSizing)
 
-  -- Close button — minimal X (top-right)
-  local closeBtn = CreateFrame("Button", nil, f)
-  closeBtn:SetSize(16, 16)
-  closeBtn:SetPoint("TOPRIGHT", f, "TOPRIGHT", -4, -4)
-  local closeText = closeBtn:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-  closeText:SetPoint("CENTER")
-  closeText:SetText("x")
+  -- Class-colored left accent bar
+  local accent = f:CreateTexture(nil, "OVERLAY")
+  accent:SetWidth(4)
+  accent:SetPoint("TOPLEFT", f, "TOPLEFT", 1, -1)
+  accent:SetPoint("BOTTOMLEFT", f, "BOTTOMLEFT", 1, 1)
+  local cr, cg, cb = getClassColor()
+  accent:SetColorTexture(cr, cg, cb, 1)
+  f.accent = accent
+
+  -- Top brand stripe (accent green)
+  local stripe = f:CreateTexture(nil, "OVERLAY")
+  stripe:SetHeight(2)
+  stripe:SetPoint("TOPLEFT", f, "TOPLEFT", 5, -1)
+  stripe:SetPoint("TOPRIGHT", f, "TOPRIGHT", -1, -1)
+  stripe:SetColorTexture(COLORS.accent.r, COLORS.accent.g, COLORS.accent.b, 0.7)
+
+  -- Close button (top-right)
+  local closeBtn = CreateFrame("Button", nil, f, "BackdropTemplate")
+  closeBtn:SetSize(20, 20)
+  closeBtn:SetPoint("TOPRIGHT", f, "TOPRIGHT", -8, -8)
+  closeBtn:SetBackdrop(BACKDROP_INFO)
+  closeBtn:SetBackdropColor(0.10, 0.10, 0.13, 1)
+  closeBtn:SetBackdropBorderColor(0.30, 0.30, 0.35, 1)
+  local closeText = closeBtn:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+  closeText:SetPoint("CENTER", closeBtn, "CENTER", 0, 1)
+  closeText:SetText("\195\151") -- ×
   closeText:SetTextColor(COLORS.muted.r, COLORS.muted.g, COLORS.muted.b)
-  closeBtn:SetScript("OnEnter", function()
-    closeText:SetTextColor(1, 0.4, 0.4)
+  closeBtn:SetScript("OnEnter", function(self)
+    self:SetBackdropBorderColor(1, 0.3, 0.3, 1)
+    closeText:SetTextColor(1, 0.5, 0.5)
   end)
-  closeBtn:SetScript("OnLeave", function()
+  closeBtn:SetScript("OnLeave", function(self)
+    self:SetBackdropBorderColor(0.30, 0.30, 0.35, 1)
     closeText:SetTextColor(COLORS.muted.r, COLORS.muted.g, COLORS.muted.b)
   end)
-  closeBtn:SetScript("OnClick", function()
-    f:Hide()
-  end)
+  closeBtn:SetScript("OnClick", function() f:Hide() end)
 
-  -- Progress: "3 of 71" — left of close button so they don't overlap
-  local progressText = f:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-  progressText:SetPoint("RIGHT", closeBtn, "LEFT", -6, 0)
-  progressText:SetTextColor(COLORS.muted.r, COLORS.muted.g, COLORS.muted.b)
-  f.progressText = progressText
+  -- Header row: phase chip + spec/level info
+  local phaseChip = CreateFrame("Frame", nil, f, "BackdropTemplate")
+  phaseChip:SetSize(74, 16)
+  phaseChip:SetPoint("TOPLEFT", f, "TOPLEFT", 18, -12)
+  phaseChip:SetBackdrop(BACKDROP_INFO)
+  phaseChip:SetBackdropColor(cr * 0.3, cg * 0.3, cb * 0.3, 1)
+  phaseChip:SetBackdropBorderColor(cr * 0.7, cg * 0.7, cb * 0.7, 1)
+  local phaseText = phaseChip:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+  phaseText:SetPoint("CENTER")
+  phaseText:SetTextColor(cr, cg, cb)
+  phaseText:SetText("SPEC TREE")
+  phaseChip.text = phaseText
+  f.phaseChip = phaseChip
 
-  -- Title line: "Next talent: <name>"
-  local titleText = f:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-  titleText:SetPoint("TOPLEFT", f, "TOPLEFT", 10, -8)
-  titleText:SetPoint("RIGHT", progressText, "LEFT", -8, 0)
+  local specInfoText = f:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+  specInfoText:SetPoint("LEFT", phaseChip, "RIGHT", 8, 0)
+  specInfoText:SetTextColor(COLORS.muted.r, COLORS.muted.g, COLORS.muted.b)
+  f.specInfoText = specInfoText
+
+  -- Talent icon (rounded, class-colored frame)
+  local talentIconFrame = CreateFrame("Frame", nil, f, "BackdropTemplate")
+  talentIconFrame:SetSize(48, 48)
+  talentIconFrame:SetPoint("TOPLEFT", f, "TOPLEFT", 18, -36)
+  talentIconFrame:SetBackdrop(BACKDROP_INFO)
+  talentIconFrame:SetBackdropColor(cr * 0.4, cg * 0.4, cb * 0.4, 1)
+  talentIconFrame:SetBackdropBorderColor(cr, cg, cb, 1)
+  local talentIconText = talentIconFrame:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
+  talentIconText:SetPoint("CENTER")
+  talentIconText:SetTextColor(1, 1, 1)
+  talentIconFrame.text = talentIconText
+  f.talentIconFrame = talentIconFrame
+
+  -- "NEXT TALENT" eyebrow
+  local nextLabel = f:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+  nextLabel:SetPoint("TOPLEFT", talentIconFrame, "TOPRIGHT", 12, -2)
+  nextLabel:SetTextColor(COLORS.accent.r, COLORS.accent.g, COLORS.accent.b)
+  nextLabel:SetText("NEXT TALENT")
+  f.nextLabel = nextLabel
+
+  -- Talent name (big)
+  local titleText = f:CreateFontString(nil, "OVERLAY", "GameFontNormalHuge")
+  titleText:SetPoint("TOPLEFT", nextLabel, "BOTTOMLEFT", 0, -2)
+  titleText:SetPoint("RIGHT", f, "RIGHT", -18, 0)
   titleText:SetJustifyH("LEFT")
   titleText:SetWordWrap(false)
-  titleText:SetTextColor(COLORS.text.r, COLORS.text.g, COLORS.text.b)
+  titleText:SetTextColor(1, 1, 1)
   f.titleText = titleText
 
-  -- Left side: Pick All
-  local pickAllBtn = createSkinButton(f, 66, 22, "Pick All",
-    { r = 0.15, g = 0.4, b = 0.15, a = 0.9 },
-    { r = 0.85, g = 1, b = 0.85 })
-  pickAllBtn:SetPoint("BOTTOMLEFT", f, "BOTTOMLEFT", 10, 6)
+  -- Progress section
+  local progLabel = f:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+  progLabel:SetPoint("TOPLEFT", f, "TOPLEFT", 18, -100)
+  progLabel:SetText("BUILD PROGRESS")
+  progLabel:SetTextColor(0.55, 0.55, 0.60)
+
+  local progressText = f:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+  progressText:SetPoint("TOPRIGHT", f, "TOPRIGHT", -18, -100)
+  progressText:SetTextColor(COLORS.accent.r, COLORS.accent.g, COLORS.accent.b)
+  f.progressText = progressText
+
+  -- Progress bar track
+  local barTrack = f:CreateTexture(nil, "ARTWORK")
+  barTrack:SetHeight(8)
+  barTrack:SetPoint("TOPLEFT", f, "TOPLEFT", 18, -116)
+  barTrack:SetPoint("TOPRIGHT", f, "TOPRIGHT", -18, -116)
+  barTrack:SetColorTexture(0.10, 0.10, 0.13, 1)
+  f.barTrack = barTrack
+
+  -- Progress bar fill
+  local barFill = f:CreateTexture(nil, "OVERLAY")
+  barFill:SetHeight(8)
+  barFill:SetPoint("TOPLEFT", barTrack, "TOPLEFT", 0, 0)
+  barFill:SetColorTexture(COLORS.accent.r, COLORS.accent.g, COLORS.accent.b, 1)
+  barFill:SetWidth(1)
+  f.barFill = barFill
+
+  -- Action buttons (centered at bottom, primary + secondary hierarchy)
+  local pickAllBtn = createSkinButton(f, 160, 24, "PICK ALL AVAILABLE",
+    { r = 0.30, g = 0.45, b = 0.15, a = 1 },
+    { r = 1, g = 1, b = 1 })
+  pickAllBtn:SetPoint("BOTTOMLEFT", f, "BOTTOM", -85, 12)
   pickAllBtn:SetScript("OnClick", function()
     if not levelingOrder then return end
 
@@ -329,11 +417,11 @@ local function createBanner()
   end)
   f.pickAllBtn = pickAllBtn
 
-  -- Right side: Skip + Reset
-  local resetBtn = createSkinButton(f, 56, 22, "Reset",
-    { r = 0.35, g = 0.12, b = 0.12, a = 0.9 },
-    { r = 1, g = 0.7, b = 0.7 })
-  resetBtn:SetPoint("BOTTOMRIGHT", f, "BOTTOMRIGHT", -10, 6)
+  -- Secondary: Reset (smaller, beside Pick All)
+  local resetBtn = createSkinButton(f, 70, 24, "Reset",
+    { r = 0.20, g = 0.10, b = 0.10, a = 1 },
+    { r = 0.95, g = 0.45, b = 0.45 })
+  resetBtn:SetPoint("LEFT", pickAllBtn, "RIGHT", 8, 0)
   resetBtn:SetScript("OnClick", function()
     local level = UnitLevel("player")
     if level and level >= MAX_LEVEL then
@@ -396,21 +484,70 @@ local function findNextUnpurchased()
   return nil, nil
 end
 
+--- Detect which phase (Class/Spec/Hero) a given pick index falls into.
+local function phaseForIndex(idx)
+  if not levelingOrder or not idx then return "SPEC TREE" end
+  local total = #levelingOrder
+  -- Rough split: first ~12% class, next ~70% spec, last ~18% hero
+  local classEnd = math.floor(total * 0.14)
+  local specEnd = math.floor(total * 0.70)
+  if idx <= classEnd then return "CLASS TREE" end
+  if idx <= specEnd then return "SPEC TREE" end
+  return "HERO TREE"
+end
+
 local function updateBanner(pick, forceShow)
   local hasPoints = hasUnspentPoints()
-  -- Auto-triggered banners (level up, config update) only show when there are points to spend.
-  -- forceShow=true bypasses this for the manual toggle button.
   if not forceShow and not hasPoints then return end
 
   local banner = createBanner()
   local completed, total = countCompleted()
+  local pickIdx = findNextUnpurchased()
 
-  if pick then
-    banner.titleText:SetText("|cff8fbf3fNext talent:|r " .. pick.name)
-  else
-    banner.titleText:SetText("|cff8fbf3fBuild complete!|r")
+  -- Refresh class color (in case of spec switch)
+  local cr, cg, cb = getClassColor()
+  if banner.accent then banner.accent:SetColorTexture(cr, cg, cb, 1) end
+  if banner.phaseChip then
+    banner.phaseChip:SetBackdropColor(cr * 0.3, cg * 0.3, cb * 0.3, 1)
+    banner.phaseChip:SetBackdropBorderColor(cr * 0.7, cg * 0.7, cb * 0.7, 1)
+    banner.phaseChip.text:SetTextColor(cr, cg, cb)
+    banner.phaseChip.text:SetText(phaseForIndex(pickIdx))
   end
-  banner.progressText:SetText(completed .. " of " .. total)
+  if banner.talentIconFrame then
+    banner.talentIconFrame:SetBackdropColor(cr * 0.4, cg * 0.4, cb * 0.4, 1)
+    banner.talentIconFrame:SetBackdropBorderColor(cr, cg, cb, 1)
+  end
+
+  -- Spec/level info
+  if banner.specInfoText then
+    local level = UnitLevel("player") or "?"
+    local specName = ZZ.specName or "?"
+    local className = ZZ.classToken or ""
+    className = className:gsub("_", " "):lower():gsub("(%a)([%w_']*)", function(a,b) return a:upper()..b end)
+    banner.specInfoText:SetText("\194\183 " .. specName .. " " .. className .. " \226\128\148 Level " .. tostring(level))
+  end
+
+  -- Talent icon (use first letter of talent name as fallback)
+  if banner.talentIconFrame and banner.talentIconFrame.text then
+    if pick and pick.name then
+      banner.talentIconFrame.text:SetText(pick.name:sub(1, 1):upper())
+    else
+      banner.talentIconFrame.text:SetText("\226\156\147") -- ✓
+    end
+  end
+
+  -- Title (big talent name)
+  if pick then
+    banner.titleText:SetText(pick.name or "Unknown")
+  else
+    banner.titleText:SetText("Build complete!")
+  end
+
+  -- Progress bar
+  banner.progressText:SetText(completed .. " / " .. total)
+  local pct = total > 0 and (completed / total) or 0
+  local trackW = banner.barTrack:GetWidth()
+  banner.barFill:SetWidth(math.max(1, math.floor(trackW * pct)))
 
   banner.pickAllBtn:SetEnabled(hasPoints and pick ~= nil)
 
@@ -419,6 +556,21 @@ local function updateBanner(pick, forceShow)
   banner.resetBtn:SetShown(level and level < MAX_LEVEL)
 
   banner:Show()
+end
+
+--- Returns { completed, total, nextName, phase } for the leveling button inline display.
+function ZZ:GetLevelingStatus()
+  if not levelingOrder then
+    loadOrderForCurrentSpec()
+  end
+  if not levelingOrder then return nil end
+  local completed, total = countCompleted()
+  local _, pick = findNextUnpurchased()
+  return {
+    completed = completed,
+    total = total,
+    nextName = pick and pick.name,
+  }
 end
 
 --- Auto-refresh: hides banner when no unspent points, shows when there are.

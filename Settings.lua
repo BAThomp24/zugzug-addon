@@ -36,10 +36,18 @@ local function CreateToggle(parent, x, y, label, dbKey, onChange)
   return cb
 end
 
-local function CreateDropdownSetting(parent, x, y, label, dbKey, options)
+local function CreateDropdownSetting(parent, x, y, label, dbKey, options, description)
   local fs = parent:CreateFontString(nil, "OVERLAY", "GameFontNormal")
   fs:SetPoint("TOPLEFT", parent, "TOPLEFT", x, y)
   fs:SetText(label)
+
+  -- Optional one-line description below the label
+  if description then
+    local desc = parent:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")
+    desc:SetPoint("TOPLEFT", fs, "BOTTOMLEFT", 0, -2)
+    desc:SetText(description)
+    desc:SetTextColor(0.55, 0.55, 0.60)
+  end
 
   local dropdown = CreateFrame("Frame", "ZugZugDropdown_" .. dbKey, parent, "UIDropDownMenuTemplate")
   dropdown:SetPoint("LEFT", fs, "LEFT", 200, -2)
@@ -139,13 +147,13 @@ local function CreateSettingsPanel()
     { value = "mythic", label = "Mythic" },
   })
 
-  -- Dungeon key level
-  CreateDropdownSetting(panel, 16, startY - 92, "Dungeon Suggest Key Level", "suggestMpBucket", {
-    { value = "all",  label = "All" },
-    { value = "15+",  label = "15+" },
-    { value = "18+",  label = "18+" },
-    { value = "20+",  label = "20+" },
-  })
+  -- Default M+ key level (used when no active keystone)
+  CreateDropdownSetting(panel, 16, startY - 92, "Default M+ Key Level", "suggestMpBucket", {
+    { value = "all",  label = "All keys" },
+    { value = "15+",  label = "Keys 15+" },
+    { value = "18+",  label = "Keys 18+" },
+    { value = "20+",  label = "Keys 20+" },
+  }, "Fallback for dungeons with no active keystone. With a key inserted, the actual key level is used.")
 
   -- Spec filter
   CreateDropdownSetting(panel, 16, startY - 138, "Only Suggest Current Spec", "suggestSpecFilter", {

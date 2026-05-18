@@ -376,18 +376,34 @@ local function getActiveHeroName()
   return info.name
 end
 
---- Returns true if the player's current spec+hero already matches the build.
+-- Talent-diff threshold below which the player is considered "on the build".
+-- Builds within the same cluster on the website often differ by 1-3 picks
+-- (variation talents). Anything beyond that is a meaningfully different build.
+local SAME_BUILD_DIFF_THRESHOLD = 4
+
+--- Returns true if the player's current loadout already matches the build.
+--- Requires spec + hero to match, then uses a talent-diff threshold so small
+--- variations within the same cluster still count as "on the build".
 local function isAlreadyOnBuild(build)
   if not build then return false end
   if build.spec ~= ZZ.specName then return false end
-  if not build.hero or build.hero == "" then return true end
-  local heroName, reason = getActiveHeroName()
-  if heroName then
-    return heroName == build.hero
+
+  -- If the build specifies a hero tree, the player must be on the same one.
+  if build.hero and build.hero ~= "" then
+    local heroName = getActiveHeroName()
+    if heroName and heroName ~= build.hero then return false end
   end
-  -- reason == "none": player has no hero selected; show suggestion
-  -- reason == "unavailable": API failed; show suggestion (better to over-suggest)
-  return false
+
+  -- Compare actual talent picks. Small diffs = same build cluster.
+  if ZZ.CountTalentDiff and build.importString and build.importString ~= "" then
+    local diff = ZZ.CountTalentDiff(build.importString)
+    if diff ~= nil then
+      return diff < SAME_BUILD_DIFF_THRESHOLD
+    end
+  end
+
+  -- Fallback: import string couldn't be parsed — spec+hero match is good enough.
+  return true
 end
 
 --- Show a build suggestion popup.
