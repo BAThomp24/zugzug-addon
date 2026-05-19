@@ -1323,8 +1323,14 @@ local function createBar(parent)
     self:SetBackdropBorderColor(COLORS.border.r, COLORS.border.g, COLORS.border.b, 1)
   end)
   levelBtn:SetScript("OnClick", function()
-    if ZZ.ToggleLevelingBanner then
-      ZZ:ToggleLevelingBanner()
+    -- At max level the banner has nothing actionable (no "next pick"), so
+    -- the click directly applies the leveling build in one step.
+    local level = UnitLevel("player")
+    local maxLevel = GetMaxPlayerLevel and GetMaxPlayerLevel() or 80
+    if level and level >= maxLevel then
+      if ZZ.ApplyLevelingBuild then ZZ:ApplyLevelingBuild() end
+    else
+      if ZZ.ToggleLevelingBanner then ZZ:ToggleLevelingBanner() end
     end
   end)
   levelBtn:Hide()
@@ -1537,11 +1543,14 @@ function ZZ:RefreshUI()
     bar.mpBtn.buildText:SetText(topBuildLabel(mpBuilds, ZZ.specName))
   end
 
-  -- Show leveling button only below max level and only if the leveling feature is enabled
+  -- Show leveling button below max level (always when enabled) or at max level
+  -- when the "Show at Max Level" option is on (for open world / delve use).
   local level = UnitLevel("player")
   local maxLevel = GetMaxPlayerLevel and GetMaxPlayerLevel() or 80
   local levelingOn = ZugZugDB.levelingEnabled ~= false
-  local showLeveling = levelingOn and level and level < maxLevel and ZugZugLevelingData ~= nil
+  local belowMax = level and level < maxLevel
+  local atMaxAllowed = level and level >= maxLevel and ZugZugDB.levelingAtMax
+  local showLeveling = levelingOn and ZugZugLevelingData ~= nil and (belowMax or atMaxAllowed)
   if bar.levelBtn then
     bar.levelBtn:SetShown(showLeveling)
     -- Populate next-talent + progress from the leveling system

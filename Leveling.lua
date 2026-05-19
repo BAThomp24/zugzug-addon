@@ -424,7 +424,7 @@ local function createBanner()
   resetBtn:SetPoint("LEFT", pickAllBtn, "RIGHT", 8, 0)
   resetBtn:SetScript("OnClick", function()
     local level = UnitLevel("player")
-    if level and level >= MAX_LEVEL then
+    if level and level >= MAX_LEVEL and not (ZugZugDB and ZugZugDB.levelingAtMax) then
       print("|cff00ccffZugZug:|r Reset is only available below max level.")
       return
     end
@@ -551,9 +551,11 @@ local function updateBanner(pick, forceShow)
 
   banner.pickAllBtn:SetEnabled(hasPoints and pick ~= nil)
 
-  -- Only show Reset below max level
+  -- Show Reset below max level, or at max if user has opted in
   local level = UnitLevel("player")
-  banner.resetBtn:SetShown(level and level < MAX_LEVEL)
+  local belowMax = level and level < MAX_LEVEL
+  local atMaxAllowed = level and level >= MAX_LEVEL and ZugZugDB.levelingAtMax
+  banner.resetBtn:SetShown(belowMax or atMaxAllowed)
 
   banner:Show()
 end
@@ -621,6 +623,70 @@ function ZZ:ToggleLevelingBanner()
   updateBanner(pick, true)
 end
 
+--- One-shot: reset the tree and apply the full leveling order. Used at max
+--- level (where the player typically has no free points) so a single click
+--- swaps them into the leveling build for open-world / delve content without
+--- needing to go through Reset → Pick All on the banner.
+function ZZ:ApplyLevelingBuild()
+  if InCombatLockdown() then
+    print("|cff00ccffZugZug:|r Cannot change talents in combat.")
+    return false
+  end
+
+  if not levelingOrder then
+    loadOrderForCurrentSpec()
+  end
+  if not levelingOrder then
+    print("|cff00ccffZugZug:|r No leveling data for your spec.")
+    return false
+  end
+
+  local specID = PlayerUtil and PlayerUtil.GetCurrentSpecID and PlayerUtil.GetCurrentSpecID()
+  if not specID then return false end
+  local configID = C_ClassTalents.GetActiveConfigID()
+  if not configID then return false end
+  local treeID = C_ClassTalents.GetTraitTreeForSpec(specID)
+  if not treeID then return false end
+
+  -- Stage the reset (frees all points but doesn't commit yet)
+  if not C_Traits.ResetTree(configID, treeID) then
+    print("|cff00ccffZugZug:|r Failed to reset talent tree.")
+    return false
+  end
+
+  -- Multi-pass staging so dependency chains can resolve.
+  local MAX_PASSES = 40
+  local staged = 0
+  for pass = 1, MAX_PASSES do
+    local progress = 0
+    local ranksApplied = {}
+    for _, pick in ipairs(levelingOrder) do
+      local info = C_Traits.GetNodeInfo(configID, pick.nodeID)
+      if info then
+        local appliedSoFar = ranksApplied[pick.nodeID] or 0
+        local neededRank = appliedSoFar + 1
+        if (info.currentRank or 0) < neededRank and info.canPurchaseRank then
+          if stageNode(configID, pick) then
+            progress = progress + 1
+            staged = staged + 1
+          end
+        end
+        ranksApplied[pick.nodeID] = neededRank
+      end
+    end
+    if progress == 0 then break end
+  end
+
+  if not C_ClassTalents.CommitConfig(configID) then
+    print("|cff00ccffZugZug:|r Failed to commit leveling build.")
+    return false
+  end
+
+  print(string.format("|cff00ccffZugZug:|r Leveling build applied (%d talents).", staged))
+  C_Timer.After(0.5, function() ZZ:RefreshLeveling() end)
+  return true
+end
+
 --- Called when the settings toggle flips. Hides the banner when disabled,
 --- or attempts to show it when re-enabled.
 function ZZ:UpdateLevelingEnabled()
@@ -648,7 +714,8 @@ frame:RegisterEvent("ACTIVE_TALENT_GROUP_CHANGED")
 frame:SetScript("OnEvent", function(_, event)
   if event == "PLAYER_LOGIN" then
     local level = UnitLevel("player")
-    if level and level >= MAX_LEVEL then return end
+    -- At max level, only continue if the user has opted in (open world / delve use).
+    if level and level >= MAX_LEVEL and not (ZugZugDB and ZugZugDB.levelingAtMax) then return end
     loadOrderForCurrentSpec()
     -- Delay initial check to let talent data load
     C_Timer.After(2, function()

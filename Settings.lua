@@ -203,6 +203,12 @@ local function CreateSettingsPanel()
   end)
   levelingToggle.text:SetText("Enable Leveling Guide  |cff888888(banner + bar button below max level)|r")
 
+  local atMaxToggle = CreateToggle(panel, 16, startY - 470, "Show at Max Level", "levelingAtMax", function()
+    local ZZ = _G.ZugZug
+    if ZZ and ZZ.UpdateLevelingEnabled then ZZ:UpdateLevelingEnabled() end
+  end)
+  atMaxToggle.text:SetText("Show at Max Level  |cff888888(for open world / delves)|r")
+
   return panel
 end
 

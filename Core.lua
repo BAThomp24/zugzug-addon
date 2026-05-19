@@ -37,6 +37,7 @@ local DEFAULTS = {
   barClamped = true,               -- when true, bar follows talent frame; when false, bar uses absolute screen position
   barPosition = nil,               -- { point, relativePoint, x, y, clamped }; nil = default anchor
   levelingEnabled = true,          -- show leveling guide banner + bar button below max level
+  levelingAtMax = false,           -- keep showing the leveling guide at max level (for open world / delves)
 }
 
 local function ensureDefaults()
