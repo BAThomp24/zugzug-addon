@@ -47,10 +47,29 @@ interface BossResult {
   buildCountsByDifficulty: Record<Difficulty, number[]>;
 }
 
+interface TalentSwap {
+  talentId: number;
+  name: string;
+  dungeonPct: number;
+  baselinePct: number;
+  direction: "up" | "down";
+}
+
+interface DungeonSwapEntry {
+  sampleSize: number;
+  /** New shape: talents picked at meaningfully higher rate than baseline. */
+  picks?: TalentSwap[];
+  /** New shape: talents picked at meaningfully lower rate (where the points came from). */
+  drops?: TalentSwap[];
+  /** @deprecated Pre-split flat list. Worker may still return this on older blobs. */
+  swaps?: TalentSwap[];
+}
+
 interface DungeonResult {
   name: string;
   bestBuildIndexByBucket: Record<KeyLevelBucket, number>;
   buildCountsByBucket: Record<KeyLevelBucket, number[]>;
+  swapsByBuild?: DungeonSwapEntry[];
 }
 
 interface ClassData {
@@ -133,6 +152,19 @@ function toLua(value: unknown, depth = 0): string {
 
 // ─── Build extraction ───────────────────────────────────────────────────────
 
+interface AddonSwap {
+  name: string;
+  dungeonPct: number;
+  baselinePct: number;
+}
+
+interface AddonDungeonSwap {
+  /** Talents to add (picked more on this dungeon vs. the build's baseline). */
+  picks: AddonSwap[];
+  /** Talents to remove (picked less — frees the points the picks cost). */
+  drops: AddonSwap[];
+}
+
 interface AddonBuild {
   spec: string;
   hero: string;
@@ -142,6 +174,8 @@ interface AddonBuild {
   trend: string;
   bosses?: string[];
   dungeons?: string[];
+  /** Map of dungeon name → "pick X, drop Y" recommendations for this build on that dungeon. */
+  dungeonSwaps?: Record<string, AddonDungeonSwap>;
 }
 
 /**
@@ -193,9 +227,8 @@ function extractMpBuilds(
   classData: ClassData,
   bucket: KeyLevelBucket,
 ): AddonBuild[] {
-  const builds = classData.mythicPlus.builds.filter(
-    (b) => b.id !== "other" && b.importString,
-  );
+  const allBuilds = classData.mythicPlus.builds;
+  const builds = allBuilds.filter((b) => b.id !== "other" && b.importString);
   const dungeons = classData.mythicPlus.dungeons;
 
   // Compute per-bucket popularity from dungeon counts
@@ -217,6 +250,42 @@ function extractMpBuilds(
 
     const pop = grandTotal > 0 ? Math.round(((totalsByBuild[buildIdx] ?? 0) / grandTotal) * 100) : 0;
 
+    // Per-dungeon talent swaps for this build. swapsByBuild on the website is
+    // parallel to the ORIGINAL builds array (including "other"), so use the
+    // original index, not the filtered-array index.
+    //
+    // The website's worker writes the new split shape (picks + drops), but
+    // older blobs only had a flat `swaps` array — handle both transparently.
+    const origIdx = allBuilds.indexOf(build);
+    const dungeonSwaps: Record<string, AddonDungeonSwap> = {};
+    for (const dungeon of dungeons) {
+      const entry = dungeon.swapsByBuild?.[origIdx];
+      if (!entry) continue;
+
+      let picks: TalentSwap[] = entry.picks ?? [];
+      let drops: TalentSwap[] = entry.drops ?? [];
+      // Fallback for pre-split blobs.
+      if (picks.length === 0 && drops.length === 0 && entry.swaps && entry.swaps.length > 0) {
+        picks = entry.swaps.filter((s) => s.direction === "up");
+        drops = entry.swaps.filter((s) => s.direction === "down");
+      }
+
+      if (picks.length === 0 && drops.length === 0) continue;
+
+      dungeonSwaps[dungeon.name] = {
+        picks: picks.map((s) => ({
+          name: s.name,
+          dungeonPct: s.dungeonPct,
+          baselinePct: s.baselinePct,
+        })),
+        drops: drops.map((s) => ({
+          name: s.name,
+          dungeonPct: s.dungeonPct,
+          baselinePct: s.baselinePct,
+        })),
+      };
+    }
+
     return {
       spec: build.spec,
       hero: build.hero,
@@ -225,6 +294,7 @@ function extractMpBuilds(
       popularity: pop,
       trend: build.trend,
       dungeons: bestFor.length > 0 ? bestFor : undefined,
+      dungeonSwaps: Object.keys(dungeonSwaps).length > 0 ? dungeonSwaps : undefined,
     };
   });
 }

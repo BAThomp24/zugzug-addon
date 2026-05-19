@@ -242,14 +242,17 @@ end
 ----------------------------------------------------------------------
 
 local suggestFrame = nil
-local SUGGEST_WIDTH = 320
-local SUGGEST_HEIGHT = 72
+local SUGGEST_WIDTH_BASE = 320
+local SUGGEST_WIDTH_WIDE = 400
+local SUGGEST_HEIGHT_BASE = 72
+local SUGGEST_HEIGHT_WITH_SWAPS = 158
+local MAX_SWAPS_SHOWN = 3
 
 local function createSuggestFrame()
   if suggestFrame then return suggestFrame end
 
   local f = CreateFrame("Frame", "ZugZugSuggestFrame", UIParent, "BackdropTemplate")
-  f:SetSize(SUGGEST_WIDTH, SUGGEST_HEIGHT)
+  f:SetSize(SUGGEST_WIDTH_BASE, SUGGEST_HEIGHT_BASE)
   f:SetPoint("TOP", UIParent, "TOP", 0, -120)
   f:SetFrameStrata("DIALOG")
   f:SetBackdrop({
@@ -281,9 +284,70 @@ local function createSuggestFrame()
   buildText:SetWordWrap(false)
   f.buildText = buildText
 
-  -- Apply button
+  -- Swap section (only shown when dungeon swaps are present)
+  local swapHeader = f:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+  swapHeader:SetPoint("TOPLEFT", f, "TOPLEFT", 10, -46)
+  swapHeader:SetTextColor(0.56, 0.75, 0.25)
+  swapHeader:Hide()
+  f.swapHeader = swapHeader
+
+  -- Each swap line is a small container: arrow + spell icon (hoverable for tooltip) + label
+  f.swapLines = {}
+  for i = 1, MAX_SWAPS_SHOWN do
+    local row = CreateFrame("Frame", nil, f)
+    row:SetHeight(16)
+    row:SetPoint("TOPLEFT", f, "TOPLEFT", 18, -58 - ((i - 1) * 18))
+    row:SetPoint("RIGHT", f, "RIGHT", -10, 0)
+    row:Hide()
+
+    -- Arrow indicator (▲/▼)
+    local arrow = row:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    arrow:SetPoint("LEFT", row, "LEFT", 0, 0)
+    arrow:SetWidth(12)
+    arrow:SetJustifyH("LEFT")
+    row.arrow = arrow
+
+    -- Spell icon (hoverable)
+    local iconBtn = CreateFrame("Frame", nil, row)
+    iconBtn:SetSize(14, 14)
+    iconBtn:SetPoint("LEFT", arrow, "RIGHT", 4, 0)
+    iconBtn:EnableMouse(true)
+
+    local iconTex = iconBtn:CreateTexture(nil, "ARTWORK")
+    iconTex:SetAllPoints(iconBtn)
+    iconTex:SetTexCoord(0.08, 0.92, 0.08, 0.92)
+    iconBtn.icon = iconTex
+
+    -- Subtle border around the icon
+    local iconBorder = iconBtn:CreateTexture(nil, "OVERLAY")
+    iconBorder:SetPoint("TOPLEFT", iconBtn, "TOPLEFT", -1, 1)
+    iconBorder:SetPoint("BOTTOMRIGHT", iconBtn, "BOTTOMRIGHT", 1, -1)
+    iconBorder:SetColorTexture(0, 0, 0, 0.6)
+    iconBorder:SetDrawLayer("BACKGROUND")
+
+    iconBtn:SetScript("OnEnter", function(self)
+      if not self.spellID then return end
+      GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+      GameTooltip:SetSpellByID(self.spellID)
+      GameTooltip:Show()
+    end)
+    iconBtn:SetScript("OnLeave", function() GameTooltip:Hide() end)
+    row.iconBtn = iconBtn
+
+    -- Label text to the right of the icon
+    local text = row:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    text:SetPoint("LEFT", iconBtn, "RIGHT", 6, 0)
+    text:SetPoint("RIGHT", row, "RIGHT", 0, 0)
+    text:SetJustifyH("LEFT")
+    text:SetWordWrap(false)
+    row.text = text
+
+    f.swapLines[i] = row
+  end
+
+  -- Apply Build button
   local applyBtn = CreateFrame("Button", nil, f, "BackdropTemplate")
-  applyBtn:SetSize(80, 22)
+  applyBtn:SetSize(90, 22)
   applyBtn:SetPoint("BOTTOMLEFT", f, "BOTTOMLEFT", 10, 8)
   applyBtn:SetBackdrop({
     bgFile = "Interface\\Buttons\\WHITE8x8",
@@ -294,7 +358,7 @@ local function createSuggestFrame()
   applyBtn:SetBackdropBorderColor(0.56, 0.75, 0.25, 0.6)
   local applyText = applyBtn:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
   applyText:SetPoint("CENTER")
-  applyText:SetText("|cff8fbf3fApply|r")
+  applyBtn.text = applyText
   applyBtn:SetScript("OnEnter", function(self)
     self:SetBackdropColor(0.56, 0.75, 0.25, 0.35)
   end)
@@ -308,6 +372,34 @@ local function createSuggestFrame()
     f:Hide()
   end)
   f.applyBtn = applyBtn
+
+  -- Apply Swaps button (shown only when dungeon swaps are present)
+  local applySwapsBtn = CreateFrame("Button", nil, f, "BackdropTemplate")
+  applySwapsBtn:SetSize(110, 22)
+  applySwapsBtn:SetBackdrop({
+    bgFile = "Interface\\Buttons\\WHITE8x8",
+    edgeFile = "Interface\\Buttons\\WHITE8x8",
+    edgeSize = 1,
+  })
+  applySwapsBtn:SetBackdropColor(0.30, 0.55, 0.85, 0.25)
+  applySwapsBtn:SetBackdropBorderColor(0.40, 0.65, 0.95, 0.7)
+  local applySwapsText = applySwapsBtn:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+  applySwapsText:SetPoint("CENTER")
+  applySwapsText:SetText("|cff80c8ffApply Swaps|r")
+  applySwapsBtn:SetScript("OnEnter", function(self)
+    self:SetBackdropColor(0.30, 0.55, 0.85, 0.40)
+  end)
+  applySwapsBtn:SetScript("OnLeave", function(self)
+    self:SetBackdropColor(0.30, 0.55, 0.85, 0.25)
+  end)
+  applySwapsBtn:SetScript("OnClick", function()
+    if f.currentSwaps and ZZ.ApplySwaps then
+      ZZ:ApplySwaps(f.currentSwaps)
+    end
+    f:Hide()
+  end)
+  applySwapsBtn:Hide()
+  f.applySwapsBtn = applySwapsBtn
 
   -- Dismiss button
   local dismissBtn = CreateFrame("Button", nil, f, "BackdropTemplate")
@@ -407,23 +499,136 @@ local function isAlreadyOnBuild(build)
 end
 
 --- Show a build suggestion popup.
-showSuggestion = function(contentLabel, build, contentType)
+--- swapData (optional): { picks = {...}, drops = {...} } — dungeon-specific
+--- talent recommendations relative to the build's all-dungeon baseline. Picks
+--- are taken on this dungeon, drops are where the points came from.
+showSuggestion = function(contentLabel, build, contentType, swapData)
   if not build or not build.importString or build.importString == "" then return end
   if InCombatLockdown() then return end
   if not ZugZugDB.suggestEnabled then return end
-  if isAlreadyOnBuild(build) then return end
+
+  local onBuild = isAlreadyOnBuild(build)
+  local picks = swapData and swapData.picks or nil
+  local drops = swapData and swapData.drops or nil
+  local hasSwaps = (picks and #picks > 0) or (drops and #drops > 0)
+
+  -- Already on the right build AND no extra swap info to convey → nothing useful to show.
+  if onBuild and not hasSwaps then return end
 
   local f = createSuggestFrame()
   f.currentBuild = build
+  f.currentSwaps = swapData
 
   local typeColor = contentType == "raid" and "|cffFFBF33" or "|cff66DD66"
-  f.header:SetText("|cff8fbf3fZugZug|r " .. typeColor .. contentLabel .. "|r")
+  -- If they're already on the recommended build, frame the popup as "tweaks for this dungeon"
+  -- so it doesn't read like a redundant suggestion. Otherwise use the original "Best for X" label.
+  if onBuild and hasSwaps then
+    f.header:SetText("|cff8fbf3fZugZug|r " .. typeColor .. "Dungeon tweaks: " .. contentLabel:gsub("^Best for ", "") .. "|r")
+  else
+    f.header:SetText("|cff8fbf3fZugZug|r " .. typeColor .. contentLabel .. "|r")
+  end
+
+  -- Configure button layout based on state.
+  -- States:
+  --   no swaps             → [Apply] [Dismiss]
+  --   swaps + on build     → [Apply Swaps] [Dismiss]
+  --   swaps + not on build → [Apply Build] [Apply Swaps] [Dismiss]
+  if hasSwaps then
+    f.applySwapsBtn:Show()
+    if onBuild then
+      f.applyBtn:Hide()
+      f.applySwapsBtn:ClearAllPoints()
+      f.applySwapsBtn:SetPoint("BOTTOMLEFT", f, "BOTTOMLEFT", 10, 8)
+      f.dismissBtn:ClearAllPoints()
+      f.dismissBtn:SetPoint("LEFT", f.applySwapsBtn, "RIGHT", 6, 0)
+    else
+      f.applyBtn:Show()
+      f.applyBtn.text:SetText("|cff8fbf3fApply Build|r")
+      f.applyBtn:ClearAllPoints()
+      f.applyBtn:SetPoint("BOTTOMLEFT", f, "BOTTOMLEFT", 10, 8)
+      f.applySwapsBtn:ClearAllPoints()
+      f.applySwapsBtn:SetPoint("LEFT", f.applyBtn, "RIGHT", 6, 0)
+      f.dismissBtn:ClearAllPoints()
+      f.dismissBtn:SetPoint("LEFT", f.applySwapsBtn, "RIGHT", 6, 0)
+    end
+  else
+    f.applyBtn:Show()
+    f.applyBtn.text:SetText("|cff8fbf3fApply|r")
+    f.applySwapsBtn:Hide()
+    f.applyBtn:ClearAllPoints()
+    f.applyBtn:SetPoint("BOTTOMLEFT", f, "BOTTOMLEFT", 10, 8)
+    f.dismissBtn:ClearAllPoints()
+    f.dismissBtn:SetPoint("LEFT", f.applyBtn, "RIGHT", 6, 0)
+  end
 
   local specHero = build.spec
   if build.hero and build.hero ~= "" then
     specHero = specHero .. " · " .. build.hero
   end
   f.buildText:SetText("|cffffffff" .. build.label .. "|r  |cff888888" .. specHero .. "  " .. build.popularity .. "%|r")
+
+  -- Swap section: interleave picks (▲) and drops (▼) up to MAX_SWAPS_SHOWN total.
+  -- We display picks first, then drops, so the most actionable info (what to TAKE)
+  -- leads — but drops come right after so the "to take X, drop Y" pairing is visible.
+  if hasSwaps then
+    f:SetWidth(SUGGEST_WIDTH_WIDE)
+    f:SetHeight(SUGGEST_HEIGHT_WITH_SWAPS)
+    f.swapHeader:SetText("Common picks for this dungeon:")
+    f.swapHeader:Show()
+
+    local rows = {}
+    if picks then
+      for _, p in ipairs(picks) do
+        rows[#rows + 1] = { kind = "pick", data = p }
+      end
+    end
+    if drops then
+      for _, d in ipairs(drops) do
+        rows[#rows + 1] = { kind = "drop", data = d }
+      end
+    end
+
+    -- Build a talent-name → { spellID, iconID } lookup from the player's tree
+    -- so we can render an icon + show a real spell tooltip on hover.
+    local lookup = (ZZ.GetTalentLookup and ZZ:GetTalentLookup()) or {}
+
+    for i = 1, MAX_SWAPS_SHOWN do
+      local line = f.swapLines[i]
+      local row = rows[i]
+      if row then
+        if row.kind == "pick" then
+          line.arrow:SetText("|cff5DCAA5\226\150\178|r")  -- ▲ green
+        else
+          line.arrow:SetText("|cffE06B6B\226\150\188|r")  -- ▼ red
+        end
+
+        local info = lookup[row.data.name]
+        if info and info.iconID then
+          line.iconBtn.icon:SetTexture(info.iconID)
+          line.iconBtn.spellID = info.spellID
+          line.iconBtn:Show()
+        else
+          -- Fallback: hide the icon when the talent isn't in the player's
+          -- current spec tree (e.g. cross-spec swap suggestions).
+          line.iconBtn.spellID = nil
+          line.iconBtn:Hide()
+        end
+
+        line.text:SetText("|cffffffff" .. row.data.name .. "|r  |cff888888"
+          .. row.data.dungeonPct .. "%|r |cff666666(vs " .. row.data.baselinePct .. "% baseline)|r")
+        line:Show()
+      else
+        line:Hide()
+      end
+    end
+  else
+    f:SetWidth(SUGGEST_WIDTH_BASE)
+    f:SetHeight(SUGGEST_HEIGHT_BASE)
+    f.swapHeader:Hide()
+    for i = 1, MAX_SWAPS_SHOWN do
+      f.swapLines[i]:Hide()
+    end
+  end
 
   f:Show()
 end
@@ -577,7 +782,8 @@ eventFrame:SetScript("OnEvent", function(_, event, ...)
       local best = findBestBuildForDungeon(builds, dungeonName)
       if best then
         local label = level > 0 and ("Best for " .. dungeonName .. " +" .. level) or ("Best for " .. dungeonName)
-        showSuggestion(label, best, "mp")
+        local swaps = best.dungeonSwaps and best.dungeonSwaps[dungeonName] or nil
+        showSuggestion(label, best, "mp", swaps)
       end
     end)
     if not ok then

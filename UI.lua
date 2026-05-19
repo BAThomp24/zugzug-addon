@@ -434,6 +434,190 @@ function ZZ:ApplyBuild(importString, label)
 end
 
 --- Apply a pending build after a spec switch completes.
+--- Walk the player's active talent tree and build a name → talent info lookup.
+--- Used by Suggest.lua (for popup icons + spell tooltips) and ApplySwaps internally.
+--- Returns a table: { [talentName] = { spellID, iconID, nodeID, entryID, isChoice } }
+function ZZ:GetTalentLookup()
+  local lookup = {}
+  local specID = PlayerUtil and PlayerUtil.GetCurrentSpecID and PlayerUtil.GetCurrentSpecID()
+  if not specID then return lookup end
+  local configID = C_ClassTalents.GetActiveConfigID()
+  if not configID then return lookup end
+  local treeID = C_ClassTalents.GetTraitTreeForSpec(specID)
+  if not treeID then return lookup end
+  local treeNodes = C_Traits.GetTreeNodes(treeID)
+  if not treeNodes then return lookup end
+
+  for _, nodeID in ipairs(treeNodes) do
+    local nodeInfo = C_Traits.GetNodeInfo(configID, nodeID)
+    if nodeInfo and nodeInfo.entryIDs then
+      local isChoice = #nodeInfo.entryIDs > 1
+      for _, entryID in ipairs(nodeInfo.entryIDs) do
+        local entryInfo = C_Traits.GetEntryInfo(configID, entryID)
+        if entryInfo and entryInfo.definitionID then
+          local defInfo = C_Traits.GetDefinitionInfo(entryInfo.definitionID)
+          if defInfo and defInfo.spellID then
+            local spell = C_Spell and C_Spell.GetSpellInfo and C_Spell.GetSpellInfo(defInfo.spellID)
+            local name = (defInfo.overrideName and defInfo.overrideName ~= "")
+              and defInfo.overrideName
+              or (spell and spell.name)
+            if name and name ~= "" and not lookup[name] then
+              lookup[name] = {
+                spellID = defInfo.spellID,
+                iconID = spell and spell.iconID,
+                nodeID = nodeID,
+                entryID = entryID,
+                isChoice = isChoice,
+              }
+            end
+          end
+        end
+      end
+    end
+  end
+  return lookup
+end
+
+--- Apply dungeon-specific talent swaps to the current loadout without resetting
+--- the tree. swapData is the new split shape: { picks = {...}, drops = {...} }.
+---
+--- Strategy:
+---   1. Refund all non-choice drops first (frees talent points).
+---   2. For each pick:
+---      - Choice node:  SetSelection on the entry (no point cost).
+---      - Non-choice:   PurchaseRank. If it fails because we're out of points,
+---                      refund the next-best non-choice drop to free one, then retry.
+---
+--- For choice nodes among the drops, we skip — picking the alternative entry
+--- via the corresponding "pick" already deselects them.
+function ZZ:ApplySwaps(swapData)
+  if not swapData then return false end
+  local picks = swapData.picks or {}
+  local drops = swapData.drops or {}
+  if #picks == 0 and #drops == 0 then return false end
+  if InCombatLockdown() then
+    print("|cff00ccffZugZug:|r Cannot change talents in combat.")
+    return false
+  end
+
+  local specID = PlayerUtil and PlayerUtil.GetCurrentSpecID and PlayerUtil.GetCurrentSpecID()
+  if not specID then return false end
+  local configID = C_ClassTalents.GetActiveConfigID()
+  if not configID then return false end
+  local treeID = C_ClassTalents.GetTraitTreeForSpec(specID)
+  if not treeID then return false end
+
+  local treeNodes = C_Traits.GetTreeNodes(treeID)
+  if not treeNodes then return false end
+
+  -- Build a talent-name → (nodeID, entryID, isChoice) lookup by walking the tree.
+  local lookup = {}
+  for _, nodeID in ipairs(treeNodes) do
+    local nodeInfo = C_Traits.GetNodeInfo(configID, nodeID)
+    if nodeInfo and nodeInfo.entryIDs then
+      local isChoice = #nodeInfo.entryIDs > 1
+      for _, entryID in ipairs(nodeInfo.entryIDs) do
+        local entryInfo = C_Traits.GetEntryInfo(configID, entryID)
+        if entryInfo and entryInfo.definitionID then
+          local defInfo = C_Traits.GetDefinitionInfo(entryInfo.definitionID)
+          if defInfo then
+            local name = defInfo.overrideName
+            if (not name or name == "") and defInfo.spellID and C_Spell and C_Spell.GetSpellInfo then
+              local spell = C_Spell.GetSpellInfo(defInfo.spellID)
+              name = spell and spell.name
+            end
+            if name and name ~= "" and not lookup[name] then
+              lookup[name] = { nodeID = nodeID, entryID = entryID, isChoice = isChoice }
+            end
+          end
+        end
+      end
+    end
+  end
+
+  -- Helper: try to refund one rank from any non-choice drop that's currently
+  -- purchased. Returns true if a point was freed.
+  local refundedDrops = {}
+  local function tryRefundOneDrop()
+    for _, d in ipairs(drops) do
+      local key = d.name
+      if not refundedDrops[key] then
+        local target = lookup[key]
+        if target and not target.isChoice then
+          local ni = C_Traits.GetNodeInfo(configID, target.nodeID)
+          if ni and (ni.currentRank or 0) > 0 and C_Traits.RefundRank then
+            if C_Traits.RefundRank(configID, target.nodeID) then
+              refundedDrops[key] = true
+              return true
+            end
+          end
+        end
+      end
+    end
+    return false
+  end
+
+  local applied = 0
+  local skipped = {}
+
+  -- Apply each pick. Choice nodes cost nothing; non-choice nodes may need a
+  -- point freed first via the drops list.
+  for _, p in ipairs(picks) do
+    local target = lookup[p.name]
+    if not target then
+      table.insert(skipped, p.name)
+    else
+      local nodeInfo = C_Traits.GetNodeInfo(configID, target.nodeID)
+      if nodeInfo then
+        if target.isChoice then
+          local active = nodeInfo.activeEntry and nodeInfo.activeEntry.entryID
+          if active ~= target.entryID then
+            if C_Traits.SetSelection(configID, target.nodeID, target.entryID) then
+              applied = applied + 1
+            end
+          end
+        else
+          local currentRank = nodeInfo.currentRank or 0
+          local maxRanks = nodeInfo.maxRanks or 1
+          if currentRank < maxRanks then
+            -- Refresh canPurchaseRank after any prior staging.
+            local ni = C_Traits.GetNodeInfo(configID, target.nodeID)
+            if ni and not ni.canPurchaseRank then
+              -- Free a point by refunding a non-choice drop, then retry.
+              tryRefundOneDrop()
+              ni = C_Traits.GetNodeInfo(configID, target.nodeID)
+            end
+            if ni and ni.canPurchaseRank and C_Traits.PurchaseRank(configID, target.nodeID) then
+              applied = applied + 1
+            end
+          end
+        end
+      end
+    end
+  end
+
+  if applied == 0 then
+    print("|cff00ccffZugZug:|r No swaps needed — already aligned.")
+    return false
+  end
+
+  if not C_Traits.ConfigHasStagedChanges(configID) then
+    print("|cff00ccffZugZug:|r No staged changes after swap pass.")
+    return false
+  end
+
+  if C_ClassTalents.CommitConfig(configID) then
+    print(string.format("|cff00ccffZugZug:|r Applied %d talent swap%s.", applied, applied == 1 and "" or "s"))
+    if #skipped > 0 then
+      print("|cff00ccffZugZug:|r Couldn't find: " .. table.concat(skipped, ", "))
+    end
+    return true
+  end
+
+  print("|cff00ccffZugZug:|r Failed to commit talent changes.")
+  return false
+end
+
 function ZZ:ApplyPendingBuild()
   if not pendingBuild then return end
   local build = pendingBuild
@@ -993,6 +1177,11 @@ local function createBar(parent)
     GameTooltip:Hide()
   end)
   cogBtn:SetScript("OnClick", function()
+    -- Toggle: if the settings panel is already open, close it.
+    if SettingsPanel and SettingsPanel:IsShown() then
+      HideUIPanel(SettingsPanel)
+      return
+    end
     local ok = pcall(function()
       if ZZ.settingsCategory then
         Settings.OpenToCategory(ZZ.settingsCategory:GetID())

@@ -216,6 +216,40 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Grimoire: Fel Ravager",
+                      dungeonPct = 39,
+                      baselinePct = 19,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Grimoire: Imp Lord",
+                      dungeonPct = 60,
+                      baselinePct = 81,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Grimoire: Imp Lord",
+                      dungeonPct = 95,
+                      baselinePct = 81,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Grimoire: Fel Ravager",
+                      dungeonPct = 5,
+                      baselinePct = 19,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Affliction",
@@ -225,6 +259,34 @@ ZugZugData = {
               popularity = 32,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Banish",
+                      dungeonPct = 79,
+                      baselinePct = 58,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Curse of Exhaustion",
+                      dungeonPct = 51,
+                      baselinePct = 59,
+                    },
+                    {
+                      name = "Blight of Tongues",
+                      dungeonPct = 76,
+                      baselinePct = 81,
+                    },
+                    {
+                      name = "Empowered Drain Life",
+                      dungeonPct = 25,
+                      baselinePct = 28,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Destruction",
@@ -234,6 +296,34 @@ ZugZugData = {
               popularity = 21,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Banish",
+                      dungeonPct = 49,
+                      baselinePct = 28,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Curse of Exhaustion",
+                      dungeonPct = 78,
+                      baselinePct = 86,
+                    },
+                    {
+                      name = "Infernal Bulwark",
+                      dungeonPct = 48,
+                      baselinePct = 55,
+                    },
+                    {
+                      name = "Teachings of the Black Harvest",
+                      dungeonPct = 4,
+                      baselinePct = 10,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Destruction",
@@ -243,6 +333,81 @@ ZugZugData = {
               popularity = 9,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Ichor of Devils",
+                      dungeonPct = 51,
+                      baselinePct = 39,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Improved Havoc",
+                      dungeonPct = 51,
+                      baselinePct = 64,
+                    },
+                    {
+                      name = "Frequent Donor",
+                      dungeonPct = 49,
+                      baselinePct = 61,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Frequent Donor",
+                      dungeonPct = 74,
+                      baselinePct = 61,
+                    },
+                    {
+                      name = "Fiendish Stride",
+                      dungeonPct = 71,
+                      baselinePct = 58,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Ichor of Devils",
+                      dungeonPct = 26,
+                      baselinePct = 39,
+                    },
+                    {
+                      name = "Improved Havoc",
+                      dungeonPct = 52,
+                      baselinePct = 64,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Banish",
+                      dungeonPct = 38,
+                      baselinePct = 18,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Rain of Fire",
+                      dungeonPct = 70,
+                      baselinePct = 81,
+                    },
+                    {
+                      name = "Inferno",
+                      dungeonPct = 59,
+                      baselinePct = 69,
+                    },
+                    {
+                      name = "Curse of Exhaustion",
+                      dungeonPct = 85,
+                      baselinePct = 93,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Destruction",
@@ -252,6 +417,7 @@ ZugZugData = {
               popularity = 2,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Affliction",
@@ -261,6 +427,7 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Demonology",
@@ -270,6 +437,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Demonology",
@@ -279,6 +447,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Affliction",
@@ -288,6 +457,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["15+"] = {
@@ -308,6 +478,40 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Grimoire: Fel Ravager",
+                      dungeonPct = 39,
+                      baselinePct = 19,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Grimoire: Imp Lord",
+                      dungeonPct = 60,
+                      baselinePct = 81,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Grimoire: Imp Lord",
+                      dungeonPct = 95,
+                      baselinePct = 81,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Grimoire: Fel Ravager",
+                      dungeonPct = 5,
+                      baselinePct = 19,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Affliction",
@@ -317,6 +521,34 @@ ZugZugData = {
               popularity = 32,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Banish",
+                      dungeonPct = 79,
+                      baselinePct = 58,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Curse of Exhaustion",
+                      dungeonPct = 51,
+                      baselinePct = 59,
+                    },
+                    {
+                      name = "Blight of Tongues",
+                      dungeonPct = 76,
+                      baselinePct = 81,
+                    },
+                    {
+                      name = "Empowered Drain Life",
+                      dungeonPct = 25,
+                      baselinePct = 28,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Destruction",
@@ -326,6 +558,34 @@ ZugZugData = {
               popularity = 21,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Banish",
+                      dungeonPct = 49,
+                      baselinePct = 28,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Curse of Exhaustion",
+                      dungeonPct = 78,
+                      baselinePct = 86,
+                    },
+                    {
+                      name = "Infernal Bulwark",
+                      dungeonPct = 48,
+                      baselinePct = 55,
+                    },
+                    {
+                      name = "Teachings of the Black Harvest",
+                      dungeonPct = 4,
+                      baselinePct = 10,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Destruction",
@@ -335,6 +595,81 @@ ZugZugData = {
               popularity = 9,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Ichor of Devils",
+                      dungeonPct = 51,
+                      baselinePct = 39,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Improved Havoc",
+                      dungeonPct = 51,
+                      baselinePct = 64,
+                    },
+                    {
+                      name = "Frequent Donor",
+                      dungeonPct = 49,
+                      baselinePct = 61,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Frequent Donor",
+                      dungeonPct = 74,
+                      baselinePct = 61,
+                    },
+                    {
+                      name = "Fiendish Stride",
+                      dungeonPct = 71,
+                      baselinePct = 58,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Ichor of Devils",
+                      dungeonPct = 26,
+                      baselinePct = 39,
+                    },
+                    {
+                      name = "Improved Havoc",
+                      dungeonPct = 52,
+                      baselinePct = 64,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Banish",
+                      dungeonPct = 38,
+                      baselinePct = 18,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Rain of Fire",
+                      dungeonPct = 70,
+                      baselinePct = 81,
+                    },
+                    {
+                      name = "Inferno",
+                      dungeonPct = 59,
+                      baselinePct = 69,
+                    },
+                    {
+                      name = "Curse of Exhaustion",
+                      dungeonPct = 85,
+                      baselinePct = 93,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Destruction",
@@ -344,6 +679,7 @@ ZugZugData = {
               popularity = 2,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Affliction",
@@ -353,6 +689,7 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Demonology",
@@ -362,6 +699,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Demonology",
@@ -371,6 +709,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Affliction",
@@ -380,6 +719,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["18+"] = {
@@ -400,6 +740,40 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Grimoire: Fel Ravager",
+                      dungeonPct = 39,
+                      baselinePct = 19,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Grimoire: Imp Lord",
+                      dungeonPct = 60,
+                      baselinePct = 81,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Grimoire: Imp Lord",
+                      dungeonPct = 95,
+                      baselinePct = 81,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Grimoire: Fel Ravager",
+                      dungeonPct = 5,
+                      baselinePct = 19,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Affliction",
@@ -409,6 +783,34 @@ ZugZugData = {
               popularity = 36,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Banish",
+                      dungeonPct = 79,
+                      baselinePct = 58,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Curse of Exhaustion",
+                      dungeonPct = 51,
+                      baselinePct = 59,
+                    },
+                    {
+                      name = "Blight of Tongues",
+                      dungeonPct = 76,
+                      baselinePct = 81,
+                    },
+                    {
+                      name = "Empowered Drain Life",
+                      dungeonPct = 25,
+                      baselinePct = 28,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Destruction",
@@ -418,6 +820,34 @@ ZugZugData = {
               popularity = 6,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Banish",
+                      dungeonPct = 49,
+                      baselinePct = 28,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Curse of Exhaustion",
+                      dungeonPct = 78,
+                      baselinePct = 86,
+                    },
+                    {
+                      name = "Infernal Bulwark",
+                      dungeonPct = 48,
+                      baselinePct = 55,
+                    },
+                    {
+                      name = "Teachings of the Black Harvest",
+                      dungeonPct = 4,
+                      baselinePct = 10,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Destruction",
@@ -427,6 +857,81 @@ ZugZugData = {
               popularity = 2,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Ichor of Devils",
+                      dungeonPct = 51,
+                      baselinePct = 39,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Improved Havoc",
+                      dungeonPct = 51,
+                      baselinePct = 64,
+                    },
+                    {
+                      name = "Frequent Donor",
+                      dungeonPct = 49,
+                      baselinePct = 61,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Frequent Donor",
+                      dungeonPct = 74,
+                      baselinePct = 61,
+                    },
+                    {
+                      name = "Fiendish Stride",
+                      dungeonPct = 71,
+                      baselinePct = 58,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Ichor of Devils",
+                      dungeonPct = 26,
+                      baselinePct = 39,
+                    },
+                    {
+                      name = "Improved Havoc",
+                      dungeonPct = 52,
+                      baselinePct = 64,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Banish",
+                      dungeonPct = 38,
+                      baselinePct = 18,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Rain of Fire",
+                      dungeonPct = 70,
+                      baselinePct = 81,
+                    },
+                    {
+                      name = "Inferno",
+                      dungeonPct = 59,
+                      baselinePct = 69,
+                    },
+                    {
+                      name = "Curse of Exhaustion",
+                      dungeonPct = 85,
+                      baselinePct = 93,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Destruction",
@@ -436,6 +941,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Affliction",
@@ -445,6 +951,7 @@ ZugZugData = {
               popularity = 2,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Demonology",
@@ -454,6 +961,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Demonology",
@@ -463,6 +971,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Affliction",
@@ -472,6 +981,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["20+"] = {
@@ -492,6 +1002,40 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Grimoire: Fel Ravager",
+                      dungeonPct = 39,
+                      baselinePct = 19,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Grimoire: Imp Lord",
+                      dungeonPct = 60,
+                      baselinePct = 81,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Grimoire: Imp Lord",
+                      dungeonPct = 95,
+                      baselinePct = 81,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Grimoire: Fel Ravager",
+                      dungeonPct = 5,
+                      baselinePct = 19,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Affliction",
@@ -501,6 +1045,34 @@ ZugZugData = {
               popularity = 3,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Banish",
+                      dungeonPct = 79,
+                      baselinePct = 58,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Curse of Exhaustion",
+                      dungeonPct = 51,
+                      baselinePct = 59,
+                    },
+                    {
+                      name = "Blight of Tongues",
+                      dungeonPct = 76,
+                      baselinePct = 81,
+                    },
+                    {
+                      name = "Empowered Drain Life",
+                      dungeonPct = 25,
+                      baselinePct = 28,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Destruction",
@@ -510,6 +1082,34 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Banish",
+                      dungeonPct = 49,
+                      baselinePct = 28,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Curse of Exhaustion",
+                      dungeonPct = 78,
+                      baselinePct = 86,
+                    },
+                    {
+                      name = "Infernal Bulwark",
+                      dungeonPct = 48,
+                      baselinePct = 55,
+                    },
+                    {
+                      name = "Teachings of the Black Harvest",
+                      dungeonPct = 4,
+                      baselinePct = 10,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Destruction",
@@ -519,6 +1119,81 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Ichor of Devils",
+                      dungeonPct = 51,
+                      baselinePct = 39,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Improved Havoc",
+                      dungeonPct = 51,
+                      baselinePct = 64,
+                    },
+                    {
+                      name = "Frequent Donor",
+                      dungeonPct = 49,
+                      baselinePct = 61,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Frequent Donor",
+                      dungeonPct = 74,
+                      baselinePct = 61,
+                    },
+                    {
+                      name = "Fiendish Stride",
+                      dungeonPct = 71,
+                      baselinePct = 58,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Ichor of Devils",
+                      dungeonPct = 26,
+                      baselinePct = 39,
+                    },
+                    {
+                      name = "Improved Havoc",
+                      dungeonPct = 52,
+                      baselinePct = 64,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Banish",
+                      dungeonPct = 38,
+                      baselinePct = 18,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Rain of Fire",
+                      dungeonPct = 70,
+                      baselinePct = 81,
+                    },
+                    {
+                      name = "Inferno",
+                      dungeonPct = 59,
+                      baselinePct = 69,
+                    },
+                    {
+                      name = "Curse of Exhaustion",
+                      dungeonPct = 85,
+                      baselinePct = 93,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Destruction",
@@ -528,6 +1203,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Affliction",
@@ -537,6 +1213,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Demonology",
@@ -546,6 +1223,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Demonology",
@@ -555,6 +1233,7 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Affliction",
@@ -564,6 +1243,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
         },
@@ -740,6 +1420,7 @@ ZugZugData = {
                 "Seat of Triumvirate",
                 "Skyreach",
               },
+              dungeonSwaps = nil,
             },
             {
               spec = "Arcane",
@@ -753,6 +1434,7 @@ ZugZugData = {
                 "Nexus-Point Xenas",
                 "Windrunner Spire",
               },
+              dungeonSwaps = nil,
             },
             {
               spec = "Fire",
@@ -762,6 +1444,7 @@ ZugZugData = {
               popularity = 33,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Fire",
@@ -771,6 +1454,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Fire",
@@ -780,6 +1464,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Arcane",
@@ -789,6 +1474,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["15+"] = {
@@ -806,6 +1492,7 @@ ZugZugData = {
                 "Seat of Triumvirate",
                 "Skyreach",
               },
+              dungeonSwaps = nil,
             },
             {
               spec = "Arcane",
@@ -819,6 +1506,7 @@ ZugZugData = {
                 "Nexus-Point Xenas",
                 "Windrunner Spire",
               },
+              dungeonSwaps = nil,
             },
             {
               spec = "Fire",
@@ -828,6 +1516,7 @@ ZugZugData = {
               popularity = 33,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Fire",
@@ -837,6 +1526,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Fire",
@@ -846,6 +1536,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Arcane",
@@ -855,6 +1546,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["18+"] = {
@@ -875,6 +1567,7 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = nil,
             },
             {
               spec = "Arcane",
@@ -884,6 +1577,7 @@ ZugZugData = {
               popularity = 17,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Fire",
@@ -893,6 +1587,7 @@ ZugZugData = {
               popularity = 14,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Fire",
@@ -902,6 +1597,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Fire",
@@ -911,6 +1607,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Arcane",
@@ -920,6 +1617,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["20+"] = {
@@ -940,6 +1638,7 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = nil,
             },
             {
               spec = "Arcane",
@@ -949,6 +1648,7 @@ ZugZugData = {
               popularity = 5,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Fire",
@@ -958,6 +1658,7 @@ ZugZugData = {
               popularity = 2,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Fire",
@@ -967,6 +1668,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Fire",
@@ -976,6 +1678,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Arcane",
@@ -985,6 +1688,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
         },
@@ -1147,6 +1851,149 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 78,
+                      baselinePct = 62,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 22,
+                      baselinePct = 38,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 59,
+                      baselinePct = 38,
+                    },
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 86,
+                      baselinePct = 73,
+                    },
+                    {
+                      name = "Thunderous Paws",
+                      dungeonPct = 94,
+                      baselinePct = 82,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 41,
+                      baselinePct = 62,
+                    },
+                    {
+                      name = "Spirit Wolf",
+                      dungeonPct = 6,
+                      baselinePct = 18,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 57,
+                      baselinePct = 38,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 43,
+                      baselinePct = 62,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Earthgrab Totem",
+                      dungeonPct = 52,
+                      baselinePct = 34,
+                    },
+                    {
+                      name = "Thunderous Paws",
+                      dungeonPct = 96,
+                      baselinePct = 82,
+                    },
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 52,
+                      baselinePct = 38,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 48,
+                      baselinePct = 62,
+                    },
+                    {
+                      name = "Spirit Wolf",
+                      dungeonPct = 4,
+                      baselinePct = 18,
+                    },
+                    {
+                      name = "Poison Cleansing Totem",
+                      dungeonPct = 10,
+                      baselinePct = 23,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 90,
+                      baselinePct = 62,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 10,
+                      baselinePct = 38,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Poison Cleansing Totem",
+                      dungeonPct = 65,
+                      baselinePct = 23,
+                    },
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 75,
+                      baselinePct = 62,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 58,
+                      baselinePct = 73,
+                    },
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 25,
+                      baselinePct = 38,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Enhancement",
@@ -1156,6 +2003,40 @@ ZugZugData = {
               popularity = 38,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 24,
+                      baselinePct = 9,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 76,
+                      baselinePct = 91,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Poison Cleansing Totem",
+                      dungeonPct = 60,
+                      baselinePct = 30,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 71,
+                      baselinePct = 86,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Enhancement",
@@ -1165,6 +2046,180 @@ ZugZugData = {
               popularity = 12,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Poison Cleansing Totem",
+                      dungeonPct = 38,
+                      baselinePct = 23,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Purge",
+                      dungeonPct = 60,
+                      baselinePct = 77,
+                    },
+                  },
+                },
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Purge",
+                      dungeonPct = 92,
+                      baselinePct = 77,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Poison Cleansing Totem",
+                      dungeonPct = 15,
+                      baselinePct = 23,
+                    },
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 70,
+                      baselinePct = 77,
+                    },
+                    {
+                      name = "Cleanse Spirit",
+                      dungeonPct = 74,
+                      baselinePct = 81,
+                    },
+                  },
+                },
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Purge",
+                      dungeonPct = 91,
+                      baselinePct = 77,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Tremor Totem",
+                      dungeonPct = 2,
+                      baselinePct = 12,
+                    },
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 2,
+                      baselinePct = 8,
+                    },
+                    {
+                      name = "Refreshing Waters",
+                      dungeonPct = 51,
+                      baselinePct = 55,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Cleanse Spirit",
+                      dungeonPct = 96,
+                      baselinePct = 81,
+                    },
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 89,
+                      baselinePct = 77,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Poison Cleansing Totem",
+                      dungeonPct = 12,
+                      baselinePct = 23,
+                    },
+                    {
+                      name = "Totemic Surge",
+                      dungeonPct = 16,
+                      baselinePct = 27,
+                    },
+                    {
+                      name = "Refreshing Waters",
+                      dungeonPct = 47,
+                      baselinePct = 55,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Thunderous Paws",
+                      dungeonPct = 79,
+                      baselinePct = 64,
+                    },
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 90,
+                      baselinePct = 77,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Spirit Wolf",
+                      dungeonPct = 21,
+                      baselinePct = 36,
+                    },
+                    {
+                      name = "Cleanse Spirit",
+                      dungeonPct = 66,
+                      baselinePct = 81,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 29,
+                      baselinePct = 8,
+                    },
+                    {
+                      name = "Spirit Wolf",
+                      dungeonPct = 49,
+                      baselinePct = 36,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 71,
+                      baselinePct = 92,
+                    },
+                    {
+                      name = "Thunderous Paws",
+                      dungeonPct = 51,
+                      baselinePct = 64,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Poison Cleansing Totem",
+                      dungeonPct = 54,
+                      baselinePct = 23,
+                    },
+                    {
+                      name = "Cleanse Spirit",
+                      dungeonPct = 99,
+                      baselinePct = 81,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 63,
+                      baselinePct = 77,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Enhancement",
@@ -1174,6 +2229,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Elemental",
@@ -1183,6 +2239,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Elemental",
@@ -1192,6 +2249,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["15+"] = {
@@ -1212,6 +2270,149 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 78,
+                      baselinePct = 62,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 22,
+                      baselinePct = 38,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 59,
+                      baselinePct = 38,
+                    },
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 86,
+                      baselinePct = 73,
+                    },
+                    {
+                      name = "Thunderous Paws",
+                      dungeonPct = 94,
+                      baselinePct = 82,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 41,
+                      baselinePct = 62,
+                    },
+                    {
+                      name = "Spirit Wolf",
+                      dungeonPct = 6,
+                      baselinePct = 18,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 57,
+                      baselinePct = 38,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 43,
+                      baselinePct = 62,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Earthgrab Totem",
+                      dungeonPct = 52,
+                      baselinePct = 34,
+                    },
+                    {
+                      name = "Thunderous Paws",
+                      dungeonPct = 96,
+                      baselinePct = 82,
+                    },
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 52,
+                      baselinePct = 38,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 48,
+                      baselinePct = 62,
+                    },
+                    {
+                      name = "Spirit Wolf",
+                      dungeonPct = 4,
+                      baselinePct = 18,
+                    },
+                    {
+                      name = "Poison Cleansing Totem",
+                      dungeonPct = 10,
+                      baselinePct = 23,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 90,
+                      baselinePct = 62,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 10,
+                      baselinePct = 38,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Poison Cleansing Totem",
+                      dungeonPct = 65,
+                      baselinePct = 23,
+                    },
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 75,
+                      baselinePct = 62,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 58,
+                      baselinePct = 73,
+                    },
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 25,
+                      baselinePct = 38,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Enhancement",
@@ -1221,6 +2422,40 @@ ZugZugData = {
               popularity = 38,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 24,
+                      baselinePct = 9,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 76,
+                      baselinePct = 91,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Poison Cleansing Totem",
+                      dungeonPct = 60,
+                      baselinePct = 30,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 71,
+                      baselinePct = 86,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Enhancement",
@@ -1230,6 +2465,180 @@ ZugZugData = {
               popularity = 12,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Poison Cleansing Totem",
+                      dungeonPct = 38,
+                      baselinePct = 23,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Purge",
+                      dungeonPct = 60,
+                      baselinePct = 77,
+                    },
+                  },
+                },
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Purge",
+                      dungeonPct = 92,
+                      baselinePct = 77,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Poison Cleansing Totem",
+                      dungeonPct = 15,
+                      baselinePct = 23,
+                    },
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 70,
+                      baselinePct = 77,
+                    },
+                    {
+                      name = "Cleanse Spirit",
+                      dungeonPct = 74,
+                      baselinePct = 81,
+                    },
+                  },
+                },
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Purge",
+                      dungeonPct = 91,
+                      baselinePct = 77,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Tremor Totem",
+                      dungeonPct = 2,
+                      baselinePct = 12,
+                    },
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 2,
+                      baselinePct = 8,
+                    },
+                    {
+                      name = "Refreshing Waters",
+                      dungeonPct = 51,
+                      baselinePct = 55,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Cleanse Spirit",
+                      dungeonPct = 96,
+                      baselinePct = 81,
+                    },
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 89,
+                      baselinePct = 77,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Poison Cleansing Totem",
+                      dungeonPct = 12,
+                      baselinePct = 23,
+                    },
+                    {
+                      name = "Totemic Surge",
+                      dungeonPct = 16,
+                      baselinePct = 27,
+                    },
+                    {
+                      name = "Refreshing Waters",
+                      dungeonPct = 47,
+                      baselinePct = 55,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Thunderous Paws",
+                      dungeonPct = 79,
+                      baselinePct = 64,
+                    },
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 90,
+                      baselinePct = 77,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Spirit Wolf",
+                      dungeonPct = 21,
+                      baselinePct = 36,
+                    },
+                    {
+                      name = "Cleanse Spirit",
+                      dungeonPct = 66,
+                      baselinePct = 81,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 29,
+                      baselinePct = 8,
+                    },
+                    {
+                      name = "Spirit Wolf",
+                      dungeonPct = 49,
+                      baselinePct = 36,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 71,
+                      baselinePct = 92,
+                    },
+                    {
+                      name = "Thunderous Paws",
+                      dungeonPct = 51,
+                      baselinePct = 64,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Poison Cleansing Totem",
+                      dungeonPct = 54,
+                      baselinePct = 23,
+                    },
+                    {
+                      name = "Cleanse Spirit",
+                      dungeonPct = 99,
+                      baselinePct = 81,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 63,
+                      baselinePct = 77,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Enhancement",
@@ -1239,6 +2648,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Elemental",
@@ -1248,6 +2658,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Elemental",
@@ -1257,6 +2668,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["18+"] = {
@@ -1277,6 +2689,149 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 78,
+                      baselinePct = 62,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 22,
+                      baselinePct = 38,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 59,
+                      baselinePct = 38,
+                    },
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 86,
+                      baselinePct = 73,
+                    },
+                    {
+                      name = "Thunderous Paws",
+                      dungeonPct = 94,
+                      baselinePct = 82,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 41,
+                      baselinePct = 62,
+                    },
+                    {
+                      name = "Spirit Wolf",
+                      dungeonPct = 6,
+                      baselinePct = 18,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 57,
+                      baselinePct = 38,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 43,
+                      baselinePct = 62,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Earthgrab Totem",
+                      dungeonPct = 52,
+                      baselinePct = 34,
+                    },
+                    {
+                      name = "Thunderous Paws",
+                      dungeonPct = 96,
+                      baselinePct = 82,
+                    },
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 52,
+                      baselinePct = 38,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 48,
+                      baselinePct = 62,
+                    },
+                    {
+                      name = "Spirit Wolf",
+                      dungeonPct = 4,
+                      baselinePct = 18,
+                    },
+                    {
+                      name = "Poison Cleansing Totem",
+                      dungeonPct = 10,
+                      baselinePct = 23,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 90,
+                      baselinePct = 62,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 10,
+                      baselinePct = 38,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Poison Cleansing Totem",
+                      dungeonPct = 65,
+                      baselinePct = 23,
+                    },
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 75,
+                      baselinePct = 62,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 58,
+                      baselinePct = 73,
+                    },
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 25,
+                      baselinePct = 38,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Enhancement",
@@ -1286,6 +2841,40 @@ ZugZugData = {
               popularity = 38,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 24,
+                      baselinePct = 9,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 76,
+                      baselinePct = 91,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Poison Cleansing Totem",
+                      dungeonPct = 60,
+                      baselinePct = 30,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 71,
+                      baselinePct = 86,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Enhancement",
@@ -1295,6 +2884,180 @@ ZugZugData = {
               popularity = 12,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Poison Cleansing Totem",
+                      dungeonPct = 38,
+                      baselinePct = 23,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Purge",
+                      dungeonPct = 60,
+                      baselinePct = 77,
+                    },
+                  },
+                },
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Purge",
+                      dungeonPct = 92,
+                      baselinePct = 77,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Poison Cleansing Totem",
+                      dungeonPct = 15,
+                      baselinePct = 23,
+                    },
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 70,
+                      baselinePct = 77,
+                    },
+                    {
+                      name = "Cleanse Spirit",
+                      dungeonPct = 74,
+                      baselinePct = 81,
+                    },
+                  },
+                },
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Purge",
+                      dungeonPct = 91,
+                      baselinePct = 77,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Tremor Totem",
+                      dungeonPct = 2,
+                      baselinePct = 12,
+                    },
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 2,
+                      baselinePct = 8,
+                    },
+                    {
+                      name = "Refreshing Waters",
+                      dungeonPct = 51,
+                      baselinePct = 55,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Cleanse Spirit",
+                      dungeonPct = 96,
+                      baselinePct = 81,
+                    },
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 89,
+                      baselinePct = 77,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Poison Cleansing Totem",
+                      dungeonPct = 12,
+                      baselinePct = 23,
+                    },
+                    {
+                      name = "Totemic Surge",
+                      dungeonPct = 16,
+                      baselinePct = 27,
+                    },
+                    {
+                      name = "Refreshing Waters",
+                      dungeonPct = 47,
+                      baselinePct = 55,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Thunderous Paws",
+                      dungeonPct = 79,
+                      baselinePct = 64,
+                    },
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 90,
+                      baselinePct = 77,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Spirit Wolf",
+                      dungeonPct = 21,
+                      baselinePct = 36,
+                    },
+                    {
+                      name = "Cleanse Spirit",
+                      dungeonPct = 66,
+                      baselinePct = 81,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 29,
+                      baselinePct = 8,
+                    },
+                    {
+                      name = "Spirit Wolf",
+                      dungeonPct = 49,
+                      baselinePct = 36,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 71,
+                      baselinePct = 92,
+                    },
+                    {
+                      name = "Thunderous Paws",
+                      dungeonPct = 51,
+                      baselinePct = 64,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Poison Cleansing Totem",
+                      dungeonPct = 54,
+                      baselinePct = 23,
+                    },
+                    {
+                      name = "Cleanse Spirit",
+                      dungeonPct = 99,
+                      baselinePct = 81,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 63,
+                      baselinePct = 77,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Enhancement",
@@ -1304,6 +3067,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Elemental",
@@ -1313,6 +3077,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Elemental",
@@ -1322,6 +3087,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["20+"] = {
@@ -1342,6 +3108,149 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 78,
+                      baselinePct = 62,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 22,
+                      baselinePct = 38,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 59,
+                      baselinePct = 38,
+                    },
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 86,
+                      baselinePct = 73,
+                    },
+                    {
+                      name = "Thunderous Paws",
+                      dungeonPct = 94,
+                      baselinePct = 82,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 41,
+                      baselinePct = 62,
+                    },
+                    {
+                      name = "Spirit Wolf",
+                      dungeonPct = 6,
+                      baselinePct = 18,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 57,
+                      baselinePct = 38,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 43,
+                      baselinePct = 62,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Earthgrab Totem",
+                      dungeonPct = 52,
+                      baselinePct = 34,
+                    },
+                    {
+                      name = "Thunderous Paws",
+                      dungeonPct = 96,
+                      baselinePct = 82,
+                    },
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 52,
+                      baselinePct = 38,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 48,
+                      baselinePct = 62,
+                    },
+                    {
+                      name = "Spirit Wolf",
+                      dungeonPct = 4,
+                      baselinePct = 18,
+                    },
+                    {
+                      name = "Poison Cleansing Totem",
+                      dungeonPct = 10,
+                      baselinePct = 23,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 90,
+                      baselinePct = 62,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 10,
+                      baselinePct = 38,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Poison Cleansing Totem",
+                      dungeonPct = 65,
+                      baselinePct = 23,
+                    },
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 75,
+                      baselinePct = 62,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 58,
+                      baselinePct = 73,
+                    },
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 25,
+                      baselinePct = 38,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Enhancement",
@@ -1351,6 +3260,40 @@ ZugZugData = {
               popularity = 25,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 24,
+                      baselinePct = 9,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 76,
+                      baselinePct = 91,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Poison Cleansing Totem",
+                      dungeonPct = 60,
+                      baselinePct = 30,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 71,
+                      baselinePct = 86,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Enhancement",
@@ -1360,6 +3303,180 @@ ZugZugData = {
               popularity = 3,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Poison Cleansing Totem",
+                      dungeonPct = 38,
+                      baselinePct = 23,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Purge",
+                      dungeonPct = 60,
+                      baselinePct = 77,
+                    },
+                  },
+                },
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Purge",
+                      dungeonPct = 92,
+                      baselinePct = 77,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Poison Cleansing Totem",
+                      dungeonPct = 15,
+                      baselinePct = 23,
+                    },
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 70,
+                      baselinePct = 77,
+                    },
+                    {
+                      name = "Cleanse Spirit",
+                      dungeonPct = 74,
+                      baselinePct = 81,
+                    },
+                  },
+                },
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Purge",
+                      dungeonPct = 91,
+                      baselinePct = 77,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Tremor Totem",
+                      dungeonPct = 2,
+                      baselinePct = 12,
+                    },
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 2,
+                      baselinePct = 8,
+                    },
+                    {
+                      name = "Refreshing Waters",
+                      dungeonPct = 51,
+                      baselinePct = 55,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Cleanse Spirit",
+                      dungeonPct = 96,
+                      baselinePct = 81,
+                    },
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 89,
+                      baselinePct = 77,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Poison Cleansing Totem",
+                      dungeonPct = 12,
+                      baselinePct = 23,
+                    },
+                    {
+                      name = "Totemic Surge",
+                      dungeonPct = 16,
+                      baselinePct = 27,
+                    },
+                    {
+                      name = "Refreshing Waters",
+                      dungeonPct = 47,
+                      baselinePct = 55,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Thunderous Paws",
+                      dungeonPct = 79,
+                      baselinePct = 64,
+                    },
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 90,
+                      baselinePct = 77,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Spirit Wolf",
+                      dungeonPct = 21,
+                      baselinePct = 36,
+                    },
+                    {
+                      name = "Cleanse Spirit",
+                      dungeonPct = 66,
+                      baselinePct = 81,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 29,
+                      baselinePct = 8,
+                    },
+                    {
+                      name = "Spirit Wolf",
+                      dungeonPct = 49,
+                      baselinePct = 36,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 71,
+                      baselinePct = 92,
+                    },
+                    {
+                      name = "Thunderous Paws",
+                      dungeonPct = 51,
+                      baselinePct = 64,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Poison Cleansing Totem",
+                      dungeonPct = 54,
+                      baselinePct = 23,
+                    },
+                    {
+                      name = "Cleanse Spirit",
+                      dungeonPct = 99,
+                      baselinePct = 81,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 63,
+                      baselinePct = 77,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Enhancement",
@@ -1369,6 +3486,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Elemental",
@@ -1378,6 +3496,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Elemental",
@@ -1387,6 +3506,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
         },
@@ -1491,6 +3611,256 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 64,
+                      baselinePct = 42,
+                    },
+                    {
+                      name = "Poison Cleansing Totem",
+                      dungeonPct = 30,
+                      baselinePct = 13,
+                    },
+                    {
+                      name = "Earth Elemental",
+                      dungeonPct = 65,
+                      baselinePct = 49,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Purge",
+                      dungeonPct = 28,
+                      baselinePct = 64,
+                    },
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 34,
+                      baselinePct = 56,
+                    },
+                    {
+                      name = "Improved Purify Spirit",
+                      dungeonPct = 36,
+                      baselinePct = 58,
+                    },
+                  },
+                },
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Purge",
+                      dungeonPct = 94,
+                      baselinePct = 64,
+                    },
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 66,
+                      baselinePct = 42,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 33,
+                      baselinePct = 56,
+                    },
+                    {
+                      name = "Improved Purify Spirit",
+                      dungeonPct = 36,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 49,
+                      baselinePct = 66,
+                    },
+                  },
+                },
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Purge",
+                      dungeonPct = 98,
+                      baselinePct = 64,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Improved Purify Spirit",
+                      dungeonPct = 44,
+                      baselinePct = 58,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 80,
+                      baselinePct = 56,
+                    },
+                    {
+                      name = "Improved Purify Spirit",
+                      dungeonPct = 78,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 86,
+                      baselinePct = 66,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 18,
+                      baselinePct = 42,
+                    },
+                    {
+                      name = "Primordial Bond",
+                      dungeonPct = 27,
+                      baselinePct = 46,
+                    },
+                    {
+                      name = "Earth Elemental",
+                      dungeonPct = 33,
+                      baselinePct = 49,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Improved Purify Spirit",
+                      dungeonPct = 98,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 87,
+                      baselinePct = 56,
+                    },
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 89,
+                      baselinePct = 66,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 12,
+                      baselinePct = 42,
+                    },
+                    {
+                      name = "Purge",
+                      dungeonPct = 38,
+                      baselinePct = 64,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Earthgrab Totem",
+                      dungeonPct = 56,
+                      baselinePct = 11,
+                    },
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 94,
+                      baselinePct = 66,
+                    },
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 74,
+                      baselinePct = 56,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Purge",
+                      dungeonPct = 33,
+                      baselinePct = 64,
+                    },
+                    {
+                      name = "Improved Purify Spirit",
+                      dungeonPct = 36,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 25,
+                      baselinePct = 42,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 78,
+                      baselinePct = 42,
+                    },
+                    {
+                      name = "Purge",
+                      dungeonPct = 80,
+                      baselinePct = 64,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 22,
+                      baselinePct = 56,
+                    },
+                    {
+                      name = "Improved Purify Spirit",
+                      dungeonPct = 40,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 50,
+                      baselinePct = 66,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Poison Cleansing Totem",
+                      dungeonPct = 58,
+                      baselinePct = 13,
+                    },
+                    {
+                      name = "Improved Purify Spirit",
+                      dungeonPct = 95,
+                      baselinePct = 58,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 44,
+                      baselinePct = 66,
+                    },
+                    {
+                      name = "Wind Rush Totem",
+                      dungeonPct = 82,
+                      baselinePct = 95,
+                    },
+                    {
+                      name = "Windveil",
+                      dungeonPct = 45,
+                      baselinePct = 57,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Restoration",
@@ -1500,6 +3870,7 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Restoration",
@@ -1509,6 +3880,7 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["15+"] = {
@@ -1529,6 +3901,256 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 64,
+                      baselinePct = 42,
+                    },
+                    {
+                      name = "Poison Cleansing Totem",
+                      dungeonPct = 30,
+                      baselinePct = 13,
+                    },
+                    {
+                      name = "Earth Elemental",
+                      dungeonPct = 65,
+                      baselinePct = 49,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Purge",
+                      dungeonPct = 28,
+                      baselinePct = 64,
+                    },
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 34,
+                      baselinePct = 56,
+                    },
+                    {
+                      name = "Improved Purify Spirit",
+                      dungeonPct = 36,
+                      baselinePct = 58,
+                    },
+                  },
+                },
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Purge",
+                      dungeonPct = 94,
+                      baselinePct = 64,
+                    },
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 66,
+                      baselinePct = 42,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 33,
+                      baselinePct = 56,
+                    },
+                    {
+                      name = "Improved Purify Spirit",
+                      dungeonPct = 36,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 49,
+                      baselinePct = 66,
+                    },
+                  },
+                },
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Purge",
+                      dungeonPct = 98,
+                      baselinePct = 64,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Improved Purify Spirit",
+                      dungeonPct = 44,
+                      baselinePct = 58,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 80,
+                      baselinePct = 56,
+                    },
+                    {
+                      name = "Improved Purify Spirit",
+                      dungeonPct = 78,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 86,
+                      baselinePct = 66,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 18,
+                      baselinePct = 42,
+                    },
+                    {
+                      name = "Primordial Bond",
+                      dungeonPct = 27,
+                      baselinePct = 46,
+                    },
+                    {
+                      name = "Earth Elemental",
+                      dungeonPct = 33,
+                      baselinePct = 49,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Improved Purify Spirit",
+                      dungeonPct = 98,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 87,
+                      baselinePct = 56,
+                    },
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 89,
+                      baselinePct = 66,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 12,
+                      baselinePct = 42,
+                    },
+                    {
+                      name = "Purge",
+                      dungeonPct = 38,
+                      baselinePct = 64,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Earthgrab Totem",
+                      dungeonPct = 56,
+                      baselinePct = 11,
+                    },
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 94,
+                      baselinePct = 66,
+                    },
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 74,
+                      baselinePct = 56,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Purge",
+                      dungeonPct = 33,
+                      baselinePct = 64,
+                    },
+                    {
+                      name = "Improved Purify Spirit",
+                      dungeonPct = 36,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 25,
+                      baselinePct = 42,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 78,
+                      baselinePct = 42,
+                    },
+                    {
+                      name = "Purge",
+                      dungeonPct = 80,
+                      baselinePct = 64,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 22,
+                      baselinePct = 56,
+                    },
+                    {
+                      name = "Improved Purify Spirit",
+                      dungeonPct = 40,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 50,
+                      baselinePct = 66,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Poison Cleansing Totem",
+                      dungeonPct = 58,
+                      baselinePct = 13,
+                    },
+                    {
+                      name = "Improved Purify Spirit",
+                      dungeonPct = 95,
+                      baselinePct = 58,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 44,
+                      baselinePct = 66,
+                    },
+                    {
+                      name = "Wind Rush Totem",
+                      dungeonPct = 82,
+                      baselinePct = 95,
+                    },
+                    {
+                      name = "Windveil",
+                      dungeonPct = 45,
+                      baselinePct = 57,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Restoration",
@@ -1538,6 +4160,7 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Restoration",
@@ -1547,6 +4170,7 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["18+"] = {
@@ -1567,6 +4191,256 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 64,
+                      baselinePct = 42,
+                    },
+                    {
+                      name = "Poison Cleansing Totem",
+                      dungeonPct = 30,
+                      baselinePct = 13,
+                    },
+                    {
+                      name = "Earth Elemental",
+                      dungeonPct = 65,
+                      baselinePct = 49,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Purge",
+                      dungeonPct = 28,
+                      baselinePct = 64,
+                    },
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 34,
+                      baselinePct = 56,
+                    },
+                    {
+                      name = "Improved Purify Spirit",
+                      dungeonPct = 36,
+                      baselinePct = 58,
+                    },
+                  },
+                },
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Purge",
+                      dungeonPct = 94,
+                      baselinePct = 64,
+                    },
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 66,
+                      baselinePct = 42,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 33,
+                      baselinePct = 56,
+                    },
+                    {
+                      name = "Improved Purify Spirit",
+                      dungeonPct = 36,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 49,
+                      baselinePct = 66,
+                    },
+                  },
+                },
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Purge",
+                      dungeonPct = 98,
+                      baselinePct = 64,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Improved Purify Spirit",
+                      dungeonPct = 44,
+                      baselinePct = 58,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 80,
+                      baselinePct = 56,
+                    },
+                    {
+                      name = "Improved Purify Spirit",
+                      dungeonPct = 78,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 86,
+                      baselinePct = 66,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 18,
+                      baselinePct = 42,
+                    },
+                    {
+                      name = "Primordial Bond",
+                      dungeonPct = 27,
+                      baselinePct = 46,
+                    },
+                    {
+                      name = "Earth Elemental",
+                      dungeonPct = 33,
+                      baselinePct = 49,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Improved Purify Spirit",
+                      dungeonPct = 98,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 87,
+                      baselinePct = 56,
+                    },
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 89,
+                      baselinePct = 66,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 12,
+                      baselinePct = 42,
+                    },
+                    {
+                      name = "Purge",
+                      dungeonPct = 38,
+                      baselinePct = 64,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Earthgrab Totem",
+                      dungeonPct = 56,
+                      baselinePct = 11,
+                    },
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 94,
+                      baselinePct = 66,
+                    },
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 74,
+                      baselinePct = 56,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Purge",
+                      dungeonPct = 33,
+                      baselinePct = 64,
+                    },
+                    {
+                      name = "Improved Purify Spirit",
+                      dungeonPct = 36,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 25,
+                      baselinePct = 42,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 78,
+                      baselinePct = 42,
+                    },
+                    {
+                      name = "Purge",
+                      dungeonPct = 80,
+                      baselinePct = 64,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 22,
+                      baselinePct = 56,
+                    },
+                    {
+                      name = "Improved Purify Spirit",
+                      dungeonPct = 40,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 50,
+                      baselinePct = 66,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Poison Cleansing Totem",
+                      dungeonPct = 58,
+                      baselinePct = 13,
+                    },
+                    {
+                      name = "Improved Purify Spirit",
+                      dungeonPct = 95,
+                      baselinePct = 58,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 44,
+                      baselinePct = 66,
+                    },
+                    {
+                      name = "Wind Rush Totem",
+                      dungeonPct = 82,
+                      baselinePct = 95,
+                    },
+                    {
+                      name = "Windveil",
+                      dungeonPct = 45,
+                      baselinePct = 57,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Restoration",
@@ -1576,6 +4450,7 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Restoration",
@@ -1585,6 +4460,7 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["20+"] = {
@@ -1605,6 +4481,256 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 64,
+                      baselinePct = 42,
+                    },
+                    {
+                      name = "Poison Cleansing Totem",
+                      dungeonPct = 30,
+                      baselinePct = 13,
+                    },
+                    {
+                      name = "Earth Elemental",
+                      dungeonPct = 65,
+                      baselinePct = 49,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Purge",
+                      dungeonPct = 28,
+                      baselinePct = 64,
+                    },
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 34,
+                      baselinePct = 56,
+                    },
+                    {
+                      name = "Improved Purify Spirit",
+                      dungeonPct = 36,
+                      baselinePct = 58,
+                    },
+                  },
+                },
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Purge",
+                      dungeonPct = 94,
+                      baselinePct = 64,
+                    },
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 66,
+                      baselinePct = 42,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 33,
+                      baselinePct = 56,
+                    },
+                    {
+                      name = "Improved Purify Spirit",
+                      dungeonPct = 36,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 49,
+                      baselinePct = 66,
+                    },
+                  },
+                },
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Purge",
+                      dungeonPct = 98,
+                      baselinePct = 64,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Improved Purify Spirit",
+                      dungeonPct = 44,
+                      baselinePct = 58,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 80,
+                      baselinePct = 56,
+                    },
+                    {
+                      name = "Improved Purify Spirit",
+                      dungeonPct = 78,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 86,
+                      baselinePct = 66,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 18,
+                      baselinePct = 42,
+                    },
+                    {
+                      name = "Primordial Bond",
+                      dungeonPct = 27,
+                      baselinePct = 46,
+                    },
+                    {
+                      name = "Earth Elemental",
+                      dungeonPct = 33,
+                      baselinePct = 49,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Improved Purify Spirit",
+                      dungeonPct = 98,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 87,
+                      baselinePct = 56,
+                    },
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 89,
+                      baselinePct = 66,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 12,
+                      baselinePct = 42,
+                    },
+                    {
+                      name = "Purge",
+                      dungeonPct = 38,
+                      baselinePct = 64,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Earthgrab Totem",
+                      dungeonPct = 56,
+                      baselinePct = 11,
+                    },
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 94,
+                      baselinePct = 66,
+                    },
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 74,
+                      baselinePct = 56,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Purge",
+                      dungeonPct = 33,
+                      baselinePct = 64,
+                    },
+                    {
+                      name = "Improved Purify Spirit",
+                      dungeonPct = 36,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 25,
+                      baselinePct = 42,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Gust of Wind",
+                      dungeonPct = 78,
+                      baselinePct = 42,
+                    },
+                    {
+                      name = "Purge",
+                      dungeonPct = 80,
+                      baselinePct = 64,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Spirit Walk",
+                      dungeonPct = 22,
+                      baselinePct = 56,
+                    },
+                    {
+                      name = "Improved Purify Spirit",
+                      dungeonPct = 40,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 50,
+                      baselinePct = 66,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Poison Cleansing Totem",
+                      dungeonPct = 58,
+                      baselinePct = 13,
+                    },
+                    {
+                      name = "Improved Purify Spirit",
+                      dungeonPct = 95,
+                      baselinePct = 58,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Jet Stream",
+                      dungeonPct = 44,
+                      baselinePct = 66,
+                    },
+                    {
+                      name = "Wind Rush Totem",
+                      dungeonPct = 82,
+                      baselinePct = 95,
+                    },
+                    {
+                      name = "Windveil",
+                      dungeonPct = 45,
+                      baselinePct = 57,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Restoration",
@@ -1614,6 +4740,7 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Restoration",
@@ -1623,6 +4750,7 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
         },
@@ -1787,6 +4915,7 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = nil,
             },
             {
               spec = "Feral",
@@ -1796,6 +4925,82 @@ ZugZugData = {
               popularity = 46,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Hunger for Battle",
+                      dungeonPct = 64,
+                      baselinePct = 43,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Carnivorous Instinct",
+                      dungeonPct = 21,
+                      baselinePct = 39,
+                    },
+                  },
+                },
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Hunger for Battle",
+                      dungeonPct = 66,
+                      baselinePct = 43,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Carnivorous Instinct",
+                      dungeonPct = 22,
+                      baselinePct = 39,
+                    },
+                  },
+                },
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Carnivorous Instinct",
+                      dungeonPct = 48,
+                      baselinePct = 39,
+                    },
+                    {
+                      name = "Strike for the Heart",
+                      dungeonPct = 74,
+                      baselinePct = 70,
+                    },
+                    {
+                      name = "Veinripper",
+                      dungeonPct = 16,
+                      baselinePct = 12,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Hunger for Battle",
+                      dungeonPct = 29,
+                      baselinePct = 43,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Carnivorous Instinct",
+                      dungeonPct = 62,
+                      baselinePct = 39,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Hunger for Battle",
+                      dungeonPct = 17,
+                      baselinePct = 43,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Feral",
@@ -1805,6 +5010,7 @@ ZugZugData = {
               popularity = 4,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Balance",
@@ -1814,6 +5020,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Balance",
@@ -1823,6 +5030,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["15+"] = {
@@ -1843,6 +5051,7 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = nil,
             },
             {
               spec = "Feral",
@@ -1852,6 +5061,82 @@ ZugZugData = {
               popularity = 46,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Hunger for Battle",
+                      dungeonPct = 64,
+                      baselinePct = 43,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Carnivorous Instinct",
+                      dungeonPct = 21,
+                      baselinePct = 39,
+                    },
+                  },
+                },
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Hunger for Battle",
+                      dungeonPct = 66,
+                      baselinePct = 43,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Carnivorous Instinct",
+                      dungeonPct = 22,
+                      baselinePct = 39,
+                    },
+                  },
+                },
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Carnivorous Instinct",
+                      dungeonPct = 48,
+                      baselinePct = 39,
+                    },
+                    {
+                      name = "Strike for the Heart",
+                      dungeonPct = 74,
+                      baselinePct = 70,
+                    },
+                    {
+                      name = "Veinripper",
+                      dungeonPct = 16,
+                      baselinePct = 12,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Hunger for Battle",
+                      dungeonPct = 29,
+                      baselinePct = 43,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Carnivorous Instinct",
+                      dungeonPct = 62,
+                      baselinePct = 39,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Hunger for Battle",
+                      dungeonPct = 17,
+                      baselinePct = 43,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Feral",
@@ -1861,6 +5146,7 @@ ZugZugData = {
               popularity = 4,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Balance",
@@ -1870,6 +5156,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Balance",
@@ -1879,6 +5166,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["18+"] = {
@@ -1899,6 +5187,7 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = nil,
             },
             {
               spec = "Feral",
@@ -1908,6 +5197,82 @@ ZugZugData = {
               popularity = 46,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Hunger for Battle",
+                      dungeonPct = 64,
+                      baselinePct = 43,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Carnivorous Instinct",
+                      dungeonPct = 21,
+                      baselinePct = 39,
+                    },
+                  },
+                },
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Hunger for Battle",
+                      dungeonPct = 66,
+                      baselinePct = 43,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Carnivorous Instinct",
+                      dungeonPct = 22,
+                      baselinePct = 39,
+                    },
+                  },
+                },
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Carnivorous Instinct",
+                      dungeonPct = 48,
+                      baselinePct = 39,
+                    },
+                    {
+                      name = "Strike for the Heart",
+                      dungeonPct = 74,
+                      baselinePct = 70,
+                    },
+                    {
+                      name = "Veinripper",
+                      dungeonPct = 16,
+                      baselinePct = 12,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Hunger for Battle",
+                      dungeonPct = 29,
+                      baselinePct = 43,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Carnivorous Instinct",
+                      dungeonPct = 62,
+                      baselinePct = 39,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Hunger for Battle",
+                      dungeonPct = 17,
+                      baselinePct = 43,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Feral",
@@ -1917,6 +5282,7 @@ ZugZugData = {
               popularity = 4,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Balance",
@@ -1926,6 +5292,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Balance",
@@ -1935,6 +5302,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["20+"] = {
@@ -1946,6 +5314,7 @@ ZugZugData = {
               popularity = 13,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Feral",
@@ -1964,6 +5333,82 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Hunger for Battle",
+                      dungeonPct = 64,
+                      baselinePct = 43,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Carnivorous Instinct",
+                      dungeonPct = 21,
+                      baselinePct = 39,
+                    },
+                  },
+                },
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Hunger for Battle",
+                      dungeonPct = 66,
+                      baselinePct = 43,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Carnivorous Instinct",
+                      dungeonPct = 22,
+                      baselinePct = 39,
+                    },
+                  },
+                },
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Carnivorous Instinct",
+                      dungeonPct = 48,
+                      baselinePct = 39,
+                    },
+                    {
+                      name = "Strike for the Heart",
+                      dungeonPct = 74,
+                      baselinePct = 70,
+                    },
+                    {
+                      name = "Veinripper",
+                      dungeonPct = 16,
+                      baselinePct = 12,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Hunger for Battle",
+                      dungeonPct = 29,
+                      baselinePct = 43,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Carnivorous Instinct",
+                      dungeonPct = 62,
+                      baselinePct = 39,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Hunger for Battle",
+                      dungeonPct = 17,
+                      baselinePct = 43,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Feral",
@@ -1973,6 +5418,7 @@ ZugZugData = {
               popularity = 6,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Balance",
@@ -1982,6 +5428,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Balance",
@@ -1991,6 +5438,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
         },
@@ -2095,6 +5543,7 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = nil,
             },
             {
               spec = "Restoration",
@@ -2104,6 +5553,7 @@ ZugZugData = {
               popularity = 3,
               trend = "new",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Restoration",
@@ -2113,6 +5563,7 @@ ZugZugData = {
               popularity = 2,
               trend = "new",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["15+"] = {
@@ -2133,6 +5584,7 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = nil,
             },
             {
               spec = "Restoration",
@@ -2142,6 +5594,7 @@ ZugZugData = {
               popularity = 3,
               trend = "new",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Restoration",
@@ -2151,6 +5604,7 @@ ZugZugData = {
               popularity = 2,
               trend = "new",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["18+"] = {
@@ -2171,6 +5625,7 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = nil,
             },
             {
               spec = "Restoration",
@@ -2180,6 +5635,7 @@ ZugZugData = {
               popularity = 3,
               trend = "new",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Restoration",
@@ -2189,6 +5645,7 @@ ZugZugData = {
               popularity = 2,
               trend = "new",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["20+"] = {
@@ -2209,6 +5666,7 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = nil,
             },
             {
               spec = "Restoration",
@@ -2218,6 +5676,7 @@ ZugZugData = {
               popularity = 3,
               trend = "new",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Restoration",
@@ -2227,6 +5686,7 @@ ZugZugData = {
               popularity = 2,
               trend = "new",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
         },
@@ -2332,6 +5792,7 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = nil,
             },
             {
               spec = "Guardian",
@@ -2341,6 +5802,7 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["15+"] = {
@@ -2361,6 +5823,7 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = nil,
             },
             {
               spec = "Guardian",
@@ -2370,6 +5833,7 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["18+"] = {
@@ -2390,6 +5854,7 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = nil,
             },
             {
               spec = "Guardian",
@@ -2399,6 +5864,7 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["20+"] = {
@@ -2419,6 +5885,7 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = nil,
             },
             {
               spec = "Guardian",
@@ -2428,6 +5895,7 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
         },
@@ -2590,6 +6058,34 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Grip of the Dead",
+                      dungeonPct = 89,
+                      baselinePct = 76,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Wraith Walk",
+                      dungeonPct = 45,
+                      baselinePct = 52,
+                    },
+                    {
+                      name = "Blood Scent",
+                      dungeonPct = 70,
+                      baselinePct = 75,
+                    },
+                    {
+                      name = "Horsemen's Aid",
+                      dungeonPct = 52,
+                      baselinePct = 54,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Frost",
@@ -2599,6 +6095,7 @@ ZugZugData = {
               popularity = 34,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Frost",
@@ -2608,6 +6105,7 @@ ZugZugData = {
               popularity = 17,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Frost",
@@ -2617,6 +6115,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["15+"] = {
@@ -2637,6 +6136,34 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Grip of the Dead",
+                      dungeonPct = 89,
+                      baselinePct = 76,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Wraith Walk",
+                      dungeonPct = 45,
+                      baselinePct = 52,
+                    },
+                    {
+                      name = "Blood Scent",
+                      dungeonPct = 70,
+                      baselinePct = 75,
+                    },
+                    {
+                      name = "Horsemen's Aid",
+                      dungeonPct = 52,
+                      baselinePct = 54,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Frost",
@@ -2646,6 +6173,7 @@ ZugZugData = {
               popularity = 34,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Frost",
@@ -2655,6 +6183,7 @@ ZugZugData = {
               popularity = 17,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Frost",
@@ -2664,6 +6193,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["18+"] = {
@@ -2684,6 +6214,34 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Grip of the Dead",
+                      dungeonPct = 89,
+                      baselinePct = 76,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Wraith Walk",
+                      dungeonPct = 45,
+                      baselinePct = 52,
+                    },
+                    {
+                      name = "Blood Scent",
+                      dungeonPct = 70,
+                      baselinePct = 75,
+                    },
+                    {
+                      name = "Horsemen's Aid",
+                      dungeonPct = 52,
+                      baselinePct = 54,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Frost",
@@ -2693,6 +6251,7 @@ ZugZugData = {
               popularity = 18,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Frost",
@@ -2702,6 +6261,7 @@ ZugZugData = {
               popularity = 10,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Frost",
@@ -2711,6 +6271,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["20+"] = {
@@ -2731,6 +6292,34 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Grip of the Dead",
+                      dungeonPct = 89,
+                      baselinePct = 76,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Wraith Walk",
+                      dungeonPct = 45,
+                      baselinePct = 52,
+                    },
+                    {
+                      name = "Blood Scent",
+                      dungeonPct = 70,
+                      baselinePct = 75,
+                    },
+                    {
+                      name = "Horsemen's Aid",
+                      dungeonPct = 52,
+                      baselinePct = 54,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Frost",
@@ -2740,6 +6329,7 @@ ZugZugData = {
               popularity = 2,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Frost",
@@ -2749,6 +6339,7 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Frost",
@@ -2758,6 +6349,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
         },
@@ -2862,6 +6454,60 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Control Undead",
+                      dungeonPct = 41,
+                      baselinePct = 18,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Gorefiend's Grasp",
+                      dungeonPct = 74,
+                      baselinePct = 79,
+                    },
+                    {
+                      name = "Grip of the Dead",
+                      dungeonPct = 85,
+                      baselinePct = 90,
+                    },
+                    {
+                      name = "Dark Talons",
+                      dungeonPct = 55,
+                      baselinePct = 59,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Control Undead",
+                      dungeonPct = 36,
+                      baselinePct = 18,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Blood Draw",
+                      dungeonPct = 87,
+                      baselinePct = 90,
+                    },
+                    {
+                      name = "Unholy Endurance",
+                      dungeonPct = 90,
+                      baselinePct = 93,
+                    },
+                    {
+                      name = "Suppression",
+                      dungeonPct = 48,
+                      baselinePct = 51,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Blood",
@@ -2871,6 +6517,29 @@ ZugZugData = {
               popularity = 10,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "March of Darkness",
+                      dungeonPct = 69,
+                      baselinePct = 57,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Wraith Walk",
+                      dungeonPct = 16,
+                      baselinePct = 28,
+                    },
+                    {
+                      name = "Control Undead",
+                      dungeonPct = 3,
+                      baselinePct = 15,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Blood",
@@ -2880,6 +6549,7 @@ ZugZugData = {
               popularity = 3,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["15+"] = {
@@ -2900,6 +6570,60 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Control Undead",
+                      dungeonPct = 41,
+                      baselinePct = 18,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Gorefiend's Grasp",
+                      dungeonPct = 74,
+                      baselinePct = 79,
+                    },
+                    {
+                      name = "Grip of the Dead",
+                      dungeonPct = 85,
+                      baselinePct = 90,
+                    },
+                    {
+                      name = "Dark Talons",
+                      dungeonPct = 55,
+                      baselinePct = 59,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Control Undead",
+                      dungeonPct = 36,
+                      baselinePct = 18,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Blood Draw",
+                      dungeonPct = 87,
+                      baselinePct = 90,
+                    },
+                    {
+                      name = "Unholy Endurance",
+                      dungeonPct = 90,
+                      baselinePct = 93,
+                    },
+                    {
+                      name = "Suppression",
+                      dungeonPct = 48,
+                      baselinePct = 51,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Blood",
@@ -2909,6 +6633,29 @@ ZugZugData = {
               popularity = 10,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "March of Darkness",
+                      dungeonPct = 69,
+                      baselinePct = 57,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Wraith Walk",
+                      dungeonPct = 16,
+                      baselinePct = 28,
+                    },
+                    {
+                      name = "Control Undead",
+                      dungeonPct = 3,
+                      baselinePct = 15,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Blood",
@@ -2918,6 +6665,7 @@ ZugZugData = {
               popularity = 3,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["18+"] = {
@@ -2938,6 +6686,60 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Control Undead",
+                      dungeonPct = 41,
+                      baselinePct = 18,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Gorefiend's Grasp",
+                      dungeonPct = 74,
+                      baselinePct = 79,
+                    },
+                    {
+                      name = "Grip of the Dead",
+                      dungeonPct = 85,
+                      baselinePct = 90,
+                    },
+                    {
+                      name = "Dark Talons",
+                      dungeonPct = 55,
+                      baselinePct = 59,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Control Undead",
+                      dungeonPct = 36,
+                      baselinePct = 18,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Blood Draw",
+                      dungeonPct = 87,
+                      baselinePct = 90,
+                    },
+                    {
+                      name = "Unholy Endurance",
+                      dungeonPct = 90,
+                      baselinePct = 93,
+                    },
+                    {
+                      name = "Suppression",
+                      dungeonPct = 48,
+                      baselinePct = 51,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Blood",
@@ -2947,6 +6749,29 @@ ZugZugData = {
               popularity = 10,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "March of Darkness",
+                      dungeonPct = 69,
+                      baselinePct = 57,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Wraith Walk",
+                      dungeonPct = 16,
+                      baselinePct = 28,
+                    },
+                    {
+                      name = "Control Undead",
+                      dungeonPct = 3,
+                      baselinePct = 15,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Blood",
@@ -2956,6 +6781,7 @@ ZugZugData = {
               popularity = 3,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["20+"] = {
@@ -2976,6 +6802,60 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Control Undead",
+                      dungeonPct = 41,
+                      baselinePct = 18,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Gorefiend's Grasp",
+                      dungeonPct = 74,
+                      baselinePct = 79,
+                    },
+                    {
+                      name = "Grip of the Dead",
+                      dungeonPct = 85,
+                      baselinePct = 90,
+                    },
+                    {
+                      name = "Dark Talons",
+                      dungeonPct = 55,
+                      baselinePct = 59,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Control Undead",
+                      dungeonPct = 36,
+                      baselinePct = 18,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Blood Draw",
+                      dungeonPct = 87,
+                      baselinePct = 90,
+                    },
+                    {
+                      name = "Unholy Endurance",
+                      dungeonPct = 90,
+                      baselinePct = 93,
+                    },
+                    {
+                      name = "Suppression",
+                      dungeonPct = 48,
+                      baselinePct = 51,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Blood",
@@ -2985,6 +6865,29 @@ ZugZugData = {
               popularity = 11,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "March of Darkness",
+                      dungeonPct = 69,
+                      baselinePct = 57,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Wraith Walk",
+                      dungeonPct = 16,
+                      baselinePct = 28,
+                    },
+                    {
+                      name = "Control Undead",
+                      dungeonPct = 3,
+                      baselinePct = 15,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Blood",
@@ -2994,6 +6897,7 @@ ZugZugData = {
               popularity = 3,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
         },
@@ -3211,6 +7115,86 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Emergency Salve",
+                      dungeonPct = 87,
+                      baselinePct = 73,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Kodo Tranquilizer",
+                      dungeonPct = 38,
+                      baselinePct = 46,
+                    },
+                    {
+                      name = "Shell Wall",
+                      dungeonPct = 38,
+                      baselinePct = 41,
+                    },
+                    {
+                      name = "Sharpened Claws",
+                      dungeonPct = 60,
+                      baselinePct = 63,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Kodo Tranquilizer",
+                      dungeonPct = 58,
+                      baselinePct = 46,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Emergency Salve",
+                      dungeonPct = 67,
+                      baselinePct = 73,
+                    },
+                    {
+                      name = "Camouflage",
+                      dungeonPct = 14,
+                      baselinePct = 18,
+                    },
+                    {
+                      name = "Catlike Reflexes",
+                      dungeonPct = 6,
+                      baselinePct = 9,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Emergency Salve",
+                      dungeonPct = 92,
+                      baselinePct = 73,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Shell Wall",
+                      dungeonPct = 35,
+                      baselinePct = 41,
+                    },
+                    {
+                      name = "Pathfinding",
+                      dungeonPct = 74,
+                      baselinePct = 78,
+                    },
+                    {
+                      name = "Guardian's Hide",
+                      dungeonPct = 85,
+                      baselinePct = 89,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Beast Mastery",
@@ -3220,6 +7204,34 @@ ZugZugData = {
               popularity = 23,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Emergency Salve",
+                      dungeonPct = 96,
+                      baselinePct = 83,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Misdirection",
+                      dungeonPct = 45,
+                      baselinePct = 48,
+                    },
+                    {
+                      name = "Scout's Instincts",
+                      dungeonPct = 56,
+                      baselinePct = 59,
+                    },
+                    {
+                      name = "Horsehair Tether",
+                      dungeonPct = 1,
+                      baselinePct = 4,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Marksmanship",
@@ -3229,6 +7241,7 @@ ZugZugData = {
               popularity = 17,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Marksmanship",
@@ -3238,6 +7251,7 @@ ZugZugData = {
               popularity = 15,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Beast Mastery",
@@ -3247,6 +7261,50 @@ ZugZugData = {
               popularity = 10,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Emergency Salve",
+                      dungeonPct = 98,
+                      baselinePct = 79,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Kodo Tranquilizer",
+                      dungeonPct = 46,
+                      baselinePct = 58,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Emergency Salve",
+                      dungeonPct = 92,
+                      baselinePct = 79,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Misdirection",
+                      dungeonPct = 57,
+                      baselinePct = 64,
+                    },
+                    {
+                      name = "Kodo Tranquilizer",
+                      dungeonPct = 52,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Binding Shot",
+                      dungeonPct = 8,
+                      baselinePct = 13,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Marksmanship",
@@ -3256,6 +7314,7 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Beast Mastery",
@@ -3265,6 +7324,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["15+"] = {
@@ -3285,6 +7345,86 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Emergency Salve",
+                      dungeonPct = 87,
+                      baselinePct = 73,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Kodo Tranquilizer",
+                      dungeonPct = 38,
+                      baselinePct = 46,
+                    },
+                    {
+                      name = "Shell Wall",
+                      dungeonPct = 38,
+                      baselinePct = 41,
+                    },
+                    {
+                      name = "Sharpened Claws",
+                      dungeonPct = 60,
+                      baselinePct = 63,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Kodo Tranquilizer",
+                      dungeonPct = 58,
+                      baselinePct = 46,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Emergency Salve",
+                      dungeonPct = 67,
+                      baselinePct = 73,
+                    },
+                    {
+                      name = "Camouflage",
+                      dungeonPct = 14,
+                      baselinePct = 18,
+                    },
+                    {
+                      name = "Catlike Reflexes",
+                      dungeonPct = 6,
+                      baselinePct = 9,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Emergency Salve",
+                      dungeonPct = 92,
+                      baselinePct = 73,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Shell Wall",
+                      dungeonPct = 35,
+                      baselinePct = 41,
+                    },
+                    {
+                      name = "Pathfinding",
+                      dungeonPct = 74,
+                      baselinePct = 78,
+                    },
+                    {
+                      name = "Guardian's Hide",
+                      dungeonPct = 85,
+                      baselinePct = 89,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Beast Mastery",
@@ -3294,6 +7434,34 @@ ZugZugData = {
               popularity = 23,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Emergency Salve",
+                      dungeonPct = 96,
+                      baselinePct = 83,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Misdirection",
+                      dungeonPct = 45,
+                      baselinePct = 48,
+                    },
+                    {
+                      name = "Scout's Instincts",
+                      dungeonPct = 56,
+                      baselinePct = 59,
+                    },
+                    {
+                      name = "Horsehair Tether",
+                      dungeonPct = 1,
+                      baselinePct = 4,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Marksmanship",
@@ -3303,6 +7471,7 @@ ZugZugData = {
               popularity = 17,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Marksmanship",
@@ -3312,6 +7481,7 @@ ZugZugData = {
               popularity = 15,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Beast Mastery",
@@ -3321,6 +7491,50 @@ ZugZugData = {
               popularity = 10,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Emergency Salve",
+                      dungeonPct = 98,
+                      baselinePct = 79,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Kodo Tranquilizer",
+                      dungeonPct = 46,
+                      baselinePct = 58,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Emergency Salve",
+                      dungeonPct = 92,
+                      baselinePct = 79,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Misdirection",
+                      dungeonPct = 57,
+                      baselinePct = 64,
+                    },
+                    {
+                      name = "Kodo Tranquilizer",
+                      dungeonPct = 52,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Binding Shot",
+                      dungeonPct = 8,
+                      baselinePct = 13,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Marksmanship",
@@ -3330,6 +7544,7 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Beast Mastery",
@@ -3339,6 +7554,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["18+"] = {
@@ -3359,6 +7575,86 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Emergency Salve",
+                      dungeonPct = 87,
+                      baselinePct = 73,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Kodo Tranquilizer",
+                      dungeonPct = 38,
+                      baselinePct = 46,
+                    },
+                    {
+                      name = "Shell Wall",
+                      dungeonPct = 38,
+                      baselinePct = 41,
+                    },
+                    {
+                      name = "Sharpened Claws",
+                      dungeonPct = 60,
+                      baselinePct = 63,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Kodo Tranquilizer",
+                      dungeonPct = 58,
+                      baselinePct = 46,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Emergency Salve",
+                      dungeonPct = 67,
+                      baselinePct = 73,
+                    },
+                    {
+                      name = "Camouflage",
+                      dungeonPct = 14,
+                      baselinePct = 18,
+                    },
+                    {
+                      name = "Catlike Reflexes",
+                      dungeonPct = 6,
+                      baselinePct = 9,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Emergency Salve",
+                      dungeonPct = 92,
+                      baselinePct = 73,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Shell Wall",
+                      dungeonPct = 35,
+                      baselinePct = 41,
+                    },
+                    {
+                      name = "Pathfinding",
+                      dungeonPct = 74,
+                      baselinePct = 78,
+                    },
+                    {
+                      name = "Guardian's Hide",
+                      dungeonPct = 85,
+                      baselinePct = 89,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Beast Mastery",
@@ -3368,6 +7664,34 @@ ZugZugData = {
               popularity = 27,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Emergency Salve",
+                      dungeonPct = 96,
+                      baselinePct = 83,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Misdirection",
+                      dungeonPct = 45,
+                      baselinePct = 48,
+                    },
+                    {
+                      name = "Scout's Instincts",
+                      dungeonPct = 56,
+                      baselinePct = 59,
+                    },
+                    {
+                      name = "Horsehair Tether",
+                      dungeonPct = 1,
+                      baselinePct = 4,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Marksmanship",
@@ -3377,6 +7701,7 @@ ZugZugData = {
               popularity = 12,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Marksmanship",
@@ -3386,6 +7711,7 @@ ZugZugData = {
               popularity = 8,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Beast Mastery",
@@ -3395,6 +7721,50 @@ ZugZugData = {
               popularity = 12,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Emergency Salve",
+                      dungeonPct = 98,
+                      baselinePct = 79,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Kodo Tranquilizer",
+                      dungeonPct = 46,
+                      baselinePct = 58,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Emergency Salve",
+                      dungeonPct = 92,
+                      baselinePct = 79,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Misdirection",
+                      dungeonPct = 57,
+                      baselinePct = 64,
+                    },
+                    {
+                      name = "Kodo Tranquilizer",
+                      dungeonPct = 52,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Binding Shot",
+                      dungeonPct = 8,
+                      baselinePct = 13,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Marksmanship",
@@ -3404,6 +7774,7 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Beast Mastery",
@@ -3413,6 +7784,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["20+"] = {
@@ -3433,6 +7805,86 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Emergency Salve",
+                      dungeonPct = 87,
+                      baselinePct = 73,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Kodo Tranquilizer",
+                      dungeonPct = 38,
+                      baselinePct = 46,
+                    },
+                    {
+                      name = "Shell Wall",
+                      dungeonPct = 38,
+                      baselinePct = 41,
+                    },
+                    {
+                      name = "Sharpened Claws",
+                      dungeonPct = 60,
+                      baselinePct = 63,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Kodo Tranquilizer",
+                      dungeonPct = 58,
+                      baselinePct = 46,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Emergency Salve",
+                      dungeonPct = 67,
+                      baselinePct = 73,
+                    },
+                    {
+                      name = "Camouflage",
+                      dungeonPct = 14,
+                      baselinePct = 18,
+                    },
+                    {
+                      name = "Catlike Reflexes",
+                      dungeonPct = 6,
+                      baselinePct = 9,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Emergency Salve",
+                      dungeonPct = 92,
+                      baselinePct = 73,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Shell Wall",
+                      dungeonPct = 35,
+                      baselinePct = 41,
+                    },
+                    {
+                      name = "Pathfinding",
+                      dungeonPct = 74,
+                      baselinePct = 78,
+                    },
+                    {
+                      name = "Guardian's Hide",
+                      dungeonPct = 85,
+                      baselinePct = 89,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Beast Mastery",
@@ -3442,6 +7894,34 @@ ZugZugData = {
               popularity = 27,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Emergency Salve",
+                      dungeonPct = 96,
+                      baselinePct = 83,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Misdirection",
+                      dungeonPct = 45,
+                      baselinePct = 48,
+                    },
+                    {
+                      name = "Scout's Instincts",
+                      dungeonPct = 56,
+                      baselinePct = 59,
+                    },
+                    {
+                      name = "Horsehair Tether",
+                      dungeonPct = 1,
+                      baselinePct = 4,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Marksmanship",
@@ -3451,6 +7931,7 @@ ZugZugData = {
               popularity = 3,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Marksmanship",
@@ -3460,6 +7941,7 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Beast Mastery",
@@ -3469,6 +7951,50 @@ ZugZugData = {
               popularity = 11,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Emergency Salve",
+                      dungeonPct = 98,
+                      baselinePct = 79,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Kodo Tranquilizer",
+                      dungeonPct = 46,
+                      baselinePct = 58,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Emergency Salve",
+                      dungeonPct = 92,
+                      baselinePct = 79,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Misdirection",
+                      dungeonPct = 57,
+                      baselinePct = 64,
+                    },
+                    {
+                      name = "Kodo Tranquilizer",
+                      dungeonPct = 52,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Binding Shot",
+                      dungeonPct = 8,
+                      baselinePct = 13,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Marksmanship",
@@ -3478,6 +8004,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Beast Mastery",
@@ -3487,6 +8014,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
         },
@@ -3646,6 +8174,40 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Burn It Out",
+                      dungeonPct = 59,
+                      baselinePct = 23,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Soul Cleanse",
+                      dungeonPct = 40,
+                      baselinePct = 75,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Soul Cleanse",
+                      dungeonPct = 89,
+                      baselinePct = 75,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Burn It Out",
+                      dungeonPct = 11,
+                      baselinePct = 23,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Havoc",
@@ -3657,6 +8219,24 @@ ZugZugData = {
               dungeons = {
                 "Pit of Saron",
               },
+              dungeonSwaps = {
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Burn It Out",
+                      dungeonPct = 29,
+                      baselinePct = 11,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Soul Cleanse",
+                      dungeonPct = 70,
+                      baselinePct = 88,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Havoc",
@@ -3666,6 +8246,7 @@ ZugZugData = {
               popularity = 2,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Havoc",
@@ -3675,6 +8256,7 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["15+"] = {
@@ -3694,6 +8276,40 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Burn It Out",
+                      dungeonPct = 59,
+                      baselinePct = 23,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Soul Cleanse",
+                      dungeonPct = 40,
+                      baselinePct = 75,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Soul Cleanse",
+                      dungeonPct = 89,
+                      baselinePct = 75,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Burn It Out",
+                      dungeonPct = 11,
+                      baselinePct = 23,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Havoc",
@@ -3705,6 +8321,24 @@ ZugZugData = {
               dungeons = {
                 "Pit of Saron",
               },
+              dungeonSwaps = {
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Burn It Out",
+                      dungeonPct = 29,
+                      baselinePct = 11,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Soul Cleanse",
+                      dungeonPct = 70,
+                      baselinePct = 88,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Havoc",
@@ -3714,6 +8348,7 @@ ZugZugData = {
               popularity = 2,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Havoc",
@@ -3723,6 +8358,7 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["18+"] = {
@@ -3742,6 +8378,40 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Burn It Out",
+                      dungeonPct = 59,
+                      baselinePct = 23,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Soul Cleanse",
+                      dungeonPct = 40,
+                      baselinePct = 75,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Soul Cleanse",
+                      dungeonPct = 89,
+                      baselinePct = 75,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Burn It Out",
+                      dungeonPct = 11,
+                      baselinePct = 23,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Havoc",
@@ -3753,6 +8423,24 @@ ZugZugData = {
               dungeons = {
                 "Pit of Saron",
               },
+              dungeonSwaps = {
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Burn It Out",
+                      dungeonPct = 29,
+                      baselinePct = 11,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Soul Cleanse",
+                      dungeonPct = 70,
+                      baselinePct = 88,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Havoc",
@@ -3762,6 +8450,7 @@ ZugZugData = {
               popularity = 2,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Havoc",
@@ -3771,6 +8460,7 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["20+"] = {
@@ -3791,6 +8481,40 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Burn It Out",
+                      dungeonPct = 59,
+                      baselinePct = 23,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Soul Cleanse",
+                      dungeonPct = 40,
+                      baselinePct = 75,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Soul Cleanse",
+                      dungeonPct = 89,
+                      baselinePct = 75,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Burn It Out",
+                      dungeonPct = 11,
+                      baselinePct = 23,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Havoc",
@@ -3800,6 +8524,24 @@ ZugZugData = {
               popularity = 6,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Burn It Out",
+                      dungeonPct = 29,
+                      baselinePct = 11,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Soul Cleanse",
+                      dungeonPct = 70,
+                      baselinePct = 88,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Havoc",
@@ -3809,6 +8551,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Havoc",
@@ -3818,6 +8561,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
         },
@@ -3922,6 +8666,34 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Burn It Out",
+                      dungeonPct = 43,
+                      baselinePct = 21,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Erratic Felheart",
+                      dungeonPct = 54,
+                      baselinePct = 59,
+                    },
+                    {
+                      name = "Painbringer",
+                      dungeonPct = 77,
+                      baselinePct = 80,
+                    },
+                    {
+                      name = "Soul Cleanse",
+                      dungeonPct = 7,
+                      baselinePct = 10,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Vengeance",
@@ -3931,6 +8703,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Vengeance",
@@ -3940,6 +8713,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["15+"] = {
@@ -3960,6 +8734,34 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Burn It Out",
+                      dungeonPct = 43,
+                      baselinePct = 21,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Erratic Felheart",
+                      dungeonPct = 54,
+                      baselinePct = 59,
+                    },
+                    {
+                      name = "Painbringer",
+                      dungeonPct = 77,
+                      baselinePct = 80,
+                    },
+                    {
+                      name = "Soul Cleanse",
+                      dungeonPct = 7,
+                      baselinePct = 10,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Vengeance",
@@ -3969,6 +8771,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Vengeance",
@@ -3978,6 +8781,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["18+"] = {
@@ -3998,6 +8802,34 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Burn It Out",
+                      dungeonPct = 43,
+                      baselinePct = 21,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Erratic Felheart",
+                      dungeonPct = 54,
+                      baselinePct = 59,
+                    },
+                    {
+                      name = "Painbringer",
+                      dungeonPct = 77,
+                      baselinePct = 80,
+                    },
+                    {
+                      name = "Soul Cleanse",
+                      dungeonPct = 7,
+                      baselinePct = 10,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Vengeance",
@@ -4007,6 +8839,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Vengeance",
@@ -4016,6 +8849,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["20+"] = {
@@ -4036,6 +8870,34 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Burn It Out",
+                      dungeonPct = 43,
+                      baselinePct = 21,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Erratic Felheart",
+                      dungeonPct = 54,
+                      baselinePct = 59,
+                    },
+                    {
+                      name = "Painbringer",
+                      dungeonPct = 77,
+                      baselinePct = 80,
+                    },
+                    {
+                      name = "Soul Cleanse",
+                      dungeonPct = 7,
+                      baselinePct = 10,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Vengeance",
@@ -4045,6 +8907,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Vengeance",
@@ -4054,6 +8917,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
         },
@@ -4218,6 +9082,221 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Improved Defy Fate",
+                      dungeonPct = 35,
+                      baselinePct = 21,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Overawe",
+                      dungeonPct = 17,
+                      baselinePct = 36,
+                    },
+                    {
+                      name = "Bestow Weyrnstone",
+                      dungeonPct = 63,
+                      baselinePct = 78,
+                    },
+                  },
+                },
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Sleep Walk",
+                      dungeonPct = 75,
+                      baselinePct = 52,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Overawe",
+                      dungeonPct = 14,
+                      baselinePct = 36,
+                    },
+                    {
+                      name = "Oppressing Roar",
+                      dungeonPct = 43,
+                      baselinePct = 57,
+                    },
+                  },
+                },
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Overlord",
+                      dungeonPct = 24,
+                      baselinePct = 17,
+                    },
+                    {
+                      name = "Clairvoyant",
+                      dungeonPct = 24,
+                      baselinePct = 17,
+                    },
+                    {
+                      name = "Motes of Possibility",
+                      dungeonPct = 24,
+                      baselinePct = 17,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Sleep Walk",
+                      dungeonPct = 40,
+                      baselinePct = 52,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Attuned to the Dream",
+                      dungeonPct = 72,
+                      baselinePct = 63,
+                    },
+                    {
+                      name = "Stretch Time",
+                      dungeonPct = 93,
+                      baselinePct = 85,
+                    },
+                    {
+                      name = "Improved Defy Fate",
+                      dungeonPct = 27,
+                      baselinePct = 21,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Overawe",
+                      dungeonPct = 14,
+                      baselinePct = 36,
+                    },
+                    {
+                      name = "Oppressing Roar",
+                      dungeonPct = 41,
+                      baselinePct = 57,
+                    },
+                    {
+                      name = "Sleep Walk",
+                      dungeonPct = 40,
+                      baselinePct = 52,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Bestow Weyrnstone",
+                      dungeonPct = 91,
+                      baselinePct = 78,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Sleep Walk",
+                      dungeonPct = 33,
+                      baselinePct = 52,
+                    },
+                    {
+                      name = "Overawe",
+                      dungeonPct = 18,
+                      baselinePct = 36,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Improved Defy Fate",
+                      dungeonPct = 31,
+                      baselinePct = 21,
+                    },
+                    {
+                      name = "Forger of Mountains",
+                      dungeonPct = 11,
+                      baselinePct = 2,
+                    },
+                    {
+                      name = "Stretch Time",
+                      dungeonPct = 93,
+                      baselinePct = 85,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Sleep Walk",
+                      dungeonPct = 28,
+                      baselinePct = 52,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Overawe",
+                      dungeonPct = 77,
+                      baselinePct = 36,
+                    },
+                    {
+                      name = "Oppressing Roar",
+                      dungeonPct = 85,
+                      baselinePct = 57,
+                    },
+                    {
+                      name = "Bestow Weyrnstone",
+                      dungeonPct = 99,
+                      baselinePct = 78,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Improved Defy Fate",
+                      dungeonPct = 2,
+                      baselinePct = 21,
+                    },
+                    {
+                      name = "Stretch Time",
+                      dungeonPct = 72,
+                      baselinePct = 85,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Overawe",
+                      dungeonPct = 78,
+                      baselinePct = 36,
+                    },
+                    {
+                      name = "Oppressing Roar",
+                      dungeonPct = 83,
+                      baselinePct = 57,
+                    },
+                    {
+                      name = "Sleep Walk",
+                      dungeonPct = 73,
+                      baselinePct = 52,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Stretch Time",
+                      dungeonPct = 67,
+                      baselinePct = 85,
+                    },
+                    {
+                      name = "Attuned to the Dream",
+                      dungeonPct = 51,
+                      baselinePct = 63,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Devastation",
@@ -4227,6 +9306,7 @@ ZugZugData = {
               popularity = 32,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Devastation",
@@ -4236,6 +9316,71 @@ ZugZugData = {
               popularity = 14,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Scarlet Adaptation",
+                      dungeonPct = 66,
+                      baselinePct = 51,
+                    },
+                    {
+                      name = "Unravel",
+                      dungeonPct = 47,
+                      baselinePct = 32,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Oppressing Roar",
+                      dungeonPct = 39,
+                      baselinePct = 55,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Draconic Instincts",
+                      dungeonPct = 93,
+                      baselinePct = 81,
+                    },
+                    {
+                      name = "Feed the Flames",
+                      dungeonPct = 24,
+                      baselinePct = 12,
+                    },
+                    {
+                      name = "Engulfing Blaze",
+                      dungeonPct = 24,
+                      baselinePct = 12,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Lifecinders",
+                      dungeonPct = 7,
+                      baselinePct = 19,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Overawe",
+                      dungeonPct = 29,
+                      baselinePct = 12,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Scarlet Adaptation",
+                      dungeonPct = 38,
+                      baselinePct = 51,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Devastation",
@@ -4245,6 +9390,50 @@ ZugZugData = {
               popularity = 4,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Time Spiral",
+                      dungeonPct = 69,
+                      baselinePct = 55,
+                    },
+                    {
+                      name = "Event Horizon",
+                      dungeonPct = 28,
+                      baselinePct = 14,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Ancient Flame",
+                      dungeonPct = 28,
+                      baselinePct = 42,
+                    },
+                    {
+                      name = "Twin Guardian",
+                      dungeonPct = 22,
+                      baselinePct = 35,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Eye of Infinity",
+                      dungeonPct = 97,
+                      baselinePct = 83,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Event Horizon",
+                      dungeonPct = 0,
+                      baselinePct = 14,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Augmentation",
@@ -4254,6 +9443,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["15+"] = {
@@ -4274,6 +9464,221 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Improved Defy Fate",
+                      dungeonPct = 35,
+                      baselinePct = 21,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Overawe",
+                      dungeonPct = 17,
+                      baselinePct = 36,
+                    },
+                    {
+                      name = "Bestow Weyrnstone",
+                      dungeonPct = 63,
+                      baselinePct = 78,
+                    },
+                  },
+                },
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Sleep Walk",
+                      dungeonPct = 75,
+                      baselinePct = 52,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Overawe",
+                      dungeonPct = 14,
+                      baselinePct = 36,
+                    },
+                    {
+                      name = "Oppressing Roar",
+                      dungeonPct = 43,
+                      baselinePct = 57,
+                    },
+                  },
+                },
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Overlord",
+                      dungeonPct = 24,
+                      baselinePct = 17,
+                    },
+                    {
+                      name = "Clairvoyant",
+                      dungeonPct = 24,
+                      baselinePct = 17,
+                    },
+                    {
+                      name = "Motes of Possibility",
+                      dungeonPct = 24,
+                      baselinePct = 17,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Sleep Walk",
+                      dungeonPct = 40,
+                      baselinePct = 52,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Attuned to the Dream",
+                      dungeonPct = 72,
+                      baselinePct = 63,
+                    },
+                    {
+                      name = "Stretch Time",
+                      dungeonPct = 93,
+                      baselinePct = 85,
+                    },
+                    {
+                      name = "Improved Defy Fate",
+                      dungeonPct = 27,
+                      baselinePct = 21,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Overawe",
+                      dungeonPct = 14,
+                      baselinePct = 36,
+                    },
+                    {
+                      name = "Oppressing Roar",
+                      dungeonPct = 41,
+                      baselinePct = 57,
+                    },
+                    {
+                      name = "Sleep Walk",
+                      dungeonPct = 40,
+                      baselinePct = 52,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Bestow Weyrnstone",
+                      dungeonPct = 91,
+                      baselinePct = 78,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Sleep Walk",
+                      dungeonPct = 33,
+                      baselinePct = 52,
+                    },
+                    {
+                      name = "Overawe",
+                      dungeonPct = 18,
+                      baselinePct = 36,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Improved Defy Fate",
+                      dungeonPct = 31,
+                      baselinePct = 21,
+                    },
+                    {
+                      name = "Forger of Mountains",
+                      dungeonPct = 11,
+                      baselinePct = 2,
+                    },
+                    {
+                      name = "Stretch Time",
+                      dungeonPct = 93,
+                      baselinePct = 85,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Sleep Walk",
+                      dungeonPct = 28,
+                      baselinePct = 52,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Overawe",
+                      dungeonPct = 77,
+                      baselinePct = 36,
+                    },
+                    {
+                      name = "Oppressing Roar",
+                      dungeonPct = 85,
+                      baselinePct = 57,
+                    },
+                    {
+                      name = "Bestow Weyrnstone",
+                      dungeonPct = 99,
+                      baselinePct = 78,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Improved Defy Fate",
+                      dungeonPct = 2,
+                      baselinePct = 21,
+                    },
+                    {
+                      name = "Stretch Time",
+                      dungeonPct = 72,
+                      baselinePct = 85,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Overawe",
+                      dungeonPct = 78,
+                      baselinePct = 36,
+                    },
+                    {
+                      name = "Oppressing Roar",
+                      dungeonPct = 83,
+                      baselinePct = 57,
+                    },
+                    {
+                      name = "Sleep Walk",
+                      dungeonPct = 73,
+                      baselinePct = 52,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Stretch Time",
+                      dungeonPct = 67,
+                      baselinePct = 85,
+                    },
+                    {
+                      name = "Attuned to the Dream",
+                      dungeonPct = 51,
+                      baselinePct = 63,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Devastation",
@@ -4283,6 +9688,7 @@ ZugZugData = {
               popularity = 32,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Devastation",
@@ -4292,6 +9698,71 @@ ZugZugData = {
               popularity = 14,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Scarlet Adaptation",
+                      dungeonPct = 66,
+                      baselinePct = 51,
+                    },
+                    {
+                      name = "Unravel",
+                      dungeonPct = 47,
+                      baselinePct = 32,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Oppressing Roar",
+                      dungeonPct = 39,
+                      baselinePct = 55,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Draconic Instincts",
+                      dungeonPct = 93,
+                      baselinePct = 81,
+                    },
+                    {
+                      name = "Feed the Flames",
+                      dungeonPct = 24,
+                      baselinePct = 12,
+                    },
+                    {
+                      name = "Engulfing Blaze",
+                      dungeonPct = 24,
+                      baselinePct = 12,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Lifecinders",
+                      dungeonPct = 7,
+                      baselinePct = 19,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Overawe",
+                      dungeonPct = 29,
+                      baselinePct = 12,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Scarlet Adaptation",
+                      dungeonPct = 38,
+                      baselinePct = 51,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Devastation",
@@ -4301,6 +9772,50 @@ ZugZugData = {
               popularity = 4,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Time Spiral",
+                      dungeonPct = 69,
+                      baselinePct = 55,
+                    },
+                    {
+                      name = "Event Horizon",
+                      dungeonPct = 28,
+                      baselinePct = 14,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Ancient Flame",
+                      dungeonPct = 28,
+                      baselinePct = 42,
+                    },
+                    {
+                      name = "Twin Guardian",
+                      dungeonPct = 22,
+                      baselinePct = 35,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Eye of Infinity",
+                      dungeonPct = 97,
+                      baselinePct = 83,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Event Horizon",
+                      dungeonPct = 0,
+                      baselinePct = 14,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Augmentation",
@@ -4310,6 +9825,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["18+"] = {
@@ -4330,6 +9846,221 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Improved Defy Fate",
+                      dungeonPct = 35,
+                      baselinePct = 21,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Overawe",
+                      dungeonPct = 17,
+                      baselinePct = 36,
+                    },
+                    {
+                      name = "Bestow Weyrnstone",
+                      dungeonPct = 63,
+                      baselinePct = 78,
+                    },
+                  },
+                },
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Sleep Walk",
+                      dungeonPct = 75,
+                      baselinePct = 52,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Overawe",
+                      dungeonPct = 14,
+                      baselinePct = 36,
+                    },
+                    {
+                      name = "Oppressing Roar",
+                      dungeonPct = 43,
+                      baselinePct = 57,
+                    },
+                  },
+                },
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Overlord",
+                      dungeonPct = 24,
+                      baselinePct = 17,
+                    },
+                    {
+                      name = "Clairvoyant",
+                      dungeonPct = 24,
+                      baselinePct = 17,
+                    },
+                    {
+                      name = "Motes of Possibility",
+                      dungeonPct = 24,
+                      baselinePct = 17,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Sleep Walk",
+                      dungeonPct = 40,
+                      baselinePct = 52,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Attuned to the Dream",
+                      dungeonPct = 72,
+                      baselinePct = 63,
+                    },
+                    {
+                      name = "Stretch Time",
+                      dungeonPct = 93,
+                      baselinePct = 85,
+                    },
+                    {
+                      name = "Improved Defy Fate",
+                      dungeonPct = 27,
+                      baselinePct = 21,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Overawe",
+                      dungeonPct = 14,
+                      baselinePct = 36,
+                    },
+                    {
+                      name = "Oppressing Roar",
+                      dungeonPct = 41,
+                      baselinePct = 57,
+                    },
+                    {
+                      name = "Sleep Walk",
+                      dungeonPct = 40,
+                      baselinePct = 52,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Bestow Weyrnstone",
+                      dungeonPct = 91,
+                      baselinePct = 78,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Sleep Walk",
+                      dungeonPct = 33,
+                      baselinePct = 52,
+                    },
+                    {
+                      name = "Overawe",
+                      dungeonPct = 18,
+                      baselinePct = 36,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Improved Defy Fate",
+                      dungeonPct = 31,
+                      baselinePct = 21,
+                    },
+                    {
+                      name = "Forger of Mountains",
+                      dungeonPct = 11,
+                      baselinePct = 2,
+                    },
+                    {
+                      name = "Stretch Time",
+                      dungeonPct = 93,
+                      baselinePct = 85,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Sleep Walk",
+                      dungeonPct = 28,
+                      baselinePct = 52,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Overawe",
+                      dungeonPct = 77,
+                      baselinePct = 36,
+                    },
+                    {
+                      name = "Oppressing Roar",
+                      dungeonPct = 85,
+                      baselinePct = 57,
+                    },
+                    {
+                      name = "Bestow Weyrnstone",
+                      dungeonPct = 99,
+                      baselinePct = 78,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Improved Defy Fate",
+                      dungeonPct = 2,
+                      baselinePct = 21,
+                    },
+                    {
+                      name = "Stretch Time",
+                      dungeonPct = 72,
+                      baselinePct = 85,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Overawe",
+                      dungeonPct = 78,
+                      baselinePct = 36,
+                    },
+                    {
+                      name = "Oppressing Roar",
+                      dungeonPct = 83,
+                      baselinePct = 57,
+                    },
+                    {
+                      name = "Sleep Walk",
+                      dungeonPct = 73,
+                      baselinePct = 52,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Stretch Time",
+                      dungeonPct = 67,
+                      baselinePct = 85,
+                    },
+                    {
+                      name = "Attuned to the Dream",
+                      dungeonPct = 51,
+                      baselinePct = 63,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Devastation",
@@ -4339,6 +10070,7 @@ ZugZugData = {
               popularity = 6,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Devastation",
@@ -4348,6 +10080,71 @@ ZugZugData = {
               popularity = 3,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Scarlet Adaptation",
+                      dungeonPct = 66,
+                      baselinePct = 51,
+                    },
+                    {
+                      name = "Unravel",
+                      dungeonPct = 47,
+                      baselinePct = 32,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Oppressing Roar",
+                      dungeonPct = 39,
+                      baselinePct = 55,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Draconic Instincts",
+                      dungeonPct = 93,
+                      baselinePct = 81,
+                    },
+                    {
+                      name = "Feed the Flames",
+                      dungeonPct = 24,
+                      baselinePct = 12,
+                    },
+                    {
+                      name = "Engulfing Blaze",
+                      dungeonPct = 24,
+                      baselinePct = 12,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Lifecinders",
+                      dungeonPct = 7,
+                      baselinePct = 19,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Overawe",
+                      dungeonPct = 29,
+                      baselinePct = 12,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Scarlet Adaptation",
+                      dungeonPct = 38,
+                      baselinePct = 51,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Devastation",
@@ -4357,6 +10154,50 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Time Spiral",
+                      dungeonPct = 69,
+                      baselinePct = 55,
+                    },
+                    {
+                      name = "Event Horizon",
+                      dungeonPct = 28,
+                      baselinePct = 14,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Ancient Flame",
+                      dungeonPct = 28,
+                      baselinePct = 42,
+                    },
+                    {
+                      name = "Twin Guardian",
+                      dungeonPct = 22,
+                      baselinePct = 35,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Eye of Infinity",
+                      dungeonPct = 97,
+                      baselinePct = 83,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Event Horizon",
+                      dungeonPct = 0,
+                      baselinePct = 14,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Augmentation",
@@ -4366,6 +10207,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["20+"] = {
@@ -4386,6 +10228,221 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Improved Defy Fate",
+                      dungeonPct = 35,
+                      baselinePct = 21,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Overawe",
+                      dungeonPct = 17,
+                      baselinePct = 36,
+                    },
+                    {
+                      name = "Bestow Weyrnstone",
+                      dungeonPct = 63,
+                      baselinePct = 78,
+                    },
+                  },
+                },
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Sleep Walk",
+                      dungeonPct = 75,
+                      baselinePct = 52,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Overawe",
+                      dungeonPct = 14,
+                      baselinePct = 36,
+                    },
+                    {
+                      name = "Oppressing Roar",
+                      dungeonPct = 43,
+                      baselinePct = 57,
+                    },
+                  },
+                },
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Overlord",
+                      dungeonPct = 24,
+                      baselinePct = 17,
+                    },
+                    {
+                      name = "Clairvoyant",
+                      dungeonPct = 24,
+                      baselinePct = 17,
+                    },
+                    {
+                      name = "Motes of Possibility",
+                      dungeonPct = 24,
+                      baselinePct = 17,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Sleep Walk",
+                      dungeonPct = 40,
+                      baselinePct = 52,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Attuned to the Dream",
+                      dungeonPct = 72,
+                      baselinePct = 63,
+                    },
+                    {
+                      name = "Stretch Time",
+                      dungeonPct = 93,
+                      baselinePct = 85,
+                    },
+                    {
+                      name = "Improved Defy Fate",
+                      dungeonPct = 27,
+                      baselinePct = 21,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Overawe",
+                      dungeonPct = 14,
+                      baselinePct = 36,
+                    },
+                    {
+                      name = "Oppressing Roar",
+                      dungeonPct = 41,
+                      baselinePct = 57,
+                    },
+                    {
+                      name = "Sleep Walk",
+                      dungeonPct = 40,
+                      baselinePct = 52,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Bestow Weyrnstone",
+                      dungeonPct = 91,
+                      baselinePct = 78,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Sleep Walk",
+                      dungeonPct = 33,
+                      baselinePct = 52,
+                    },
+                    {
+                      name = "Overawe",
+                      dungeonPct = 18,
+                      baselinePct = 36,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Improved Defy Fate",
+                      dungeonPct = 31,
+                      baselinePct = 21,
+                    },
+                    {
+                      name = "Forger of Mountains",
+                      dungeonPct = 11,
+                      baselinePct = 2,
+                    },
+                    {
+                      name = "Stretch Time",
+                      dungeonPct = 93,
+                      baselinePct = 85,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Sleep Walk",
+                      dungeonPct = 28,
+                      baselinePct = 52,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Overawe",
+                      dungeonPct = 77,
+                      baselinePct = 36,
+                    },
+                    {
+                      name = "Oppressing Roar",
+                      dungeonPct = 85,
+                      baselinePct = 57,
+                    },
+                    {
+                      name = "Bestow Weyrnstone",
+                      dungeonPct = 99,
+                      baselinePct = 78,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Improved Defy Fate",
+                      dungeonPct = 2,
+                      baselinePct = 21,
+                    },
+                    {
+                      name = "Stretch Time",
+                      dungeonPct = 72,
+                      baselinePct = 85,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Overawe",
+                      dungeonPct = 78,
+                      baselinePct = 36,
+                    },
+                    {
+                      name = "Oppressing Roar",
+                      dungeonPct = 83,
+                      baselinePct = 57,
+                    },
+                    {
+                      name = "Sleep Walk",
+                      dungeonPct = 73,
+                      baselinePct = 52,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Stretch Time",
+                      dungeonPct = 67,
+                      baselinePct = 85,
+                    },
+                    {
+                      name = "Attuned to the Dream",
+                      dungeonPct = 51,
+                      baselinePct = 63,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Devastation",
@@ -4395,6 +10452,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Devastation",
@@ -4404,6 +10462,71 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Scarlet Adaptation",
+                      dungeonPct = 66,
+                      baselinePct = 51,
+                    },
+                    {
+                      name = "Unravel",
+                      dungeonPct = 47,
+                      baselinePct = 32,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Oppressing Roar",
+                      dungeonPct = 39,
+                      baselinePct = 55,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Draconic Instincts",
+                      dungeonPct = 93,
+                      baselinePct = 81,
+                    },
+                    {
+                      name = "Feed the Flames",
+                      dungeonPct = 24,
+                      baselinePct = 12,
+                    },
+                    {
+                      name = "Engulfing Blaze",
+                      dungeonPct = 24,
+                      baselinePct = 12,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Lifecinders",
+                      dungeonPct = 7,
+                      baselinePct = 19,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Overawe",
+                      dungeonPct = 29,
+                      baselinePct = 12,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Scarlet Adaptation",
+                      dungeonPct = 38,
+                      baselinePct = 51,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Devastation",
@@ -4413,6 +10536,50 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Time Spiral",
+                      dungeonPct = 69,
+                      baselinePct = 55,
+                    },
+                    {
+                      name = "Event Horizon",
+                      dungeonPct = 28,
+                      baselinePct = 14,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Ancient Flame",
+                      dungeonPct = 28,
+                      baselinePct = 42,
+                    },
+                    {
+                      name = "Twin Guardian",
+                      dungeonPct = 22,
+                      baselinePct = 35,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Eye of Infinity",
+                      dungeonPct = 97,
+                      baselinePct = 83,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Event Horizon",
+                      dungeonPct = 0,
+                      baselinePct = 14,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Augmentation",
@@ -4422,6 +10589,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
         },
@@ -4526,6 +10694,7 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = nil,
             },
             {
               spec = "Preservation",
@@ -4535,6 +10704,7 @@ ZugZugData = {
               popularity = 7,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Preservation",
@@ -4544,6 +10714,7 @@ ZugZugData = {
               popularity = 4,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["15+"] = {
@@ -4564,6 +10735,7 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = nil,
             },
             {
               spec = "Preservation",
@@ -4573,6 +10745,7 @@ ZugZugData = {
               popularity = 7,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Preservation",
@@ -4582,6 +10755,7 @@ ZugZugData = {
               popularity = 4,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["18+"] = {
@@ -4602,6 +10776,7 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = nil,
             },
             {
               spec = "Preservation",
@@ -4611,6 +10786,7 @@ ZugZugData = {
               popularity = 6,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Preservation",
@@ -4620,6 +10796,7 @@ ZugZugData = {
               popularity = 4,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["20+"] = {
@@ -4640,6 +10817,7 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = nil,
             },
             {
               spec = "Preservation",
@@ -4649,6 +10827,7 @@ ZugZugData = {
               popularity = 10,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Preservation",
@@ -4658,6 +10837,7 @@ ZugZugData = {
               popularity = 6,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
         },
@@ -4819,6 +10999,34 @@ ZugZugData = {
                 "Seat of Triumvirate",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Martial Prowess",
+                      dungeonPct = 22,
+                      baselinePct = 3,
+                    },
+                    {
+                      name = "Overpowering Finish",
+                      dungeonPct = 22,
+                      baselinePct = 4,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Powerful Momentum",
+                      dungeonPct = 72,
+                      baselinePct = 94,
+                    },
+                    {
+                      name = "Mass Execution",
+                      dungeonPct = 78,
+                      baselinePct = 97,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Fury",
@@ -4828,6 +11036,7 @@ ZugZugData = {
               popularity = 25,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Fury",
@@ -4837,6 +11046,7 @@ ZugZugData = {
               popularity = 23,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Arms",
@@ -4849,6 +11059,55 @@ ZugZugData = {
                 "Algeth'ar Academy",
                 "Skyreach",
               },
+              dungeonSwaps = {
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Powerful Momentum",
+                      dungeonPct = 76,
+                      baselinePct = 64,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Mass Execution",
+                      dungeonPct = 32,
+                      baselinePct = 47,
+                    },
+                    {
+                      name = "Wrecking Throw",
+                      dungeonPct = 58,
+                      baselinePct = 71,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Powerful Momentum",
+                      dungeonPct = 76,
+                      baselinePct = 64,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Mass Execution",
+                      dungeonPct = 40,
+                      baselinePct = 47,
+                    },
+                    {
+                      name = "Interpose",
+                      dungeonPct = 8,
+                      baselinePct = 14,
+                    },
+                    {
+                      name = "Wrecking Throw",
+                      dungeonPct = 67,
+                      baselinePct = 71,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Fury",
@@ -4858,6 +11117,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["15+"] = {
@@ -4876,6 +11136,34 @@ ZugZugData = {
                 "Seat of Triumvirate",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Martial Prowess",
+                      dungeonPct = 22,
+                      baselinePct = 3,
+                    },
+                    {
+                      name = "Overpowering Finish",
+                      dungeonPct = 22,
+                      baselinePct = 4,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Powerful Momentum",
+                      dungeonPct = 72,
+                      baselinePct = 94,
+                    },
+                    {
+                      name = "Mass Execution",
+                      dungeonPct = 78,
+                      baselinePct = 97,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Fury",
@@ -4885,6 +11173,7 @@ ZugZugData = {
               popularity = 25,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Fury",
@@ -4894,6 +11183,7 @@ ZugZugData = {
               popularity = 23,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Arms",
@@ -4906,6 +11196,55 @@ ZugZugData = {
                 "Algeth'ar Academy",
                 "Skyreach",
               },
+              dungeonSwaps = {
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Powerful Momentum",
+                      dungeonPct = 76,
+                      baselinePct = 64,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Mass Execution",
+                      dungeonPct = 32,
+                      baselinePct = 47,
+                    },
+                    {
+                      name = "Wrecking Throw",
+                      dungeonPct = 58,
+                      baselinePct = 71,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Powerful Momentum",
+                      dungeonPct = 76,
+                      baselinePct = 64,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Mass Execution",
+                      dungeonPct = 40,
+                      baselinePct = 47,
+                    },
+                    {
+                      name = "Interpose",
+                      dungeonPct = 8,
+                      baselinePct = 14,
+                    },
+                    {
+                      name = "Wrecking Throw",
+                      dungeonPct = 67,
+                      baselinePct = 71,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Fury",
@@ -4915,6 +11254,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["18+"] = {
@@ -4933,6 +11273,34 @@ ZugZugData = {
                 "Seat of Triumvirate",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Martial Prowess",
+                      dungeonPct = 22,
+                      baselinePct = 3,
+                    },
+                    {
+                      name = "Overpowering Finish",
+                      dungeonPct = 22,
+                      baselinePct = 4,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Powerful Momentum",
+                      dungeonPct = 72,
+                      baselinePct = 94,
+                    },
+                    {
+                      name = "Mass Execution",
+                      dungeonPct = 78,
+                      baselinePct = 97,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Fury",
@@ -4942,6 +11310,7 @@ ZugZugData = {
               popularity = 25,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Fury",
@@ -4951,6 +11320,7 @@ ZugZugData = {
               popularity = 23,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Arms",
@@ -4963,6 +11333,55 @@ ZugZugData = {
                 "Algeth'ar Academy",
                 "Skyreach",
               },
+              dungeonSwaps = {
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Powerful Momentum",
+                      dungeonPct = 76,
+                      baselinePct = 64,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Mass Execution",
+                      dungeonPct = 32,
+                      baselinePct = 47,
+                    },
+                    {
+                      name = "Wrecking Throw",
+                      dungeonPct = 58,
+                      baselinePct = 71,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Powerful Momentum",
+                      dungeonPct = 76,
+                      baselinePct = 64,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Mass Execution",
+                      dungeonPct = 40,
+                      baselinePct = 47,
+                    },
+                    {
+                      name = "Interpose",
+                      dungeonPct = 8,
+                      baselinePct = 14,
+                    },
+                    {
+                      name = "Wrecking Throw",
+                      dungeonPct = 67,
+                      baselinePct = 71,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Fury",
@@ -4972,6 +11391,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["20+"] = {
@@ -4990,6 +11410,34 @@ ZugZugData = {
                 "Seat of Triumvirate",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Martial Prowess",
+                      dungeonPct = 22,
+                      baselinePct = 3,
+                    },
+                    {
+                      name = "Overpowering Finish",
+                      dungeonPct = 22,
+                      baselinePct = 4,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Powerful Momentum",
+                      dungeonPct = 72,
+                      baselinePct = 94,
+                    },
+                    {
+                      name = "Mass Execution",
+                      dungeonPct = 78,
+                      baselinePct = 97,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Fury",
@@ -4999,6 +11447,7 @@ ZugZugData = {
               popularity = 15,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Fury",
@@ -5008,6 +11457,7 @@ ZugZugData = {
               popularity = 12,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Arms",
@@ -5020,6 +11470,55 @@ ZugZugData = {
                 "Algeth'ar Academy",
                 "Skyreach",
               },
+              dungeonSwaps = {
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Powerful Momentum",
+                      dungeonPct = 76,
+                      baselinePct = 64,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Mass Execution",
+                      dungeonPct = 32,
+                      baselinePct = 47,
+                    },
+                    {
+                      name = "Wrecking Throw",
+                      dungeonPct = 58,
+                      baselinePct = 71,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Powerful Momentum",
+                      dungeonPct = 76,
+                      baselinePct = 64,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Mass Execution",
+                      dungeonPct = 40,
+                      baselinePct = 47,
+                    },
+                    {
+                      name = "Interpose",
+                      dungeonPct = 8,
+                      baselinePct = 14,
+                    },
+                    {
+                      name = "Wrecking Throw",
+                      dungeonPct = 67,
+                      baselinePct = 71,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Fury",
@@ -5029,6 +11528,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
         },
@@ -5133,6 +11633,50 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Fight Through the Flames",
+                      dungeonPct = 33,
+                      baselinePct = 21,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Armor Specialization",
+                      dungeonPct = 80,
+                      baselinePct = 88,
+                    },
+                    {
+                      name = "Tough as Nails",
+                      dungeonPct = 80,
+                      baselinePct = 87,
+                    },
+                    {
+                      name = "Fearless",
+                      dungeonPct = 18,
+                      baselinePct = 25,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Fearless",
+                      dungeonPct = 60,
+                      baselinePct = 25,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Piercing Howl",
+                      dungeonPct = 52,
+                      baselinePct = 68,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Protection",
@@ -5142,6 +11686,7 @@ ZugZugData = {
               popularity = 3,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Protection",
@@ -5151,6 +11696,7 @@ ZugZugData = {
               popularity = 2,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["15+"] = {
@@ -5171,6 +11717,50 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Fight Through the Flames",
+                      dungeonPct = 33,
+                      baselinePct = 21,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Armor Specialization",
+                      dungeonPct = 80,
+                      baselinePct = 88,
+                    },
+                    {
+                      name = "Tough as Nails",
+                      dungeonPct = 80,
+                      baselinePct = 87,
+                    },
+                    {
+                      name = "Fearless",
+                      dungeonPct = 18,
+                      baselinePct = 25,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Fearless",
+                      dungeonPct = 60,
+                      baselinePct = 25,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Piercing Howl",
+                      dungeonPct = 52,
+                      baselinePct = 68,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Protection",
@@ -5180,6 +11770,7 @@ ZugZugData = {
               popularity = 3,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Protection",
@@ -5189,6 +11780,7 @@ ZugZugData = {
               popularity = 2,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["18+"] = {
@@ -5209,6 +11801,50 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Fight Through the Flames",
+                      dungeonPct = 33,
+                      baselinePct = 21,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Armor Specialization",
+                      dungeonPct = 80,
+                      baselinePct = 88,
+                    },
+                    {
+                      name = "Tough as Nails",
+                      dungeonPct = 80,
+                      baselinePct = 87,
+                    },
+                    {
+                      name = "Fearless",
+                      dungeonPct = 18,
+                      baselinePct = 25,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Fearless",
+                      dungeonPct = 60,
+                      baselinePct = 25,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Piercing Howl",
+                      dungeonPct = 52,
+                      baselinePct = 68,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Protection",
@@ -5218,6 +11854,7 @@ ZugZugData = {
               popularity = 3,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Protection",
@@ -5227,6 +11864,7 @@ ZugZugData = {
               popularity = 2,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["20+"] = {
@@ -5247,6 +11885,50 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Fight Through the Flames",
+                      dungeonPct = 33,
+                      baselinePct = 21,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Armor Specialization",
+                      dungeonPct = 80,
+                      baselinePct = 88,
+                    },
+                    {
+                      name = "Tough as Nails",
+                      dungeonPct = 80,
+                      baselinePct = 87,
+                    },
+                    {
+                      name = "Fearless",
+                      dungeonPct = 18,
+                      baselinePct = 25,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Fearless",
+                      dungeonPct = 60,
+                      baselinePct = 25,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Piercing Howl",
+                      dungeonPct = 52,
+                      baselinePct = 68,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Protection",
@@ -5256,6 +11938,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Protection",
@@ -5265,6 +11948,7 @@ ZugZugData = {
               popularity = 11,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
         },
@@ -5444,6 +12128,7 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = nil,
             },
             {
               spec = "Subtlety",
@@ -5455,6 +12140,7 @@ ZugZugData = {
               dungeons = {
                 "Algeth'ar Academy",
               },
+              dungeonSwaps = nil,
             },
             {
               spec = "Outlaw",
@@ -5464,6 +12150,34 @@ ZugZugData = {
               popularity = 32,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Improved Wound Poison",
+                      dungeonPct = 30,
+                      baselinePct = 13,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Shadowrunner",
+                      dungeonPct = 42,
+                      baselinePct = 49,
+                    },
+                    {
+                      name = "Atrophic Poison",
+                      dungeonPct = 89,
+                      baselinePct = 93,
+                    },
+                    {
+                      name = "Thief's Versatility",
+                      dungeonPct = 14,
+                      baselinePct = 17,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Outlaw",
@@ -5473,6 +12187,7 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Assassination",
@@ -5482,6 +12197,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["15+"] = {
@@ -5501,6 +12217,7 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = nil,
             },
             {
               spec = "Subtlety",
@@ -5512,6 +12229,7 @@ ZugZugData = {
               dungeons = {
                 "Algeth'ar Academy",
               },
+              dungeonSwaps = nil,
             },
             {
               spec = "Outlaw",
@@ -5521,6 +12239,34 @@ ZugZugData = {
               popularity = 32,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Improved Wound Poison",
+                      dungeonPct = 30,
+                      baselinePct = 13,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Shadowrunner",
+                      dungeonPct = 42,
+                      baselinePct = 49,
+                    },
+                    {
+                      name = "Atrophic Poison",
+                      dungeonPct = 89,
+                      baselinePct = 93,
+                    },
+                    {
+                      name = "Thief's Versatility",
+                      dungeonPct = 14,
+                      baselinePct = 17,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Outlaw",
@@ -5530,6 +12276,7 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Assassination",
@@ -5539,6 +12286,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["18+"] = {
@@ -5558,6 +12306,7 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = nil,
             },
             {
               spec = "Subtlety",
@@ -5569,6 +12318,7 @@ ZugZugData = {
               dungeons = {
                 "Algeth'ar Academy",
               },
+              dungeonSwaps = nil,
             },
             {
               spec = "Outlaw",
@@ -5578,6 +12328,34 @@ ZugZugData = {
               popularity = 32,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Improved Wound Poison",
+                      dungeonPct = 30,
+                      baselinePct = 13,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Shadowrunner",
+                      dungeonPct = 42,
+                      baselinePct = 49,
+                    },
+                    {
+                      name = "Atrophic Poison",
+                      dungeonPct = 89,
+                      baselinePct = 93,
+                    },
+                    {
+                      name = "Thief's Versatility",
+                      dungeonPct = 14,
+                      baselinePct = 17,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Outlaw",
@@ -5587,6 +12365,7 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Assassination",
@@ -5596,6 +12375,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["20+"] = {
@@ -5607,6 +12387,7 @@ ZugZugData = {
               popularity = 25,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Subtlety",
@@ -5616,6 +12397,7 @@ ZugZugData = {
               popularity = 21,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Outlaw",
@@ -5634,6 +12416,34 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Improved Wound Poison",
+                      dungeonPct = 30,
+                      baselinePct = 13,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Shadowrunner",
+                      dungeonPct = 42,
+                      baselinePct = 49,
+                    },
+                    {
+                      name = "Atrophic Poison",
+                      dungeonPct = 89,
+                      baselinePct = 93,
+                    },
+                    {
+                      name = "Thief's Versatility",
+                      dungeonPct = 14,
+                      baselinePct = 17,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Outlaw",
@@ -5643,6 +12453,7 @@ ZugZugData = {
               popularity = 2,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Assassination",
@@ -5652,6 +12463,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
         },
@@ -5758,6 +12570,128 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 88,
+                      baselinePct = 64,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Jurisdiction",
+                      dungeonPct = 18,
+                      baselinePct = 27,
+                    },
+                    {
+                      name = "Sacrifice of the Just",
+                      dungeonPct = 76,
+                      baselinePct = 81,
+                    },
+                    {
+                      name = "Lead the Charge",
+                      dungeonPct = 70,
+                      baselinePct = 75,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Lightbearer",
+                      dungeonPct = 67,
+                      baselinePct = 63,
+                    },
+                    {
+                      name = "Consecrated Ground",
+                      dungeonPct = 85,
+                      baselinePct = 82,
+                    },
+                    {
+                      name = "Sacrifice of the Just",
+                      dungeonPct = 84,
+                      baselinePct = 81,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 49,
+                      baselinePct = 64,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Turn Evil",
+                      dungeonPct = 16,
+                      baselinePct = 4,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 39,
+                      baselinePct = 64,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Jurisdiction",
+                      dungeonPct = 38,
+                      baselinePct = 27,
+                    },
+                    {
+                      name = "Improved Blessing of Protection",
+                      dungeonPct = 9,
+                      baselinePct = 4,
+                    },
+                    {
+                      name = "Lightbearer",
+                      dungeonPct = 67,
+                      baselinePct = 63,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 50,
+                      baselinePct = 64,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 94,
+                      baselinePct = 64,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Lead the Charge",
+                      dungeonPct = 66,
+                      baselinePct = 75,
+                    },
+                    {
+                      name = "Lightbearer",
+                      dungeonPct = 58,
+                      baselinePct = 63,
+                    },
+                    {
+                      name = "Unrelenting Charger",
+                      dungeonPct = 69,
+                      baselinePct = 73,
+                    },
+                  },
+                },
+              },
             },
           },
           ["15+"] = {
@@ -5777,6 +12711,128 @@ ZugZugData = {
                 "Seat of Triumvirate",
                 "Skyreach",
                 "Windrunner Spire",
+              },
+              dungeonSwaps = {
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 88,
+                      baselinePct = 64,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Jurisdiction",
+                      dungeonPct = 18,
+                      baselinePct = 27,
+                    },
+                    {
+                      name = "Sacrifice of the Just",
+                      dungeonPct = 76,
+                      baselinePct = 81,
+                    },
+                    {
+                      name = "Lead the Charge",
+                      dungeonPct = 70,
+                      baselinePct = 75,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Lightbearer",
+                      dungeonPct = 67,
+                      baselinePct = 63,
+                    },
+                    {
+                      name = "Consecrated Ground",
+                      dungeonPct = 85,
+                      baselinePct = 82,
+                    },
+                    {
+                      name = "Sacrifice of the Just",
+                      dungeonPct = 84,
+                      baselinePct = 81,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 49,
+                      baselinePct = 64,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Turn Evil",
+                      dungeonPct = 16,
+                      baselinePct = 4,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 39,
+                      baselinePct = 64,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Jurisdiction",
+                      dungeonPct = 38,
+                      baselinePct = 27,
+                    },
+                    {
+                      name = "Improved Blessing of Protection",
+                      dungeonPct = 9,
+                      baselinePct = 4,
+                    },
+                    {
+                      name = "Lightbearer",
+                      dungeonPct = 67,
+                      baselinePct = 63,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 50,
+                      baselinePct = 64,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 94,
+                      baselinePct = 64,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Lead the Charge",
+                      dungeonPct = 66,
+                      baselinePct = 75,
+                    },
+                    {
+                      name = "Lightbearer",
+                      dungeonPct = 58,
+                      baselinePct = 63,
+                    },
+                    {
+                      name = "Unrelenting Charger",
+                      dungeonPct = 69,
+                      baselinePct = 73,
+                    },
+                  },
+                },
               },
             },
           },
@@ -5798,6 +12854,128 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 88,
+                      baselinePct = 64,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Jurisdiction",
+                      dungeonPct = 18,
+                      baselinePct = 27,
+                    },
+                    {
+                      name = "Sacrifice of the Just",
+                      dungeonPct = 76,
+                      baselinePct = 81,
+                    },
+                    {
+                      name = "Lead the Charge",
+                      dungeonPct = 70,
+                      baselinePct = 75,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Lightbearer",
+                      dungeonPct = 67,
+                      baselinePct = 63,
+                    },
+                    {
+                      name = "Consecrated Ground",
+                      dungeonPct = 85,
+                      baselinePct = 82,
+                    },
+                    {
+                      name = "Sacrifice of the Just",
+                      dungeonPct = 84,
+                      baselinePct = 81,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 49,
+                      baselinePct = 64,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Turn Evil",
+                      dungeonPct = 16,
+                      baselinePct = 4,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 39,
+                      baselinePct = 64,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Jurisdiction",
+                      dungeonPct = 38,
+                      baselinePct = 27,
+                    },
+                    {
+                      name = "Improved Blessing of Protection",
+                      dungeonPct = 9,
+                      baselinePct = 4,
+                    },
+                    {
+                      name = "Lightbearer",
+                      dungeonPct = 67,
+                      baselinePct = 63,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 50,
+                      baselinePct = 64,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 94,
+                      baselinePct = 64,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Lead the Charge",
+                      dungeonPct = 66,
+                      baselinePct = 75,
+                    },
+                    {
+                      name = "Lightbearer",
+                      dungeonPct = 58,
+                      baselinePct = 63,
+                    },
+                    {
+                      name = "Unrelenting Charger",
+                      dungeonPct = 69,
+                      baselinePct = 73,
+                    },
+                  },
+                },
+              },
             },
           },
           ["20+"] = {
@@ -5817,6 +12995,128 @@ ZugZugData = {
                 "Seat of Triumvirate",
                 "Skyreach",
                 "Windrunner Spire",
+              },
+              dungeonSwaps = {
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 88,
+                      baselinePct = 64,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Jurisdiction",
+                      dungeonPct = 18,
+                      baselinePct = 27,
+                    },
+                    {
+                      name = "Sacrifice of the Just",
+                      dungeonPct = 76,
+                      baselinePct = 81,
+                    },
+                    {
+                      name = "Lead the Charge",
+                      dungeonPct = 70,
+                      baselinePct = 75,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Lightbearer",
+                      dungeonPct = 67,
+                      baselinePct = 63,
+                    },
+                    {
+                      name = "Consecrated Ground",
+                      dungeonPct = 85,
+                      baselinePct = 82,
+                    },
+                    {
+                      name = "Sacrifice of the Just",
+                      dungeonPct = 84,
+                      baselinePct = 81,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 49,
+                      baselinePct = 64,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Turn Evil",
+                      dungeonPct = 16,
+                      baselinePct = 4,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 39,
+                      baselinePct = 64,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Jurisdiction",
+                      dungeonPct = 38,
+                      baselinePct = 27,
+                    },
+                    {
+                      name = "Improved Blessing of Protection",
+                      dungeonPct = 9,
+                      baselinePct = 4,
+                    },
+                    {
+                      name = "Lightbearer",
+                      dungeonPct = 67,
+                      baselinePct = 63,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 50,
+                      baselinePct = 64,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 94,
+                      baselinePct = 64,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Lead the Charge",
+                      dungeonPct = 66,
+                      baselinePct = 75,
+                    },
+                    {
+                      name = "Lightbearer",
+                      dungeonPct = 58,
+                      baselinePct = 63,
+                    },
+                    {
+                      name = "Unrelenting Charger",
+                      dungeonPct = 69,
+                      baselinePct = 73,
+                    },
+                  },
+                },
               },
             },
           },
@@ -5922,6 +13222,98 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Echoing Blessings",
+                      dungeonPct = 38,
+                      baselinePct = 27,
+                    },
+                    {
+                      name = "Light's Revocation",
+                      dungeonPct = 64,
+                      baselinePct = 60,
+                    },
+                    {
+                      name = "Improved Cleanse",
+                      dungeonPct = 100,
+                      baselinePct = 98,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Unbound Freedom",
+                      dungeonPct = 61,
+                      baselinePct = 73,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Unbound Freedom",
+                      dungeonPct = 92,
+                      baselinePct = 73,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Echoing Blessings",
+                      dungeonPct = 8,
+                      baselinePct = 27,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Unbound Freedom",
+                      dungeonPct = 95,
+                      baselinePct = 73,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Echoing Blessings",
+                      dungeonPct = 5,
+                      baselinePct = 27,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Echoing Blessings",
+                      dungeonPct = 39,
+                      baselinePct = 27,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Unbound Freedom",
+                      dungeonPct = 61,
+                      baselinePct = 73,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Echoing Blessings",
+                      dungeonPct = 40,
+                      baselinePct = 27,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Unbound Freedom",
+                      dungeonPct = 60,
+                      baselinePct = 73,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Holy",
@@ -5931,6 +13323,7 @@ ZugZugData = {
               popularity = 6,
               trend = "new",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Holy",
@@ -5940,6 +13333,7 @@ ZugZugData = {
               popularity = 1,
               trend = "new",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["15+"] = {
@@ -5960,6 +13354,98 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Echoing Blessings",
+                      dungeonPct = 38,
+                      baselinePct = 27,
+                    },
+                    {
+                      name = "Light's Revocation",
+                      dungeonPct = 64,
+                      baselinePct = 60,
+                    },
+                    {
+                      name = "Improved Cleanse",
+                      dungeonPct = 100,
+                      baselinePct = 98,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Unbound Freedom",
+                      dungeonPct = 61,
+                      baselinePct = 73,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Unbound Freedom",
+                      dungeonPct = 92,
+                      baselinePct = 73,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Echoing Blessings",
+                      dungeonPct = 8,
+                      baselinePct = 27,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Unbound Freedom",
+                      dungeonPct = 95,
+                      baselinePct = 73,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Echoing Blessings",
+                      dungeonPct = 5,
+                      baselinePct = 27,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Echoing Blessings",
+                      dungeonPct = 39,
+                      baselinePct = 27,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Unbound Freedom",
+                      dungeonPct = 61,
+                      baselinePct = 73,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Echoing Blessings",
+                      dungeonPct = 40,
+                      baselinePct = 27,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Unbound Freedom",
+                      dungeonPct = 60,
+                      baselinePct = 73,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Holy",
@@ -5969,6 +13455,7 @@ ZugZugData = {
               popularity = 6,
               trend = "new",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Holy",
@@ -5978,6 +13465,7 @@ ZugZugData = {
               popularity = 1,
               trend = "new",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["18+"] = {
@@ -5998,6 +13486,98 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Echoing Blessings",
+                      dungeonPct = 38,
+                      baselinePct = 27,
+                    },
+                    {
+                      name = "Light's Revocation",
+                      dungeonPct = 64,
+                      baselinePct = 60,
+                    },
+                    {
+                      name = "Improved Cleanse",
+                      dungeonPct = 100,
+                      baselinePct = 98,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Unbound Freedom",
+                      dungeonPct = 61,
+                      baselinePct = 73,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Unbound Freedom",
+                      dungeonPct = 92,
+                      baselinePct = 73,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Echoing Blessings",
+                      dungeonPct = 8,
+                      baselinePct = 27,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Unbound Freedom",
+                      dungeonPct = 95,
+                      baselinePct = 73,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Echoing Blessings",
+                      dungeonPct = 5,
+                      baselinePct = 27,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Echoing Blessings",
+                      dungeonPct = 39,
+                      baselinePct = 27,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Unbound Freedom",
+                      dungeonPct = 61,
+                      baselinePct = 73,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Echoing Blessings",
+                      dungeonPct = 40,
+                      baselinePct = 27,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Unbound Freedom",
+                      dungeonPct = 60,
+                      baselinePct = 73,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Holy",
@@ -6007,6 +13587,7 @@ ZugZugData = {
               popularity = 6,
               trend = "new",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Holy",
@@ -6016,6 +13597,7 @@ ZugZugData = {
               popularity = 1,
               trend = "new",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["20+"] = {
@@ -6036,6 +13618,98 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Echoing Blessings",
+                      dungeonPct = 38,
+                      baselinePct = 27,
+                    },
+                    {
+                      name = "Light's Revocation",
+                      dungeonPct = 64,
+                      baselinePct = 60,
+                    },
+                    {
+                      name = "Improved Cleanse",
+                      dungeonPct = 100,
+                      baselinePct = 98,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Unbound Freedom",
+                      dungeonPct = 61,
+                      baselinePct = 73,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Unbound Freedom",
+                      dungeonPct = 92,
+                      baselinePct = 73,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Echoing Blessings",
+                      dungeonPct = 8,
+                      baselinePct = 27,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Unbound Freedom",
+                      dungeonPct = 95,
+                      baselinePct = 73,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Echoing Blessings",
+                      dungeonPct = 5,
+                      baselinePct = 27,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Echoing Blessings",
+                      dungeonPct = 39,
+                      baselinePct = 27,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Unbound Freedom",
+                      dungeonPct = 61,
+                      baselinePct = 73,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Echoing Blessings",
+                      dungeonPct = 40,
+                      baselinePct = 27,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Unbound Freedom",
+                      dungeonPct = 60,
+                      baselinePct = 73,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Holy",
@@ -6045,6 +13719,7 @@ ZugZugData = {
               popularity = 4,
               trend = "new",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Holy",
@@ -6054,6 +13729,7 @@ ZugZugData = {
               popularity = 0,
               trend = "new",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
         },
@@ -6158,6 +13834,211 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 77,
+                      baselinePct = 63,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Sacrifice of the Just",
+                      dungeonPct = 76,
+                      baselinePct = 82,
+                    },
+                    {
+                      name = "Empyreal Ward",
+                      dungeonPct = 65,
+                      baselinePct = 71,
+                    },
+                    {
+                      name = "Redoubt",
+                      dungeonPct = 13,
+                      baselinePct = 19,
+                    },
+                  },
+                },
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Imbued Shield",
+                      dungeonPct = 89,
+                      baselinePct = 81,
+                    },
+                    {
+                      name = "Brought to Light",
+                      dungeonPct = 14,
+                      baselinePct = 9,
+                    },
+                    {
+                      name = "Improved Blessing of Protection",
+                      dungeonPct = 24,
+                      baselinePct = 20,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 43,
+                      baselinePct = 63,
+                    },
+                  },
+                },
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 85,
+                      baselinePct = 63,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Imbued Shield",
+                      dungeonPct = 71,
+                      baselinePct = 81,
+                    },
+                    {
+                      name = "Blessing of Protection",
+                      dungeonPct = 50,
+                      baselinePct = 55,
+                    },
+                    {
+                      name = "Blessing of Spellwarding",
+                      dungeonPct = 87,
+                      baselinePct = 92,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Imbued Shield",
+                      dungeonPct = 91,
+                      baselinePct = 81,
+                    },
+                    {
+                      name = "Sentinel",
+                      dungeonPct = 86,
+                      baselinePct = 80,
+                    },
+                    {
+                      name = "Light's Revocation",
+                      dungeonPct = 96,
+                      baselinePct = 92,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 43,
+                      baselinePct = 63,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 83,
+                      baselinePct = 63,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Blessing of Protection",
+                      dungeonPct = 46,
+                      baselinePct = 55,
+                    },
+                    {
+                      name = "Improved Blessing of Protection",
+                      dungeonPct = 13,
+                      baselinePct = 20,
+                    },
+                    {
+                      name = "Empyreal Ward",
+                      dungeonPct = 65,
+                      baselinePct = 71,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Unbound Freedom",
+                      dungeonPct = 98,
+                      baselinePct = 90,
+                    },
+                    {
+                      name = "Improved Blessing of Protection",
+                      dungeonPct = 27,
+                      baselinePct = 20,
+                    },
+                    {
+                      name = "Sentinel",
+                      dungeonPct = 85,
+                      baselinePct = 80,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 38,
+                      baselinePct = 63,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Empyreal Ward",
+                      dungeonPct = 79,
+                      baselinePct = 71,
+                    },
+                    {
+                      name = "Sentinel",
+                      dungeonPct = 86,
+                      baselinePct = 80,
+                    },
+                    {
+                      name = "Lightbearer",
+                      dungeonPct = 44,
+                      baselinePct = 38,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 51,
+                      baselinePct = 63,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 84,
+                      baselinePct = 63,
+                    },
+                    {
+                      name = "Avenging Wrath",
+                      dungeonPct = 32,
+                      baselinePct = 20,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Sentinel",
+                      dungeonPct = 68,
+                      baselinePct = 80,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Protection",
@@ -6167,6 +14048,7 @@ ZugZugData = {
               popularity = 2,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Protection",
@@ -6176,6 +14058,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["15+"] = {
@@ -6196,6 +14079,211 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 77,
+                      baselinePct = 63,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Sacrifice of the Just",
+                      dungeonPct = 76,
+                      baselinePct = 82,
+                    },
+                    {
+                      name = "Empyreal Ward",
+                      dungeonPct = 65,
+                      baselinePct = 71,
+                    },
+                    {
+                      name = "Redoubt",
+                      dungeonPct = 13,
+                      baselinePct = 19,
+                    },
+                  },
+                },
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Imbued Shield",
+                      dungeonPct = 89,
+                      baselinePct = 81,
+                    },
+                    {
+                      name = "Brought to Light",
+                      dungeonPct = 14,
+                      baselinePct = 9,
+                    },
+                    {
+                      name = "Improved Blessing of Protection",
+                      dungeonPct = 24,
+                      baselinePct = 20,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 43,
+                      baselinePct = 63,
+                    },
+                  },
+                },
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 85,
+                      baselinePct = 63,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Imbued Shield",
+                      dungeonPct = 71,
+                      baselinePct = 81,
+                    },
+                    {
+                      name = "Blessing of Protection",
+                      dungeonPct = 50,
+                      baselinePct = 55,
+                    },
+                    {
+                      name = "Blessing of Spellwarding",
+                      dungeonPct = 87,
+                      baselinePct = 92,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Imbued Shield",
+                      dungeonPct = 91,
+                      baselinePct = 81,
+                    },
+                    {
+                      name = "Sentinel",
+                      dungeonPct = 86,
+                      baselinePct = 80,
+                    },
+                    {
+                      name = "Light's Revocation",
+                      dungeonPct = 96,
+                      baselinePct = 92,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 43,
+                      baselinePct = 63,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 83,
+                      baselinePct = 63,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Blessing of Protection",
+                      dungeonPct = 46,
+                      baselinePct = 55,
+                    },
+                    {
+                      name = "Improved Blessing of Protection",
+                      dungeonPct = 13,
+                      baselinePct = 20,
+                    },
+                    {
+                      name = "Empyreal Ward",
+                      dungeonPct = 65,
+                      baselinePct = 71,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Unbound Freedom",
+                      dungeonPct = 98,
+                      baselinePct = 90,
+                    },
+                    {
+                      name = "Improved Blessing of Protection",
+                      dungeonPct = 27,
+                      baselinePct = 20,
+                    },
+                    {
+                      name = "Sentinel",
+                      dungeonPct = 85,
+                      baselinePct = 80,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 38,
+                      baselinePct = 63,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Empyreal Ward",
+                      dungeonPct = 79,
+                      baselinePct = 71,
+                    },
+                    {
+                      name = "Sentinel",
+                      dungeonPct = 86,
+                      baselinePct = 80,
+                    },
+                    {
+                      name = "Lightbearer",
+                      dungeonPct = 44,
+                      baselinePct = 38,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 51,
+                      baselinePct = 63,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 84,
+                      baselinePct = 63,
+                    },
+                    {
+                      name = "Avenging Wrath",
+                      dungeonPct = 32,
+                      baselinePct = 20,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Sentinel",
+                      dungeonPct = 68,
+                      baselinePct = 80,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Protection",
@@ -6205,6 +14293,7 @@ ZugZugData = {
               popularity = 2,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Protection",
@@ -6214,6 +14303,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["18+"] = {
@@ -6234,6 +14324,211 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 77,
+                      baselinePct = 63,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Sacrifice of the Just",
+                      dungeonPct = 76,
+                      baselinePct = 82,
+                    },
+                    {
+                      name = "Empyreal Ward",
+                      dungeonPct = 65,
+                      baselinePct = 71,
+                    },
+                    {
+                      name = "Redoubt",
+                      dungeonPct = 13,
+                      baselinePct = 19,
+                    },
+                  },
+                },
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Imbued Shield",
+                      dungeonPct = 89,
+                      baselinePct = 81,
+                    },
+                    {
+                      name = "Brought to Light",
+                      dungeonPct = 14,
+                      baselinePct = 9,
+                    },
+                    {
+                      name = "Improved Blessing of Protection",
+                      dungeonPct = 24,
+                      baselinePct = 20,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 43,
+                      baselinePct = 63,
+                    },
+                  },
+                },
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 85,
+                      baselinePct = 63,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Imbued Shield",
+                      dungeonPct = 71,
+                      baselinePct = 81,
+                    },
+                    {
+                      name = "Blessing of Protection",
+                      dungeonPct = 50,
+                      baselinePct = 55,
+                    },
+                    {
+                      name = "Blessing of Spellwarding",
+                      dungeonPct = 87,
+                      baselinePct = 92,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Imbued Shield",
+                      dungeonPct = 91,
+                      baselinePct = 81,
+                    },
+                    {
+                      name = "Sentinel",
+                      dungeonPct = 86,
+                      baselinePct = 80,
+                    },
+                    {
+                      name = "Light's Revocation",
+                      dungeonPct = 96,
+                      baselinePct = 92,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 43,
+                      baselinePct = 63,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 83,
+                      baselinePct = 63,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Blessing of Protection",
+                      dungeonPct = 46,
+                      baselinePct = 55,
+                    },
+                    {
+                      name = "Improved Blessing of Protection",
+                      dungeonPct = 13,
+                      baselinePct = 20,
+                    },
+                    {
+                      name = "Empyreal Ward",
+                      dungeonPct = 65,
+                      baselinePct = 71,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Unbound Freedom",
+                      dungeonPct = 98,
+                      baselinePct = 90,
+                    },
+                    {
+                      name = "Improved Blessing of Protection",
+                      dungeonPct = 27,
+                      baselinePct = 20,
+                    },
+                    {
+                      name = "Sentinel",
+                      dungeonPct = 85,
+                      baselinePct = 80,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 38,
+                      baselinePct = 63,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Empyreal Ward",
+                      dungeonPct = 79,
+                      baselinePct = 71,
+                    },
+                    {
+                      name = "Sentinel",
+                      dungeonPct = 86,
+                      baselinePct = 80,
+                    },
+                    {
+                      name = "Lightbearer",
+                      dungeonPct = 44,
+                      baselinePct = 38,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 51,
+                      baselinePct = 63,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 84,
+                      baselinePct = 63,
+                    },
+                    {
+                      name = "Avenging Wrath",
+                      dungeonPct = 32,
+                      baselinePct = 20,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Sentinel",
+                      dungeonPct = 68,
+                      baselinePct = 80,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Protection",
@@ -6243,6 +14538,7 @@ ZugZugData = {
               popularity = 2,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Protection",
@@ -6252,6 +14548,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["20+"] = {
@@ -6272,6 +14569,211 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 77,
+                      baselinePct = 63,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Sacrifice of the Just",
+                      dungeonPct = 76,
+                      baselinePct = 82,
+                    },
+                    {
+                      name = "Empyreal Ward",
+                      dungeonPct = 65,
+                      baselinePct = 71,
+                    },
+                    {
+                      name = "Redoubt",
+                      dungeonPct = 13,
+                      baselinePct = 19,
+                    },
+                  },
+                },
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Imbued Shield",
+                      dungeonPct = 89,
+                      baselinePct = 81,
+                    },
+                    {
+                      name = "Brought to Light",
+                      dungeonPct = 14,
+                      baselinePct = 9,
+                    },
+                    {
+                      name = "Improved Blessing of Protection",
+                      dungeonPct = 24,
+                      baselinePct = 20,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 43,
+                      baselinePct = 63,
+                    },
+                  },
+                },
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 85,
+                      baselinePct = 63,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Imbued Shield",
+                      dungeonPct = 71,
+                      baselinePct = 81,
+                    },
+                    {
+                      name = "Blessing of Protection",
+                      dungeonPct = 50,
+                      baselinePct = 55,
+                    },
+                    {
+                      name = "Blessing of Spellwarding",
+                      dungeonPct = 87,
+                      baselinePct = 92,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Imbued Shield",
+                      dungeonPct = 91,
+                      baselinePct = 81,
+                    },
+                    {
+                      name = "Sentinel",
+                      dungeonPct = 86,
+                      baselinePct = 80,
+                    },
+                    {
+                      name = "Light's Revocation",
+                      dungeonPct = 96,
+                      baselinePct = 92,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 43,
+                      baselinePct = 63,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 83,
+                      baselinePct = 63,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Blessing of Protection",
+                      dungeonPct = 46,
+                      baselinePct = 55,
+                    },
+                    {
+                      name = "Improved Blessing of Protection",
+                      dungeonPct = 13,
+                      baselinePct = 20,
+                    },
+                    {
+                      name = "Empyreal Ward",
+                      dungeonPct = 65,
+                      baselinePct = 71,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Unbound Freedom",
+                      dungeonPct = 98,
+                      baselinePct = 90,
+                    },
+                    {
+                      name = "Improved Blessing of Protection",
+                      dungeonPct = 27,
+                      baselinePct = 20,
+                    },
+                    {
+                      name = "Sentinel",
+                      dungeonPct = 85,
+                      baselinePct = 80,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 38,
+                      baselinePct = 63,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Empyreal Ward",
+                      dungeonPct = 79,
+                      baselinePct = 71,
+                    },
+                    {
+                      name = "Sentinel",
+                      dungeonPct = 86,
+                      baselinePct = 80,
+                    },
+                    {
+                      name = "Lightbearer",
+                      dungeonPct = 44,
+                      baselinePct = 38,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 51,
+                      baselinePct = 63,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Cleanse Toxins",
+                      dungeonPct = 84,
+                      baselinePct = 63,
+                    },
+                    {
+                      name = "Avenging Wrath",
+                      dungeonPct = 32,
+                      baselinePct = 20,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Sentinel",
+                      dungeonPct = 68,
+                      baselinePct = 80,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Protection",
@@ -6281,6 +14783,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Protection",
@@ -6290,6 +14793,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
         },
@@ -6380,6 +14884,150 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 45,
+                      baselinePct = 32,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 46,
+                      baselinePct = 65,
+                    },
+                  },
+                },
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Purify Disease",
+                      dungeonPct = 82,
+                      baselinePct = 57,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 32,
+                      baselinePct = 42,
+                    },
+                    {
+                      name = "Improved Flash Heal",
+                      dungeonPct = 28,
+                      baselinePct = 36,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 57,
+                      baselinePct = 65,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 92,
+                      baselinePct = 65,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 13,
+                      baselinePct = 32,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 88,
+                      baselinePct = 65,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 16,
+                      baselinePct = 32,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 76,
+                      baselinePct = 42,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 95,
+                      baselinePct = 65,
+                    },
+                    {
+                      name = "Shackle Horror",
+                      dungeonPct = 43,
+                      baselinePct = 23,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 9,
+                      baselinePct = 32,
+                    },
+                    {
+                      name = "Purify Disease",
+                      dungeonPct = 39,
+                      baselinePct = 57,
+                    },
+                    {
+                      name = "Psychic Voice",
+                      dungeonPct = 48,
+                      baselinePct = 61,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 49,
+                      baselinePct = 32,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 46,
+                      baselinePct = 65,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 47,
+                      baselinePct = 32,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 45,
+                      baselinePct = 65,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Shadow",
@@ -6389,6 +15037,169 @@ ZugZugData = {
               popularity = 32,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Phantom Reach",
+                      dungeonPct = 42,
+                      baselinePct = 34,
+                    },
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 28,
+                      baselinePct = 23,
+                    },
+                    {
+                      name = "Improved Flash Heal",
+                      dungeonPct = 28,
+                      baselinePct = 23,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 54,
+                      baselinePct = 75,
+                    },
+                  },
+                },
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Phantom Reach",
+                      dungeonPct = 44,
+                      baselinePct = 34,
+                    },
+                    {
+                      name = "Maddening Touch",
+                      dungeonPct = 82,
+                      baselinePct = 77,
+                    },
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 28,
+                      baselinePct = 23,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 62,
+                      baselinePct = 75,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 92,
+                      baselinePct = 75,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Shackle Horror",
+                      dungeonPct = 15,
+                      baselinePct = 23,
+                    },
+                    {
+                      name = "Maddening Touch",
+                      dungeonPct = 69,
+                      baselinePct = 77,
+                    },
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 16,
+                      baselinePct = 23,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 90,
+                      baselinePct = 75,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 15,
+                      baselinePct = 23,
+                    },
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 31,
+                      baselinePct = 37,
+                    },
+                    {
+                      name = "Psychic Voice",
+                      dungeonPct = 66,
+                      baselinePct = 69,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 75,
+                      baselinePct = 37,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 98,
+                      baselinePct = 75,
+                    },
+                    {
+                      name = "Shackle Horror",
+                      dungeonPct = 40,
+                      baselinePct = 23,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Purify Disease",
+                      dungeonPct = 52,
+                      baselinePct = 69,
+                    },
+                    {
+                      name = "Psychic Voice",
+                      dungeonPct = 56,
+                      baselinePct = 69,
+                    },
+                    {
+                      name = "Phantom Reach",
+                      dungeonPct = 21,
+                      baselinePct = 34,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 39,
+                      baselinePct = 23,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 56,
+                      baselinePct = 75,
+                    },
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 21,
+                      baselinePct = 37,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Shadow",
@@ -6398,6 +15209,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["15+"] = {
@@ -6418,6 +15230,150 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 45,
+                      baselinePct = 32,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 46,
+                      baselinePct = 65,
+                    },
+                  },
+                },
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Purify Disease",
+                      dungeonPct = 82,
+                      baselinePct = 57,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 32,
+                      baselinePct = 42,
+                    },
+                    {
+                      name = "Improved Flash Heal",
+                      dungeonPct = 28,
+                      baselinePct = 36,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 57,
+                      baselinePct = 65,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 92,
+                      baselinePct = 65,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 13,
+                      baselinePct = 32,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 88,
+                      baselinePct = 65,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 16,
+                      baselinePct = 32,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 76,
+                      baselinePct = 42,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 95,
+                      baselinePct = 65,
+                    },
+                    {
+                      name = "Shackle Horror",
+                      dungeonPct = 43,
+                      baselinePct = 23,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 9,
+                      baselinePct = 32,
+                    },
+                    {
+                      name = "Purify Disease",
+                      dungeonPct = 39,
+                      baselinePct = 57,
+                    },
+                    {
+                      name = "Psychic Voice",
+                      dungeonPct = 48,
+                      baselinePct = 61,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 49,
+                      baselinePct = 32,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 46,
+                      baselinePct = 65,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 47,
+                      baselinePct = 32,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 45,
+                      baselinePct = 65,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Shadow",
@@ -6427,6 +15383,169 @@ ZugZugData = {
               popularity = 32,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Phantom Reach",
+                      dungeonPct = 42,
+                      baselinePct = 34,
+                    },
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 28,
+                      baselinePct = 23,
+                    },
+                    {
+                      name = "Improved Flash Heal",
+                      dungeonPct = 28,
+                      baselinePct = 23,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 54,
+                      baselinePct = 75,
+                    },
+                  },
+                },
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Phantom Reach",
+                      dungeonPct = 44,
+                      baselinePct = 34,
+                    },
+                    {
+                      name = "Maddening Touch",
+                      dungeonPct = 82,
+                      baselinePct = 77,
+                    },
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 28,
+                      baselinePct = 23,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 62,
+                      baselinePct = 75,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 92,
+                      baselinePct = 75,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Shackle Horror",
+                      dungeonPct = 15,
+                      baselinePct = 23,
+                    },
+                    {
+                      name = "Maddening Touch",
+                      dungeonPct = 69,
+                      baselinePct = 77,
+                    },
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 16,
+                      baselinePct = 23,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 90,
+                      baselinePct = 75,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 15,
+                      baselinePct = 23,
+                    },
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 31,
+                      baselinePct = 37,
+                    },
+                    {
+                      name = "Psychic Voice",
+                      dungeonPct = 66,
+                      baselinePct = 69,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 75,
+                      baselinePct = 37,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 98,
+                      baselinePct = 75,
+                    },
+                    {
+                      name = "Shackle Horror",
+                      dungeonPct = 40,
+                      baselinePct = 23,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Purify Disease",
+                      dungeonPct = 52,
+                      baselinePct = 69,
+                    },
+                    {
+                      name = "Psychic Voice",
+                      dungeonPct = 56,
+                      baselinePct = 69,
+                    },
+                    {
+                      name = "Phantom Reach",
+                      dungeonPct = 21,
+                      baselinePct = 34,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 39,
+                      baselinePct = 23,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 56,
+                      baselinePct = 75,
+                    },
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 21,
+                      baselinePct = 37,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Shadow",
@@ -6436,6 +15555,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["18+"] = {
@@ -6456,6 +15576,150 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 45,
+                      baselinePct = 32,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 46,
+                      baselinePct = 65,
+                    },
+                  },
+                },
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Purify Disease",
+                      dungeonPct = 82,
+                      baselinePct = 57,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 32,
+                      baselinePct = 42,
+                    },
+                    {
+                      name = "Improved Flash Heal",
+                      dungeonPct = 28,
+                      baselinePct = 36,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 57,
+                      baselinePct = 65,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 92,
+                      baselinePct = 65,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 13,
+                      baselinePct = 32,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 88,
+                      baselinePct = 65,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 16,
+                      baselinePct = 32,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 76,
+                      baselinePct = 42,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 95,
+                      baselinePct = 65,
+                    },
+                    {
+                      name = "Shackle Horror",
+                      dungeonPct = 43,
+                      baselinePct = 23,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 9,
+                      baselinePct = 32,
+                    },
+                    {
+                      name = "Purify Disease",
+                      dungeonPct = 39,
+                      baselinePct = 57,
+                    },
+                    {
+                      name = "Psychic Voice",
+                      dungeonPct = 48,
+                      baselinePct = 61,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 49,
+                      baselinePct = 32,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 46,
+                      baselinePct = 65,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 47,
+                      baselinePct = 32,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 45,
+                      baselinePct = 65,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Shadow",
@@ -6465,6 +15729,169 @@ ZugZugData = {
               popularity = 32,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Phantom Reach",
+                      dungeonPct = 42,
+                      baselinePct = 34,
+                    },
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 28,
+                      baselinePct = 23,
+                    },
+                    {
+                      name = "Improved Flash Heal",
+                      dungeonPct = 28,
+                      baselinePct = 23,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 54,
+                      baselinePct = 75,
+                    },
+                  },
+                },
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Phantom Reach",
+                      dungeonPct = 44,
+                      baselinePct = 34,
+                    },
+                    {
+                      name = "Maddening Touch",
+                      dungeonPct = 82,
+                      baselinePct = 77,
+                    },
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 28,
+                      baselinePct = 23,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 62,
+                      baselinePct = 75,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 92,
+                      baselinePct = 75,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Shackle Horror",
+                      dungeonPct = 15,
+                      baselinePct = 23,
+                    },
+                    {
+                      name = "Maddening Touch",
+                      dungeonPct = 69,
+                      baselinePct = 77,
+                    },
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 16,
+                      baselinePct = 23,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 90,
+                      baselinePct = 75,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 15,
+                      baselinePct = 23,
+                    },
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 31,
+                      baselinePct = 37,
+                    },
+                    {
+                      name = "Psychic Voice",
+                      dungeonPct = 66,
+                      baselinePct = 69,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 75,
+                      baselinePct = 37,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 98,
+                      baselinePct = 75,
+                    },
+                    {
+                      name = "Shackle Horror",
+                      dungeonPct = 40,
+                      baselinePct = 23,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Purify Disease",
+                      dungeonPct = 52,
+                      baselinePct = 69,
+                    },
+                    {
+                      name = "Psychic Voice",
+                      dungeonPct = 56,
+                      baselinePct = 69,
+                    },
+                    {
+                      name = "Phantom Reach",
+                      dungeonPct = 21,
+                      baselinePct = 34,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 39,
+                      baselinePct = 23,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 56,
+                      baselinePct = 75,
+                    },
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 21,
+                      baselinePct = 37,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Shadow",
@@ -6474,6 +15901,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["20+"] = {
@@ -6493,6 +15921,150 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 45,
+                      baselinePct = 32,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 46,
+                      baselinePct = 65,
+                    },
+                  },
+                },
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Purify Disease",
+                      dungeonPct = 82,
+                      baselinePct = 57,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 32,
+                      baselinePct = 42,
+                    },
+                    {
+                      name = "Improved Flash Heal",
+                      dungeonPct = 28,
+                      baselinePct = 36,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 57,
+                      baselinePct = 65,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 92,
+                      baselinePct = 65,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 13,
+                      baselinePct = 32,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 88,
+                      baselinePct = 65,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 16,
+                      baselinePct = 32,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 76,
+                      baselinePct = 42,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 95,
+                      baselinePct = 65,
+                    },
+                    {
+                      name = "Shackle Horror",
+                      dungeonPct = 43,
+                      baselinePct = 23,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 9,
+                      baselinePct = 32,
+                    },
+                    {
+                      name = "Purify Disease",
+                      dungeonPct = 39,
+                      baselinePct = 57,
+                    },
+                    {
+                      name = "Psychic Voice",
+                      dungeonPct = 48,
+                      baselinePct = 61,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 49,
+                      baselinePct = 32,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 46,
+                      baselinePct = 65,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 47,
+                      baselinePct = 32,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 45,
+                      baselinePct = 65,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Shadow",
@@ -6504,6 +16076,169 @@ ZugZugData = {
               dungeons = {
                 "Seat of Triumvirate",
               },
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Phantom Reach",
+                      dungeonPct = 42,
+                      baselinePct = 34,
+                    },
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 28,
+                      baselinePct = 23,
+                    },
+                    {
+                      name = "Improved Flash Heal",
+                      dungeonPct = 28,
+                      baselinePct = 23,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 54,
+                      baselinePct = 75,
+                    },
+                  },
+                },
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Phantom Reach",
+                      dungeonPct = 44,
+                      baselinePct = 34,
+                    },
+                    {
+                      name = "Maddening Touch",
+                      dungeonPct = 82,
+                      baselinePct = 77,
+                    },
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 28,
+                      baselinePct = 23,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 62,
+                      baselinePct = 75,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 92,
+                      baselinePct = 75,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Shackle Horror",
+                      dungeonPct = 15,
+                      baselinePct = 23,
+                    },
+                    {
+                      name = "Maddening Touch",
+                      dungeonPct = 69,
+                      baselinePct = 77,
+                    },
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 16,
+                      baselinePct = 23,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 90,
+                      baselinePct = 75,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 15,
+                      baselinePct = 23,
+                    },
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 31,
+                      baselinePct = 37,
+                    },
+                    {
+                      name = "Psychic Voice",
+                      dungeonPct = 66,
+                      baselinePct = 69,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 75,
+                      baselinePct = 37,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 98,
+                      baselinePct = 75,
+                    },
+                    {
+                      name = "Shackle Horror",
+                      dungeonPct = 40,
+                      baselinePct = 23,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Purify Disease",
+                      dungeonPct = 52,
+                      baselinePct = 69,
+                    },
+                    {
+                      name = "Psychic Voice",
+                      dungeonPct = 56,
+                      baselinePct = 69,
+                    },
+                    {
+                      name = "Phantom Reach",
+                      dungeonPct = 21,
+                      baselinePct = 34,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 39,
+                      baselinePct = 23,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 56,
+                      baselinePct = 75,
+                    },
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 21,
+                      baselinePct = 37,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Shadow",
@@ -6513,6 +16248,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
         },
@@ -6672,6 +16408,206 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Psychic Scream",
+                      dungeonPct = 81,
+                      baselinePct = 61,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 32,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 14,
+                      baselinePct = 30,
+                    },
+                  },
+                },
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Mental Agility",
+                      dungeonPct = 33,
+                      baselinePct = 21,
+                    },
+                    {
+                      name = "Angel's Mercy",
+                      dungeonPct = 38,
+                      baselinePct = 26,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 35,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 16,
+                      baselinePct = 30,
+                    },
+                  },
+                },
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 82,
+                      baselinePct = 30,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 12,
+                      baselinePct = 26,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 46,
+                      baselinePct = 58,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 95,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Psychic Scream",
+                      dungeonPct = 73,
+                      baselinePct = 61,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 14,
+                      baselinePct = 30,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 80,
+                      baselinePct = 30,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 89,
+                      baselinePct = 58,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Psychic Scream",
+                      dungeonPct = 40,
+                      baselinePct = 61,
+                    },
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 13,
+                      baselinePct = 26,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 91,
+                      baselinePct = 26,
+                    },
+                    {
+                      name = "Shackle Horror",
+                      dungeonPct = 63,
+                      baselinePct = 13,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 97,
+                      baselinePct = 58,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 3,
+                      baselinePct = 30,
+                    },
+                    {
+                      name = "Psychic Scream",
+                      dungeonPct = 42,
+                      baselinePct = 61,
+                    },
+                    {
+                      name = "Body and Soul",
+                      dungeonPct = 51,
+                      baselinePct = 68,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Psychic Scream",
+                      dungeonPct = 74,
+                      baselinePct = 61,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 36,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 16,
+                      baselinePct = 30,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Angel's Mercy",
+                      dungeonPct = 35,
+                      baselinePct = 26,
+                    },
+                    {
+                      name = "Mental Agility",
+                      dungeonPct = 30,
+                      baselinePct = 21,
+                    },
+                    {
+                      name = "Mindpierce",
+                      dungeonPct = 58,
+                      baselinePct = 51,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 31,
+                      baselinePct = 58,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Holy",
@@ -6681,6 +16617,195 @@ ZugZugData = {
               popularity = 30,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Angel's Mercy",
+                      dungeonPct = 66,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Guardian Angel",
+                      dungeonPct = 33,
+                      baselinePct = 26,
+                    },
+                    {
+                      name = "Petrifying Scream",
+                      dungeonPct = 30,
+                      baselinePct = 23,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 56,
+                      baselinePct = 72,
+                    },
+                  },
+                },
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 88,
+                      baselinePct = 57,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 6,
+                      baselinePct = 14,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 66,
+                      baselinePct = 72,
+                    },
+                    {
+                      name = "Body and Soul",
+                      dungeonPct = 27,
+                      baselinePct = 32,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 93,
+                      baselinePct = 72,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Angel's Mercy",
+                      dungeonPct = 48,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 47,
+                      baselinePct = 57,
+                    },
+                    {
+                      name = "Burning Vehemence",
+                      dungeonPct = 83,
+                      baselinePct = 87,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 85,
+                      baselinePct = 57,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 87,
+                      baselinePct = 72,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Psychic Scream",
+                      dungeonPct = 77,
+                      baselinePct = 88,
+                    },
+                    {
+                      name = "Body and Soul",
+                      dungeonPct = 25,
+                      baselinePct = 32,
+                    },
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 7,
+                      baselinePct = 14,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 47,
+                      baselinePct = 14,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 96,
+                      baselinePct = 72,
+                    },
+                    {
+                      name = "Shackle Horror",
+                      dungeonPct = 20,
+                      baselinePct = 5,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 38,
+                      baselinePct = 57,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Angel's Mercy",
+                      dungeonPct = 67,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Inspiration",
+                      dungeonPct = 79,
+                      baselinePct = 73,
+                    },
+                    {
+                      name = "Body and Soul",
+                      dungeonPct = 38,
+                      baselinePct = 32,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 57,
+                      baselinePct = 72,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Restitution",
+                      dungeonPct = 81,
+                      baselinePct = 74,
+                    },
+                    {
+                      name = "Mental Agility",
+                      dungeonPct = 34,
+                      baselinePct = 28,
+                    },
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 88,
+                      baselinePct = 83,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 57,
+                      baselinePct = 72,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Holy",
@@ -6690,6 +16815,175 @@ ZugZugData = {
               popularity = 17,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Body and Soul",
+                      dungeonPct = 67,
+                      baselinePct = 53,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 43,
+                      baselinePct = 56,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 57,
+                      baselinePct = 70,
+                    },
+                  },
+                },
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Mental Agility",
+                      dungeonPct = 38,
+                      baselinePct = 26,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 46,
+                      baselinePct = 56,
+                    },
+                    {
+                      name = "Trail of Light",
+                      dungeonPct = 39,
+                      baselinePct = 49,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 60,
+                      baselinePct = 70,
+                    },
+                  },
+                },
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 84,
+                      baselinePct = 56,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 57,
+                      baselinePct = 70,
+                    },
+                    {
+                      name = "Body and Soul",
+                      dungeonPct = 40,
+                      baselinePct = 53,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 92,
+                      baselinePct = 70,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Leap of Faith",
+                      dungeonPct = 85,
+                      baselinePct = 91,
+                    },
+                    {
+                      name = "Angel's Mercy",
+                      dungeonPct = 54,
+                      baselinePct = 59,
+                    },
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 51,
+                      baselinePct = 56,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 90,
+                      baselinePct = 56,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 89,
+                      baselinePct = 70,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Psychic Scream",
+                      dungeonPct = 58,
+                      baselinePct = 73,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 46,
+                      baselinePct = 13,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 96,
+                      baselinePct = 70,
+                    },
+                    {
+                      name = "Shackle Horror",
+                      dungeonPct = 16,
+                      baselinePct = 3,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 42,
+                      baselinePct = 56,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Psychic Scream",
+                      dungeonPct = 80,
+                      baselinePct = 73,
+                    },
+                    {
+                      name = "Trail of Light",
+                      dungeonPct = 56,
+                      baselinePct = 49,
+                    },
+                    {
+                      name = "Leap of Faith",
+                      dungeonPct = 97,
+                      baselinePct = 91,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 41,
+                      baselinePct = 56,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Holy",
@@ -6699,6 +16993,7 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Discipline",
@@ -6708,6 +17003,7 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Discipline",
@@ -6717,6 +17013,7 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["15+"] = {
@@ -6737,6 +17034,206 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Psychic Scream",
+                      dungeonPct = 81,
+                      baselinePct = 61,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 32,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 14,
+                      baselinePct = 30,
+                    },
+                  },
+                },
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Mental Agility",
+                      dungeonPct = 33,
+                      baselinePct = 21,
+                    },
+                    {
+                      name = "Angel's Mercy",
+                      dungeonPct = 38,
+                      baselinePct = 26,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 35,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 16,
+                      baselinePct = 30,
+                    },
+                  },
+                },
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 82,
+                      baselinePct = 30,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 12,
+                      baselinePct = 26,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 46,
+                      baselinePct = 58,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 95,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Psychic Scream",
+                      dungeonPct = 73,
+                      baselinePct = 61,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 14,
+                      baselinePct = 30,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 80,
+                      baselinePct = 30,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 89,
+                      baselinePct = 58,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Psychic Scream",
+                      dungeonPct = 40,
+                      baselinePct = 61,
+                    },
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 13,
+                      baselinePct = 26,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 91,
+                      baselinePct = 26,
+                    },
+                    {
+                      name = "Shackle Horror",
+                      dungeonPct = 63,
+                      baselinePct = 13,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 97,
+                      baselinePct = 58,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 3,
+                      baselinePct = 30,
+                    },
+                    {
+                      name = "Psychic Scream",
+                      dungeonPct = 42,
+                      baselinePct = 61,
+                    },
+                    {
+                      name = "Body and Soul",
+                      dungeonPct = 51,
+                      baselinePct = 68,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Psychic Scream",
+                      dungeonPct = 74,
+                      baselinePct = 61,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 36,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 16,
+                      baselinePct = 30,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Angel's Mercy",
+                      dungeonPct = 35,
+                      baselinePct = 26,
+                    },
+                    {
+                      name = "Mental Agility",
+                      dungeonPct = 30,
+                      baselinePct = 21,
+                    },
+                    {
+                      name = "Mindpierce",
+                      dungeonPct = 58,
+                      baselinePct = 51,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 31,
+                      baselinePct = 58,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Holy",
@@ -6746,6 +17243,195 @@ ZugZugData = {
               popularity = 30,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Angel's Mercy",
+                      dungeonPct = 66,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Guardian Angel",
+                      dungeonPct = 33,
+                      baselinePct = 26,
+                    },
+                    {
+                      name = "Petrifying Scream",
+                      dungeonPct = 30,
+                      baselinePct = 23,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 56,
+                      baselinePct = 72,
+                    },
+                  },
+                },
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 88,
+                      baselinePct = 57,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 6,
+                      baselinePct = 14,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 66,
+                      baselinePct = 72,
+                    },
+                    {
+                      name = "Body and Soul",
+                      dungeonPct = 27,
+                      baselinePct = 32,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 93,
+                      baselinePct = 72,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Angel's Mercy",
+                      dungeonPct = 48,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 47,
+                      baselinePct = 57,
+                    },
+                    {
+                      name = "Burning Vehemence",
+                      dungeonPct = 83,
+                      baselinePct = 87,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 85,
+                      baselinePct = 57,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 87,
+                      baselinePct = 72,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Psychic Scream",
+                      dungeonPct = 77,
+                      baselinePct = 88,
+                    },
+                    {
+                      name = "Body and Soul",
+                      dungeonPct = 25,
+                      baselinePct = 32,
+                    },
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 7,
+                      baselinePct = 14,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 47,
+                      baselinePct = 14,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 96,
+                      baselinePct = 72,
+                    },
+                    {
+                      name = "Shackle Horror",
+                      dungeonPct = 20,
+                      baselinePct = 5,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 38,
+                      baselinePct = 57,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Angel's Mercy",
+                      dungeonPct = 67,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Inspiration",
+                      dungeonPct = 79,
+                      baselinePct = 73,
+                    },
+                    {
+                      name = "Body and Soul",
+                      dungeonPct = 38,
+                      baselinePct = 32,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 57,
+                      baselinePct = 72,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Restitution",
+                      dungeonPct = 81,
+                      baselinePct = 74,
+                    },
+                    {
+                      name = "Mental Agility",
+                      dungeonPct = 34,
+                      baselinePct = 28,
+                    },
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 88,
+                      baselinePct = 83,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 57,
+                      baselinePct = 72,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Holy",
@@ -6755,6 +17441,175 @@ ZugZugData = {
               popularity = 17,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Body and Soul",
+                      dungeonPct = 67,
+                      baselinePct = 53,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 43,
+                      baselinePct = 56,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 57,
+                      baselinePct = 70,
+                    },
+                  },
+                },
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Mental Agility",
+                      dungeonPct = 38,
+                      baselinePct = 26,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 46,
+                      baselinePct = 56,
+                    },
+                    {
+                      name = "Trail of Light",
+                      dungeonPct = 39,
+                      baselinePct = 49,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 60,
+                      baselinePct = 70,
+                    },
+                  },
+                },
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 84,
+                      baselinePct = 56,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 57,
+                      baselinePct = 70,
+                    },
+                    {
+                      name = "Body and Soul",
+                      dungeonPct = 40,
+                      baselinePct = 53,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 92,
+                      baselinePct = 70,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Leap of Faith",
+                      dungeonPct = 85,
+                      baselinePct = 91,
+                    },
+                    {
+                      name = "Angel's Mercy",
+                      dungeonPct = 54,
+                      baselinePct = 59,
+                    },
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 51,
+                      baselinePct = 56,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 90,
+                      baselinePct = 56,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 89,
+                      baselinePct = 70,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Psychic Scream",
+                      dungeonPct = 58,
+                      baselinePct = 73,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 46,
+                      baselinePct = 13,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 96,
+                      baselinePct = 70,
+                    },
+                    {
+                      name = "Shackle Horror",
+                      dungeonPct = 16,
+                      baselinePct = 3,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 42,
+                      baselinePct = 56,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Psychic Scream",
+                      dungeonPct = 80,
+                      baselinePct = 73,
+                    },
+                    {
+                      name = "Trail of Light",
+                      dungeonPct = 56,
+                      baselinePct = 49,
+                    },
+                    {
+                      name = "Leap of Faith",
+                      dungeonPct = 97,
+                      baselinePct = 91,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 41,
+                      baselinePct = 56,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Holy",
@@ -6764,6 +17619,7 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Discipline",
@@ -6773,6 +17629,7 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Discipline",
@@ -6782,6 +17639,7 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["18+"] = {
@@ -6802,6 +17660,206 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Psychic Scream",
+                      dungeonPct = 81,
+                      baselinePct = 61,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 32,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 14,
+                      baselinePct = 30,
+                    },
+                  },
+                },
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Mental Agility",
+                      dungeonPct = 33,
+                      baselinePct = 21,
+                    },
+                    {
+                      name = "Angel's Mercy",
+                      dungeonPct = 38,
+                      baselinePct = 26,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 35,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 16,
+                      baselinePct = 30,
+                    },
+                  },
+                },
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 82,
+                      baselinePct = 30,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 12,
+                      baselinePct = 26,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 46,
+                      baselinePct = 58,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 95,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Psychic Scream",
+                      dungeonPct = 73,
+                      baselinePct = 61,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 14,
+                      baselinePct = 30,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 80,
+                      baselinePct = 30,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 89,
+                      baselinePct = 58,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Psychic Scream",
+                      dungeonPct = 40,
+                      baselinePct = 61,
+                    },
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 13,
+                      baselinePct = 26,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 91,
+                      baselinePct = 26,
+                    },
+                    {
+                      name = "Shackle Horror",
+                      dungeonPct = 63,
+                      baselinePct = 13,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 97,
+                      baselinePct = 58,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 3,
+                      baselinePct = 30,
+                    },
+                    {
+                      name = "Psychic Scream",
+                      dungeonPct = 42,
+                      baselinePct = 61,
+                    },
+                    {
+                      name = "Body and Soul",
+                      dungeonPct = 51,
+                      baselinePct = 68,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Psychic Scream",
+                      dungeonPct = 74,
+                      baselinePct = 61,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 36,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 16,
+                      baselinePct = 30,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Angel's Mercy",
+                      dungeonPct = 35,
+                      baselinePct = 26,
+                    },
+                    {
+                      name = "Mental Agility",
+                      dungeonPct = 30,
+                      baselinePct = 21,
+                    },
+                    {
+                      name = "Mindpierce",
+                      dungeonPct = 58,
+                      baselinePct = 51,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 31,
+                      baselinePct = 58,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Holy",
@@ -6811,6 +17869,195 @@ ZugZugData = {
               popularity = 18,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Angel's Mercy",
+                      dungeonPct = 66,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Guardian Angel",
+                      dungeonPct = 33,
+                      baselinePct = 26,
+                    },
+                    {
+                      name = "Petrifying Scream",
+                      dungeonPct = 30,
+                      baselinePct = 23,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 56,
+                      baselinePct = 72,
+                    },
+                  },
+                },
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 88,
+                      baselinePct = 57,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 6,
+                      baselinePct = 14,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 66,
+                      baselinePct = 72,
+                    },
+                    {
+                      name = "Body and Soul",
+                      dungeonPct = 27,
+                      baselinePct = 32,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 93,
+                      baselinePct = 72,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Angel's Mercy",
+                      dungeonPct = 48,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 47,
+                      baselinePct = 57,
+                    },
+                    {
+                      name = "Burning Vehemence",
+                      dungeonPct = 83,
+                      baselinePct = 87,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 85,
+                      baselinePct = 57,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 87,
+                      baselinePct = 72,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Psychic Scream",
+                      dungeonPct = 77,
+                      baselinePct = 88,
+                    },
+                    {
+                      name = "Body and Soul",
+                      dungeonPct = 25,
+                      baselinePct = 32,
+                    },
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 7,
+                      baselinePct = 14,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 47,
+                      baselinePct = 14,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 96,
+                      baselinePct = 72,
+                    },
+                    {
+                      name = "Shackle Horror",
+                      dungeonPct = 20,
+                      baselinePct = 5,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 38,
+                      baselinePct = 57,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Angel's Mercy",
+                      dungeonPct = 67,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Inspiration",
+                      dungeonPct = 79,
+                      baselinePct = 73,
+                    },
+                    {
+                      name = "Body and Soul",
+                      dungeonPct = 38,
+                      baselinePct = 32,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 57,
+                      baselinePct = 72,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Restitution",
+                      dungeonPct = 81,
+                      baselinePct = 74,
+                    },
+                    {
+                      name = "Mental Agility",
+                      dungeonPct = 34,
+                      baselinePct = 28,
+                    },
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 88,
+                      baselinePct = 83,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 57,
+                      baselinePct = 72,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Holy",
@@ -6820,6 +18067,175 @@ ZugZugData = {
               popularity = 11,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Body and Soul",
+                      dungeonPct = 67,
+                      baselinePct = 53,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 43,
+                      baselinePct = 56,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 57,
+                      baselinePct = 70,
+                    },
+                  },
+                },
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Mental Agility",
+                      dungeonPct = 38,
+                      baselinePct = 26,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 46,
+                      baselinePct = 56,
+                    },
+                    {
+                      name = "Trail of Light",
+                      dungeonPct = 39,
+                      baselinePct = 49,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 60,
+                      baselinePct = 70,
+                    },
+                  },
+                },
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 84,
+                      baselinePct = 56,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 57,
+                      baselinePct = 70,
+                    },
+                    {
+                      name = "Body and Soul",
+                      dungeonPct = 40,
+                      baselinePct = 53,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 92,
+                      baselinePct = 70,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Leap of Faith",
+                      dungeonPct = 85,
+                      baselinePct = 91,
+                    },
+                    {
+                      name = "Angel's Mercy",
+                      dungeonPct = 54,
+                      baselinePct = 59,
+                    },
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 51,
+                      baselinePct = 56,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 90,
+                      baselinePct = 56,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 89,
+                      baselinePct = 70,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Psychic Scream",
+                      dungeonPct = 58,
+                      baselinePct = 73,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 46,
+                      baselinePct = 13,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 96,
+                      baselinePct = 70,
+                    },
+                    {
+                      name = "Shackle Horror",
+                      dungeonPct = 16,
+                      baselinePct = 3,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 42,
+                      baselinePct = 56,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Psychic Scream",
+                      dungeonPct = 80,
+                      baselinePct = 73,
+                    },
+                    {
+                      name = "Trail of Light",
+                      dungeonPct = 56,
+                      baselinePct = 49,
+                    },
+                    {
+                      name = "Leap of Faith",
+                      dungeonPct = 97,
+                      baselinePct = 91,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 41,
+                      baselinePct = 56,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Holy",
@@ -6829,6 +18245,7 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Discipline",
@@ -6838,6 +18255,7 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Discipline",
@@ -6847,6 +18265,7 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["20+"] = {
@@ -6867,6 +18286,206 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Psychic Scream",
+                      dungeonPct = 81,
+                      baselinePct = 61,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 32,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 14,
+                      baselinePct = 30,
+                    },
+                  },
+                },
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Mental Agility",
+                      dungeonPct = 33,
+                      baselinePct = 21,
+                    },
+                    {
+                      name = "Angel's Mercy",
+                      dungeonPct = 38,
+                      baselinePct = 26,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 35,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 16,
+                      baselinePct = 30,
+                    },
+                  },
+                },
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 82,
+                      baselinePct = 30,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 12,
+                      baselinePct = 26,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 46,
+                      baselinePct = 58,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 95,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Psychic Scream",
+                      dungeonPct = 73,
+                      baselinePct = 61,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 14,
+                      baselinePct = 30,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 80,
+                      baselinePct = 30,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 89,
+                      baselinePct = 58,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Psychic Scream",
+                      dungeonPct = 40,
+                      baselinePct = 61,
+                    },
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 13,
+                      baselinePct = 26,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 91,
+                      baselinePct = 26,
+                    },
+                    {
+                      name = "Shackle Horror",
+                      dungeonPct = 63,
+                      baselinePct = 13,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 97,
+                      baselinePct = 58,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 3,
+                      baselinePct = 30,
+                    },
+                    {
+                      name = "Psychic Scream",
+                      dungeonPct = 42,
+                      baselinePct = 61,
+                    },
+                    {
+                      name = "Body and Soul",
+                      dungeonPct = 51,
+                      baselinePct = 68,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Psychic Scream",
+                      dungeonPct = 74,
+                      baselinePct = 61,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 36,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 16,
+                      baselinePct = 30,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Angel's Mercy",
+                      dungeonPct = 35,
+                      baselinePct = 26,
+                    },
+                    {
+                      name = "Mental Agility",
+                      dungeonPct = 30,
+                      baselinePct = 21,
+                    },
+                    {
+                      name = "Mindpierce",
+                      dungeonPct = 58,
+                      baselinePct = 51,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 31,
+                      baselinePct = 58,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Holy",
@@ -6876,6 +18495,195 @@ ZugZugData = {
               popularity = 3,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Angel's Mercy",
+                      dungeonPct = 66,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Guardian Angel",
+                      dungeonPct = 33,
+                      baselinePct = 26,
+                    },
+                    {
+                      name = "Petrifying Scream",
+                      dungeonPct = 30,
+                      baselinePct = 23,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 56,
+                      baselinePct = 72,
+                    },
+                  },
+                },
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 88,
+                      baselinePct = 57,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 6,
+                      baselinePct = 14,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 66,
+                      baselinePct = 72,
+                    },
+                    {
+                      name = "Body and Soul",
+                      dungeonPct = 27,
+                      baselinePct = 32,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 93,
+                      baselinePct = 72,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Angel's Mercy",
+                      dungeonPct = 48,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 47,
+                      baselinePct = 57,
+                    },
+                    {
+                      name = "Burning Vehemence",
+                      dungeonPct = 83,
+                      baselinePct = 87,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 85,
+                      baselinePct = 57,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 87,
+                      baselinePct = 72,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Psychic Scream",
+                      dungeonPct = 77,
+                      baselinePct = 88,
+                    },
+                    {
+                      name = "Body and Soul",
+                      dungeonPct = 25,
+                      baselinePct = 32,
+                    },
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 7,
+                      baselinePct = 14,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 47,
+                      baselinePct = 14,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 96,
+                      baselinePct = 72,
+                    },
+                    {
+                      name = "Shackle Horror",
+                      dungeonPct = 20,
+                      baselinePct = 5,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 38,
+                      baselinePct = 57,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Angel's Mercy",
+                      dungeonPct = 67,
+                      baselinePct = 58,
+                    },
+                    {
+                      name = "Inspiration",
+                      dungeonPct = 79,
+                      baselinePct = 73,
+                    },
+                    {
+                      name = "Body and Soul",
+                      dungeonPct = 38,
+                      baselinePct = 32,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 57,
+                      baselinePct = 72,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Restitution",
+                      dungeonPct = 81,
+                      baselinePct = 74,
+                    },
+                    {
+                      name = "Mental Agility",
+                      dungeonPct = 34,
+                      baselinePct = 28,
+                    },
+                    {
+                      name = "Angelic Bulwark",
+                      dungeonPct = 88,
+                      baselinePct = 83,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 57,
+                      baselinePct = 72,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Holy",
@@ -6885,6 +18693,175 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Body and Soul",
+                      dungeonPct = 67,
+                      baselinePct = 53,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 43,
+                      baselinePct = 56,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 57,
+                      baselinePct = 70,
+                    },
+                  },
+                },
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Mental Agility",
+                      dungeonPct = 38,
+                      baselinePct = 26,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 46,
+                      baselinePct = 56,
+                    },
+                    {
+                      name = "Trail of Light",
+                      dungeonPct = 39,
+                      baselinePct = 49,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 60,
+                      baselinePct = 70,
+                    },
+                  },
+                },
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 84,
+                      baselinePct = 56,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 57,
+                      baselinePct = 70,
+                    },
+                    {
+                      name = "Body and Soul",
+                      dungeonPct = 40,
+                      baselinePct = 53,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 92,
+                      baselinePct = 70,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Leap of Faith",
+                      dungeonPct = 85,
+                      baselinePct = 91,
+                    },
+                    {
+                      name = "Angel's Mercy",
+                      dungeonPct = 54,
+                      baselinePct = 59,
+                    },
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 51,
+                      baselinePct = 56,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 90,
+                      baselinePct = 56,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 89,
+                      baselinePct = 70,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Psychic Scream",
+                      dungeonPct = 58,
+                      baselinePct = 73,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Dominate Mind",
+                      dungeonPct = 46,
+                      baselinePct = 13,
+                    },
+                    {
+                      name = "Phantasm",
+                      dungeonPct = 96,
+                      baselinePct = 70,
+                    },
+                    {
+                      name = "Shackle Horror",
+                      dungeonPct = 16,
+                      baselinePct = 3,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 42,
+                      baselinePct = 56,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Psychic Scream",
+                      dungeonPct = 80,
+                      baselinePct = 73,
+                    },
+                    {
+                      name = "Trail of Light",
+                      dungeonPct = 56,
+                      baselinePct = 49,
+                    },
+                    {
+                      name = "Leap of Faith",
+                      dungeonPct = 97,
+                      baselinePct = 91,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Improved Purify",
+                      dungeonPct = 41,
+                      baselinePct = 56,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Holy",
@@ -6894,6 +18871,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Discipline",
@@ -6903,6 +18881,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Discipline",
@@ -6912,6 +18891,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
         },
@@ -7018,6 +18998,60 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Swift Art",
+                      dungeonPct = 38,
+                      baselinePct = 22,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Diffuse Magic",
+                      dungeonPct = 32,
+                      baselinePct = 38,
+                    },
+                    {
+                      name = "Soothing Mist",
+                      dungeonPct = 39,
+                      baselinePct = 44,
+                    },
+                    {
+                      name = "Elusive Mists",
+                      dungeonPct = 38,
+                      baselinePct = 43,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Transcendence: Linked Spirits",
+                      dungeonPct = 23,
+                      baselinePct = 6,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Lighter Than Air",
+                      dungeonPct = 82,
+                      baselinePct = 92,
+                    },
+                    {
+                      name = "Diffuse Magic",
+                      dungeonPct = 30,
+                      baselinePct = 38,
+                    },
+                    {
+                      name = "Swift Art",
+                      dungeonPct = 14,
+                      baselinePct = 22,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Windwalker",
@@ -7027,6 +19061,7 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Windwalker",
@@ -7036,6 +19071,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["15+"] = {
@@ -7056,6 +19092,60 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Swift Art",
+                      dungeonPct = 38,
+                      baselinePct = 22,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Diffuse Magic",
+                      dungeonPct = 32,
+                      baselinePct = 38,
+                    },
+                    {
+                      name = "Soothing Mist",
+                      dungeonPct = 39,
+                      baselinePct = 44,
+                    },
+                    {
+                      name = "Elusive Mists",
+                      dungeonPct = 38,
+                      baselinePct = 43,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Transcendence: Linked Spirits",
+                      dungeonPct = 23,
+                      baselinePct = 6,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Lighter Than Air",
+                      dungeonPct = 82,
+                      baselinePct = 92,
+                    },
+                    {
+                      name = "Diffuse Magic",
+                      dungeonPct = 30,
+                      baselinePct = 38,
+                    },
+                    {
+                      name = "Swift Art",
+                      dungeonPct = 14,
+                      baselinePct = 22,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Windwalker",
@@ -7065,6 +19155,7 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Windwalker",
@@ -7074,6 +19165,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["18+"] = {
@@ -7094,6 +19186,60 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Swift Art",
+                      dungeonPct = 38,
+                      baselinePct = 22,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Diffuse Magic",
+                      dungeonPct = 32,
+                      baselinePct = 38,
+                    },
+                    {
+                      name = "Soothing Mist",
+                      dungeonPct = 39,
+                      baselinePct = 44,
+                    },
+                    {
+                      name = "Elusive Mists",
+                      dungeonPct = 38,
+                      baselinePct = 43,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Transcendence: Linked Spirits",
+                      dungeonPct = 23,
+                      baselinePct = 6,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Lighter Than Air",
+                      dungeonPct = 82,
+                      baselinePct = 92,
+                    },
+                    {
+                      name = "Diffuse Magic",
+                      dungeonPct = 30,
+                      baselinePct = 38,
+                    },
+                    {
+                      name = "Swift Art",
+                      dungeonPct = 14,
+                      baselinePct = 22,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Windwalker",
@@ -7103,6 +19249,7 @@ ZugZugData = {
               popularity = 2,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Windwalker",
@@ -7112,6 +19259,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["20+"] = {
@@ -7132,6 +19280,60 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Swift Art",
+                      dungeonPct = 38,
+                      baselinePct = 22,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Diffuse Magic",
+                      dungeonPct = 32,
+                      baselinePct = 38,
+                    },
+                    {
+                      name = "Soothing Mist",
+                      dungeonPct = 39,
+                      baselinePct = 44,
+                    },
+                    {
+                      name = "Elusive Mists",
+                      dungeonPct = 38,
+                      baselinePct = 43,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Transcendence: Linked Spirits",
+                      dungeonPct = 23,
+                      baselinePct = 6,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Lighter Than Air",
+                      dungeonPct = 82,
+                      baselinePct = 92,
+                    },
+                    {
+                      name = "Diffuse Magic",
+                      dungeonPct = 30,
+                      baselinePct = 38,
+                    },
+                    {
+                      name = "Swift Art",
+                      dungeonPct = 14,
+                      baselinePct = 22,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Windwalker",
@@ -7141,6 +19343,7 @@ ZugZugData = {
               popularity = 5,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Windwalker",
@@ -7150,6 +19353,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
         },
@@ -7254,6 +19458,196 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Fatal Touch",
+                      dungeonPct = 52,
+                      baselinePct = 37,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Swift Art",
+                      dungeonPct = 8,
+                      baselinePct = 24,
+                    },
+                  },
+                },
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Diffuse Magic",
+                      dungeonPct = 71,
+                      baselinePct = 56,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Swift Art",
+                      dungeonPct = 10,
+                      baselinePct = 24,
+                    },
+                  },
+                },
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Fatal Touch",
+                      dungeonPct = 47,
+                      baselinePct = 37,
+                    },
+                    {
+                      name = "Improved Detox",
+                      dungeonPct = 99,
+                      baselinePct = 92,
+                    },
+                    {
+                      name = "Lighter Than Air",
+                      dungeonPct = 96,
+                      baselinePct = 90,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Swift Art",
+                      dungeonPct = 12,
+                      baselinePct = 24,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Swift Art",
+                      dungeonPct = 52,
+                      baselinePct = 24,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Transcendence: Linked Spirits",
+                      dungeonPct = 10,
+                      baselinePct = 19,
+                    },
+                    {
+                      name = "Jade Infusion",
+                      dungeonPct = 43,
+                      baselinePct = 51,
+                    },
+                    {
+                      name = "Windwalking",
+                      dungeonPct = 19,
+                      baselinePct = 25,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Swift Art",
+                      dungeonPct = 40,
+                      baselinePct = 24,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Windwalking",
+                      dungeonPct = 16,
+                      baselinePct = 25,
+                    },
+                    {
+                      name = "Transcendence: Linked Spirits",
+                      dungeonPct = 10,
+                      baselinePct = 19,
+                    },
+                    {
+                      name = "Fatal Touch",
+                      dungeonPct = 31,
+                      baselinePct = 37,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Swift Art",
+                      dungeonPct = 50,
+                      baselinePct = 24,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Diffuse Magic",
+                      dungeonPct = 45,
+                      baselinePct = 56,
+                    },
+                    {
+                      name = "Improved Detox",
+                      dungeonPct = 82,
+                      baselinePct = 92,
+                    },
+                    {
+                      name = "Transcendence: Linked Spirits",
+                      dungeonPct = 9,
+                      baselinePct = 19,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Transcendence: Linked Spirits",
+                      dungeonPct = 69,
+                      baselinePct = 19,
+                    },
+                    {
+                      name = "Windwalking",
+                      dungeonPct = 62,
+                      baselinePct = 25,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Diffuse Magic",
+                      dungeonPct = 23,
+                      baselinePct = 56,
+                    },
+                    {
+                      name = "Swift Art",
+                      dungeonPct = 5,
+                      baselinePct = 24,
+                    },
+                    {
+                      name = "Fatal Touch",
+                      dungeonPct = 22,
+                      baselinePct = 37,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Diffuse Magic",
+                      dungeonPct = 74,
+                      baselinePct = 56,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Transcendence: Linked Spirits",
+                      dungeonPct = 6,
+                      baselinePct = 19,
+                    },
+                    {
+                      name = "Swift Art",
+                      dungeonPct = 11,
+                      baselinePct = 24,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Mistweaver",
@@ -7263,6 +19657,7 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Mistweaver",
@@ -7272,6 +19667,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["15+"] = {
@@ -7292,6 +19688,196 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Fatal Touch",
+                      dungeonPct = 52,
+                      baselinePct = 37,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Swift Art",
+                      dungeonPct = 8,
+                      baselinePct = 24,
+                    },
+                  },
+                },
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Diffuse Magic",
+                      dungeonPct = 71,
+                      baselinePct = 56,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Swift Art",
+                      dungeonPct = 10,
+                      baselinePct = 24,
+                    },
+                  },
+                },
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Fatal Touch",
+                      dungeonPct = 47,
+                      baselinePct = 37,
+                    },
+                    {
+                      name = "Improved Detox",
+                      dungeonPct = 99,
+                      baselinePct = 92,
+                    },
+                    {
+                      name = "Lighter Than Air",
+                      dungeonPct = 96,
+                      baselinePct = 90,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Swift Art",
+                      dungeonPct = 12,
+                      baselinePct = 24,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Swift Art",
+                      dungeonPct = 52,
+                      baselinePct = 24,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Transcendence: Linked Spirits",
+                      dungeonPct = 10,
+                      baselinePct = 19,
+                    },
+                    {
+                      name = "Jade Infusion",
+                      dungeonPct = 43,
+                      baselinePct = 51,
+                    },
+                    {
+                      name = "Windwalking",
+                      dungeonPct = 19,
+                      baselinePct = 25,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Swift Art",
+                      dungeonPct = 40,
+                      baselinePct = 24,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Windwalking",
+                      dungeonPct = 16,
+                      baselinePct = 25,
+                    },
+                    {
+                      name = "Transcendence: Linked Spirits",
+                      dungeonPct = 10,
+                      baselinePct = 19,
+                    },
+                    {
+                      name = "Fatal Touch",
+                      dungeonPct = 31,
+                      baselinePct = 37,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Swift Art",
+                      dungeonPct = 50,
+                      baselinePct = 24,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Diffuse Magic",
+                      dungeonPct = 45,
+                      baselinePct = 56,
+                    },
+                    {
+                      name = "Improved Detox",
+                      dungeonPct = 82,
+                      baselinePct = 92,
+                    },
+                    {
+                      name = "Transcendence: Linked Spirits",
+                      dungeonPct = 9,
+                      baselinePct = 19,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Transcendence: Linked Spirits",
+                      dungeonPct = 69,
+                      baselinePct = 19,
+                    },
+                    {
+                      name = "Windwalking",
+                      dungeonPct = 62,
+                      baselinePct = 25,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Diffuse Magic",
+                      dungeonPct = 23,
+                      baselinePct = 56,
+                    },
+                    {
+                      name = "Swift Art",
+                      dungeonPct = 5,
+                      baselinePct = 24,
+                    },
+                    {
+                      name = "Fatal Touch",
+                      dungeonPct = 22,
+                      baselinePct = 37,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Diffuse Magic",
+                      dungeonPct = 74,
+                      baselinePct = 56,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Transcendence: Linked Spirits",
+                      dungeonPct = 6,
+                      baselinePct = 19,
+                    },
+                    {
+                      name = "Swift Art",
+                      dungeonPct = 11,
+                      baselinePct = 24,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Mistweaver",
@@ -7301,6 +19887,7 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Mistweaver",
@@ -7310,6 +19897,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["18+"] = {
@@ -7330,6 +19918,196 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Fatal Touch",
+                      dungeonPct = 52,
+                      baselinePct = 37,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Swift Art",
+                      dungeonPct = 8,
+                      baselinePct = 24,
+                    },
+                  },
+                },
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Diffuse Magic",
+                      dungeonPct = 71,
+                      baselinePct = 56,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Swift Art",
+                      dungeonPct = 10,
+                      baselinePct = 24,
+                    },
+                  },
+                },
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Fatal Touch",
+                      dungeonPct = 47,
+                      baselinePct = 37,
+                    },
+                    {
+                      name = "Improved Detox",
+                      dungeonPct = 99,
+                      baselinePct = 92,
+                    },
+                    {
+                      name = "Lighter Than Air",
+                      dungeonPct = 96,
+                      baselinePct = 90,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Swift Art",
+                      dungeonPct = 12,
+                      baselinePct = 24,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Swift Art",
+                      dungeonPct = 52,
+                      baselinePct = 24,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Transcendence: Linked Spirits",
+                      dungeonPct = 10,
+                      baselinePct = 19,
+                    },
+                    {
+                      name = "Jade Infusion",
+                      dungeonPct = 43,
+                      baselinePct = 51,
+                    },
+                    {
+                      name = "Windwalking",
+                      dungeonPct = 19,
+                      baselinePct = 25,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Swift Art",
+                      dungeonPct = 40,
+                      baselinePct = 24,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Windwalking",
+                      dungeonPct = 16,
+                      baselinePct = 25,
+                    },
+                    {
+                      name = "Transcendence: Linked Spirits",
+                      dungeonPct = 10,
+                      baselinePct = 19,
+                    },
+                    {
+                      name = "Fatal Touch",
+                      dungeonPct = 31,
+                      baselinePct = 37,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Swift Art",
+                      dungeonPct = 50,
+                      baselinePct = 24,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Diffuse Magic",
+                      dungeonPct = 45,
+                      baselinePct = 56,
+                    },
+                    {
+                      name = "Improved Detox",
+                      dungeonPct = 82,
+                      baselinePct = 92,
+                    },
+                    {
+                      name = "Transcendence: Linked Spirits",
+                      dungeonPct = 9,
+                      baselinePct = 19,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Transcendence: Linked Spirits",
+                      dungeonPct = 69,
+                      baselinePct = 19,
+                    },
+                    {
+                      name = "Windwalking",
+                      dungeonPct = 62,
+                      baselinePct = 25,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Diffuse Magic",
+                      dungeonPct = 23,
+                      baselinePct = 56,
+                    },
+                    {
+                      name = "Swift Art",
+                      dungeonPct = 5,
+                      baselinePct = 24,
+                    },
+                    {
+                      name = "Fatal Touch",
+                      dungeonPct = 22,
+                      baselinePct = 37,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Diffuse Magic",
+                      dungeonPct = 74,
+                      baselinePct = 56,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Transcendence: Linked Spirits",
+                      dungeonPct = 6,
+                      baselinePct = 19,
+                    },
+                    {
+                      name = "Swift Art",
+                      dungeonPct = 11,
+                      baselinePct = 24,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Mistweaver",
@@ -7339,6 +20117,7 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Mistweaver",
@@ -7348,6 +20127,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["20+"] = {
@@ -7368,6 +20148,196 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Fatal Touch",
+                      dungeonPct = 52,
+                      baselinePct = 37,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Swift Art",
+                      dungeonPct = 8,
+                      baselinePct = 24,
+                    },
+                  },
+                },
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Diffuse Magic",
+                      dungeonPct = 71,
+                      baselinePct = 56,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Swift Art",
+                      dungeonPct = 10,
+                      baselinePct = 24,
+                    },
+                  },
+                },
+                ["Maisara Caverns"] = {
+                  picks = {
+                    {
+                      name = "Fatal Touch",
+                      dungeonPct = 47,
+                      baselinePct = 37,
+                    },
+                    {
+                      name = "Improved Detox",
+                      dungeonPct = 99,
+                      baselinePct = 92,
+                    },
+                    {
+                      name = "Lighter Than Air",
+                      dungeonPct = 96,
+                      baselinePct = 90,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Swift Art",
+                      dungeonPct = 12,
+                      baselinePct = 24,
+                    },
+                  },
+                },
+                ["Nexus-Point Xenas"] = {
+                  picks = {
+                    {
+                      name = "Swift Art",
+                      dungeonPct = 52,
+                      baselinePct = 24,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Transcendence: Linked Spirits",
+                      dungeonPct = 10,
+                      baselinePct = 19,
+                    },
+                    {
+                      name = "Jade Infusion",
+                      dungeonPct = 43,
+                      baselinePct = 51,
+                    },
+                    {
+                      name = "Windwalking",
+                      dungeonPct = 19,
+                      baselinePct = 25,
+                    },
+                  },
+                },
+                ["Pit of Saron"] = {
+                  picks = {
+                    {
+                      name = "Swift Art",
+                      dungeonPct = 40,
+                      baselinePct = 24,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Windwalking",
+                      dungeonPct = 16,
+                      baselinePct = 25,
+                    },
+                    {
+                      name = "Transcendence: Linked Spirits",
+                      dungeonPct = 10,
+                      baselinePct = 19,
+                    },
+                    {
+                      name = "Fatal Touch",
+                      dungeonPct = 31,
+                      baselinePct = 37,
+                    },
+                  },
+                },
+                ["Seat of Triumvirate"] = {
+                  picks = {
+                    {
+                      name = "Swift Art",
+                      dungeonPct = 50,
+                      baselinePct = 24,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Diffuse Magic",
+                      dungeonPct = 45,
+                      baselinePct = 56,
+                    },
+                    {
+                      name = "Improved Detox",
+                      dungeonPct = 82,
+                      baselinePct = 92,
+                    },
+                    {
+                      name = "Transcendence: Linked Spirits",
+                      dungeonPct = 9,
+                      baselinePct = 19,
+                    },
+                  },
+                },
+                Skyreach = {
+                  picks = {
+                    {
+                      name = "Transcendence: Linked Spirits",
+                      dungeonPct = 69,
+                      baselinePct = 19,
+                    },
+                    {
+                      name = "Windwalking",
+                      dungeonPct = 62,
+                      baselinePct = 25,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Diffuse Magic",
+                      dungeonPct = 23,
+                      baselinePct = 56,
+                    },
+                    {
+                      name = "Swift Art",
+                      dungeonPct = 5,
+                      baselinePct = 24,
+                    },
+                    {
+                      name = "Fatal Touch",
+                      dungeonPct = 22,
+                      baselinePct = 37,
+                    },
+                  },
+                },
+                ["Windrunner Spire"] = {
+                  picks = {
+                    {
+                      name = "Diffuse Magic",
+                      dungeonPct = 74,
+                      baselinePct = 56,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Transcendence: Linked Spirits",
+                      dungeonPct = 6,
+                      baselinePct = 19,
+                    },
+                    {
+                      name = "Swift Art",
+                      dungeonPct = 11,
+                      baselinePct = 24,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Mistweaver",
@@ -7377,6 +20347,7 @@ ZugZugData = {
               popularity = 1,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
             {
               spec = "Mistweaver",
@@ -7386,6 +20357,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
         },
@@ -7490,6 +20462,24 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Transcendence: Linked Spirits",
+                      dungeonPct = 56,
+                      baselinePct = 28,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Save Them All",
+                      dungeonPct = 23,
+                      baselinePct = 35,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Brewmaster",
@@ -7501,6 +20491,60 @@ ZugZugData = {
               dungeons = {
                 "Maisara Caverns",
               },
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Counterstrike",
+                      dungeonPct = 71,
+                      baselinePct = 57,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Jade Walk",
+                      dungeonPct = 63,
+                      baselinePct = 68,
+                    },
+                    {
+                      name = "Anvil and Stave",
+                      dungeonPct = 85,
+                      baselinePct = 89,
+                    },
+                    {
+                      name = "Exploding Keg",
+                      dungeonPct = 62,
+                      baselinePct = 66,
+                    },
+                  },
+                },
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Transcendence: Linked Spirits",
+                      dungeonPct = 28,
+                      baselinePct = 15,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Save Them All",
+                      dungeonPct = 51,
+                      baselinePct = 59,
+                    },
+                    {
+                      name = "Anvil and Stave",
+                      dungeonPct = 83,
+                      baselinePct = 89,
+                    },
+                    {
+                      name = "Walk with the Ox",
+                      dungeonPct = 1,
+                      baselinePct = 6,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Brewmaster",
@@ -7510,6 +20554,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["15+"] = {
@@ -7529,6 +20574,24 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Transcendence: Linked Spirits",
+                      dungeonPct = 56,
+                      baselinePct = 28,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Save Them All",
+                      dungeonPct = 23,
+                      baselinePct = 35,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Brewmaster",
@@ -7540,6 +20603,60 @@ ZugZugData = {
               dungeons = {
                 "Maisara Caverns",
               },
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Counterstrike",
+                      dungeonPct = 71,
+                      baselinePct = 57,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Jade Walk",
+                      dungeonPct = 63,
+                      baselinePct = 68,
+                    },
+                    {
+                      name = "Anvil and Stave",
+                      dungeonPct = 85,
+                      baselinePct = 89,
+                    },
+                    {
+                      name = "Exploding Keg",
+                      dungeonPct = 62,
+                      baselinePct = 66,
+                    },
+                  },
+                },
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Transcendence: Linked Spirits",
+                      dungeonPct = 28,
+                      baselinePct = 15,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Save Them All",
+                      dungeonPct = 51,
+                      baselinePct = 59,
+                    },
+                    {
+                      name = "Anvil and Stave",
+                      dungeonPct = 83,
+                      baselinePct = 89,
+                    },
+                    {
+                      name = "Walk with the Ox",
+                      dungeonPct = 1,
+                      baselinePct = 6,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Brewmaster",
@@ -7549,6 +20666,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["18+"] = {
@@ -7568,6 +20686,24 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Transcendence: Linked Spirits",
+                      dungeonPct = 56,
+                      baselinePct = 28,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Save Them All",
+                      dungeonPct = 23,
+                      baselinePct = 35,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Brewmaster",
@@ -7579,6 +20715,60 @@ ZugZugData = {
               dungeons = {
                 "Maisara Caverns",
               },
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Counterstrike",
+                      dungeonPct = 71,
+                      baselinePct = 57,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Jade Walk",
+                      dungeonPct = 63,
+                      baselinePct = 68,
+                    },
+                    {
+                      name = "Anvil and Stave",
+                      dungeonPct = 85,
+                      baselinePct = 89,
+                    },
+                    {
+                      name = "Exploding Keg",
+                      dungeonPct = 62,
+                      baselinePct = 66,
+                    },
+                  },
+                },
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Transcendence: Linked Spirits",
+                      dungeonPct = 28,
+                      baselinePct = 15,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Save Them All",
+                      dungeonPct = 51,
+                      baselinePct = 59,
+                    },
+                    {
+                      name = "Anvil and Stave",
+                      dungeonPct = 83,
+                      baselinePct = 89,
+                    },
+                    {
+                      name = "Walk with the Ox",
+                      dungeonPct = 1,
+                      baselinePct = 6,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Brewmaster",
@@ -7588,6 +20778,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
           ["20+"] = {
@@ -7607,6 +20798,24 @@ ZugZugData = {
                 "Skyreach",
                 "Windrunner Spire",
               },
+              dungeonSwaps = {
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Transcendence: Linked Spirits",
+                      dungeonPct = 56,
+                      baselinePct = 28,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Save Them All",
+                      dungeonPct = 23,
+                      baselinePct = 35,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Brewmaster",
@@ -7618,6 +20827,60 @@ ZugZugData = {
               dungeons = {
                 "Maisara Caverns",
               },
+              dungeonSwaps = {
+                ["Algeth'ar Academy"] = {
+                  picks = {
+                    {
+                      name = "Counterstrike",
+                      dungeonPct = 71,
+                      baselinePct = 57,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Jade Walk",
+                      dungeonPct = 63,
+                      baselinePct = 68,
+                    },
+                    {
+                      name = "Anvil and Stave",
+                      dungeonPct = 85,
+                      baselinePct = 89,
+                    },
+                    {
+                      name = "Exploding Keg",
+                      dungeonPct = 62,
+                      baselinePct = 66,
+                    },
+                  },
+                },
+                ["Magisters' Terrace"] = {
+                  picks = {
+                    {
+                      name = "Transcendence: Linked Spirits",
+                      dungeonPct = 28,
+                      baselinePct = 15,
+                    },
+                  },
+                  drops = {
+                    {
+                      name = "Save Them All",
+                      dungeonPct = 51,
+                      baselinePct = 59,
+                    },
+                    {
+                      name = "Anvil and Stave",
+                      dungeonPct = 83,
+                      baselinePct = 89,
+                    },
+                    {
+                      name = "Walk with the Ox",
+                      dungeonPct = 1,
+                      baselinePct = 6,
+                    },
+                  },
+                },
+              },
             },
             {
               spec = "Brewmaster",
@@ -7627,6 +20890,7 @@ ZugZugData = {
               popularity = 0,
               trend = "flat",
               dungeons = nil,
+              dungeonSwaps = nil,
             },
           },
         },
