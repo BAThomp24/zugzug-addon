@@ -1,186 +1,186 @@
 {
-  "source": "icy-veins.com leveling guides (Midnight expansion)",
-  "lastUpdated": "2026-04-25",
+  "source": "icy-veins.com Mythic+/Delves builds (35 specs) + manual (Dev/Pres Evoker, Ret Paladin, Holy Priest) \u2014 Midnight 12.0.5",
+  "lastUpdated": "2026-05-19",
   "specs": [
     {
       "class": "Death Knight",
       "classToken": "DEATHKNIGHT",
       "spec": "Blood",
-      "importString": "CoPAAAAAAAAAAAAAAAAAAAAAAwYWmZGmxYmhZZmZmmZxYMmxAAAAAzMzMzMzMDzYMAYMzMzAAAgxADQw2wEYYBwMMAAMzAAGA"
+      "importString": "CoPAAAAAAAAAAAAAAAAAAAAAAwMzyMzMmxMzMMLzMz0MLGjxMGAAAAwMmZmZmZYGjBAjZmZGAAgxsNwAWCWGmADLAmhZAAMzAYYA"
     },
     {
       "class": "Death Knight",
       "classToken": "DEATHKNIGHT",
       "spec": "Frost",
-      "importString": "CsPAAAAAAAAAAAAAAAAAAAAAAMDYmZMzMDY2mZmZmZxMjxMGzMMDjxMDmZmZmBAAAAAAAAAjZbgBsAWGmBMWwMjZmBmBwwMDwMgB"
+      "importString": "CsPAAAAAAAAAAAAAAAAAAAAAAMDYmZMzMzYY2mZmZmZxMzkZwYmZMgZMzMzMzMDAAAAAAAAAjZbgBsAWGmAjFMzwMDMDghZGAgB"
     },
     {
       "class": "Death Knight",
       "classToken": "DEATHKNIGHT",
       "spec": "Unholy",
-      "importString": "CwPAAAAAAAAAAAAAAAAAAAAAAAwMjZMDDz2MzMzMbmZmxMGAAAAAAAAmZYmBAbzYmZbmZMMDYzsYYgBmNGmxCAmBgxMzYGgZmZYMA"
+      "importString": "CwPAAAAAAAAAAAAAAAAAAAAAAAYmhZMzMDz2MzMTzmZGjZAAAAAAAAgZGzYAwyMmZ2MzYMDYzsZYgBmNGasgBMDAjZmxMAzMzYMA"
     },
     {
       "class": "Demon Hunter",
       "classToken": "DEMONHUNTER",
       "spec": "Havoc",
-      "importString": "CEkAAAAAAAAAAAAAAAAAAAAAAYmZGzMzmxMzMmZmwMDAAAAAAY2MGmxYYegZwyMzMbjBWGwsZGY2QjZmxwGAAAwAAAAYmBDAAAAA"
+      "importString": "CEkAAAAAAAAAAAAAAAAAAAAAAYmZmZmZ2mxMzMGzkxMDAAAAAAYWMmtZYmBmx2sNzMjxALDsNbmxwsw0YmZMjNAAAgBAAAwMDGAAAAG"
     },
     {
       "class": "Demon Hunter",
       "classToken": "DEMONHUNTER",
       "spec": "Vengeance",
-      "importString": "CUkAAAAAAAAAAAAAAAAAAAAAAAAMjZmZMzMjMmBDzMzYYGzMmxMmZGmZbmx2YGMAAAAAAAAgZM2AAAAwgZmZMj2mZMAYAAAAA"
+      "importString": "CUkAAAAAAAAAAAAAAAAAAAAAAAAMjZmZMMzkZmBWMjZwMjZGzMzMzYwsNzYjZ2GDDAAAAAAAAzMzsBAAAgBmZmZmt2mZmBAGAAAAD"
     },
     {
       "class": "Druid",
       "classToken": "DRUID",
       "spec": "Balance",
-      "importString": "CYGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWoMbNjxMDMmFmZmBgHYMz2YbGzYbsMjxYMzGGGgBYbDYyMbDAAAA2YmZmBbGDjZAMzAA"
+      "importString": "CYGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWoMbNMmZgxsMzMzMLMgZbmlZWmxM2YZGjZmZsgBADwy2YDTzMLjAAAAsZm5BmZwmxMGDAzMAwA"
     },
     {
       "class": "Druid",
       "classToken": "DRUID",
       "spec": "Feral",
-      "importString": "CcGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMYmxMzMzstN2mZbmZm5BmZAAAAYLYYYMzomxsMmZmxYGAAAAAAYgBAAAQGz2YmBAsAmZAWYwAAAYmNA"
+      "importString": "CcGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMDzMzMjZmNjtZ2mZmZegZGAAAA2CmNDPgZG1MmFzMzMLjZYAAAAAAMwAAAAoZWmtZmZAALwMzAswgBAAwMbYA"
     },
     {
       "class": "Druid",
       "classToken": "DRUID",
       "spec": "Guardian",
-      "importString": "CgGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZmxsMPwYMWMbzMPgZZZAbGGNRzMzyMzMzYMDAAAAAADbzAW2mZwYWGATAAAAbYMALmBDGssNAAA"
+      "importString": "CgGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZmZmFzMjZWMLm5BmZZZgZzMGNRmZWmZmZmlxMAAAAAAYsYGYbbmBjZZAMFAAAYDz8ADYxMYgZxyGgZGAA"
     },
     {
       "class": "Druid",
       "classToken": "DRUID",
       "spec": "Restoration",
-      "importString": "CkGAAAAAAAAAAAAAAAAAAAAAAMMmZZMjZmxsNzMglZsYbGAAAAAAAAAAsNoZjxkhZmxsZmZmZZGYAAAAAAAwAAAAAghZrZZsYDmZgZWAZAAmZAA"
+      "importString": "CkGAAAAAAAAAAAAAAAAAAAAAAMMmZZMjZmxsN8AMzsNjFbzAAAAAAAAAAgFDNbzw0MAmFzMzMLGGAAAAAMAAzAAQAAAz2MbNbzsYjZmZGMzGoZAAmZAYA"
     },
     {
       "class": "Evoker",
       "classToken": "EVOKER",
       "spec": "Devastation",
-      "importString": "CsbBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAzMDMDzgZghZMTjZmpZwyMmZmZmZmZGwMzYwMLzMDMAD2AMaYAMDAbYgZGMA"
+      "importString": "CsbBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAzMDMDzYmBMYMTjZmpZM2mxMzMz8AzMzAmxMzYmZZmZgBGDWglxox2AYGA2wAzMYYA"
     },
     {
       "class": "Evoker",
       "classToken": "EVOKER",
       "spec": "Preservation",
-      "importString": "CwbBAAAAAAAAAAAAAAAAAAAAAAAAAAAYmZ2WGYGzMPwsYMzM2mBAAYGzYGjxMTYmBAAAMzMTGmZMbzMAAYMDAGYwQDYBGzMADA"
+      "importString": "CwbBAAAAAAAAAAAAAAAAAAAAAAAAAAAMzMz2yAzYmxsZGjx2wAAAzYGzghZyMzMAAAw2MzMNjZmZGjZAAYMjFWgBmhhGGWgxMDAD"
     },
     {
       "class": "Evoker",
       "classToken": "EVOKER",
       "spec": "Augmentation",
-      "importString": "CEcBAAAAAAAAAAAAAAAAAAAAAMmZmZbmZmxyAzsNjxwMAAAAAAAAwMYGYM1YmZGAAAAYMjxMjxMDMzmxgFYZMM2GAzgYDzMDmZwA"
+      "importString": "CEcBAAAAAAAAAAAAAAAAAAAAAMmZmZbmZmxyAzsNjxwMAAAAAAAAwM8AzwYM1YmZGAAAAYmZMmZ2GzMwMbGDWglxwYbAMDiNMzMYmBDG"
     },
     {
       "class": "Hunter",
       "classToken": "HUNTER",
       "spec": "Beast Mastery",
-      "importString": "C0PAAAAAAAAAAAAAAAAAAAAAAYzsAGwAGIwYBAAAAAAAAYmZGzwMmZGzMMmwYmZ222MzMDzMDzYbwsNYGAAAzMGAMjFYGgtB"
+      "importString": "C0PAAAAAAAAAAAAAAAAAAAAAAAMmxwGsAzwQDbAAYGPwyMzsYGmZmZGzMMzMmhZGzMDbzMjZMDLjpZAAAAAAAAAMzYAzsBgZWAbDA"
     },
     {
       "class": "Hunter",
       "classToken": "HUNTER",
       "spec": "Marksmanship",
-      "importString": "C4PAAAAAAAAAAAAAAAAAAAAAAwCMwwohBwMYDAAAAAAAAYmZGzwMmZGzMMmwYmZ222MzMDzMDzYbwsNYGAAAzMGAMjFYGgtB"
+      "importString": "C4PAAAAAAAAAAAAAAAAAAAAAAwCMwMGNWGAzgNAAAAAAAAgZMzMjNjHYmxMsMmmxgZbbbmZYmZmZmZjZ2GmZAAAmxYAYmxGMDwGzMG"
     },
     {
       "class": "Hunter",
       "classToken": "HUNTER",
       "spec": "Survival",
-      "importString": "C8PAAAAAAAAAAAAAAAAAAAAAAMWgBGGNMAmBsZmZmxM2GAAAAAAMzMjZYGjZMzwDYyAAAAAGAALbzMzmZmZGGjBADLwMGzMbA"
+      "importString": "C8PAAAAAAAAAAAAAAAAAAAAAAMgxMGWgFYGGawiZmZmZYZAAAAAAwMmZmx2MGzYGWGTzAAAAwAAjllZmZxMzMYMGwMbAYGjZmNDA"
     },
     {
       "class": "Mage",
       "classToken": "MAGE",
       "spec": "Arcane",
-      "importString": "C4DAAAAAAAAAAAAAAAAAAAAAAMzwYZGzsgZGamZmBAAAAAAYmZmllZmYBAgtZMzMmNzyMzMmZMGzMzMWYGzYAAMAAAmZBAMDAGG"
+      "importString": "C4DAAAAAAAAAAAAAAAAAAAAAAMzwMLzMzsgZGamZmBAAwAAAAzMzssMzELAAsNjZmxsZWmZmxMjxYmZmxGzYGDAgBAAwMLAgZAwwA"
     },
     {
       "class": "Mage",
       "classToken": "MAGE",
       "spec": "Fire",
-      "importString": "C8DAAAAAAAAAAAAAAAAAAAAAAMzALzMzsgZGZmZGAAAGAwYmssYGAgNzMjtxMzMPwGAAAAAsYmxMAAwYGGmZmZ2GAmZAGjBzwA"
+      "importString": "C8DAAAAAAAAAAAAAAAAAAAAAAMzwYZmZmFMzIzMzMAAAGAwMz0sssMDAwmZmx2YmZGLAAAAAwmZGzMAAYMDjZmZmZbAYmBYMGMDD"
     },
     {
       "class": "Mage",
       "classToken": "MAGE",
       "spec": "Frost",
-      "importString": "CAEAAAAAAAAAAAAAAAAAAAAAAMzwYZmZmNmZmYGGzMzMziZmZMmZmFyMLzCAAAsAAAAAAAWAYbbMzMDmtZMmx2GAAAYmBjwAAA"
+      "importString": "CAEAAAAAAAAAAAAAAAAAAAAAAYGGLzMzsMmZmYmxMzMzMziZmZMjZAAAgZmZWWmZaDAA2AAAAWAYbbMzMDmthxMsAAAwMbAzADYGMA"
     },
     {
       "class": "Monk",
       "classToken": "MONK",
       "spec": "Brewmaster",
-      "importString": "CwQAAAAAAAAAAAAAAAAAAAAAAAAAAgZZzYGzwyM2MmZMAAAAAAALLgYmBmhBzgZmZwshZMzywymltZbGzGAAsMLTLz2AAAAADbgZGw0YADAA"
+      "importString": "CwQAAAAAAAAAAAAAAAAAAAAAAAAAAgZZzYGzwyM2MmZMAAAAAAALLgYmBmhBzgZmZGzsNMjZWGW2ssNbzYWAAglZZaZ2mZZAAAAMsBmZATjBMAgB"
     },
     {
       "class": "Monk",
       "classToken": "MONK",
       "spec": "Mistweaver",
-      "importString": "C4QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAghxyMLDL2MjZshtttZMDzsttMzYhhmxMgBDzgZmZGmNYYWmJAAAAAAYxyYhZGAAAAwMgBYRGzA"
+      "importString": "C4QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAghxyMLjZx2MjZsYstsNjZ2Mz22yMjFGaGzAGMgxMzMDz2sxwsMTAAAAAAwitZWmtZGAAYAAmBMGYRGzA"
     },
     {
       "class": "Monk",
       "classToken": "MONK",
       "spec": "Windwalker",
-      "importString": "C0QAAAAAAAAAAAAAAAAAAAAAAMzMD2GGYmZ2mZGAAAAAAAAAAAYZYEmxywAmxwMjBzGmBLzEAwmZ2mZgxMAA2AAmlmZmZBYYgZAwYxMgBA"
+      "importString": "C0QAAAAAAAAAAAAAAAAAAAAAAMzYMYMYbmZ2mxAAAAAAAAAAAALDzEmhhBMjhZmZGmthZYWmJAgFzsNGGzMDAgNAYWmlmZmZBYYgZGAYZMEDYA"
     },
     {
       "class": "Paladin",
       "classToken": "PALADIN",
       "spec": "Holy",
-      "importString": "CEEAAAAAAAAAAAAAAAAAAAAAAAAAAYBAMAAglxMzYGzMzGjxYWGbzMLmpJmlZMzMMMbZAYAYDsZWmxMLz2MzsEAAAgFAYjxAmBAAGwYMA"
+      "importString": "CEEAAAAAAAAAAAAAAAAAAAAAAAAAAMLAgZAAglxMzMzYmZWgxwyYbmZxMNxsMjZmhhZLDADAbgNWmZmZZ2mZmtGAAAgF2YGsBMMAAAzMMjxwA"
     },
     {
       "class": "Paladin",
       "classToken": "PALADIN",
       "spec": "Protection",
-      "importString": "CIEAAAAAAAAAAAAAAAAAAAAAAsNj5BYWmZZMjZmxyYmhZxyMGAAAAAAAAopZmFzYmhhRAwAGwgNAAwMabMmBAYzMYAAzwYAAWmBMzMAA"
+      "importString": "CIEAAAAAAAAAAAAAAAAAAAAAAsZMMzyYZmZMzMLLjxwsMLzYAAAAAAAAgmmZWMjZGGmt2AwAGwgtBAAmZabmZZGAgNGMAYMDjBAYZGwMzAG"
     },
     {
       "class": "Paladin",
       "classToken": "PALADIN",
       "spec": "Retribution",
-      "importString": "CYEAAAAAAAAAAAAAAAAAAAAAAAAAAAAQzyyMzsMzMzMDAAAAAwMlhBzYbY2GmZzMMegZwYjtBAAkZ02YMDAYDwAAmhBGmZWwyMYMjZMA"
+      "importString": "CYEAAAAAAAAAAAAAAAAAAAAAAAAAAAAQzyyMzsMzMzMDAAAAAwMlxMYGbzY2GmZbGMegZwYjtBAAwMTbzMbzAA2AMAgZYGMMzsglZwYGzYwA"
     },
     {
       "class": "Priest",
       "classToken": "PRIEST",
       "spec": "Discipline",
-      "importString": "CAQAAAAAAAAAAAAAAAAAAAAAAADsYMzGjxYmZMbsNzMzMzAAAAAAAAAAgBLzgZmZwYmBbmmpZAzAAAYbWAGbGAAGDzYwMYmBjmB"
+      "importString": "CAQAAAAAAAAAAAAAAAAAAAAAAADsYwyMjZmZGMbzYmZmZMzAAAAAAAAAAYGWmBzMzMMmZwmpZiBYmFMEGzyAMGsAAAjZmZMYGgZmRwA"
     },
     {
       "class": "Priest",
       "classToken": "PRIEST",
       "spec": "Holy",
-      "importString": "CEQAAAAAAAAAAAAAAAAAAAAAAwYAAAAAAAMMzsMmxMzYMzALzMzMAAAAmZsNDGPwM2MGjZDmpAYmFMEGWGgBYxMmFAmxMMzgZAMjBA"
+      "importString": "CEQAAAAAAAAAAAAAAAAAAAAAAwYAAAAAAAmZMzsMzMMzYYmZYZmZmBAAAwYmlZwMzM2MmZMgZKAmZBDhxsNAjBWYYDgZMzYMYGgZmBMA"
     },
     {
       "class": "Priest",
       "classToken": "PRIEST",
       "spec": "Shadow",
-      "importString": "CIQAAAAAAAAAAAAAAAAAAAAAAAzmBAAAAAAAAAAAwYsYGjlxYmZzMmZYzgxMjNkZsYmGADwMLmhZzAQGjFAMmZmMmZmZmNmBAzEA"
+      "importString": "CIQAAAAAAAAAAAAAAAAAAAAAAMMDDAAAAAAAAAAAgxYxMGLzMmZWmZYG2mZGzMzMbIzYZjGgZmZAgAMbz2CY2YAmZGYMzMjZjZwMDmBD"
     },
     {
       "class": "Rogue",
       "classToken": "ROGUE",
       "spec": "Assassination",
-      "importString": "CMQAAAAAAAAAAAAAAAAAAAAAAYmlZmNDAAAAAAz2gtZAAAAAAZbmZGPwMDmZmZWmZbmxYmZmBzYmxYAMwCMMaAglBsZAwMzMwA"
+      "importString": "CMQAAAAAAAAAAAAAAAAAAAAAAYmlZmNDGAAAAAYWGsNDAAAAAottZmZmZmxYmZmZbmlZG8AzMzMjhZGjBwALwMGNmNALDYzYDwMDjB"
     },
     {
       "class": "Rogue",
       "classToken": "ROGUE",
       "spec": "Outlaw",
-      "importString": "CQQAAAAAAAAAAAAAAAAAAAAAAAgBwMzgZbmZmxYmZbxMzMLTbD2mBAAAAAM2mZmZmZGGGzsMAAAAmBAMmFAMwgFahNGgZGYgB"
+      "importString": "CQQAAAAAAAAAAAAAAAAAAAAAAAgx2MYmZmZmtZmZMzMzsBmZbaZw2MAAAAAgZbbmZGmZmZGzMzyAAAAwYAwYWMMwAzCL0CbMAzMYgB"
     },
     {
       "class": "Rogue",
       "classToken": "ROGUE",
       "spec": "Subtlety",
-      "importString": "CUQAAAAAAAAAAAAAAAAAAAAAAAgx2MAAAAAwsMGLTMbbjxMYwMzMzYMbzMzM2mZmxDMzYAzsMAAAAMYMgxwwADYhFiNMDYmBzA"
+      "importString": "CUQAAAAAAAAAAAAAAAAAAAAAAAgx2MAAAAAwsMGLTMbbjxMjZMegZmZGjZbYGbbzMzMzMjBjZWGAAAAGMGwY2MMwAziWoFbYGwMDmxA"
     },
     {
       "class": "Shaman",
@@ -192,49 +192,49 @@
       "class": "Shaman",
       "classToken": "SHAMAN",
       "spec": "Enhancement",
-      "importString": "CcQAAAAAAAAAAAAAAAAAAAAAAMzMDjZmZmZmhZmZAAAAAAAAAsBgZMsBgZANYBgZZGzYssMDMzswiZmZYsMmBAYGGzMMCMzgBDA"
+      "importString": "CcQAAAAAAAAAAAAAAAAAAAAAAMzMjZmZmZmZmZmZGzAAAAAAAAAALwGMjFN2GAzA2AYWmxMGLLGYmZbsMzMzMYZMDAAwYMjYmBYwYA"
     },
     {
       "class": "Shaman",
       "classToken": "SHAMAN",
       "spec": "Restoration",
-      "importString": "CgQAAAAAAAAAAAAAAAAAAAAAAAAAAgBAAAAjZMW2mZmZmZmZmxwgxCMAgZhJwYxMmBz2MzMa2WmZYmZwi5BmZMwyAAAAMDAmZwMA"
+      "importString": "CgQAAAAAAAAAAAAAAAAAAAAAAAAAAgBAAAAjZMW2mZmZmZmZmxwYxMLwAGwswEYsYGzgZbmZGNbLzMMzMLsYmZGDmlBAAAYGAMzgZwA"
     },
     {
       "class": "Warlock",
       "classToken": "WARLOCK",
       "spec": "Affliction",
-      "importString": "CkQAAAAAAAAAAAAAAAAAAAAAAYMjZGNLmx2MzYWGAAwMzsMbzMzyYAALwAziRjZAMLglBAAADAAAMmZYMzYGMzMzYYGjBAMAA"
+      "importString": "CkQAAAAAAAAAAAAAAAAAAAAAAwMjZGNLmxiZGzyAAAmZmlZzMzyYAALwAziRjZAZ2ALDAAAzAAAzMYMzMmtxYGmZmZYYmZmBAMDMA"
     },
     {
       "class": "Warlock",
       "classToken": "WARLOCK",
       "spec": "Demonology",
-      "importString": "CoQAAAAAAAAAAAAAAAAAAAAAAYMjZGNLmx2MzYWGAAAAAAAW2GYADYGEYsZMzMLz2MmhBAMmxYAMzYmhBAAwMjxMzMYmZAA"
+      "importString": "CoQAAAAAAAAAAAAAAAAAAAAAAwMjZGNLmxiZGzyAAAAAAAMWWGYADYG2CM2MmZsMmxMzMAwMzMGDwMzYmxMbAAgxMzMzYw2MDwA"
     },
     {
       "class": "Warlock",
       "classToken": "WARLOCK",
       "spec": "Destruction",
-      "importString": "CsQAAAAAAAAAAAAAAAAAAAAAAYMjZGNLmx2MzYWmNmZmFzMbLmBAAzMjZmZxCMwwoBAmNsxAAAjBAAwMDGzMMAAAMjxAAwMA"
+      "importString": "CsQAAAAAAAAAAAAAAAAAAAAAAwMjZGNLmxmZGzysZGzsYYZZmBAAzMjZmZxCMwsY0YGAzG2YAAgxMAAAzMYMzMmNAAAzMzMAAMDD"
     },
     {
       "class": "Warrior",
       "classToken": "WARRIOR",
       "spec": "Arms",
-      "importString": "CcEAAAAAAAAAAAAAAAAAAAAAAgZmZmFzMzYGAAAghpBGzYzMzDMzwMmZAAAAAM2MDslZAMjhFAMDoxgFghNz2MMbmtBzMAgZAA"
+      "importString": "CcEAAAAAAAAAAAAAAAAAAAAAAgZmZmFzYmZGAAAghphxYmZzMzMzYmxMDAAAAgxyMDsFGLbDsAGwMMhMD2AzMMMY2mZbAmZAwYYA"
     },
     {
       "class": "Warrior",
       "classToken": "WARRIOR",
       "spec": "Fury",
-      "importString": "CgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgGDMzMzmZmHYGjZMzMzYMzsNzMGjZZMzMAAQYgNYhRDDgZBDLAGbGbDAMDghZmxwA"
+      "importString": "CgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgGDjZMz2yMzMjZmxMjZMjZWmZGjZmlxMzAAAhB2glFjGzAysgZsAYGMGAMzAYYmZGMYA"
     },
     {
       "class": "Warrior",
       "classToken": "WARRIOR",
       "spec": "Protection",
-      "importString": "CkEAAAAAAAAAAAAAAAAAAAAAA0yAAAjZMzMzMzY2MzsMMGz0wMDLmxMjZYmBAAAALzAYGDwAglF0YGADMzGYmZgZbAwMDAADA"
+      "importString": "CkEAAAAAAAAAAAAAAAAAAAAAAkBAAGzYmZmZmxsYmZZGjxoxMGWMzMzYGmZAAAAwyAwMGgB2glFjGzAYWwMbwMzMDmlBAzMAAMDYA"
     }
   ]
 }
