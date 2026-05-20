@@ -316,17 +316,39 @@ local function createBanner()
   specInfoText:SetTextColor(COLORS.muted.r, COLORS.muted.g, COLORS.muted.b)
   f.specInfoText = specInfoText
 
-  -- Talent icon (rounded, class-colored frame)
+  -- Talent icon (rounded, class-colored frame). Shows the actual spell icon
+  -- when we can resolve one; falls back to a single letter otherwise. The
+  -- whole frame is hoverable for the spell tooltip.
   local talentIconFrame = CreateFrame("Frame", nil, f, "BackdropTemplate")
   talentIconFrame:SetSize(48, 48)
   talentIconFrame:SetPoint("TOPLEFT", f, "TOPLEFT", 18, -36)
   talentIconFrame:SetBackdrop(BACKDROP_INFO)
   talentIconFrame:SetBackdropColor(cr * 0.4, cg * 0.4, cb * 0.4, 1)
   talentIconFrame:SetBackdropBorderColor(cr, cg, cb, 1)
+  talentIconFrame:EnableMouse(true)
+
+  -- Spell-icon texture (preferred when we can resolve it)
+  local talentIconTex = talentIconFrame:CreateTexture(nil, "ARTWORK")
+  talentIconTex:SetPoint("TOPLEFT", talentIconFrame, "TOPLEFT", 3, -3)
+  talentIconTex:SetPoint("BOTTOMRIGHT", talentIconFrame, "BOTTOMRIGHT", -3, 3)
+  talentIconTex:SetTexCoord(0.08, 0.92, 0.08, 0.92)
+  talentIconTex:Hide()
+  talentIconFrame.iconTex = talentIconTex
+
+  -- Letter fallback (used when no spell icon is resolvable)
   local talentIconText = talentIconFrame:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
   talentIconText:SetPoint("CENTER")
   talentIconText:SetTextColor(1, 1, 1)
   talentIconFrame.text = talentIconText
+
+  talentIconFrame:SetScript("OnEnter", function(self)
+    if not self.spellID then return end
+    GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+    GameTooltip:SetSpellByID(self.spellID)
+    GameTooltip:Show()
+  end)
+  talentIconFrame:SetScript("OnLeave", function() GameTooltip:Hide() end)
+
   f.talentIconFrame = talentIconFrame
 
   -- "NEXT TALENT" eyebrow
@@ -527,12 +549,43 @@ local function updateBanner(pick, forceShow)
     banner.specInfoText:SetText("\194\183 " .. specName .. " " .. className .. " \226\128\148 Level " .. tostring(level))
   end
 
-  -- Talent icon (use first letter of talent name as fallback)
-  if banner.talentIconFrame and banner.talentIconFrame.text then
-    if pick and pick.name then
-      banner.talentIconFrame.text:SetText(pick.name:sub(1, 1):upper())
+  -- Talent icon: resolve the pick's spell ID/icon directly from the talent tree
+  -- so the icon texture matches the talent and hover shows the real spell tooltip.
+  if banner.talentIconFrame then
+    local spellID, iconID
+    if pick and pick.nodeID then
+      local configID = C_ClassTalents.GetActiveConfigID()
+      if configID then
+        local nodeInfo = C_Traits.GetNodeInfo(configID, pick.nodeID)
+        if nodeInfo and nodeInfo.entryIDs then
+          local entryID = nodeInfo.entryIDs[(pick.choiceIndex or 0) + 1]
+          if entryID then
+            local entryInfo = C_Traits.GetEntryInfo(configID, entryID)
+            if entryInfo and entryInfo.definitionID then
+              local defInfo = C_Traits.GetDefinitionInfo(entryInfo.definitionID)
+              if defInfo and defInfo.spellID then
+                spellID = defInfo.spellID
+                local spell = C_Spell and C_Spell.GetSpellInfo and C_Spell.GetSpellInfo(spellID)
+                iconID = spell and spell.iconID
+              end
+            end
+          end
+        end
+      end
+    end
+
+    banner.talentIconFrame.spellID = spellID
+    if iconID then
+      banner.talentIconFrame.iconTex:SetTexture(iconID)
+      banner.talentIconFrame.iconTex:Show()
+      banner.talentIconFrame.text:SetText("")
     else
-      banner.talentIconFrame.text:SetText("\226\156\147") -- ✓
+      banner.talentIconFrame.iconTex:Hide()
+      if pick and pick.name then
+        banner.talentIconFrame.text:SetText(pick.name:sub(1, 1):upper())
+      else
+        banner.talentIconFrame.text:SetText("\226\156\147") -- ✓
+      end
     end
   end
 
@@ -575,9 +628,19 @@ function ZZ:GetLevelingStatus()
   }
 end
 
+--- Returns true when the leveling guide should be active for the player right now.
+local function levelingActive()
+  if ZugZugDB.levelingEnabled == false then return false end
+  local level = UnitLevel("player")
+  if level and level >= MAX_LEVEL and not ZugZugDB.levelingAtMax then
+    return false
+  end
+  return true
+end
+
 --- Auto-refresh: hides banner when no unspent points, shows when there are.
 function ZZ:RefreshLeveling()
-  if ZugZugDB.levelingEnabled == false then
+  if not levelingActive() then
     if bannerFrame then bannerFrame:Hide() end
     return
   end
@@ -600,6 +663,11 @@ end
 function ZZ:ToggleLevelingBanner()
   if ZugZugDB.levelingEnabled == false then
     print("|cff00ccffZugZug:|r Leveling guide is disabled in settings.")
+    return
+  end
+  local level = UnitLevel("player")
+  if level and level >= MAX_LEVEL and not ZugZugDB.levelingAtMax then
+    print("|cff00ccffZugZug:|r Leveling guide is hidden at max level (enable in settings).")
     return
   end
 
@@ -687,10 +755,11 @@ function ZZ:ApplyLevelingBuild()
   return true
 end
 
---- Called when the settings toggle flips. Hides the banner when disabled,
+--- Called when either of the leveling settings toggles flip. Hides the banner
+--- when the guide is no longer active (disabled, or at max with the opt-in off),
 --- or attempts to show it when re-enabled.
 function ZZ:UpdateLevelingEnabled()
-  if ZugZugDB.levelingEnabled == false then
+  if not levelingActive() then
     if bannerFrame then bannerFrame:Hide() end
   else
     if not levelingOrder then
