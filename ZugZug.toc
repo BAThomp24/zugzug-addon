@@ -6,7 +6,7 @@
 ## SavedVariables: ZugZugDB
 ## DefaultState: enabled
 ## X-Website: https://zugzug.info
-## X-Curse-Project-ID: zugzugcompanion
+## X-Curse-Project-ID: zugzug-companion
 ## X-Category: Class
 
 Data.lua
@@ -17,3 +17,4 @@ UI.lua
 Suggest.lua
 Leveling.lua
 Minimap.lua
+AutoResponse.lua

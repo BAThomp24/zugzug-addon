@@ -58,7 +58,7 @@ Every WoW class and spec is supported — 39 specs total, all with hand-tuned le
 
 ## Installation
 
-1. Download the latest release from [CurseForge](https://www.curseforge.com/wow/addons/zugzugcompanion) or [Releases](https://github.com/BAThomp24/zugzug-addon/releases)
+1. Download the latest release from [CurseForge](https://www.curseforge.com/wow/addons/zugzug-companion) or [Releases](https://github.com/BAThomp24/zugzug-addon/releases)
 2. Extract the `ZugZug` folder into `World of Warcraft/_retail_/Interface/AddOns/`
 3. Restart WoW or `/reload`
 
@@ -84,6 +84,6 @@ You can also browse the same builds on the web:
 ## Links
 
 - 🌐 Website: **[zugzug.info](https://zugzug.info)**
-- 📦 CurseForge: **[zugzugcompanion](https://www.curseforge.com/wow/addons/zugzugcompanion)**
+- 📦 CurseForge: **[zugzug-companion](https://www.curseforge.com/wow/addons/zugzug-companion)**
 - 🐛 Issues / feedback: [GitHub Issues](https://github.com/BAThomp24/zugzug-addon/issues)
 - ☕ Support: [Buy me a coffee](https://buymeacoffee.com/bathomp24)
