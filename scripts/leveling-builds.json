@@ -1,6 +1,6 @@
 {
-  "source": "icy-veins.com Mythic+/Delves builds (35 specs) + manual (Dev/Pres Evoker, Ret Paladin, Holy Priest) \u2014 Midnight 12.0.5",
-  "lastUpdated": "2026-05-19",
+  "source": "icy-veins.com Mythic+/Delves builds (36 specs) + manual (Dev/Pres Evoker, Ret Paladin, Holy Priest) \u2014 Midnight 12.0.5",
+  "lastUpdated": "2026-05-26",
   "specs": [
     {
       "class": "Death Knight",
@@ -31,6 +31,12 @@
       "classToken": "DEMONHUNTER",
       "spec": "Vengeance",
       "importString": "CUkAAAAAAAAAAAAAAAAAAAAAAAAMjZmZMMzkZmBWMjZwMjZGzMzMzYwsNzYjZ2GDDAAAAAAAAzMzsBAAAgBmZmZmt2mZmBAGAAAAD"
+    },
+    {
+      "class": "Demon Hunter",
+      "classToken": "DEMONHUNTER",
+      "spec": "Devourer",
+      "importString": "CgcBAAAAAAAAAAAAAAAAAAAAAAA2mxMzMzMzMGmBAAAAAAgxsNYGAAAAAAAAmxMMzMzMzMzMDzsYGjFZhZmZmt2mZmBwwAQgZMYMD"
     },
     {
       "class": "Druid",
