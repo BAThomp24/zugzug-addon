@@ -180,25 +180,17 @@ local function CreateSettingsPanel()
   -- Fade timer
   CreateSliderSetting(panel, 16, startY - 210, "Auto-Hide Timer", "suggestFadeTimer", 0, 30, 1)
 
-  -- Mythic+ section
-  local mpLabel = panel:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
-  mpLabel:SetPoint("TOPLEFT", panel, "TOPLEFT", 16, startY - 255)
-  mpLabel:SetText("|cff8fbf3fMythic+|r")
-
-  local mpAutoToggle = CreateToggle(panel, 16, startY - 285, "Time Auto-Reply", "mpAutoResponse")
-  mpAutoToggle.text:SetText("Time Auto-Reply  |cff888888(whisper \"time\" auto-replies with key time left)|r")
-
   -- Frame section
   local frameLabel = panel:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
-  frameLabel:SetPoint("TOPLEFT", panel, "TOPLEFT", 16, startY - 325)
+  frameLabel:SetPoint("TOPLEFT", panel, "TOPLEFT", 16, startY - 270)
   frameLabel:SetText("|cff8fbf3fFrame|r")
 
-  CreateToggle(panel, 16, startY - 355, "Lock Frame Position", "barLocked", function()
+  CreateToggle(panel, 16, startY - 300, "Lock Frame Position", "barLocked", function()
     local ZZ = _G.ZugZug
     if ZZ and ZZ.UpdateBarLockState then ZZ:UpdateBarLockState() end
   end)
 
-  local clampToggle = CreateToggle(panel, 16, startY - 385, "Clamp to Talent Page", "barClamped", function()
+  local clampToggle = CreateToggle(panel, 16, startY - 330, "Clamp to Talent Page", "barClamped", function()
     local ZZ = _G.ZugZug
     if ZZ and ZZ.UpdateBarClampState then ZZ:UpdateBarClampState() end
   end)
@@ -206,7 +198,7 @@ local function CreateSettingsPanel()
 
   local resetBtn = CreateFrame("Button", nil, panel, "UIPanelButtonTemplate")
   resetBtn:SetSize(140, 22)
-  resetBtn:SetPoint("TOPLEFT", panel, "TOPLEFT", 16, startY - 420)
+  resetBtn:SetPoint("TOPLEFT", panel, "TOPLEFT", 16, startY - 365)
   resetBtn:SetText("Reset Position")
   resetBtn:SetScript("OnClick", function()
     local ZZ = _G.ZugZug
@@ -215,23 +207,23 @@ local function CreateSettingsPanel()
 
   -- Leveling section
   local levelingLabel = panel:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
-  levelingLabel:SetPoint("TOPLEFT", panel, "TOPLEFT", 16, startY - 465)
+  levelingLabel:SetPoint("TOPLEFT", panel, "TOPLEFT", 16, startY - 410)
   levelingLabel:SetText("|cff8fbf3fLeveling|r")
 
-  local levelingToggle = CreateToggle(panel, 16, startY - 495, "Enable Leveling Guide", "levelingEnabled", function()
+  local levelingToggle = CreateToggle(panel, 16, startY - 440, "Enable Leveling Guide", "levelingEnabled", function()
     local ZZ = _G.ZugZug
     if ZZ and ZZ.UpdateLevelingEnabled then ZZ:UpdateLevelingEnabled() end
   end)
   levelingToggle.text:SetText("Enable Leveling Guide  |cff888888(banner + bar button below max level)|r")
 
-  local atMaxToggle = CreateToggle(panel, 16, startY - 525, "Show at Max Level", "levelingAtMax", function()
+  local atMaxToggle = CreateToggle(panel, 16, startY - 470, "Show at Max Level", "levelingAtMax", function()
     local ZZ = _G.ZugZug
     if ZZ and ZZ.UpdateLevelingEnabled then ZZ:UpdateLevelingEnabled() end
   end)
   atMaxToggle.text:SetText("Show at Max Level  |cff888888(for open world / delves)|r")
 
-  -- Size the scroll child to fit all content (last control sits near startY - 525)
-  panel:SetHeight(math.abs(startY - 525) + 60)
+  -- Size the scroll child to fit all content (last control sits near startY - 470)
+  panel:SetHeight(math.abs(startY - 470) + 60)
 
   return canvas
 end
