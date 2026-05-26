@@ -17,4 +17,3 @@ UI.lua
 Suggest.lua
 Leveling.lua
 Minimap.lua
-AutoResponse.lua

@@ -38,7 +38,6 @@ local DEFAULTS = {
   barPosition = nil,               -- { point, relativePoint, x, y, clamped }; nil = default anchor
   levelingEnabled = true,          -- show leveling guide banner + bar button below max level
   levelingAtMax = false,           -- keep showing the leveling guide at max level (for open world / delves)
-  mpAutoResponse = false,          -- auto-reply to "time" whispers with M+ time remaining
 }
 
 local function ensureDefaults()
