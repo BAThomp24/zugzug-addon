@@ -187,6 +187,15 @@ local function handleSlashCommand(msg)
     return
   end
 
+  if cmd == "dump" or cmd == "debug" or cmd == "dumpswaps" then
+    if ZZ.DumpLastSwapState then
+      ZZ:DumpLastSwapState()
+    else
+      print("|cff00ccffZugZug:|r DumpLastSwapState not loaded — try /reload")
+    end
+    return
+  end
+
   if cmd == "settings" or cmd == "options" or cmd == "config" then
     local ok, err = pcall(function()
       if ZZ.settingsCategory then
@@ -208,7 +217,6 @@ local function handleSlashCommand(msg)
   print("  /zugzug diff <heroic|mythic> — set raid difficulty")
   print("  /zugzug key <all|15+|18+|20+> — set M+ key level filter")
   print("  /zugzug suggest — toggle smart suggest on/off")
-  print("  /zugzug minimap — toggle minimap button")
 end
 
 ----------------------------------------------------------------------

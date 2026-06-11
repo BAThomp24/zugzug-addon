@@ -16,4 +16,3 @@ Settings.lua
 UI.lua
 Suggest.lua
 Leveling.lua
-Minimap.lua

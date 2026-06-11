@@ -251,6 +251,80 @@ end
 -- (not just on the same spec + hero).
 ZZ.CountTalentDiff = countTalentDiff
 
+--- Print the current state of every pick/drop in the last captured
+--- swapData, so we can see exactly why the popup is appearing. Each line
+--- shows the talent name, current/max rank, whether it's a choice node,
+--- canPurchaseRank, and canRefundRank — the four fields ApplySwaps and
+--- SwapsAlreadyApplied use to decide actionability.
+function ZZ:DumpLastSwapState()
+  -- Write directly to DEFAULT_CHAT_FRAME so a chat addon (Chattynator
+  -- etc.) can't route or filter the output away.
+  local function out(msg) DEFAULT_CHAT_FRAME:AddMessage(msg) end
+  out("|cffff8800ZZ:DumpLastSwapState ENTRY|r")
+  local sw = self.lastSwapData
+  if not sw then out("|cff00ccffZugZug:|r no captured swap data") return end
+  out("|cff00ccffZugZug:|r sw has " .. (sw.picks and #sw.picks or 0) .. " picks, "
+    .. (sw.drops and #sw.drops or 0) .. " drops")
+  local specID = PlayerUtil and PlayerUtil.GetCurrentSpecID and PlayerUtil.GetCurrentSpecID()
+  local configID = C_ClassTalents.GetActiveConfigID()
+  local treeID = specID and C_ClassTalents.GetTraitTreeForSpec(specID)
+  if not (specID and configID and treeID) then
+    print("|cff00ccffZugZug:|r talent API not ready")
+    return
+  end
+  local treeNodes = C_Traits.GetTreeNodes(treeID)
+  local nameLookup = {}
+  for _, nodeID in ipairs(treeNodes or {}) do
+    local ni = C_Traits.GetNodeInfo(configID, nodeID)
+    if ni and ni.entryIDs then
+      local isChoice = #ni.entryIDs > 1
+      for _, entryID in ipairs(ni.entryIDs) do
+        local ei = C_Traits.GetEntryInfo(configID, entryID)
+        local di = ei and ei.definitionID
+                    and C_Traits.GetDefinitionInfo(ei.definitionID)
+        if di then
+          local nm = (di.overrideName and di.overrideName ~= "") and di.overrideName
+                      or (di.spellID and C_Spell and C_Spell.GetSpellInfo
+                          and (C_Spell.GetSpellInfo(di.spellID) or {}).name)
+          if nm and nm ~= "" and not nameLookup[nm] then
+            nameLookup[nm] = { nodeID = nodeID, entryID = entryID, isChoice = isChoice }
+          end
+        end
+      end
+    end
+  end
+
+  local function dumpList(label, list)
+    print(string.format("|cff8fbf3fZugZug %s (%d):|r", label, #list))
+    for i, p in ipairs(list) do
+      local t = nameLookup[p.name]
+      if not t then
+        print(string.format("  [%d] %s — NOT FOUND in spec tree", i, tostring(p.name)))
+      else
+        local ni = C_Traits.GetNodeInfo(configID, t.nodeID)
+        if not ni then
+          print(string.format("  [%d] %s — nodeInfo nil", i, p.name))
+        elseif t.isChoice then
+          local active = ni.activeEntry and ni.activeEntry.entryID
+          local matches = (active == t.entryID)
+          print(string.format("  [%d] %s — choice  active=%s  target=%s  matches=%s",
+            i, p.name, tostring(active), tostring(t.entryID), tostring(matches)))
+        else
+          print(string.format("  [%d] %s — rank=%d/%d  canPurchase=%s  canRefund=%s",
+            i, p.name, ni.currentRank or 0, ni.maxRanks or 1,
+            tostring(ni.canPurchaseRank), tostring(ni.canRefundRank)))
+        end
+      end
+    end
+  end
+
+  dumpList("picks", sw.picks or {})
+  dumpList("drops", sw.drops or {})
+
+  print(string.format("|cff8fbf3fZugZug:|r SwapsAlreadyApplied = %s",
+    tostring(ZZ:SwapsAlreadyApplied(sw))))
+end
+
 --- Parse a talent import string into structured node data.
 local function parseImportString(importString)
   if not ExportUtil or not ExportUtil.MakeImportDataStream then
@@ -478,6 +552,122 @@ function ZZ:GetTalentLookup()
   return lookup
 end
 
+--- Returns true if every pick in swapData is already selected AND every
+--- non-choice drop is already at rank 0 — i.e., there's nothing left for
+--- ApplySwaps to do. Used by Suggest.lua to suppress redundant dungeon-tweak
+--- popups when the player already has the recommended picks.
+function ZZ:SwapsAlreadyApplied(swapData)
+  if not swapData then return true end
+  local picks = swapData.picks or {}
+  if #picks == 0 then return true end
+
+  -- API readiness checks. On /reload these can return nil briefly before
+  -- the talent system has settled. In that window we lean *optimistic* —
+  -- return true (no popup) rather than false (popup), so we don't show a
+  -- "Apply Swaps" call-to-action we can't verify is meaningful. A real
+  -- swap-needed state will re-trigger the next zone change or spec switch.
+  local specID = PlayerUtil and PlayerUtil.GetCurrentSpecID and PlayerUtil.GetCurrentSpecID()
+  if not specID then return true end
+  local configID = C_ClassTalents.GetActiveConfigID()
+  if not configID then return true end
+  local treeID = C_ClassTalents.GetTraitTreeForSpec(specID)
+  if not treeID then return true end
+
+  local treeNodes = C_Traits.GetTreeNodes(treeID)
+  if not treeNodes then return true end
+
+  -- name → { nodeID, entryID, isChoice }
+  local lookup = {}
+  for _, nodeID in ipairs(treeNodes) do
+    local nodeInfo = C_Traits.GetNodeInfo(configID, nodeID)
+    if nodeInfo and nodeInfo.entryIDs then
+      local isChoice = #nodeInfo.entryIDs > 1
+      for _, entryID in ipairs(nodeInfo.entryIDs) do
+        local entryInfo = C_Traits.GetEntryInfo(configID, entryID)
+        if entryInfo and entryInfo.definitionID then
+          local defInfo = C_Traits.GetDefinitionInfo(entryInfo.definitionID)
+          if defInfo then
+            local name = defInfo.overrideName
+            if (not name or name == "") and defInfo.spellID and C_Spell and C_Spell.GetSpellInfo then
+              local spell = C_Spell.GetSpellInfo(defInfo.spellID)
+              name = spell and spell.name
+            end
+            if name and name ~= "" and not lookup[name] then
+              lookup[name] = { nodeID = nodeID, entryID = entryID, isChoice = isChoice }
+            end
+          end
+        end
+      end
+    end
+  end
+
+  -- Every actionable pick must be at max ranks (matching what ApplySwaps
+  -- does — it stops purchasing when currentRank == maxRanks). Picks we
+  -- can't find in the tree (cross-spec leakage) are treated as "nothing
+  -- to do" so we match ApplySwaps' permissive skip behaviour.
+  --
+  -- We deliberately DO NOT check drops here: ApplySwaps only refunds
+  -- drops lazily (to free a point when a pick needs one), so a stale
+  -- drop at rank > 0 with no pending picks is a no-op for ApplySwaps —
+  -- and showing the popup in that case produces the "No swaps needed,
+  -- already aligned" UX bug.
+  -- We mirror ApplySwaps' decision: a pick is "actionable" only if
+  -- ApplySwaps could actually make progress on it. If a pick is below max
+  -- ranks AND can't be purchased AND no drop has rank to refund, it's
+  -- stuck — same effective outcome as if it were already applied, so we
+  -- treat it that way to suppress a useless popup.
+  local drops = swapData.drops or {}
+
+  --- Returns true if at least one non-choice drop still has a rank that
+  --- could be refunded to free a point for picks. We require Blizzard's
+  --- own `canRefundRank` flag to be true — a drop that has rank but
+  --- downstream dependencies (talents purchased *because* of it) reports
+  --- `canRefundRank = false` and ApplySwaps can't actually refund it.
+  local function anyDropRefundable()
+    for _, d in ipairs(drops) do
+      local dt = lookup[d.name]
+      if dt and not dt.isChoice then
+        local di = C_Traits.GetNodeInfo(configID, dt.nodeID)
+        if di and (di.currentRank or 0) > 0 and di.canRefundRank then
+          return true
+        end
+      end
+    end
+    return false
+  end
+
+  for _, p in ipairs(picks) do
+    local target = lookup[p.name]
+    if target then
+      local nodeInfo = C_Traits.GetNodeInfo(configID, target.nodeID)
+      -- nil node info → API mid-load. Skip optimistically.
+      if nodeInfo then
+        if target.isChoice then
+          local active = nodeInfo.activeEntry and nodeInfo.activeEntry.entryID
+          -- Choice swaps cost no points, so they're always actionable
+          -- when the active entry differs from the target.
+          if active ~= target.entryID then return false end
+        else
+          local currentRank = nodeInfo.currentRank or 0
+          local maxRanks    = nodeInfo.maxRanks or 1
+          if currentRank < maxRanks then
+            -- The pick isn't at target. Can ApplySwaps actually progress
+            -- it? Either canPurchaseRank (free point already), or there's
+            -- a non-choice drop with rank to refund.
+            if nodeInfo.canPurchaseRank or anyDropRefundable() then
+              return false
+            end
+            -- Otherwise: stuck. Treat as "already applied" since the
+            -- popup has nothing actionable to offer.
+          end
+        end
+      end
+    end
+  end
+
+  return true
+end
+
 --- Apply dungeon-specific talent swaps to the current loadout without resetting
 --- the tree. swapData is the new split shape: { picks = {...}, drops = {...} }.
 ---
@@ -536,7 +726,7 @@ function ZZ:ApplySwaps(swapData)
   end
 
   -- Helper: try to refund one rank from any non-choice drop that's currently
-  -- purchased. Returns true if a point was freed.
+  -- purchased. Returns the refunded key (so caller can undo) or nil.
   local refundedDrops = {}
   local function tryRefundOneDrop()
     for _, d in ipairs(drops) do
@@ -548,20 +738,51 @@ function ZZ:ApplySwaps(swapData)
           if ni and (ni.currentRank or 0) > 0 and C_Traits.RefundRank then
             if C_Traits.RefundRank(configID, target.nodeID) then
               refundedDrops[key] = true
-              return true
+              return key
             end
           end
         end
       end
     end
-    return false
+    return nil
+  end
+
+  -- Undo a refund (re-purchase the drop) if the pick we freed the point
+  -- for couldn't actually be purchased. Keeps the player's loadout
+  -- stable instead of leaving a stray unspent point.
+  local function undoRefund(key)
+    if not key then return end
+    local target = lookup[key]
+    if target and C_Traits.PurchaseRank then
+      C_Traits.PurchaseRank(configID, target.nodeID)
+    end
+    refundedDrops[key] = nil
   end
 
   local applied = 0
   local skipped = {}
 
-  -- Apply each pick. Choice nodes cost nothing; non-choice nodes may need a
-  -- point freed first via the drops list.
+  -- Phase 1 — refund every non-choice drop upfront. This mirrors how the
+  -- Blizzard talent UI itself processes changes (all refunds, then all
+  -- purchases). Doing it lazily per-pick caused staging-order issues that
+  -- made PurchaseRank return false even when the talent was reachable.
+  -- We record what we refunded so we can roll back orphans afterwards.
+  local refundedTargets = {}  -- ordered list of refunded {key, nodeID}
+  for _, d in ipairs(drops) do
+    local target = lookup[d.name]
+    if target and not target.isChoice then
+      local ni = C_Traits.GetNodeInfo(configID, target.nodeID)
+      if ni and (ni.currentRank or 0) > 0
+          and ni.canRefundRank and C_Traits.RefundRank then
+        if C_Traits.RefundRank(configID, target.nodeID) then
+          table.insert(refundedTargets, target)
+        end
+      end
+    end
+  end
+
+  -- Phase 2 — purchase every pick that's reachable.
+  local nonChoicePurchases = 0
   for _, p in ipairs(picks) do
     local target = lookup[p.name]
     if not target then
@@ -578,21 +799,27 @@ function ZZ:ApplySwaps(swapData)
           end
         else
           local currentRank = nodeInfo.currentRank or 0
-          local maxRanks = nodeInfo.maxRanks or 1
+          local maxRanks    = nodeInfo.maxRanks or 1
           if currentRank < maxRanks then
-            -- Refresh canPurchaseRank after any prior staging.
             local ni = C_Traits.GetNodeInfo(configID, target.nodeID)
-            if ni and not ni.canPurchaseRank then
-              -- Free a point by refunding a non-choice drop, then retry.
-              tryRefundOneDrop()
-              ni = C_Traits.GetNodeInfo(configID, target.nodeID)
-            end
-            if ni and ni.canPurchaseRank and C_Traits.PurchaseRank(configID, target.nodeID) then
+            if ni and ni.canPurchaseRank
+                and C_Traits.PurchaseRank(configID, target.nodeID) then
               applied = applied + 1
+              nonChoicePurchases = nonChoicePurchases + 1
             end
           end
         end
       end
+    end
+  end
+
+  -- Phase 3 — roll back any refunds we didn't end up needing. Drops are
+  -- fungible (each refund just freed a point) so we pop from the tail.
+  local orphans = #refundedTargets - nonChoicePurchases
+  for i = 1, orphans do
+    local target = table.remove(refundedTargets)
+    if target and C_Traits.PurchaseRank then
+      C_Traits.PurchaseRank(configID, target.nodeID)
     end
   end
 

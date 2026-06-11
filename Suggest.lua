@@ -248,6 +248,12 @@ local SUGGEST_HEIGHT_BASE = 72
 local SUGGEST_HEIGHT_WITH_SWAPS = 158
 local MAX_SWAPS_SHOWN = 3
 
+-- Session-only suppression set. Declared up here so the Apply Swaps
+-- button's OnClick closure inside createSuggestFrame captures it as an
+-- upvalue rather than falling through to the global namespace (where it
+-- would be nil and the suppression assignment would error silently).
+local suppressedSwaps = {}
+
 local function createSuggestFrame()
   if suggestFrame then return suggestFrame end
 
@@ -394,7 +400,14 @@ local function createSuggestFrame()
   end)
   applySwapsBtn:SetScript("OnClick", function()
     if f.currentSwaps and ZZ.ApplySwaps then
-      ZZ:ApplySwaps(f.currentSwaps)
+      local applied = ZZ:ApplySwaps(f.currentSwaps)
+      -- If ApplySwaps reported no progress at all, the swap is stuck
+      -- (an unsatisfiable prereq, almost always). Suppress this popup
+      -- for the rest of the session so the user isn't pestered each
+      -- time they re-enter the dungeon.
+      if applied == false and f.currentContentLabel then
+        suppressedSwaps[f.currentContentLabel] = true
+      end
     end
     f:Hide()
   end)
@@ -498,26 +511,52 @@ local function isAlreadyOnBuild(build)
   return true
 end
 
---- Show a build suggestion popup.
---- swapData (optional): { picks = {...}, drops = {...} } — dungeon-specific
---- talent recommendations relative to the build's all-dungeon baseline. Picks
---- are taken on this dungeon, drops are where the points came from.
+-- (suppressedSwaps is defined above createSuggestFrame — see comment there.)
+
 showSuggestion = function(contentLabel, build, contentType, swapData)
   if not build or not build.importString or build.importString == "" then return end
   if InCombatLockdown() then return end
   if not ZugZugDB.suggestEnabled then return end
+  if suppressedSwaps[contentLabel] then return end
 
   local onBuild = isAlreadyOnBuild(build)
   local picks = swapData and swapData.picks or nil
   local drops = swapData and swapData.drops or nil
   local hasSwaps = (picks and #picks > 0) or (drops and #drops > 0)
+  -- Stash for /run inspection so the user can poke at the same data
+  -- the popup decision saw.
+  ZZ.lastBuild      = build
+  ZZ.lastSwapData   = swapData
+  ZZ.lastOnBuild    = onBuild
+  ZZ.lastHasSwaps   = hasSwaps
+  local alreadyApplied = ZZ.SwapsAlreadyApplied and ZZ:SwapsAlreadyApplied(swapData)
+  ZZ.lastSwapsAlreadyApplied = alreadyApplied
 
-  -- Already on the right build AND no extra swap info to convey → nothing useful to show.
-  if onBuild and not hasSwaps then return end
+  if ZugZugDB.suggestDebug then
+    print(string.format(
+      "|cff00ccffZugZug suggest:|r contentLabel=%q onBuild=%s hasSwaps=%s alreadyApplied=%s picks=%d drops=%d",
+      tostring(contentLabel), tostring(onBuild), tostring(hasSwaps),
+      tostring(alreadyApplied), picks and #picks or 0, drops and #drops or 0))
+    -- Auto-dump per-pick/drop state so the user doesn't have to type
+    -- anything to see why the check returned what it did.
+    if ZZ.DumpLastSwapState then
+      ZZ:DumpLastSwapState()
+    else
+      print("|cff00ccffZugZug:|r DumpLastSwapState is nil — UI.lua hasn't reloaded with the new function")
+    end
+  end
+
+  -- Already on the right build → nothing to do unless there are still
+  -- swap recommendations the player hasn't applied yet.
+  if onBuild then
+    if not hasSwaps then return end
+    if alreadyApplied then return end
+  end
 
   local f = createSuggestFrame()
   f.currentBuild = build
   f.currentSwaps = swapData
+  f.currentContentLabel = contentLabel
 
   local typeColor = contentType == "raid" and "|cffFFBF33" or "|cff66DD66"
   -- If they're already on the recommended build, frame the popup as "tweaks for this dungeon"
@@ -661,6 +700,14 @@ eventFrame:SetScript("OnEvent", function(_, event, ...)
       local _, instanceType, difficultyID = GetInstanceInfo()
       local diff = RAID_DIFFICULTY_MAP[difficultyID]
 
+      -- Reset the dungeon-suggest debouncer when we leave a party
+      -- instance — next time we enter a dungeon, the popup is allowed
+      -- to fire again.
+      if instanceType ~= "party" then
+        ZugZugDB.lastSuggestDungeon = nil
+        lastSuggestDungeon = nil
+      end
+
       if instanceType == "raid" and diff then
         currentRaidDiff = diff
         suggestBossCooldown = false
@@ -748,46 +795,71 @@ eventFrame:SetScript("OnEvent", function(_, event, ...)
   end
 
   -- ── M+/Dungeon: suggest when zoning into a dungeon ──
+  -- On PLAYER_ENTERING_WORLD (especially after /reload) the talent API
+  -- can take a beat to populate. We delay the dungeon check by 1.5s so
+  -- isAlreadyOnBuild / SwapsAlreadyApplied see settled data and don't
+  -- false-positive a "needs swap" suggestion that ApplySwaps then no-ops.
   if event == "ZONE_CHANGED_NEW_AREA" or event == "PLAYER_ENTERING_WORLD" then
-    local ok, err = pcall(function()
-      if not ZZ.data or not ZZ.classToken then return end
+    local delay = (event == "PLAYER_ENTERING_WORLD") and 1.5 or 0
+    local function runDungeonSuggest()
+      local ok, err = pcall(function()
+        if not ZZ.data or not ZZ.classToken then return end
 
-      local _, instanceType, difficultyID = GetInstanceInfo()
+        -- If an M+ key is already in progress, talents are locked — the
+        -- popup is just noise on every /reload. Skip silently.
+        if C_ChallengeMode and C_ChallengeMode.GetActiveChallengeMapID then
+          local okC, activeID = pcall(C_ChallengeMode.GetActiveChallengeMapID)
+          if okC and type(activeID) == "number" and activeID > 0 then return end
+        end
 
-      local mapID = C_ChallengeMode.GetActiveChallengeMapID()
-      local dungeonName, level
+        local _, instanceType, difficultyID = GetInstanceInfo()
 
-      if mapID then
-        dungeonName = C_ChallengeMode.GetMapUIInfo(mapID)
-        level = select(1, C_ChallengeMode.GetActiveKeystoneInfo()) or 0
-      elseif instanceType == "party" then
-        dungeonName = GetInstanceInfo()
-        level = 0
-      else
-        return
+        local mapID = C_ChallengeMode.GetActiveChallengeMapID()
+        local dungeonName, level
+
+        if mapID then
+          dungeonName = C_ChallengeMode.GetMapUIInfo(mapID)
+          level = select(1, C_ChallengeMode.GetActiveKeystoneInfo()) or 0
+        elseif instanceType == "party" then
+          dungeonName = GetInstanceInfo()
+          level = 0
+        else
+          return
+        end
+
+        if not dungeonName then return end
+        -- Debouncer persists across /reload via saved variables so we
+        -- don't re-pop the suggestion every time the user reloads inside
+        -- the same dungeon. lastSuggestDungeon is reset on actual zone
+        -- exit (PLAYER_ENTERING_WORLD outside a party instance).
+        local lastDungeon = ZugZugDB.lastSuggestDungeon or lastSuggestDungeon
+        if lastDungeon == dungeonName then return end
+        ZugZugDB.lastSuggestDungeon = dungeonName
+        lastSuggestDungeon = dungeonName
+
+        local bucket = level > 0 and keystoneToBucket(level) or (ZugZugDB.suggestMpBucket or "all")
+
+        local classEntry = ZZ.data.classes[ZZ.classToken]
+        if not classEntry then return end
+        local roleData = classEntry[ZZ.role]
+        if not roleData or not roleData.mythicPlus then return end
+        local builds = roleData.mythicPlus[bucket]
+
+        local best = findBestBuildForDungeon(builds, dungeonName)
+        if best then
+          local label = level > 0 and ("Best for " .. dungeonName .. " +" .. level) or ("Best for " .. dungeonName)
+          local swaps = best.dungeonSwaps and best.dungeonSwaps[dungeonName] or nil
+          showSuggestion(label, best, "mp", swaps)
+        end
+      end)
+      if not ok then
+        print("|cff00ccffZugZug:|r ZONE error: " .. tostring(err))
       end
-
-      if not dungeonName then return end
-      if lastSuggestDungeon == dungeonName then return end
-      lastSuggestDungeon = dungeonName
-
-      local bucket = level > 0 and keystoneToBucket(level) or (ZugZugDB.suggestMpBucket or "all")
-
-      local classEntry = ZZ.data.classes[ZZ.classToken]
-      if not classEntry then return end
-      local roleData = classEntry[ZZ.role]
-      if not roleData or not roleData.mythicPlus then return end
-      local builds = roleData.mythicPlus[bucket]
-
-      local best = findBestBuildForDungeon(builds, dungeonName)
-      if best then
-        local label = level > 0 and ("Best for " .. dungeonName .. " +" .. level) or ("Best for " .. dungeonName)
-        local swaps = best.dungeonSwaps and best.dungeonSwaps[dungeonName] or nil
-        showSuggestion(label, best, "mp", swaps)
-      end
-    end)
-    if not ok then
-      print("|cff00ccffZugZug:|r ZONE error: " .. tostring(err))
+    end
+    if delay > 0 then
+      C_Timer.After(delay, runDungeonSuggest)
+    else
+      runDungeonSuggest()
     end
     return
   end
@@ -805,5 +877,8 @@ resetFrame:SetScript("OnEvent", function(_, event)
     lastSuggestDungeon = nil
   elseif event == "ACTIVE_TALENT_GROUP_CHANGED" then
     suggestBossCooldown = false
+    -- Spec change → tree is different, anything we marked as
+    -- "unsatisfiable" might now work. Wipe the suppression.
+    suppressedSwaps = {}
   end
 end)
