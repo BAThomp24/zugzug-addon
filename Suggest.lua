@@ -306,43 +306,56 @@ local function createSuggestFrame()
     row:SetPoint("RIGHT", f, "RIGHT", -10, 0)
     row:Hide()
 
-    -- Arrow indicator (▲/▼)
-    local arrow = row:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    arrow:SetPoint("LEFT", row, "LEFT", 0, 0)
-    arrow:SetWidth(12)
-    arrow:SetJustifyH("LEFT")
-    row.arrow = arrow
+    -- A swap row pairs a drop talent on the left with a pick talent on
+    -- the right, separated by an arrow. For choice-node swaps (same node,
+    -- different entry) the drop icon is hidden and the row reads as
+    -- "Swap to <pick>" — visually unmistakable from a refund-and-purchase
+    -- swap, since those show both icons.
 
-    -- Spell icon (hoverable)
-    local iconBtn = CreateFrame("Frame", nil, row)
-    iconBtn:SetSize(14, 14)
-    iconBtn:SetPoint("LEFT", arrow, "RIGHT", 4, 0)
-    iconBtn:EnableMouse(true)
+    local function buildIconBtn()
+      local btn = CreateFrame("Frame", nil, row)
+      btn:SetSize(14, 14)
+      btn:EnableMouse(true)
+      local tex = btn:CreateTexture(nil, "ARTWORK")
+      tex:SetAllPoints(btn)
+      tex:SetTexCoord(0.08, 0.92, 0.08, 0.92)
+      btn.icon = tex
+      local border = btn:CreateTexture(nil, "OVERLAY")
+      border:SetPoint("TOPLEFT", btn, "TOPLEFT", -1, 1)
+      border:SetPoint("BOTTOMRIGHT", btn, "BOTTOMRIGHT", 1, -1)
+      border:SetColorTexture(0, 0, 0, 0.6)
+      border:SetDrawLayer("BACKGROUND")
+      btn:SetScript("OnEnter", function(self)
+        if not self.spellID then return end
+        GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+        GameTooltip:SetSpellByID(self.spellID)
+        GameTooltip:Show()
+      end)
+      btn:SetScript("OnLeave", function() GameTooltip:Hide() end)
+      return btn
+    end
 
-    local iconTex = iconBtn:CreateTexture(nil, "ARTWORK")
-    iconTex:SetAllPoints(iconBtn)
-    iconTex:SetTexCoord(0.08, 0.92, 0.08, 0.92)
-    iconBtn.icon = iconTex
+    -- Drop icon (left)
+    local dropIcon = buildIconBtn()
+    dropIcon:SetPoint("LEFT", row, "LEFT", 0, 0)
+    row.dropIcon = dropIcon
 
-    -- Subtle border around the icon
-    local iconBorder = iconBtn:CreateTexture(nil, "OVERLAY")
-    iconBorder:SetPoint("TOPLEFT", iconBtn, "TOPLEFT", -1, 1)
-    iconBorder:SetPoint("BOTTOMRIGHT", iconBtn, "BOTTOMRIGHT", 1, -1)
-    iconBorder:SetColorTexture(0, 0, 0, 0.6)
-    iconBorder:SetDrawLayer("BACKGROUND")
+    -- Connector arrow between the two talents
+    local connector = row:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    connector:SetPoint("LEFT", dropIcon, "RIGHT", 4, 0)
+    connector:SetWidth(14)
+    connector:SetJustifyH("CENTER")
+    connector:SetText("|cffaaaaaa→|r")
+    row.connector = connector
 
-    iconBtn:SetScript("OnEnter", function(self)
-      if not self.spellID then return end
-      GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
-      GameTooltip:SetSpellByID(self.spellID)
-      GameTooltip:Show()
-    end)
-    iconBtn:SetScript("OnLeave", function() GameTooltip:Hide() end)
-    row.iconBtn = iconBtn
+    -- Pick icon (right)
+    local pickIcon = buildIconBtn()
+    pickIcon:SetPoint("LEFT", connector, "RIGHT", 2, 0)
+    row.pickIcon = pickIcon
 
-    -- Label text to the right of the icon
+    -- Label text to the right of both icons
     local text = row:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    text:SetPoint("LEFT", iconBtn, "RIGHT", 6, 0)
+    text:SetPoint("LEFT", pickIcon, "RIGHT", 6, 0)
     text:SetPoint("RIGHT", row, "RIGHT", 0, 0)
     text:SetJustifyH("LEFT")
     text:SetWordWrap(false)
@@ -567,29 +580,34 @@ showSuggestion = function(contentLabel, build, contentType, swapData)
     f.header:SetText("|cff8fbf3fZugZug|r " .. typeColor .. contentLabel .. "|r")
   end
 
-  -- Configure button layout based on state.
+  -- Configure button layout based on state. We never show both action
+  -- buttons at once — that produced confusing popups where Apply Build
+  -- and Apply Swaps offered ambiguously different paths.
   -- States:
-  --   no swaps             → [Apply] [Dismiss]
-  --   swaps + on build     → [Apply Swaps] [Dismiss]
-  --   swaps + not on build → [Apply Build] [Apply Swaps] [Dismiss]
-  if hasSwaps then
+  --   not on build               → [Apply Build] [Dismiss]
+  --                                (import the recommended build; dungeon
+  --                                 tweaks come along for the ride)
+  --   on build  + has swaps      → [Apply Swaps] [Dismiss]
+  --                                (already on the build, just need the
+  --                                 dungeon-specific tweaks)
+  --   on build  + no swaps       → [Apply] [Dismiss]
+  --                                (only reachable for non-swap builds —
+  --                                 raid bosses without per-boss tweaks)
+  if hasSwaps and onBuild then
+    f.applyBtn:Hide()
     f.applySwapsBtn:Show()
-    if onBuild then
-      f.applyBtn:Hide()
-      f.applySwapsBtn:ClearAllPoints()
-      f.applySwapsBtn:SetPoint("BOTTOMLEFT", f, "BOTTOMLEFT", 10, 8)
-      f.dismissBtn:ClearAllPoints()
-      f.dismissBtn:SetPoint("LEFT", f.applySwapsBtn, "RIGHT", 6, 0)
-    else
-      f.applyBtn:Show()
-      f.applyBtn.text:SetText("|cff8fbf3fApply Build|r")
-      f.applyBtn:ClearAllPoints()
-      f.applyBtn:SetPoint("BOTTOMLEFT", f, "BOTTOMLEFT", 10, 8)
-      f.applySwapsBtn:ClearAllPoints()
-      f.applySwapsBtn:SetPoint("LEFT", f.applyBtn, "RIGHT", 6, 0)
-      f.dismissBtn:ClearAllPoints()
-      f.dismissBtn:SetPoint("LEFT", f.applySwapsBtn, "RIGHT", 6, 0)
-    end
+    f.applySwapsBtn:ClearAllPoints()
+    f.applySwapsBtn:SetPoint("BOTTOMLEFT", f, "BOTTOMLEFT", 10, 8)
+    f.dismissBtn:ClearAllPoints()
+    f.dismissBtn:SetPoint("LEFT", f.applySwapsBtn, "RIGHT", 6, 0)
+  elseif hasSwaps then
+    f.applyBtn:Show()
+    f.applyBtn.text:SetText("|cff8fbf3fApply Build|r")
+    f.applySwapsBtn:Hide()
+    f.applyBtn:ClearAllPoints()
+    f.applyBtn:SetPoint("BOTTOMLEFT", f, "BOTTOMLEFT", 10, 8)
+    f.dismissBtn:ClearAllPoints()
+    f.dismissBtn:SetPoint("LEFT", f.applyBtn, "RIGHT", 6, 0)
   else
     f.applyBtn:Show()
     f.applyBtn.text:SetText("|cff8fbf3fApply|r")
@@ -606,58 +624,162 @@ showSuggestion = function(contentLabel, build, contentType, swapData)
   end
   f.buildText:SetText("|cffffffff" .. build.label .. "|r  |cff888888" .. specHero .. "  " .. build.popularity .. "%|r")
 
-  -- Swap section: interleave picks (▲) and drops (▼) up to MAX_SWAPS_SHOWN total.
-  -- We display picks first, then drops, so the most actionable info (what to TAKE)
-  -- leads — but drops come right after so the "to take X, drop Y" pairing is visible.
+  -- Swap section: pair each drop[i] with pick[i] so the user can see the
+  -- exact "Apply Swaps" action plan. After the pool-aware fix in the
+  -- dataset assembler, picks and drops are 1:1 pool-paired, so this works
+  -- out of the box. For choice nodes (same talent node, different entry)
+  -- we collapse to a single "swap to <new>" row.
   if hasSwaps then
     f:SetWidth(SUGGEST_WIDTH_WIDE)
     f:SetHeight(SUGGEST_HEIGHT_WITH_SWAPS)
-    f.swapHeader:SetText("Common picks for this dungeon:")
+    f.swapHeader:SetText("Changes Apply Swaps will make:")
     f.swapHeader:Show()
 
-    local rows = {}
-    if picks then
-      for _, p in ipairs(picks) do
-        rows[#rows + 1] = { kind = "pick", data = p }
-      end
-    end
-    if drops then
-      for _, d in ipairs(drops) do
-        rows[#rows + 1] = { kind = "drop", data = d }
-      end
-    end
-
-    -- Build a talent-name → { spellID, iconID } lookup from the player's tree
-    -- so we can render an icon + show a real spell tooltip on hover.
     local lookup = (ZZ.GetTalentLookup and ZZ:GetTalentLookup()) or {}
 
-    for i = 1, MAX_SWAPS_SHOWN do
-      local line = f.swapLines[i]
-      local row = rows[i]
-      if row then
-        if row.kind == "pick" then
-          line.arrow:SetText("|cff5DCAA5\226\150\178|r")  -- ▲ green
-        else
-          line.arrow:SetText("|cffE06B6B\226\150\188|r")  -- ▼ red
-        end
+    -- Per-side alignment check. A drop is "aligned" if it's already at
+    -- rank 0 (or for a choice node, not the active entry) — meaning the
+    -- user has already dropped it and doesn't need to do anything to
+    -- get rid of it. A pick is "aligned" if it's already at maxRanks
+    -- (or the chosen choice entry). When BOTH sides are aligned, the
+    -- pair is omitted entirely. When only the drop is aligned, the row
+    -- collapses to "Take X" (no need to drop something that's already
+    -- gone). When only the pick is aligned, it collapses to "Drop Y"
+    -- (the talent the user still has but the build doesn't want).
+    local configID = C_ClassTalents and C_ClassTalents.GetActiveConfigID
+                      and C_ClassTalents.GetActiveConfigID()
+    local function sideAligned(name, isPick)
+      if not configID then return false end
+      local t = name and lookup[name]
+      if not t then return false end
+      local ni = C_Traits.GetNodeInfo(configID, t.nodeID)
+      if not ni then return false end
+      if t.isChoice then
+        local active = ni.activeEntry and ni.activeEntry.entryID
+        if isPick then return active == t.entryID end
+        return active ~= t.entryID
+      end
+      local cur = ni.currentRank or 0
+      local mx  = ni.maxRanks or 1
+      if isPick then return cur >= mx end
+      return cur == 0
+    end
 
-        local info = lookup[row.data.name]
-        if info and info.iconID then
-          line.iconBtn.icon:SetTexture(info.iconID)
-          line.iconBtn.spellID = info.spellID
-          line.iconBtn:Show()
-        else
-          -- Fallback: hide the icon when the talent isn't in the player's
-          -- current spec tree (e.g. cross-spec swap suggestions).
-          line.iconBtn.spellID = nil
-          line.iconBtn:Hide()
-        end
-
-        line.text:SetText("|cffffffff" .. row.data.name .. "|r  |cff888888"
-          .. row.data.dungeonPct .. "%|r |cff666666(vs " .. row.data.baselinePct .. "% baseline)|r")
-        line:Show()
+    local picksList = picks or {}
+    local dropsList = drops or {}
+    local pairs_ = {}
+    local maxLen = math.max(#picksList, #dropsList)
+    for i = 1, maxLen do
+      local drop, pick = dropsList[i], picksList[i]
+      local dropAligned = not drop or sideAligned(drop.name, false)
+      local pickAligned = not pick or sideAligned(pick.name, true)
+      if dropAligned and pickAligned then
+        -- Both sides already in target state — omit entirely.
+      elseif dropAligned then
+        -- Only the pick needs action — show as lone pick.
+        pairs_[#pairs_ + 1] = { pick = pick }
+      elseif pickAligned then
+        -- Only the drop needs action — show as lone drop.
+        pairs_[#pairs_ + 1] = { drop = drop }
       else
+        -- Both sides need action — show as paired swap.
+        pairs_[#pairs_ + 1] = { drop = drop, pick = pick }
+      end
+    end
+
+    for i = 1, MAX_SWAPS_SHOWN do
+      local line  = f.swapLines[i]
+      local pair  = pairs_[i]
+      if not pair then
         line:Hide()
+      else
+        local dropInfo = pair.drop and lookup[pair.drop.name]
+        local pickInfo = pair.pick and lookup[pair.pick.name]
+
+        -- Detect a choice-node swap (same node, both choice entries) so
+        -- the row reads "Swap to X" instead of "Drop X for Y" — that's
+        -- what ApplySwaps will actually do (SetSelection, no refund).
+        local isChoiceSwap =
+          pair.drop and pair.pick
+          and dropInfo and pickInfo
+          and dropInfo.nodeID == pickInfo.nodeID
+          and dropInfo.isChoice and pickInfo.isChoice
+
+        if isChoiceSwap then
+          -- One icon (the new choice entry) + "Swap to X (was Y)" text.
+          line.dropIcon:Hide()
+          line.connector:Hide()
+          line.pickIcon:ClearAllPoints()
+          line.pickIcon:SetPoint("LEFT", line, "LEFT", 0, 0)
+          line.pickIcon.icon:SetTexture(pickInfo.iconID or "")
+          line.pickIcon.spellID = pickInfo.spellID
+          line.pickIcon:Show()
+          line.text:SetText(
+            "Swap to |cff5DCAA5" .. pair.pick.name .. "|r"
+            .. "  |cff888888(was " .. pair.drop.name .. ")|r")
+          line:Show()
+        elseif pair.drop and pair.pick then
+          -- Standard refund-and-purchase pair: drop icon → pick icon
+          -- with both names in the text, color-coded.
+          if dropInfo and dropInfo.iconID then
+            line.dropIcon.icon:SetTexture(dropInfo.iconID)
+            line.dropIcon.spellID = dropInfo.spellID
+            line.dropIcon:Show()
+          else
+            line.dropIcon:Hide()
+          end
+          line.connector:Show()
+          line.pickIcon:ClearAllPoints()
+          line.pickIcon:SetPoint("LEFT", line.connector, "RIGHT", 2, 0)
+          if pickInfo and pickInfo.iconID then
+            line.pickIcon.icon:SetTexture(pickInfo.iconID)
+            line.pickIcon.spellID = pickInfo.spellID
+            line.pickIcon:Show()
+          else
+            line.pickIcon:Hide()
+          end
+          line.text:SetText(
+            "|cffE06B6B" .. pair.drop.name .. "|r"
+            .. "  →  "
+            .. "|cff5DCAA5" .. pair.pick.name .. "|r")
+          line:Show()
+        elseif pair.pick then
+          -- Lone pick — either no matched drop in the dataset, or the
+          -- drop side is already aligned (already dropped) so we omit it.
+          line.dropIcon:Hide()
+          line.connector:Hide()
+          line.pickIcon:ClearAllPoints()
+          line.pickIcon:SetPoint("LEFT", line, "LEFT", 0, 0)
+          if pickInfo and pickInfo.iconID then
+            line.pickIcon.icon:SetTexture(pickInfo.iconID)
+            line.pickIcon.spellID = pickInfo.spellID
+            line.pickIcon:Show()
+          else
+            line.pickIcon:Hide()
+          end
+          line.text:SetText(
+            "Take |cff5DCAA5" .. pair.pick.name .. "|r")
+          line:Show()
+        elseif pair.drop then
+          -- Lone drop — either no matched pick, or the pick is already
+          -- at max so we omit the right side.
+          line.connector:Hide()
+          line.pickIcon:Hide()
+          line.dropIcon:ClearAllPoints()
+          line.dropIcon:SetPoint("LEFT", line, "LEFT", 0, 0)
+          if dropInfo and dropInfo.iconID then
+            line.dropIcon.icon:SetTexture(dropInfo.iconID)
+            line.dropIcon.spellID = dropInfo.spellID
+            line.dropIcon:Show()
+          else
+            line.dropIcon:Hide()
+          end
+          line.text:SetText(
+            "Drop |cffE06B6B" .. pair.drop.name .. "|r")
+          line:Show()
+        else
+          line:Hide()
+        end
       end
     end
   else

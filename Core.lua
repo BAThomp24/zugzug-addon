@@ -187,7 +187,7 @@ local function handleSlashCommand(msg)
     return
   end
 
-  if cmd == "dump" or cmd == "debug" or cmd == "dumpswaps" then
+  if cmd == "dump" then
     if ZZ.DumpLastSwapState then
       ZZ:DumpLastSwapState()
     else
