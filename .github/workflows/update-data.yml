@@ -1,13 +1,29 @@
 name: Update build data & release
 
+# Three triggers, all routed through one job:
+#
+#   * schedule (cron) — daily Data.lua refresh. Releases only if Data.lua
+#     actually changed (skipping the release tag on data-stable days).
+#   * push to main   — code-only changes ship the same day, no waiting
+#     for the next cron. Matches zugzug-keys' release flow.
+#   * workflow_dispatch — manual trigger, mirrors the cron behaviour
+#     (runs the data update + releases if anything changed).
 on:
   schedule:
     # Daily at 16:00 UTC (noon EDT) — well after the WCL cron pipeline finishes
     - cron: "0 16 * * *"
-  workflow_dispatch: # Manual trigger
+  push:
+    branches: [main]
+    paths-ignore:
+      - "README.md"
+      - ".gitignore"
+      - ".github/**"
+      - "scripts/**"
+      - "LEVELING_DESIGN.md"
+  workflow_dispatch:
 
 jobs:
-  update-and-release:
+  release:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -15,19 +31,24 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Node is only needed for the data-update path. Skip it on
+      # push runs so they ship in ~10s instead of ~60s.
       - uses: actions/setup-node@v4
+        if: github.event_name != 'push'
         with:
           node-version: 22
 
-      - name: Fetch API and generate Data.lua
+      - name: Fetch API and regenerate Data.lua
+        if: github.event_name != 'push'
         run: npx tsx scripts/update-data.ts
 
-      - name: Get current date for version tag
+      - name: Compute date-based version tag
         id: version
         run: echo "tag=v$(date -u +%Y.%m.%d)" >> "$GITHUB_OUTPUT"
 
-      - name: Check if data actually changed
+      - name: Did Data.lua actually change?
         id: diff
+        if: github.event_name != 'push'
         run: |
           if git diff --quiet Data.lua; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
@@ -35,8 +56,8 @@ jobs:
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Commit updated Data.lua
-        if: steps.diff.outputs.changed == 'true'
+      - name: Commit Data.lua update
+        if: github.event_name != 'push' && steps.diff.outputs.changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -44,18 +65,46 @@ jobs:
           git commit -m "data: update builds ${{ steps.version.outputs.tag }}"
           git push
 
-      - name: Create release zip
-        if: steps.diff.outputs.changed == 'true'
-        run: zip -r ZugZug.zip ZugZug.toc Core.lua UI.lua Suggest.lua Minimap.lua Data.lua icon.png
+      # Release on every code push and every workflow_dispatch, and on
+      # cron runs ONLY when Data.lua changed (we don't want to tag the
+      # repo if nothing meaningful happened).
+      - name: Should we release?
+        id: gate
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "${{ steps.diff.outputs.changed }}" != "true" ]; then
+            echo "release=false" >> "$GITHUB_OUTPUT"
+            echo "Cron with unchanged Data.lua — skipping release."
+          else
+            echo "release=true" >> "$GITHUB_OUTPUT"
+          fi
 
-      - name: Create GitHub Release
-        if: steps.diff.outputs.changed == 'true'
+      # File list mirrors the TOC's load order. Anything the TOC pulls
+      # in must be here or the released addon will fail to load.
+      - name: Build ZugZug.zip
+        if: steps.gate.outputs.release == 'true'
+        run: |
+          zip -r ZugZug.zip \
+            ZugZug.toc \
+            Data.lua \
+            LevelingData.lua \
+            Core.lua \
+            Settings.lua \
+            UI.lua \
+            Suggest.lua \
+            Leveling.lua \
+            icon.png
+
+      # softprops/action-gh-release updates the release in place if the
+      # tag already exists (multiple pushes per day → one release).
+      - name: Create or update GitHub Release
+        if: steps.gate.outputs.release == 'true'
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.version.outputs.tag }}
-          name: Build Data ${{ steps.version.outputs.tag }}
+          name: ZugZug ${{ steps.version.outputs.tag }}
           body: |
-            Daily build data update from [ZUGZUG.io](https://zugzug.info).
+            Talent build data + ZugZug.io companion addon.
 
-            Download `ZugZug.zip` and extract into your `Interface/AddOns/` folder, or install via CurseForge/WoWUp.
+            Download `ZugZug.zip` and extract into your
+            `Interface/AddOns/` folder, or install via CurseForge/WoWUp.
           files: ZugZug.zip
