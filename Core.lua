@@ -196,6 +196,22 @@ local function handleSlashCommand(msg)
     return
   end
 
+  if cmd == "showimport" or cmd == "import" then
+    -- Print the import string of the build the suggest popup is using.
+    -- Lets you paste it straight into Class > Specialization > Loadout
+    -- > Import to confirm Blizzard's UI agrees with what we'd apply.
+    -- The string is written to its own chat line for easy click-drag-copy.
+    local b = ZZ.lastBuild
+    if not (b and b.importString) then
+      print("|cff00ccffZugZug:|r no active build cached. Trigger the dungeon-suggest popup first (zone into a dungeon).")
+      return
+    end
+    print("|cff00ccffZugZug:|r last build import string (paste into the in-game Import dialog) —")
+    print(string.format("  build: %s  spec: %s", tostring(b.name or b.id or "?"), tostring(b.spec or "?")))
+    print(b.importString)
+    return
+  end
+
   if cmd == "settings" or cmd == "options" or cmd == "config" then
     local ok, err = pcall(function()
       if ZZ.settingsCategory then
