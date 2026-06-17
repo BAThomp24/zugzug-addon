@@ -42,9 +42,21 @@ jobs:
         if: github.event_name != 'push'
         run: npx tsx scripts/update-data.ts
 
-      - name: Compute date-based version tag
+      - name: Compute version tag
         id: version
-        run: echo "tag=v$(date -u +%Y.%m.%d)" >> "$GITHUB_OUTPUT"
+        # CurseForge only re-syncs on a *new* release tag; updating the
+        # asset on an existing tag is silently ignored. The daily cron
+        # owns the clean v<date> tag (it runs once/day, no self-collision).
+        # Push / manual runs append HHMM so they're always a fresh tag —
+        # otherwise a push the same day after the cron would update the
+        # asset but never reach CurseForge (which is exactly what stranded
+        # the 12.0.7 bump on the 120005 build).
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            echo "tag=v$(date -u +%Y.%m.%d)" >> "$GITHUB_OUTPUT"
+          else
+            echo "tag=v$(date -u +%Y.%m.%d.%H%M)" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Did Data.lua actually change?
         id: diff
@@ -80,9 +92,14 @@ jobs:
 
       # File list mirrors the TOC's load order. Anything the TOC pulls
       # in must be here or the released addon will fail to load.
+      # Substitute @project-version@ with the real tag first so the
+      # in-game Version field is meaningful (our custom pipeline doesn't
+      # run the CurseForge packager that normally does this). The checkout
+      # is disposable, so editing the TOC in place is fine.
       - name: Build ZugZug.zip
         if: steps.gate.outputs.release == 'true'
         run: |
+          sed -i "s/@project-version@/${{ steps.version.outputs.tag }}/" ZugZug.toc
           zip -r ZugZug.zip \
             ZugZug.toc \
             Data.lua \
