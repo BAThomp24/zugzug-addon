@@ -42,15 +42,32 @@ local function normName(name)
   return s
 end
 
+--- Compact form: normalized, common articles dropped, all whitespace
+--- removed. This bridges the naming gaps between WoW's in-game dungeon
+--- names and the website's build data, which don't always agree on
+--- apostrophe placement or articles, e.g.
+---   "Seat of the Triumvirate" (in-game) vs "Seat of Triumvirate" (data)
+---   "Magister's Terrace"       vs "Magisters' Terrace"
+--- Both collapse to the same compact form, so the popup still fires.
+local function compactName(name)
+  local s = normName(name)
+  s = " " .. s .. " "
+  s = string.gsub(s, " the ", " ")  -- drop the most common article
+  s = string.gsub(s, "%s+", "")     -- remove all spaces → position-agnostic
+  return s
+end
+
 --- Match a target name against a data name.
---- Tries exact match first, then normalized fuzzy match (pcall-safe).
+--- Exact → normalized → compact (article/apostrophe/spacing-agnostic),
+--- all pcall-safe so a bad string can never abort the suggest flow.
 local function namesMatch(targetName, dataName)
   if targetName == dataName then return true end
-  local ok, normTarget = pcall(normName, targetName)
-  if ok then
-    return normName(dataName) == normTarget
-  end
-  return false
+  local ok, result = pcall(function()
+    if normName(targetName) == normName(dataName) then return true end
+    if compactName(targetName) == compactName(dataName) then return true end
+    return false
+  end)
+  return ok and result or false
 end
 
 --- Check if we should filter to current spec only for a given content type.
@@ -542,7 +559,20 @@ showSuggestion = function(contentLabel, build, contentType, swapData)
   ZZ.lastSwapData   = swapData
   ZZ.lastOnBuild    = onBuild
   ZZ.lastHasSwaps   = hasSwaps
-  local alreadyApplied = ZZ.SwapsAlreadyApplied and ZZ:SwapsAlreadyApplied(swapData)
+  -- SwapsAlreadyApplied does a live talent dry-run (stage refunds/
+  -- purchases, then RollbackConfig). Isolate it: if that dry-run errors
+  -- — e.g. a talent API shift in a patch — we must NOT let it abort the
+  -- whole suggest flow and swallow the popup. On failure we treat swaps
+  -- as NOT-yet-applied, i.e. err toward showing the popup.
+  local okChk, alreadyApplied = pcall(function()
+    return ZZ.SwapsAlreadyApplied and ZZ:SwapsAlreadyApplied(swapData)
+  end)
+  if not okChk then
+    alreadyApplied = false
+    if ZugZugDB.suggestDebug then
+      print("|cff00ccffZugZug:|r SwapsAlreadyApplied errored: " .. tostring(alreadyApplied))
+    end
+  end
   ZZ.lastSwapsAlreadyApplied = alreadyApplied
 
   if ZugZugDB.suggestDebug then
