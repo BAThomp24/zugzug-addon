@@ -265,11 +265,16 @@ local SUGGEST_HEIGHT_BASE = 72
 local SUGGEST_HEIGHT_WITH_SWAPS = 158
 local MAX_SWAPS_SHOWN = 3
 
--- Session-only suppression set. Declared up here so the Apply Swaps
--- button's OnClick closure inside createSuggestFrame captures it as an
--- upvalue rather than falling through to the global namespace (where it
--- would be nil and the suppression assignment would error silently).
-local suppressedSwaps = {}
+-- Persistent suppression set: labels for which Apply Swaps reported no
+-- progress (a genuinely-stuck build — an unsatisfiable prereq). Stored in
+-- the saved variables so it survives /reload, so the user isn't re-popped
+-- for the same stuck dungeon every reload. Cleared on spec/loadout change
+-- (ACTIVE_TALENT_GROUP_CHANGED), since a respec can make it applicable.
+local function getSuppressedSwaps()
+  ZugZugDB = ZugZugDB or {}
+  ZugZugDB.suppressedSwaps = ZugZugDB.suppressedSwaps or {}
+  return ZugZugDB.suppressedSwaps
+end
 
 local function createSuggestFrame()
   if suggestFrame then return suggestFrame end
@@ -436,7 +441,7 @@ local function createSuggestFrame()
       -- for the rest of the session so the user isn't pestered each
       -- time they re-enter the dungeon.
       if applied == false and f.currentContentLabel then
-        suppressedSwaps[f.currentContentLabel] = true
+        getSuppressedSwaps()[f.currentContentLabel] = true
       end
     end
     f:Hide()
@@ -547,7 +552,7 @@ showSuggestion = function(contentLabel, build, contentType, swapData)
   if not build or not build.importString or build.importString == "" then return end
   if InCombatLockdown() then return end
   if not ZugZugDB.suggestEnabled then return end
-  if suppressedSwaps[contentLabel] then return end
+  if getSuppressedSwaps()[contentLabel] then return end
 
   local onBuild = isAlreadyOnBuild(build)
   local picks = swapData and swapData.picks or nil
@@ -559,20 +564,9 @@ showSuggestion = function(contentLabel, build, contentType, swapData)
   ZZ.lastSwapData   = swapData
   ZZ.lastOnBuild    = onBuild
   ZZ.lastHasSwaps   = hasSwaps
-  -- SwapsAlreadyApplied does a live talent dry-run (stage refunds/
-  -- purchases, then RollbackConfig). Isolate it: if that dry-run errors
-  -- — e.g. a talent API shift in a patch — we must NOT let it abort the
-  -- whole suggest flow and swallow the popup. On failure we treat swaps
-  -- as NOT-yet-applied, i.e. err toward showing the popup.
-  local okChk, alreadyApplied = pcall(function()
-    return ZZ.SwapsAlreadyApplied and ZZ:SwapsAlreadyApplied(swapData)
-  end)
-  if not okChk then
-    alreadyApplied = false
-    if ZugZugDB.suggestDebug then
-      print("|cff00ccffZugZug:|r SwapsAlreadyApplied errored: " .. tostring(alreadyApplied))
-    end
-  end
+  -- SwapsAlreadyApplied is now a pure read-only comparison (no talent
+  -- staging), so it can't error out and swallow the popup.
+  local alreadyApplied = ZZ.SwapsAlreadyApplied and ZZ:SwapsAlreadyApplied(swapData)
   ZZ.lastSwapsAlreadyApplied = alreadyApplied
 
   if ZugZugDB.suggestDebug then
@@ -1030,7 +1024,7 @@ resetFrame:SetScript("OnEvent", function(_, event)
   elseif event == "ACTIVE_TALENT_GROUP_CHANGED" then
     suggestBossCooldown = false
     -- Spec change → tree is different, anything we marked as
-    -- "unsatisfiable" might now work. Wipe the suppression.
-    suppressedSwaps = {}
+    -- "unsatisfiable" might now work. Wipe the (persistent) suppression.
+    ZugZugDB.suppressedSwaps = {}
   end
 end)

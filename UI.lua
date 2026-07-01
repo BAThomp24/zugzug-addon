@@ -601,97 +601,40 @@ function ZZ:SwapsAlreadyApplied(swapData)
     end
   end
 
-  -- We deliberately DO NOT check drops separately: ApplySwaps only
-  -- refunds drops to free a point for picks. A stale drop at rank > 0
-  -- with no satisfiable picks is a no-op for ApplySwaps — and showing
-  -- the popup in that case produces the "No swaps needed, already
-  -- aligned" UX bug. So we only return false (popup shows) when at
-  -- least one pick is provably actionable.
+  -- Pure, READ-ONLY comparison. A swap is "already applied" iff every
+  -- pick is at its target state — a selected choice entry, or a
+  -- non-choice node purchased to max rank.
   --
-  -- "Provably actionable" requires a dry-run because Blizzard's
-  -- canPurchaseRank for a pick depends on tree-gate math (row totals,
-  -- prereqs) that refunding a drop may make true or false. We stage the
-  -- refunds, re-check each pick, then roll back so the player's actual
-  -- loadout is untouched.
-
-  -- Bail if the player already has uncommitted staged changes — they
-  -- might be editing manually, and a rollback would discard their work.
-  -- Conservative fallback: return true (no popup) in that window; the
-  -- next zone change / spec change will re-trigger the check.
-  if C_Traits.ConfigHasStagedChanges
-      and C_Traits.ConfigHasStagedChanges(configID) then
-    return true
-  end
-
-  local drops = swapData.drops or {}
-
-  --- Stage-and-check: actually attempt to purchase (or select) the pick.
-  --- This is the authoritative test — Blizzard's `canPurchaseRank` flag
-  --- LIES (reports true even when the player has zero free points in
-  --- the relevant pool), but `PurchaseRank` itself returns the truth: it
-  --- only stages the change if Blizzard's internal engine accepts it.
-  --- All staged changes are rolled back at the end of SwapsAlreadyApplied
-  --- via RollbackConfig, so the player's loadout is never mutated.
-  local function tryStagePick(p)
-    local t = lookup[p.name]
-    if not t then return false end
-    local ni = C_Traits.GetNodeInfo(configID, t.nodeID)
-    if not ni then return false end
-    if t.isChoice then
-      local active = ni.activeEntry and ni.activeEntry.entryID
-      if active == t.entryID then return false end
-      if C_Traits.SetSelection
-          and C_Traits.SetSelection(configID, t.nodeID, t.entryID) then
-        return true
-      end
-      return false
-    end
-    local currentRank = ni.currentRank or 0
-    local maxRanks    = ni.maxRanks or 1
-    if currentRank >= maxRanks then return false end
-    if C_Traits.PurchaseRank
-        and C_Traits.PurchaseRank(configID, t.nodeID) then
-      return true
-    end
-    return false
-  end
-
-  -- Test 1 — try every pick without touching drops. If any pick stages
-  -- successfully, the popup is actionable as-is.
-  local actionable = false
+  -- We deliberately don't inspect drops: ApplySwaps only refunds them to
+  -- free points for picks, so a stale drop at rank > 0 is a no-op once
+  -- its paired pick is satisfied. Checking picks alone matches what
+  -- ApplySwaps actually does.
+  --
+  -- This function used to STAGE refunds/purchases and RollbackConfig them
+  -- to test purchasability (working around canPurchaseRank being
+  -- unreliable). That mutated the talent config on every dungeon entry —
+  -- it fired config-update events, could leave dangling staged changes
+  -- when the rollback didn't fully revert, and was the source of errors
+  -- that silently swallowed the popup. It's gone. The rare genuinely-
+  -- stuck build (a pick that can never reach target from the base
+  -- loadout) is handled reactively and persistently by suppressedSwaps
+  -- in Suggest.lua — set when Apply Swaps reports no progress — so we
+  -- never need to simulate it here.
   for _, p in ipairs(picks) do
-    if tryStagePick(p) then actionable = true; break end
-  end
-
-  -- Test 2 (only if Test 1 failed) — stage every drop's refund, then
-  -- retry the picks. A refund may unlock a pick by either freeing a
-  -- point in the same pool or rebalancing a tree-gate the pick was
-  -- behind. Whichever, we just want to know whether ApplySwaps could
-  -- succeed.
-  if not actionable then
-    for _, d in ipairs(drops) do
-      local t = lookup[d.name]
-      if t and not t.isChoice then
-        local ni = C_Traits.GetNodeInfo(configID, t.nodeID)
-        if ni and (ni.currentRank or 0) > 0 and ni.canRefundRank
-            and C_Traits.RefundRank then
-          C_Traits.RefundRank(configID, t.nodeID)
+    local t = lookup[p.name]
+    if t then
+      local ni = C_Traits.GetNodeInfo(configID, t.nodeID)
+      if ni then
+        if t.isChoice then
+          local active = ni.activeEntry and ni.activeEntry.entryID
+          if active ~= t.entryID then return false end
+        else
+          if (ni.currentRank or 0) < (ni.maxRanks or 1) then return false end
         end
       end
     end
-    for _, p in ipairs(picks) do
-      if tryStagePick(p) then actionable = true; break end
-    end
   end
-
-  -- Always roll back so the player's state is unchanged regardless of
-  -- the dry-run outcome. RollbackConfig discards all uncommitted staged
-  -- changes — exactly what we want.
-  if C_Traits.RollbackConfig then
-    pcall(C_Traits.RollbackConfig, configID)
-  end
-
-  return not actionable
+  return true
 end
 
 --- Apply dungeon-specific talent swaps to the current loadout without resetting
