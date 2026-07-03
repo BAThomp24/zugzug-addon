@@ -11,6 +11,7 @@ ZugZugData = {
           heroic = {
             {
               spec = "Demonology",
+              specId = 266,
               hero = "Diabolist",
               label = "Mark of F'harg",
               importString = "CoQAAAAAAAAAAAAAAAAAAAAAAwMmZGzsxwMzY2GAAAAAAAwYGDLwAbDLMDLGzMWmtZmZMDAMzYMzMzAMzMmZ2AAAjZmZMMsMjBMA",
@@ -31,6 +32,7 @@ ZugZugData = {
             },
             {
               spec = "Destruction",
+              specId = 267,
               hero = "Hellcaller",
               label = "Havoc",
               importString = "CsQAAAAAAAAAAAAAAAAAAAAAAwMzMzYmNGmZmZWmlZmZmFjZbxMAAYmZMzMLWgBmFjZMDgZDbMAAwYA2AAmZgZGjBAAgZmZGAAjhB",
@@ -40,6 +42,7 @@ ZugZugData = {
             },
             {
               spec = "Affliction",
+              specId = 265,
               hero = "Soul Harvester",
               label = "Improved Shadow Bolt",
               importString = "CkQAAAAAAAAAAAAAAAAAAAAAAgZmZGzsxwMzYWGAAgZmFLzMzyMDAMWWGYADYG2Gww2AAAwMAAAmZYmZmZDDzMzMjZwMzMDAYGYA",
@@ -49,6 +52,7 @@ ZugZugData = {
             },
             {
               spec = "Affliction",
+              specId = 265,
               hero = "Soul Harvester",
               label = "Patient Zero",
               importString = "CkQAAAAAAAAAAAAAAAAAAAAAAwMjZGzsZmZbmZMLDAAYmZWmNzMLjBAGbLDMgBMDbDYYbAAAYGAAAzMjZMjtxYGjZmZGDzMzAAMgB",
@@ -58,6 +62,7 @@ ZugZugData = {
             },
             {
               spec = "Destruction",
+              specId = 267,
               hero = "Diabolist",
               label = "Devastation",
               importString = "CsQAAAAAAAAAAAAAAAAAAAAAAwMzMzYmNGmZmZWmNmZmFDWMDAAmZGzMzCYMjhFYgthNmxCDAAMGYsBgZGAzMGDAAAzMzMAAmZYA",
@@ -67,6 +72,7 @@ ZugZugData = {
             },
             {
               spec = "Destruction",
+              specId = 267,
               hero = "Diabolist",
               label = "Mayhem",
               importString = "CsQAAAAAAAAAAAAAAAAAAAAAAgZmZGzsxYbmZMLzyMzMzixssYGAAMjxMzsAGzYYBGYbYhZswAAAjBYDAzMAzMjZGAAAmZmBAgxwA",
@@ -76,6 +82,7 @@ ZugZugData = {
             },
             {
               spec = "Affliction",
+              specId = 265,
               hero = "Soul Harvester",
               label = "Gorefiend's Resolve",
               importString = "CkQAAAAAAAAAAAAAAAAAAAAAAwMmZGzsxwMzMzyAAAMzsMbzMziZAgx22ADYAzwyAG2GAAAmBAAwMzMzYmBGmZmZmxgZmZAAmBG",
@@ -85,6 +92,7 @@ ZugZugData = {
             },
             {
               spec = "Demonology",
+              specId = 266,
               hero = "Diabolist",
               label = "Stabilized Portals",
               importString = "CoQAAAAAAAAAAAAAAAAAAAAAAYMmZGzsMmZbmZMLDAAAAAAAYMjhFYgthFmhFDmZZWmZmxMAwMMzMzMDgZGzAAAYmZmZMMmlZMgB",
@@ -94,6 +102,7 @@ ZugZugData = {
             },
             {
               spec = "Demonology",
+              specId = 266,
               hero = "Soul Harvester",
               label = "Demonic Knowledge",
               importString = "CoQAAAAAAAAAAAAAAAAAAAAAAwMzMzYmNGmZmZWGAAAAAAgx2yADYAzwyAGbGjxysMzMjZAAzMzMzAMzMzMGDAAwYmZGjBLzAYA",
@@ -105,6 +114,7 @@ ZugZugData = {
           mythic = {
             {
               spec = "Demonology",
+              specId = 266,
               hero = "Diabolist",
               label = "Mark of F'harg",
               importString = "CoQAAAAAAAAAAAAAAAAAAAAAAwMmZGzsxwMzY2GAAAAAAAwYGDLwAbDLMDLGzMWmtZmZMDAMzYMzMzAMzMmZ2AAAjZmZMMsMjBMA",
@@ -123,6 +133,7 @@ ZugZugData = {
             },
             {
               spec = "Destruction",
+              specId = 267,
               hero = "Hellcaller",
               label = "Havoc",
               importString = "CsQAAAAAAAAAAAAAAAAAAAAAAwMzMzYmNGmZmZWmlZmZmFjZbxMAAYmZMzMLWgBmFjZMDgZDbMAAwYA2AAmZgZGjBAAgZmZGAAjhB",
@@ -134,6 +145,7 @@ ZugZugData = {
             },
             {
               spec = "Affliction",
+              specId = 265,
               hero = "Soul Harvester",
               label = "Improved Shadow Bolt",
               importString = "CkQAAAAAAAAAAAAAAAAAAAAAAgZmZGzsxwMzYWGAAgZmFLzMzyMDAMWWGYADYG2Gww2AAAwMAAAmZYmZmZDDzMzMjZwMzMDAYGYA",
@@ -143,6 +155,7 @@ ZugZugData = {
             },
             {
               spec = "Affliction",
+              specId = 265,
               hero = "Soul Harvester",
               label = "Patient Zero",
               importString = "CkQAAAAAAAAAAAAAAAAAAAAAAwMjZGzsZmZbmZMLDAAYmZWmNzMLjBAGbLDMgBMDbDYYbAAAYGAAAzMjZMjtxYGjZmZGDzMzAAMgB",
@@ -154,6 +167,7 @@ ZugZugData = {
             },
             {
               spec = "Destruction",
+              specId = 267,
               hero = "Diabolist",
               label = "Devastation",
               importString = "CsQAAAAAAAAAAAAAAAAAAAAAAwMzMzYmNGmZmZWmNmZmFDWMDAAmZGzMzCYMjhFYgthNmxCDAAMGYsBgZGAzMGDAAAzMzMAAmZYA",
@@ -163,6 +177,7 @@ ZugZugData = {
             },
             {
               spec = "Destruction",
+              specId = 267,
               hero = "Diabolist",
               label = "Mayhem",
               importString = "CsQAAAAAAAAAAAAAAAAAAAAAAgZmZGzsxYbmZMLzyMzMzixssYGAAMjxMzsAGzYYBGYbYhZswAAAjBYDAzMAzMjZGAAAmZmBAgxwA",
@@ -172,6 +187,7 @@ ZugZugData = {
             },
             {
               spec = "Affliction",
+              specId = 265,
               hero = "Soul Harvester",
               label = "Gorefiend's Resolve",
               importString = "CkQAAAAAAAAAAAAAAAAAAAAAAwMmZGzsxwMzMzyAAAMzsMbzMziZAgx22ADYAzwyAG2GAAAmBAAwMzMzYmBGmZmZmxgZmZAAmBG",
@@ -181,6 +197,7 @@ ZugZugData = {
             },
             {
               spec = "Demonology",
+              specId = 266,
               hero = "Diabolist",
               label = "Stabilized Portals",
               importString = "CoQAAAAAAAAAAAAAAAAAAAAAAYMmZGzsMmZbmZMLDAAAAAAAYMjhFYgthFmhFDmZZWmZmxMAwMMzMzMDgZGzAAAYmZmZMMmlZMgB",
@@ -190,6 +207,7 @@ ZugZugData = {
             },
             {
               spec = "Demonology",
+              specId = 266,
               hero = "Soul Harvester",
               label = "Demonic Knowledge",
               importString = "CoQAAAAAAAAAAAAAAAAAAAAAAwMzMzYmNGmZmZWGAAAAAAgx2yADYAzwyAGbGjxysMzMjZAAzMzMzAMzMzMGDAAwYmZGjBLzAYA",
@@ -203,6 +221,7 @@ ZugZugData = {
           all = {
             {
               spec = "Demonology",
+              specId = 266,
               hero = "Diabolist",
               label = "Grimoire: Imp Lord",
               importString = "CoQAAAAAAAAAAAAAAAAAAAAAAwMmZGzsxMbzMjZZAAAAAAAAjZMsADsNswMsYMzYZ2mZmxMAwMjxMzMDwYGzYDAAMmZmxwwyMGwA",
@@ -223,6 +242,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Grimoire: Fel Ravager",
+                      talentId = 136725,
                       dungeonPct = 33,
                       baselinePct = 15,
                     },
@@ -230,6 +250,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Grimoire: Imp Lord",
+                      talentId = 136726,
                       dungeonPct = 67,
                       baselinePct = 85,
                     },
@@ -239,6 +260,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Grimoire: Imp Lord",
+                      talentId = 136726,
                       dungeonPct = 97,
                       baselinePct = 85,
                     },
@@ -246,6 +268,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Grimoire: Fel Ravager",
+                      talentId = 136725,
                       dungeonPct = 3,
                       baselinePct = 15,
                     },
@@ -255,6 +278,7 @@ ZugZugData = {
             },
             {
               spec = "Affliction",
+              specId = 265,
               hero = "Soul Harvester",
               label = "Absolute Corruption",
               importString = "CkQAAAAAAAAAAAAAAAAAAAAAAwMjZGzsZmZbmZMLDAAYmZWmNzMLjBAGbLDMgBMDbDYYbAAAYGAAAzMjZMjtxYGjZmZGDzMzAAMgB",
@@ -266,6 +290,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Banish",
+                      talentId = 91454,
                       dungeonPct = 96,
                       baselinePct = 81,
                     },
@@ -273,6 +298,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Curse of Exhaustion",
+                      talentId = 136107,
                       dungeonPct = 31,
                       baselinePct = 37,
                     },
@@ -282,6 +308,7 @@ ZugZugData = {
             },
             {
               spec = "Destruction",
+              specId = 267,
               hero = "Diabolist",
               label = "Diabolist",
               importString = "CsQAAAAAAAAAAAAAAAAAAAAAAwMmZGzsxYbmZMLzmZmZWMzssMGAAMjxMzsAGzYYBGYbYhZswAAAjBDAwMDwYGzMbAAAmZmBAAzwA",
@@ -293,6 +320,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Banish",
+                      talentId = 91454,
                       dungeonPct = 77,
                       baselinePct = 49,
                     },
@@ -300,6 +328,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Curse of Exhaustion",
+                      talentId = 136107,
                       dungeonPct = 60,
                       baselinePct = 67,
                     },
@@ -309,6 +338,7 @@ ZugZugData = {
             },
             {
               spec = "Destruction",
+              specId = 267,
               hero = "Hellcaller",
               label = "Alythess's Ire",
               importString = "CsQAAAAAAAAAAAAAAAAAAAAAAwMjZGzsZGbzMjZZ2mZmZWMzssMGAAMjxMzsYBGYWMmxMAmNsxAAAjZYAAwMDGzYMbAAAmZmZAAwwA",
@@ -320,6 +350,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Oppressive Darkness",
+                      talentId = 91451,
                       dungeonPct = 90,
                       baselinePct = 83,
                     },
@@ -327,6 +358,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Curse of Tongues",
+                      talentId = 136106,
                       dungeonPct = 36,
                       baselinePct = 49,
                     },
@@ -336,6 +368,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Gorefiend's Avarice",
+                      talentId = 91431,
                       dungeonPct = 74,
                       baselinePct = 62,
                     },
@@ -343,6 +376,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Devastation",
+                      talentId = 136834,
                       dungeonPct = 45,
                       baselinePct = 55,
                     },
@@ -352,6 +386,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Banish",
+                      talentId = 91454,
                       dungeonPct = 59,
                       baselinePct = 38,
                     },
@@ -359,6 +394,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Ashen Remains",
+                      talentId = 91482,
                       dungeonPct = 69,
                       baselinePct = 80,
                     },
@@ -368,6 +404,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Ichor of Devils",
+                      talentId = 91446,
                       dungeonPct = 44,
                       baselinePct = 26,
                     },
@@ -375,6 +412,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Frequent Donor",
+                      talentId = 91445,
                       dungeonPct = 56,
                       baselinePct = 73,
                     },
@@ -384,6 +422,7 @@ ZugZugData = {
             },
             {
               spec = "Affliction",
+              specId = 265,
               hero = "Hellcaller",
               label = "Malediction",
               importString = "CkQAAAAAAAAAAAAAAAAAAAAAAsZmxMjZ2MzsNzMmlBAAMzMLz2MzsNGAwCMwsYMjZAMbglBAAgZAAgZGMmhxyYMjhZmZMMzMGAwAG",
@@ -394,6 +433,7 @@ ZugZugData = {
             },
             {
               spec = "Affliction",
+              specId = 265,
               hero = "Soul Harvester",
               label = "Eye Contract",
               importString = "CkQAAAAAAAAAAAAAAAAAAAAAAsNGzMjZWMmtZmxsAAAMzMLzmZmNzAAjttBGwAmhlBMsNAAAMDAAgZmZmhxmZMDmZmZMMzMDAgBG",
@@ -404,6 +444,7 @@ ZugZugData = {
             },
             {
               spec = "Destruction",
+              specId = 267,
               hero = "Diabolist",
               label = "Rain of Fire",
               importString = "CsQAAAAAAAAAAAAAAAAAAAAAAgZmZGzsYGLmZMbzmZmZWMzssMGAAMjxMzsBGzYYDGYbYjZswAAAjBDAwMDwYGzMbAAAmxMDAAzwA",
@@ -414,6 +455,7 @@ ZugZugData = {
             },
             {
               spec = "Demonology",
+              specId = 266,
               hero = "Diabolist",
               label = "Soul",
               importString = "CoQAAAAAAAAAAAAAAAAAAAAAAwMjZGzsYGbzMjZbAAAAAAAAjZMsADsNswMsYMzYZ2mZmxMAwMjZGzMDwYGmZDAAYmZmZmB2mxAGA",
@@ -424,6 +466,7 @@ ZugZugData = {
             },
             {
               spec = "Demonology",
+              specId = 266,
               hero = "Diabolist",
               label = "Summon Doomguard",
               importString = "CoQAAAAAAAAAAAAAAAAAAAAAAwMMzYmNzMbzMjZZAAAAAAAAjZMsADsNswMsYwYZMzMzMDAMjZGzMzAMzMmxCAAYmZmZMzgtZGgB",
@@ -436,6 +479,7 @@ ZugZugData = {
           ["15+"] = {
             {
               spec = "Demonology",
+              specId = 266,
               hero = "Diabolist",
               label = "Grimoire: Imp Lord",
               importString = "CoQAAAAAAAAAAAAAAAAAAAAAAwMmZGzsxMbzMjZZAAAAAAAAjZMsADsNswMsYMzYZ2mZmxMAwMjxMzMDwYGzYDAAMmZmxwwyMGwA",
@@ -456,6 +500,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Grimoire: Fel Ravager",
+                      talentId = 136725,
                       dungeonPct = 33,
                       baselinePct = 15,
                     },
@@ -463,6 +508,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Grimoire: Imp Lord",
+                      talentId = 136726,
                       dungeonPct = 67,
                       baselinePct = 85,
                     },
@@ -472,6 +518,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Grimoire: Imp Lord",
+                      talentId = 136726,
                       dungeonPct = 97,
                       baselinePct = 85,
                     },
@@ -479,6 +526,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Grimoire: Fel Ravager",
+                      talentId = 136725,
                       dungeonPct = 3,
                       baselinePct = 15,
                     },
@@ -488,6 +536,7 @@ ZugZugData = {
             },
             {
               spec = "Affliction",
+              specId = 265,
               hero = "Soul Harvester",
               label = "Absolute Corruption",
               importString = "CkQAAAAAAAAAAAAAAAAAAAAAAwMjZGzsZmZbmZMLDAAYmZWmNzMLjBAGbLDMgBMDbDYYbAAAYGAAAzMjZMjtxYGjZmZGDzMzAAMgB",
@@ -499,6 +548,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Banish",
+                      talentId = 91454,
                       dungeonPct = 96,
                       baselinePct = 81,
                     },
@@ -506,6 +556,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Curse of Exhaustion",
+                      talentId = 136107,
                       dungeonPct = 31,
                       baselinePct = 37,
                     },
@@ -515,6 +566,7 @@ ZugZugData = {
             },
             {
               spec = "Destruction",
+              specId = 267,
               hero = "Diabolist",
               label = "Diabolist",
               importString = "CsQAAAAAAAAAAAAAAAAAAAAAAwMmZGzsxYbmZMLzmZmZWMzssMGAAMjxMzsAGzYYBGYbYhZswAAAjBDAwMDwYGzMbAAAmZmBAAzwA",
@@ -526,6 +578,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Banish",
+                      talentId = 91454,
                       dungeonPct = 77,
                       baselinePct = 49,
                     },
@@ -533,6 +586,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Curse of Exhaustion",
+                      talentId = 136107,
                       dungeonPct = 60,
                       baselinePct = 67,
                     },
@@ -542,6 +596,7 @@ ZugZugData = {
             },
             {
               spec = "Destruction",
+              specId = 267,
               hero = "Hellcaller",
               label = "Alythess's Ire",
               importString = "CsQAAAAAAAAAAAAAAAAAAAAAAwMjZGzsZGbzMjZZ2mZmZWMzssMGAAMjxMzsYBGYWMmxMAmNsxAAAjZYAAwMDGzYMbAAAmZmZAAwwA",
@@ -553,6 +608,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Oppressive Darkness",
+                      talentId = 91451,
                       dungeonPct = 90,
                       baselinePct = 83,
                     },
@@ -560,6 +616,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Curse of Tongues",
+                      talentId = 136106,
                       dungeonPct = 36,
                       baselinePct = 49,
                     },
@@ -569,6 +626,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Gorefiend's Avarice",
+                      talentId = 91431,
                       dungeonPct = 74,
                       baselinePct = 62,
                     },
@@ -576,6 +634,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Devastation",
+                      talentId = 136834,
                       dungeonPct = 45,
                       baselinePct = 55,
                     },
@@ -585,6 +644,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Banish",
+                      talentId = 91454,
                       dungeonPct = 59,
                       baselinePct = 38,
                     },
@@ -592,6 +652,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Ashen Remains",
+                      talentId = 91482,
                       dungeonPct = 69,
                       baselinePct = 80,
                     },
@@ -601,6 +662,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Ichor of Devils",
+                      talentId = 91446,
                       dungeonPct = 44,
                       baselinePct = 26,
                     },
@@ -608,6 +670,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Frequent Donor",
+                      talentId = 91445,
                       dungeonPct = 56,
                       baselinePct = 73,
                     },
@@ -617,6 +680,7 @@ ZugZugData = {
             },
             {
               spec = "Affliction",
+              specId = 265,
               hero = "Hellcaller",
               label = "Malediction",
               importString = "CkQAAAAAAAAAAAAAAAAAAAAAAsZmxMjZ2MzsNzMmlBAAMzMLz2MzsNGAwCMwsYMjZAMbglBAAgZAAgZGMmhxyYMjhZmZMMzMGAwAG",
@@ -627,6 +691,7 @@ ZugZugData = {
             },
             {
               spec = "Affliction",
+              specId = 265,
               hero = "Soul Harvester",
               label = "Eye Contract",
               importString = "CkQAAAAAAAAAAAAAAAAAAAAAAsNGzMjZWMmtZmxsAAAMzMLzmZmNzAAjttBGwAmhlBMsNAAAMDAAgZmZmhxmZMDmZmZMMzMDAgBG",
@@ -637,6 +702,7 @@ ZugZugData = {
             },
             {
               spec = "Destruction",
+              specId = 267,
               hero = "Diabolist",
               label = "Rain of Fire",
               importString = "CsQAAAAAAAAAAAAAAAAAAAAAAgZmZGzsYGLmZMbzmZmZWMzssMGAAMjxMzsBGzYYDGYbYjZswAAAjBDAwMDwYGzMbAAAmxMDAAzwA",
@@ -647,6 +713,7 @@ ZugZugData = {
             },
             {
               spec = "Demonology",
+              specId = 266,
               hero = "Diabolist",
               label = "Soul",
               importString = "CoQAAAAAAAAAAAAAAAAAAAAAAwMjZGzsYGbzMjZbAAAAAAAAjZMsADsNswMsYMzYZ2mZmxMAwMjZGzMDwYGmZDAAYmZmZmB2mxAGA",
@@ -657,6 +724,7 @@ ZugZugData = {
             },
             {
               spec = "Demonology",
+              specId = 266,
               hero = "Diabolist",
               label = "Summon Doomguard",
               importString = "CoQAAAAAAAAAAAAAAAAAAAAAAwMMzYmNzMbzMjZZAAAAAAAAjZMsADsNswMsYwYZMzMzMDAMjZGzMzAMzMmxCAAYmZmZMzgtZGgB",
@@ -669,6 +737,7 @@ ZugZugData = {
           ["18+"] = {
             {
               spec = "Demonology",
+              specId = 266,
               hero = "Diabolist",
               label = "Grimoire: Imp Lord",
               importString = "CoQAAAAAAAAAAAAAAAAAAAAAAwMmZGzsxMbzMjZZAAAAAAAAjZMsADsNswMsYMzYZ2mZmxMAwMjxMzMDwYGzYDAAMmZmxwwyMGwA",
@@ -689,6 +758,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Grimoire: Fel Ravager",
+                      talentId = 136725,
                       dungeonPct = 33,
                       baselinePct = 15,
                     },
@@ -696,6 +766,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Grimoire: Imp Lord",
+                      talentId = 136726,
                       dungeonPct = 67,
                       baselinePct = 85,
                     },
@@ -705,6 +776,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Grimoire: Imp Lord",
+                      talentId = 136726,
                       dungeonPct = 97,
                       baselinePct = 85,
                     },
@@ -712,6 +784,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Grimoire: Fel Ravager",
+                      talentId = 136725,
                       dungeonPct = 3,
                       baselinePct = 15,
                     },
@@ -721,6 +794,7 @@ ZugZugData = {
             },
             {
               spec = "Affliction",
+              specId = 265,
               hero = "Soul Harvester",
               label = "Absolute Corruption",
               importString = "CkQAAAAAAAAAAAAAAAAAAAAAAwMjZGzsZmZbmZMLDAAYmZWmNzMLjBAGbLDMgBMDbDYYbAAAYGAAAzMjZMjtxYGjZmZGDzMzAAMgB",
@@ -732,6 +806,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Banish",
+                      talentId = 91454,
                       dungeonPct = 96,
                       baselinePct = 81,
                     },
@@ -739,6 +814,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Curse of Exhaustion",
+                      talentId = 136107,
                       dungeonPct = 31,
                       baselinePct = 37,
                     },
@@ -748,6 +824,7 @@ ZugZugData = {
             },
             {
               spec = "Destruction",
+              specId = 267,
               hero = "Diabolist",
               label = "Diabolist",
               importString = "CsQAAAAAAAAAAAAAAAAAAAAAAwMmZGzsxYbmZMLzmZmZWMzssMGAAMjxMzsAGzYYBGYbYhZswAAAjBDAwMDwYGzMbAAAmZmBAAzwA",
@@ -759,6 +836,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Banish",
+                      talentId = 91454,
                       dungeonPct = 77,
                       baselinePct = 49,
                     },
@@ -766,6 +844,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Curse of Exhaustion",
+                      talentId = 136107,
                       dungeonPct = 60,
                       baselinePct = 67,
                     },
@@ -775,6 +854,7 @@ ZugZugData = {
             },
             {
               spec = "Destruction",
+              specId = 267,
               hero = "Hellcaller",
               label = "Alythess's Ire",
               importString = "CsQAAAAAAAAAAAAAAAAAAAAAAwMjZGzsZGbzMjZZ2mZmZWMzssMGAAMjxMzsYBGYWMmxMAmNsxAAAjZYAAwMDGzYMbAAAmZmZAAwwA",
@@ -786,6 +866,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Oppressive Darkness",
+                      talentId = 91451,
                       dungeonPct = 90,
                       baselinePct = 83,
                     },
@@ -793,6 +874,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Curse of Tongues",
+                      talentId = 136106,
                       dungeonPct = 36,
                       baselinePct = 49,
                     },
@@ -802,6 +884,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Gorefiend's Avarice",
+                      talentId = 91431,
                       dungeonPct = 74,
                       baselinePct = 62,
                     },
@@ -809,6 +892,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Devastation",
+                      talentId = 136834,
                       dungeonPct = 45,
                       baselinePct = 55,
                     },
@@ -818,6 +902,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Banish",
+                      talentId = 91454,
                       dungeonPct = 59,
                       baselinePct = 38,
                     },
@@ -825,6 +910,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Ashen Remains",
+                      talentId = 91482,
                       dungeonPct = 69,
                       baselinePct = 80,
                     },
@@ -834,6 +920,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Ichor of Devils",
+                      talentId = 91446,
                       dungeonPct = 44,
                       baselinePct = 26,
                     },
@@ -841,6 +928,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Frequent Donor",
+                      talentId = 91445,
                       dungeonPct = 56,
                       baselinePct = 73,
                     },
@@ -850,6 +938,7 @@ ZugZugData = {
             },
             {
               spec = "Affliction",
+              specId = 265,
               hero = "Hellcaller",
               label = "Malediction",
               importString = "CkQAAAAAAAAAAAAAAAAAAAAAAsZmxMjZ2MzsNzMmlBAAMzMLz2MzsNGAwCMwsYMjZAMbglBAAgZAAgZGMmhxyYMjhZmZMMzMGAwAG",
@@ -860,6 +949,7 @@ ZugZugData = {
             },
             {
               spec = "Affliction",
+              specId = 265,
               hero = "Soul Harvester",
               label = "Eye Contract",
               importString = "CkQAAAAAAAAAAAAAAAAAAAAAAsNGzMjZWMmtZmxsAAAMzMLzmZmNzAAjttBGwAmhlBMsNAAAMDAAgZmZmhxmZMDmZmZMMzMDAgBG",
@@ -870,6 +960,7 @@ ZugZugData = {
             },
             {
               spec = "Destruction",
+              specId = 267,
               hero = "Diabolist",
               label = "Rain of Fire",
               importString = "CsQAAAAAAAAAAAAAAAAAAAAAAgZmZGzsYGLmZMbzmZmZWMzssMGAAMjxMzsBGzYYDGYbYjZswAAAjBDAwMDwYGzMbAAAmxMDAAzwA",
@@ -880,6 +971,7 @@ ZugZugData = {
             },
             {
               spec = "Demonology",
+              specId = 266,
               hero = "Diabolist",
               label = "Soul",
               importString = "CoQAAAAAAAAAAAAAAAAAAAAAAwMjZGzsYGbzMjZbAAAAAAAAjZMsADsNswMsYMzYZ2mZmxMAwMjZGzMDwYGmZDAAYmZmZmB2mxAGA",
@@ -890,6 +982,7 @@ ZugZugData = {
             },
             {
               spec = "Demonology",
+              specId = 266,
               hero = "Diabolist",
               label = "Summon Doomguard",
               importString = "CoQAAAAAAAAAAAAAAAAAAAAAAwMMzYmNzMbzMjZZAAAAAAAAjZMsADsNswMsYwYZMzMzMDAMjZGzMzAMzMmxCAAYmZmZMzgtZGgB",
@@ -902,6 +995,7 @@ ZugZugData = {
           ["20+"] = {
             {
               spec = "Demonology",
+              specId = 266,
               hero = "Diabolist",
               label = "Grimoire: Imp Lord",
               importString = "CoQAAAAAAAAAAAAAAAAAAAAAAwMmZGzsxMbzMjZZAAAAAAAAjZMsADsNswMsYMzYZ2mZmxMAwMjxMzMDwYGzYDAAMmZmxwwyMGwA",
@@ -922,6 +1016,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Grimoire: Fel Ravager",
+                      talentId = 136725,
                       dungeonPct = 33,
                       baselinePct = 15,
                     },
@@ -929,6 +1024,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Grimoire: Imp Lord",
+                      talentId = 136726,
                       dungeonPct = 67,
                       baselinePct = 85,
                     },
@@ -938,6 +1034,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Grimoire: Imp Lord",
+                      talentId = 136726,
                       dungeonPct = 97,
                       baselinePct = 85,
                     },
@@ -945,6 +1042,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Grimoire: Fel Ravager",
+                      talentId = 136725,
                       dungeonPct = 3,
                       baselinePct = 15,
                     },
@@ -954,6 +1052,7 @@ ZugZugData = {
             },
             {
               spec = "Affliction",
+              specId = 265,
               hero = "Soul Harvester",
               label = "Absolute Corruption",
               importString = "CkQAAAAAAAAAAAAAAAAAAAAAAwMjZGzsZmZbmZMLDAAYmZWmNzMLjBAGbLDMgBMDbDYYbAAAYGAAAzMjZMjtxYGjZmZGDzMzAAMgB",
@@ -965,6 +1064,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Banish",
+                      talentId = 91454,
                       dungeonPct = 96,
                       baselinePct = 81,
                     },
@@ -972,6 +1072,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Curse of Exhaustion",
+                      talentId = 136107,
                       dungeonPct = 31,
                       baselinePct = 37,
                     },
@@ -981,6 +1082,7 @@ ZugZugData = {
             },
             {
               spec = "Destruction",
+              specId = 267,
               hero = "Diabolist",
               label = "Diabolist",
               importString = "CsQAAAAAAAAAAAAAAAAAAAAAAwMmZGzsxYbmZMLzmZmZWMzssMGAAMjxMzsAGzYYBGYbYhZswAAAjBDAwMDwYGzMbAAAmZmBAAzwA",
@@ -992,6 +1094,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Banish",
+                      talentId = 91454,
                       dungeonPct = 77,
                       baselinePct = 49,
                     },
@@ -999,6 +1102,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Curse of Exhaustion",
+                      talentId = 136107,
                       dungeonPct = 60,
                       baselinePct = 67,
                     },
@@ -1008,6 +1112,7 @@ ZugZugData = {
             },
             {
               spec = "Destruction",
+              specId = 267,
               hero = "Hellcaller",
               label = "Alythess's Ire",
               importString = "CsQAAAAAAAAAAAAAAAAAAAAAAwMjZGzsZGbzMjZZ2mZmZWMzssMGAAMjxMzsYBGYWMmxMAmNsxAAAjZYAAwMDGzYMbAAAmZmZAAwwA",
@@ -1019,6 +1124,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Oppressive Darkness",
+                      talentId = 91451,
                       dungeonPct = 90,
                       baselinePct = 83,
                     },
@@ -1026,6 +1132,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Curse of Tongues",
+                      talentId = 136106,
                       dungeonPct = 36,
                       baselinePct = 49,
                     },
@@ -1035,6 +1142,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Gorefiend's Avarice",
+                      talentId = 91431,
                       dungeonPct = 74,
                       baselinePct = 62,
                     },
@@ -1042,6 +1150,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Devastation",
+                      talentId = 136834,
                       dungeonPct = 45,
                       baselinePct = 55,
                     },
@@ -1051,6 +1160,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Banish",
+                      talentId = 91454,
                       dungeonPct = 59,
                       baselinePct = 38,
                     },
@@ -1058,6 +1168,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Ashen Remains",
+                      talentId = 91482,
                       dungeonPct = 69,
                       baselinePct = 80,
                     },
@@ -1067,6 +1178,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Ichor of Devils",
+                      talentId = 91446,
                       dungeonPct = 44,
                       baselinePct = 26,
                     },
@@ -1074,6 +1186,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Frequent Donor",
+                      talentId = 91445,
                       dungeonPct = 56,
                       baselinePct = 73,
                     },
@@ -1083,6 +1196,7 @@ ZugZugData = {
             },
             {
               spec = "Affliction",
+              specId = 265,
               hero = "Hellcaller",
               label = "Malediction",
               importString = "CkQAAAAAAAAAAAAAAAAAAAAAAsZmxMjZ2MzsNzMmlBAAMzMLz2MzsNGAwCMwsYMjZAMbglBAAgZAAgZGMmhxyYMjhZmZMMzMGAwAG",
@@ -1093,6 +1207,7 @@ ZugZugData = {
             },
             {
               spec = "Affliction",
+              specId = 265,
               hero = "Soul Harvester",
               label = "Eye Contract",
               importString = "CkQAAAAAAAAAAAAAAAAAAAAAAsNGzMjZWMmtZmxsAAAMzMLzmZmNzAAjttBGwAmhlBMsNAAAMDAAgZmZmhxmZMDmZmZMMzMDAgBG",
@@ -1103,6 +1218,7 @@ ZugZugData = {
             },
             {
               spec = "Destruction",
+              specId = 267,
               hero = "Diabolist",
               label = "Rain of Fire",
               importString = "CsQAAAAAAAAAAAAAAAAAAAAAAgZmZGzsYGLmZMbzmZmZWMzssMGAAMjxMzsBGzYYDGYbYjZswAAAjBDAwMDwYGzMbAAAmxMDAAzwA",
@@ -1113,6 +1229,7 @@ ZugZugData = {
             },
             {
               spec = "Demonology",
+              specId = 266,
               hero = "Diabolist",
               label = "Soul",
               importString = "CoQAAAAAAAAAAAAAAAAAAAAAAwMjZGzsYGbzMjZbAAAAAAAAjZMsADsNswMsYMzYZ2mZmxMAwMjZGzMDwYGmZDAAYmZmZmB2mxAGA",
@@ -1123,6 +1240,7 @@ ZugZugData = {
             },
             {
               spec = "Demonology",
+              specId = 266,
               hero = "Diabolist",
               label = "Summon Doomguard",
               importString = "CoQAAAAAAAAAAAAAAAAAAAAAAwMMzYmNzMbzMjZZAAAAAAAAjZMsADsNswMsYwYZMzMzMDAMjZGzMzAMzMmxCAAYmZmZMzgtZGgB",
@@ -1141,6 +1259,7 @@ ZugZugData = {
           heroic = {
             {
               spec = "Frost",
+              specId = 64,
               hero = "Spellslinger",
               label = "Frigid Focus",
               importString = "CAEAAAAAAAAAAAAAAAAAAAAAAYGGLzMzsMmZmhZmZMzMzMLmZmxMmBAAAmZmZZZmZ2AAgNAAAgNA2WGzMzgZbYMDLAAAMzGwMwAmBD",
@@ -1160,6 +1279,7 @@ ZugZugData = {
             },
             {
               spec = "Fire",
+              specId = 63,
               hero = "Sunfury",
               label = "Flamestrike",
               importString = "C8DAAAAAAAAAAAAAAAAAAAAAAYGGLzMzswMDjZmZAAAYAAzMzMLLLzAAsZmZsNmZmxCAAAAAsYmZmZAAwYGzYmZmZWAwMDwYMYGG",
@@ -1169,6 +1289,7 @@ ZugZugData = {
             },
             {
               spec = "Arcane",
+              specId = 62,
               hero = "Spellslinger",
               label = "Orb Mastery",
               importString = "C4DAAAAAAAAAAAAAAAAAAAAAAYGGLzMzswMzwMzMDAAADAAAMzMzyyMzwCAAbDzMjZbxyMzMmZMGzMzMWYmZGzAAMAAAmZBAMDAGG",
@@ -1180,6 +1301,7 @@ ZugZugData = {
             },
             {
               spec = "Fire",
+              specId = 63,
               hero = "Frostfire",
               label = "Blast Zone",
               importString = "C8DAAAAAAAAAAAAAAAAAAAAAAYGGLzMzswMDjZmZAAAYmlZMzsMLAAAgFzMjtxMzMAAAAAALmZmZGAAMmxMzMzMzsBMzAGmxYwgB",
@@ -1189,6 +1311,7 @@ ZugZugData = {
             },
             {
               spec = "Fire",
+              specId = 63,
               hero = "Sunfury",
               label = "Cinderstorm",
               importString = "C8DAAAAAAAAAAAAAAAAAAAAAAYmNzsMzMzCmZMmZmBAAgBAMzMzsssMDAwmZmZ2GGzMAAAAAAmZmZGAAMMzMmZYmtBgZGYMGGmhB",
@@ -1198,6 +1321,7 @@ ZugZugData = {
             },
             {
               spec = "Arcane",
+              specId = 62,
               hero = "Sunfury",
               label = "Explosive Potential",
               importString = "C4DAAAAAAAAAAAAAAAAAAAAAAYGGLzMzswMzwMzMDAAADAYmZmZZZbGAAbAAshZmxYzyMzMLzMGjZmZGLMzMjZAAGAAgBYmBMDAGG",
@@ -1207,6 +1331,7 @@ ZugZugData = {
             },
             {
               spec = "Arcane",
+              specId = 62,
               hero = "Spellslinger",
               label = "Focusing Crystal",
               importString = "C4DAAAAAAAAAAAAAAAAAAAAAAMzwMLzMzsgZGmZmZAAAYAAAgZmZWWmZGWAAYjZmZmxmlZmZWGMmZmZG2YGzMzAAMAAAzMLAgZAwwA",
@@ -1216,6 +1341,7 @@ ZugZugData = {
             },
             {
               spec = "Frost",
+              specId = 64,
               hero = "Spellslinger",
               label = "Freezing Rain",
               importString = "CAEAAAAAAAAAAAAAAAAAAAAAAMzgZZmZmFmZmhZYmZmZmZxMzwMmBAAAmZmZZZmZ2AAgFAAAgFA22GzMzgZbYMzYDAAgZ2AmhxAmBD",
@@ -1225,6 +1351,7 @@ ZugZugData = {
             },
             {
               spec = "Frost",
+              specId = 64,
               hero = "Frostfire",
               label = "Comet Storm",
               importString = "CAEAAAAAAAAAAAAAAAAAAAAAAMzwYZmZmlxMzMMzMjZmZmZzMzMzYMzyMzMzysAAAALAAwGAAAAA22GzMzgxMmZGbLAAAgZGMgBMwA",
@@ -1236,6 +1363,7 @@ ZugZugData = {
           mythic = {
             {
               spec = "Frost",
+              specId = 64,
               hero = "Spellslinger",
               label = "Frigid Focus",
               importString = "CAEAAAAAAAAAAAAAAAAAAAAAAYGGLzMzsMmZmhZmZMzMzMLmZmxMmBAAAmZmZZZmZ2AAgNAAAgNA2WGzMzgZbYMDLAAAMzGwMwAmBD",
@@ -1256,6 +1384,7 @@ ZugZugData = {
             },
             {
               spec = "Fire",
+              specId = 63,
               hero = "Sunfury",
               label = "Flamestrike",
               importString = "C8DAAAAAAAAAAAAAAAAAAAAAAYGGLzMzswMDjZmZAAAYAAzMzMLLLzAAsZmZsNmZmxCAAAAAsYmZmZAAwYGzYmZmZWAwMDwYMYGG",
@@ -1265,6 +1394,7 @@ ZugZugData = {
             },
             {
               spec = "Arcane",
+              specId = 62,
               hero = "Spellslinger",
               label = "Orb Mastery",
               importString = "C4DAAAAAAAAAAAAAAAAAAAAAAYGGLzMzswMzwMzMDAAADAAAMzMzyyMzwCAAbDzMjZbxyMzMmZMGzMzMWYmZGzAAMAAAmZBAMDAGG",
@@ -1274,6 +1404,7 @@ ZugZugData = {
             },
             {
               spec = "Fire",
+              specId = 63,
               hero = "Frostfire",
               label = "Blast Zone",
               importString = "C8DAAAAAAAAAAAAAAAAAAAAAAYGGLzMzswMDjZmZAAAYmlZMzsMLAAAgFzMjtxMzMAAAAAALmZmZGAAMmxMzMzMzsBMzAGmxYwgB",
@@ -1283,6 +1414,7 @@ ZugZugData = {
             },
             {
               spec = "Fire",
+              specId = 63,
               hero = "Sunfury",
               label = "Cinderstorm",
               importString = "C8DAAAAAAAAAAAAAAAAAAAAAAYmNzsMzMzCmZMmZmBAAgBAMzMzsssMDAwmZmZ2GGzMAAAAAAmZmZGAAMMzMmZYmtBgZGYMGGmhB",
@@ -1292,6 +1424,7 @@ ZugZugData = {
             },
             {
               spec = "Arcane",
+              specId = 62,
               hero = "Sunfury",
               label = "Explosive Potential",
               importString = "C4DAAAAAAAAAAAAAAAAAAAAAAYGGLzMzswMzwMzMDAAADAYmZmZZZbGAAbAAshZmxYzyMzMLzMGjZmZGLMzMjZAAGAAgBYmBMDAGG",
@@ -1301,6 +1434,7 @@ ZugZugData = {
             },
             {
               spec = "Arcane",
+              specId = 62,
               hero = "Spellslinger",
               label = "Focusing Crystal",
               importString = "C4DAAAAAAAAAAAAAAAAAAAAAAMzwMLzMzsgZGmZmZAAAYAAAgZmZWWmZGWAAYjZmZmxmlZmZWGMmZmZG2YGzMzAAMAAAzMLAgZAwwA",
@@ -1310,6 +1444,7 @@ ZugZugData = {
             },
             {
               spec = "Frost",
+              specId = 64,
               hero = "Spellslinger",
               label = "Freezing Rain",
               importString = "CAEAAAAAAAAAAAAAAAAAAAAAAMzgZZmZmFmZmhZYmZmZmZxMzwMmBAAAmZmZZZmZ2AAgFAAAgFA22GzMzgZbYMzYDAAgZ2AmhxAmBD",
@@ -1319,6 +1454,7 @@ ZugZugData = {
             },
             {
               spec = "Frost",
+              specId = 64,
               hero = "Frostfire",
               label = "Comet Storm",
               importString = "CAEAAAAAAAAAAAAAAAAAAAAAAMzwYZmZmlxMzMMzMjZmZmZzMzMzYMzyMzMzysAAAALAAwGAAAAA22GzMzgxMmZGbLAAAgZGMgBMwA",
@@ -1332,6 +1468,7 @@ ZugZugData = {
           all = {
             {
               spec = "Frost",
+              specId = 64,
               hero = "Spellslinger",
               label = "Crystalline Refraction",
               importString = "CAEAAAAAAAAAAAAAAAAAAAAAAMzwYZmZmlhZmhZmZMzMzMLmZGmxMAAAwMzMLLzMzGAAsBAAAsAw2yYmZGMbDjZGLAAAMzGwMMGwMYA",
@@ -1351,6 +1488,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Mass Invisibility",
+                      talentId = 115878,
                       dungeonPct = 65,
                       baselinePct = 37,
                     },
@@ -1358,6 +1496,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spellsteal",
+                      talentId = 80140,
                       dungeonPct = 65,
                       baselinePct = 87,
                     },
@@ -1367,6 +1506,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Dragon's Breath",
+                      talentId = 125819,
                       dungeonPct = 25,
                       baselinePct = 8,
                     },
@@ -1374,6 +1514,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Supernova",
+                      talentId = 125818,
                       dungeonPct = 75,
                       baselinePct = 92,
                     },
@@ -1383,6 +1524,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Remove Curse",
+                      talentId = 80175,
                       dungeonPct = 99,
                       baselinePct = 87,
                     },
@@ -1390,6 +1532,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Mass Invisibility",
+                      talentId = 115878,
                       dungeonPct = 29,
                       baselinePct = 37,
                     },
@@ -1399,6 +1542,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Energized Barriers",
+                      talentId = 80157,
                       dungeonPct = 100,
                       baselinePct = 93,
                     },
@@ -1406,6 +1550,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spellsteal",
+                      talentId = 80140,
                       dungeonPct = 72,
                       baselinePct = 87,
                     },
@@ -1415,6 +1560,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Ring of Frost",
+                      talentId = 80144,
                       dungeonPct = 38,
                       baselinePct = 15,
                     },
@@ -1422,6 +1568,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Mass Invisibility",
+                      talentId = 115878,
                       dungeonPct = 26,
                       baselinePct = 37,
                     },
@@ -1431,6 +1578,7 @@ ZugZugData = {
             },
             {
               spec = "Fire",
+              specId = 63,
               hero = "Sunfury",
               label = "Heat Shimmer",
               importString = "C8DAAAAAAAAAAAAAAAAAAAAAAMzwMLzMzsgZGjZmZAAAYAAzMzMLLLzAAsZmZsNmZmxGAAAAAsYmZmBAAGzwYmZmZWGAmZgxYMYGG",
@@ -1443,6 +1591,7 @@ ZugZugData = {
             },
             {
               spec = "Fire",
+              specId = 63,
               hero = "Frostfire",
               label = "Ice Nova",
               importString = "C8DAAAAAAAAAAAAAAAAAAAAAAMzsZsMzMzCzMjxMzMAAAMzyMmZWmFAAAwiZmx2YmZGbAAAAAwiZmZGAAYMjZmZmZmZDYmBMYMGMYA",
@@ -1453,6 +1602,7 @@ ZugZugData = {
             },
             {
               spec = "Frost",
+              specId = 64,
               hero = "Frostfire",
               label = "Comet Storm",
               importString = "CAEAAAAAAAAAAAAAAAAAAAAAAMzwMLzMzsMMzMMzMjZmZGLmZmZmZmZWmZmZWmFAAAYBAAWAAAAWAYbZMzMDGGjZstAAAAmZwgxAGYA",
@@ -1463,6 +1613,7 @@ ZugZugData = {
             },
             {
               spec = "Fire",
+              specId = 63,
               hero = "Sunfury",
               label = "Conflagration",
               importString = "C8DAAAAAAAAAAAAAAAAAAAAAAMGLjlZGzCzMjxMzMAAAMAgZmZmlllZAA2MzM2GzMzYBAAAAA2MzMzAAAjZMzYmZmZDAzMYGjZGYYA",
@@ -1475,6 +1626,7 @@ ZugZugData = {
           ["15+"] = {
             {
               spec = "Frost",
+              specId = 64,
               hero = "Spellslinger",
               label = "Crystalline Refraction",
               importString = "CAEAAAAAAAAAAAAAAAAAAAAAAMzwYZmZmlhZmhZmZMzMzMLmZGmxMAAAwMzMLLzMzGAAsBAAAsAw2yYmZGMbDjZGLAAAMzGwMMGwMYA",
@@ -1494,6 +1646,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Mass Invisibility",
+                      talentId = 115878,
                       dungeonPct = 65,
                       baselinePct = 37,
                     },
@@ -1501,6 +1654,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spellsteal",
+                      talentId = 80140,
                       dungeonPct = 65,
                       baselinePct = 87,
                     },
@@ -1510,6 +1664,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Dragon's Breath",
+                      talentId = 125819,
                       dungeonPct = 25,
                       baselinePct = 8,
                     },
@@ -1517,6 +1672,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Supernova",
+                      talentId = 125818,
                       dungeonPct = 75,
                       baselinePct = 92,
                     },
@@ -1526,6 +1682,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Remove Curse",
+                      talentId = 80175,
                       dungeonPct = 99,
                       baselinePct = 87,
                     },
@@ -1533,6 +1690,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Mass Invisibility",
+                      talentId = 115878,
                       dungeonPct = 29,
                       baselinePct = 37,
                     },
@@ -1542,6 +1700,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Energized Barriers",
+                      talentId = 80157,
                       dungeonPct = 100,
                       baselinePct = 93,
                     },
@@ -1549,6 +1708,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spellsteal",
+                      talentId = 80140,
                       dungeonPct = 72,
                       baselinePct = 87,
                     },
@@ -1558,6 +1718,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Ring of Frost",
+                      talentId = 80144,
                       dungeonPct = 38,
                       baselinePct = 15,
                     },
@@ -1565,6 +1726,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Mass Invisibility",
+                      talentId = 115878,
                       dungeonPct = 26,
                       baselinePct = 37,
                     },
@@ -1574,6 +1736,7 @@ ZugZugData = {
             },
             {
               spec = "Fire",
+              specId = 63,
               hero = "Sunfury",
               label = "Heat Shimmer",
               importString = "C8DAAAAAAAAAAAAAAAAAAAAAAMzwMLzMzsgZGjZmZAAAYAAzMzMLLLzAAsZmZsNmZmxGAAAAAsYmZmBAAGzwYmZmZWGAmZgxYMYGG",
@@ -1586,6 +1749,7 @@ ZugZugData = {
             },
             {
               spec = "Fire",
+              specId = 63,
               hero = "Frostfire",
               label = "Ice Nova",
               importString = "C8DAAAAAAAAAAAAAAAAAAAAAAMzsZsMzMzCzMjxMzMAAAMzyMmZWmFAAAwiZmx2YmZGbAAAAAwiZmZGAAYMjZmZmZmZDYmBMYMGMYA",
@@ -1596,6 +1760,7 @@ ZugZugData = {
             },
             {
               spec = "Frost",
+              specId = 64,
               hero = "Frostfire",
               label = "Comet Storm",
               importString = "CAEAAAAAAAAAAAAAAAAAAAAAAMzwMLzMzsMMzMMzMjZmZGLmZmZmZmZWmZmZWmFAAAYBAAWAAAAWAYbZMzMDGGjZstAAAAmZwgxAGYA",
@@ -1606,6 +1771,7 @@ ZugZugData = {
             },
             {
               spec = "Fire",
+              specId = 63,
               hero = "Sunfury",
               label = "Conflagration",
               importString = "C8DAAAAAAAAAAAAAAAAAAAAAAMGLjlZGzCzMjxMzMAAAMAgZmZmlllZAA2MzM2GzMzYBAAAAA2MzMzAAAjZMzYmZmZDAzMYGjZGYYA",
@@ -1618,6 +1784,7 @@ ZugZugData = {
           ["18+"] = {
             {
               spec = "Frost",
+              specId = 64,
               hero = "Spellslinger",
               label = "Crystalline Refraction",
               importString = "CAEAAAAAAAAAAAAAAAAAAAAAAMzwYZmZmlhZmhZmZMzMzMLmZGmxMAAAwMzMLLzMzGAAsBAAAsAw2yYmZGMbDjZGLAAAMzGwMMGwMYA",
@@ -1638,6 +1805,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Mass Invisibility",
+                      talentId = 115878,
                       dungeonPct = 65,
                       baselinePct = 37,
                     },
@@ -1645,6 +1813,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spellsteal",
+                      talentId = 80140,
                       dungeonPct = 65,
                       baselinePct = 87,
                     },
@@ -1654,6 +1823,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Dragon's Breath",
+                      talentId = 125819,
                       dungeonPct = 25,
                       baselinePct = 8,
                     },
@@ -1661,6 +1831,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Supernova",
+                      talentId = 125818,
                       dungeonPct = 75,
                       baselinePct = 92,
                     },
@@ -1670,6 +1841,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Remove Curse",
+                      talentId = 80175,
                       dungeonPct = 99,
                       baselinePct = 87,
                     },
@@ -1677,6 +1849,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Mass Invisibility",
+                      talentId = 115878,
                       dungeonPct = 29,
                       baselinePct = 37,
                     },
@@ -1686,6 +1859,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Energized Barriers",
+                      talentId = 80157,
                       dungeonPct = 100,
                       baselinePct = 93,
                     },
@@ -1693,6 +1867,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spellsteal",
+                      talentId = 80140,
                       dungeonPct = 72,
                       baselinePct = 87,
                     },
@@ -1702,6 +1877,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Ring of Frost",
+                      talentId = 80144,
                       dungeonPct = 38,
                       baselinePct = 15,
                     },
@@ -1709,6 +1885,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Mass Invisibility",
+                      talentId = 115878,
                       dungeonPct = 26,
                       baselinePct = 37,
                     },
@@ -1718,6 +1895,7 @@ ZugZugData = {
             },
             {
               spec = "Fire",
+              specId = 63,
               hero = "Sunfury",
               label = "Heat Shimmer",
               importString = "C8DAAAAAAAAAAAAAAAAAAAAAAMzwMLzMzsgZGjZmZAAAYAAzMzMLLLzAAsZmZsNmZmxGAAAAAsYmZmBAAGzwYmZmZWGAmZgxYMYGG",
@@ -1728,6 +1906,7 @@ ZugZugData = {
             },
             {
               spec = "Fire",
+              specId = 63,
               hero = "Frostfire",
               label = "Ice Nova",
               importString = "C8DAAAAAAAAAAAAAAAAAAAAAAMzsZsMzMzCzMjxMzMAAAMzyMmZWmFAAAwiZmx2YmZGbAAAAAwiZmZGAAYMjZmZmZmZDYmBMYMGMYA",
@@ -1738,6 +1917,7 @@ ZugZugData = {
             },
             {
               spec = "Frost",
+              specId = 64,
               hero = "Frostfire",
               label = "Comet Storm",
               importString = "CAEAAAAAAAAAAAAAAAAAAAAAAMzwMLzMzsMMzMMzMjZmZGLmZmZmZmZWmZmZWmFAAAYBAAWAAAAWAYbZMzMDGGjZstAAAAmZwgxAGYA",
@@ -1748,6 +1928,7 @@ ZugZugData = {
             },
             {
               spec = "Fire",
+              specId = 63,
               hero = "Sunfury",
               label = "Conflagration",
               importString = "C8DAAAAAAAAAAAAAAAAAAAAAAMGLjlZGzCzMjxMzMAAAMAgZmZmlllZAA2MzM2GzMzYBAAAAA2MzMzAAAjZMzYmZmZDAzMYGjZGYYA",
@@ -1760,6 +1941,7 @@ ZugZugData = {
           ["20+"] = {
             {
               spec = "Frost",
+              specId = 64,
               hero = "Spellslinger",
               label = "Crystalline Refraction",
               importString = "CAEAAAAAAAAAAAAAAAAAAAAAAMzwYZmZmlhZmhZmZMzMzMLmZGmxMAAAwMzMLLzMzGAAsBAAAsAw2yYmZGMbDjZGLAAAMzGwMMGwMYA",
@@ -1780,6 +1962,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Mass Invisibility",
+                      talentId = 115878,
                       dungeonPct = 65,
                       baselinePct = 37,
                     },
@@ -1787,6 +1970,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spellsteal",
+                      talentId = 80140,
                       dungeonPct = 65,
                       baselinePct = 87,
                     },
@@ -1796,6 +1980,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Dragon's Breath",
+                      talentId = 125819,
                       dungeonPct = 25,
                       baselinePct = 8,
                     },
@@ -1803,6 +1988,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Supernova",
+                      talentId = 125818,
                       dungeonPct = 75,
                       baselinePct = 92,
                     },
@@ -1812,6 +1998,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Remove Curse",
+                      talentId = 80175,
                       dungeonPct = 99,
                       baselinePct = 87,
                     },
@@ -1819,6 +2006,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Mass Invisibility",
+                      talentId = 115878,
                       dungeonPct = 29,
                       baselinePct = 37,
                     },
@@ -1828,6 +2016,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Energized Barriers",
+                      talentId = 80157,
                       dungeonPct = 100,
                       baselinePct = 93,
                     },
@@ -1835,6 +2024,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spellsteal",
+                      talentId = 80140,
                       dungeonPct = 72,
                       baselinePct = 87,
                     },
@@ -1844,6 +2034,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Ring of Frost",
+                      talentId = 80144,
                       dungeonPct = 38,
                       baselinePct = 15,
                     },
@@ -1851,6 +2042,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Mass Invisibility",
+                      talentId = 115878,
                       dungeonPct = 26,
                       baselinePct = 37,
                     },
@@ -1860,6 +2052,7 @@ ZugZugData = {
             },
             {
               spec = "Fire",
+              specId = 63,
               hero = "Sunfury",
               label = "Heat Shimmer",
               importString = "C8DAAAAAAAAAAAAAAAAAAAAAAMzwMLzMzsgZGjZmZAAAYAAzMzMLLLzAAsZmZsNmZmxGAAAAAsYmZmBAAGzwYmZmZWGAmZgxYMYGG",
@@ -1870,6 +2063,7 @@ ZugZugData = {
             },
             {
               spec = "Fire",
+              specId = 63,
               hero = "Frostfire",
               label = "Ice Nova",
               importString = "C8DAAAAAAAAAAAAAAAAAAAAAAMzsZsMzMzCzMjxMzMAAAMzyMmZWmFAAAwiZmx2YmZGbAAAAAwiZmZGAAYMjZmZmZmZDYmBMYMGMYA",
@@ -1880,6 +2074,7 @@ ZugZugData = {
             },
             {
               spec = "Frost",
+              specId = 64,
               hero = "Frostfire",
               label = "Comet Storm",
               importString = "CAEAAAAAAAAAAAAAAAAAAAAAAMzwMLzMzsMMzMMzMjZmZGLmZmZmZmZWmZmZWmFAAAYBAAWAAAAWAYbZMzMDGGjZstAAAAmZwgxAGYA",
@@ -1890,6 +2085,7 @@ ZugZugData = {
             },
             {
               spec = "Fire",
+              specId = 63,
               hero = "Sunfury",
               label = "Conflagration",
               importString = "C8DAAAAAAAAAAAAAAAAAAAAAAMGLjlZGzCzMjxMzMAAAMAgZmZmlllZAA2MzM2GzMzYBAAAAA2MzMzAAAjZMzYmZmZDAzMYGjZGYYA",
@@ -1908,6 +2104,7 @@ ZugZugData = {
           heroic = {
             {
               spec = "Elemental",
+              specId = 262,
               hero = "Stormbringer",
               label = "Charged Conduit",
               importString = "CYQAAAAAAAAAAAAAAAAAAAAAAAAAAAzMbLzMzMzMLbbDMmZAAAAAgNzYYDWgZYYGbAwsMzMjx2iZWYmZZsMzMzYYZWGWMzwMLAADgZGYYYA",
@@ -1926,6 +2123,7 @@ ZugZugData = {
             },
             {
               spec = "Enhancement",
+              specId = 263,
               hero = "Stormbringer",
               label = "Stormbringer",
               importString = "CcQAAAAAAAAAAAAAAAAAAAAAAMzMzgZmZmZmhZmZAAAAAAAAAsBYzMG2gFYGGmBLAMbzYGjllZswMz2YZmZmhxyYGAgZYMzwYAzMYwYA",
@@ -1937,6 +2135,7 @@ ZugZugData = {
             },
             {
               spec = "Enhancement",
+              specId = 263,
               hero = "Totemic",
               label = "Lashing Flames",
               importString = "CcQAAAAAAAAAAAAAAAAAAAAAAMzMjZmZmZmZmZmZmZGAAAAAAAAAYB2gZsYGbDgZAbAMLzYmZssMDMzsxyMzMDDjZAAMAjZmhZGAYMA",
@@ -1946,6 +2145,7 @@ ZugZugData = {
             },
             {
               spec = "Elemental",
+              specId = 262,
               hero = "Farseer",
               label = "Earth Shock",
               importString = "CYQAAAAAAAAAAAAAAAAAAAAAAAAAAAzMLLzMmZmZZZZwMMAAAAALmZDGwAmNmBMLAwsNzMjx2iZWYGbjlZmZGDLzyMWmZGzMLAADAMzYYYA",
@@ -1957,6 +2157,7 @@ ZugZugData = {
             },
             {
               spec = "Elemental",
+              specId = 262,
               hero = "Farseer",
               label = "Flames of the Cauldron",
               importString = "CYQAAAAAAAAAAAAAAAAAAAAAAAAAAAzMbbzMGjZZZZMmhBAAAAYxMbwAGwsxMgZBAmtZmZMz2yMDzMwyMzMjZwyMzyMGzMLAAzAgZGDDD",
@@ -1966,6 +2167,7 @@ ZugZugData = {
             },
             {
               spec = "Enhancement",
+              specId = 263,
               hero = "Stormbringer",
               label = "Static Charge",
               importString = "CcQAAAAAAAAAAAAAAAAAAAAAAMzMzgZmZmZmZmZmZGAAAAAAAAgNAbmxwGsAzwwMYBgZbGzMjtFDMzsYWmZmZGYMDAwMMmBzMgZGMYMA",
@@ -1977,6 +2179,7 @@ ZugZugData = {
           mythic = {
             {
               spec = "Elemental",
+              specId = 262,
               hero = "Stormbringer",
               label = "Charged Conduit",
               importString = "CYQAAAAAAAAAAAAAAAAAAAAAAAAAAAzMbLzMzMzMLbbDMmZAAAAAgNzYYDWgZYYGbAwsMzMjx2iZWYmZZsMzMzYYZWGWMzwMLAADgZGYYYA",
@@ -1993,6 +2196,7 @@ ZugZugData = {
             },
             {
               spec = "Enhancement",
+              specId = 263,
               hero = "Stormbringer",
               label = "Stormbringer",
               importString = "CcQAAAAAAAAAAAAAAAAAAAAAAMzMzgZmZmZmhZmZAAAAAAAAAsBYzMG2gFYGGmBLAMbzYGjllZswMz2YZmZmhxyYGAgZYMzwYAzMYwYA",
@@ -2005,6 +2209,7 @@ ZugZugData = {
             },
             {
               spec = "Enhancement",
+              specId = 263,
               hero = "Totemic",
               label = "Lashing Flames",
               importString = "CcQAAAAAAAAAAAAAAAAAAAAAAMzMjZmZmZmZmZmZmZGAAAAAAAAAYB2gZsYGbDgZAbAMLzYmZssMDMzsxyMzMDDjZAAMAjZmhZGAYMA",
@@ -2014,6 +2219,7 @@ ZugZugData = {
             },
             {
               spec = "Elemental",
+              specId = 262,
               hero = "Farseer",
               label = "Earth Shock",
               importString = "CYQAAAAAAAAAAAAAAAAAAAAAAAAAAAzMLLzMmZmZZZZwMMAAAAALmZDGwAmNmBMLAwsNzMjx2iZWYGbjlZmZGDLzyMWmZGzMLAADAMzYYYA",
@@ -2026,6 +2232,7 @@ ZugZugData = {
             },
             {
               spec = "Elemental",
+              specId = 262,
               hero = "Farseer",
               label = "Flames of the Cauldron",
               importString = "CYQAAAAAAAAAAAAAAAAAAAAAAAAAAAzMbbzMGjZZZZMmhBAAAAYxMbwAGwsxMgZBAmtZmZMz2yMDzMwyMzMjZwyMzyMGzMLAAzAgZGDDD",
@@ -2035,6 +2242,7 @@ ZugZugData = {
             },
             {
               spec = "Enhancement",
+              specId = 263,
               hero = "Stormbringer",
               label = "Static Charge",
               importString = "CcQAAAAAAAAAAAAAAAAAAAAAAMzMzgZmZmZmZmZmZGAAAAAAAAgNAbmxwGsAzwwMYBgZbGzMjtFDMzsYWmZmZGYMDAwMMmBzMgZGMYMA",
@@ -2048,6 +2256,7 @@ ZugZugData = {
           all = {
             {
               spec = "Enhancement",
+              specId = 263,
               hero = "Stormbringer",
               label = "Stormbringer",
               importString = "CcQAAAAAAAAAAAAAAAAAAAAAAMzMzgZmZmZmhZmZAAAAAAAAAsBYzMG2gFYGGmBLAMbzYGjllZgZmtxyMzMDjlxMAAzwYmhZGwMDGMGA",
@@ -2068,6 +2277,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Tremor Totem",
+                      talentId = 127874,
                       dungeonPct = 46,
                       baselinePct = 17,
                     },
@@ -2075,6 +2285,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Purge",
+                      talentId = 127905,
                       dungeonPct = 61,
                       baselinePct = 79,
                     },
@@ -2084,11 +2295,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 40,
                       baselinePct = 16,
                     },
                     {
                       name = "Tremor Totem",
+                      talentId = 127874,
                       dungeonPct = 31,
                       baselinePct = 17,
                     },
@@ -2096,11 +2309,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 60,
                       baselinePct = 84,
                     },
                     {
                       name = "Poison Cleansing Totem",
+                      talentId = 136567,
                       dungeonPct = 7,
                       baselinePct = 22,
                     },
@@ -2110,6 +2325,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Purge",
+                      talentId = 127905,
                       dungeonPct = 92,
                       baselinePct = 79,
                     },
@@ -2117,6 +2333,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 6,
                       baselinePct = 16,
                     },
@@ -2126,6 +2343,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 99,
                       baselinePct = 87,
                     },
@@ -2133,6 +2351,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 5,
                       baselinePct = 16,
                     },
@@ -2142,6 +2361,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Cleanse Spirit",
+                      talentId = 127884,
                       dungeonPct = 96,
                       baselinePct = 80,
                     },
@@ -2149,6 +2369,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 4,
                       baselinePct = 16,
                     },
@@ -2158,6 +2379,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 96,
                       baselinePct = 84,
                     },
@@ -2165,6 +2387,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 4,
                       baselinePct = 16,
                     },
@@ -2174,6 +2397,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 44,
                       baselinePct = 16,
                     },
@@ -2181,6 +2405,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 56,
                       baselinePct = 84,
                     },
@@ -2190,11 +2415,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Poison Cleansing Totem",
+                      talentId = 136567,
                       dungeonPct = 69,
                       baselinePct = 22,
                     },
                     {
                       name = "Cleanse Spirit",
+                      talentId = 127884,
                       dungeonPct = 93,
                       baselinePct = 80,
                     },
@@ -2202,11 +2429,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 75,
                       baselinePct = 87,
                     },
                     {
                       name = "Tremor Totem",
+                      talentId = 127874,
                       dungeonPct = 5,
                       baselinePct = 17,
                     },
@@ -2216,6 +2445,7 @@ ZugZugData = {
             },
             {
               spec = "Elemental",
+              specId = 262,
               hero = "Stormbringer",
               label = "Charged Conduit",
               importString = "CYQAAAAAAAAAAAAAAAAAAAAAAAAAAAzMbbzMzYML2mhZMzAAAAAAbmxwGsAzwwM2AgZbmZGjlFzgZmtxyMzMjZsYZGLmZGzsAAMAmZghhB",
@@ -2227,6 +2457,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Tremor Totem",
+                      talentId = 127874,
                       dungeonPct = 42,
                       baselinePct = 13,
                     },
@@ -2234,6 +2465,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 21,
                       baselinePct = 45,
                     },
@@ -2243,6 +2475,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 70,
                       baselinePct = 55,
                     },
@@ -2250,6 +2483,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 30,
                       baselinePct = 45,
                     },
@@ -2259,6 +2493,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 63,
                       baselinePct = 45,
                     },
@@ -2266,6 +2501,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 37,
                       baselinePct = 55,
                     },
@@ -2275,11 +2511,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 75,
                       baselinePct = 45,
                     },
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 97,
                       baselinePct = 77,
                     },
@@ -2287,11 +2525,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 25,
                       baselinePct = 55,
                     },
                     {
                       name = "Spirit Wolf",
+                      talentId = 127854,
                       dungeonPct = 4,
                       baselinePct = 17,
                     },
@@ -2301,6 +2541,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 70,
                       baselinePct = 45,
                     },
@@ -2308,6 +2549,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 30,
                       baselinePct = 55,
                     },
@@ -2317,16 +2559,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Earthgrab Totem",
+                      talentId = 127902,
                       dungeonPct = 63,
                       baselinePct = 30,
                     },
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 97,
                       baselinePct = 77,
                     },
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 63,
                       baselinePct = 45,
                     },
@@ -2334,16 +2579,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 37,
                       baselinePct = 55,
                     },
                     {
                       name = "Spirit Wolf",
+                      talentId = 127854,
                       dungeonPct = 1,
                       baselinePct = 17,
                     },
                     {
                       name = "Poison Cleansing Totem",
+                      talentId = 136567,
                       dungeonPct = 7,
                       baselinePct = 19,
                     },
@@ -2353,6 +2601,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 88,
                       baselinePct = 55,
                     },
@@ -2360,6 +2609,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 12,
                       baselinePct = 45,
                     },
@@ -2369,11 +2619,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Poison Cleansing Totem",
+                      talentId = 136567,
                       dungeonPct = 80,
                       baselinePct = 19,
                     },
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 70,
                       baselinePct = 55,
                     },
@@ -2381,11 +2633,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 54,
                       baselinePct = 77,
                     },
                     {
                       name = "Earthgrab Totem",
+                      talentId = 127902,
                       dungeonPct = 13,
                       baselinePct = 30,
                     },
@@ -2395,6 +2649,7 @@ ZugZugData = {
             },
             {
               spec = "Elemental",
+              specId = 262,
               hero = "Farseer",
               label = "Earthquake",
               importString = "CYQAAAAAAAAAAAAAAAAAAAAAAAAAAAzMbLzMGjZZZZMmhBAAAAYxMbwAGwsxMgZBAmtZmZMzyyMDzMzGLzYmxwilZmlZMmZWAAmBAzMGGG",
@@ -2406,16 +2661,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 54,
                       baselinePct = 34,
                     },
                     {
                       name = "Tremor Totem",
+                      talentId = 127874,
                       dungeonPct = 29,
                       baselinePct = 9,
                     },
                     {
                       name = "Elemental Blast",
+                      talentId = 127924,
                       dungeonPct = 86,
                       baselinePct = 69,
                     },
@@ -2423,16 +2681,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 43,
                       baselinePct = 66,
                     },
                     {
                       name = "Earth Shock",
+                      talentId = 101854,
                       dungeonPct = 14,
                       baselinePct = 31,
                     },
                     {
                       name = "Thunderous Paws",
+                      talentId = 127853,
                       dungeonPct = 69,
                       baselinePct = 85,
                     },
@@ -2442,6 +2703,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 68,
                       baselinePct = 34,
                     },
@@ -2449,6 +2711,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 32,
                       baselinePct = 66,
                     },
@@ -2458,6 +2721,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 89,
                       baselinePct = 66,
                     },
@@ -2465,6 +2729,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 11,
                       baselinePct = 34,
                     },
@@ -2474,6 +2739,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 84,
                       baselinePct = 66,
                     },
@@ -2481,6 +2747,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 16,
                       baselinePct = 34,
                     },
@@ -2490,11 +2757,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 88,
                       baselinePct = 66,
                     },
                     {
                       name = "Earthgrab Totem",
+                      talentId = 127902,
                       dungeonPct = 44,
                       baselinePct = 25,
                     },
@@ -2502,11 +2771,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 13,
                       baselinePct = 34,
                     },
                     {
                       name = "Spirit Wolf",
+                      talentId = 127854,
                       dungeonPct = 2,
                       baselinePct = 15,
                     },
@@ -2516,11 +2787,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 72,
                       baselinePct = 34,
                     },
                     {
                       name = "Earth Shock",
+                      talentId = 101854,
                       dungeonPct = 43,
                       baselinePct = 31,
                     },
@@ -2528,11 +2801,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 28,
                       baselinePct = 66,
                     },
                     {
                       name = "Elemental Blast",
+                      talentId = 127924,
                       dungeonPct = 57,
                       baselinePct = 69,
                     },
@@ -2542,6 +2817,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Poison Cleansing Totem",
+                      talentId = 136567,
                       dungeonPct = 51,
                       baselinePct = 14,
                     },
@@ -2549,6 +2825,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 67,
                       baselinePct = 86,
                     },
@@ -2558,6 +2835,7 @@ ZugZugData = {
             },
             {
               spec = "Enhancement",
+              specId = 263,
               hero = "Totemic",
               label = "Lashing Flames",
               importString = "CcQAAAAAAAAAAAAAAAAAAAAAAMzMjZmZmZmZmZmZGzAAAAAAAAAALwGMjFzYbAMDYDgZbGzYssYsxMz2YZmZmZwyYGAAgxwYYmBYwYA",
@@ -2568,6 +2846,7 @@ ZugZugData = {
             },
             {
               spec = "Elemental",
+              specId = 262,
               hero = "Farseer",
               label = "Lava Flows",
               importString = "CYQAAAAAAAAAAAAAAAAAAAAAAAAAAAzMLbzMGjZbZZMmhBAAAAYxMbwAGwsxMgZBAmtZmZM2WMDmx2YZmZmxMWsMzsMMzYWAAGGAzMGmxA",
@@ -2578,6 +2857,7 @@ ZugZugData = {
             },
             {
               spec = "Enhancement",
+              specId = 263,
               hero = "Stormbringer",
               label = "Tremor Totem",
               importString = "CcQAAAAAAAAAAAAAAAAAAAAAAMzMzgZmZmZmZmZmZGAAAAAAAAgNAbmxwGsAzwwMYBgZZGzYmtlZsYmZ2mZZGzMDWYGAgZYMDGDYmBDGD",
@@ -2590,6 +2870,7 @@ ZugZugData = {
           ["15+"] = {
             {
               spec = "Enhancement",
+              specId = 263,
               hero = "Stormbringer",
               label = "Stormbringer",
               importString = "CcQAAAAAAAAAAAAAAAAAAAAAAMzMzgZmZmZmhZmZAAAAAAAAAsBYzMG2gFYGGmBLAMbzYGjllZgZmtxyMzMDjlxMAAzwYmhZGwMDGMGA",
@@ -2610,6 +2891,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Tremor Totem",
+                      talentId = 127874,
                       dungeonPct = 46,
                       baselinePct = 17,
                     },
@@ -2617,6 +2899,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Purge",
+                      talentId = 127905,
                       dungeonPct = 61,
                       baselinePct = 79,
                     },
@@ -2626,11 +2909,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 40,
                       baselinePct = 16,
                     },
                     {
                       name = "Tremor Totem",
+                      talentId = 127874,
                       dungeonPct = 31,
                       baselinePct = 17,
                     },
@@ -2638,11 +2923,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 60,
                       baselinePct = 84,
                     },
                     {
                       name = "Poison Cleansing Totem",
+                      talentId = 136567,
                       dungeonPct = 7,
                       baselinePct = 22,
                     },
@@ -2652,6 +2939,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Purge",
+                      talentId = 127905,
                       dungeonPct = 92,
                       baselinePct = 79,
                     },
@@ -2659,6 +2947,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 6,
                       baselinePct = 16,
                     },
@@ -2668,6 +2957,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 99,
                       baselinePct = 87,
                     },
@@ -2675,6 +2965,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 5,
                       baselinePct = 16,
                     },
@@ -2684,6 +2975,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Cleanse Spirit",
+                      talentId = 127884,
                       dungeonPct = 96,
                       baselinePct = 80,
                     },
@@ -2691,6 +2983,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 4,
                       baselinePct = 16,
                     },
@@ -2700,6 +2993,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 96,
                       baselinePct = 84,
                     },
@@ -2707,6 +3001,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 4,
                       baselinePct = 16,
                     },
@@ -2716,6 +3011,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 44,
                       baselinePct = 16,
                     },
@@ -2723,6 +3019,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 56,
                       baselinePct = 84,
                     },
@@ -2732,11 +3029,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Poison Cleansing Totem",
+                      talentId = 136567,
                       dungeonPct = 69,
                       baselinePct = 22,
                     },
                     {
                       name = "Cleanse Spirit",
+                      talentId = 127884,
                       dungeonPct = 93,
                       baselinePct = 80,
                     },
@@ -2744,11 +3043,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 75,
                       baselinePct = 87,
                     },
                     {
                       name = "Tremor Totem",
+                      talentId = 127874,
                       dungeonPct = 5,
                       baselinePct = 17,
                     },
@@ -2758,6 +3059,7 @@ ZugZugData = {
             },
             {
               spec = "Elemental",
+              specId = 262,
               hero = "Stormbringer",
               label = "Charged Conduit",
               importString = "CYQAAAAAAAAAAAAAAAAAAAAAAAAAAAzMbbzMzYML2mhZMzAAAAAAbmxwGsAzwwM2AgZbmZGjlFzgZmtxyMzMjZsYZGLmZGzsAAMAmZghhB",
@@ -2769,6 +3071,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Tremor Totem",
+                      talentId = 127874,
                       dungeonPct = 42,
                       baselinePct = 13,
                     },
@@ -2776,6 +3079,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 21,
                       baselinePct = 45,
                     },
@@ -2785,6 +3089,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 70,
                       baselinePct = 55,
                     },
@@ -2792,6 +3097,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 30,
                       baselinePct = 45,
                     },
@@ -2801,6 +3107,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 63,
                       baselinePct = 45,
                     },
@@ -2808,6 +3115,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 37,
                       baselinePct = 55,
                     },
@@ -2817,11 +3125,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 75,
                       baselinePct = 45,
                     },
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 97,
                       baselinePct = 77,
                     },
@@ -2829,11 +3139,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 25,
                       baselinePct = 55,
                     },
                     {
                       name = "Spirit Wolf",
+                      talentId = 127854,
                       dungeonPct = 4,
                       baselinePct = 17,
                     },
@@ -2843,6 +3155,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 70,
                       baselinePct = 45,
                     },
@@ -2850,6 +3163,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 30,
                       baselinePct = 55,
                     },
@@ -2859,16 +3173,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Earthgrab Totem",
+                      talentId = 127902,
                       dungeonPct = 63,
                       baselinePct = 30,
                     },
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 97,
                       baselinePct = 77,
                     },
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 63,
                       baselinePct = 45,
                     },
@@ -2876,16 +3193,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 37,
                       baselinePct = 55,
                     },
                     {
                       name = "Spirit Wolf",
+                      talentId = 127854,
                       dungeonPct = 1,
                       baselinePct = 17,
                     },
                     {
                       name = "Poison Cleansing Totem",
+                      talentId = 136567,
                       dungeonPct = 7,
                       baselinePct = 19,
                     },
@@ -2895,6 +3215,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 88,
                       baselinePct = 55,
                     },
@@ -2902,6 +3223,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 12,
                       baselinePct = 45,
                     },
@@ -2911,11 +3233,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Poison Cleansing Totem",
+                      talentId = 136567,
                       dungeonPct = 80,
                       baselinePct = 19,
                     },
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 70,
                       baselinePct = 55,
                     },
@@ -2923,11 +3247,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 54,
                       baselinePct = 77,
                     },
                     {
                       name = "Earthgrab Totem",
+                      talentId = 127902,
                       dungeonPct = 13,
                       baselinePct = 30,
                     },
@@ -2937,6 +3263,7 @@ ZugZugData = {
             },
             {
               spec = "Elemental",
+              specId = 262,
               hero = "Farseer",
               label = "Earthquake",
               importString = "CYQAAAAAAAAAAAAAAAAAAAAAAAAAAAzMbLzMGjZZZZMmhBAAAAYxMbwAGwsxMgZBAmtZmZMzyyMDzMzGLzYmxwilZmlZMmZWAAmBAzMGGG",
@@ -2948,16 +3275,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 54,
                       baselinePct = 34,
                     },
                     {
                       name = "Tremor Totem",
+                      talentId = 127874,
                       dungeonPct = 29,
                       baselinePct = 9,
                     },
                     {
                       name = "Elemental Blast",
+                      talentId = 127924,
                       dungeonPct = 86,
                       baselinePct = 69,
                     },
@@ -2965,16 +3295,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 43,
                       baselinePct = 66,
                     },
                     {
                       name = "Earth Shock",
+                      talentId = 101854,
                       dungeonPct = 14,
                       baselinePct = 31,
                     },
                     {
                       name = "Thunderous Paws",
+                      talentId = 127853,
                       dungeonPct = 69,
                       baselinePct = 85,
                     },
@@ -2984,6 +3317,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 68,
                       baselinePct = 34,
                     },
@@ -2991,6 +3325,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 32,
                       baselinePct = 66,
                     },
@@ -3000,6 +3335,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 89,
                       baselinePct = 66,
                     },
@@ -3007,6 +3343,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 11,
                       baselinePct = 34,
                     },
@@ -3016,6 +3353,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 84,
                       baselinePct = 66,
                     },
@@ -3023,6 +3361,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 16,
                       baselinePct = 34,
                     },
@@ -3032,11 +3371,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 88,
                       baselinePct = 66,
                     },
                     {
                       name = "Earthgrab Totem",
+                      talentId = 127902,
                       dungeonPct = 44,
                       baselinePct = 25,
                     },
@@ -3044,11 +3385,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 13,
                       baselinePct = 34,
                     },
                     {
                       name = "Spirit Wolf",
+                      talentId = 127854,
                       dungeonPct = 2,
                       baselinePct = 15,
                     },
@@ -3058,11 +3401,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 72,
                       baselinePct = 34,
                     },
                     {
                       name = "Earth Shock",
+                      talentId = 101854,
                       dungeonPct = 43,
                       baselinePct = 31,
                     },
@@ -3070,11 +3415,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 28,
                       baselinePct = 66,
                     },
                     {
                       name = "Elemental Blast",
+                      talentId = 127924,
                       dungeonPct = 57,
                       baselinePct = 69,
                     },
@@ -3084,6 +3431,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Poison Cleansing Totem",
+                      talentId = 136567,
                       dungeonPct = 51,
                       baselinePct = 14,
                     },
@@ -3091,6 +3439,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 67,
                       baselinePct = 86,
                     },
@@ -3100,6 +3449,7 @@ ZugZugData = {
             },
             {
               spec = "Enhancement",
+              specId = 263,
               hero = "Totemic",
               label = "Lashing Flames",
               importString = "CcQAAAAAAAAAAAAAAAAAAAAAAMzMjZmZmZmZmZmZGzAAAAAAAAAALwGMjFzYbAMDYDgZbGzYssYsxMz2YZmZmZwyYGAAgxwYYmBYwYA",
@@ -3110,6 +3460,7 @@ ZugZugData = {
             },
             {
               spec = "Elemental",
+              specId = 262,
               hero = "Farseer",
               label = "Lava Flows",
               importString = "CYQAAAAAAAAAAAAAAAAAAAAAAAAAAAzMLbzMGjZbZZMmhBAAAAYxMbwAGwsxMgZBAmtZmZM2WMDmx2YZmZmxMWsMzsMMzYWAAGGAzMGmxA",
@@ -3120,6 +3471,7 @@ ZugZugData = {
             },
             {
               spec = "Enhancement",
+              specId = 263,
               hero = "Stormbringer",
               label = "Tremor Totem",
               importString = "CcQAAAAAAAAAAAAAAAAAAAAAAMzMzgZmZmZmZmZmZGAAAAAAAAgNAbmxwGsAzwwMYBgZZGzYmtlZsYmZ2mZZGzMDWYGAgZYMDGDYmBDGD",
@@ -3132,6 +3484,7 @@ ZugZugData = {
           ["18+"] = {
             {
               spec = "Enhancement",
+              specId = 263,
               hero = "Stormbringer",
               label = "Stormbringer",
               importString = "CcQAAAAAAAAAAAAAAAAAAAAAAMzMzgZmZmZmhZmZAAAAAAAAAsBYzMG2gFYGGmBLAMbzYGjllZgZmtxyMzMDjlxMAAzwYmhZGwMDGMGA",
@@ -3152,6 +3505,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Tremor Totem",
+                      talentId = 127874,
                       dungeonPct = 46,
                       baselinePct = 17,
                     },
@@ -3159,6 +3513,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Purge",
+                      talentId = 127905,
                       dungeonPct = 61,
                       baselinePct = 79,
                     },
@@ -3168,11 +3523,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 40,
                       baselinePct = 16,
                     },
                     {
                       name = "Tremor Totem",
+                      talentId = 127874,
                       dungeonPct = 31,
                       baselinePct = 17,
                     },
@@ -3180,11 +3537,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 60,
                       baselinePct = 84,
                     },
                     {
                       name = "Poison Cleansing Totem",
+                      talentId = 136567,
                       dungeonPct = 7,
                       baselinePct = 22,
                     },
@@ -3194,6 +3553,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Purge",
+                      talentId = 127905,
                       dungeonPct = 92,
                       baselinePct = 79,
                     },
@@ -3201,6 +3561,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 6,
                       baselinePct = 16,
                     },
@@ -3210,6 +3571,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 99,
                       baselinePct = 87,
                     },
@@ -3217,6 +3579,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 5,
                       baselinePct = 16,
                     },
@@ -3226,6 +3589,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Cleanse Spirit",
+                      talentId = 127884,
                       dungeonPct = 96,
                       baselinePct = 80,
                     },
@@ -3233,6 +3597,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 4,
                       baselinePct = 16,
                     },
@@ -3242,6 +3607,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 96,
                       baselinePct = 84,
                     },
@@ -3249,6 +3615,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 4,
                       baselinePct = 16,
                     },
@@ -3258,6 +3625,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 44,
                       baselinePct = 16,
                     },
@@ -3265,6 +3633,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 56,
                       baselinePct = 84,
                     },
@@ -3274,11 +3643,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Poison Cleansing Totem",
+                      talentId = 136567,
                       dungeonPct = 69,
                       baselinePct = 22,
                     },
                     {
                       name = "Cleanse Spirit",
+                      talentId = 127884,
                       dungeonPct = 93,
                       baselinePct = 80,
                     },
@@ -3286,11 +3657,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 75,
                       baselinePct = 87,
                     },
                     {
                       name = "Tremor Totem",
+                      talentId = 127874,
                       dungeonPct = 5,
                       baselinePct = 17,
                     },
@@ -3300,6 +3673,7 @@ ZugZugData = {
             },
             {
               spec = "Elemental",
+              specId = 262,
               hero = "Stormbringer",
               label = "Charged Conduit",
               importString = "CYQAAAAAAAAAAAAAAAAAAAAAAAAAAAzMbbzMzYML2mhZMzAAAAAAbmxwGsAzwwM2AgZbmZGjlFzgZmtxyMzMjZsYZGLmZGzsAAMAmZghhB",
@@ -3311,6 +3685,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Tremor Totem",
+                      talentId = 127874,
                       dungeonPct = 42,
                       baselinePct = 13,
                     },
@@ -3318,6 +3693,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 21,
                       baselinePct = 45,
                     },
@@ -3327,6 +3703,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 70,
                       baselinePct = 55,
                     },
@@ -3334,6 +3711,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 30,
                       baselinePct = 45,
                     },
@@ -3343,6 +3721,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 63,
                       baselinePct = 45,
                     },
@@ -3350,6 +3729,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 37,
                       baselinePct = 55,
                     },
@@ -3359,11 +3739,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 75,
                       baselinePct = 45,
                     },
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 97,
                       baselinePct = 77,
                     },
@@ -3371,11 +3753,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 25,
                       baselinePct = 55,
                     },
                     {
                       name = "Spirit Wolf",
+                      talentId = 127854,
                       dungeonPct = 4,
                       baselinePct = 17,
                     },
@@ -3385,6 +3769,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 70,
                       baselinePct = 45,
                     },
@@ -3392,6 +3777,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 30,
                       baselinePct = 55,
                     },
@@ -3401,16 +3787,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Earthgrab Totem",
+                      talentId = 127902,
                       dungeonPct = 63,
                       baselinePct = 30,
                     },
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 97,
                       baselinePct = 77,
                     },
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 63,
                       baselinePct = 45,
                     },
@@ -3418,16 +3807,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 37,
                       baselinePct = 55,
                     },
                     {
                       name = "Spirit Wolf",
+                      talentId = 127854,
                       dungeonPct = 1,
                       baselinePct = 17,
                     },
                     {
                       name = "Poison Cleansing Totem",
+                      talentId = 136567,
                       dungeonPct = 7,
                       baselinePct = 19,
                     },
@@ -3437,6 +3829,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 88,
                       baselinePct = 55,
                     },
@@ -3444,6 +3837,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 12,
                       baselinePct = 45,
                     },
@@ -3453,11 +3847,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Poison Cleansing Totem",
+                      talentId = 136567,
                       dungeonPct = 80,
                       baselinePct = 19,
                     },
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 70,
                       baselinePct = 55,
                     },
@@ -3465,11 +3861,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 54,
                       baselinePct = 77,
                     },
                     {
                       name = "Earthgrab Totem",
+                      talentId = 127902,
                       dungeonPct = 13,
                       baselinePct = 30,
                     },
@@ -3479,6 +3877,7 @@ ZugZugData = {
             },
             {
               spec = "Elemental",
+              specId = 262,
               hero = "Farseer",
               label = "Earthquake",
               importString = "CYQAAAAAAAAAAAAAAAAAAAAAAAAAAAzMbLzMGjZZZZMmhBAAAAYxMbwAGwsxMgZBAmtZmZMzyyMDzMzGLzYmxwilZmlZMmZWAAmBAzMGGG",
@@ -3490,16 +3889,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 54,
                       baselinePct = 34,
                     },
                     {
                       name = "Tremor Totem",
+                      talentId = 127874,
                       dungeonPct = 29,
                       baselinePct = 9,
                     },
                     {
                       name = "Elemental Blast",
+                      talentId = 127924,
                       dungeonPct = 86,
                       baselinePct = 69,
                     },
@@ -3507,16 +3909,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 43,
                       baselinePct = 66,
                     },
                     {
                       name = "Earth Shock",
+                      talentId = 101854,
                       dungeonPct = 14,
                       baselinePct = 31,
                     },
                     {
                       name = "Thunderous Paws",
+                      talentId = 127853,
                       dungeonPct = 69,
                       baselinePct = 85,
                     },
@@ -3526,6 +3931,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 68,
                       baselinePct = 34,
                     },
@@ -3533,6 +3939,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 32,
                       baselinePct = 66,
                     },
@@ -3542,6 +3949,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 89,
                       baselinePct = 66,
                     },
@@ -3549,6 +3957,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 11,
                       baselinePct = 34,
                     },
@@ -3558,6 +3967,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 84,
                       baselinePct = 66,
                     },
@@ -3565,6 +3975,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 16,
                       baselinePct = 34,
                     },
@@ -3574,11 +3985,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 88,
                       baselinePct = 66,
                     },
                     {
                       name = "Earthgrab Totem",
+                      talentId = 127902,
                       dungeonPct = 44,
                       baselinePct = 25,
                     },
@@ -3586,11 +3999,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 13,
                       baselinePct = 34,
                     },
                     {
                       name = "Spirit Wolf",
+                      talentId = 127854,
                       dungeonPct = 2,
                       baselinePct = 15,
                     },
@@ -3600,11 +4015,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 72,
                       baselinePct = 34,
                     },
                     {
                       name = "Earth Shock",
+                      talentId = 101854,
                       dungeonPct = 43,
                       baselinePct = 31,
                     },
@@ -3612,11 +4029,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 28,
                       baselinePct = 66,
                     },
                     {
                       name = "Elemental Blast",
+                      talentId = 127924,
                       dungeonPct = 57,
                       baselinePct = 69,
                     },
@@ -3626,6 +4045,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Poison Cleansing Totem",
+                      talentId = 136567,
                       dungeonPct = 51,
                       baselinePct = 14,
                     },
@@ -3633,6 +4053,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 67,
                       baselinePct = 86,
                     },
@@ -3642,6 +4063,7 @@ ZugZugData = {
             },
             {
               spec = "Enhancement",
+              specId = 263,
               hero = "Totemic",
               label = "Lashing Flames",
               importString = "CcQAAAAAAAAAAAAAAAAAAAAAAMzMjZmZmZmZmZmZGzAAAAAAAAAALwGMjFzYbAMDYDgZbGzYssYsxMz2YZmZmZwyYGAAgxwYYmBYwYA",
@@ -3652,6 +4074,7 @@ ZugZugData = {
             },
             {
               spec = "Elemental",
+              specId = 262,
               hero = "Farseer",
               label = "Lava Flows",
               importString = "CYQAAAAAAAAAAAAAAAAAAAAAAAAAAAzMLbzMGjZbZZMmhBAAAAYxMbwAGwsxMgZBAmtZmZM2WMDmx2YZmZmxMWsMzsMMzYWAAGGAzMGmxA",
@@ -3662,6 +4085,7 @@ ZugZugData = {
             },
             {
               spec = "Enhancement",
+              specId = 263,
               hero = "Stormbringer",
               label = "Tremor Totem",
               importString = "CcQAAAAAAAAAAAAAAAAAAAAAAMzMzgZmZmZmZmZmZGAAAAAAAAgNAbmxwGsAzwwMYBgZZGzYmtlZsYmZ2mZZGzMDWYGAgZYMDGDYmBDGD",
@@ -3674,6 +4098,7 @@ ZugZugData = {
           ["20+"] = {
             {
               spec = "Enhancement",
+              specId = 263,
               hero = "Stormbringer",
               label = "Stormbringer",
               importString = "CcQAAAAAAAAAAAAAAAAAAAAAAMzMzgZmZmZmhZmZAAAAAAAAAsBYzMG2gFYGGmBLAMbzYGjllZgZmtxyMzMDjlxMAAzwYmhZGwMDGMGA",
@@ -3694,6 +4119,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Tremor Totem",
+                      talentId = 127874,
                       dungeonPct = 46,
                       baselinePct = 17,
                     },
@@ -3701,6 +4127,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Purge",
+                      talentId = 127905,
                       dungeonPct = 61,
                       baselinePct = 79,
                     },
@@ -3710,11 +4137,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 40,
                       baselinePct = 16,
                     },
                     {
                       name = "Tremor Totem",
+                      talentId = 127874,
                       dungeonPct = 31,
                       baselinePct = 17,
                     },
@@ -3722,11 +4151,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 60,
                       baselinePct = 84,
                     },
                     {
                       name = "Poison Cleansing Totem",
+                      talentId = 136567,
                       dungeonPct = 7,
                       baselinePct = 22,
                     },
@@ -3736,6 +4167,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Purge",
+                      talentId = 127905,
                       dungeonPct = 92,
                       baselinePct = 79,
                     },
@@ -3743,6 +4175,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 6,
                       baselinePct = 16,
                     },
@@ -3752,6 +4185,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 99,
                       baselinePct = 87,
                     },
@@ -3759,6 +4193,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 5,
                       baselinePct = 16,
                     },
@@ -3768,6 +4203,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Cleanse Spirit",
+                      talentId = 127884,
                       dungeonPct = 96,
                       baselinePct = 80,
                     },
@@ -3775,6 +4211,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 4,
                       baselinePct = 16,
                     },
@@ -3784,6 +4221,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 96,
                       baselinePct = 84,
                     },
@@ -3791,6 +4229,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 4,
                       baselinePct = 16,
                     },
@@ -3800,6 +4239,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 44,
                       baselinePct = 16,
                     },
@@ -3807,6 +4247,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 56,
                       baselinePct = 84,
                     },
@@ -3816,11 +4257,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Poison Cleansing Totem",
+                      talentId = 136567,
                       dungeonPct = 69,
                       baselinePct = 22,
                     },
                     {
                       name = "Cleanse Spirit",
+                      talentId = 127884,
                       dungeonPct = 93,
                       baselinePct = 80,
                     },
@@ -3828,11 +4271,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 75,
                       baselinePct = 87,
                     },
                     {
                       name = "Tremor Totem",
+                      talentId = 127874,
                       dungeonPct = 5,
                       baselinePct = 17,
                     },
@@ -3842,6 +4287,7 @@ ZugZugData = {
             },
             {
               spec = "Elemental",
+              specId = 262,
               hero = "Stormbringer",
               label = "Charged Conduit",
               importString = "CYQAAAAAAAAAAAAAAAAAAAAAAAAAAAzMbbzMzYML2mhZMzAAAAAAbmxwGsAzwwM2AgZbmZGjlFzgZmtxyMzMjZsYZGLmZGzsAAMAmZghhB",
@@ -3853,6 +4299,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Tremor Totem",
+                      talentId = 127874,
                       dungeonPct = 42,
                       baselinePct = 13,
                     },
@@ -3860,6 +4307,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 21,
                       baselinePct = 45,
                     },
@@ -3869,6 +4317,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 70,
                       baselinePct = 55,
                     },
@@ -3876,6 +4325,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 30,
                       baselinePct = 45,
                     },
@@ -3885,6 +4335,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 63,
                       baselinePct = 45,
                     },
@@ -3892,6 +4343,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 37,
                       baselinePct = 55,
                     },
@@ -3901,11 +4353,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 75,
                       baselinePct = 45,
                     },
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 97,
                       baselinePct = 77,
                     },
@@ -3913,11 +4367,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 25,
                       baselinePct = 55,
                     },
                     {
                       name = "Spirit Wolf",
+                      talentId = 127854,
                       dungeonPct = 4,
                       baselinePct = 17,
                     },
@@ -3927,6 +4383,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 70,
                       baselinePct = 45,
                     },
@@ -3934,6 +4391,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 30,
                       baselinePct = 55,
                     },
@@ -3943,16 +4401,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Earthgrab Totem",
+                      talentId = 127902,
                       dungeonPct = 63,
                       baselinePct = 30,
                     },
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 97,
                       baselinePct = 77,
                     },
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 63,
                       baselinePct = 45,
                     },
@@ -3960,16 +4421,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 37,
                       baselinePct = 55,
                     },
                     {
                       name = "Spirit Wolf",
+                      talentId = 127854,
                       dungeonPct = 1,
                       baselinePct = 17,
                     },
                     {
                       name = "Poison Cleansing Totem",
+                      talentId = 136567,
                       dungeonPct = 7,
                       baselinePct = 19,
                     },
@@ -3979,6 +4443,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 88,
                       baselinePct = 55,
                     },
@@ -3986,6 +4451,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 12,
                       baselinePct = 45,
                     },
@@ -3995,11 +4461,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Poison Cleansing Totem",
+                      talentId = 136567,
                       dungeonPct = 80,
                       baselinePct = 19,
                     },
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 70,
                       baselinePct = 55,
                     },
@@ -4007,11 +4475,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 54,
                       baselinePct = 77,
                     },
                     {
                       name = "Earthgrab Totem",
+                      talentId = 127902,
                       dungeonPct = 13,
                       baselinePct = 30,
                     },
@@ -4021,6 +4491,7 @@ ZugZugData = {
             },
             {
               spec = "Elemental",
+              specId = 262,
               hero = "Farseer",
               label = "Earthquake",
               importString = "CYQAAAAAAAAAAAAAAAAAAAAAAAAAAAzMbLzMGjZZZZMmhBAAAAYxMbwAGwsxMgZBAmtZmZMzyyMDzMzGLzYmxwilZmlZMmZWAAmBAzMGGG",
@@ -4032,16 +4503,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 54,
                       baselinePct = 34,
                     },
                     {
                       name = "Tremor Totem",
+                      talentId = 127874,
                       dungeonPct = 29,
                       baselinePct = 9,
                     },
                     {
                       name = "Elemental Blast",
+                      talentId = 127924,
                       dungeonPct = 86,
                       baselinePct = 69,
                     },
@@ -4049,16 +4523,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 43,
                       baselinePct = 66,
                     },
                     {
                       name = "Earth Shock",
+                      talentId = 101854,
                       dungeonPct = 14,
                       baselinePct = 31,
                     },
                     {
                       name = "Thunderous Paws",
+                      talentId = 127853,
                       dungeonPct = 69,
                       baselinePct = 85,
                     },
@@ -4068,6 +4545,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 68,
                       baselinePct = 34,
                     },
@@ -4075,6 +4553,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 32,
                       baselinePct = 66,
                     },
@@ -4084,6 +4563,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 89,
                       baselinePct = 66,
                     },
@@ -4091,6 +4571,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 11,
                       baselinePct = 34,
                     },
@@ -4100,6 +4581,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 84,
                       baselinePct = 66,
                     },
@@ -4107,6 +4589,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 16,
                       baselinePct = 34,
                     },
@@ -4116,11 +4599,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 88,
                       baselinePct = 66,
                     },
                     {
                       name = "Earthgrab Totem",
+                      talentId = 127902,
                       dungeonPct = 44,
                       baselinePct = 25,
                     },
@@ -4128,11 +4613,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 13,
                       baselinePct = 34,
                     },
                     {
                       name = "Spirit Wolf",
+                      talentId = 127854,
                       dungeonPct = 2,
                       baselinePct = 15,
                     },
@@ -4142,11 +4629,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 72,
                       baselinePct = 34,
                     },
                     {
                       name = "Earth Shock",
+                      talentId = 101854,
                       dungeonPct = 43,
                       baselinePct = 31,
                     },
@@ -4154,11 +4643,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 28,
                       baselinePct = 66,
                     },
                     {
                       name = "Elemental Blast",
+                      talentId = 127924,
                       dungeonPct = 57,
                       baselinePct = 69,
                     },
@@ -4168,6 +4659,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Poison Cleansing Totem",
+                      talentId = 136567,
                       dungeonPct = 51,
                       baselinePct = 14,
                     },
@@ -4175,6 +4667,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 67,
                       baselinePct = 86,
                     },
@@ -4184,6 +4677,7 @@ ZugZugData = {
             },
             {
               spec = "Enhancement",
+              specId = 263,
               hero = "Totemic",
               label = "Lashing Flames",
               importString = "CcQAAAAAAAAAAAAAAAAAAAAAAMzMjZmZmZmZmZmZGzAAAAAAAAAALwGMjFzYbAMDYDgZbGzYssYsxMz2YZmZmZwyYGAAgxwYYmBYwYA",
@@ -4194,6 +4688,7 @@ ZugZugData = {
             },
             {
               spec = "Elemental",
+              specId = 262,
               hero = "Farseer",
               label = "Lava Flows",
               importString = "CYQAAAAAAAAAAAAAAAAAAAAAAAAAAAzMLbzMGjZbZZMmhBAAAAYxMbwAGwsxMgZBAmtZmZM2WMDmx2YZmZmxMWsMzsMMzYWAAGGAzMGmxA",
@@ -4204,6 +4699,7 @@ ZugZugData = {
             },
             {
               spec = "Enhancement",
+              specId = 263,
               hero = "Stormbringer",
               label = "Tremor Totem",
               importString = "CcQAAAAAAAAAAAAAAAAAAAAAAMzMzgZmZmZmZmZmZGAAAAAAAAgNAbmxwGsAzwwMYBgZZGzYmtlZsYmZ2mZZGzMDWYGAgZYMDGDYmBDGD",
@@ -4220,6 +4716,7 @@ ZugZugData = {
           heroic = {
             {
               spec = "Restoration",
+              specId = 264,
               hero = "Totemic",
               label = "Wavespeaker's Blessing",
               importString = "CgQAAAAAAAAAAAAAAAAAAAAAAAAAAgBAAAAzMzMLLbDzMGzMzMDzYBWgZsYGbDgZgNzwgZZMmZmtlZmFzYWYxMzMGMLDAAAMzMYmBAGM",
@@ -4240,6 +4737,7 @@ ZugZugData = {
             },
             {
               spec = "Restoration",
+              specId = 264,
               hero = "Totemic",
               label = "Ancestral Awakening",
               importString = "CgQAAAAAAAAAAAAAAAAAAAAAAAAAAgBAAAAjZmZZbZMzMzYmZGzYYB2gZsYGbDgZgNmZGMbzMGzstMzwMmFWMmZMjlZZAAwAYmBzMAwgB",
@@ -4249,6 +4747,7 @@ ZugZugData = {
             },
             {
               spec = "Restoration",
+              specId = 264,
               hero = "Totemic",
               label = "Double Dip",
               importString = "CgQAAAAAAAAAAAAAAAAAAAAAAAAAAgBAAAAzMzMLLbDzwYmZmZGzYB2gZsZGbDgZgNGDzYbMmZmtlZmFzY2YxMmxMMLDAAMgZmBzMAwgB",
@@ -4260,6 +4759,7 @@ ZugZugData = {
           mythic = {
             {
               spec = "Restoration",
+              specId = 264,
               hero = "Totemic",
               label = "Wavespeaker's Blessing",
               importString = "CgQAAAAAAAAAAAAAAAAAAAAAAAAAAgBAAAAzMzMLLbDzMGzMzMDzYBWgZsYGbDgZgNzwgZZMmZmtlZmFzYWYxMzMGMLDAAAMzMYmBAGM",
@@ -4280,6 +4780,7 @@ ZugZugData = {
             },
             {
               spec = "Restoration",
+              specId = 264,
               hero = "Totemic",
               label = "Ancestral Awakening",
               importString = "CgQAAAAAAAAAAAAAAAAAAAAAAAAAAgBAAAAjZmZZbZMzMzYmZGzYYB2gZsYGbDgZgNmZGMbzMGzstMzwMmFWMmZMjlZZAAwAYmBzMAwgB",
@@ -4289,6 +4790,7 @@ ZugZugData = {
             },
             {
               spec = "Restoration",
+              specId = 264,
               hero = "Totemic",
               label = "Double Dip",
               importString = "CgQAAAAAAAAAAAAAAAAAAAAAAAAAAgBAAAAzMzMLLbDzwYmZmZGzYB2gZsZGbDgZgNGDzYbMmZmtlZmFzY2YxMmxMMLDAAMgZmBzMAwgB",
@@ -4302,6 +4804,7 @@ ZugZugData = {
           all = {
             {
               spec = "Restoration",
+              specId = 264,
               hero = "Totemic",
               label = "Improved Earthliving Weapon",
               importString = "CgQAAAAAAAAAAAAAAAAAAAAAAAAAAgBAAAAjZmZZbZMzMzYmZGzYYB2gZsYGbDgZgNMzgZbmxYmllZGmxsxixMjhlZZGAAGAzMYmBgxgB",
@@ -4322,16 +4825,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Tremor Totem",
+                      talentId = 127874,
                       dungeonPct = 51,
                       baselinePct = 8,
                     },
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 70,
                       baselinePct = 44,
                     },
                     {
                       name = "Primordial Bond",
+                      talentId = 127889,
                       dungeonPct = 70,
                       baselinePct = 47,
                     },
@@ -4339,16 +4845,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Purge",
+                      talentId = 127905,
                       dungeonPct = 13,
                       baselinePct = 60,
                     },
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 27,
                       baselinePct = 53,
                     },
                     {
                       name = "Improved Purify Spirit",
+                      talentId = 101964,
                       dungeonPct = 18,
                       baselinePct = 43,
                     },
@@ -4358,16 +4867,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Purge",
+                      talentId = 127905,
                       dungeonPct = 95,
                       baselinePct = 60,
                     },
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 75,
                       baselinePct = 44,
                     },
                     {
                       name = "Hex",
+                      talentId = 127903,
                       dungeonPct = 49,
                       baselinePct = 22,
                     },
@@ -4375,16 +4887,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 24,
                       baselinePct = 53,
                     },
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 33,
                       baselinePct = 59,
                     },
                     {
                       name = "Improved Purify Spirit",
+                      talentId = 101964,
                       dungeonPct = 19,
                       baselinePct = 43,
                     },
@@ -4394,11 +4909,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Purge",
+                      talentId = 127905,
                       dungeonPct = 99,
                       baselinePct = 60,
                     },
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 73,
                       baselinePct = 53,
                     },
@@ -4406,11 +4923,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 26,
                       baselinePct = 44,
                     },
                     {
                       name = "Improved Purify Spirit",
+                      talentId = 101964,
                       dungeonPct = 29,
                       baselinePct = 43,
                     },
@@ -4420,16 +4939,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 85,
                       baselinePct = 53,
                     },
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 89,
                       baselinePct = 59,
                     },
                     {
                       name = "Hex",
+                      talentId = 127903,
                       dungeonPct = 50,
                       baselinePct = 22,
                     },
@@ -4437,16 +4959,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 13,
                       baselinePct = 44,
                     },
                     {
                       name = "Earth Elemental",
+                      talentId = 127858,
                       dungeonPct = 25,
                       baselinePct = 51,
                     },
                     {
                       name = "Primordial Bond",
+                      talentId = 127889,
                       dungeonPct = 22,
                       baselinePct = 47,
                     },
@@ -4456,16 +4981,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Purify Spirit",
+                      talentId = 101964,
                       dungeonPct = 99,
                       baselinePct = 43,
                     },
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 91,
                       baselinePct = 53,
                     },
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 95,
                       baselinePct = 59,
                     },
@@ -4473,16 +5001,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 8,
                       baselinePct = 44,
                     },
                     {
                       name = "Purge",
+                      talentId = 127905,
                       dungeonPct = 25,
                       baselinePct = 60,
                     },
                     {
                       name = "Hex",
+                      talentId = 127903,
                       dungeonPct = 1,
                       baselinePct = 22,
                     },
@@ -4492,16 +5023,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Earthgrab Totem",
+                      talentId = 127902,
                       dungeonPct = 75,
                       baselinePct = 13,
                     },
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 100,
                       baselinePct = 59,
                     },
                     {
                       name = "Thunderous Paws",
+                      talentId = 127853,
                       dungeonPct = 97,
                       baselinePct = 83,
                     },
@@ -4509,16 +5043,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Purge",
+                      talentId = 127905,
                       dungeonPct = 27,
                       baselinePct = 60,
                     },
                     {
                       name = "Improved Purify Spirit",
+                      talentId = 101964,
                       dungeonPct = 19,
                       baselinePct = 43,
                     },
                     {
                       name = "Elemental Resistance",
+                      talentId = 127876,
                       dungeonPct = 76,
                       baselinePct = 97,
                     },
@@ -4528,16 +5065,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 88,
                       baselinePct = 44,
                     },
                     {
                       name = "Hex",
+                      talentId = 127903,
                       dungeonPct = 49,
                       baselinePct = 22,
                     },
                     {
                       name = "Purge",
+                      talentId = 127905,
                       dungeonPct = 79,
                       baselinePct = 60,
                     },
@@ -4545,16 +5085,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 12,
                       baselinePct = 53,
                     },
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 33,
                       baselinePct = 59,
                     },
                     {
                       name = "Improved Purify Spirit",
+                      talentId = 101964,
                       dungeonPct = 18,
                       baselinePct = 43,
                     },
@@ -4564,11 +5107,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Poison Cleansing Totem",
+                      talentId = 136567,
                       dungeonPct = 67,
                       baselinePct = 11,
                     },
                     {
                       name = "Improved Purify Spirit",
+                      talentId = 101964,
                       dungeonPct = 96,
                       baselinePct = 43,
                     },
@@ -4576,11 +5121,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 34,
                       baselinePct = 59,
                     },
                     {
                       name = "Wind Rush Totem",
+                      talentId = 127909,
                       dungeonPct = 73,
                       baselinePct = 94,
                     },
@@ -4590,6 +5137,7 @@ ZugZugData = {
             },
             {
               spec = "Restoration",
+              specId = 264,
               hero = "Totemic",
               label = "Earthweaver",
               importString = "CgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYMzMLbLzMzMzMzMGDDLwGMjFzYbAMDshZGMLzMzYmttZGmxglZMzYMLzyMAAMAmZwMDAGYA",
@@ -4600,6 +5148,7 @@ ZugZugData = {
             },
             {
               spec = "Restoration",
+              specId = 264,
               hero = "Totemic",
               label = "Flow of the Tides",
               importString = "CgQAAAAAAAAAAAAAAAAAAAAAAAAAAgBAAAAjZmZbbbmZmZGzMGzYYB2gZsYGLDgZgNMDMbjZmZmtlZGmxglZMzYYZWMAAMAmZwMDAzMYA",
@@ -4612,6 +5161,7 @@ ZugZugData = {
           ["15+"] = {
             {
               spec = "Restoration",
+              specId = 264,
               hero = "Totemic",
               label = "Improved Earthliving Weapon",
               importString = "CgQAAAAAAAAAAAAAAAAAAAAAAAAAAgBAAAAjZmZZbZMzMzYmZGzYYB2gZsYGbDgZgNMzgZbmxYmllZGmxsxixMjhlZZGAAGAzMYmBgxgB",
@@ -4632,16 +5182,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Tremor Totem",
+                      talentId = 127874,
                       dungeonPct = 51,
                       baselinePct = 8,
                     },
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 70,
                       baselinePct = 44,
                     },
                     {
                       name = "Primordial Bond",
+                      talentId = 127889,
                       dungeonPct = 70,
                       baselinePct = 47,
                     },
@@ -4649,16 +5202,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Purge",
+                      talentId = 127905,
                       dungeonPct = 13,
                       baselinePct = 60,
                     },
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 27,
                       baselinePct = 53,
                     },
                     {
                       name = "Improved Purify Spirit",
+                      talentId = 101964,
                       dungeonPct = 18,
                       baselinePct = 43,
                     },
@@ -4668,16 +5224,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Purge",
+                      talentId = 127905,
                       dungeonPct = 95,
                       baselinePct = 60,
                     },
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 75,
                       baselinePct = 44,
                     },
                     {
                       name = "Hex",
+                      talentId = 127903,
                       dungeonPct = 49,
                       baselinePct = 22,
                     },
@@ -4685,16 +5244,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 24,
                       baselinePct = 53,
                     },
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 33,
                       baselinePct = 59,
                     },
                     {
                       name = "Improved Purify Spirit",
+                      talentId = 101964,
                       dungeonPct = 19,
                       baselinePct = 43,
                     },
@@ -4704,11 +5266,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Purge",
+                      talentId = 127905,
                       dungeonPct = 99,
                       baselinePct = 60,
                     },
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 73,
                       baselinePct = 53,
                     },
@@ -4716,11 +5280,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 26,
                       baselinePct = 44,
                     },
                     {
                       name = "Improved Purify Spirit",
+                      talentId = 101964,
                       dungeonPct = 29,
                       baselinePct = 43,
                     },
@@ -4730,16 +5296,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 85,
                       baselinePct = 53,
                     },
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 89,
                       baselinePct = 59,
                     },
                     {
                       name = "Hex",
+                      talentId = 127903,
                       dungeonPct = 50,
                       baselinePct = 22,
                     },
@@ -4747,16 +5316,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 13,
                       baselinePct = 44,
                     },
                     {
                       name = "Earth Elemental",
+                      talentId = 127858,
                       dungeonPct = 25,
                       baselinePct = 51,
                     },
                     {
                       name = "Primordial Bond",
+                      talentId = 127889,
                       dungeonPct = 22,
                       baselinePct = 47,
                     },
@@ -4766,16 +5338,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Purify Spirit",
+                      talentId = 101964,
                       dungeonPct = 99,
                       baselinePct = 43,
                     },
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 91,
                       baselinePct = 53,
                     },
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 95,
                       baselinePct = 59,
                     },
@@ -4783,16 +5358,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 8,
                       baselinePct = 44,
                     },
                     {
                       name = "Purge",
+                      talentId = 127905,
                       dungeonPct = 25,
                       baselinePct = 60,
                     },
                     {
                       name = "Hex",
+                      talentId = 127903,
                       dungeonPct = 1,
                       baselinePct = 22,
                     },
@@ -4802,16 +5380,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Earthgrab Totem",
+                      talentId = 127902,
                       dungeonPct = 75,
                       baselinePct = 13,
                     },
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 100,
                       baselinePct = 59,
                     },
                     {
                       name = "Thunderous Paws",
+                      talentId = 127853,
                       dungeonPct = 97,
                       baselinePct = 83,
                     },
@@ -4819,16 +5400,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Purge",
+                      talentId = 127905,
                       dungeonPct = 27,
                       baselinePct = 60,
                     },
                     {
                       name = "Improved Purify Spirit",
+                      talentId = 101964,
                       dungeonPct = 19,
                       baselinePct = 43,
                     },
                     {
                       name = "Elemental Resistance",
+                      talentId = 127876,
                       dungeonPct = 76,
                       baselinePct = 97,
                     },
@@ -4838,16 +5422,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 88,
                       baselinePct = 44,
                     },
                     {
                       name = "Hex",
+                      talentId = 127903,
                       dungeonPct = 49,
                       baselinePct = 22,
                     },
                     {
                       name = "Purge",
+                      talentId = 127905,
                       dungeonPct = 79,
                       baselinePct = 60,
                     },
@@ -4855,16 +5442,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 12,
                       baselinePct = 53,
                     },
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 33,
                       baselinePct = 59,
                     },
                     {
                       name = "Improved Purify Spirit",
+                      talentId = 101964,
                       dungeonPct = 18,
                       baselinePct = 43,
                     },
@@ -4874,11 +5464,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Poison Cleansing Totem",
+                      talentId = 136567,
                       dungeonPct = 67,
                       baselinePct = 11,
                     },
                     {
                       name = "Improved Purify Spirit",
+                      talentId = 101964,
                       dungeonPct = 96,
                       baselinePct = 43,
                     },
@@ -4886,11 +5478,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 34,
                       baselinePct = 59,
                     },
                     {
                       name = "Wind Rush Totem",
+                      talentId = 127909,
                       dungeonPct = 73,
                       baselinePct = 94,
                     },
@@ -4900,6 +5494,7 @@ ZugZugData = {
             },
             {
               spec = "Restoration",
+              specId = 264,
               hero = "Totemic",
               label = "Earthweaver",
               importString = "CgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYMzMLbLzMzMzMzMGDDLwGMjFzYbAMDshZGMLzMzYmttZGmxglZMzYMLzyMAAMAmZwMDAGYA",
@@ -4910,6 +5505,7 @@ ZugZugData = {
             },
             {
               spec = "Restoration",
+              specId = 264,
               hero = "Totemic",
               label = "Flow of the Tides",
               importString = "CgQAAAAAAAAAAAAAAAAAAAAAAAAAAgBAAAAjZmZbbbmZmZGzMGzYYB2gZsYGLDgZgNMDMbjZmZmtlZGmxglZMzYYZWMAAMAmZwMDAzMYA",
@@ -4922,6 +5518,7 @@ ZugZugData = {
           ["18+"] = {
             {
               spec = "Restoration",
+              specId = 264,
               hero = "Totemic",
               label = "Improved Earthliving Weapon",
               importString = "CgQAAAAAAAAAAAAAAAAAAAAAAAAAAgBAAAAjZmZZbZMzMzYmZGzYYB2gZsYGbDgZgNMzgZbmxYmllZGmxsxixMjhlZZGAAGAzMYmBgxgB",
@@ -4942,16 +5539,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Tremor Totem",
+                      talentId = 127874,
                       dungeonPct = 51,
                       baselinePct = 8,
                     },
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 70,
                       baselinePct = 44,
                     },
                     {
                       name = "Primordial Bond",
+                      talentId = 127889,
                       dungeonPct = 70,
                       baselinePct = 47,
                     },
@@ -4959,16 +5559,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Purge",
+                      talentId = 127905,
                       dungeonPct = 13,
                       baselinePct = 60,
                     },
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 27,
                       baselinePct = 53,
                     },
                     {
                       name = "Improved Purify Spirit",
+                      talentId = 101964,
                       dungeonPct = 18,
                       baselinePct = 43,
                     },
@@ -4978,16 +5581,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Purge",
+                      talentId = 127905,
                       dungeonPct = 95,
                       baselinePct = 60,
                     },
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 75,
                       baselinePct = 44,
                     },
                     {
                       name = "Hex",
+                      talentId = 127903,
                       dungeonPct = 49,
                       baselinePct = 22,
                     },
@@ -4995,16 +5601,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 24,
                       baselinePct = 53,
                     },
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 33,
                       baselinePct = 59,
                     },
                     {
                       name = "Improved Purify Spirit",
+                      talentId = 101964,
                       dungeonPct = 19,
                       baselinePct = 43,
                     },
@@ -5014,11 +5623,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Purge",
+                      talentId = 127905,
                       dungeonPct = 99,
                       baselinePct = 60,
                     },
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 73,
                       baselinePct = 53,
                     },
@@ -5026,11 +5637,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 26,
                       baselinePct = 44,
                     },
                     {
                       name = "Improved Purify Spirit",
+                      talentId = 101964,
                       dungeonPct = 29,
                       baselinePct = 43,
                     },
@@ -5040,16 +5653,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 85,
                       baselinePct = 53,
                     },
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 89,
                       baselinePct = 59,
                     },
                     {
                       name = "Hex",
+                      talentId = 127903,
                       dungeonPct = 50,
                       baselinePct = 22,
                     },
@@ -5057,16 +5673,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 13,
                       baselinePct = 44,
                     },
                     {
                       name = "Earth Elemental",
+                      talentId = 127858,
                       dungeonPct = 25,
                       baselinePct = 51,
                     },
                     {
                       name = "Primordial Bond",
+                      talentId = 127889,
                       dungeonPct = 22,
                       baselinePct = 47,
                     },
@@ -5076,16 +5695,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Purify Spirit",
+                      talentId = 101964,
                       dungeonPct = 99,
                       baselinePct = 43,
                     },
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 91,
                       baselinePct = 53,
                     },
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 95,
                       baselinePct = 59,
                     },
@@ -5093,16 +5715,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 8,
                       baselinePct = 44,
                     },
                     {
                       name = "Purge",
+                      talentId = 127905,
                       dungeonPct = 25,
                       baselinePct = 60,
                     },
                     {
                       name = "Hex",
+                      talentId = 127903,
                       dungeonPct = 1,
                       baselinePct = 22,
                     },
@@ -5112,16 +5737,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Earthgrab Totem",
+                      talentId = 127902,
                       dungeonPct = 75,
                       baselinePct = 13,
                     },
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 100,
                       baselinePct = 59,
                     },
                     {
                       name = "Thunderous Paws",
+                      talentId = 127853,
                       dungeonPct = 97,
                       baselinePct = 83,
                     },
@@ -5129,16 +5757,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Purge",
+                      talentId = 127905,
                       dungeonPct = 27,
                       baselinePct = 60,
                     },
                     {
                       name = "Improved Purify Spirit",
+                      talentId = 101964,
                       dungeonPct = 19,
                       baselinePct = 43,
                     },
                     {
                       name = "Elemental Resistance",
+                      talentId = 127876,
                       dungeonPct = 76,
                       baselinePct = 97,
                     },
@@ -5148,16 +5779,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 88,
                       baselinePct = 44,
                     },
                     {
                       name = "Hex",
+                      talentId = 127903,
                       dungeonPct = 49,
                       baselinePct = 22,
                     },
                     {
                       name = "Purge",
+                      talentId = 127905,
                       dungeonPct = 79,
                       baselinePct = 60,
                     },
@@ -5165,16 +5799,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 12,
                       baselinePct = 53,
                     },
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 33,
                       baselinePct = 59,
                     },
                     {
                       name = "Improved Purify Spirit",
+                      talentId = 101964,
                       dungeonPct = 18,
                       baselinePct = 43,
                     },
@@ -5184,11 +5821,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Poison Cleansing Totem",
+                      talentId = 136567,
                       dungeonPct = 67,
                       baselinePct = 11,
                     },
                     {
                       name = "Improved Purify Spirit",
+                      talentId = 101964,
                       dungeonPct = 96,
                       baselinePct = 43,
                     },
@@ -5196,11 +5835,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 34,
                       baselinePct = 59,
                     },
                     {
                       name = "Wind Rush Totem",
+                      talentId = 127909,
                       dungeonPct = 73,
                       baselinePct = 94,
                     },
@@ -5210,6 +5851,7 @@ ZugZugData = {
             },
             {
               spec = "Restoration",
+              specId = 264,
               hero = "Totemic",
               label = "Earthweaver",
               importString = "CgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYMzMLbLzMzMzMzMGDDLwGMjFzYbAMDshZGMLzMzYmttZGmxglZMzYMLzyMAAMAmZwMDAGYA",
@@ -5220,6 +5862,7 @@ ZugZugData = {
             },
             {
               spec = "Restoration",
+              specId = 264,
               hero = "Totemic",
               label = "Flow of the Tides",
               importString = "CgQAAAAAAAAAAAAAAAAAAAAAAAAAAgBAAAAjZmZbbbmZmZGzMGzYYB2gZsYGLDgZgNMDMbjZmZmtlZGmxglZMzYYZWMAAMAmZwMDAzMYA",
@@ -5232,6 +5875,7 @@ ZugZugData = {
           ["20+"] = {
             {
               spec = "Restoration",
+              specId = 264,
               hero = "Totemic",
               label = "Improved Earthliving Weapon",
               importString = "CgQAAAAAAAAAAAAAAAAAAAAAAAAAAgBAAAAjZmZZbZMzMzYmZGzYYB2gZsYGbDgZgNMzgZbmxYmllZGmxsxixMjhlZZGAAGAzMYmBgxgB",
@@ -5252,16 +5896,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Tremor Totem",
+                      talentId = 127874,
                       dungeonPct = 51,
                       baselinePct = 8,
                     },
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 70,
                       baselinePct = 44,
                     },
                     {
                       name = "Primordial Bond",
+                      talentId = 127889,
                       dungeonPct = 70,
                       baselinePct = 47,
                     },
@@ -5269,16 +5916,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Purge",
+                      talentId = 127905,
                       dungeonPct = 13,
                       baselinePct = 60,
                     },
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 27,
                       baselinePct = 53,
                     },
                     {
                       name = "Improved Purify Spirit",
+                      talentId = 101964,
                       dungeonPct = 18,
                       baselinePct = 43,
                     },
@@ -5288,16 +5938,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Purge",
+                      talentId = 127905,
                       dungeonPct = 95,
                       baselinePct = 60,
                     },
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 75,
                       baselinePct = 44,
                     },
                     {
                       name = "Hex",
+                      talentId = 127903,
                       dungeonPct = 49,
                       baselinePct = 22,
                     },
@@ -5305,16 +5958,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 24,
                       baselinePct = 53,
                     },
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 33,
                       baselinePct = 59,
                     },
                     {
                       name = "Improved Purify Spirit",
+                      talentId = 101964,
                       dungeonPct = 19,
                       baselinePct = 43,
                     },
@@ -5324,11 +5980,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Purge",
+                      talentId = 127905,
                       dungeonPct = 99,
                       baselinePct = 60,
                     },
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 73,
                       baselinePct = 53,
                     },
@@ -5336,11 +5994,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 26,
                       baselinePct = 44,
                     },
                     {
                       name = "Improved Purify Spirit",
+                      talentId = 101964,
                       dungeonPct = 29,
                       baselinePct = 43,
                     },
@@ -5350,16 +6010,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 85,
                       baselinePct = 53,
                     },
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 89,
                       baselinePct = 59,
                     },
                     {
                       name = "Hex",
+                      talentId = 127903,
                       dungeonPct = 50,
                       baselinePct = 22,
                     },
@@ -5367,16 +6030,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 13,
                       baselinePct = 44,
                     },
                     {
                       name = "Earth Elemental",
+                      talentId = 127858,
                       dungeonPct = 25,
                       baselinePct = 51,
                     },
                     {
                       name = "Primordial Bond",
+                      talentId = 127889,
                       dungeonPct = 22,
                       baselinePct = 47,
                     },
@@ -5386,16 +6052,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Purify Spirit",
+                      talentId = 101964,
                       dungeonPct = 99,
                       baselinePct = 43,
                     },
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 91,
                       baselinePct = 53,
                     },
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 95,
                       baselinePct = 59,
                     },
@@ -5403,16 +6072,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 8,
                       baselinePct = 44,
                     },
                     {
                       name = "Purge",
+                      talentId = 127905,
                       dungeonPct = 25,
                       baselinePct = 60,
                     },
                     {
                       name = "Hex",
+                      talentId = 127903,
                       dungeonPct = 1,
                       baselinePct = 22,
                     },
@@ -5422,16 +6094,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Earthgrab Totem",
+                      talentId = 127902,
                       dungeonPct = 75,
                       baselinePct = 13,
                     },
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 100,
                       baselinePct = 59,
                     },
                     {
                       name = "Thunderous Paws",
+                      talentId = 127853,
                       dungeonPct = 97,
                       baselinePct = 83,
                     },
@@ -5439,16 +6114,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Purge",
+                      talentId = 127905,
                       dungeonPct = 27,
                       baselinePct = 60,
                     },
                     {
                       name = "Improved Purify Spirit",
+                      talentId = 101964,
                       dungeonPct = 19,
                       baselinePct = 43,
                     },
                     {
                       name = "Elemental Resistance",
+                      talentId = 127876,
                       dungeonPct = 76,
                       baselinePct = 97,
                     },
@@ -5458,16 +6136,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Gust of Wind",
+                      talentId = 127864,
                       dungeonPct = 88,
                       baselinePct = 44,
                     },
                     {
                       name = "Hex",
+                      talentId = 127903,
                       dungeonPct = 49,
                       baselinePct = 22,
                     },
                     {
                       name = "Purge",
+                      talentId = 127905,
                       dungeonPct = 79,
                       baselinePct = 60,
                     },
@@ -5475,16 +6156,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Spirit Walk",
+                      talentId = 127865,
                       dungeonPct = 12,
                       baselinePct = 53,
                     },
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 33,
                       baselinePct = 59,
                     },
                     {
                       name = "Improved Purify Spirit",
+                      talentId = 101964,
                       dungeonPct = 18,
                       baselinePct = 43,
                     },
@@ -5494,11 +6178,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Poison Cleansing Totem",
+                      talentId = 136567,
                       dungeonPct = 67,
                       baselinePct = 11,
                     },
                     {
                       name = "Improved Purify Spirit",
+                      talentId = 101964,
                       dungeonPct = 96,
                       baselinePct = 43,
                     },
@@ -5506,11 +6192,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Jet Stream",
+                      talentId = 127882,
                       dungeonPct = 34,
                       baselinePct = 59,
                     },
                     {
                       name = "Wind Rush Totem",
+                      talentId = 127909,
                       dungeonPct = 73,
                       baselinePct = 94,
                     },
@@ -5520,6 +6208,7 @@ ZugZugData = {
             },
             {
               spec = "Restoration",
+              specId = 264,
               hero = "Totemic",
               label = "Earthweaver",
               importString = "CgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYMzMLbLzMzMzMzMGDDLwGMjFzYbAMDshZGMLzMzYmttZGmxglZMzYMLzyMAAMAmZwMDAGYA",
@@ -5530,6 +6219,7 @@ ZugZugData = {
             },
             {
               spec = "Restoration",
+              specId = 264,
               hero = "Totemic",
               label = "Flow of the Tides",
               importString = "CgQAAAAAAAAAAAAAAAAAAAAAAAAAAgBAAAAjZmZbbbmZmZGzMGzYYB2gZsYGLDgZgNMDMbjZmZmtlZGmxglZMzYYZWMAAMAmZwMDAzMYA",
@@ -5548,6 +6238,7 @@ ZugZugData = {
           heroic = {
             {
               spec = "Balance",
+              specId = 102,
               hero = "Keeper of the Grove",
               label = "Meteor Storm",
               importString = "CYGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWYGz2MjxMDMmlZmZmBYGjZWGbzYGbsMzyYmZMLYYAGgltxGmZmZZAAAAwGzMzMYzAjZAMzAADA",
@@ -5561,6 +6252,7 @@ ZugZugData = {
             },
             {
               spec = "Feral",
+              specId = 103,
               hero = "Wildstalker",
               label = "Ashamane's Guidance",
               importString = "CcGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAjZwMzMzMmtlxyMbzYGzMDAAAALDMLGGzMmZGziZmZGjZYAAAAAAMwAAAAAAMbzsMz2MLbgZGgFzgBAwMDAG",
@@ -5577,6 +6269,7 @@ ZugZugData = {
             },
             {
               spec = "Balance",
+              specId = 102,
               hero = "Elune's Chosen",
               label = "Radiant Moonlight",
               importString = "CYGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWYGz2MjxMDwsMzMzMYYYMzyYxMzYjlZWmZMzMLYYAGbbzMYMbDgZAAAAsYmZmZwmhxYAAYmBGA",
@@ -5588,6 +6281,7 @@ ZugZugData = {
             },
             {
               spec = "Feral",
+              specId = 103,
               hero = "Wildstalker",
               label = "Carnivorous Instinct",
               importString = "CcGAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZMzCjZmxY2Mz2YbmZmZmZAAAAYbghhxMjZmxswMzMGzYGAAAAAADMAAAAAAz2MLzsMzyGMzMALMDDAgZGAMA",
@@ -5597,6 +6291,7 @@ ZugZugData = {
             },
             {
               spec = "Feral",
+              specId = 103,
               hero = "Druid of the Claw",
               label = "Hunger for Battle",
               importString = "CcGAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZMziZmZmxY2M2GbzMzMmZAAAAYZgZzwYmxMzYWMzMzsMmhBAAAAAwADAAAgZmlZZmZGAwCMzMALMYAAAMzGG",
@@ -5606,6 +6301,7 @@ ZugZugData = {
             },
             {
               spec = "Balance",
+              specId = 102,
               hero = "Keeper of the Grove",
               label = "Convoke the Spirits",
               importString = "CYGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWYGjZGjZGgZZMzMDzwMsMz2MmxM2YZGzMzYmNMMADwy2YDzMzsMAAAAYzMzMzgNDjxMAmZAgB",
@@ -5617,6 +6313,7 @@ ZugZugData = {
           mythic = {
             {
               spec = "Balance",
+              specId = 102,
               hero = "Keeper of the Grove",
               label = "Meteor Storm",
               importString = "CYGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWYGz2MjxMDMmlZmZmBYGjZWGbzYGbsMzyYmZMLYYAGgltxGmZmZZAAAAwGzMzMYzAjZAMzAADA",
@@ -5633,6 +6330,7 @@ ZugZugData = {
             },
             {
               spec = "Feral",
+              specId = 103,
               hero = "Wildstalker",
               label = "Ashamane's Guidance",
               importString = "CcGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAjZwMzMzMmtlxyMbzYGzMDAAAALDMLGGzMmZGziZmZGjZYAAAAAAMwAAAAAAMbzsMz2MLbgZGgFzgBAwMDAG",
@@ -5645,6 +6343,7 @@ ZugZugData = {
             },
             {
               spec = "Balance",
+              specId = 102,
               hero = "Elune's Chosen",
               label = "Radiant Moonlight",
               importString = "CYGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWYGz2MjxMDwsMzMzMYYYMzyYxMzYjlZWmZMzMLYYAGbbzMYMbDgZAAAAsYmZmZwmhxYAAYmBGA",
@@ -5657,6 +6356,7 @@ ZugZugData = {
             },
             {
               spec = "Feral",
+              specId = 103,
               hero = "Wildstalker",
               label = "Carnivorous Instinct",
               importString = "CcGAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZMzCjZmxY2Mz2YbmZmZmZAAAAYbghhxMjZmxswMzMGzYGAAAAAADMAAAAAAz2MLzsMzyGMzMALMDDAgZGAMA",
@@ -5666,6 +6366,7 @@ ZugZugData = {
             },
             {
               spec = "Feral",
+              specId = 103,
               hero = "Druid of the Claw",
               label = "Hunger for Battle",
               importString = "CcGAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZMziZmZmxY2M2GbzMzMmZAAAAYZgZzwYmxMzYWMzMzsMmhBAAAAAwADAAAgZmlZZmZGAwCMzMALMYAAAMzGG",
@@ -5675,6 +6376,7 @@ ZugZugData = {
             },
             {
               spec = "Balance",
+              specId = 102,
               hero = "Keeper of the Grove",
               label = "Convoke the Spirits",
               importString = "CYGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWYGjZGjZGgZZMzMDzwMsMz2MmxM2YZGzMzYmNMMADwy2YDzMzsMAAAAYzMzMzgNDjxMAmZAgB",
@@ -5688,6 +6390,7 @@ ZugZugData = {
           all = {
             {
               spec = "Balance",
+              specId = 102,
               hero = "Elune's Chosen",
               label = "Radiant Moonlight",
               importString = "CYGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWYGz2MjxMDwsYmZmZhBjZZmlZWMzM2YZmlxMjxCGGgx22MDGz2AYGAAAALmZmZGsZYMGAAmZgB",
@@ -5707,6 +6410,7 @@ ZugZugData = {
             },
             {
               spec = "Feral",
+              specId = 103,
               hero = "Druid of the Claw",
               label = "Hunger for Battle",
               importString = "CcGAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZMziZmZmxY2M2GbzMzMmZAAAAYZgZzwYmxMzYWMzMzsMmhBAAAAAwADAAAgZmlZZmZGAwCMzMALMYAAAMzGG",
@@ -5718,6 +6422,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Hunger for Battle",
+                      talentId = 103156,
                       dungeonPct = 86,
                       baselinePct = 71,
                     },
@@ -5725,6 +6430,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Carnivorous Instinct",
+                      talentId = 103173,
                       dungeonPct = 13,
                       baselinePct = 27,
                     },
@@ -5734,6 +6440,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Hunger for Battle",
+                      talentId = 103156,
                       dungeonPct = 83,
                       baselinePct = 71,
                     },
@@ -5741,6 +6448,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Carnivorous Instinct",
+                      talentId = 103173,
                       dungeonPct = 17,
                       baselinePct = 27,
                     },
@@ -5750,6 +6458,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Carnivorous Instinct",
+                      talentId = 103173,
                       dungeonPct = 69,
                       baselinePct = 27,
                     },
@@ -5757,6 +6466,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Hunger for Battle",
+                      talentId = 103156,
                       dungeonPct = 28,
                       baselinePct = 71,
                     },
@@ -5766,6 +6476,7 @@ ZugZugData = {
             },
             {
               spec = "Feral",
+              specId = 103,
               hero = "Wildstalker",
               label = "Carnivorous Instinct",
               importString = "CcGAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZMzCzMzMGzmZ2GbzMzMmZAAAAYZgZzwYmxMzYWMzMzsMmhBAAAAAwADAAAAAwsNzyMLzssBzMDwCDGAAzMAYA",
@@ -5776,6 +6487,7 @@ ZugZugData = {
             },
             {
               spec = "Balance",
+              specId = 102,
               hero = "Keeper of the Grove",
               label = "Power of Goldrinn",
               importString = "CYGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWYGz2MjxMDYmtxMzMYAzyMLjtZMjNWmZZMzwsghBYAW2GbYmZmlBAAAAbmZmZGsZMjxMAmZAgB",
@@ -5786,6 +6498,7 @@ ZugZugData = {
             },
             {
               spec = "Balance",
+              specId = 102,
               hero = "Keeper of the Grove",
               label = "Rattle the Stars",
               importString = "CYGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWYGz2MjxMDMmFzMzMLMgZbmlxywMzGLzYMzMjNMMADwy2YDzMzsMAAAAYjZmZGsZMjxMAmZAgB",
@@ -5798,6 +6511,7 @@ ZugZugData = {
           ["15+"] = {
             {
               spec = "Balance",
+              specId = 102,
               hero = "Elune's Chosen",
               label = "Radiant Moonlight",
               importString = "CYGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWYGz2MjxMDwsYmZmZhBjZZmlZWMzM2YZmlxMjxCGGgx22MDGz2AYGAAAALmZmZGsZYMGAAmZgB",
@@ -5817,6 +6531,7 @@ ZugZugData = {
             },
             {
               spec = "Feral",
+              specId = 103,
               hero = "Druid of the Claw",
               label = "Hunger for Battle",
               importString = "CcGAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZMziZmZmxY2M2GbzMzMmZAAAAYZgZzwYmxMzYWMzMzsMmhBAAAAAwADAAAgZmlZZmZGAwCMzMALMYAAAMzGG",
@@ -5828,6 +6543,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Hunger for Battle",
+                      talentId = 103156,
                       dungeonPct = 86,
                       baselinePct = 71,
                     },
@@ -5835,6 +6551,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Carnivorous Instinct",
+                      talentId = 103173,
                       dungeonPct = 13,
                       baselinePct = 27,
                     },
@@ -5844,6 +6561,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Hunger for Battle",
+                      talentId = 103156,
                       dungeonPct = 83,
                       baselinePct = 71,
                     },
@@ -5851,6 +6569,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Carnivorous Instinct",
+                      talentId = 103173,
                       dungeonPct = 17,
                       baselinePct = 27,
                     },
@@ -5860,6 +6579,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Carnivorous Instinct",
+                      talentId = 103173,
                       dungeonPct = 69,
                       baselinePct = 27,
                     },
@@ -5867,6 +6587,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Hunger for Battle",
+                      talentId = 103156,
                       dungeonPct = 28,
                       baselinePct = 71,
                     },
@@ -5876,6 +6597,7 @@ ZugZugData = {
             },
             {
               spec = "Feral",
+              specId = 103,
               hero = "Wildstalker",
               label = "Carnivorous Instinct",
               importString = "CcGAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZMzCzMzMGzmZ2GbzMzMmZAAAAYZgZzwYmxMzYWMzMzsMmhBAAAAAwADAAAAAwsNzyMLzssBzMDwCDGAAzMAYA",
@@ -5886,6 +6608,7 @@ ZugZugData = {
             },
             {
               spec = "Balance",
+              specId = 102,
               hero = "Keeper of the Grove",
               label = "Power of Goldrinn",
               importString = "CYGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWYGz2MjxMDYmtxMzMYAzyMLjtZMjNWmZZMzwsghBYAW2GbYmZmlBAAAAbmZmZGsZMjxMAmZAgB",
@@ -5896,6 +6619,7 @@ ZugZugData = {
             },
             {
               spec = "Balance",
+              specId = 102,
               hero = "Keeper of the Grove",
               label = "Rattle the Stars",
               importString = "CYGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWYGz2MjxMDMmFzMzMLMgZbmlxywMzGLzYMzMjNMMADwy2YDzMzsMAAAAYjZmZGsZMjxMAmZAgB",
@@ -5908,6 +6632,7 @@ ZugZugData = {
           ["18+"] = {
             {
               spec = "Balance",
+              specId = 102,
               hero = "Elune's Chosen",
               label = "Radiant Moonlight",
               importString = "CYGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWYGz2MjxMDwsYmZmZhBjZZmlZWMzM2YZmlxMjxCGGgx22MDGz2AYGAAAALmZmZGsZYMGAAmZgB",
@@ -5927,6 +6652,7 @@ ZugZugData = {
             },
             {
               spec = "Feral",
+              specId = 103,
               hero = "Druid of the Claw",
               label = "Hunger for Battle",
               importString = "CcGAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZMziZmZmxY2M2GbzMzMmZAAAAYZgZzwYmxMzYWMzMzsMmhBAAAAAwADAAAgZmlZZmZGAwCMzMALMYAAAMzGG",
@@ -5938,6 +6664,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Hunger for Battle",
+                      talentId = 103156,
                       dungeonPct = 86,
                       baselinePct = 71,
                     },
@@ -5945,6 +6672,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Carnivorous Instinct",
+                      talentId = 103173,
                       dungeonPct = 13,
                       baselinePct = 27,
                     },
@@ -5954,6 +6682,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Hunger for Battle",
+                      talentId = 103156,
                       dungeonPct = 83,
                       baselinePct = 71,
                     },
@@ -5961,6 +6690,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Carnivorous Instinct",
+                      talentId = 103173,
                       dungeonPct = 17,
                       baselinePct = 27,
                     },
@@ -5970,6 +6700,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Carnivorous Instinct",
+                      talentId = 103173,
                       dungeonPct = 69,
                       baselinePct = 27,
                     },
@@ -5977,6 +6708,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Hunger for Battle",
+                      talentId = 103156,
                       dungeonPct = 28,
                       baselinePct = 71,
                     },
@@ -5986,6 +6718,7 @@ ZugZugData = {
             },
             {
               spec = "Feral",
+              specId = 103,
               hero = "Wildstalker",
               label = "Carnivorous Instinct",
               importString = "CcGAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZMzCzMzMGzmZ2GbzMzMmZAAAAYZgZzwYmxMzYWMzMzsMmhBAAAAAwADAAAAAwsNzyMLzssBzMDwCDGAAzMAYA",
@@ -5996,6 +6729,7 @@ ZugZugData = {
             },
             {
               spec = "Balance",
+              specId = 102,
               hero = "Keeper of the Grove",
               label = "Power of Goldrinn",
               importString = "CYGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWYGz2MjxMDYmtxMzMYAzyMLjtZMjNWmZZMzwsghBYAW2GbYmZmlBAAAAbmZmZGsZMjxMAmZAgB",
@@ -6006,6 +6740,7 @@ ZugZugData = {
             },
             {
               spec = "Balance",
+              specId = 102,
               hero = "Keeper of the Grove",
               label = "Rattle the Stars",
               importString = "CYGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWYGz2MjxMDMmFzMzMLMgZbmlxywMzGLzYMzMjNMMADwy2YDzMzsMAAAAYjZmZGsZMjxMAmZAgB",
@@ -6018,6 +6753,7 @@ ZugZugData = {
           ["20+"] = {
             {
               spec = "Balance",
+              specId = 102,
               hero = "Elune's Chosen",
               label = "Radiant Moonlight",
               importString = "CYGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWYGz2MjxMDwsYmZmZhBjZZmlZWMzM2YZmlxMjxCGGgx22MDGz2AYGAAAALmZmZGsZYMGAAmZgB",
@@ -6028,6 +6764,7 @@ ZugZugData = {
             },
             {
               spec = "Feral",
+              specId = 103,
               hero = "Druid of the Claw",
               label = "Hunger for Battle",
               importString = "CcGAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZMziZmZmxY2M2GbzMzMmZAAAAYZgZzwYmxMzYWMzMzsMmhBAAAAAwADAAAgZmlZZmZGAwCMzMALMYAAAMzGG",
@@ -6048,6 +6785,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Hunger for Battle",
+                      talentId = 103156,
                       dungeonPct = 86,
                       baselinePct = 71,
                     },
@@ -6055,6 +6793,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Carnivorous Instinct",
+                      talentId = 103173,
                       dungeonPct = 13,
                       baselinePct = 27,
                     },
@@ -6064,6 +6803,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Hunger for Battle",
+                      talentId = 103156,
                       dungeonPct = 83,
                       baselinePct = 71,
                     },
@@ -6071,6 +6811,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Carnivorous Instinct",
+                      talentId = 103173,
                       dungeonPct = 17,
                       baselinePct = 27,
                     },
@@ -6080,6 +6821,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Carnivorous Instinct",
+                      talentId = 103173,
                       dungeonPct = 69,
                       baselinePct = 27,
                     },
@@ -6087,6 +6829,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Hunger for Battle",
+                      talentId = 103156,
                       dungeonPct = 28,
                       baselinePct = 71,
                     },
@@ -6096,6 +6839,7 @@ ZugZugData = {
             },
             {
               spec = "Feral",
+              specId = 103,
               hero = "Wildstalker",
               label = "Carnivorous Instinct",
               importString = "CcGAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZMzCzMzMGzmZ2GbzMzMmZAAAAYZgZzwYmxMzYWMzMzsMmhBAAAAAwADAAAAAwsNzyMLzssBzMDwCDGAAzMAYA",
@@ -6106,6 +6850,7 @@ ZugZugData = {
             },
             {
               spec = "Balance",
+              specId = 102,
               hero = "Keeper of the Grove",
               label = "Power of Goldrinn",
               importString = "CYGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWYGz2MjxMDYmtxMzMYAzyMLjtZMjNWmZZMzwsghBYAW2GbYmZmlBAAAAbmZmZGsZMjxMAmZAgB",
@@ -6116,6 +6861,7 @@ ZugZugData = {
             },
             {
               spec = "Balance",
+              specId = 102,
               hero = "Keeper of the Grove",
               label = "Rattle the Stars",
               importString = "CYGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWYGz2MjxMDMmFzMzMLMgZbmlxywMzGLzYMzMjNMMADwy2YDzMzsMAAAAYjZmZGsZMjxMAmZAgB",
@@ -6132,6 +6878,7 @@ ZugZugData = {
           heroic = {
             {
               spec = "Restoration",
+              specId = 105,
               hero = "Wildstalker",
               label = "Photosynthesis",
               importString = "CkGAAAAAAAAAAAAAAAAAAAAAAMjxMbz2MmZGz2wwMzmxCzAAAAAAAAAAgtBzsxYmZGDjZZmZmZYYGAAAAAAAAAAAAAmtZWmZbmNbMmZGmZgxMDAwMDAD",
@@ -6152,6 +6899,7 @@ ZugZugData = {
             },
             {
               spec = "Restoration",
+              specId = 105,
               hero = "Keeper of the Grove",
               label = "Embrace of the Dream",
               importString = "CkGAAAAAAAAAAAAAAAAAAAAAAMjxMmtZMzMmthZmZsZsMmBAAAAAAAAAAbGmZbmxMzAYWmZmZGGmBAAAAgBAMGw22YDzMzsMAAAAWYMzMYGYMzAgZGAAA",
@@ -6161,6 +6909,7 @@ ZugZugData = {
             },
             {
               spec = "Restoration",
+              specId = 105,
               hero = "Keeper of the Grove",
               label = "Fluid Form",
               importString = "CkGAAAAAAAAAAAAAAAAAAAAAAMjxMbz2MmZGz2wMmxmxCzAAAAAAAAAAglBzwMmZGGzYWmZmZGGmZAAAAAAAAw2yYDzMzsMAAAAWYMzgZGgZGAMzAAGA",
@@ -6172,6 +6921,7 @@ ZugZugData = {
           mythic = {
             {
               spec = "Restoration",
+              specId = 105,
               hero = "Wildstalker",
               label = "Photosynthesis",
               importString = "CkGAAAAAAAAAAAAAAAAAAAAAAMjxMbz2MmZGz2wwMzmxCzAAAAAAAAAAgtBzsxYmZGDjZZmZmZYYGAAAAAAAAAAAAAmtZWmZbmNbMmZGmZgxMDAwMDAD",
@@ -6192,6 +6942,7 @@ ZugZugData = {
             },
             {
               spec = "Restoration",
+              specId = 105,
               hero = "Keeper of the Grove",
               label = "Embrace of the Dream",
               importString = "CkGAAAAAAAAAAAAAAAAAAAAAAMjxMmtZMzMmthZmZsZsMmBAAAAAAAAAAbGmZbmxMzAYWmZmZGGmBAAAAgBAMGw22YDzMzsMAAAAWYMzMYGYMzAgZGAAA",
@@ -6201,6 +6952,7 @@ ZugZugData = {
             },
             {
               spec = "Restoration",
+              specId = 105,
               hero = "Keeper of the Grove",
               label = "Fluid Form",
               importString = "CkGAAAAAAAAAAAAAAAAAAAAAAMjxMbz2MmZGz2wMmxmxCzAAAAAAAAAAglBzwMmZGGzYWmZmZGGmZAAAAAAAAw2yYDzMzsMAAAAWYMzgZGgZGAMzAAGA",
@@ -6214,6 +6966,7 @@ ZugZugData = {
           all = {
             {
               spec = "Restoration",
+              specId = 105,
               hero = "Wildstalker",
               label = "Liveliness",
               importString = "CkGAAAAAAAAAAAAAAAAAAAAAAMMmZZMjZmxsNMMzswsYbGAAAAAAAAAAsMYmtZYmZGDjZxMzMMDjBAAAAwAAMDAAAAAmtZ2mZZmFbMzMwMzCYmBAYmBgB",
@@ -6234,6 +6987,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Incapacitating Roar",
+                      talentId = 103316,
                       dungeonPct = 41,
                       baselinePct = 29,
                     },
@@ -6241,6 +6995,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Wild Charge",
+                      talentId = 103276,
                       dungeonPct = 85,
                       baselinePct = 90,
                     },
@@ -6250,6 +7005,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Innervate",
+                      talentId = 103324,
                       dungeonPct = 40,
                       baselinePct = 34,
                     },
@@ -6257,6 +7013,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Incapacitating Roar",
+                      talentId = 103316,
                       dungeonPct = 17,
                       baselinePct = 29,
                     },
@@ -6266,6 +7023,7 @@ ZugZugData = {
             },
             {
               spec = "Restoration",
+              specId = 105,
               hero = "Keeper of the Grove",
               label = "Dream of Cenarius",
               importString = "CkGAAAAAAAAAAAAAAAAAAAAAAMMmZZMjZmxsNzgxsxsZbGAAAAAAAAAAsYYmtZGzMzAMLmZmBDjBAAAAwAAMDYbbsgZmZWGAAAALMzMzwMzGYmBAzMAgB",
@@ -6276,6 +7034,7 @@ ZugZugData = {
             },
             {
               spec = "Restoration",
+              specId = 105,
               hero = "Wildstalker",
               label = "Regenerative Heartwood",
               importString = "CkGAAAAAAAAAAAAAAAAAAAAAAMMmZZMjZmxsNMMzsNmFbzAAAAAAAAAAgFDzsNDzMzAMLmZmZWMMAAAAAYAAmBAAAAAz2MLzsNzmNmZmZwMbgZGAgZGAGA",
@@ -6288,6 +7047,7 @@ ZugZugData = {
           ["15+"] = {
             {
               spec = "Restoration",
+              specId = 105,
               hero = "Wildstalker",
               label = "Liveliness",
               importString = "CkGAAAAAAAAAAAAAAAAAAAAAAMMmZZMjZmxsNMMzswsYbGAAAAAAAAAAsMYmtZYmZGDjZxMzMMDjBAAAAwAAMDAAAAAmtZ2mZZmFbMzMwMzCYmBAYmBgB",
@@ -6308,6 +7068,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Incapacitating Roar",
+                      talentId = 103316,
                       dungeonPct = 41,
                       baselinePct = 29,
                     },
@@ -6315,6 +7076,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Wild Charge",
+                      talentId = 103276,
                       dungeonPct = 85,
                       baselinePct = 90,
                     },
@@ -6324,6 +7086,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Innervate",
+                      talentId = 103324,
                       dungeonPct = 40,
                       baselinePct = 34,
                     },
@@ -6331,6 +7094,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Incapacitating Roar",
+                      talentId = 103316,
                       dungeonPct = 17,
                       baselinePct = 29,
                     },
@@ -6340,6 +7104,7 @@ ZugZugData = {
             },
             {
               spec = "Restoration",
+              specId = 105,
               hero = "Keeper of the Grove",
               label = "Dream of Cenarius",
               importString = "CkGAAAAAAAAAAAAAAAAAAAAAAMMmZZMjZmxsNzgxsxsZbGAAAAAAAAAAsYYmtZGzMzAMLmZmBDjBAAAAwAAMDYbbsgZmZWGAAAALMzMzwMzGYmBAzMAgB",
@@ -6350,6 +7115,7 @@ ZugZugData = {
             },
             {
               spec = "Restoration",
+              specId = 105,
               hero = "Wildstalker",
               label = "Regenerative Heartwood",
               importString = "CkGAAAAAAAAAAAAAAAAAAAAAAMMmZZMjZmxsNMMzsNmFbzAAAAAAAAAAgFDzsNDzMzAMLmZmZWMMAAAAAYAAmBAAAAAz2MLzsNzmNmZmZwMbgZGAgZGAGA",
@@ -6362,6 +7128,7 @@ ZugZugData = {
           ["18+"] = {
             {
               spec = "Restoration",
+              specId = 105,
               hero = "Wildstalker",
               label = "Liveliness",
               importString = "CkGAAAAAAAAAAAAAAAAAAAAAAMMmZZMjZmxsNMMzswsYbGAAAAAAAAAAsMYmtZYmZGDjZxMzMMDjBAAAAwAAMDAAAAAmtZ2mZZmFbMzMwMzCYmBAYmBgB",
@@ -6382,6 +7149,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Incapacitating Roar",
+                      talentId = 103316,
                       dungeonPct = 41,
                       baselinePct = 29,
                     },
@@ -6389,6 +7157,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Wild Charge",
+                      talentId = 103276,
                       dungeonPct = 85,
                       baselinePct = 90,
                     },
@@ -6398,6 +7167,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Innervate",
+                      talentId = 103324,
                       dungeonPct = 40,
                       baselinePct = 34,
                     },
@@ -6405,6 +7175,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Incapacitating Roar",
+                      talentId = 103316,
                       dungeonPct = 17,
                       baselinePct = 29,
                     },
@@ -6414,6 +7185,7 @@ ZugZugData = {
             },
             {
               spec = "Restoration",
+              specId = 105,
               hero = "Keeper of the Grove",
               label = "Dream of Cenarius",
               importString = "CkGAAAAAAAAAAAAAAAAAAAAAAMMmZZMjZmxsNzgxsxsZbGAAAAAAAAAAsYYmtZGzMzAMLmZmBDjBAAAAwAAMDYbbsgZmZWGAAAALMzMzwMzGYmBAzMAgB",
@@ -6424,6 +7196,7 @@ ZugZugData = {
             },
             {
               spec = "Restoration",
+              specId = 105,
               hero = "Wildstalker",
               label = "Regenerative Heartwood",
               importString = "CkGAAAAAAAAAAAAAAAAAAAAAAMMmZZMjZmxsNMMzsNmFbzAAAAAAAAAAgFDzsNDzMzAMLmZmZWMMAAAAAYAAmBAAAAAz2MLzsNzmNmZmZwMbgZGAgZGAGA",
@@ -6436,6 +7209,7 @@ ZugZugData = {
           ["20+"] = {
             {
               spec = "Restoration",
+              specId = 105,
               hero = "Wildstalker",
               label = "Liveliness",
               importString = "CkGAAAAAAAAAAAAAAAAAAAAAAMMmZZMjZmxsNMMzswsYbGAAAAAAAAAAsMYmtZYmZGDjZxMzMMDjBAAAAwAAMDAAAAAmtZ2mZZmFbMzMwMzCYmBAYmBgB",
@@ -6456,6 +7230,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Incapacitating Roar",
+                      talentId = 103316,
                       dungeonPct = 41,
                       baselinePct = 29,
                     },
@@ -6463,6 +7238,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Wild Charge",
+                      talentId = 103276,
                       dungeonPct = 85,
                       baselinePct = 90,
                     },
@@ -6472,6 +7248,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Innervate",
+                      talentId = 103324,
                       dungeonPct = 40,
                       baselinePct = 34,
                     },
@@ -6479,6 +7256,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Incapacitating Roar",
+                      talentId = 103316,
                       dungeonPct = 17,
                       baselinePct = 29,
                     },
@@ -6488,6 +7266,7 @@ ZugZugData = {
             },
             {
               spec = "Restoration",
+              specId = 105,
               hero = "Keeper of the Grove",
               label = "Dream of Cenarius",
               importString = "CkGAAAAAAAAAAAAAAAAAAAAAAMMmZZMjZmxsNzgxsxsZbGAAAAAAAAAAsYYmtZGzMzAMLmZmBDjBAAAAwAAMDYbbsgZmZWGAAAALMzMzwMzGYmBAzMAgB",
@@ -6498,6 +7277,7 @@ ZugZugData = {
             },
             {
               spec = "Restoration",
+              specId = 105,
               hero = "Wildstalker",
               label = "Regenerative Heartwood",
               importString = "CkGAAAAAAAAAAAAAAAAAAAAAAMMmZZMjZmxsNMMzsNmFbzAAAAAAAAAAgFDzsNDzMzAMLmZmZWMMAAAAAYAAmBAAAAAz2MLzsNzmNmZmZwMbgZGAgZGAGA",
@@ -6514,6 +7294,7 @@ ZugZugData = {
           heroic = {
             {
               spec = "Guardian",
+              specId = 104,
               hero = "Elune's Chosen",
               label = "Dream of Cenarius",
               importString = "CgGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZmxsMzYMzmZZGMWGgZGjZGmZmZZmZmZMMjBAAAAwgZsMDYZbmBjZbAMDAAAwGmxAWMDGwiltBYmBwA",
@@ -6534,6 +7315,7 @@ ZugZugData = {
             },
             {
               spec = "Guardian",
+              specId = 104,
               hero = "Elune's Chosen",
               label = "Sundering Roar",
               importString = "CgGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZmZmFzMjZWmZxMzMLLDMbGGzMMmZWmZmZmlxMMAAAAAAjNzALbzMYMLDgZAAAA2wMDwixwAziFAmZAA",
@@ -6543,6 +7325,7 @@ ZugZugData = {
             },
             {
               spec = "Guardian",
+              specId = 104,
               hero = "Elune's Chosen",
               label = "Front of the Pack",
               importString = "CgGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZmxsMzYMzmZZGMLLDMbwYmhZmZWmZmZGzMjZAAAAAADbzAW2mZwYWGAzAAAAshZGgFzgBDW2GgZGAD",
@@ -6554,6 +7337,7 @@ ZugZugData = {
           mythic = {
             {
               spec = "Guardian",
+              specId = 104,
               hero = "Elune's Chosen",
               label = "Dream of Cenarius",
               importString = "CgGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZmxsMzYMzmZZGMWGgZGjZGmZmZZmZmZMMjBAAAAwgZsMDYZbmBjZbAMDAAAwGmxAWMDGwiltBYmBwA",
@@ -6574,6 +7358,7 @@ ZugZugData = {
             },
             {
               spec = "Guardian",
+              specId = 104,
               hero = "Elune's Chosen",
               label = "Sundering Roar",
               importString = "CgGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZmZmFzMjZWmZxMzMLLDMbGGzMMmZWmZmZmlxMMAAAAAAjNzALbzMYMLDgZAAAA2wMDwixwAziFAmZAA",
@@ -6583,6 +7368,7 @@ ZugZugData = {
             },
             {
               spec = "Guardian",
+              specId = 104,
               hero = "Elune's Chosen",
               label = "Front of the Pack",
               importString = "CgGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZmxsMzYMzmZZGMLLDMbwYmhZmZWmZmZGzMjZAAAAAADbzAW2mZwYWGAzAAAAshZGgFzgBDW2GgZGAD",
@@ -6596,6 +7382,7 @@ ZugZugData = {
           all = {
             {
               spec = "Guardian",
+              specId = 104,
               hero = "Elune's Chosen",
               label = "Galactic Guardian",
               importString = "CgGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZmZmFzMjZWmZxMzMLLDMbGGzMMmZWmZmZmlxMMAAAAAAjNzALbzMYMLDgZAAAA2wMDwixwAziFAmZAA",
@@ -6616,6 +7403,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Moonkin Form",
+                      talentId = 103286,
                       dungeonPct = 22,
                       baselinePct = 8,
                     },
@@ -6623,6 +7411,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Innervate",
+                      talentId = 103324,
                       dungeonPct = 15,
                       baselinePct = 29,
                     },
@@ -6632,6 +7421,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Innervate",
+                      talentId = 103324,
                       dungeonPct = 41,
                       baselinePct = 29,
                     },
@@ -6639,6 +7429,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Incapacitating Roar",
+                      talentId = 103316,
                       dungeonPct = 88,
                       baselinePct = 95,
                     },
@@ -6650,6 +7441,7 @@ ZugZugData = {
           ["15+"] = {
             {
               spec = "Guardian",
+              specId = 104,
               hero = "Elune's Chosen",
               label = "Galactic Guardian",
               importString = "CgGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZmZmFzMjZWmZxMzMLLDMbGGzMMmZWmZmZmlxMMAAAAAAjNzALbzMYMLDgZAAAA2wMDwixwAziFAmZAA",
@@ -6670,6 +7462,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Moonkin Form",
+                      talentId = 103286,
                       dungeonPct = 22,
                       baselinePct = 8,
                     },
@@ -6677,6 +7470,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Innervate",
+                      talentId = 103324,
                       dungeonPct = 15,
                       baselinePct = 29,
                     },
@@ -6686,6 +7480,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Innervate",
+                      talentId = 103324,
                       dungeonPct = 41,
                       baselinePct = 29,
                     },
@@ -6693,6 +7488,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Incapacitating Roar",
+                      talentId = 103316,
                       dungeonPct = 88,
                       baselinePct = 95,
                     },
@@ -6704,6 +7500,7 @@ ZugZugData = {
           ["18+"] = {
             {
               spec = "Guardian",
+              specId = 104,
               hero = "Elune's Chosen",
               label = "Galactic Guardian",
               importString = "CgGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZmZmFzMjZWmZxMzMLLDMbGGzMMmZWmZmZmlxMMAAAAAAjNzALbzMYMLDgZAAAA2wMDwixwAziFAmZAA",
@@ -6724,6 +7521,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Moonkin Form",
+                      talentId = 103286,
                       dungeonPct = 22,
                       baselinePct = 8,
                     },
@@ -6731,6 +7529,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Innervate",
+                      talentId = 103324,
                       dungeonPct = 15,
                       baselinePct = 29,
                     },
@@ -6740,6 +7539,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Innervate",
+                      talentId = 103324,
                       dungeonPct = 41,
                       baselinePct = 29,
                     },
@@ -6747,6 +7547,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Incapacitating Roar",
+                      talentId = 103316,
                       dungeonPct = 88,
                       baselinePct = 95,
                     },
@@ -6758,6 +7559,7 @@ ZugZugData = {
           ["20+"] = {
             {
               spec = "Guardian",
+              specId = 104,
               hero = "Elune's Chosen",
               label = "Galactic Guardian",
               importString = "CgGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZmZmFzMjZWmZxMzMLLDMbGGzMMmZWmZmZmlxMMAAAAAAjNzALbzMYMLDgZAAAA2wMDwixwAziFAmZAA",
@@ -6778,6 +7580,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Moonkin Form",
+                      talentId = 103286,
                       dungeonPct = 22,
                       baselinePct = 8,
                     },
@@ -6785,6 +7588,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Innervate",
+                      talentId = 103324,
                       dungeonPct = 15,
                       baselinePct = 29,
                     },
@@ -6794,6 +7598,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Innervate",
+                      talentId = 103324,
                       dungeonPct = 41,
                       baselinePct = 29,
                     },
@@ -6801,6 +7606,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Incapacitating Roar",
+                      talentId = 103316,
                       dungeonPct = 88,
                       baselinePct = 95,
                     },
@@ -6818,6 +7624,7 @@ ZugZugData = {
           heroic = {
             {
               spec = "Frost",
+              specId = 251,
               hero = "Deathbringer",
               label = "Frigid Executioner",
               importString = "CsPAAAAAAAAAAAAAAAAAAAAAAMDwMjZMDY2mZmZmZZmZMmxYmhZYMmZwMzMzMAAAAAAAAAMmtBGwCYZYGwYBzMmZGYGADzMAzMYA",
@@ -6830,6 +7637,7 @@ ZugZugData = {
             },
             {
               spec = "Unholy",
+              specId = 252,
               hero = "Rider of the Apocalypse",
               label = "Morbidity",
               importString = "CwPAAAAAAAAAAAAAAAAAAAAAAAwMjZMDDz2MzMzMbmZmxMGAAAAAAAAmZYmBAbzYmZbmZMmBsZWMMwAzGDzYBAzAwYmZMDwMzMGD",
@@ -6848,6 +7656,7 @@ ZugZugData = {
             },
             {
               spec = "Unholy",
+              specId = 252,
               hero = "Rider of the Apocalypse",
               label = "A Feast of Souls",
               importString = "CwPAAAAAAAAAAAAAAAAAAAAAAAYmZMjxYY2mZmZmhZGzMjBAAAAAAAgZGDDAWmxMzmZGzMDYxsZYgBmNGmxCGwMAMmZGzAMzMjxA",
@@ -6857,6 +7666,7 @@ ZugZugData = {
             },
             {
               spec = "Frost",
+              specId = 251,
               hero = "Deathbringer",
               label = "Osmosis",
               importString = "CsPAAAAAAAAAAAAAAAAAAAAAAMDYmZYMGDz2MzMzMbzMjZmxMjhZYwMzMzMzMzMAAAAAAAAAMmtBGwCYZYGwYBzMmZGYAYYmBAYA",
@@ -6866,6 +7676,7 @@ ZugZugData = {
             },
             {
               spec = "Unholy",
+              specId = 252,
               hero = "San'layn",
               label = "Superstrain",
               importString = "CwPAAAAAAAAAAAAAAAAAAAAAAAwMMjZGDz2MzMzMbmZMzMGAAAAAAAAmZMjBALDzMbmZmZmxADMjNzYZBw2gNMgZAYMzMMYmBzYMA",
@@ -6875,6 +7686,7 @@ ZugZugData = {
             },
             {
               spec = "Frost",
+              specId = 251,
               hero = "Rider of the Apocalypse",
               label = "Everfrost",
               importString = "CsPAAAAAAAAAAAAAAAAAAAAAAMDYmZmZMzYY2mZmZmZxMjxMGjhZGDmxMzMzMzMAAAAAAAAAAWMLGGYgZjhZYDzMmZGYAYAYmBYA",
@@ -6886,6 +7698,7 @@ ZugZugData = {
           mythic = {
             {
               spec = "Frost",
+              specId = 251,
               hero = "Deathbringer",
               label = "Frigid Executioner",
               importString = "CsPAAAAAAAAAAAAAAAAAAAAAAMDwMjZMDY2mZmZmZZmZMmxYmhZYMmZwMzMzMAAAAAAAAAMmtBGwCYZYGwYBzMmZGYGADzMAzMYA",
@@ -6901,6 +7714,7 @@ ZugZugData = {
             },
             {
               spec = "Unholy",
+              specId = 252,
               hero = "Rider of the Apocalypse",
               label = "Morbidity",
               importString = "CwPAAAAAAAAAAAAAAAAAAAAAAAwMjZMDDz2MzMzMbmZmxMGAAAAAAAAmZYmBAbzYmZbmZMmBsZWMMwAzGDzYBAzAwYmZMDwMzMGD",
@@ -6916,6 +7730,7 @@ ZugZugData = {
             },
             {
               spec = "Unholy",
+              specId = 252,
               hero = "Rider of the Apocalypse",
               label = "A Feast of Souls",
               importString = "CwPAAAAAAAAAAAAAAAAAAAAAAAYmZMjxYY2mZmZmhZGzMjBAAAAAAAgZGDDAWmxMzmZGzMDYxsZYgBmNGmxCGwMAMmZGzAMzMjxA",
@@ -6925,6 +7740,7 @@ ZugZugData = {
             },
             {
               spec = "Frost",
+              specId = 251,
               hero = "Deathbringer",
               label = "Osmosis",
               importString = "CsPAAAAAAAAAAAAAAAAAAAAAAMDYmZYMGDz2MzMzMbzMjZmxMjhZYwMzMzMzMzMAAAAAAAAAMmtBGwCYZYGwYBzMmZGYAYYmBAYA",
@@ -6934,6 +7750,7 @@ ZugZugData = {
             },
             {
               spec = "Unholy",
+              specId = 252,
               hero = "San'layn",
               label = "Superstrain",
               importString = "CwPAAAAAAAAAAAAAAAAAAAAAAAwMMjZGDz2MzMzMbmZMzMGAAAAAAAAmZMjBALDzMbmZmZmxADMjNzYZBw2gNMgZAYMzMMYmBzYMA",
@@ -6943,6 +7760,7 @@ ZugZugData = {
             },
             {
               spec = "Frost",
+              specId = 251,
               hero = "Rider of the Apocalypse",
               label = "Everfrost",
               importString = "CsPAAAAAAAAAAAAAAAAAAAAAAMDYmZmZMzYY2mZmZmZxMjxMGjhZGDmxMzMzMzMAAAAAAAAAAWMLGGYgZjhZYDzMmZGYAYAYmBYA",
@@ -6956,6 +7774,7 @@ ZugZugData = {
           all = {
             {
               spec = "Unholy",
+              specId = 252,
               hero = "Rider of the Apocalypse",
               label = "Raise Abomination",
               importString = "CwPAAAAAAAAAAAAAAAAAAAAAAAYmZMjZMYWGzMzMmZGzMjBAAAAAAAgZGDDAWmxMzmZGzMDYzsZYgBmNGmxCGwMAMmZGzAMzMmxA",
@@ -6976,6 +7795,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Death's Reach",
+                      talentId = 136526,
                       dungeonPct = 64,
                       baselinePct = 51,
                     },
@@ -6983,6 +7803,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Asphyxiate",
+                      talentId = 96193,
                       dungeonPct = 36,
                       baselinePct = 49,
                     },
@@ -6992,6 +7813,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Death's Reach",
+                      talentId = 136526,
                       dungeonPct = 66,
                       baselinePct = 51,
                     },
@@ -6999,6 +7821,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Asphyxiate",
+                      talentId = 96193,
                       dungeonPct = 34,
                       baselinePct = 49,
                     },
@@ -7008,6 +7831,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Asphyxiate",
+                      talentId = 96193,
                       dungeonPct = 79,
                       baselinePct = 49,
                     },
@@ -7015,6 +7839,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Death's Reach",
+                      talentId = 136526,
                       dungeonPct = 21,
                       baselinePct = 51,
                     },
@@ -7024,6 +7849,7 @@ ZugZugData = {
             },
             {
               spec = "Frost",
+              specId = 251,
               hero = "Deathbringer",
               label = "Frigid Executioner",
               importString = "CsPAAAAAAAAAAAAAAAAAAAAAAMAzMjZMzYY2mZmZmZxMjZmxYmZmZgxMDzMzMmBAAAAAAAAgxsNwAWALDzAGLYmhZGYGADzMAAD",
@@ -7034,6 +7860,7 @@ ZugZugData = {
             },
             {
               spec = "Frost",
+              specId = 251,
               hero = "Deathbringer",
               label = "Icy Death Torrent",
               importString = "CsPAAAAAAAAAAAAAAAAAAAAAAMDYmZMzMDY2mZmZmZzMjxMGjhZYwMzMzMzMzMAAAAAAAAAMmtBGwCYZYGwYBzMmZGYAYYmBYGYA",
@@ -7044,6 +7871,7 @@ ZugZugData = {
             },
             {
               spec = "Frost",
+              specId = 251,
               hero = "Rider of the Apocalypse",
               label = "Everfrost",
               importString = "CsPAAAAAAAAAAAAAAAAAAAAAAMAzMjZMGDz2MzMzMbmZMzMGjZmxgxMmZmZmxMAAAAAAAAAA2MbGGYgZjhZYDzMMzAzAYAYmxAD",
@@ -7054,6 +7882,7 @@ ZugZugData = {
             },
             {
               spec = "Unholy",
+              specId = 252,
               hero = "Rider of the Apocalypse",
               label = "Morbidity",
               importString = "CwPAAAAAAAAAAAAAAAAAAAAAAAwMjZMGDz2MzMzMmZGjZMAAAAAAAAMzwMDA2mxMz2MzYMDYzsYYgBmNGmxCAmBgxMzYGgZmZmxA",
@@ -7066,6 +7895,7 @@ ZugZugData = {
           ["15+"] = {
             {
               spec = "Unholy",
+              specId = 252,
               hero = "Rider of the Apocalypse",
               label = "Raise Abomination",
               importString = "CwPAAAAAAAAAAAAAAAAAAAAAAAYmZMjZMYWGzMzMmZGzMjBAAAAAAAgZGDDAWmxMzmZGzMDYzsZYgBmNGmxCGwMAMmZGzAMzMmxA",
@@ -7086,6 +7916,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Death's Reach",
+                      talentId = 136526,
                       dungeonPct = 64,
                       baselinePct = 51,
                     },
@@ -7093,6 +7924,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Asphyxiate",
+                      talentId = 96193,
                       dungeonPct = 36,
                       baselinePct = 49,
                     },
@@ -7102,6 +7934,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Death's Reach",
+                      talentId = 136526,
                       dungeonPct = 66,
                       baselinePct = 51,
                     },
@@ -7109,6 +7942,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Asphyxiate",
+                      talentId = 96193,
                       dungeonPct = 34,
                       baselinePct = 49,
                     },
@@ -7118,6 +7952,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Asphyxiate",
+                      talentId = 96193,
                       dungeonPct = 79,
                       baselinePct = 49,
                     },
@@ -7125,6 +7960,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Death's Reach",
+                      talentId = 136526,
                       dungeonPct = 21,
                       baselinePct = 51,
                     },
@@ -7134,6 +7970,7 @@ ZugZugData = {
             },
             {
               spec = "Frost",
+              specId = 251,
               hero = "Deathbringer",
               label = "Frigid Executioner",
               importString = "CsPAAAAAAAAAAAAAAAAAAAAAAMAzMjZMzYY2mZmZmZxMjZmxYmZmZgxMDzMzMmBAAAAAAAAgxsNwAWALDzAGLYmhZGYGADzMAAD",
@@ -7144,6 +7981,7 @@ ZugZugData = {
             },
             {
               spec = "Frost",
+              specId = 251,
               hero = "Deathbringer",
               label = "Icy Death Torrent",
               importString = "CsPAAAAAAAAAAAAAAAAAAAAAAMDYmZMzMDY2mZmZmZzMjxMGjhZYwMzMzMzMzMAAAAAAAAAMmtBGwCYZYGwYBzMmZGYAYYmBYGYA",
@@ -7154,6 +7992,7 @@ ZugZugData = {
             },
             {
               spec = "Frost",
+              specId = 251,
               hero = "Rider of the Apocalypse",
               label = "Everfrost",
               importString = "CsPAAAAAAAAAAAAAAAAAAAAAAMAzMjZMGDz2MzMzMbmZMzMGjZmxgxMmZmZmxMAAAAAAAAAA2MbGGYgZjhZYDzMMzAzAYAYmxAD",
@@ -7164,6 +8003,7 @@ ZugZugData = {
             },
             {
               spec = "Unholy",
+              specId = 252,
               hero = "Rider of the Apocalypse",
               label = "Morbidity",
               importString = "CwPAAAAAAAAAAAAAAAAAAAAAAAwMjZMGDz2MzMzMmZGjZMAAAAAAAAMzwMDA2mxMz2MzYMDYzsYYgBmNGmxCAmBgxMzYGgZmZmxA",
@@ -7176,6 +8016,7 @@ ZugZugData = {
           ["18+"] = {
             {
               spec = "Unholy",
+              specId = 252,
               hero = "Rider of the Apocalypse",
               label = "Raise Abomination",
               importString = "CwPAAAAAAAAAAAAAAAAAAAAAAAYmZMjZMYWGzMzMmZGzMjBAAAAAAAgZGDDAWmxMzmZGzMDYzsZYgBmNGmxCGwMAMmZGzAMzMmxA",
@@ -7196,6 +8037,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Death's Reach",
+                      talentId = 136526,
                       dungeonPct = 64,
                       baselinePct = 51,
                     },
@@ -7203,6 +8045,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Asphyxiate",
+                      talentId = 96193,
                       dungeonPct = 36,
                       baselinePct = 49,
                     },
@@ -7212,6 +8055,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Death's Reach",
+                      talentId = 136526,
                       dungeonPct = 66,
                       baselinePct = 51,
                     },
@@ -7219,6 +8063,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Asphyxiate",
+                      talentId = 96193,
                       dungeonPct = 34,
                       baselinePct = 49,
                     },
@@ -7228,6 +8073,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Asphyxiate",
+                      talentId = 96193,
                       dungeonPct = 79,
                       baselinePct = 49,
                     },
@@ -7235,6 +8081,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Death's Reach",
+                      talentId = 136526,
                       dungeonPct = 21,
                       baselinePct = 51,
                     },
@@ -7244,6 +8091,7 @@ ZugZugData = {
             },
             {
               spec = "Frost",
+              specId = 251,
               hero = "Deathbringer",
               label = "Frigid Executioner",
               importString = "CsPAAAAAAAAAAAAAAAAAAAAAAMAzMjZMzYY2mZmZmZxMjZmxYmZmZgxMDzMzMmBAAAAAAAAgxsNwAWALDzAGLYmhZGYGADzMAAD",
@@ -7254,6 +8102,7 @@ ZugZugData = {
             },
             {
               spec = "Frost",
+              specId = 251,
               hero = "Deathbringer",
               label = "Icy Death Torrent",
               importString = "CsPAAAAAAAAAAAAAAAAAAAAAAMDYmZMzMDY2mZmZmZzMjxMGjhZYwMzMzMzMzMAAAAAAAAAMmtBGwCYZYGwYBzMmZGYAYYmBYGYA",
@@ -7264,6 +8113,7 @@ ZugZugData = {
             },
             {
               spec = "Frost",
+              specId = 251,
               hero = "Rider of the Apocalypse",
               label = "Everfrost",
               importString = "CsPAAAAAAAAAAAAAAAAAAAAAAMAzMjZMGDz2MzMzMbmZMzMGjZmxgxMmZmZmxMAAAAAAAAAA2MbGGYgZjhZYDzMMzAzAYAYmxAD",
@@ -7274,6 +8124,7 @@ ZugZugData = {
             },
             {
               spec = "Unholy",
+              specId = 252,
               hero = "Rider of the Apocalypse",
               label = "Morbidity",
               importString = "CwPAAAAAAAAAAAAAAAAAAAAAAAwMjZMGDz2MzMzMmZGjZMAAAAAAAAMzwMDA2mxMz2MzYMDYzsYYgBmNGmxCAmBgxMzYGgZmZmxA",
@@ -7286,6 +8137,7 @@ ZugZugData = {
           ["20+"] = {
             {
               spec = "Unholy",
+              specId = 252,
               hero = "Rider of the Apocalypse",
               label = "Raise Abomination",
               importString = "CwPAAAAAAAAAAAAAAAAAAAAAAAYmZMjZMYWGzMzMmZGzMjBAAAAAAAgZGDDAWmxMzmZGzMDYzsZYgBmNGmxCGwMAMmZGzAMzMmxA",
@@ -7306,6 +8158,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Death's Reach",
+                      talentId = 136526,
                       dungeonPct = 64,
                       baselinePct = 51,
                     },
@@ -7313,6 +8166,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Asphyxiate",
+                      talentId = 96193,
                       dungeonPct = 36,
                       baselinePct = 49,
                     },
@@ -7322,6 +8176,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Death's Reach",
+                      talentId = 136526,
                       dungeonPct = 66,
                       baselinePct = 51,
                     },
@@ -7329,6 +8184,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Asphyxiate",
+                      talentId = 96193,
                       dungeonPct = 34,
                       baselinePct = 49,
                     },
@@ -7338,6 +8194,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Asphyxiate",
+                      talentId = 96193,
                       dungeonPct = 79,
                       baselinePct = 49,
                     },
@@ -7345,6 +8202,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Death's Reach",
+                      talentId = 136526,
                       dungeonPct = 21,
                       baselinePct = 51,
                     },
@@ -7354,6 +8212,7 @@ ZugZugData = {
             },
             {
               spec = "Frost",
+              specId = 251,
               hero = "Deathbringer",
               label = "Frigid Executioner",
               importString = "CsPAAAAAAAAAAAAAAAAAAAAAAMAzMjZMzYY2mZmZmZxMjZmxYmZmZgxMDzMzMmBAAAAAAAAgxsNwAWALDzAGLYmhZGYGADzMAAD",
@@ -7364,6 +8223,7 @@ ZugZugData = {
             },
             {
               spec = "Frost",
+              specId = 251,
               hero = "Deathbringer",
               label = "Icy Death Torrent",
               importString = "CsPAAAAAAAAAAAAAAAAAAAAAAMDYmZMzMDY2mZmZmZzMjxMGjhZYwMzMzMzMzMAAAAAAAAAMmtBGwCYZYGwYBzMmZGYAYYmBYGYA",
@@ -7374,6 +8234,7 @@ ZugZugData = {
             },
             {
               spec = "Frost",
+              specId = 251,
               hero = "Rider of the Apocalypse",
               label = "Everfrost",
               importString = "CsPAAAAAAAAAAAAAAAAAAAAAAMAzMjZMGDz2MzMzMbmZMzMGjZmxgxMmZmZmxMAAAAAAAAAA2MbGGYgZjhZYDzMMzAzAYAYmxAD",
@@ -7384,6 +8245,7 @@ ZugZugData = {
             },
             {
               spec = "Unholy",
+              specId = 252,
               hero = "Rider of the Apocalypse",
               label = "Morbidity",
               importString = "CwPAAAAAAAAAAAAAAAAAAAAAAAwMjZMGDz2MzMzMmZGjZMAAAAAAAAMzwMDA2mxMz2MzYMDYzsYYgBmNGmxCAmBgxMzYGgZmZmxA",
@@ -7400,6 +8262,7 @@ ZugZugData = {
           heroic = {
             {
               spec = "Blood",
+              specId = 250,
               hero = "San'layn",
               label = "Sanguinary Burst",
               importString = "CoPAAAAAAAAAAAAAAAAAAAAAAwYWGzMmxMzMMbzMzMzsYmxYGDAAAAMzMzMzMzMMjxAgxMzMDAAgBGYGbmxyGgtBsBYGGAAwMDGMA",
@@ -7420,6 +8283,7 @@ ZugZugData = {
             },
             {
               spec = "Blood",
+              specId = 250,
               hero = "Deathbringer",
               label = "Umbilicus Eternus",
               importString = "CoPAAAAAAAAAAAAAAAAAAAAAAwMzyMzMmxMzMMLzMzMzsYMGzYAAAAAzYmZmZmhZMGAMmZmZAAAGz2ADYBsNMDYYBwMmBAgZGADD",
@@ -7429,6 +8293,7 @@ ZugZugData = {
             },
             {
               spec = "Blood",
+              specId = 250,
               hero = "San'layn",
               label = "Bloody Reflection",
               importString = "CoPAAAAAAAAAAAAAAAAAAAAAAwYWGzMmxMzMMbzMzMzsZmZGzAAAAAYGzMzMzMDzMAgZmZmZAAAMwAzYxM22AsNgNAzYGAAwMDMMA",
@@ -7440,6 +8305,7 @@ ZugZugData = {
           mythic = {
             {
               spec = "Blood",
+              specId = 250,
               hero = "San'layn",
               label = "Sanguinary Burst",
               importString = "CoPAAAAAAAAAAAAAAAAAAAAAAwYWGzMmxMzMMbzMzMzsYmxYGDAAAAMzMzMzMzMMjxAgxMzMDAAgBGYGbmxyGgtBsBYGGAAwMDGMA",
@@ -7460,6 +8326,7 @@ ZugZugData = {
             },
             {
               spec = "Blood",
+              specId = 250,
               hero = "Deathbringer",
               label = "Umbilicus Eternus",
               importString = "CoPAAAAAAAAAAAAAAAAAAAAAAwMzyMzMmxMzMMLzMzMzsYMGzYAAAAAzYmZmZmhZMGAMmZmZAAAGz2ADYBsNMDYYBwMmBAgZGADD",
@@ -7469,6 +8336,7 @@ ZugZugData = {
             },
             {
               spec = "Blood",
+              specId = 250,
               hero = "San'layn",
               label = "Bloody Reflection",
               importString = "CoPAAAAAAAAAAAAAAAAAAAAAAwYWGzMmxMzMMbzMzMzsZmZGzAAAAAYGzMzMzMDzMAgZmZmZAAAMwAzYxM22AsNgNAzYGAAwMDMMA",
@@ -7482,6 +8350,7 @@ ZugZugData = {
           all = {
             {
               spec = "Blood",
+              specId = 250,
               hero = "Deathbringer",
               label = "Asphyxiate",
               importString = "CoPAAAAAAAAAAAAAAAAAAAAAAwMzyMzMmxMGMLzMzMzsMzMmZGAAAAADmZmZmxMzMGAMzMzMDAAwY2GYALglhZADLAmxAAgZGAGD",
@@ -7502,6 +8371,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Death's Reach",
+                      talentId = 136526,
                       dungeonPct = 57,
                       baselinePct = 53,
                     },
@@ -7509,6 +8379,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Control Undead",
+                      talentId = 96188,
                       dungeonPct = 6,
                       baselinePct = 18,
                     },
@@ -7518,6 +8389,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Control Undead",
+                      talentId = 96188,
                       dungeonPct = 49,
                       baselinePct = 18,
                     },
@@ -7525,6 +8397,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Grip of the Dead",
+                      talentId = 96186,
                       dungeonPct = 85,
                       baselinePct = 92,
                     },
@@ -7534,6 +8407,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Coldthirst",
+                      talentId = 96212,
                       dungeonPct = 79,
                       baselinePct = 74,
                     },
@@ -7541,6 +8415,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Control Undead",
+                      talentId = 96188,
                       dungeonPct = 5,
                       baselinePct = 18,
                     },
@@ -7550,6 +8425,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Enfeeble",
+                      talentId = 136523,
                       dungeonPct = 23,
                       baselinePct = 16,
                     },
@@ -7557,6 +8433,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Control Undead",
+                      talentId = 96188,
                       dungeonPct = 6,
                       baselinePct = 18,
                     },
@@ -7566,6 +8443,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Control Undead",
+                      talentId = 96188,
                       dungeonPct = 49,
                       baselinePct = 18,
                     },
@@ -7573,6 +8451,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Blood Draw",
+                      talentId = 96184,
                       dungeonPct = 72,
                       baselinePct = 81,
                     },
@@ -7582,6 +8461,7 @@ ZugZugData = {
             },
             {
               spec = "Blood",
+              specId = 250,
               hero = "San'layn",
               label = "Improved Heart Strike",
               importString = "CoPAAAAAAAAAAAAAAAAAAAAAAwMzyMzwMmZmhZbmZmZmFzMzMzAAAAAYGmZmZmxMjBAMzMzMDAAgBGYGLmx2GgtBsBYGDAAwMDgB",
@@ -7593,6 +8473,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Blood Mist",
+                      talentId = 96259,
                       dungeonPct = 29,
                       baselinePct = 16,
                     },
@@ -7600,6 +8481,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Improved Vampiric Blood",
+                      talentId = 96272,
                       dungeonPct = 66,
                       baselinePct = 79,
                     },
@@ -7609,6 +8491,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Sanguine Scent",
+                      talentId = 117893,
                       dungeonPct = 55,
                       baselinePct = 40,
                     },
@@ -7616,6 +8499,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Pact of the San'layn",
+                      talentId = 117652,
                       dungeonPct = 45,
                       baselinePct = 60,
                     },
@@ -7625,6 +8509,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Pact of the San'layn",
+                      talentId = 117652,
                       dungeonPct = 72,
                       baselinePct = 60,
                     },
@@ -7632,6 +8517,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Sanguine Scent",
+                      talentId = 117893,
                       dungeonPct = 28,
                       baselinePct = 40,
                     },
@@ -7641,6 +8527,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Desecrate",
+                      talentId = 136836,
                       dungeonPct = 24,
                       baselinePct = 10,
                     },
@@ -7648,6 +8535,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Blood-Soaked Ground",
+                      talentId = 117645,
                       dungeonPct = 76,
                       baselinePct = 90,
                     },
@@ -7657,6 +8545,7 @@ ZugZugData = {
             },
             {
               spec = "Blood",
+              specId = 250,
               hero = "Deathbringer",
               label = "Bloody Reflection",
               importString = "CoPAAAAAAAAAAAAAAAAAAAAAAwMz2MzwMmZmhZbmZmZmFjZmZGDAAAAYwMzMmZmZmxAgZmZmZAAAGz2ADYDsNMDYYBwMGAAMzAAD",
@@ -7669,6 +8558,7 @@ ZugZugData = {
           ["15+"] = {
             {
               spec = "Blood",
+              specId = 250,
               hero = "Deathbringer",
               label = "Asphyxiate",
               importString = "CoPAAAAAAAAAAAAAAAAAAAAAAwMzyMzMmxMGMLzMzMzsMzMmZGAAAAADmZmZmxMzMGAMzMzMDAAwY2GYALglhZADLAmxAAgZGAGD",
@@ -7689,6 +8579,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Death's Reach",
+                      talentId = 136526,
                       dungeonPct = 57,
                       baselinePct = 53,
                     },
@@ -7696,6 +8587,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Control Undead",
+                      talentId = 96188,
                       dungeonPct = 6,
                       baselinePct = 18,
                     },
@@ -7705,6 +8597,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Control Undead",
+                      talentId = 96188,
                       dungeonPct = 49,
                       baselinePct = 18,
                     },
@@ -7712,6 +8605,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Grip of the Dead",
+                      talentId = 96186,
                       dungeonPct = 85,
                       baselinePct = 92,
                     },
@@ -7721,6 +8615,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Coldthirst",
+                      talentId = 96212,
                       dungeonPct = 79,
                       baselinePct = 74,
                     },
@@ -7728,6 +8623,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Control Undead",
+                      talentId = 96188,
                       dungeonPct = 5,
                       baselinePct = 18,
                     },
@@ -7737,6 +8633,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Enfeeble",
+                      talentId = 136523,
                       dungeonPct = 23,
                       baselinePct = 16,
                     },
@@ -7744,6 +8641,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Control Undead",
+                      talentId = 96188,
                       dungeonPct = 6,
                       baselinePct = 18,
                     },
@@ -7753,6 +8651,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Control Undead",
+                      talentId = 96188,
                       dungeonPct = 49,
                       baselinePct = 18,
                     },
@@ -7760,6 +8659,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Blood Draw",
+                      talentId = 96184,
                       dungeonPct = 72,
                       baselinePct = 81,
                     },
@@ -7769,6 +8669,7 @@ ZugZugData = {
             },
             {
               spec = "Blood",
+              specId = 250,
               hero = "San'layn",
               label = "Improved Heart Strike",
               importString = "CoPAAAAAAAAAAAAAAAAAAAAAAwMzyMzwMmZmhZbmZmZmFzMzMzAAAAAYGmZmZmxMjBAMzMzMDAAgBGYGLmx2GgtBsBYGDAAwMDgB",
@@ -7780,6 +8681,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Blood Mist",
+                      talentId = 96259,
                       dungeonPct = 29,
                       baselinePct = 16,
                     },
@@ -7787,6 +8689,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Improved Vampiric Blood",
+                      talentId = 96272,
                       dungeonPct = 66,
                       baselinePct = 79,
                     },
@@ -7796,6 +8699,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Sanguine Scent",
+                      talentId = 117893,
                       dungeonPct = 55,
                       baselinePct = 40,
                     },
@@ -7803,6 +8707,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Pact of the San'layn",
+                      talentId = 117652,
                       dungeonPct = 45,
                       baselinePct = 60,
                     },
@@ -7812,6 +8717,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Pact of the San'layn",
+                      talentId = 117652,
                       dungeonPct = 72,
                       baselinePct = 60,
                     },
@@ -7819,6 +8725,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Sanguine Scent",
+                      talentId = 117893,
                       dungeonPct = 28,
                       baselinePct = 40,
                     },
@@ -7828,6 +8735,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Desecrate",
+                      talentId = 136836,
                       dungeonPct = 24,
                       baselinePct = 10,
                     },
@@ -7835,6 +8743,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Blood-Soaked Ground",
+                      talentId = 117645,
                       dungeonPct = 76,
                       baselinePct = 90,
                     },
@@ -7844,6 +8753,7 @@ ZugZugData = {
             },
             {
               spec = "Blood",
+              specId = 250,
               hero = "Deathbringer",
               label = "Bloody Reflection",
               importString = "CoPAAAAAAAAAAAAAAAAAAAAAAwMz2MzwMmZmhZbmZmZmFjZmZGDAAAAYwMzMmZmZmxAgZmZmZAAAGz2ADYDsNMDYYBwMGAAMzAAD",
@@ -7856,6 +8766,7 @@ ZugZugData = {
           ["18+"] = {
             {
               spec = "Blood",
+              specId = 250,
               hero = "Deathbringer",
               label = "Asphyxiate",
               importString = "CoPAAAAAAAAAAAAAAAAAAAAAAwMzyMzMmxMGMLzMzMzsMzMmZGAAAAADmZmZmxMzMGAMzMzMDAAwY2GYALglhZADLAmxAAgZGAGD",
@@ -7876,6 +8787,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Death's Reach",
+                      talentId = 136526,
                       dungeonPct = 57,
                       baselinePct = 53,
                     },
@@ -7883,6 +8795,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Control Undead",
+                      talentId = 96188,
                       dungeonPct = 6,
                       baselinePct = 18,
                     },
@@ -7892,6 +8805,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Control Undead",
+                      talentId = 96188,
                       dungeonPct = 49,
                       baselinePct = 18,
                     },
@@ -7899,6 +8813,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Grip of the Dead",
+                      talentId = 96186,
                       dungeonPct = 85,
                       baselinePct = 92,
                     },
@@ -7908,6 +8823,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Coldthirst",
+                      talentId = 96212,
                       dungeonPct = 79,
                       baselinePct = 74,
                     },
@@ -7915,6 +8831,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Control Undead",
+                      talentId = 96188,
                       dungeonPct = 5,
                       baselinePct = 18,
                     },
@@ -7924,6 +8841,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Enfeeble",
+                      talentId = 136523,
                       dungeonPct = 23,
                       baselinePct = 16,
                     },
@@ -7931,6 +8849,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Control Undead",
+                      talentId = 96188,
                       dungeonPct = 6,
                       baselinePct = 18,
                     },
@@ -7940,6 +8859,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Control Undead",
+                      talentId = 96188,
                       dungeonPct = 49,
                       baselinePct = 18,
                     },
@@ -7947,6 +8867,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Blood Draw",
+                      talentId = 96184,
                       dungeonPct = 72,
                       baselinePct = 81,
                     },
@@ -7956,6 +8877,7 @@ ZugZugData = {
             },
             {
               spec = "Blood",
+              specId = 250,
               hero = "San'layn",
               label = "Improved Heart Strike",
               importString = "CoPAAAAAAAAAAAAAAAAAAAAAAwMzyMzwMmZmhZbmZmZmFzMzMzAAAAAYGmZmZmxMjBAMzMzMDAAgBGYGLmx2GgtBsBYGDAAwMDgB",
@@ -7967,6 +8889,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Blood Mist",
+                      talentId = 96259,
                       dungeonPct = 29,
                       baselinePct = 16,
                     },
@@ -7974,6 +8897,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Improved Vampiric Blood",
+                      talentId = 96272,
                       dungeonPct = 66,
                       baselinePct = 79,
                     },
@@ -7983,6 +8907,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Sanguine Scent",
+                      talentId = 117893,
                       dungeonPct = 55,
                       baselinePct = 40,
                     },
@@ -7990,6 +8915,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Pact of the San'layn",
+                      talentId = 117652,
                       dungeonPct = 45,
                       baselinePct = 60,
                     },
@@ -7999,6 +8925,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Pact of the San'layn",
+                      talentId = 117652,
                       dungeonPct = 72,
                       baselinePct = 60,
                     },
@@ -8006,6 +8933,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Sanguine Scent",
+                      talentId = 117893,
                       dungeonPct = 28,
                       baselinePct = 40,
                     },
@@ -8015,6 +8943,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Desecrate",
+                      talentId = 136836,
                       dungeonPct = 24,
                       baselinePct = 10,
                     },
@@ -8022,6 +8951,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Blood-Soaked Ground",
+                      talentId = 117645,
                       dungeonPct = 76,
                       baselinePct = 90,
                     },
@@ -8031,6 +8961,7 @@ ZugZugData = {
             },
             {
               spec = "Blood",
+              specId = 250,
               hero = "Deathbringer",
               label = "Bloody Reflection",
               importString = "CoPAAAAAAAAAAAAAAAAAAAAAAwMz2MzwMmZmhZbmZmZmFjZmZGDAAAAYwMzMmZmZmxAgZmZmZAAAGz2ADYDsNMDYYBwMGAAMzAAD",
@@ -8043,6 +8974,7 @@ ZugZugData = {
           ["20+"] = {
             {
               spec = "Blood",
+              specId = 250,
               hero = "Deathbringer",
               label = "Asphyxiate",
               importString = "CoPAAAAAAAAAAAAAAAAAAAAAAwMzyMzMmxMGMLzMzMzsMzMmZGAAAAADmZmZmxMzMGAMzMzMDAAwY2GYALglhZADLAmxAAgZGAGD",
@@ -8063,6 +8995,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Death's Reach",
+                      talentId = 136526,
                       dungeonPct = 57,
                       baselinePct = 53,
                     },
@@ -8070,6 +9003,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Control Undead",
+                      talentId = 96188,
                       dungeonPct = 6,
                       baselinePct = 18,
                     },
@@ -8079,6 +9013,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Control Undead",
+                      talentId = 96188,
                       dungeonPct = 49,
                       baselinePct = 18,
                     },
@@ -8086,6 +9021,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Grip of the Dead",
+                      talentId = 96186,
                       dungeonPct = 85,
                       baselinePct = 92,
                     },
@@ -8095,6 +9031,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Coldthirst",
+                      talentId = 96212,
                       dungeonPct = 79,
                       baselinePct = 74,
                     },
@@ -8102,6 +9039,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Control Undead",
+                      talentId = 96188,
                       dungeonPct = 5,
                       baselinePct = 18,
                     },
@@ -8111,6 +9049,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Enfeeble",
+                      talentId = 136523,
                       dungeonPct = 23,
                       baselinePct = 16,
                     },
@@ -8118,6 +9057,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Control Undead",
+                      talentId = 96188,
                       dungeonPct = 6,
                       baselinePct = 18,
                     },
@@ -8127,6 +9067,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Control Undead",
+                      talentId = 96188,
                       dungeonPct = 49,
                       baselinePct = 18,
                     },
@@ -8134,6 +9075,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Blood Draw",
+                      talentId = 96184,
                       dungeonPct = 72,
                       baselinePct = 81,
                     },
@@ -8143,6 +9085,7 @@ ZugZugData = {
             },
             {
               spec = "Blood",
+              specId = 250,
               hero = "San'layn",
               label = "Improved Heart Strike",
               importString = "CoPAAAAAAAAAAAAAAAAAAAAAAwMzyMzwMmZmhZbmZmZmFzMzMzAAAAAYGmZmZmxMjBAMzMzMDAAgBGYGLmx2GgtBsBYGDAAwMDgB",
@@ -8154,6 +9097,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Blood Mist",
+                      talentId = 96259,
                       dungeonPct = 29,
                       baselinePct = 16,
                     },
@@ -8161,6 +9105,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Improved Vampiric Blood",
+                      talentId = 96272,
                       dungeonPct = 66,
                       baselinePct = 79,
                     },
@@ -8170,6 +9115,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Sanguine Scent",
+                      talentId = 117893,
                       dungeonPct = 55,
                       baselinePct = 40,
                     },
@@ -8177,6 +9123,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Pact of the San'layn",
+                      talentId = 117652,
                       dungeonPct = 45,
                       baselinePct = 60,
                     },
@@ -8186,6 +9133,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Pact of the San'layn",
+                      talentId = 117652,
                       dungeonPct = 72,
                       baselinePct = 60,
                     },
@@ -8193,6 +9141,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Sanguine Scent",
+                      talentId = 117893,
                       dungeonPct = 28,
                       baselinePct = 40,
                     },
@@ -8202,6 +9151,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Desecrate",
+                      talentId = 136836,
                       dungeonPct = 24,
                       baselinePct = 10,
                     },
@@ -8209,6 +9159,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Blood-Soaked Ground",
+                      talentId = 117645,
                       dungeonPct = 76,
                       baselinePct = 90,
                     },
@@ -8218,6 +9169,7 @@ ZugZugData = {
             },
             {
               spec = "Blood",
+              specId = 250,
               hero = "Deathbringer",
               label = "Bloody Reflection",
               importString = "CoPAAAAAAAAAAAAAAAAAAAAAAwMz2MzwMmZmhZbmZmZmFjZmZGDAAAAYwMzMmZmZmxAgZmZmZAAAGz2ADYDsNMDYYBwMGAAMzAAD",
@@ -8236,6 +9188,7 @@ ZugZugData = {
           heroic = {
             {
               spec = "Survival",
+              specId = 255,
               hero = "Pack Leader",
               label = "Sharpened Claws",
               importString = "C8PAAAAAAAAAAAAAAAAAAAAAAMgxMG2gFYGGmBLmZmZmhlBAAAAAAzYmZGbzYMjZYZMzMAAAAMAwYZZmZWMzMDGjBMzGghxYmZzAA",
@@ -8252,6 +9205,7 @@ ZugZugData = {
             },
             {
               spec = "Beast Mastery",
+              specId = 253,
               hero = "Pack Leader",
               label = "Bloody Frenzy",
               importString = "C0PAAAAAAAAAAAAAAAAAAAAAAAMmxwCsAzwwMsBAgZYbMz2MDzYmhhZGjZGzMjZMDzMjZMDGmZAAAAAMDAAAzMzMAzsBYYWAbDA",
@@ -8266,6 +9220,7 @@ ZugZugData = {
             },
             {
               spec = "Marksmanship",
+              specId = 254,
               hero = "Dark Ranger",
               label = "Headshot",
               importString = "C4PAAAAAAAAAAAAAAAAAAAAAAYzsMwAGwMsNgZBAAAAAAAAYGzYGmxMzYGMmZGDmtNmZmlZmZmZmFMLDzMAAgxMzMzMzAGYWMAbMDA",
@@ -8275,6 +9230,7 @@ ZugZugData = {
             },
             {
               spec = "Marksmanship",
+              specId = 254,
               hero = "Sentinel",
               label = "On Target",
               importString = "C4PAAAAAAAAAAAAAAAAAAAAAAwCMwMGzYZAMD2AAAAAAAAAmxMzMMjZmxMYMzMGMbbbmZGzMzMzMLMzywMDAAYMzYAYmxGWMAbMzYA",
@@ -8284,6 +9240,7 @@ ZugZugData = {
             },
             {
               spec = "Beast Mastery",
+              specId = 253,
               hero = "Pack Leader",
               label = "Piercing Fangs",
               importString = "C0PAAAAAAAAAAAAAAAAAAAAAAAMmxwCsAzwwMsBAgZMLzMziZYmZmZMzwMzYGmZMzMjtZmxMmhlxMzAAAAAAAAAYMGwMbAGmFw2AA",
@@ -8293,6 +9250,7 @@ ZugZugData = {
             },
             {
               spec = "Marksmanship",
+              specId = 254,
               hero = "Dark Ranger",
               label = "Salvo",
               importString = "C4PAAAAAAAAAAAAAAAAAAAAAAYzsMwAGwMsMgZBAAAAAAAAYGzMzYzYmZMDLjZmxgZZzMzwMzYmZWYmlhZGAAgZMmZmZADgBYjZGD",
@@ -8302,6 +9260,7 @@ ZugZugData = {
             },
             {
               spec = "Survival",
+              specId = 255,
               hero = "Pack Leader",
               label = "Wallop",
               importString = "C8PAAAAAAAAAAAAAAAAAAAAAAMgxMGWgNYGGmBLmZmZmhlBAAAAAAzYmZGMGzYGMmxAAAAAAYstNzMLmZmxMjZGwMbAmFjxMzmBA",
@@ -8311,6 +9270,7 @@ ZugZugData = {
             },
             {
               spec = "Beast Mastery",
+              specId = 253,
               hero = "Dark Ranger",
               label = "Dire Cleave",
               importString = "C0PAAAAAAAAAAAAAAAAAAAAAAYzsNwAGwMsBMWAAwMjlZmhZYmZGMjZmZYGzMjZmZsNzMmxMsMmZGAAAAAzAAAAjxwMDwghZBsNA",
@@ -8320,6 +9280,7 @@ ZugZugData = {
             },
             {
               spec = "Survival",
+              specId = 255,
               hero = "Pack Leader",
               label = "Twin Fangs",
               importString = "C8PAAAAAAAAAAAAAAAAAAAAAAMgxMGWgNYGGmBLGzMzMjlBAAAAAAzYmZmFzYMjZwwMDAAAADAMWWmZmFzMzMzMmBYmNwCMGzYzAA",
@@ -8331,6 +9292,7 @@ ZugZugData = {
           mythic = {
             {
               spec = "Survival",
+              specId = 255,
               hero = "Pack Leader",
               label = "Sharpened Claws",
               importString = "C8PAAAAAAAAAAAAAAAAAAAAAAMgxMG2gFYGGmBLmZmZmhlBAAAAAAzYmZGbzYMjZYZMzMAAAAMAwYZZmZWMzMDGjBMzGghxYmZzAA",
@@ -8348,6 +9310,7 @@ ZugZugData = {
             },
             {
               spec = "Beast Mastery",
+              specId = 253,
               hero = "Pack Leader",
               label = "Bloody Frenzy",
               importString = "C0PAAAAAAAAAAAAAAAAAAAAAAAMmxwCsAzwwMsBAgZYbMz2MDzYmhhZGjZGzMjZMDzMjZMDGmZAAAAAMDAAAzMzMAzsBYYWAbDA",
@@ -8360,6 +9323,7 @@ ZugZugData = {
             },
             {
               spec = "Marksmanship",
+              specId = 254,
               hero = "Dark Ranger",
               label = "Headshot",
               importString = "C4PAAAAAAAAAAAAAAAAAAAAAAYzsMwAGwMsNgZBAAAAAAAAYGzYGmxMzYGMmZGDmtNmZmlZmZmZmFMLDzMAAgxMzMzMzAGYWMAbMDA",
@@ -8369,6 +9333,7 @@ ZugZugData = {
             },
             {
               spec = "Marksmanship",
+              specId = 254,
               hero = "Sentinel",
               label = "On Target",
               importString = "C4PAAAAAAAAAAAAAAAAAAAAAAwCMwMGzYZAMD2AAAAAAAAAmxMzMMjZmxMYMzMGMbbbmZGzMzMzMLMzywMDAAYMzYAYmxGWMAbMzYA",
@@ -8380,6 +9345,7 @@ ZugZugData = {
             },
             {
               spec = "Beast Mastery",
+              specId = 253,
               hero = "Pack Leader",
               label = "Piercing Fangs",
               importString = "C0PAAAAAAAAAAAAAAAAAAAAAAAMmxwCsAzwwMsBAgZMLzMziZYmZmZMzwMzYGmZMzMjtZmxMmhlxMzAAAAAAAAAYMGwMbAGmFw2AA",
@@ -8389,6 +9355,7 @@ ZugZugData = {
             },
             {
               spec = "Marksmanship",
+              specId = 254,
               hero = "Dark Ranger",
               label = "Salvo",
               importString = "C4PAAAAAAAAAAAAAAAAAAAAAAYzsMwAGwMsMgZBAAAAAAAAYGzMzYzYmZMDLjZmxgZZzMzwMzYmZWYmlhZGAAgZMmZmZADgBYjZGD",
@@ -8398,6 +9365,7 @@ ZugZugData = {
             },
             {
               spec = "Survival",
+              specId = 255,
               hero = "Pack Leader",
               label = "Wallop",
               importString = "C8PAAAAAAAAAAAAAAAAAAAAAAMgxMGWgNYGGmBLmZmZmhlBAAAAAAzYmZGMGzYGMmxAAAAAAYstNzMLmZmxMjZGwMbAmFjxMzmBA",
@@ -8407,6 +9375,7 @@ ZugZugData = {
             },
             {
               spec = "Beast Mastery",
+              specId = 253,
               hero = "Dark Ranger",
               label = "Dire Cleave",
               importString = "C0PAAAAAAAAAAAAAAAAAAAAAAYzsNwAGwMsBMWAAwMjlZmhZYmZGMjZmZYGzMjZmZsNzMmxMsMmZGAAAAAzAAAAjxwMDwghZBsNA",
@@ -8416,6 +9385,7 @@ ZugZugData = {
             },
             {
               spec = "Survival",
+              specId = 255,
               hero = "Pack Leader",
               label = "Twin Fangs",
               importString = "C8PAAAAAAAAAAAAAAAAAAAAAAMgxMGWgNYGGmBLGzMzMjlBAAAAAAzYmZmFzYMjZwwMDAAAADAMWWmZmFzMzMzMmBYmNwCMGzYzAA",
@@ -8429,6 +9399,7 @@ ZugZugData = {
           all = {
             {
               spec = "Survival",
+              specId = 255,
               hero = "Pack Leader",
               label = "Mongoose Rounds",
               importString = "C8PAAAAAAAAAAAAAAAAAAAAAAMgxMG2gFYGGmBLmZmZmhlBAAAAAAzYmZGbzYMjZwYmZAAAAYAgxyyMzsYmZGmxYAzsBAjxMzmBA",
@@ -8449,6 +9420,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Camouflage",
+                      talentId = 136676,
                       dungeonPct = 32,
                       baselinePct = 20,
                     },
@@ -8456,6 +9428,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 58,
                       baselinePct = 65,
                     },
@@ -8465,6 +9438,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Kodo Tranquilizer",
+                      talentId = 126480,
                       dungeonPct = 57,
                       baselinePct = 42,
                     },
@@ -8472,6 +9446,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 55,
                       baselinePct = 65,
                     },
@@ -8481,6 +9456,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 89,
                       baselinePct = 65,
                     },
@@ -8488,6 +9464,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Kodo Tranquilizer",
+                      talentId = 126480,
                       dungeonPct = 26,
                       baselinePct = 42,
                     },
@@ -8497,6 +9474,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Shell Wall",
+                      talentId = 136673,
                       dungeonPct = 45,
                       baselinePct = 37,
                     },
@@ -8504,6 +9482,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 53,
                       baselinePct = 65,
                     },
@@ -8513,6 +9492,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Kodo Tranquilizer",
+                      talentId = 126480,
                       dungeonPct = 58,
                       baselinePct = 42,
                     },
@@ -8520,6 +9500,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 50,
                       baselinePct = 65,
                     },
@@ -8529,6 +9510,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 93,
                       baselinePct = 65,
                     },
@@ -8536,6 +9518,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Improved Feign Death",
+                      talentId = 135706,
                       dungeonPct = 62,
                       baselinePct = 69,
                     },
@@ -8545,6 +9528,7 @@ ZugZugData = {
             },
             {
               spec = "Beast Mastery",
+              specId = 253,
               hero = "Pack Leader",
               label = "Piercing Fangs",
               importString = "C0PAAAAAAAAAAAAAAAAAAAAAAAMmxwCsAzwwMsBAgZMLzMziZYmZmZMzwMzYGmZMzMjtZmxMmBjZmBAAAAAAAAYGjBMzGAMLgtBA",
@@ -8556,6 +9540,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Kodo Tranquilizer",
+                      talentId = 126480,
                       dungeonPct = 42,
                       baselinePct = 23,
                     },
@@ -8563,6 +9548,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 65,
                       baselinePct = 73,
                     },
@@ -8572,6 +9558,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 94,
                       baselinePct = 73,
                     },
@@ -8579,6 +9566,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Kodo Tranquilizer",
+                      talentId = 126480,
                       dungeonPct = 7,
                       baselinePct = 23,
                     },
@@ -8588,6 +9576,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Kodo Tranquilizer",
+                      talentId = 126480,
                       dungeonPct = 35,
                       baselinePct = 23,
                     },
@@ -8595,6 +9584,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 62,
                       baselinePct = 73,
                     },
@@ -8604,6 +9594,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 97,
                       baselinePct = 73,
                     },
@@ -8611,6 +9602,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Binding Shot",
+                      talentId = 135711,
                       dungeonPct = 10,
                       baselinePct = 21,
                     },
@@ -8620,6 +9612,7 @@ ZugZugData = {
             },
             {
               spec = "Marksmanship",
+              specId = 254,
               hero = "Dark Ranger",
               label = "Unload",
               importString = "C4PAAAAAAAAAAAAAAAAAAAAAAYzsMwAGwMsMgZBAAAAAAAAYGzMzYzYmZMDLjZmxgZZzMzwMzYmZWYmlhZGAAgZMmZmZADgBYjZGD",
@@ -8631,6 +9624,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 93,
                       baselinePct = 78,
                     },
@@ -8638,6 +9632,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Camouflage",
+                      talentId = 136676,
                       dungeonPct = 14,
                       baselinePct = 18,
                     },
@@ -8647,6 +9642,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 94,
                       baselinePct = 78,
                     },
@@ -8654,6 +9650,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Scout's Instincts",
+                      talentId = 135705,
                       dungeonPct = 12,
                       baselinePct = 18,
                     },
@@ -8663,6 +9660,7 @@ ZugZugData = {
             },
             {
               spec = "Beast Mastery",
+              specId = 253,
               hero = "Dark Ranger",
               label = "Wildspeaker",
               importString = "C0PAAAAAAAAAAAAAAAAAAAAAAYzsNwAGwMsBMWAAwMjlZmhZYmZGMjZmZYGzMjZmZsNzMmxMsMmZGAAAAAzAAAAjxwMDwghZBsNA",
@@ -8673,6 +9671,7 @@ ZugZugData = {
             },
             {
               spec = "Marksmanship",
+              specId = 254,
               hero = "Sentinel",
               label = "Focused Aim",
               importString = "C4PAAAAAAAAAAAAAAAAAAAAAAwCMwMGzYZAMD2AAAAAAAAAmxMzM2mxMzYGWGzMjZMz22mZmhZGmZWGjlhZGAAAjxAwMjNGGgNGA",
@@ -8683,6 +9682,7 @@ ZugZugData = {
             },
             {
               spec = "Marksmanship",
+              specId = 254,
               hero = "Sentinel",
               label = "Precision Detonation",
               importString = "C4PAAAAAAAAAAAAAAAAAAAAAAwCMwMGzYZAMD2AAAAAAAAAmxMzM2MmZGzw2YmZMYW2MzMjZmZmZmFGLDzMAAAzYMAMzYDMAbMzMD",
@@ -8693,6 +9693,7 @@ ZugZugData = {
             },
             {
               spec = "Survival",
+              specId = 255,
               hero = "Sentinel",
               label = "Explosives Expert",
               importString = "C8PAAAAAAAAAAAAAAAAAAAAAAMWgBmxYGLDgZAbmZmZMzsMAAAAAAYGzMzwMGzYGMmZGAAAAGAYssNzMbmZmhZMGAmhNGGjZmNDA",
@@ -8705,6 +9706,7 @@ ZugZugData = {
           ["15+"] = {
             {
               spec = "Survival",
+              specId = 255,
               hero = "Pack Leader",
               label = "Mongoose Rounds",
               importString = "C8PAAAAAAAAAAAAAAAAAAAAAAMgxMG2gFYGGmBLmZmZmhlBAAAAAAzYmZGbzYMjZwYmZAAAAYAgxyyMzsYmZGmxYAzsBAjxMzmBA",
@@ -8725,6 +9727,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Camouflage",
+                      talentId = 136676,
                       dungeonPct = 32,
                       baselinePct = 20,
                     },
@@ -8732,6 +9735,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 58,
                       baselinePct = 65,
                     },
@@ -8741,6 +9745,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Kodo Tranquilizer",
+                      talentId = 126480,
                       dungeonPct = 57,
                       baselinePct = 42,
                     },
@@ -8748,6 +9753,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 55,
                       baselinePct = 65,
                     },
@@ -8757,6 +9763,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 89,
                       baselinePct = 65,
                     },
@@ -8764,6 +9771,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Kodo Tranquilizer",
+                      talentId = 126480,
                       dungeonPct = 26,
                       baselinePct = 42,
                     },
@@ -8773,6 +9781,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Shell Wall",
+                      talentId = 136673,
                       dungeonPct = 45,
                       baselinePct = 37,
                     },
@@ -8780,6 +9789,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 53,
                       baselinePct = 65,
                     },
@@ -8789,6 +9799,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Kodo Tranquilizer",
+                      talentId = 126480,
                       dungeonPct = 58,
                       baselinePct = 42,
                     },
@@ -8796,6 +9807,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 50,
                       baselinePct = 65,
                     },
@@ -8805,6 +9817,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 93,
                       baselinePct = 65,
                     },
@@ -8812,6 +9825,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Improved Feign Death",
+                      talentId = 135706,
                       dungeonPct = 62,
                       baselinePct = 69,
                     },
@@ -8821,6 +9835,7 @@ ZugZugData = {
             },
             {
               spec = "Beast Mastery",
+              specId = 253,
               hero = "Pack Leader",
               label = "Piercing Fangs",
               importString = "C0PAAAAAAAAAAAAAAAAAAAAAAAMmxwCsAzwwMsBAgZMLzMziZYmZmZMzwMzYGmZMzMjtZmxMmBjZmBAAAAAAAAYGjBMzGAMLgtBA",
@@ -8832,6 +9847,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Kodo Tranquilizer",
+                      talentId = 126480,
                       dungeonPct = 42,
                       baselinePct = 23,
                     },
@@ -8839,6 +9855,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 65,
                       baselinePct = 73,
                     },
@@ -8848,6 +9865,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 94,
                       baselinePct = 73,
                     },
@@ -8855,6 +9873,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Kodo Tranquilizer",
+                      talentId = 126480,
                       dungeonPct = 7,
                       baselinePct = 23,
                     },
@@ -8864,6 +9883,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Kodo Tranquilizer",
+                      talentId = 126480,
                       dungeonPct = 35,
                       baselinePct = 23,
                     },
@@ -8871,6 +9891,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 62,
                       baselinePct = 73,
                     },
@@ -8880,6 +9901,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 97,
                       baselinePct = 73,
                     },
@@ -8887,6 +9909,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Binding Shot",
+                      talentId = 135711,
                       dungeonPct = 10,
                       baselinePct = 21,
                     },
@@ -8896,6 +9919,7 @@ ZugZugData = {
             },
             {
               spec = "Marksmanship",
+              specId = 254,
               hero = "Dark Ranger",
               label = "Unload",
               importString = "C4PAAAAAAAAAAAAAAAAAAAAAAYzsMwAGwMsMgZBAAAAAAAAYGzMzYzYmZMDLjZmxgZZzMzwMzYmZWYmlhZGAAgZMmZmZADgBYjZGD",
@@ -8907,6 +9931,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 93,
                       baselinePct = 78,
                     },
@@ -8914,6 +9939,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Camouflage",
+                      talentId = 136676,
                       dungeonPct = 14,
                       baselinePct = 18,
                     },
@@ -8923,6 +9949,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 94,
                       baselinePct = 78,
                     },
@@ -8930,6 +9957,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Scout's Instincts",
+                      talentId = 135705,
                       dungeonPct = 12,
                       baselinePct = 18,
                     },
@@ -8939,6 +9967,7 @@ ZugZugData = {
             },
             {
               spec = "Beast Mastery",
+              specId = 253,
               hero = "Dark Ranger",
               label = "Wildspeaker",
               importString = "C0PAAAAAAAAAAAAAAAAAAAAAAYzsNwAGwMsBMWAAwMjlZmhZYmZGMjZmZYGzMjZmZsNzMmxMsMmZGAAAAAzAAAAjxwMDwghZBsNA",
@@ -8949,6 +9978,7 @@ ZugZugData = {
             },
             {
               spec = "Marksmanship",
+              specId = 254,
               hero = "Sentinel",
               label = "Focused Aim",
               importString = "C4PAAAAAAAAAAAAAAAAAAAAAAwCMwMGzYZAMD2AAAAAAAAAmxMzM2mxMzYGWGzMjZMz22mZmhZGmZWGjlhZGAAAjxAwMjNGGgNGA",
@@ -8959,6 +9989,7 @@ ZugZugData = {
             },
             {
               spec = "Marksmanship",
+              specId = 254,
               hero = "Sentinel",
               label = "Precision Detonation",
               importString = "C4PAAAAAAAAAAAAAAAAAAAAAAwCMwMGzYZAMD2AAAAAAAAAmxMzM2MmZGzw2YmZMYW2MzMjZmZmZmFGLDzMAAAzYMAMzYDMAbMzMD",
@@ -8969,6 +10000,7 @@ ZugZugData = {
             },
             {
               spec = "Survival",
+              specId = 255,
               hero = "Sentinel",
               label = "Explosives Expert",
               importString = "C8PAAAAAAAAAAAAAAAAAAAAAAMWgBmxYGLDgZAbmZmZMzsMAAAAAAYGzMzwMGzYGMmZGAAAAGAYssNzMbmZmhZMGAmhNGGjZmNDA",
@@ -8981,6 +10013,7 @@ ZugZugData = {
           ["18+"] = {
             {
               spec = "Survival",
+              specId = 255,
               hero = "Pack Leader",
               label = "Mongoose Rounds",
               importString = "C8PAAAAAAAAAAAAAAAAAAAAAAMgxMG2gFYGGmBLmZmZmhlBAAAAAAzYmZGbzYMjZwYmZAAAAYAgxyyMzsYmZGmxYAzsBAjxMzmBA",
@@ -9001,6 +10034,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Camouflage",
+                      talentId = 136676,
                       dungeonPct = 32,
                       baselinePct = 20,
                     },
@@ -9008,6 +10042,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 58,
                       baselinePct = 65,
                     },
@@ -9017,6 +10052,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Kodo Tranquilizer",
+                      talentId = 126480,
                       dungeonPct = 57,
                       baselinePct = 42,
                     },
@@ -9024,6 +10060,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 55,
                       baselinePct = 65,
                     },
@@ -9033,6 +10070,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 89,
                       baselinePct = 65,
                     },
@@ -9040,6 +10078,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Kodo Tranquilizer",
+                      talentId = 126480,
                       dungeonPct = 26,
                       baselinePct = 42,
                     },
@@ -9049,6 +10088,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Shell Wall",
+                      talentId = 136673,
                       dungeonPct = 45,
                       baselinePct = 37,
                     },
@@ -9056,6 +10096,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 53,
                       baselinePct = 65,
                     },
@@ -9065,6 +10106,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Kodo Tranquilizer",
+                      talentId = 126480,
                       dungeonPct = 58,
                       baselinePct = 42,
                     },
@@ -9072,6 +10114,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 50,
                       baselinePct = 65,
                     },
@@ -9081,6 +10124,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 93,
                       baselinePct = 65,
                     },
@@ -9088,6 +10132,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Improved Feign Death",
+                      talentId = 135706,
                       dungeonPct = 62,
                       baselinePct = 69,
                     },
@@ -9097,6 +10142,7 @@ ZugZugData = {
             },
             {
               spec = "Beast Mastery",
+              specId = 253,
               hero = "Pack Leader",
               label = "Piercing Fangs",
               importString = "C0PAAAAAAAAAAAAAAAAAAAAAAAMmxwCsAzwwMsBAgZMLzMziZYmZmZMzwMzYGmZMzMjtZmxMmBjZmBAAAAAAAAYGjBMzGAMLgtBA",
@@ -9108,6 +10154,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Kodo Tranquilizer",
+                      talentId = 126480,
                       dungeonPct = 42,
                       baselinePct = 23,
                     },
@@ -9115,6 +10162,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 65,
                       baselinePct = 73,
                     },
@@ -9124,6 +10172,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 94,
                       baselinePct = 73,
                     },
@@ -9131,6 +10180,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Kodo Tranquilizer",
+                      talentId = 126480,
                       dungeonPct = 7,
                       baselinePct = 23,
                     },
@@ -9140,6 +10190,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Kodo Tranquilizer",
+                      talentId = 126480,
                       dungeonPct = 35,
                       baselinePct = 23,
                     },
@@ -9147,6 +10198,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 62,
                       baselinePct = 73,
                     },
@@ -9156,6 +10208,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 97,
                       baselinePct = 73,
                     },
@@ -9163,6 +10216,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Binding Shot",
+                      talentId = 135711,
                       dungeonPct = 10,
                       baselinePct = 21,
                     },
@@ -9172,6 +10226,7 @@ ZugZugData = {
             },
             {
               spec = "Marksmanship",
+              specId = 254,
               hero = "Dark Ranger",
               label = "Unload",
               importString = "C4PAAAAAAAAAAAAAAAAAAAAAAYzsMwAGwMsMgZBAAAAAAAAYGzMzYzYmZMDLjZmxgZZzMzwMzYmZWYmlhZGAAgZMmZmZADgBYjZGD",
@@ -9183,6 +10238,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 93,
                       baselinePct = 78,
                     },
@@ -9190,6 +10246,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Camouflage",
+                      talentId = 136676,
                       dungeonPct = 14,
                       baselinePct = 18,
                     },
@@ -9199,6 +10256,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 94,
                       baselinePct = 78,
                     },
@@ -9206,6 +10264,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Scout's Instincts",
+                      talentId = 135705,
                       dungeonPct = 12,
                       baselinePct = 18,
                     },
@@ -9215,6 +10274,7 @@ ZugZugData = {
             },
             {
               spec = "Beast Mastery",
+              specId = 253,
               hero = "Dark Ranger",
               label = "Wildspeaker",
               importString = "C0PAAAAAAAAAAAAAAAAAAAAAAYzsNwAGwMsBMWAAwMjlZmhZYmZGMjZmZYGzMjZmZsNzMmxMsMmZGAAAAAzAAAAjxwMDwghZBsNA",
@@ -9225,6 +10285,7 @@ ZugZugData = {
             },
             {
               spec = "Marksmanship",
+              specId = 254,
               hero = "Sentinel",
               label = "Focused Aim",
               importString = "C4PAAAAAAAAAAAAAAAAAAAAAAwCMwMGzYZAMD2AAAAAAAAAmxMzM2mxMzYGWGzMjZMz22mZmhZGmZWGjlhZGAAAjxAwMjNGGgNGA",
@@ -9235,6 +10296,7 @@ ZugZugData = {
             },
             {
               spec = "Marksmanship",
+              specId = 254,
               hero = "Sentinel",
               label = "Precision Detonation",
               importString = "C4PAAAAAAAAAAAAAAAAAAAAAAwCMwMGzYZAMD2AAAAAAAAAmxMzM2MmZGzw2YmZMYW2MzMjZmZmZmFGLDzMAAAzYMAMzYDMAbMzMD",
@@ -9245,6 +10307,7 @@ ZugZugData = {
             },
             {
               spec = "Survival",
+              specId = 255,
               hero = "Sentinel",
               label = "Explosives Expert",
               importString = "C8PAAAAAAAAAAAAAAAAAAAAAAMWgBmxYGLDgZAbmZmZMzsMAAAAAAYGzMzwMGzYGMmZGAAAAGAYssNzMbmZmhZMGAmhNGGjZmNDA",
@@ -9257,6 +10320,7 @@ ZugZugData = {
           ["20+"] = {
             {
               spec = "Survival",
+              specId = 255,
               hero = "Pack Leader",
               label = "Mongoose Rounds",
               importString = "C8PAAAAAAAAAAAAAAAAAAAAAAMgxMG2gFYGGmBLmZmZmhlBAAAAAAzYmZGbzYMjZwYmZAAAAYAgxyyMzsYmZGmxYAzsBAjxMzmBA",
@@ -9277,6 +10341,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Camouflage",
+                      talentId = 136676,
                       dungeonPct = 32,
                       baselinePct = 20,
                     },
@@ -9284,6 +10349,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 58,
                       baselinePct = 65,
                     },
@@ -9293,6 +10359,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Kodo Tranquilizer",
+                      talentId = 126480,
                       dungeonPct = 57,
                       baselinePct = 42,
                     },
@@ -9300,6 +10367,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 55,
                       baselinePct = 65,
                     },
@@ -9309,6 +10377,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 89,
                       baselinePct = 65,
                     },
@@ -9316,6 +10385,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Kodo Tranquilizer",
+                      talentId = 126480,
                       dungeonPct = 26,
                       baselinePct = 42,
                     },
@@ -9325,6 +10395,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Shell Wall",
+                      talentId = 136673,
                       dungeonPct = 45,
                       baselinePct = 37,
                     },
@@ -9332,6 +10403,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 53,
                       baselinePct = 65,
                     },
@@ -9341,6 +10413,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Kodo Tranquilizer",
+                      talentId = 126480,
                       dungeonPct = 58,
                       baselinePct = 42,
                     },
@@ -9348,6 +10421,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 50,
                       baselinePct = 65,
                     },
@@ -9357,6 +10431,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 93,
                       baselinePct = 65,
                     },
@@ -9364,6 +10439,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Improved Feign Death",
+                      talentId = 135706,
                       dungeonPct = 62,
                       baselinePct = 69,
                     },
@@ -9373,6 +10449,7 @@ ZugZugData = {
             },
             {
               spec = "Beast Mastery",
+              specId = 253,
               hero = "Pack Leader",
               label = "Piercing Fangs",
               importString = "C0PAAAAAAAAAAAAAAAAAAAAAAAMmxwCsAzwwMsBAgZMLzMziZYmZmZMzwMzYGmZMzMjtZmxMmBjZmBAAAAAAAAYGjBMzGAMLgtBA",
@@ -9384,6 +10461,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Kodo Tranquilizer",
+                      talentId = 126480,
                       dungeonPct = 42,
                       baselinePct = 23,
                     },
@@ -9391,6 +10469,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 65,
                       baselinePct = 73,
                     },
@@ -9400,6 +10479,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 94,
                       baselinePct = 73,
                     },
@@ -9407,6 +10487,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Kodo Tranquilizer",
+                      talentId = 126480,
                       dungeonPct = 7,
                       baselinePct = 23,
                     },
@@ -9416,6 +10497,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Kodo Tranquilizer",
+                      talentId = 126480,
                       dungeonPct = 35,
                       baselinePct = 23,
                     },
@@ -9423,6 +10505,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 62,
                       baselinePct = 73,
                     },
@@ -9432,6 +10515,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 97,
                       baselinePct = 73,
                     },
@@ -9439,6 +10523,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Binding Shot",
+                      talentId = 135711,
                       dungeonPct = 10,
                       baselinePct = 21,
                     },
@@ -9448,6 +10533,7 @@ ZugZugData = {
             },
             {
               spec = "Marksmanship",
+              specId = 254,
               hero = "Dark Ranger",
               label = "Unload",
               importString = "C4PAAAAAAAAAAAAAAAAAAAAAAYzsMwAGwMsMgZBAAAAAAAAYGzMzYzYmZMDLjZmxgZZzMzwMzYmZWYmlhZGAAgZMmZmZADgBYjZGD",
@@ -9459,6 +10545,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 93,
                       baselinePct = 78,
                     },
@@ -9466,6 +10553,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Camouflage",
+                      talentId = 136676,
                       dungeonPct = 14,
                       baselinePct = 18,
                     },
@@ -9475,6 +10563,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Emergency Salve",
+                      talentId = 126452,
                       dungeonPct = 94,
                       baselinePct = 78,
                     },
@@ -9482,6 +10571,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Scout's Instincts",
+                      talentId = 135705,
                       dungeonPct = 12,
                       baselinePct = 18,
                     },
@@ -9491,6 +10581,7 @@ ZugZugData = {
             },
             {
               spec = "Beast Mastery",
+              specId = 253,
               hero = "Dark Ranger",
               label = "Wildspeaker",
               importString = "C0PAAAAAAAAAAAAAAAAAAAAAAYzsNwAGwMsBMWAAwMjlZmhZYmZGMjZmZYGzMjZmZsNzMmxMsMmZGAAAAAzAAAAjxwMDwghZBsNA",
@@ -9501,6 +10592,7 @@ ZugZugData = {
             },
             {
               spec = "Marksmanship",
+              specId = 254,
               hero = "Sentinel",
               label = "Focused Aim",
               importString = "C4PAAAAAAAAAAAAAAAAAAAAAAwCMwMGzYZAMD2AAAAAAAAAmxMzM2mxMzYGWGzMjZMz22mZmhZGmZWGjlhZGAAAjxAwMjNGGgNGA",
@@ -9511,6 +10603,7 @@ ZugZugData = {
             },
             {
               spec = "Marksmanship",
+              specId = 254,
               hero = "Sentinel",
               label = "Precision Detonation",
               importString = "C4PAAAAAAAAAAAAAAAAAAAAAAwCMwMGzYZAMD2AAAAAAAAAmxMzM2MmZGzw2YmZMYW2MzMjZmZmZmFGLDzMAAAzYMAMzYDMAbMzMD",
@@ -9521,6 +10614,7 @@ ZugZugData = {
             },
             {
               spec = "Survival",
+              specId = 255,
               hero = "Sentinel",
               label = "Explosives Expert",
               importString = "C8PAAAAAAAAAAAAAAAAAAAAAAMWgBmxYGLDgZAbmZmZMzsMAAAAAAYGzMzwMGzYGMmZGAAAAGAYssNzMbmZmhZMGAmhNGGjZmNDA",
@@ -9539,6 +10633,7 @@ ZugZugData = {
           heroic = {
             {
               spec = "Devourer",
+              specId = nil,
               hero = "Annihilator",
               label = "Eradicate",
               importString = "CgcBAAAAAAAAAAAAAAAAAAAAAAA2mxMzMzMzMGmBAAAAAAgxsNYGAAAAAAAAmxMMzMzMzMzMDzsYGjFjFmZmZ2mtZmZAMMAAMjBjZA",
@@ -9559,6 +10654,7 @@ ZugZugData = {
             },
             {
               spec = "Havoc",
+              specId = 577,
               hero = "Fel-Scarred",
               label = "Isolated Prey",
               importString = "CEkAAAAAAAAAAAAAAAAAAAAAAYmZGzMz2MmZmZmZmBzMAAAAAAgZzY2mhZGMzYb2mZmxYMsMw2sYGDzGzMmZGDbAAAAAAAAMzgBAAAgB",
@@ -9568,6 +10664,7 @@ ZugZugData = {
             },
             {
               spec = "Havoc",
+              specId = 577,
               hero = "Fel-Scarred",
               label = "Infernal Armor",
               importString = "CEkAAAAAAAAAAAAAAAAAAAAAAYmZmZmZ2mxMzMGzMGzMAAAAAAgZxYMzYmZ2GzYb2GzwYYsMw2sZGDzGzMmZGDbAAAAAAAAMzgBAAAgB",
@@ -9577,6 +10674,7 @@ ZugZugData = {
             },
             {
               spec = "Havoc",
+              specId = 577,
               hero = "Aldrachi Reaver",
               label = "Shattered Destiny",
               importString = "CEkAAAAAAAAAAAAAAAAAAAAAAYGMzMz2MmZmZmZmxYmBAAAAAAMbzMjZgZ2mZGLz2YGLjZMWmZbGMMW2YGMmZMsAAAAAAAAmZAGAAAAG",
@@ -9586,6 +10684,7 @@ ZugZugData = {
             },
             {
               spec = "Devourer",
+              specId = nil,
               hero = "Void-Scarred",
               label = "Soul Glutton",
               importString = "CgcBAAAAAAAAAAAAAAAAAAAAAAA2MmZmZmZmxwMAAAAAAAmxsNYGAAAAAAAAmxMMmZmZMzMjZmtZGjNzyCAAMAzYmZWmZmZ2mZbmZMMDA",
@@ -9595,6 +10694,7 @@ ZugZugData = {
             },
             {
               spec = "Devourer",
+              specId = nil,
               hero = "Void-Scarred",
               label = "Set Fire to the Pain",
               importString = "CgcBAAAAAAAAAAAAAAAAAAAAAAA2MmZmZmZmBzMAAAAAAALzYMYGAAAAAAAAmxgZmZmZMzMDzsYGjNjFAAAwMmZmlZmZmtZWmZGMmB",
@@ -9606,6 +10706,7 @@ ZugZugData = {
           mythic = {
             {
               spec = "Devourer",
+              specId = nil,
               hero = "Annihilator",
               label = "Eradicate",
               importString = "CgcBAAAAAAAAAAAAAAAAAAAAAAA2mxMzMzMzMGmBAAAAAAgxsNYGAAAAAAAAmxMMzMzMzMzMDzsYGjFjFmZmZ2mtZmZAMMAAMjBjZA",
@@ -9626,6 +10727,7 @@ ZugZugData = {
             },
             {
               spec = "Havoc",
+              specId = 577,
               hero = "Fel-Scarred",
               label = "Isolated Prey",
               importString = "CEkAAAAAAAAAAAAAAAAAAAAAAYmZGzMz2MmZmZmZmBzMAAAAAAgZzY2mhZGMzYb2mZmxYMsMw2sYGDzGzMmZGDbAAAAAAAAMzgBAAAgB",
@@ -9635,6 +10737,7 @@ ZugZugData = {
             },
             {
               spec = "Havoc",
+              specId = 577,
               hero = "Fel-Scarred",
               label = "Infernal Armor",
               importString = "CEkAAAAAAAAAAAAAAAAAAAAAAYmZmZmZ2mxMzMGzMGzMAAAAAAgZxYMzYmZ2GzYb2GzwYYsMw2sZGDzGzMmZGDbAAAAAAAAMzgBAAAgB",
@@ -9644,6 +10747,7 @@ ZugZugData = {
             },
             {
               spec = "Havoc",
+              specId = 577,
               hero = "Aldrachi Reaver",
               label = "Shattered Destiny",
               importString = "CEkAAAAAAAAAAAAAAAAAAAAAAYGMzMz2MmZmZmZmxYmBAAAAAAMbzMjZgZ2mZGLz2YGLjZMWmZbGMMW2YGMmZMsAAAAAAAAmZAGAAAAG",
@@ -9653,6 +10757,7 @@ ZugZugData = {
             },
             {
               spec = "Devourer",
+              specId = nil,
               hero = "Void-Scarred",
               label = "Soul Glutton",
               importString = "CgcBAAAAAAAAAAAAAAAAAAAAAAA2MmZmZmZmxwMAAAAAAAmxsNYGAAAAAAAAmxMMmZmZMzMjZmtZGjNzyCAAMAzYmZWmZmZ2mZbmZMMDA",
@@ -9662,6 +10767,7 @@ ZugZugData = {
             },
             {
               spec = "Devourer",
+              specId = nil,
               hero = "Void-Scarred",
               label = "Set Fire to the Pain",
               importString = "CgcBAAAAAAAAAAAAAAAAAAAAAAA2MmZmZmZmBzMAAAAAAALzYMYGAAAAAAAAmxgZmZmZMzMDzsYGjNjFAAAwMmZmlZmZmtZWmZGMmB",
@@ -9675,6 +10781,7 @@ ZugZugData = {
           all = {
             {
               spec = "Devourer",
+              specId = nil,
               hero = "Annihilator",
               label = "Midnight",
               importString = "CgcBAAAAAAAAAAAAAAAAAAAAAAA2mxMzMzYmxwMAAAAAAAMmthZGAAAAAAAAmxMMzMzMzMzMDzsYGjFjFmZmZ2mtZmZAMMAAMjBjZA",
@@ -9695,6 +10802,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Infernal Armor",
+                      talentId = 112924,
                       dungeonPct = 20,
                       baselinePct = 11,
                     },
@@ -9702,6 +10810,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Swallowed Anger",
+                      talentId = 112925,
                       dungeonPct = 39,
                       baselinePct = 52,
                     },
@@ -9711,6 +10820,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Burn It Out",
+                      talentId = 112837,
                       dungeonPct = 78,
                       baselinePct = 25,
                     },
@@ -9718,6 +10828,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Soul Cleanse",
+                      talentId = 136502,
                       dungeonPct = 21,
                       baselinePct = 69,
                     },
@@ -9727,6 +10838,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Soul Cleanse",
+                      talentId = 136502,
                       dungeonPct = 86,
                       baselinePct = 69,
                     },
@@ -9734,6 +10846,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Burn It Out",
+                      talentId = 112837,
                       dungeonPct = 13,
                       baselinePct = 25,
                     },
@@ -9743,6 +10856,7 @@ ZugZugData = {
             },
             {
               spec = "Havoc",
+              specId = 577,
               hero = "Fel-Scarred",
               label = "Inertia",
               importString = "CEkAAAAAAAAAAAAAAAAAAAAAAYmZmZmZ2mxMzMGzMGzMAAAAAAgZxY2mhZGYGbz2MzMGDsMw2sZGDzCzMmZGzYDAAAYAAAAMzgBAAAgB",
@@ -9754,6 +10868,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Burn It Out",
+                      talentId = 112837,
                       dungeonPct = 39,
                       baselinePct = 15,
                     },
@@ -9761,6 +10876,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Soul Cleanse",
+                      talentId = 136502,
                       dungeonPct = 61,
                       baselinePct = 84,
                     },
@@ -9770,6 +10886,7 @@ ZugZugData = {
             },
             {
               spec = "Havoc",
+              specId = 577,
               hero = "Aldrachi Reaver",
               label = "Essence Break",
               importString = "CEkAAAAAAAAAAAAAAAAAAAAAAYGMzMz2MmZmZGzMGzMAAAAAAgZzY2mhZmZbmZsMbzMDzMMWmZbGMM22YGMmZMsAAAAAAAAmZAGAAAAG",
@@ -9780,6 +10897,7 @@ ZugZugData = {
             },
             {
               spec = "Havoc",
+              specId = 577,
               hero = "Fel-Scarred",
               label = "Collective Anguish",
               importString = "CEkAAAAAAAAAAAAAAAAAAAAAAYmZGzMz2MmZmZGzMGmBAAAAAAMbGz2YMzAzYZ2MzMbjxwyALzmZMMbMzYmZMsBAAAMAAAAmZwAAAAwA",
@@ -9792,6 +10910,7 @@ ZugZugData = {
           ["15+"] = {
             {
               spec = "Devourer",
+              specId = nil,
               hero = "Annihilator",
               label = "Midnight",
               importString = "CgcBAAAAAAAAAAAAAAAAAAAAAAA2mxMzMzYmxwMAAAAAAAMmthZGAAAAAAAAmxMMzMzMzMzMDzsYGjFjFmZmZ2mtZmZAMMAAMjBjZA",
@@ -9812,6 +10931,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Infernal Armor",
+                      talentId = 112924,
                       dungeonPct = 20,
                       baselinePct = 11,
                     },
@@ -9819,6 +10939,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Swallowed Anger",
+                      talentId = 112925,
                       dungeonPct = 39,
                       baselinePct = 52,
                     },
@@ -9828,6 +10949,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Burn It Out",
+                      talentId = 112837,
                       dungeonPct = 78,
                       baselinePct = 25,
                     },
@@ -9835,6 +10957,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Soul Cleanse",
+                      talentId = 136502,
                       dungeonPct = 21,
                       baselinePct = 69,
                     },
@@ -9844,6 +10967,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Soul Cleanse",
+                      talentId = 136502,
                       dungeonPct = 86,
                       baselinePct = 69,
                     },
@@ -9851,6 +10975,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Burn It Out",
+                      talentId = 112837,
                       dungeonPct = 13,
                       baselinePct = 25,
                     },
@@ -9860,6 +10985,7 @@ ZugZugData = {
             },
             {
               spec = "Havoc",
+              specId = 577,
               hero = "Fel-Scarred",
               label = "Inertia",
               importString = "CEkAAAAAAAAAAAAAAAAAAAAAAYmZmZmZ2mxMzMGzMGzMAAAAAAgZxY2mhZGYGbz2MzMGDsMw2sZGDzCzMmZGzYDAAAYAAAAMzgBAAAgB",
@@ -9871,6 +10997,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Burn It Out",
+                      talentId = 112837,
                       dungeonPct = 39,
                       baselinePct = 15,
                     },
@@ -9878,6 +11005,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Soul Cleanse",
+                      talentId = 136502,
                       dungeonPct = 61,
                       baselinePct = 84,
                     },
@@ -9887,6 +11015,7 @@ ZugZugData = {
             },
             {
               spec = "Havoc",
+              specId = 577,
               hero = "Aldrachi Reaver",
               label = "Essence Break",
               importString = "CEkAAAAAAAAAAAAAAAAAAAAAAYGMzMz2MmZmZGzMGzMAAAAAAgZzY2mhZmZbmZsMbzMDzMMWmZbGMM22YGMmZMsAAAAAAAAmZAGAAAAG",
@@ -9897,6 +11026,7 @@ ZugZugData = {
             },
             {
               spec = "Havoc",
+              specId = 577,
               hero = "Fel-Scarred",
               label = "Collective Anguish",
               importString = "CEkAAAAAAAAAAAAAAAAAAAAAAYmZGzMz2MmZmZGzMGmBAAAAAAMbGz2YMzAzYZ2MzMbjxwyALzmZMMbMzYmZMsBAAAMAAAAmZwAAAAwA",
@@ -9909,6 +11039,7 @@ ZugZugData = {
           ["18+"] = {
             {
               spec = "Devourer",
+              specId = nil,
               hero = "Annihilator",
               label = "Midnight",
               importString = "CgcBAAAAAAAAAAAAAAAAAAAAAAA2mxMzMzYmxwMAAAAAAAMmthZGAAAAAAAAmxMMzMzMzMzMDzsYGjFjFmZmZ2mtZmZAMMAAMjBjZA",
@@ -9929,6 +11060,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Infernal Armor",
+                      talentId = 112924,
                       dungeonPct = 20,
                       baselinePct = 11,
                     },
@@ -9936,6 +11068,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Swallowed Anger",
+                      talentId = 112925,
                       dungeonPct = 39,
                       baselinePct = 52,
                     },
@@ -9945,6 +11078,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Burn It Out",
+                      talentId = 112837,
                       dungeonPct = 78,
                       baselinePct = 25,
                     },
@@ -9952,6 +11086,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Soul Cleanse",
+                      talentId = 136502,
                       dungeonPct = 21,
                       baselinePct = 69,
                     },
@@ -9961,6 +11096,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Soul Cleanse",
+                      talentId = 136502,
                       dungeonPct = 86,
                       baselinePct = 69,
                     },
@@ -9968,6 +11104,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Burn It Out",
+                      talentId = 112837,
                       dungeonPct = 13,
                       baselinePct = 25,
                     },
@@ -9977,6 +11114,7 @@ ZugZugData = {
             },
             {
               spec = "Havoc",
+              specId = 577,
               hero = "Fel-Scarred",
               label = "Inertia",
               importString = "CEkAAAAAAAAAAAAAAAAAAAAAAYmZmZmZ2mxMzMGzMGzMAAAAAAgZxY2mhZGYGbz2MzMGDsMw2sZGDzCzMmZGzYDAAAYAAAAMzgBAAAgB",
@@ -9988,6 +11126,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Burn It Out",
+                      talentId = 112837,
                       dungeonPct = 39,
                       baselinePct = 15,
                     },
@@ -9995,6 +11134,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Soul Cleanse",
+                      talentId = 136502,
                       dungeonPct = 61,
                       baselinePct = 84,
                     },
@@ -10004,6 +11144,7 @@ ZugZugData = {
             },
             {
               spec = "Havoc",
+              specId = 577,
               hero = "Aldrachi Reaver",
               label = "Essence Break",
               importString = "CEkAAAAAAAAAAAAAAAAAAAAAAYGMzMz2MmZmZGzMGzMAAAAAAgZzY2mhZmZbmZsMbzMDzMMWmZbGMM22YGMmZMsAAAAAAAAmZAGAAAAG",
@@ -10014,6 +11155,7 @@ ZugZugData = {
             },
             {
               spec = "Havoc",
+              specId = 577,
               hero = "Fel-Scarred",
               label = "Collective Anguish",
               importString = "CEkAAAAAAAAAAAAAAAAAAAAAAYmZGzMz2MmZmZGzMGmBAAAAAAMbGz2YMzAzYZ2MzMbjxwyALzmZMMbMzYmZMsBAAAMAAAAmZwAAAAwA",
@@ -10026,6 +11168,7 @@ ZugZugData = {
           ["20+"] = {
             {
               spec = "Devourer",
+              specId = nil,
               hero = "Annihilator",
               label = "Midnight",
               importString = "CgcBAAAAAAAAAAAAAAAAAAAAAAA2mxMzMzYmxwMAAAAAAAMmthZGAAAAAAAAmxMMzMzMzMzMDzsYGjFjFmZmZ2mtZmZAMMAAMjBjZA",
@@ -10046,6 +11189,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Infernal Armor",
+                      talentId = 112924,
                       dungeonPct = 20,
                       baselinePct = 11,
                     },
@@ -10053,6 +11197,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Swallowed Anger",
+                      talentId = 112925,
                       dungeonPct = 39,
                       baselinePct = 52,
                     },
@@ -10062,6 +11207,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Burn It Out",
+                      talentId = 112837,
                       dungeonPct = 78,
                       baselinePct = 25,
                     },
@@ -10069,6 +11215,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Soul Cleanse",
+                      talentId = 136502,
                       dungeonPct = 21,
                       baselinePct = 69,
                     },
@@ -10078,6 +11225,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Soul Cleanse",
+                      talentId = 136502,
                       dungeonPct = 86,
                       baselinePct = 69,
                     },
@@ -10085,6 +11233,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Burn It Out",
+                      talentId = 112837,
                       dungeonPct = 13,
                       baselinePct = 25,
                     },
@@ -10094,6 +11243,7 @@ ZugZugData = {
             },
             {
               spec = "Havoc",
+              specId = 577,
               hero = "Fel-Scarred",
               label = "Inertia",
               importString = "CEkAAAAAAAAAAAAAAAAAAAAAAYmZmZmZ2mxMzMGzMGzMAAAAAAgZxY2mhZGYGbz2MzMGDsMw2sZGDzCzMmZGzYDAAAYAAAAMzgBAAAgB",
@@ -10105,6 +11255,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Burn It Out",
+                      talentId = 112837,
                       dungeonPct = 39,
                       baselinePct = 15,
                     },
@@ -10112,6 +11263,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Soul Cleanse",
+                      talentId = 136502,
                       dungeonPct = 61,
                       baselinePct = 84,
                     },
@@ -10121,6 +11273,7 @@ ZugZugData = {
             },
             {
               spec = "Havoc",
+              specId = 577,
               hero = "Aldrachi Reaver",
               label = "Essence Break",
               importString = "CEkAAAAAAAAAAAAAAAAAAAAAAYGMzMz2MmZmZGzMGzMAAAAAAgZzY2mhZmZbmZsMbzMDzMMWmZbGMM22YGMmZMsAAAAAAAAmZAGAAAAG",
@@ -10131,6 +11284,7 @@ ZugZugData = {
             },
             {
               spec = "Havoc",
+              specId = 577,
               hero = "Fel-Scarred",
               label = "Collective Anguish",
               importString = "CEkAAAAAAAAAAAAAAAAAAAAAAYmZGzMz2MmZmZGzMGmBAAAAAAMbGz2YMzAzYZ2MzMbjxwyALzmZMMbMzYmZMsBAAAMAAAAmZwAAAAwA",
@@ -10147,6 +11301,7 @@ ZugZugData = {
           heroic = {
             {
               spec = "Vengeance",
+              specId = 581,
               hero = "Annihilator",
               label = "Soul Carver",
               importString = "CUkAAAAAAAAAAAAAAAAAAAAAAAAYMzMjZmZMmZmhZxMzMGmxMjZMjZmhZYGbzMjxAAAAAAAAAmZGbAAAAYwYmZmZZ2mZmBAGAAAAD",
@@ -10166,6 +11321,7 @@ ZugZugData = {
             },
             {
               spec = "Vengeance",
+              specId = 581,
               hero = "Annihilator",
               label = "Painbringer",
               importString = "CUkAAAAAAAAAAAAAAAAAAAAAAAAMjZmZmhZMmZGMLmxMYmxMjZmZmZMY2mZsNzMbjhBAAAAAAAgZG2AAAAwAzMzMz2sNzMDAAAAAwA",
@@ -10177,6 +11333,7 @@ ZugZugData = {
             },
             {
               spec = "Vengeance",
+              specId = 581,
               hero = "Annihilator",
               label = "Sigil of Chains",
               importString = "CUkAAAAAAAAAAAAAAAAAAAAAAAAYMzMjZmxMmZGmZxMmBzMmZMjZmZMYWmZsZmxYAAAAAAAAAzMzsBAAAgBzMzMzsNbzMzAADAAAgB",
@@ -10188,6 +11345,7 @@ ZugZugData = {
           mythic = {
             {
               spec = "Vengeance",
+              specId = 581,
               hero = "Annihilator",
               label = "Soul Carver",
               importString = "CUkAAAAAAAAAAAAAAAAAAAAAAAAYMzMjZmZMmZmhZxMzMGmxMjZMjZmhZYGbzMjxAAAAAAAAAmZGbAAAAYwYmZmZZ2mZmBAGAAAAD",
@@ -10207,6 +11365,7 @@ ZugZugData = {
             },
             {
               spec = "Vengeance",
+              specId = 581,
               hero = "Annihilator",
               label = "Painbringer",
               importString = "CUkAAAAAAAAAAAAAAAAAAAAAAAAMjZmZmhZMmZGMLmxMYmxMjZmZmZMY2mZsNzMbjhBAAAAAAAgZG2AAAAwAzMzMz2sNzMDAAAAAwA",
@@ -10218,6 +11377,7 @@ ZugZugData = {
             },
             {
               spec = "Vengeance",
+              specId = 581,
               hero = "Annihilator",
               label = "Sigil of Chains",
               importString = "CUkAAAAAAAAAAAAAAAAAAAAAAAAYMzMjZmxMmZGmZxMmBzMmZMjZmZMYWmZsZmxYAAAAAAAAAzMzsBAAAgBzMzMzsNbzMzAADAAAgB",
@@ -10231,6 +11391,7 @@ ZugZugData = {
           all = {
             {
               spec = "Vengeance",
+              specId = 581,
               hero = "Annihilator",
               label = "Fel Flame Fortification",
               importString = "CUkAAAAAAAAAAAAAAAAAAAAAAAAMjZmZmhZMmZGMLmxMYmxMjZmZmZMY2mZsNzMbjhBAAAAAAAgZG2AAAAwAzMzMz2sNzMDAAAAAwA",
@@ -10251,6 +11412,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Consume Magic",
+                      talentId = 112926,
                       dungeonPct = 65,
                       baselinePct = 52,
                     },
@@ -10258,6 +11420,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Furious",
+                      talentId = 117762,
                       dungeonPct = 80,
                       baselinePct = 83,
                     },
@@ -10267,6 +11430,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Burn It Out",
+                      talentId = 112837,
                       dungeonPct = 47,
                       baselinePct = 24,
                     },
@@ -10274,6 +11438,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Erratic Felheart",
+                      talentId = 112914,
                       dungeonPct = 50,
                       baselinePct = 54,
                     },
@@ -10283,6 +11448,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Burn It Out",
+                      talentId = 112837,
                       dungeonPct = 38,
                       baselinePct = 24,
                     },
@@ -10290,6 +11456,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Imprison",
+                      talentId = 112927,
                       dungeonPct = 83,
                       baselinePct = 88,
                     },
@@ -10299,6 +11466,7 @@ ZugZugData = {
             },
             {
               spec = "Vengeance",
+              specId = 581,
               hero = "Aldrachi Reaver",
               label = "Volatile Flameblood",
               importString = "CUkAAAAAAAAAAAAAAAAAAAAAAAA2mxMzMGmxYmZgFzYGMzYmxMzMzMGmZbmxmZmtxYGAAAAmtZwwYZjZwwMGLAAAAYgBAAzMADAAAgB",
@@ -10309,6 +11477,7 @@ ZugZugData = {
             },
             {
               spec = "Vengeance",
+              specId = 581,
               hero = "Annihilator",
               label = "Sigil of Chains",
               importString = "CUkAAAAAAAAAAAAAAAAAAAAAAAAWmxMzMGzMzYmZMjlZmZGMDzMmxYmxgZbmxmZmtxwAAAAAAAAwMzYDAAAAgZmZmZZ2mZmBAAAAAYA",
@@ -10321,6 +11490,7 @@ ZugZugData = {
           ["15+"] = {
             {
               spec = "Vengeance",
+              specId = 581,
               hero = "Annihilator",
               label = "Fel Flame Fortification",
               importString = "CUkAAAAAAAAAAAAAAAAAAAAAAAAMjZmZmhZMmZGMLmxMYmxMjZmZmZMY2mZsNzMbjhBAAAAAAAgZG2AAAAwAzMzMz2sNzMDAAAAAwA",
@@ -10341,6 +11511,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Consume Magic",
+                      talentId = 112926,
                       dungeonPct = 65,
                       baselinePct = 52,
                     },
@@ -10348,6 +11519,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Furious",
+                      talentId = 117762,
                       dungeonPct = 80,
                       baselinePct = 83,
                     },
@@ -10357,6 +11529,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Burn It Out",
+                      talentId = 112837,
                       dungeonPct = 47,
                       baselinePct = 24,
                     },
@@ -10364,6 +11537,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Erratic Felheart",
+                      talentId = 112914,
                       dungeonPct = 50,
                       baselinePct = 54,
                     },
@@ -10373,6 +11547,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Burn It Out",
+                      talentId = 112837,
                       dungeonPct = 38,
                       baselinePct = 24,
                     },
@@ -10380,6 +11555,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Imprison",
+                      talentId = 112927,
                       dungeonPct = 83,
                       baselinePct = 88,
                     },
@@ -10389,6 +11565,7 @@ ZugZugData = {
             },
             {
               spec = "Vengeance",
+              specId = 581,
               hero = "Aldrachi Reaver",
               label = "Volatile Flameblood",
               importString = "CUkAAAAAAAAAAAAAAAAAAAAAAAA2mxMzMGmxYmZgFzYGMzYmxMzMzMGmZbmxmZmtxYGAAAAmtZwwYZjZwwMGLAAAAYgBAAzMADAAAgB",
@@ -10399,6 +11576,7 @@ ZugZugData = {
             },
             {
               spec = "Vengeance",
+              specId = 581,
               hero = "Annihilator",
               label = "Sigil of Chains",
               importString = "CUkAAAAAAAAAAAAAAAAAAAAAAAAWmxMzMGzMzYmZMjlZmZGMDzMmxYmxgZbmxmZmtxwAAAAAAAAwMzYDAAAAgZmZmZZ2mZmBAAAAAYA",
@@ -10411,6 +11589,7 @@ ZugZugData = {
           ["18+"] = {
             {
               spec = "Vengeance",
+              specId = 581,
               hero = "Annihilator",
               label = "Fel Flame Fortification",
               importString = "CUkAAAAAAAAAAAAAAAAAAAAAAAAMjZmZmhZMmZGMLmxMYmxMjZmZmZMY2mZsNzMbjhBAAAAAAAgZG2AAAAwAzMzMz2sNzMDAAAAAwA",
@@ -10431,6 +11610,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Consume Magic",
+                      talentId = 112926,
                       dungeonPct = 65,
                       baselinePct = 52,
                     },
@@ -10438,6 +11618,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Furious",
+                      talentId = 117762,
                       dungeonPct = 80,
                       baselinePct = 83,
                     },
@@ -10447,6 +11628,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Burn It Out",
+                      talentId = 112837,
                       dungeonPct = 47,
                       baselinePct = 24,
                     },
@@ -10454,6 +11636,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Erratic Felheart",
+                      talentId = 112914,
                       dungeonPct = 50,
                       baselinePct = 54,
                     },
@@ -10463,6 +11646,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Burn It Out",
+                      talentId = 112837,
                       dungeonPct = 38,
                       baselinePct = 24,
                     },
@@ -10470,6 +11654,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Imprison",
+                      talentId = 112927,
                       dungeonPct = 83,
                       baselinePct = 88,
                     },
@@ -10479,6 +11664,7 @@ ZugZugData = {
             },
             {
               spec = "Vengeance",
+              specId = 581,
               hero = "Aldrachi Reaver",
               label = "Volatile Flameblood",
               importString = "CUkAAAAAAAAAAAAAAAAAAAAAAAA2mxMzMGmxYmZgFzYGMzYmxMzMzMGmZbmxmZmtxYGAAAAmtZwwYZjZwwMGLAAAAYgBAAzMADAAAgB",
@@ -10489,6 +11675,7 @@ ZugZugData = {
             },
             {
               spec = "Vengeance",
+              specId = 581,
               hero = "Annihilator",
               label = "Sigil of Chains",
               importString = "CUkAAAAAAAAAAAAAAAAAAAAAAAAWmxMzMGzMzYmZMjlZmZGMDzMmxYmxgZbmxmZmtxwAAAAAAAAwMzYDAAAAgZmZmZZ2mZmBAAAAAYA",
@@ -10501,6 +11688,7 @@ ZugZugData = {
           ["20+"] = {
             {
               spec = "Vengeance",
+              specId = 581,
               hero = "Annihilator",
               label = "Fel Flame Fortification",
               importString = "CUkAAAAAAAAAAAAAAAAAAAAAAAAMjZmZmhZMmZGMLmxMYmxMjZmZmZMY2mZsNzMbjhBAAAAAAAgZG2AAAAwAzMzMz2sNzMDAAAAAwA",
@@ -10521,6 +11709,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Consume Magic",
+                      talentId = 112926,
                       dungeonPct = 65,
                       baselinePct = 52,
                     },
@@ -10528,6 +11717,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Furious",
+                      talentId = 117762,
                       dungeonPct = 80,
                       baselinePct = 83,
                     },
@@ -10537,6 +11727,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Burn It Out",
+                      talentId = 112837,
                       dungeonPct = 47,
                       baselinePct = 24,
                     },
@@ -10544,6 +11735,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Erratic Felheart",
+                      talentId = 112914,
                       dungeonPct = 50,
                       baselinePct = 54,
                     },
@@ -10553,6 +11745,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Burn It Out",
+                      talentId = 112837,
                       dungeonPct = 38,
                       baselinePct = 24,
                     },
@@ -10560,6 +11753,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Imprison",
+                      talentId = 112927,
                       dungeonPct = 83,
                       baselinePct = 88,
                     },
@@ -10569,6 +11763,7 @@ ZugZugData = {
             },
             {
               spec = "Vengeance",
+              specId = 581,
               hero = "Aldrachi Reaver",
               label = "Volatile Flameblood",
               importString = "CUkAAAAAAAAAAAAAAAAAAAAAAAA2mxMzMGmxYmZgFzYGMzYmxMzMzMGmZbmxmZmtxYGAAAAmtZwwYZjZwwMGLAAAAYgBAAzMADAAAgB",
@@ -10579,6 +11774,7 @@ ZugZugData = {
             },
             {
               spec = "Vengeance",
+              specId = 581,
               hero = "Annihilator",
               label = "Sigil of Chains",
               importString = "CUkAAAAAAAAAAAAAAAAAAAAAAAAWmxMzMGzMzYmZMjlZmZGMDzMmxYmxgZbmxmZmtxwAAAAAAAAwMzYDAAAAgZmZmZZ2mZmBAAAAAYA",
@@ -10597,6 +11793,7 @@ ZugZugData = {
           heroic = {
             {
               spec = "Devastation",
+              specId = 1467,
               hero = "Scalecommander",
               label = "Strafing Run",
               importString = "CsbBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAzMDMDzYmBMYMzMzMzMzYsNjZmZmZmZmBMjZMmZWmZGYgxgFYZMmx2AYGA2wAzMYYA",
@@ -10612,6 +11809,7 @@ ZugZugData = {
             },
             {
               spec = "Augmentation",
+              specId = 1473,
               hero = "Chronowarden",
               label = "Tomorrow, Today",
               importString = "CEcBAAAAAAAAAAAAAAAAAAAAAMmZmZbmZGMYmZZGjhZ2AAAAAgBAAzMDMYMzMmZmBAAAAzYmZMzsMmZgZWMwYGLsADMDDzALYmxMDAM",
@@ -10626,6 +11824,7 @@ ZugZugData = {
             },
             {
               spec = "Augmentation",
+              specId = 1473,
               hero = "Scalecommander",
               label = "Regenerative Chitin",
               importString = "CEcBAAAAAAAAAAAAAAAAAAAAAMmZmZbmZmxyAzsMjxwMAAAAAgBAAzMDMYMzMmZmBAAAAzYmZMzsMmZgZ2MGsALjhx2AYGMshZGYmBwA",
@@ -10637,6 +11836,7 @@ ZugZugData = {
             },
             {
               spec = "Devastation",
+              specId = 1467,
               hero = "Flameshaper",
               label = "Iridescence",
               importString = "CsbBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZmZwMDGMgBjZmZmZmxYsMzMzMMzMzMgZMzMmZWmZGMDMjZgNwCYGmBsBWGGAzMDD",
@@ -10646,6 +11846,7 @@ ZugZugData = {
             },
             {
               spec = "Augmentation",
+              specId = 1473,
               hero = "Scalecommander",
               label = "Bestow Weyrnstone",
               importString = "CEcBAAAAAAAAAAAAAAAAAAAAAwMzMbzMzgBzMLzYMMzGAAAAAAAAmhZGYMzMmZmBAAAAmZmZMzsMmZgZ2mxgFYZMMWGAzghNMzMYmBwA",
@@ -10655,6 +11856,7 @@ ZugZugData = {
             },
             {
               spec = "Devastation",
+              specId = 1467,
               hero = "Flameshaper",
               label = "Feed the Flames",
               importString = "CsbBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZGjZmZmZGzMwMGDzMMzMGjlhZmhxMzMgZmZMmZMzMYGYGzALgNwMMDYDsMMDwMzwA",
@@ -10666,6 +11868,7 @@ ZugZugData = {
           mythic = {
             {
               spec = "Devastation",
+              specId = 1467,
               hero = "Scalecommander",
               label = "Strafing Run",
               importString = "CsbBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAzMDMDzYmBMYMzMzMzMzYsNjZmZmZmZmBMjZMmZWmZGYgxgFYZMmx2AYGA2wAzMYYA",
@@ -10678,6 +11881,7 @@ ZugZugData = {
             },
             {
               spec = "Augmentation",
+              specId = 1473,
               hero = "Chronowarden",
               label = "Tomorrow, Today",
               importString = "CEcBAAAAAAAAAAAAAAAAAAAAAMmZmZbmZGMYmZZGjhZ2AAAAAgBAAzMDMYMzMmZmBAAAAzYmZMzsMmZgZWMwYGLsADMDDzALYmxMDAM",
@@ -10694,6 +11898,7 @@ ZugZugData = {
             },
             {
               spec = "Augmentation",
+              specId = 1473,
               hero = "Scalecommander",
               label = "Regenerative Chitin",
               importString = "CEcBAAAAAAAAAAAAAAAAAAAAAMmZmZbmZmxyAzsMjxwMAAAAAgBAAzMDMYMzMmZmBAAAAzYmZMzsMmZgZ2MGsALjhx2AYGMshZGYmBwA",
@@ -10706,6 +11911,7 @@ ZugZugData = {
             },
             {
               spec = "Devastation",
+              specId = 1467,
               hero = "Flameshaper",
               label = "Iridescence",
               importString = "CsbBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZmZwMDGMgBjZmZmZmxYsMzMzMMzMzMgZMzMmZWmZGMDMjZgNwCYGmBsBWGGAzMDD",
@@ -10715,6 +11921,7 @@ ZugZugData = {
             },
             {
               spec = "Augmentation",
+              specId = 1473,
               hero = "Scalecommander",
               label = "Bestow Weyrnstone",
               importString = "CEcBAAAAAAAAAAAAAAAAAAAAAwMzMbzMzgBzMLzYMMzGAAAAAAAAmhZGYMzMmZmBAAAAmZmZMzsMmZgZ2mxgFYZMMWGAzghNMzMYmBwA",
@@ -10724,6 +11931,7 @@ ZugZugData = {
             },
             {
               spec = "Devastation",
+              specId = 1467,
               hero = "Flameshaper",
               label = "Feed the Flames",
               importString = "CsbBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZGjZmZmZGzMwMGDzMMzMGjlhZmhxMzMgZmZMmZMzMYGYGzALgNwMMDYDsMMDwMzwA",
@@ -10737,6 +11945,7 @@ ZugZugData = {
           all = {
             {
               spec = "Augmentation",
+              specId = 1473,
               hero = "Scalecommander",
               label = "Overlord",
               importString = "CEcBAAAAAAAAAAAAAAAAAAAAAgZmZbMzgZYmZZGzMjZ2AAAAAAAAwMMzYGjZmxMzMAAAAwMzYMzsMmZgZ2mxgFYZMMWGAzghNMmBzMAG",
@@ -10757,11 +11966,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Defy Fate",
+                      talentId = 115493,
                       dungeonPct = 62,
                       baselinePct = 14,
                     },
                     {
                       name = "Terror of the Skies",
+                      talentId = 115656,
                       dungeonPct = 92,
                       baselinePct = 64,
                     },
@@ -10769,11 +11980,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Bestow Weyrnstone",
+                      talentId = 115534,
                       dungeonPct = 36,
                       baselinePct = 86,
                     },
                     {
                       name = "Sleep Walk",
+                      talentId = 115601,
                       dungeonPct = 33,
                       baselinePct = 59,
                     },
@@ -10783,11 +11996,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Sleep Walk",
+                      talentId = 115601,
                       dungeonPct = 80,
                       baselinePct = 59,
                     },
                     {
                       name = "Bestow Weyrnstone",
+                      talentId = 115534,
                       dungeonPct = 100,
                       baselinePct = 86,
                     },
@@ -10795,11 +12010,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Overawe",
+                      talentId = 115606,
                       dungeonPct = 5,
                       baselinePct = 29,
                     },
                     {
                       name = "Oppressing Roar",
+                      talentId = 115607,
                       dungeonPct = 19,
                       baselinePct = 40,
                     },
@@ -10809,16 +12026,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Overlord",
+                      talentId = 115513,
                       dungeonPct = 99,
                       baselinePct = 91,
                     },
                     {
                       name = "Clairvoyant",
+                      talentId = 115528,
                       dungeonPct = 99,
                       baselinePct = 91,
                     },
                     {
                       name = "Motes of Possibility",
+                      talentId = 115531,
                       dungeonPct = 99,
                       baselinePct = 91,
                     },
@@ -10826,16 +12046,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Sleep Walk",
+                      talentId = 115601,
                       dungeonPct = 36,
                       baselinePct = 59,
                     },
                     {
                       name = "Oppressing Roar",
+                      talentId = 115607,
                       dungeonPct = 27,
                       baselinePct = 40,
                     },
                     {
                       name = "Overawe",
+                      talentId = 115606,
                       dungeonPct = 17,
                       baselinePct = 29,
                     },
@@ -10845,11 +12068,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Bestow Weyrnstone",
+                      talentId = 115534,
                       dungeonPct = 99,
                       baselinePct = 86,
                     },
                     {
                       name = "Sleep Walk",
+                      talentId = 115601,
                       dungeonPct = 72,
                       baselinePct = 59,
                     },
@@ -10857,11 +12082,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Overawe",
+                      talentId = 115606,
                       dungeonPct = 5,
                       baselinePct = 29,
                     },
                     {
                       name = "Oppressing Roar",
+                      talentId = 115607,
                       dungeonPct = 18,
                       baselinePct = 40,
                     },
@@ -10871,6 +12098,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Bestow Weyrnstone",
+                      talentId = 115534,
                       dungeonPct = 100,
                       baselinePct = 86,
                     },
@@ -10878,6 +12106,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Sleep Walk",
+                      talentId = 115601,
                       dungeonPct = 28,
                       baselinePct = 59,
                     },
@@ -10887,16 +12116,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Defy Fate",
+                      talentId = 115493,
                       dungeonPct = 33,
                       baselinePct = 14,
                     },
                     {
                       name = "Foci of Life",
+                      talentId = 115660,
                       dungeonPct = 80,
                       baselinePct = 64,
                     },
                     {
                       name = "Forger of Mountains",
+                      talentId = 115576,
                       dungeonPct = 15,
                       baselinePct = 2,
                     },
@@ -10904,16 +12136,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Sleep Walk",
+                      talentId = 115601,
                       dungeonPct = 22,
                       baselinePct = 59,
                     },
                     {
                       name = "Oppressing Roar",
+                      talentId = 115607,
                       dungeonPct = 19,
                       baselinePct = 40,
                     },
                     {
                       name = "Overawe",
+                      talentId = 115606,
                       dungeonPct = 9,
                       baselinePct = 29,
                     },
@@ -10923,16 +12158,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Overawe",
+                      talentId = 115606,
                       dungeonPct = 93,
                       baselinePct = 29,
                     },
                     {
                       name = "Oppressing Roar",
+                      talentId = 115607,
                       dungeonPct = 94,
                       baselinePct = 40,
                     },
                     {
                       name = "Sleep Walk",
+                      talentId = 115601,
                       dungeonPct = 100,
                       baselinePct = 59,
                     },
@@ -10940,16 +12178,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Stretch Time",
+                      talentId = 115617,
                       dungeonPct = 65,
                       baselinePct = 91,
                     },
                     {
                       name = "Foci of Life",
+                      talentId = 115660,
                       dungeonPct = 41,
                       baselinePct = 64,
                     },
                     {
                       name = "Overlord",
+                      talentId = 115513,
                       dungeonPct = 70,
                       baselinePct = 91,
                     },
@@ -10959,16 +12200,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Overawe",
+                      talentId = 115606,
                       dungeonPct = 91,
                       baselinePct = 29,
                     },
                     {
                       name = "Oppressing Roar",
+                      talentId = 115607,
                       dungeonPct = 93,
                       baselinePct = 40,
                     },
                     {
                       name = "Sleep Walk",
+                      talentId = 115601,
                       dungeonPct = 99,
                       baselinePct = 59,
                     },
@@ -10976,16 +12220,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Foci of Life",
+                      talentId = 115660,
                       dungeonPct = 40,
                       baselinePct = 64,
                     },
                     {
                       name = "Enkindled",
+                      talentId = 115603,
                       dungeonPct = 39,
                       baselinePct = 59,
                     },
                     {
                       name = "Attuned to the Dream",
+                      talentId = 115600,
                       dungeonPct = 66,
                       baselinePct = 82,
                     },
@@ -10995,6 +12242,7 @@ ZugZugData = {
             },
             {
               spec = "Devastation",
+              specId = 1467,
               hero = "Flameshaper",
               label = "Trailblazer",
               importString = "CsbBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAzMDmZMzwMwMYMzMjZmxYmlxMzMMmZmBMzMjxMzyYGMDMjZgNwCYGmBsBWGmBYmZYA",
@@ -11005,6 +12253,7 @@ ZugZugData = {
             },
             {
               spec = "Devastation",
+              specId = 1467,
               hero = "Scalecommander",
               label = "Strafing Run",
               importString = "CsbBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAzMDgZGmBGGjZmxMzMzwsNjZmZmZmZmBMzMjxMzyMzADMGsALjxM2GAzAwGmBzMYYA",
@@ -11015,6 +12264,7 @@ ZugZugData = {
             },
             {
               spec = "Devastation",
+              specId = 1467,
               hero = "Flameshaper",
               label = "Feed the Flames",
               importString = "CsbBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZGjZmZmZGMwMYmZmZmZmxYsMmZMMmZmBMzMGmZMzMYGwYGYDsBmhZAbglhZAmZGG",
@@ -11025,6 +12275,7 @@ ZugZugData = {
             },
             {
               spec = "Augmentation",
+              specId = 1473,
               hero = "Scalecommander",
               label = "Mighty Inferno",
               importString = "CEcBAAAAAAAAAAAAAAAAAAAAAMmZmZbmZmhBmZZGjhZ2AAAAAAAAwMjxMYMzMmZmBAAAAmZGjZmtxMDMzmxgFYZMMWGAzghNMzAzMAG",
@@ -11037,6 +12288,7 @@ ZugZugData = {
           ["15+"] = {
             {
               spec = "Augmentation",
+              specId = 1473,
               hero = "Scalecommander",
               label = "Overlord",
               importString = "CEcBAAAAAAAAAAAAAAAAAAAAAgZmZbMzgZYmZZGzMjZ2AAAAAAAAwMMzYGjZmxMzMAAAAwMzYMzsMmZgZ2mxgFYZMMWGAzghNMmBzMAG",
@@ -11057,11 +12309,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Defy Fate",
+                      talentId = 115493,
                       dungeonPct = 62,
                       baselinePct = 14,
                     },
                     {
                       name = "Terror of the Skies",
+                      talentId = 115656,
                       dungeonPct = 92,
                       baselinePct = 64,
                     },
@@ -11069,11 +12323,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Bestow Weyrnstone",
+                      talentId = 115534,
                       dungeonPct = 36,
                       baselinePct = 86,
                     },
                     {
                       name = "Sleep Walk",
+                      talentId = 115601,
                       dungeonPct = 33,
                       baselinePct = 59,
                     },
@@ -11083,11 +12339,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Sleep Walk",
+                      talentId = 115601,
                       dungeonPct = 80,
                       baselinePct = 59,
                     },
                     {
                       name = "Bestow Weyrnstone",
+                      talentId = 115534,
                       dungeonPct = 100,
                       baselinePct = 86,
                     },
@@ -11095,11 +12353,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Overawe",
+                      talentId = 115606,
                       dungeonPct = 5,
                       baselinePct = 29,
                     },
                     {
                       name = "Oppressing Roar",
+                      talentId = 115607,
                       dungeonPct = 19,
                       baselinePct = 40,
                     },
@@ -11109,16 +12369,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Overlord",
+                      talentId = 115513,
                       dungeonPct = 99,
                       baselinePct = 91,
                     },
                     {
                       name = "Clairvoyant",
+                      talentId = 115528,
                       dungeonPct = 99,
                       baselinePct = 91,
                     },
                     {
                       name = "Motes of Possibility",
+                      talentId = 115531,
                       dungeonPct = 99,
                       baselinePct = 91,
                     },
@@ -11126,16 +12389,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Sleep Walk",
+                      talentId = 115601,
                       dungeonPct = 36,
                       baselinePct = 59,
                     },
                     {
                       name = "Oppressing Roar",
+                      talentId = 115607,
                       dungeonPct = 27,
                       baselinePct = 40,
                     },
                     {
                       name = "Overawe",
+                      talentId = 115606,
                       dungeonPct = 17,
                       baselinePct = 29,
                     },
@@ -11145,11 +12411,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Bestow Weyrnstone",
+                      talentId = 115534,
                       dungeonPct = 99,
                       baselinePct = 86,
                     },
                     {
                       name = "Sleep Walk",
+                      talentId = 115601,
                       dungeonPct = 72,
                       baselinePct = 59,
                     },
@@ -11157,11 +12425,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Overawe",
+                      talentId = 115606,
                       dungeonPct = 5,
                       baselinePct = 29,
                     },
                     {
                       name = "Oppressing Roar",
+                      talentId = 115607,
                       dungeonPct = 18,
                       baselinePct = 40,
                     },
@@ -11171,6 +12441,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Bestow Weyrnstone",
+                      talentId = 115534,
                       dungeonPct = 100,
                       baselinePct = 86,
                     },
@@ -11178,6 +12449,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Sleep Walk",
+                      talentId = 115601,
                       dungeonPct = 28,
                       baselinePct = 59,
                     },
@@ -11187,16 +12459,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Defy Fate",
+                      talentId = 115493,
                       dungeonPct = 33,
                       baselinePct = 14,
                     },
                     {
                       name = "Foci of Life",
+                      talentId = 115660,
                       dungeonPct = 80,
                       baselinePct = 64,
                     },
                     {
                       name = "Forger of Mountains",
+                      talentId = 115576,
                       dungeonPct = 15,
                       baselinePct = 2,
                     },
@@ -11204,16 +12479,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Sleep Walk",
+                      talentId = 115601,
                       dungeonPct = 22,
                       baselinePct = 59,
                     },
                     {
                       name = "Oppressing Roar",
+                      talentId = 115607,
                       dungeonPct = 19,
                       baselinePct = 40,
                     },
                     {
                       name = "Overawe",
+                      talentId = 115606,
                       dungeonPct = 9,
                       baselinePct = 29,
                     },
@@ -11223,16 +12501,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Overawe",
+                      talentId = 115606,
                       dungeonPct = 93,
                       baselinePct = 29,
                     },
                     {
                       name = "Oppressing Roar",
+                      talentId = 115607,
                       dungeonPct = 94,
                       baselinePct = 40,
                     },
                     {
                       name = "Sleep Walk",
+                      talentId = 115601,
                       dungeonPct = 100,
                       baselinePct = 59,
                     },
@@ -11240,16 +12521,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Stretch Time",
+                      talentId = 115617,
                       dungeonPct = 65,
                       baselinePct = 91,
                     },
                     {
                       name = "Foci of Life",
+                      talentId = 115660,
                       dungeonPct = 41,
                       baselinePct = 64,
                     },
                     {
                       name = "Overlord",
+                      talentId = 115513,
                       dungeonPct = 70,
                       baselinePct = 91,
                     },
@@ -11259,16 +12543,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Overawe",
+                      talentId = 115606,
                       dungeonPct = 91,
                       baselinePct = 29,
                     },
                     {
                       name = "Oppressing Roar",
+                      talentId = 115607,
                       dungeonPct = 93,
                       baselinePct = 40,
                     },
                     {
                       name = "Sleep Walk",
+                      talentId = 115601,
                       dungeonPct = 99,
                       baselinePct = 59,
                     },
@@ -11276,16 +12563,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Foci of Life",
+                      talentId = 115660,
                       dungeonPct = 40,
                       baselinePct = 64,
                     },
                     {
                       name = "Enkindled",
+                      talentId = 115603,
                       dungeonPct = 39,
                       baselinePct = 59,
                     },
                     {
                       name = "Attuned to the Dream",
+                      talentId = 115600,
                       dungeonPct = 66,
                       baselinePct = 82,
                     },
@@ -11295,6 +12585,7 @@ ZugZugData = {
             },
             {
               spec = "Devastation",
+              specId = 1467,
               hero = "Flameshaper",
               label = "Trailblazer",
               importString = "CsbBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAzMDmZMzwMwMYMzMjZmxYmlxMzMMmZmBMzMjxMzyYGMDMjZgNwCYGmBsBWGmBYmZYA",
@@ -11305,6 +12596,7 @@ ZugZugData = {
             },
             {
               spec = "Devastation",
+              specId = 1467,
               hero = "Scalecommander",
               label = "Strafing Run",
               importString = "CsbBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAzMDgZGmBGGjZmxMzMzwsNjZmZmZmZmBMzMjxMzyMzADMGsALjxM2GAzAwGmBzMYYA",
@@ -11315,6 +12607,7 @@ ZugZugData = {
             },
             {
               spec = "Devastation",
+              specId = 1467,
               hero = "Flameshaper",
               label = "Feed the Flames",
               importString = "CsbBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZGjZmZmZGMwMYmZmZmZmxYsMmZMMmZmBMzMGmZMzMYGwYGYDsBmhZAbglhZAmZGG",
@@ -11325,6 +12618,7 @@ ZugZugData = {
             },
             {
               spec = "Augmentation",
+              specId = 1473,
               hero = "Scalecommander",
               label = "Mighty Inferno",
               importString = "CEcBAAAAAAAAAAAAAAAAAAAAAMmZmZbmZmhBmZZGjhZ2AAAAAAAAwMjxMYMzMmZmBAAAAmZGjZmtxMDMzmxgFYZMMWGAzghNMzAzMAG",
@@ -11337,6 +12631,7 @@ ZugZugData = {
           ["18+"] = {
             {
               spec = "Augmentation",
+              specId = 1473,
               hero = "Scalecommander",
               label = "Overlord",
               importString = "CEcBAAAAAAAAAAAAAAAAAAAAAgZmZbMzgZYmZZGzMjZ2AAAAAAAAwMMzYGjZmxMzMAAAAwMzYMzsMmZgZ2mxgFYZMMWGAzghNMmBzMAG",
@@ -11357,11 +12652,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Defy Fate",
+                      talentId = 115493,
                       dungeonPct = 62,
                       baselinePct = 14,
                     },
                     {
                       name = "Terror of the Skies",
+                      talentId = 115656,
                       dungeonPct = 92,
                       baselinePct = 64,
                     },
@@ -11369,11 +12666,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Bestow Weyrnstone",
+                      talentId = 115534,
                       dungeonPct = 36,
                       baselinePct = 86,
                     },
                     {
                       name = "Sleep Walk",
+                      talentId = 115601,
                       dungeonPct = 33,
                       baselinePct = 59,
                     },
@@ -11383,11 +12682,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Sleep Walk",
+                      talentId = 115601,
                       dungeonPct = 80,
                       baselinePct = 59,
                     },
                     {
                       name = "Bestow Weyrnstone",
+                      talentId = 115534,
                       dungeonPct = 100,
                       baselinePct = 86,
                     },
@@ -11395,11 +12696,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Overawe",
+                      talentId = 115606,
                       dungeonPct = 5,
                       baselinePct = 29,
                     },
                     {
                       name = "Oppressing Roar",
+                      talentId = 115607,
                       dungeonPct = 19,
                       baselinePct = 40,
                     },
@@ -11409,16 +12712,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Overlord",
+                      talentId = 115513,
                       dungeonPct = 99,
                       baselinePct = 91,
                     },
                     {
                       name = "Clairvoyant",
+                      talentId = 115528,
                       dungeonPct = 99,
                       baselinePct = 91,
                     },
                     {
                       name = "Motes of Possibility",
+                      talentId = 115531,
                       dungeonPct = 99,
                       baselinePct = 91,
                     },
@@ -11426,16 +12732,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Sleep Walk",
+                      talentId = 115601,
                       dungeonPct = 36,
                       baselinePct = 59,
                     },
                     {
                       name = "Oppressing Roar",
+                      talentId = 115607,
                       dungeonPct = 27,
                       baselinePct = 40,
                     },
                     {
                       name = "Overawe",
+                      talentId = 115606,
                       dungeonPct = 17,
                       baselinePct = 29,
                     },
@@ -11445,11 +12754,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Bestow Weyrnstone",
+                      talentId = 115534,
                       dungeonPct = 99,
                       baselinePct = 86,
                     },
                     {
                       name = "Sleep Walk",
+                      talentId = 115601,
                       dungeonPct = 72,
                       baselinePct = 59,
                     },
@@ -11457,11 +12768,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Overawe",
+                      talentId = 115606,
                       dungeonPct = 5,
                       baselinePct = 29,
                     },
                     {
                       name = "Oppressing Roar",
+                      talentId = 115607,
                       dungeonPct = 18,
                       baselinePct = 40,
                     },
@@ -11471,6 +12784,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Bestow Weyrnstone",
+                      talentId = 115534,
                       dungeonPct = 100,
                       baselinePct = 86,
                     },
@@ -11478,6 +12792,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Sleep Walk",
+                      talentId = 115601,
                       dungeonPct = 28,
                       baselinePct = 59,
                     },
@@ -11487,16 +12802,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Defy Fate",
+                      talentId = 115493,
                       dungeonPct = 33,
                       baselinePct = 14,
                     },
                     {
                       name = "Foci of Life",
+                      talentId = 115660,
                       dungeonPct = 80,
                       baselinePct = 64,
                     },
                     {
                       name = "Forger of Mountains",
+                      talentId = 115576,
                       dungeonPct = 15,
                       baselinePct = 2,
                     },
@@ -11504,16 +12822,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Sleep Walk",
+                      talentId = 115601,
                       dungeonPct = 22,
                       baselinePct = 59,
                     },
                     {
                       name = "Oppressing Roar",
+                      talentId = 115607,
                       dungeonPct = 19,
                       baselinePct = 40,
                     },
                     {
                       name = "Overawe",
+                      talentId = 115606,
                       dungeonPct = 9,
                       baselinePct = 29,
                     },
@@ -11523,16 +12844,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Overawe",
+                      talentId = 115606,
                       dungeonPct = 93,
                       baselinePct = 29,
                     },
                     {
                       name = "Oppressing Roar",
+                      talentId = 115607,
                       dungeonPct = 94,
                       baselinePct = 40,
                     },
                     {
                       name = "Sleep Walk",
+                      talentId = 115601,
                       dungeonPct = 100,
                       baselinePct = 59,
                     },
@@ -11540,16 +12864,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Stretch Time",
+                      talentId = 115617,
                       dungeonPct = 65,
                       baselinePct = 91,
                     },
                     {
                       name = "Foci of Life",
+                      talentId = 115660,
                       dungeonPct = 41,
                       baselinePct = 64,
                     },
                     {
                       name = "Overlord",
+                      talentId = 115513,
                       dungeonPct = 70,
                       baselinePct = 91,
                     },
@@ -11559,16 +12886,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Overawe",
+                      talentId = 115606,
                       dungeonPct = 91,
                       baselinePct = 29,
                     },
                     {
                       name = "Oppressing Roar",
+                      talentId = 115607,
                       dungeonPct = 93,
                       baselinePct = 40,
                     },
                     {
                       name = "Sleep Walk",
+                      talentId = 115601,
                       dungeonPct = 99,
                       baselinePct = 59,
                     },
@@ -11576,16 +12906,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Foci of Life",
+                      talentId = 115660,
                       dungeonPct = 40,
                       baselinePct = 64,
                     },
                     {
                       name = "Enkindled",
+                      talentId = 115603,
                       dungeonPct = 39,
                       baselinePct = 59,
                     },
                     {
                       name = "Attuned to the Dream",
+                      talentId = 115600,
                       dungeonPct = 66,
                       baselinePct = 82,
                     },
@@ -11595,6 +12928,7 @@ ZugZugData = {
             },
             {
               spec = "Devastation",
+              specId = 1467,
               hero = "Flameshaper",
               label = "Trailblazer",
               importString = "CsbBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAzMDmZMzwMwMYMzMjZmxYmlxMzMMmZmBMzMjxMzyYGMDMjZgNwCYGmBsBWGmBYmZYA",
@@ -11605,6 +12939,7 @@ ZugZugData = {
             },
             {
               spec = "Devastation",
+              specId = 1467,
               hero = "Scalecommander",
               label = "Strafing Run",
               importString = "CsbBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAzMDgZGmBGGjZmxMzMzwsNjZmZmZmZmBMzMjxMzyMzADMGsALjxM2GAzAwGmBzMYYA",
@@ -11615,6 +12950,7 @@ ZugZugData = {
             },
             {
               spec = "Devastation",
+              specId = 1467,
               hero = "Flameshaper",
               label = "Feed the Flames",
               importString = "CsbBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZGjZmZmZGMwMYmZmZmZmxYsMmZMMmZmBMzMGmZMzMYGwYGYDsBmhZAbglhZAmZGG",
@@ -11625,6 +12961,7 @@ ZugZugData = {
             },
             {
               spec = "Augmentation",
+              specId = 1473,
               hero = "Scalecommander",
               label = "Mighty Inferno",
               importString = "CEcBAAAAAAAAAAAAAAAAAAAAAMmZmZbmZmhBmZZGjhZ2AAAAAAAAwMjxMYMzMmZmBAAAAmZGjZmtxMDMzmxgFYZMMWGAzghNMzAzMAG",
@@ -11637,6 +12974,7 @@ ZugZugData = {
           ["20+"] = {
             {
               spec = "Augmentation",
+              specId = 1473,
               hero = "Scalecommander",
               label = "Overlord",
               importString = "CEcBAAAAAAAAAAAAAAAAAAAAAgZmZbMzgZYmZZGzMjZ2AAAAAAAAwMMzYGjZmxMzMAAAAwMzYMzsMmZgZ2mxgFYZMMWGAzghNMmBzMAG",
@@ -11657,11 +12995,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Defy Fate",
+                      talentId = 115493,
                       dungeonPct = 62,
                       baselinePct = 14,
                     },
                     {
                       name = "Terror of the Skies",
+                      talentId = 115656,
                       dungeonPct = 92,
                       baselinePct = 64,
                     },
@@ -11669,11 +13009,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Bestow Weyrnstone",
+                      talentId = 115534,
                       dungeonPct = 36,
                       baselinePct = 86,
                     },
                     {
                       name = "Sleep Walk",
+                      talentId = 115601,
                       dungeonPct = 33,
                       baselinePct = 59,
                     },
@@ -11683,11 +13025,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Sleep Walk",
+                      talentId = 115601,
                       dungeonPct = 80,
                       baselinePct = 59,
                     },
                     {
                       name = "Bestow Weyrnstone",
+                      talentId = 115534,
                       dungeonPct = 100,
                       baselinePct = 86,
                     },
@@ -11695,11 +13039,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Overawe",
+                      talentId = 115606,
                       dungeonPct = 5,
                       baselinePct = 29,
                     },
                     {
                       name = "Oppressing Roar",
+                      talentId = 115607,
                       dungeonPct = 19,
                       baselinePct = 40,
                     },
@@ -11709,16 +13055,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Overlord",
+                      talentId = 115513,
                       dungeonPct = 99,
                       baselinePct = 91,
                     },
                     {
                       name = "Clairvoyant",
+                      talentId = 115528,
                       dungeonPct = 99,
                       baselinePct = 91,
                     },
                     {
                       name = "Motes of Possibility",
+                      talentId = 115531,
                       dungeonPct = 99,
                       baselinePct = 91,
                     },
@@ -11726,16 +13075,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Sleep Walk",
+                      talentId = 115601,
                       dungeonPct = 36,
                       baselinePct = 59,
                     },
                     {
                       name = "Oppressing Roar",
+                      talentId = 115607,
                       dungeonPct = 27,
                       baselinePct = 40,
                     },
                     {
                       name = "Overawe",
+                      talentId = 115606,
                       dungeonPct = 17,
                       baselinePct = 29,
                     },
@@ -11745,11 +13097,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Bestow Weyrnstone",
+                      talentId = 115534,
                       dungeonPct = 99,
                       baselinePct = 86,
                     },
                     {
                       name = "Sleep Walk",
+                      talentId = 115601,
                       dungeonPct = 72,
                       baselinePct = 59,
                     },
@@ -11757,11 +13111,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Overawe",
+                      talentId = 115606,
                       dungeonPct = 5,
                       baselinePct = 29,
                     },
                     {
                       name = "Oppressing Roar",
+                      talentId = 115607,
                       dungeonPct = 18,
                       baselinePct = 40,
                     },
@@ -11771,6 +13127,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Bestow Weyrnstone",
+                      talentId = 115534,
                       dungeonPct = 100,
                       baselinePct = 86,
                     },
@@ -11778,6 +13135,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Sleep Walk",
+                      talentId = 115601,
                       dungeonPct = 28,
                       baselinePct = 59,
                     },
@@ -11787,16 +13145,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Defy Fate",
+                      talentId = 115493,
                       dungeonPct = 33,
                       baselinePct = 14,
                     },
                     {
                       name = "Foci of Life",
+                      talentId = 115660,
                       dungeonPct = 80,
                       baselinePct = 64,
                     },
                     {
                       name = "Forger of Mountains",
+                      talentId = 115576,
                       dungeonPct = 15,
                       baselinePct = 2,
                     },
@@ -11804,16 +13165,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Sleep Walk",
+                      talentId = 115601,
                       dungeonPct = 22,
                       baselinePct = 59,
                     },
                     {
                       name = "Oppressing Roar",
+                      talentId = 115607,
                       dungeonPct = 19,
                       baselinePct = 40,
                     },
                     {
                       name = "Overawe",
+                      talentId = 115606,
                       dungeonPct = 9,
                       baselinePct = 29,
                     },
@@ -11823,16 +13187,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Overawe",
+                      talentId = 115606,
                       dungeonPct = 93,
                       baselinePct = 29,
                     },
                     {
                       name = "Oppressing Roar",
+                      talentId = 115607,
                       dungeonPct = 94,
                       baselinePct = 40,
                     },
                     {
                       name = "Sleep Walk",
+                      talentId = 115601,
                       dungeonPct = 100,
                       baselinePct = 59,
                     },
@@ -11840,16 +13207,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Stretch Time",
+                      talentId = 115617,
                       dungeonPct = 65,
                       baselinePct = 91,
                     },
                     {
                       name = "Foci of Life",
+                      talentId = 115660,
                       dungeonPct = 41,
                       baselinePct = 64,
                     },
                     {
                       name = "Overlord",
+                      talentId = 115513,
                       dungeonPct = 70,
                       baselinePct = 91,
                     },
@@ -11859,16 +13229,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Overawe",
+                      talentId = 115606,
                       dungeonPct = 91,
                       baselinePct = 29,
                     },
                     {
                       name = "Oppressing Roar",
+                      talentId = 115607,
                       dungeonPct = 93,
                       baselinePct = 40,
                     },
                     {
                       name = "Sleep Walk",
+                      talentId = 115601,
                       dungeonPct = 99,
                       baselinePct = 59,
                     },
@@ -11876,16 +13249,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Foci of Life",
+                      talentId = 115660,
                       dungeonPct = 40,
                       baselinePct = 64,
                     },
                     {
                       name = "Enkindled",
+                      talentId = 115603,
                       dungeonPct = 39,
                       baselinePct = 59,
                     },
                     {
                       name = "Attuned to the Dream",
+                      talentId = 115600,
                       dungeonPct = 66,
                       baselinePct = 82,
                     },
@@ -11895,6 +13271,7 @@ ZugZugData = {
             },
             {
               spec = "Devastation",
+              specId = 1467,
               hero = "Flameshaper",
               label = "Trailblazer",
               importString = "CsbBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAzMDmZMzwMwMYMzMjZmxYmlxMzMMmZmBMzMjxMzyYGMDMjZgNwCYGmBsBWGmBYmZYA",
@@ -11905,6 +13282,7 @@ ZugZugData = {
             },
             {
               spec = "Devastation",
+              specId = 1467,
               hero = "Scalecommander",
               label = "Strafing Run",
               importString = "CsbBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAzMDgZGmBGGjZmxMzMzwsNjZmZmZmZmBMzMjxMzyMzADMGsALjxM2GAzAwGmBzMYYA",
@@ -11915,6 +13293,7 @@ ZugZugData = {
             },
             {
               spec = "Devastation",
+              specId = 1467,
               hero = "Flameshaper",
               label = "Feed the Flames",
               importString = "CsbBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZGjZmZmZGMwMYmZmZmZmxYsMmZMMmZmBMzMGmZMzMYGwYGYDsBmhZAbglhZAmZGG",
@@ -11925,6 +13304,7 @@ ZugZugData = {
             },
             {
               spec = "Augmentation",
+              specId = 1473,
               hero = "Scalecommander",
               label = "Mighty Inferno",
               importString = "CEcBAAAAAAAAAAAAAAAAAAAAAMmZmZbmZmhBmZZGjhZ2AAAAAAAAwMjxMYMzMmZmBAAAAmZGjZmtxMDMzmxgFYZMMWGAzghNMzAzMAG",
@@ -11941,6 +13321,7 @@ ZugZugData = {
           heroic = {
             {
               spec = "Preservation",
+              specId = 1468,
               hero = "Chronowarden",
               label = "Dream Simulacrum",
               importString = "CwbBAAAAAAAAAAAAAAAAAAAAAAAAAAAYmZ2WmBDzMmNjZmZWmxAAAzYGDmxMGzMDAAAwMzMjZMzY2mZGAMwYGbsADMDDzAWgxMDwYA",
@@ -11961,6 +13342,7 @@ ZugZugData = {
             },
             {
               spec = "Preservation",
+              specId = 1468,
               hero = "Flameshaper",
               label = "Ouroboros",
               importString = "CwbBAAAAAAAAAAAAAAAAAAAAAAAAAAAYmZ2MzMmxMjxMmxMbYAAgZMjhxYGDmBAAAYmZmxMmZmZZmZAwMmB2ALgZYGwCsZYAMzMGA",
@@ -11970,6 +13352,7 @@ ZugZugData = {
             },
             {
               spec = "Preservation",
+              specId = 1468,
               hero = "Flameshaper",
               label = "Foci of Life",
               importString = "CwbBAAAAAAAAAAAAAAAAAAAAAAAAAAAYmZ2MDGmZMbGzMzsNDAAwMzMmBjZMYGAAAgZmxwMzMzsNzMAYGzAbgFwMMDYD2MMAmZGD",
@@ -11981,6 +13364,7 @@ ZugZugData = {
           mythic = {
             {
               spec = "Preservation",
+              specId = 1468,
               hero = "Chronowarden",
               label = "Dream Simulacrum",
               importString = "CwbBAAAAAAAAAAAAAAAAAAAAAAAAAAAYmZ2WmBDzMmNjZmZWmxAAAzYGDmxMGzMDAAAwMzMjZMzY2mZGAMwYGbsADMDDzAWgxMDwYA",
@@ -11995,6 +13379,7 @@ ZugZugData = {
             },
             {
               spec = "Preservation",
+              specId = 1468,
               hero = "Flameshaper",
               label = "Ouroboros",
               importString = "CwbBAAAAAAAAAAAAAAAAAAAAAAAAAAAYmZ2MzMmxMjxMmxMbYAAgZMjhxYGDmBAAAYmZmxMmZmZZmZAwMmB2ALgZYGwCsZYAMzMGA",
@@ -12011,6 +13396,7 @@ ZugZugData = {
             },
             {
               spec = "Preservation",
+              specId = 1468,
               hero = "Flameshaper",
               label = "Foci of Life",
               importString = "CwbBAAAAAAAAAAAAAAAAAAAAAAAAAAAYmZ2MDGmZMbGzMzsNDAAwMzMmBjZMYGAAAgZmxwMzMzsNzMAYGzAbgFwMMDYD2MMAmZGD",
@@ -12024,6 +13410,7 @@ ZugZugData = {
           all = {
             {
               spec = "Preservation",
+              specId = 1468,
               hero = "Chronowarden",
               label = "Wings of Liberty",
               importString = "CwbBAAAAAAAAAAAAAAAAAAAAAAAAAAAmZmZ22GYYmZmNzYM2GGAAYGzMzMjhZGmZGAAAwMzMjxMzYMmBAgxM2YBGYGGmhhFYmZGAGA",
@@ -12044,6 +13431,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Overawe",
+                      talentId = 115606,
                       dungeonPct = 61,
                       baselinePct = 48,
                     },
@@ -12051,6 +13439,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Lifeforce Mender",
+                      talentId = 115538,
                       dungeonPct = 27,
                       baselinePct = 32,
                     },
@@ -12060,6 +13449,7 @@ ZugZugData = {
             },
             {
               spec = "Preservation",
+              specId = 1468,
               hero = "Flameshaper",
               label = "Lifespark",
               importString = "CwbBAAAAAAAAAAAAAAAAAAAAAAAAAAAmZmZ2WGYYmZmNzA2GAAAzYGzghZmxMzAAAAmZmZmhZmZWGzAAjZgFwGYGmBsZGbGmBYmhB",
@@ -12071,16 +13461,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Just in Time",
+                      talentId = 115648,
                       dungeonPct = 43,
                       baselinePct = 26,
                     },
                     {
                       name = "Innate Magic",
+                      talentId = 115611,
                       dungeonPct = 33,
                       baselinePct = 19,
                     },
                     {
                       name = "Overawe",
+                      talentId = 115606,
                       dungeonPct = 33,
                       baselinePct = 20,
                     },
@@ -12088,16 +13481,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Time Spiral",
+                      talentId = 115666,
                       dungeonPct = 40,
                       baselinePct = 58,
                     },
                     {
                       name = "Flow State",
+                      talentId = 115560,
                       dungeonPct = 67,
                       baselinePct = 81,
                     },
                     {
                       name = "Titan's Gift",
+                      talentId = 123293,
                       dungeonPct = 70,
                       baselinePct = 84,
                     },
@@ -12107,6 +13503,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Clobbering Sweep",
+                      talentId = 128217,
                       dungeonPct = 75,
                       baselinePct = 60,
                     },
@@ -12114,6 +13511,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Extended Flight",
+                      talentId = 115664,
                       dungeonPct = 66,
                       baselinePct = 78,
                     },
@@ -12123,6 +13521,7 @@ ZugZugData = {
             },
             {
               spec = "Preservation",
+              specId = 1468,
               hero = "Chronowarden",
               label = "Just in Time",
               importString = "CwbBAAAAAAAAAAAAAAAAAAAAAAAAAAAmZmZ2WGYYmZmNzYM2GAAAzYGzwMmZGzYGAAAYbmZMzYmZmxYGAAGzYhFYgZYYGwCMzMDAD",
@@ -12135,6 +13534,7 @@ ZugZugData = {
           ["15+"] = {
             {
               spec = "Preservation",
+              specId = 1468,
               hero = "Chronowarden",
               label = "Wings of Liberty",
               importString = "CwbBAAAAAAAAAAAAAAAAAAAAAAAAAAAmZmZ22GYYmZmNzYM2GGAAYGzMzMjhZGmZGAAAwMzMjxMzYMmBAgxM2YBGYGGmhhFYmZGAGA",
@@ -12155,6 +13555,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Overawe",
+                      talentId = 115606,
                       dungeonPct = 61,
                       baselinePct = 48,
                     },
@@ -12162,6 +13563,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Lifeforce Mender",
+                      talentId = 115538,
                       dungeonPct = 27,
                       baselinePct = 32,
                     },
@@ -12171,6 +13573,7 @@ ZugZugData = {
             },
             {
               spec = "Preservation",
+              specId = 1468,
               hero = "Flameshaper",
               label = "Lifespark",
               importString = "CwbBAAAAAAAAAAAAAAAAAAAAAAAAAAAmZmZ2WGYYmZmNzA2GAAAzYGzghZmxMzAAAAmZmZmhZmZWGzAAjZgFwGYGmBsZGbGmBYmhB",
@@ -12182,16 +13585,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Just in Time",
+                      talentId = 115648,
                       dungeonPct = 43,
                       baselinePct = 26,
                     },
                     {
                       name = "Innate Magic",
+                      talentId = 115611,
                       dungeonPct = 33,
                       baselinePct = 19,
                     },
                     {
                       name = "Overawe",
+                      talentId = 115606,
                       dungeonPct = 33,
                       baselinePct = 20,
                     },
@@ -12199,16 +13605,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Time Spiral",
+                      talentId = 115666,
                       dungeonPct = 40,
                       baselinePct = 58,
                     },
                     {
                       name = "Flow State",
+                      talentId = 115560,
                       dungeonPct = 67,
                       baselinePct = 81,
                     },
                     {
                       name = "Titan's Gift",
+                      talentId = 123293,
                       dungeonPct = 70,
                       baselinePct = 84,
                     },
@@ -12218,6 +13627,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Clobbering Sweep",
+                      talentId = 128217,
                       dungeonPct = 75,
                       baselinePct = 60,
                     },
@@ -12225,6 +13635,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Extended Flight",
+                      talentId = 115664,
                       dungeonPct = 66,
                       baselinePct = 78,
                     },
@@ -12234,6 +13645,7 @@ ZugZugData = {
             },
             {
               spec = "Preservation",
+              specId = 1468,
               hero = "Chronowarden",
               label = "Just in Time",
               importString = "CwbBAAAAAAAAAAAAAAAAAAAAAAAAAAAmZmZ2WGYYmZmNzYM2GAAAzYGzwMmZGzYGAAAYbmZMzYmZmxYGAAGzYhFYgZYYGwCMzMDAD",
@@ -12246,6 +13658,7 @@ ZugZugData = {
           ["18+"] = {
             {
               spec = "Preservation",
+              specId = 1468,
               hero = "Chronowarden",
               label = "Wings of Liberty",
               importString = "CwbBAAAAAAAAAAAAAAAAAAAAAAAAAAAmZmZ22GYYmZmNzYM2GGAAYGzMzMjhZGmZGAAAwMzMjxMzYMmBAgxM2YBGYGGmhhFYmZGAGA",
@@ -12266,6 +13679,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Overawe",
+                      talentId = 115606,
                       dungeonPct = 61,
                       baselinePct = 48,
                     },
@@ -12273,6 +13687,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Lifeforce Mender",
+                      talentId = 115538,
                       dungeonPct = 27,
                       baselinePct = 32,
                     },
@@ -12282,6 +13697,7 @@ ZugZugData = {
             },
             {
               spec = "Preservation",
+              specId = 1468,
               hero = "Flameshaper",
               label = "Lifespark",
               importString = "CwbBAAAAAAAAAAAAAAAAAAAAAAAAAAAmZmZ2WGYYmZmNzA2GAAAzYGzghZmxMzAAAAmZmZmhZmZWGzAAjZgFwGYGmBsZGbGmBYmhB",
@@ -12293,16 +13709,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Just in Time",
+                      talentId = 115648,
                       dungeonPct = 43,
                       baselinePct = 26,
                     },
                     {
                       name = "Innate Magic",
+                      talentId = 115611,
                       dungeonPct = 33,
                       baselinePct = 19,
                     },
                     {
                       name = "Overawe",
+                      talentId = 115606,
                       dungeonPct = 33,
                       baselinePct = 20,
                     },
@@ -12310,16 +13729,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Time Spiral",
+                      talentId = 115666,
                       dungeonPct = 40,
                       baselinePct = 58,
                     },
                     {
                       name = "Flow State",
+                      talentId = 115560,
                       dungeonPct = 67,
                       baselinePct = 81,
                     },
                     {
                       name = "Titan's Gift",
+                      talentId = 123293,
                       dungeonPct = 70,
                       baselinePct = 84,
                     },
@@ -12329,6 +13751,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Clobbering Sweep",
+                      talentId = 128217,
                       dungeonPct = 75,
                       baselinePct = 60,
                     },
@@ -12336,6 +13759,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Extended Flight",
+                      talentId = 115664,
                       dungeonPct = 66,
                       baselinePct = 78,
                     },
@@ -12345,6 +13769,7 @@ ZugZugData = {
             },
             {
               spec = "Preservation",
+              specId = 1468,
               hero = "Chronowarden",
               label = "Just in Time",
               importString = "CwbBAAAAAAAAAAAAAAAAAAAAAAAAAAAmZmZ2WGYYmZmNzYM2GAAAzYGzwMmZGzYGAAAYbmZMzYmZmxYGAAGzYhFYgZYYGwCMzMDAD",
@@ -12357,6 +13782,7 @@ ZugZugData = {
           ["20+"] = {
             {
               spec = "Preservation",
+              specId = 1468,
               hero = "Chronowarden",
               label = "Wings of Liberty",
               importString = "CwbBAAAAAAAAAAAAAAAAAAAAAAAAAAAmZmZ22GYYmZmNzYM2GGAAYGzMzMjhZGmZGAAAwMzMjxMzYMmBAgxM2YBGYGGmhhFYmZGAGA",
@@ -12377,6 +13803,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Overawe",
+                      talentId = 115606,
                       dungeonPct = 61,
                       baselinePct = 48,
                     },
@@ -12384,6 +13811,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Lifeforce Mender",
+                      talentId = 115538,
                       dungeonPct = 27,
                       baselinePct = 32,
                     },
@@ -12393,6 +13821,7 @@ ZugZugData = {
             },
             {
               spec = "Preservation",
+              specId = 1468,
               hero = "Flameshaper",
               label = "Lifespark",
               importString = "CwbBAAAAAAAAAAAAAAAAAAAAAAAAAAAmZmZ2WGYYmZmNzA2GAAAzYGzghZmxMzAAAAmZmZmhZmZWGzAAjZgFwGYGmBsZGbGmBYmhB",
@@ -12404,16 +13833,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Just in Time",
+                      talentId = 115648,
                       dungeonPct = 43,
                       baselinePct = 26,
                     },
                     {
                       name = "Innate Magic",
+                      talentId = 115611,
                       dungeonPct = 33,
                       baselinePct = 19,
                     },
                     {
                       name = "Overawe",
+                      talentId = 115606,
                       dungeonPct = 33,
                       baselinePct = 20,
                     },
@@ -12421,16 +13853,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Time Spiral",
+                      talentId = 115666,
                       dungeonPct = 40,
                       baselinePct = 58,
                     },
                     {
                       name = "Flow State",
+                      talentId = 115560,
                       dungeonPct = 67,
                       baselinePct = 81,
                     },
                     {
                       name = "Titan's Gift",
+                      talentId = 123293,
                       dungeonPct = 70,
                       baselinePct = 84,
                     },
@@ -12440,6 +13875,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Clobbering Sweep",
+                      talentId = 128217,
                       dungeonPct = 75,
                       baselinePct = 60,
                     },
@@ -12447,6 +13883,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Extended Flight",
+                      talentId = 115664,
                       dungeonPct = 66,
                       baselinePct = 78,
                     },
@@ -12456,6 +13893,7 @@ ZugZugData = {
             },
             {
               spec = "Preservation",
+              specId = 1468,
               hero = "Chronowarden",
               label = "Just in Time",
               importString = "CwbBAAAAAAAAAAAAAAAAAAAAAAAAAAAmZmZ2WGYYmZmNzYM2GAAAzYGzwMmZGzYGAAAYbmZMzYmZmxYGAAGzYhFYgZYYGwCMzMDAD",
@@ -12474,6 +13912,7 @@ ZugZugData = {
           heroic = {
             {
               spec = "Arms",
+              specId = 71,
               hero = "Slayer",
               label = "Fatality",
               importString = "CcEAAAAAAAAAAAAAAAAAAAAAAAzMzsMzMzMDAAAghZGmZMDLzMzMDGzMAAAAAmZZmBMGjllBWADYGmBMD2AzMY2GDmxAMzAwMGGA",
@@ -12492,6 +13931,7 @@ ZugZugData = {
             },
             {
               spec = "Fury",
+              specId = 72,
               hero = "Slayer",
               label = "Slayer",
               importString = "CgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZMMzYGWmZmZmhxMzMjZMzyMzYMzsNmZGAAYYssMwCYAzwMgZYDYmBz2AAgZGDjZmhBD",
@@ -12501,6 +13941,7 @@ ZugZugData = {
             },
             {
               spec = "Fury",
+              specId = 72,
               hero = "Mountain Thane",
               label = "Avatar",
               importString = "CgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZMMMzMbLzMzMzwYmxMmxMLzMjxMzyYmZAAgBDsBLLGzYGAzCmxCgZwYAwMDghZmZGGM",
@@ -12513,6 +13954,7 @@ ZugZugData = {
             },
             {
               spec = "Arms",
+              specId = 71,
               hero = "Colossus",
               label = "Battlelord",
               importString = "CcEAAAAAAAAAAAAAAAAAAAAAAgZmxsMzMzYGAAAghZGmhZmllZmZmhZMzAAAAAYsZGYbYAbmxwCMwMsxMGsAMDGDmNz2gZGAwMzwA",
@@ -12522,6 +13964,7 @@ ZugZugData = {
             },
             {
               spec = "Arms",
+              specId = 71,
               hero = "Slayer",
               label = "Resonant Voice",
               importString = "CcEAAAAAAAAAAAAAAAAAAAAAAgZmZmFzYmZGAAAghZGmZYmtlZmZmhZMzAAAAAYsMzAbDGLbDsAGwMMDYGsBmZYYwsNz2AMzAgxwA",
@@ -12531,6 +13974,7 @@ ZugZugData = {
             },
             {
               spec = "Fury",
+              specId = 72,
               hero = "Slayer",
               label = "Surge of Adrenaline",
               importString = "CgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZMMzYmZzMzMzMmxMzMjZMzyMmZmZmNzMzAAADjttBWADYGmBMDbAmBjBAAzMMGjZYwA",
@@ -12542,6 +13986,7 @@ ZugZugData = {
           mythic = {
             {
               spec = "Arms",
+              specId = 71,
               hero = "Slayer",
               label = "Fatality",
               importString = "CcEAAAAAAAAAAAAAAAAAAAAAAAzMzsMzMzMDAAAghZGmZMDLzMzMDGzMAAAAAmZZmBMGjllBWADYGmBMD2AzMY2GDmxAMzAwMGGA",
@@ -12559,6 +14004,7 @@ ZugZugData = {
             },
             {
               spec = "Fury",
+              specId = 72,
               hero = "Slayer",
               label = "Slayer",
               importString = "CgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZMMzYGWmZmZmhxMzMjZMzyMzYMzsNmZGAAYYssMwCYAzwMgZYDYmBz2AAgZGDjZmhBD",
@@ -12568,6 +14014,7 @@ ZugZugData = {
             },
             {
               spec = "Fury",
+              specId = 72,
               hero = "Mountain Thane",
               label = "Avatar",
               importString = "CgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZMMMzMbLzMzMzwYmxMmxMLzMjxMzyYmZAAgBDsBLLGzYGAzCmxCgZwYAwMDghZmZGGM",
@@ -12580,6 +14027,7 @@ ZugZugData = {
             },
             {
               spec = "Arms",
+              specId = 71,
               hero = "Colossus",
               label = "Battlelord",
               importString = "CcEAAAAAAAAAAAAAAAAAAAAAAgZmxsMzMzYGAAAghZGmhZmllZmZmhZMzAAAAAYsZGYbYAbmxwCMwMsxMGsAMDGDmNz2gZGAwMzwA",
@@ -12591,6 +14039,7 @@ ZugZugData = {
             },
             {
               spec = "Arms",
+              specId = 71,
               hero = "Slayer",
               label = "Resonant Voice",
               importString = "CcEAAAAAAAAAAAAAAAAAAAAAAgZmZmFzYmZGAAAghZGmZYmtlZmZmhZMzAAAAAYsMzAbDGLbDsAGwMMDYGsBmZYYwsNz2AMzAgxwA",
@@ -12600,6 +14049,7 @@ ZugZugData = {
             },
             {
               spec = "Fury",
+              specId = 72,
               hero = "Slayer",
               label = "Surge of Adrenaline",
               importString = "CgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZMMzYmZzMzMzMmxMzMjZMzyMmZmZmNzMzAAADjttBWADYGmBMDbAmBjBAAzMMGjZYwA",
@@ -12613,6 +14063,7 @@ ZugZugData = {
           all = {
             {
               spec = "Arms",
+              specId = 71,
               hero = "Colossus",
               label = "Colossus",
               importString = "CcEAAAAAAAAAAAAAAAAAAAAAAgZmxsMzMzYGAAAghZGmZYmtlZmZmhZMzAAAAAYsZGYbYAbmxwCMwMsxMGsAmZYYwsZ2GMzAAMzwA",
@@ -12632,6 +14083,7 @@ ZugZugData = {
             },
             {
               spec = "Fury",
+              specId = 72,
               hero = "Mountain Thane",
               label = "Avatar",
               importString = "CgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZMMMmZbZmZmZGzYmxMmZmZZmZMGzyYmZAAgBDsBLbGzYGAzCmxCgZwYAwMDghZmZGGM",
@@ -12642,6 +14094,7 @@ ZugZugData = {
             },
             {
               spec = "Fury",
+              specId = 72,
               hero = "Slayer",
               label = "Bladestorm",
               importString = "CgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZMMGmZbZmZmZmZGzMmxMzMLzMjxMz2YmZAAghxyyALgBMDzAmhNAzgxAAgZGDzMzMMYA",
@@ -12652,6 +14105,7 @@ ZugZugData = {
             },
             {
               spec = "Arms",
+              specId = 71,
               hero = "Slayer",
               label = "Bladestorm",
               importString = "CcEAAAAAAAAAAAAAAAAAAAAAAgZmZmFzYmZGAAAghZGmZYmtlZmZmhZMzAAAAAYsMzAbDGLbDsAGwMMDYGsBmZYYwsNz2AMzAgxwA",
@@ -12663,6 +14117,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Interpose",
+                      talentId = 134216,
                       dungeonPct = 26,
                       baselinePct = 14,
                     },
@@ -12670,6 +14125,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Mass Execution",
+                      talentId = 136700,
                       dungeonPct = 23,
                       baselinePct = 36,
                     },
@@ -12679,6 +14135,7 @@ ZugZugData = {
             },
             {
               spec = "Fury",
+              specId = 72,
               hero = "Colossus",
               label = "Berserker Shout",
               importString = "CgEAAAAAAAAAAAAAAAAAAAAAAgZmxsMzMzYGAAAghZGmZYmFzMzMjZGzMAAAAAGbmB2GGwmZMsADMDbMjBLgZGGGMbmtBzMAAzMMA",
@@ -12691,6 +14148,7 @@ ZugZugData = {
           ["15+"] = {
             {
               spec = "Arms",
+              specId = 71,
               hero = "Colossus",
               label = "Colossus",
               importString = "CcEAAAAAAAAAAAAAAAAAAAAAAgZmxsMzMzYGAAAghZGmZYmtlZmZmhZMzAAAAAYsZGYbYAbmxwCMwMsxMGsAmZYYwsZ2GMzAAMzwA",
@@ -12710,6 +14168,7 @@ ZugZugData = {
             },
             {
               spec = "Fury",
+              specId = 72,
               hero = "Mountain Thane",
               label = "Avatar",
               importString = "CgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZMMMmZbZmZmZGzYmxMmZmZZmZMGzyYmZAAgBDsBLbGzYGAzCmxCgZwYAwMDghZmZGGM",
@@ -12720,6 +14179,7 @@ ZugZugData = {
             },
             {
               spec = "Fury",
+              specId = 72,
               hero = "Slayer",
               label = "Bladestorm",
               importString = "CgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZMMGmZbZmZmZmZGzMmxMzMLzMjxMz2YmZAAghxyyALgBMDzAmhNAzgxAAgZGDzMzMMYA",
@@ -12730,6 +14190,7 @@ ZugZugData = {
             },
             {
               spec = "Arms",
+              specId = 71,
               hero = "Slayer",
               label = "Bladestorm",
               importString = "CcEAAAAAAAAAAAAAAAAAAAAAAgZmZmFzYmZGAAAghZGmZYmtlZmZmhZMzAAAAAYsMzAbDGLbDsAGwMMDYGsBmZYYwsNz2AMzAgxwA",
@@ -12741,6 +14202,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Interpose",
+                      talentId = 134216,
                       dungeonPct = 26,
                       baselinePct = 14,
                     },
@@ -12748,6 +14210,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Mass Execution",
+                      talentId = 136700,
                       dungeonPct = 23,
                       baselinePct = 36,
                     },
@@ -12757,6 +14220,7 @@ ZugZugData = {
             },
             {
               spec = "Fury",
+              specId = 72,
               hero = "Colossus",
               label = "Berserker Shout",
               importString = "CgEAAAAAAAAAAAAAAAAAAAAAAgZmxsMzMzYGAAAghZGmZYmFzMzMjZGzMAAAAAGbmB2GGwmZMsADMDbMjBLgZGGGMbmtBzMAAzMMA",
@@ -12769,6 +14233,7 @@ ZugZugData = {
           ["18+"] = {
             {
               spec = "Arms",
+              specId = 71,
               hero = "Colossus",
               label = "Colossus",
               importString = "CcEAAAAAAAAAAAAAAAAAAAAAAgZmxsMzMzYGAAAghZGmZYmtlZmZmhZMzAAAAAYsZGYbYAbmxwCMwMsxMGsAmZYYwsZ2GMzAAMzwA",
@@ -12788,6 +14253,7 @@ ZugZugData = {
             },
             {
               spec = "Fury",
+              specId = 72,
               hero = "Mountain Thane",
               label = "Avatar",
               importString = "CgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZMMMmZbZmZmZGzYmxMmZmZZmZMGzyYmZAAgBDsBLbGzYGAzCmxCgZwYAwMDghZmZGGM",
@@ -12798,6 +14264,7 @@ ZugZugData = {
             },
             {
               spec = "Fury",
+              specId = 72,
               hero = "Slayer",
               label = "Bladestorm",
               importString = "CgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZMMGmZbZmZmZmZGzMmxMzMLzMjxMz2YmZAAghxyyALgBMDzAmhNAzgxAAgZGDzMzMMYA",
@@ -12808,6 +14275,7 @@ ZugZugData = {
             },
             {
               spec = "Arms",
+              specId = 71,
               hero = "Slayer",
               label = "Bladestorm",
               importString = "CcEAAAAAAAAAAAAAAAAAAAAAAgZmZmFzYmZGAAAghZGmZYmtlZmZmhZMzAAAAAYsMzAbDGLbDsAGwMMDYGsBmZYYwsNz2AMzAgxwA",
@@ -12819,6 +14287,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Interpose",
+                      talentId = 134216,
                       dungeonPct = 26,
                       baselinePct = 14,
                     },
@@ -12826,6 +14295,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Mass Execution",
+                      talentId = 136700,
                       dungeonPct = 23,
                       baselinePct = 36,
                     },
@@ -12835,6 +14305,7 @@ ZugZugData = {
             },
             {
               spec = "Fury",
+              specId = 72,
               hero = "Colossus",
               label = "Berserker Shout",
               importString = "CgEAAAAAAAAAAAAAAAAAAAAAAgZmxsMzMzYGAAAghZGmZYmFzMzMjZGzMAAAAAGbmB2GGwmZMsADMDbMjBLgZGGGMbmtBzMAAzMMA",
@@ -12847,6 +14318,7 @@ ZugZugData = {
           ["20+"] = {
             {
               spec = "Arms",
+              specId = 71,
               hero = "Colossus",
               label = "Colossus",
               importString = "CcEAAAAAAAAAAAAAAAAAAAAAAgZmxsMzMzYGAAAghZGmZYmtlZmZmhZMzAAAAAYsZGYbYAbmxwCMwMsxMGsAmZYYwsZ2GMzAAMzwA",
@@ -12866,6 +14338,7 @@ ZugZugData = {
             },
             {
               spec = "Fury",
+              specId = 72,
               hero = "Mountain Thane",
               label = "Avatar",
               importString = "CgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZMMMmZbZmZmZGzYmxMmZmZZmZMGzyYmZAAgBDsBLbGzYGAzCmxCgZwYAwMDghZmZGGM",
@@ -12876,6 +14349,7 @@ ZugZugData = {
             },
             {
               spec = "Fury",
+              specId = 72,
               hero = "Slayer",
               label = "Bladestorm",
               importString = "CgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgZMMGmZbZmZmZmZGzMmxMzMLzMjxMz2YmZAAghxyyALgBMDzAmhNAzgxAAgZGDzMzMMYA",
@@ -12886,6 +14360,7 @@ ZugZugData = {
             },
             {
               spec = "Arms",
+              specId = 71,
               hero = "Slayer",
               label = "Bladestorm",
               importString = "CcEAAAAAAAAAAAAAAAAAAAAAAgZmZmFzYmZGAAAghZGmZYmtlZmZmhZMzAAAAAYsMzAbDGLbDsAGwMMDYGsBmZYYwsNz2AMzAgxwA",
@@ -12897,6 +14372,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Interpose",
+                      talentId = 134216,
                       dungeonPct = 26,
                       baselinePct = 14,
                     },
@@ -12904,6 +14380,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Mass Execution",
+                      talentId = 136700,
                       dungeonPct = 23,
                       baselinePct = 36,
                     },
@@ -12913,6 +14390,7 @@ ZugZugData = {
             },
             {
               spec = "Fury",
+              specId = 72,
               hero = "Colossus",
               label = "Berserker Shout",
               importString = "CgEAAAAAAAAAAAAAAAAAAAAAAgZmxsMzMzYGAAAghZGmZYmFzMzMjZGzMAAAAAGbmB2GGwmZMsADMDbMjBLgZGGGMbmtBzMAAzMMA",
@@ -12929,6 +14407,7 @@ ZugZugData = {
           heroic = {
             {
               spec = "Protection",
+              specId = 73,
               hero = "Mountain Thane",
               label = "Storm Shield",
               importString = "CkEAAAAAAAAAAAAAAAAAAAAAAMLDAAMzMmZmZmZMbGzyMGjxMMzwyMzMzgxMDAAAAWGAmxAMwGssYMjZAMbYmNYGzMY2GAMzAAwMgB",
@@ -12949,6 +14428,7 @@ ZugZugData = {
             },
             {
               spec = "Protection",
+              specId = 73,
               hero = "Mountain Thane",
               label = "Battle-Scarred Veteran",
               importString = "CkEAAAAAAAAAAAAAAAAAAAAAAMGAAYMjZmZmZGzmZsMMGjZmZMWWMmZGGmZAAAAwyYAmxAMwGssYMjZAMLYmNMzMzMMWGAMzAAwMgB",
@@ -12958,6 +14438,7 @@ ZugZugData = {
             },
             {
               spec = "Protection",
+              specId = 73,
               hero = "Colossus",
               label = "Arterial Bleed",
               importString = "CkEAAAAAAAAAAAAAAAAAAAAAAMLDAAMzMmZmZmZMbGzyMGjxMMzwyMzMzgxMDAAAAWGAmxAAbmxwGMwMswMmZBmxMDmtBAYmBAMDYA",
@@ -12969,6 +14450,7 @@ ZugZugData = {
           mythic = {
             {
               spec = "Protection",
+              specId = 73,
               hero = "Mountain Thane",
               label = "Storm Shield",
               importString = "CkEAAAAAAAAAAAAAAAAAAAAAAMLDAAMzMmZmZmZMbGzyMGjxMMzwyMzMzgxMDAAAAWGAmxAMwGssYMjZAMbYmNYGzMY2GAMzAAwMgB",
@@ -12989,6 +14471,7 @@ ZugZugData = {
             },
             {
               spec = "Protection",
+              specId = 73,
               hero = "Mountain Thane",
               label = "Battle-Scarred Veteran",
               importString = "CkEAAAAAAAAAAAAAAAAAAAAAAMGAAYMjZmZmZGzmZsMMGjZmZMWWMmZGGmZAAAAwyYAmxAMwGssYMjZAMLYmNMzMzMMWGAMzAAwMgB",
@@ -12998,6 +14481,7 @@ ZugZugData = {
             },
             {
               spec = "Protection",
+              specId = 73,
               hero = "Colossus",
               label = "Arterial Bleed",
               importString = "CkEAAAAAAAAAAAAAAAAAAAAAAMLDAAMzMmZmZmZMbGzyMGjxMMzwyMzMzgxMDAAAAWGAmxAAbmxwGMwMswMmZBmxMDmtBAYmBAMDYA",
@@ -13011,6 +14495,7 @@ ZugZugData = {
           all = {
             {
               spec = "Protection",
+              specId = 73,
               hero = "Mountain Thane",
               label = "Tough as Nails",
               importString = "CkEAAAAAAAAAAAAAAAAAAAAAAMGAAYMDzMzMzY2MzsMjxYMjZMsMjZmxMMzAAAAglZGgZMADsBLLGzYGAzCmZDGzMDjtBAzMAAMDYA",
@@ -13031,11 +14516,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Fight Through the Flames",
+                      talentId = 112153,
                       dungeonPct = 54,
                       baselinePct = 37,
                     },
                     {
                       name = "Last Stand",
+                      talentId = 132879,
                       dungeonPct = 62,
                       baselinePct = 48,
                     },
@@ -13043,11 +14530,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Tough as Nails",
+                      talentId = 112177,
                       dungeonPct = 65,
                       baselinePct = 75,
                     },
                     {
                       name = "Fearless",
+                      talentId = 112210,
                       dungeonPct = 19,
                       baselinePct = 29,
                     },
@@ -13057,6 +14546,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Fearless",
+                      talentId = 112210,
                       dungeonPct = 73,
                       baselinePct = 29,
                     },
@@ -13064,6 +14554,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Piercing Howl",
+                      talentId = 136627,
                       dungeonPct = 41,
                       baselinePct = 70,
                     },
@@ -13073,6 +14564,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Piercing Howl",
+                      talentId = 136627,
                       dungeonPct = 80,
                       baselinePct = 70,
                     },
@@ -13080,6 +14572,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Fearless",
+                      talentId = 112210,
                       dungeonPct = 17,
                       baselinePct = 29,
                     },
@@ -13089,6 +14582,7 @@ ZugZugData = {
             },
             {
               spec = "Protection",
+              specId = 73,
               hero = "Colossus",
               label = "Bloodborne",
               importString = "CkEAAAAAAAAAAAAAAAAAAAAAAMLDAAMmZmZmZmhZzMzywYMmxMmxiZmZGzwMDAAAAMzAYMAwmZMsBDMDLMjZWgZmZGGbDAwMDAwAG",
@@ -13099,6 +14593,7 @@ ZugZugData = {
             },
             {
               spec = "Protection",
+              specId = 73,
               hero = "Mountain Thane",
               label = "Heavy Repercussions",
               importString = "CkEAAAAAAAAAAAAAAAAAAAAAAMGAAYMzMmZGzYWMzsMMGzMzMjhFjZGmhZGAAAAsMzAMjBYgNYZxYGzAY2wMbYMzMDmlBAzMAAMDYA",
@@ -13111,6 +14606,7 @@ ZugZugData = {
           ["15+"] = {
             {
               spec = "Protection",
+              specId = 73,
               hero = "Mountain Thane",
               label = "Tough as Nails",
               importString = "CkEAAAAAAAAAAAAAAAAAAAAAAMGAAYMDzMzMzY2MzsMjxYMjZMsMjZmxMMzAAAAglZGgZMADsBLLGzYGAzCmZDGzMDjtBAzMAAMDYA",
@@ -13131,11 +14627,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Fight Through the Flames",
+                      talentId = 112153,
                       dungeonPct = 54,
                       baselinePct = 37,
                     },
                     {
                       name = "Last Stand",
+                      talentId = 132879,
                       dungeonPct = 62,
                       baselinePct = 48,
                     },
@@ -13143,11 +14641,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Tough as Nails",
+                      talentId = 112177,
                       dungeonPct = 65,
                       baselinePct = 75,
                     },
                     {
                       name = "Fearless",
+                      talentId = 112210,
                       dungeonPct = 19,
                       baselinePct = 29,
                     },
@@ -13157,6 +14657,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Fearless",
+                      talentId = 112210,
                       dungeonPct = 73,
                       baselinePct = 29,
                     },
@@ -13164,6 +14665,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Piercing Howl",
+                      talentId = 136627,
                       dungeonPct = 41,
                       baselinePct = 70,
                     },
@@ -13173,6 +14675,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Piercing Howl",
+                      talentId = 136627,
                       dungeonPct = 80,
                       baselinePct = 70,
                     },
@@ -13180,6 +14683,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Fearless",
+                      talentId = 112210,
                       dungeonPct = 17,
                       baselinePct = 29,
                     },
@@ -13189,6 +14693,7 @@ ZugZugData = {
             },
             {
               spec = "Protection",
+              specId = 73,
               hero = "Colossus",
               label = "Bloodborne",
               importString = "CkEAAAAAAAAAAAAAAAAAAAAAAMLDAAMmZmZmZmhZzMzywYMmxMmxiZmZGzwMDAAAAMzAYMAwmZMsBDMDLMjZWgZmZGGbDAwMDAwAG",
@@ -13199,6 +14704,7 @@ ZugZugData = {
             },
             {
               spec = "Protection",
+              specId = 73,
               hero = "Mountain Thane",
               label = "Heavy Repercussions",
               importString = "CkEAAAAAAAAAAAAAAAAAAAAAAMGAAYMzMmZGzYWMzsMMGzMzMjhFjZGmhZGAAAAsMzAMjBYgNYZxYGzAY2wMbYMzMDmlBAzMAAMDYA",
@@ -13211,6 +14717,7 @@ ZugZugData = {
           ["18+"] = {
             {
               spec = "Protection",
+              specId = 73,
               hero = "Mountain Thane",
               label = "Tough as Nails",
               importString = "CkEAAAAAAAAAAAAAAAAAAAAAAMGAAYMDzMzMzY2MzsMjxYMjZMsMjZmxMMzAAAAglZGgZMADsBLLGzYGAzCmZDGzMDjtBAzMAAMDYA",
@@ -13231,11 +14738,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Fight Through the Flames",
+                      talentId = 112153,
                       dungeonPct = 54,
                       baselinePct = 37,
                     },
                     {
                       name = "Last Stand",
+                      talentId = 132879,
                       dungeonPct = 62,
                       baselinePct = 48,
                     },
@@ -13243,11 +14752,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Tough as Nails",
+                      talentId = 112177,
                       dungeonPct = 65,
                       baselinePct = 75,
                     },
                     {
                       name = "Fearless",
+                      talentId = 112210,
                       dungeonPct = 19,
                       baselinePct = 29,
                     },
@@ -13257,6 +14768,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Fearless",
+                      talentId = 112210,
                       dungeonPct = 73,
                       baselinePct = 29,
                     },
@@ -13264,6 +14776,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Piercing Howl",
+                      talentId = 136627,
                       dungeonPct = 41,
                       baselinePct = 70,
                     },
@@ -13273,6 +14786,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Piercing Howl",
+                      talentId = 136627,
                       dungeonPct = 80,
                       baselinePct = 70,
                     },
@@ -13280,6 +14794,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Fearless",
+                      talentId = 112210,
                       dungeonPct = 17,
                       baselinePct = 29,
                     },
@@ -13289,6 +14804,7 @@ ZugZugData = {
             },
             {
               spec = "Protection",
+              specId = 73,
               hero = "Colossus",
               label = "Bloodborne",
               importString = "CkEAAAAAAAAAAAAAAAAAAAAAAMLDAAMmZmZmZmhZzMzywYMmxMmxiZmZGzwMDAAAAMzAYMAwmZMsBDMDLMjZWgZmZGGbDAwMDAwAG",
@@ -13299,6 +14815,7 @@ ZugZugData = {
             },
             {
               spec = "Protection",
+              specId = 73,
               hero = "Mountain Thane",
               label = "Heavy Repercussions",
               importString = "CkEAAAAAAAAAAAAAAAAAAAAAAMGAAYMzMmZGzYWMzsMMGzMzMjhFjZGmhZGAAAAsMzAMjBYgNYZxYGzAY2wMbYMzMDmlBAzMAAMDYA",
@@ -13311,6 +14828,7 @@ ZugZugData = {
           ["20+"] = {
             {
               spec = "Protection",
+              specId = 73,
               hero = "Mountain Thane",
               label = "Tough as Nails",
               importString = "CkEAAAAAAAAAAAAAAAAAAAAAAMGAAYMDzMzMzY2MzsMjxYMjZMsMjZmxMMzAAAAglZGgZMADsBLLGzYGAzCmZDGzMDjtBAzMAAMDYA",
@@ -13331,11 +14849,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Fight Through the Flames",
+                      talentId = 112153,
                       dungeonPct = 54,
                       baselinePct = 37,
                     },
                     {
                       name = "Last Stand",
+                      talentId = 132879,
                       dungeonPct = 62,
                       baselinePct = 48,
                     },
@@ -13343,11 +14863,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Tough as Nails",
+                      talentId = 112177,
                       dungeonPct = 65,
                       baselinePct = 75,
                     },
                     {
                       name = "Fearless",
+                      talentId = 112210,
                       dungeonPct = 19,
                       baselinePct = 29,
                     },
@@ -13357,6 +14879,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Fearless",
+                      talentId = 112210,
                       dungeonPct = 73,
                       baselinePct = 29,
                     },
@@ -13364,6 +14887,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Piercing Howl",
+                      talentId = 136627,
                       dungeonPct = 41,
                       baselinePct = 70,
                     },
@@ -13373,6 +14897,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Piercing Howl",
+                      talentId = 136627,
                       dungeonPct = 80,
                       baselinePct = 70,
                     },
@@ -13380,6 +14905,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Fearless",
+                      talentId = 112210,
                       dungeonPct = 17,
                       baselinePct = 29,
                     },
@@ -13389,6 +14915,7 @@ ZugZugData = {
             },
             {
               spec = "Protection",
+              specId = 73,
               hero = "Colossus",
               label = "Bloodborne",
               importString = "CkEAAAAAAAAAAAAAAAAAAAAAAMLDAAMmZmZmZmhZzMzywYMmxMmxiZmZGzwMDAAAAMzAYMAwmZMsBDMDLMjZWgZmZGGbDAwMDAwAG",
@@ -13399,6 +14926,7 @@ ZugZugData = {
             },
             {
               spec = "Protection",
+              specId = 73,
               hero = "Mountain Thane",
               label = "Heavy Repercussions",
               importString = "CkEAAAAAAAAAAAAAAAAAAAAAAMGAAYMzMmZGzYWMzsMMGzMzMjhFjZGmhZGAAAAsMzAMjBYgNYZxYGzAY2wMbYMzMDmlBAzMAAMDYA",
@@ -13417,6 +14945,7 @@ ZugZugData = {
           heroic = {
             {
               spec = "Subtlety",
+              specId = 261,
               hero = "Trickster",
               label = "Trickster",
               importString = "CUQAAAAAAAAAAAAAAAAAAAAAAAgx2MAAAAAwsMGLzwstNGzMmBzMzMjxsNMjttZmZmZmxgxMbDAAAADGDYMbGGYgZhFmFbYGwMDmxA",
@@ -13435,6 +14964,7 @@ ZugZugData = {
             },
             {
               spec = "Outlaw",
+              specId = 260,
               hero = "Trickster",
               label = "Preparation",
               importString = "CQQAAAAAAAAAAAAAAAAAAAAAAAgx2MYmZmZmtZmZmZMmNGmZbmlBbzAAAAAAmttZmZYmZmZMzMbDAAAAjBAjZxwADMLswswGDwMDGYA",
@@ -13444,6 +14974,7 @@ ZugZugData = {
             },
             {
               spec = "Assassination",
+              specId = 259,
               hero = "Fatebound",
               label = "Inspiring Strike",
               importString = "CMQAAAAAAAAAAAAAAAAAAAAAAYmlxsZwAAAAAAzyglZAAAAAAz22MzMzMzYMzMzsNzyMzMMzMzMzwMMzAYgFYGjZMLA2GwmBAzMwA",
@@ -13456,6 +14987,7 @@ ZugZugData = {
             },
             {
               spec = "Assassination",
+              specId = 259,
               hero = "Fatebound",
               label = "Sudden Demise",
               importString = "CMQAAAAAAAAAAAAAAAAAAAAAAYmlZmNDGAAAAAYWGsNDAAAAAYsNzMzMzMGzMzMbzYmxYGzMzYGmxYAMwCMjxMmNAbDYzAgZmZYA",
@@ -13465,6 +14997,7 @@ ZugZugData = {
             },
             {
               spec = "Subtlety",
+              specId = 261,
               hero = "Deathstalker",
               label = "Clear the Witnesses",
               importString = "CUQAAAAAAAAAAAAAAAAAAAAAAAgx2MAAAAAwsMGLzwstNGzMmBzMzMjxsNMjttZmZmZmxgxMbDAAAADGziZZgBsA2GmBMLYGmZAmxA",
@@ -13474,6 +15007,7 @@ ZugZugData = {
             },
             {
               spec = "Outlaw",
+              specId = 260,
               hero = "Fatebound",
               label = "Thief's Versatility",
               importString = "CQQAAAAAAAAAAAAAAAAAAAAAAAgx2MGzMzMzsNzMzYmZmFGmxMLD2mBAAAAAMbbzMzwMzMzYmZ2GAAAAGADsBzYMjZDw2ALMAYmZgB",
@@ -13483,6 +15017,7 @@ ZugZugData = {
             },
             {
               spec = "Assassination",
+              specId = 259,
               hero = "Fatebound",
               label = "Poisoner's Drive",
               importString = "CMQAAAAAAAAAAAAAAAAAAAAAAYmlxsNDGAAAAAYWGsNDAAAAAYsNzMzMzMGzMzMbzsNzMDGzMzMmZMMAGYBmxYGzGglBsZAwMzYMA",
@@ -13492,6 +15027,7 @@ ZugZugData = {
             },
             {
               spec = "Outlaw",
+              specId = 260,
               hero = "Trickster",
               label = "Find an Opening",
               importString = "CQQAAAAAAAAAAAAAAAAAAAAAAAgBDmZGGMzMjZmZ2YmZmlZWGsNDAAAAAw22MzMzMzMzMmZmlBAAAgxAgxsZYgBmFWY2YjBYmBzgB",
@@ -13503,6 +15039,7 @@ ZugZugData = {
           mythic = {
             {
               spec = "Subtlety",
+              specId = 261,
               hero = "Trickster",
               label = "Trickster",
               importString = "CUQAAAAAAAAAAAAAAAAAAAAAAAgx2MAAAAAwsMGLzwstNGzMmBzMzMjxsNMjttZmZmZmxgxMbDAAAADGDYMbGGYgZhFmFbYGwMDmxA",
@@ -13519,6 +15056,7 @@ ZugZugData = {
             },
             {
               spec = "Outlaw",
+              specId = 260,
               hero = "Trickster",
               label = "Preparation",
               importString = "CQQAAAAAAAAAAAAAAAAAAAAAAAgx2MYmZmZmtZmZmZMmNGmZbmlBbzAAAAAAmttZmZYmZmZMzMbDAAAAjBAjZxwADMLswswGDwMDGYA",
@@ -13530,6 +15068,7 @@ ZugZugData = {
             },
             {
               spec = "Assassination",
+              specId = 259,
               hero = "Fatebound",
               label = "Inspiring Strike",
               importString = "CMQAAAAAAAAAAAAAAAAAAAAAAYmlxsZwAAAAAAzyglZAAAAAAz22MzMzMzYMzMzsNzyMzMMzMzMzwMMzAYgFYGjZMLA2GwmBAzMwA",
@@ -13543,6 +15082,7 @@ ZugZugData = {
             },
             {
               spec = "Assassination",
+              specId = 259,
               hero = "Fatebound",
               label = "Sudden Demise",
               importString = "CMQAAAAAAAAAAAAAAAAAAAAAAYmlZmNDGAAAAAYWGsNDAAAAAYsNzMzMzMGzMzMbzYmxYGzMzYGmxYAMwCMjxMmNAbDYzAgZmZYA",
@@ -13552,6 +15092,7 @@ ZugZugData = {
             },
             {
               spec = "Subtlety",
+              specId = 261,
               hero = "Deathstalker",
               label = "Clear the Witnesses",
               importString = "CUQAAAAAAAAAAAAAAAAAAAAAAAgx2MAAAAAwsMGLzwstNGzMmBzMzMjxsNMjttZmZmZmxgxMbDAAAADGziZZgBsA2GmBMLYGmZAmxA",
@@ -13561,6 +15102,7 @@ ZugZugData = {
             },
             {
               spec = "Outlaw",
+              specId = 260,
               hero = "Fatebound",
               label = "Thief's Versatility",
               importString = "CQQAAAAAAAAAAAAAAAAAAAAAAAgx2MGzMzMzsNzMzYmZmFGmxMLD2mBAAAAAMbbzMzwMzMzYmZ2GAAAAGADsBzYMjZDw2ALMAYmZgB",
@@ -13570,6 +15112,7 @@ ZugZugData = {
             },
             {
               spec = "Assassination",
+              specId = 259,
               hero = "Fatebound",
               label = "Poisoner's Drive",
               importString = "CMQAAAAAAAAAAAAAAAAAAAAAAYmlxsNDGAAAAAYWGsNDAAAAAYsNzMzMzMGzMzMbzsNzMDGzMzMmZMMAGYBmxYGzGglBsZAwMzYMA",
@@ -13579,6 +15122,7 @@ ZugZugData = {
             },
             {
               spec = "Outlaw",
+              specId = 260,
               hero = "Trickster",
               label = "Find an Opening",
               importString = "CQQAAAAAAAAAAAAAAAAAAAAAAAgBDmZGGMzMjZmZ2YmZmlZWGsNDAAAAAw22MzMzMzMzMmZmlBAAAgxAgxsZYgBmFWY2YjBYmBzgB",
@@ -13592,6 +15136,7 @@ ZugZugData = {
           all = {
             {
               spec = "Subtlety",
+              specId = 261,
               hero = "Trickster",
               label = "Ancient Arts",
               importString = "CUQAAAAAAAAAAAAAAAAAAAAAAAgx2MAAAAAwsMGLzwstNGzMmxYmZmZMmthZstMzMzMzMGMmZbAAAAYwYAjZzwADMLswsYDzAmZwMGA",
@@ -13608,6 +15153,7 @@ ZugZugData = {
             },
             {
               spec = "Outlaw",
+              specId = 260,
               hero = "Trickster",
               label = "Killing Spree",
               importString = "CQQAAAAAAAAAAAAAAAAAAAAAAAgx2MYmZmZmtZmZMzMzsBmZbmlBbzAAAAAAstMzMDzMzMjZmZbAAAAYMAYMLGGYgZhFmF2YAmZwMYA",
@@ -13623,6 +15169,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Wound Poison",
+                      talentId = 112522,
                       dungeonPct = 33,
                       baselinePct = 14,
                     },
@@ -13630,6 +15177,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Shadowrunner",
+                      talentId = 136882,
                       dungeonPct = 41,
                       baselinePct = 50,
                     },
@@ -13639,6 +15187,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Stillshroud",
+                      talentId = 117146,
                       dungeonPct = 35,
                       baselinePct = 16,
                     },
@@ -13646,6 +15195,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Shadowrunner",
+                      talentId = 136882,
                       dungeonPct = 42,
                       baselinePct = 50,
                     },
@@ -13655,6 +15205,7 @@ ZugZugData = {
             },
             {
               spec = "Assassination",
+              specId = 259,
               hero = "Fatebound",
               label = "Fatebound",
               importString = "CMQAAAAAAAAAAAAAAAAAAAAAAYmlZmNDGAAAAAYWGsNDAAAAAY2WmZmZmZGjZmZmtZWmZMmZmZmxwMjxAYgFYGjZMbA2GwmBAzMDGA",
@@ -13665,6 +15216,7 @@ ZugZugData = {
             },
             {
               spec = "Assassination",
+              specId = 259,
               hero = "Deathstalker",
               label = "Bait and Switch",
               importString = "CMQAAAAAAAAAAAAAAAAAAAAAAYmlZmNDGAAAAAYWGsNDAAAAAY2WmZmZmZGjZmZmtZWmZMmZmZmxwMjxAsZWGYALgthZADLGMzAMYA",
@@ -13676,6 +15228,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Recuperator",
+                      talentId = 112526,
                       dungeonPct = 97,
                       baselinePct = 85,
                     },
@@ -13683,6 +15236,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Airborne Irritant",
+                      talentId = 117740,
                       dungeonPct = 53,
                       baselinePct = 73,
                     },
@@ -13692,6 +15246,7 @@ ZugZugData = {
             },
             {
               spec = "Outlaw",
+              specId = 260,
               hero = "Fatebound",
               label = "Summarily Dispatched",
               importString = "CQQAAAAAAAAAAAAAAAAAAAAAAAgx2MYmZmZmtZmZmZmZmFGmZbmlBbzAAAAAAstMzMDzMzMjZmZbAAAAMDgB2gZMmxsBYbgFGAMzMwA",
@@ -13702,6 +15257,7 @@ ZugZugData = {
             },
             {
               spec = "Assassination",
+              specId = 259,
               hero = "Fatebound",
               label = "Regicide's Reward",
               importString = "CMQAAAAAAAAAAAAAAAAAAAAAAYmlxsZwAAAAAAzyglZAAAAAAjtZmZmZmxYmZmZbmlZmZwMmZmxMjZMAGYBmxYGzCglBsZAwMzYMA",
@@ -13714,6 +15270,7 @@ ZugZugData = {
           ["15+"] = {
             {
               spec = "Subtlety",
+              specId = 261,
               hero = "Trickster",
               label = "Ancient Arts",
               importString = "CUQAAAAAAAAAAAAAAAAAAAAAAAgx2MAAAAAwsMGLzwstNGzMmxYmZmZMmthZstMzMzMzMGMmZbAAAAYwYAjZzwADMLswsYDzAmZwMGA",
@@ -13730,6 +15287,7 @@ ZugZugData = {
             },
             {
               spec = "Outlaw",
+              specId = 260,
               hero = "Trickster",
               label = "Killing Spree",
               importString = "CQQAAAAAAAAAAAAAAAAAAAAAAAgx2MYmZmZmtZmZMzMzsBmZbmlBbzAAAAAAstMzMDzMzMjZmZbAAAAYMAYMLGGYgZhFmF2YAmZwMYA",
@@ -13745,6 +15303,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Wound Poison",
+                      talentId = 112522,
                       dungeonPct = 33,
                       baselinePct = 14,
                     },
@@ -13752,6 +15311,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Shadowrunner",
+                      talentId = 136882,
                       dungeonPct = 41,
                       baselinePct = 50,
                     },
@@ -13761,6 +15321,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Stillshroud",
+                      talentId = 117146,
                       dungeonPct = 35,
                       baselinePct = 16,
                     },
@@ -13768,6 +15329,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Shadowrunner",
+                      talentId = 136882,
                       dungeonPct = 42,
                       baselinePct = 50,
                     },
@@ -13777,6 +15339,7 @@ ZugZugData = {
             },
             {
               spec = "Assassination",
+              specId = 259,
               hero = "Fatebound",
               label = "Fatebound",
               importString = "CMQAAAAAAAAAAAAAAAAAAAAAAYmlZmNDGAAAAAYWGsNDAAAAAY2WmZmZmZGjZmZmtZWmZMmZmZmxwMjxAYgFYGjZMbA2GwmBAzMDGA",
@@ -13787,6 +15350,7 @@ ZugZugData = {
             },
             {
               spec = "Assassination",
+              specId = 259,
               hero = "Deathstalker",
               label = "Bait and Switch",
               importString = "CMQAAAAAAAAAAAAAAAAAAAAAAYmlZmNDGAAAAAYWGsNDAAAAAY2WmZmZmZGjZmZmtZWmZMmZmZmxwMjxAsZWGYALgthZADLGMzAMYA",
@@ -13798,6 +15362,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Recuperator",
+                      talentId = 112526,
                       dungeonPct = 97,
                       baselinePct = 85,
                     },
@@ -13805,6 +15370,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Airborne Irritant",
+                      talentId = 117740,
                       dungeonPct = 53,
                       baselinePct = 73,
                     },
@@ -13814,6 +15380,7 @@ ZugZugData = {
             },
             {
               spec = "Outlaw",
+              specId = 260,
               hero = "Fatebound",
               label = "Summarily Dispatched",
               importString = "CQQAAAAAAAAAAAAAAAAAAAAAAAgx2MYmZmZmtZmZmZmZmFGmZbmlBbzAAAAAAstMzMDzMzMjZmZbAAAAMDgB2gZMmxsBYbgFGAMzMwA",
@@ -13824,6 +15391,7 @@ ZugZugData = {
             },
             {
               spec = "Assassination",
+              specId = 259,
               hero = "Fatebound",
               label = "Regicide's Reward",
               importString = "CMQAAAAAAAAAAAAAAAAAAAAAAYmlxsZwAAAAAAzyglZAAAAAAjtZmZmZmxYmZmZbmlZmZwMmZmxMjZMAGYBmxYGzCglBsZAwMzYMA",
@@ -13836,6 +15404,7 @@ ZugZugData = {
           ["18+"] = {
             {
               spec = "Subtlety",
+              specId = 261,
               hero = "Trickster",
               label = "Ancient Arts",
               importString = "CUQAAAAAAAAAAAAAAAAAAAAAAAgx2MAAAAAwsMGLzwstNGzMmxYmZmZMmthZstMzMzMzMGMmZbAAAAYwYAjZzwADMLswsYDzAmZwMGA",
@@ -13852,6 +15421,7 @@ ZugZugData = {
             },
             {
               spec = "Outlaw",
+              specId = 260,
               hero = "Trickster",
               label = "Killing Spree",
               importString = "CQQAAAAAAAAAAAAAAAAAAAAAAAgx2MYmZmZmtZmZMzMzsBmZbmlBbzAAAAAAstMzMDzMzMjZmZbAAAAYMAYMLGGYgZhFmF2YAmZwMYA",
@@ -13867,6 +15437,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Wound Poison",
+                      talentId = 112522,
                       dungeonPct = 33,
                       baselinePct = 14,
                     },
@@ -13874,6 +15445,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Shadowrunner",
+                      talentId = 136882,
                       dungeonPct = 41,
                       baselinePct = 50,
                     },
@@ -13883,6 +15455,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Stillshroud",
+                      talentId = 117146,
                       dungeonPct = 35,
                       baselinePct = 16,
                     },
@@ -13890,6 +15463,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Shadowrunner",
+                      talentId = 136882,
                       dungeonPct = 42,
                       baselinePct = 50,
                     },
@@ -13899,6 +15473,7 @@ ZugZugData = {
             },
             {
               spec = "Assassination",
+              specId = 259,
               hero = "Fatebound",
               label = "Fatebound",
               importString = "CMQAAAAAAAAAAAAAAAAAAAAAAYmlZmNDGAAAAAYWGsNDAAAAAY2WmZmZmZGjZmZmtZWmZMmZmZmxwMjxAYgFYGjZMbA2GwmBAzMDGA",
@@ -13909,6 +15484,7 @@ ZugZugData = {
             },
             {
               spec = "Assassination",
+              specId = 259,
               hero = "Deathstalker",
               label = "Bait and Switch",
               importString = "CMQAAAAAAAAAAAAAAAAAAAAAAYmlZmNDGAAAAAYWGsNDAAAAAY2WmZmZmZGjZmZmtZWmZMmZmZmxwMjxAsZWGYALgthZADLGMzAMYA",
@@ -13920,6 +15496,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Recuperator",
+                      talentId = 112526,
                       dungeonPct = 97,
                       baselinePct = 85,
                     },
@@ -13927,6 +15504,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Airborne Irritant",
+                      talentId = 117740,
                       dungeonPct = 53,
                       baselinePct = 73,
                     },
@@ -13936,6 +15514,7 @@ ZugZugData = {
             },
             {
               spec = "Outlaw",
+              specId = 260,
               hero = "Fatebound",
               label = "Summarily Dispatched",
               importString = "CQQAAAAAAAAAAAAAAAAAAAAAAAgx2MYmZmZmtZmZmZmZmFGmZbmlBbzAAAAAAstMzMDzMzMjZmZbAAAAMDgB2gZMmxsBYbgFGAMzMwA",
@@ -13946,6 +15525,7 @@ ZugZugData = {
             },
             {
               spec = "Assassination",
+              specId = 259,
               hero = "Fatebound",
               label = "Regicide's Reward",
               importString = "CMQAAAAAAAAAAAAAAAAAAAAAAYmlxsZwAAAAAAzyglZAAAAAAjtZmZmZmxYmZmZbmlZmZwMmZmxMjZMAGYBmxYGzCglBsZAwMzYMA",
@@ -13958,6 +15538,7 @@ ZugZugData = {
           ["20+"] = {
             {
               spec = "Subtlety",
+              specId = 261,
               hero = "Trickster",
               label = "Ancient Arts",
               importString = "CUQAAAAAAAAAAAAAAAAAAAAAAAgx2MAAAAAwsMGLzwstNGzMmxYmZmZMmthZstMzMzMzMGMmZbAAAAYwYAjZzwADMLswsYDzAmZwMGA",
@@ -13974,6 +15555,7 @@ ZugZugData = {
             },
             {
               spec = "Outlaw",
+              specId = 260,
               hero = "Trickster",
               label = "Killing Spree",
               importString = "CQQAAAAAAAAAAAAAAAAAAAAAAAgx2MYmZmZmtZmZMzMzsBmZbmlBbzAAAAAAstMzMDzMzMjZmZbAAAAYMAYMLGGYgZhFmF2YAmZwMYA",
@@ -13989,6 +15571,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Wound Poison",
+                      talentId = 112522,
                       dungeonPct = 33,
                       baselinePct = 14,
                     },
@@ -13996,6 +15579,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Shadowrunner",
+                      talentId = 136882,
                       dungeonPct = 41,
                       baselinePct = 50,
                     },
@@ -14005,6 +15589,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Stillshroud",
+                      talentId = 117146,
                       dungeonPct = 35,
                       baselinePct = 16,
                     },
@@ -14012,6 +15597,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Shadowrunner",
+                      talentId = 136882,
                       dungeonPct = 42,
                       baselinePct = 50,
                     },
@@ -14021,6 +15607,7 @@ ZugZugData = {
             },
             {
               spec = "Assassination",
+              specId = 259,
               hero = "Fatebound",
               label = "Fatebound",
               importString = "CMQAAAAAAAAAAAAAAAAAAAAAAYmlZmNDGAAAAAYWGsNDAAAAAY2WmZmZmZGjZmZmtZWmZMmZmZmxwMjxAYgFYGjZMbA2GwmBAzMDGA",
@@ -14031,6 +15618,7 @@ ZugZugData = {
             },
             {
               spec = "Assassination",
+              specId = 259,
               hero = "Deathstalker",
               label = "Bait and Switch",
               importString = "CMQAAAAAAAAAAAAAAAAAAAAAAYmlZmNDGAAAAAYWGsNDAAAAAY2WmZmZmZGjZmZmtZWmZMmZmZmxwMjxAsZWGYALgthZADLGMzAMYA",
@@ -14042,6 +15630,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Recuperator",
+                      talentId = 112526,
                       dungeonPct = 97,
                       baselinePct = 85,
                     },
@@ -14049,6 +15638,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Airborne Irritant",
+                      talentId = 117740,
                       dungeonPct = 53,
                       baselinePct = 73,
                     },
@@ -14058,6 +15648,7 @@ ZugZugData = {
             },
             {
               spec = "Outlaw",
+              specId = 260,
               hero = "Fatebound",
               label = "Summarily Dispatched",
               importString = "CQQAAAAAAAAAAAAAAAAAAAAAAAgx2MYmZmZmtZmZmZmZmFGmZbmlBbzAAAAAAstMzMDzMzMjZmZbAAAAMDgB2gZMmxsBYbgFGAMzMwA",
@@ -14068,6 +15659,7 @@ ZugZugData = {
             },
             {
               spec = "Assassination",
+              specId = 259,
               hero = "Fatebound",
               label = "Regicide's Reward",
               importString = "CMQAAAAAAAAAAAAAAAAAAAAAAYmlxsZwAAAAAAzyglZAAAAAAjtZmZmZmxYmZmZbmlZmZwMmZmxMjZMAGYBmxYGzCglBsZAwMzYMA",
@@ -14086,6 +15678,7 @@ ZugZugData = {
           heroic = {
             {
               spec = "Retribution",
+              specId = 70,
               hero = "Templar",
               label = "Blessed Calling",
               importString = "CYEAAAAAAAAAAAAAAAAAAAAAAAAAAAAwMbbzMzywMDAAAAAAjZMmhZGbDz2wMbzYMmZYGbsNMAAwMzsNzsNDAYDwAgxMMDmxY2wyMYYMjBD",
@@ -14106,6 +15699,7 @@ ZugZugData = {
             },
             {
               spec = "Retribution",
+              specId = 70,
               hero = "Herald of the Sun",
               label = "Templar Strikes",
               importString = "CYEAAAAAAAAAAAAAAAAAAAAAAAAAAAAwMLbzMzywMDAAAAAAzMjZbGmZsNjZbYmtZMGzMMjF2GAmlZbmZ2mBAAAWAMAgZYgZMmFgZmhxMGM",
@@ -14115,6 +15709,7 @@ ZugZugData = {
             },
             {
               spec = "Retribution",
+              specId = 70,
               hero = "Herald of the Sun",
               label = "Blessed Champion",
               importString = "CYEAAAAAAAAAAAAAAAAAAAAAAAAAAAAwMbbzMWGjZGAAAAAAzMjZZGmhthZbYmtZMGzMMjN2GGwsMbzMz2MAAAwCgBwYMjZgZMzsBMzMMGgB",
@@ -14126,6 +15721,7 @@ ZugZugData = {
           mythic = {
             {
               spec = "Retribution",
+              specId = 70,
               hero = "Templar",
               label = "Blessed Calling",
               importString = "CYEAAAAAAAAAAAAAAAAAAAAAAAAAAAAwMbbzMzywMDAAAAAAjZMmhZGbDz2wMbzYMmZYGbsNMAAwMzsNzsNDAYDwAgxMMDmxY2wyMYYMjBD",
@@ -14145,6 +15741,7 @@ ZugZugData = {
             },
             {
               spec = "Retribution",
+              specId = 70,
               hero = "Herald of the Sun",
               label = "Templar Strikes",
               importString = "CYEAAAAAAAAAAAAAAAAAAAAAAAAAAAAwMLbzMzywMDAAAAAAzMjZbGmZsNjZbYmtZMGzMMjF2GAmlZbmZ2mBAAAWAMAgZYgZMmFgZmhxMGM",
@@ -14156,6 +15753,7 @@ ZugZugData = {
             },
             {
               spec = "Retribution",
+              specId = 70,
               hero = "Herald of the Sun",
               label = "Blessed Champion",
               importString = "CYEAAAAAAAAAAAAAAAAAAAAAAAAAAAAwMbbzMWGjZGAAAAAAzMjZZGmhthZbYmtZMGzMMjN2GGwsMbzMz2MAAAwCgBwYMjZgZMzsBMzMMGgB",
@@ -14169,6 +15767,7 @@ ZugZugData = {
           all = {
             {
               spec = "Retribution",
+              specId = 70,
               hero = "Templar",
               label = "Sanctify",
               importString = "CYEAAAAAAAAAAAAAAAAAAAAAAAAAAAAMmZbbmZWGjZGAAAAAAzMjZZGmZsNMbDzsNjxYMMjN2AAAYmZWmZ2mBAsBYAwYGGYmZmZDLzghxwgB",
@@ -14189,6 +15788,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Righteous Protection",
+                      talentId = 128248,
                       dungeonPct = 46,
                       baselinePct = 26,
                     },
@@ -14196,6 +15796,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Punishment",
+                      talentId = 136592,
                       dungeonPct = 56,
                       baselinePct = 61,
                     },
@@ -14205,6 +15806,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Brought to Light",
+                      talentId = 136486,
                       dungeonPct = 14,
                       baselinePct = 5,
                     },
@@ -14212,6 +15814,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 40,
                       baselinePct = 59,
                     },
@@ -14221,6 +15824,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 92,
                       baselinePct = 59,
                     },
@@ -14228,6 +15832,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Empyreal Ward",
+                      talentId = 128255,
                       dungeonPct = 7,
                       baselinePct = 13,
                     },
@@ -14237,6 +15842,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Consecrated Ground",
+                      talentId = 102518,
                       dungeonPct = 80,
                       baselinePct = 74,
                     },
@@ -14244,6 +15850,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 37,
                       baselinePct = 59,
                     },
@@ -14253,6 +15860,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 73,
                       baselinePct = 59,
                     },
@@ -14260,6 +15868,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Lightbearer",
+                      talentId = 128257,
                       dungeonPct = 62,
                       baselinePct = 68,
                     },
@@ -14269,6 +15878,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Blessing of Protection",
+                      talentId = 102606,
                       dungeonPct = 21,
                       baselinePct = 7,
                     },
@@ -14276,6 +15886,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 31,
                       baselinePct = 59,
                     },
@@ -14285,6 +15896,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Jurisdiction",
+                      talentId = 102516,
                       dungeonPct = 48,
                       baselinePct = 35,
                     },
@@ -14292,6 +15904,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 43,
                       baselinePct = 59,
                     },
@@ -14301,6 +15914,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 97,
                       baselinePct = 59,
                     },
@@ -14308,6 +15922,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Lead the Charge",
+                      talentId = 128263,
                       dungeonPct = 67,
                       baselinePct = 75,
                     },
@@ -14317,6 +15932,7 @@ ZugZugData = {
             },
             {
               spec = "Retribution",
+              specId = 70,
               hero = "Herald of the Sun",
               label = "Jurisdiction",
               importString = "CYEAAAAAAAAAAAAAAAAAAAAAAAAAAAAMmZbbmZWGzMzAAAAAAYmZMmhZGbDz2wMbzYMGDzYhNAMLz2MzsNDAAAsAYAwYGGYGzMbAzMDjZMYA",
@@ -14329,6 +15945,7 @@ ZugZugData = {
           ["15+"] = {
             {
               spec = "Retribution",
+              specId = 70,
               hero = "Templar",
               label = "Sanctify",
               importString = "CYEAAAAAAAAAAAAAAAAAAAAAAAAAAAAMmZbbmZWGjZGAAAAAAzMjZZGmZsNMbDzsNjxYMMjN2AAAYmZWmZ2mBAsBYAwYGGYmZmZDLzghxwgB",
@@ -14349,6 +15966,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Righteous Protection",
+                      talentId = 128248,
                       dungeonPct = 46,
                       baselinePct = 26,
                     },
@@ -14356,6 +15974,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Punishment",
+                      talentId = 136592,
                       dungeonPct = 56,
                       baselinePct = 61,
                     },
@@ -14365,6 +15984,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Brought to Light",
+                      talentId = 136486,
                       dungeonPct = 14,
                       baselinePct = 5,
                     },
@@ -14372,6 +15992,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 40,
                       baselinePct = 59,
                     },
@@ -14381,6 +16002,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 92,
                       baselinePct = 59,
                     },
@@ -14388,6 +16010,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Empyreal Ward",
+                      talentId = 128255,
                       dungeonPct = 7,
                       baselinePct = 13,
                     },
@@ -14397,6 +16020,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Consecrated Ground",
+                      talentId = 102518,
                       dungeonPct = 80,
                       baselinePct = 74,
                     },
@@ -14404,6 +16028,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 37,
                       baselinePct = 59,
                     },
@@ -14413,6 +16038,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 73,
                       baselinePct = 59,
                     },
@@ -14420,6 +16046,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Lightbearer",
+                      talentId = 128257,
                       dungeonPct = 62,
                       baselinePct = 68,
                     },
@@ -14429,6 +16056,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Blessing of Protection",
+                      talentId = 102606,
                       dungeonPct = 21,
                       baselinePct = 7,
                     },
@@ -14436,6 +16064,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 31,
                       baselinePct = 59,
                     },
@@ -14445,6 +16074,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Jurisdiction",
+                      talentId = 102516,
                       dungeonPct = 48,
                       baselinePct = 35,
                     },
@@ -14452,6 +16082,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 43,
                       baselinePct = 59,
                     },
@@ -14461,6 +16092,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 97,
                       baselinePct = 59,
                     },
@@ -14468,6 +16100,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Lead the Charge",
+                      talentId = 128263,
                       dungeonPct = 67,
                       baselinePct = 75,
                     },
@@ -14477,6 +16110,7 @@ ZugZugData = {
             },
             {
               spec = "Retribution",
+              specId = 70,
               hero = "Herald of the Sun",
               label = "Jurisdiction",
               importString = "CYEAAAAAAAAAAAAAAAAAAAAAAAAAAAAMmZbbmZWGzMzAAAAAAYmZMmhZGbDz2wMbzYMGDzYhNAMLz2MzsNDAAAsAYAwYGGYGzMbAzMDjZMYA",
@@ -14489,6 +16123,7 @@ ZugZugData = {
           ["18+"] = {
             {
               spec = "Retribution",
+              specId = 70,
               hero = "Templar",
               label = "Sanctify",
               importString = "CYEAAAAAAAAAAAAAAAAAAAAAAAAAAAAMmZbbmZWGjZGAAAAAAzMjZZGmZsNMbDzsNjxYMMjN2AAAYmZWmZ2mBAsBYAwYGGYmZmZDLzghxwgB",
@@ -14509,6 +16144,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Righteous Protection",
+                      talentId = 128248,
                       dungeonPct = 46,
                       baselinePct = 26,
                     },
@@ -14516,6 +16152,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Punishment",
+                      talentId = 136592,
                       dungeonPct = 56,
                       baselinePct = 61,
                     },
@@ -14525,6 +16162,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Brought to Light",
+                      talentId = 136486,
                       dungeonPct = 14,
                       baselinePct = 5,
                     },
@@ -14532,6 +16170,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 40,
                       baselinePct = 59,
                     },
@@ -14541,6 +16180,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 92,
                       baselinePct = 59,
                     },
@@ -14548,6 +16188,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Empyreal Ward",
+                      talentId = 128255,
                       dungeonPct = 7,
                       baselinePct = 13,
                     },
@@ -14557,6 +16198,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Consecrated Ground",
+                      talentId = 102518,
                       dungeonPct = 80,
                       baselinePct = 74,
                     },
@@ -14564,6 +16206,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 37,
                       baselinePct = 59,
                     },
@@ -14573,6 +16216,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 73,
                       baselinePct = 59,
                     },
@@ -14580,6 +16224,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Lightbearer",
+                      talentId = 128257,
                       dungeonPct = 62,
                       baselinePct = 68,
                     },
@@ -14589,6 +16234,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Blessing of Protection",
+                      talentId = 102606,
                       dungeonPct = 21,
                       baselinePct = 7,
                     },
@@ -14596,6 +16242,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 31,
                       baselinePct = 59,
                     },
@@ -14605,6 +16252,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Jurisdiction",
+                      talentId = 102516,
                       dungeonPct = 48,
                       baselinePct = 35,
                     },
@@ -14612,6 +16260,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 43,
                       baselinePct = 59,
                     },
@@ -14621,6 +16270,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 97,
                       baselinePct = 59,
                     },
@@ -14628,6 +16278,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Lead the Charge",
+                      talentId = 128263,
                       dungeonPct = 67,
                       baselinePct = 75,
                     },
@@ -14637,6 +16288,7 @@ ZugZugData = {
             },
             {
               spec = "Retribution",
+              specId = 70,
               hero = "Herald of the Sun",
               label = "Jurisdiction",
               importString = "CYEAAAAAAAAAAAAAAAAAAAAAAAAAAAAMmZbbmZWGzMzAAAAAAYmZMmhZGbDz2wMbzYMGDzYhNAMLz2MzsNDAAAsAYAwYGGYGzMbAzMDjZMYA",
@@ -14649,6 +16301,7 @@ ZugZugData = {
           ["20+"] = {
             {
               spec = "Retribution",
+              specId = 70,
               hero = "Templar",
               label = "Sanctify",
               importString = "CYEAAAAAAAAAAAAAAAAAAAAAAAAAAAAMmZbbmZWGjZGAAAAAAzMjZZGmZsNMbDzsNjxYMMjN2AAAYmZWmZ2mBAsBYAwYGGYmZmZDLzghxwgB",
@@ -14669,6 +16322,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Righteous Protection",
+                      talentId = 128248,
                       dungeonPct = 46,
                       baselinePct = 26,
                     },
@@ -14676,6 +16330,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Punishment",
+                      talentId = 136592,
                       dungeonPct = 56,
                       baselinePct = 61,
                     },
@@ -14685,6 +16340,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Brought to Light",
+                      talentId = 136486,
                       dungeonPct = 14,
                       baselinePct = 5,
                     },
@@ -14692,6 +16348,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 40,
                       baselinePct = 59,
                     },
@@ -14701,6 +16358,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 92,
                       baselinePct = 59,
                     },
@@ -14708,6 +16366,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Empyreal Ward",
+                      talentId = 128255,
                       dungeonPct = 7,
                       baselinePct = 13,
                     },
@@ -14717,6 +16376,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Consecrated Ground",
+                      talentId = 102518,
                       dungeonPct = 80,
                       baselinePct = 74,
                     },
@@ -14724,6 +16384,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 37,
                       baselinePct = 59,
                     },
@@ -14733,6 +16394,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 73,
                       baselinePct = 59,
                     },
@@ -14740,6 +16402,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Lightbearer",
+                      talentId = 128257,
                       dungeonPct = 62,
                       baselinePct = 68,
                     },
@@ -14749,6 +16412,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Blessing of Protection",
+                      talentId = 102606,
                       dungeonPct = 21,
                       baselinePct = 7,
                     },
@@ -14756,6 +16420,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 31,
                       baselinePct = 59,
                     },
@@ -14765,6 +16430,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Jurisdiction",
+                      talentId = 102516,
                       dungeonPct = 48,
                       baselinePct = 35,
                     },
@@ -14772,6 +16438,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 43,
                       baselinePct = 59,
                     },
@@ -14781,6 +16448,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 97,
                       baselinePct = 59,
                     },
@@ -14788,6 +16456,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Lead the Charge",
+                      talentId = 128263,
                       dungeonPct = 67,
                       baselinePct = 75,
                     },
@@ -14797,6 +16466,7 @@ ZugZugData = {
             },
             {
               spec = "Retribution",
+              specId = 70,
               hero = "Herald of the Sun",
               label = "Jurisdiction",
               importString = "CYEAAAAAAAAAAAAAAAAAAAAAAAAAAAAMmZbbmZWGzMzAAAAAAYmZMmhZGbDz2wMbzYMGDzYhNAMLz2MzsNDAAAsAYAwYGGYGzMbAzMDjZMYA",
@@ -14813,6 +16483,7 @@ ZugZugData = {
           heroic = {
             {
               spec = "Holy",
+              specId = 65,
               hero = "Herald of the Sun",
               label = "Hand of Divinity",
               importString = "CEEAAAAAAAAAAAAAAAAAAAAAAAAAAYBAMAAglxMzYGzMzGjxYWGbzMLmZmhxMmZGGmtxAwAG2AbsMjZWmtZmZbGAAAgFAYzwYGzAAAmZYGjhB",
@@ -14833,6 +16504,7 @@ ZugZugData = {
             },
             {
               spec = "Holy",
+              specId = 65,
               hero = "Herald of the Sun",
               label = "Veneration",
               importString = "CEEAAAAAAAAAAAAAAAAAAAAAAAAAAYBAMDAAsMzMYGzMwYMzsMYmlZMzwYGzMDDz2YAYAYDsZ2mZmZZ2mZmtZAAAAWYDwihxMGMDAgZGmxYYA",
@@ -14842,6 +16514,7 @@ ZugZugData = {
             },
             {
               spec = "Holy",
+              specId = 65,
               hero = "Herald of the Sun",
               label = "Tyr's Deliverance",
               importString = "CEEAAAAAAAAAAAAAAAAAAAAAAAAAAYBAMAAGsNzMYGzMWMjZGzyYxMLDzMMMmZGGmtxAwAwGYzsMjZWmtZmZbGAAAgFAYzMGzYGmBAwMDzYMMA",
@@ -14853,6 +16526,7 @@ ZugZugData = {
           mythic = {
             {
               spec = "Holy",
+              specId = 65,
               hero = "Herald of the Sun",
               label = "Hand of Divinity",
               importString = "CEEAAAAAAAAAAAAAAAAAAAAAAAAAAYBAMAAglxMzYGzMzGjxYWGbzMLmZmhxMmZGGmtxAwAG2AbsMjZWmtZmZbGAAAgFAYzwYGzAAAmZYGjhB",
@@ -14873,6 +16547,7 @@ ZugZugData = {
             },
             {
               spec = "Holy",
+              specId = 65,
               hero = "Herald of the Sun",
               label = "Veneration",
               importString = "CEEAAAAAAAAAAAAAAAAAAAAAAAAAAYBAMDAAsMzMYGzMwYMzsMYmlZMzwYGzMDDz2YAYAYDsZ2mZmZZ2mZmtZAAAAWYDwihxMGMDAgZGmxYYA",
@@ -14882,6 +16557,7 @@ ZugZugData = {
             },
             {
               spec = "Holy",
+              specId = 65,
               hero = "Herald of the Sun",
               label = "Tyr's Deliverance",
               importString = "CEEAAAAAAAAAAAAAAAAAAAAAAAAAAYBAMAAGsNzMYGzMWMjZGzyYxMLDzMMMmZGGmtxAwAwGYzsMjZWmtZmZbGAAAgFAYzMGzYGmBAwMDzYMMA",
@@ -14895,6 +16571,7 @@ ZugZugData = {
           all = {
             {
               spec = "Holy",
+              specId = 65,
               hero = "Herald of the Sun",
               label = "Lightforged Blessing",
               importString = "CEEAAAAAAAAAAAAAAAAAAAAAAAAAAYBAMDAAsMmhZGzMzCjxYWGbzMLmZmhZZGzMDDz2YAYAYDsx2MzMLz2MzsNDAAAwCbMD2AmxAAAMzwMGDD",
@@ -14915,6 +16592,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Echoing Blessings",
+                      talentId = 115872,
                       dungeonPct = 42,
                       baselinePct = 29,
                     },
@@ -14922,6 +16600,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Unbound Freedom",
+                      talentId = 131438,
                       dungeonPct = 58,
                       baselinePct = 71,
                     },
@@ -14931,6 +16610,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Echoing Blessings",
+                      talentId = 115872,
                       dungeonPct = 41,
                       baselinePct = 29,
                     },
@@ -14938,6 +16618,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Unbound Freedom",
+                      talentId = 131438,
                       dungeonPct = 59,
                       baselinePct = 71,
                     },
@@ -14947,6 +16628,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Unbound Freedom",
+                      talentId = 131438,
                       dungeonPct = 89,
                       baselinePct = 71,
                     },
@@ -14954,6 +16636,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Echoing Blessings",
+                      talentId = 115872,
                       dungeonPct = 11,
                       baselinePct = 29,
                     },
@@ -14963,6 +16646,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Unbound Freedom",
+                      talentId = 131438,
                       dungeonPct = 87,
                       baselinePct = 71,
                     },
@@ -14970,6 +16654,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Echoing Blessings",
+                      talentId = 115872,
                       dungeonPct = 13,
                       baselinePct = 29,
                     },
@@ -14979,6 +16664,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Unbound Freedom",
+                      talentId = 131438,
                       dungeonPct = 97,
                       baselinePct = 71,
                     },
@@ -14986,6 +16672,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Echoing Blessings",
+                      talentId = 115872,
                       dungeonPct = 3,
                       baselinePct = 29,
                     },
@@ -14995,6 +16682,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Echoing Blessings",
+                      talentId = 115872,
                       dungeonPct = 45,
                       baselinePct = 29,
                     },
@@ -15002,6 +16690,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Unbound Freedom",
+                      talentId = 131438,
                       dungeonPct = 55,
                       baselinePct = 71,
                     },
@@ -15011,6 +16700,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Echoing Blessings",
+                      talentId = 115872,
                       dungeonPct = 42,
                       baselinePct = 29,
                     },
@@ -15018,6 +16708,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Unbound Freedom",
+                      talentId = 131438,
                       dungeonPct = 58,
                       baselinePct = 71,
                     },
@@ -15027,6 +16718,7 @@ ZugZugData = {
             },
             {
               spec = "Holy",
+              specId = 65,
               hero = "Lightsmith",
               label = "Bestow Light",
               importString = "CEEAAAAAAAAAAAAAAAAAAAAAAAAAAYBAMDAAsMmZmZGzMzCMGWGbzMLmZmhZZGzMDDz2YAYAYDsx2MzAAAAzMLbL2mZYjNGYDYGzAAmZAYGjxMA",
@@ -15037,6 +16729,7 @@ ZugZugData = {
             },
             {
               spec = "Holy",
+              specId = 65,
               hero = "Herald of the Sun",
               label = "Beacon of Virtue",
               importString = "CEEAAAAAAAAAAAAAAAAAAAAAAAAAAMLAgBAAsNmBzYmZWYMGzyYbmZxMzMMmxMzMGmtxAwAG2AbsMjZWmtZmZbGAAAgFWAsZGMjZwAAYmBjxwA",
@@ -15049,6 +16742,7 @@ ZugZugData = {
           ["15+"] = {
             {
               spec = "Holy",
+              specId = 65,
               hero = "Herald of the Sun",
               label = "Lightforged Blessing",
               importString = "CEEAAAAAAAAAAAAAAAAAAAAAAAAAAYBAMDAAsMmhZGzMzCjxYWGbzMLmZmhZZGzMDDz2YAYAYDsx2MzMLz2MzsNDAAAwCbMD2AmxAAAMzwMGDD",
@@ -15069,6 +16763,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Echoing Blessings",
+                      talentId = 115872,
                       dungeonPct = 42,
                       baselinePct = 29,
                     },
@@ -15076,6 +16771,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Unbound Freedom",
+                      talentId = 131438,
                       dungeonPct = 58,
                       baselinePct = 71,
                     },
@@ -15085,6 +16781,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Echoing Blessings",
+                      talentId = 115872,
                       dungeonPct = 41,
                       baselinePct = 29,
                     },
@@ -15092,6 +16789,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Unbound Freedom",
+                      talentId = 131438,
                       dungeonPct = 59,
                       baselinePct = 71,
                     },
@@ -15101,6 +16799,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Unbound Freedom",
+                      talentId = 131438,
                       dungeonPct = 89,
                       baselinePct = 71,
                     },
@@ -15108,6 +16807,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Echoing Blessings",
+                      talentId = 115872,
                       dungeonPct = 11,
                       baselinePct = 29,
                     },
@@ -15117,6 +16817,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Unbound Freedom",
+                      talentId = 131438,
                       dungeonPct = 87,
                       baselinePct = 71,
                     },
@@ -15124,6 +16825,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Echoing Blessings",
+                      talentId = 115872,
                       dungeonPct = 13,
                       baselinePct = 29,
                     },
@@ -15133,6 +16835,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Unbound Freedom",
+                      talentId = 131438,
                       dungeonPct = 97,
                       baselinePct = 71,
                     },
@@ -15140,6 +16843,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Echoing Blessings",
+                      talentId = 115872,
                       dungeonPct = 3,
                       baselinePct = 29,
                     },
@@ -15149,6 +16853,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Echoing Blessings",
+                      talentId = 115872,
                       dungeonPct = 45,
                       baselinePct = 29,
                     },
@@ -15156,6 +16861,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Unbound Freedom",
+                      talentId = 131438,
                       dungeonPct = 55,
                       baselinePct = 71,
                     },
@@ -15165,6 +16871,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Echoing Blessings",
+                      talentId = 115872,
                       dungeonPct = 42,
                       baselinePct = 29,
                     },
@@ -15172,6 +16879,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Unbound Freedom",
+                      talentId = 131438,
                       dungeonPct = 58,
                       baselinePct = 71,
                     },
@@ -15181,6 +16889,7 @@ ZugZugData = {
             },
             {
               spec = "Holy",
+              specId = 65,
               hero = "Lightsmith",
               label = "Bestow Light",
               importString = "CEEAAAAAAAAAAAAAAAAAAAAAAAAAAYBAMDAAsMmZmZGzMzCMGWGbzMLmZmhZZGzMDDz2YAYAYDsx2MzAAAAzMLbL2mZYjNGYDYGzAAmZAYGjxMA",
@@ -15191,6 +16900,7 @@ ZugZugData = {
             },
             {
               spec = "Holy",
+              specId = 65,
               hero = "Herald of the Sun",
               label = "Beacon of Virtue",
               importString = "CEEAAAAAAAAAAAAAAAAAAAAAAAAAAMLAgBAAsNmBzYmZWYMGzyYbmZxMzMMmxMzMGmtxAwAG2AbsMjZWmtZmZbGAAAgFWAsZGMjZwAAYmBjxwA",
@@ -15203,6 +16913,7 @@ ZugZugData = {
           ["18+"] = {
             {
               spec = "Holy",
+              specId = 65,
               hero = "Herald of the Sun",
               label = "Lightforged Blessing",
               importString = "CEEAAAAAAAAAAAAAAAAAAAAAAAAAAYBAMDAAsMmhZGzMzCjxYWGbzMLmZmhZZGzMDDz2YAYAYDsx2MzMLz2MzsNDAAAwCbMD2AmxAAAMzwMGDD",
@@ -15223,6 +16934,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Echoing Blessings",
+                      talentId = 115872,
                       dungeonPct = 42,
                       baselinePct = 29,
                     },
@@ -15230,6 +16942,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Unbound Freedom",
+                      talentId = 131438,
                       dungeonPct = 58,
                       baselinePct = 71,
                     },
@@ -15239,6 +16952,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Echoing Blessings",
+                      talentId = 115872,
                       dungeonPct = 41,
                       baselinePct = 29,
                     },
@@ -15246,6 +16960,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Unbound Freedom",
+                      talentId = 131438,
                       dungeonPct = 59,
                       baselinePct = 71,
                     },
@@ -15255,6 +16970,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Unbound Freedom",
+                      talentId = 131438,
                       dungeonPct = 89,
                       baselinePct = 71,
                     },
@@ -15262,6 +16978,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Echoing Blessings",
+                      talentId = 115872,
                       dungeonPct = 11,
                       baselinePct = 29,
                     },
@@ -15271,6 +16988,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Unbound Freedom",
+                      talentId = 131438,
                       dungeonPct = 87,
                       baselinePct = 71,
                     },
@@ -15278,6 +16996,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Echoing Blessings",
+                      talentId = 115872,
                       dungeonPct = 13,
                       baselinePct = 29,
                     },
@@ -15287,6 +17006,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Unbound Freedom",
+                      talentId = 131438,
                       dungeonPct = 97,
                       baselinePct = 71,
                     },
@@ -15294,6 +17014,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Echoing Blessings",
+                      talentId = 115872,
                       dungeonPct = 3,
                       baselinePct = 29,
                     },
@@ -15303,6 +17024,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Echoing Blessings",
+                      talentId = 115872,
                       dungeonPct = 45,
                       baselinePct = 29,
                     },
@@ -15310,6 +17032,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Unbound Freedom",
+                      talentId = 131438,
                       dungeonPct = 55,
                       baselinePct = 71,
                     },
@@ -15319,6 +17042,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Echoing Blessings",
+                      talentId = 115872,
                       dungeonPct = 42,
                       baselinePct = 29,
                     },
@@ -15326,6 +17050,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Unbound Freedom",
+                      talentId = 131438,
                       dungeonPct = 58,
                       baselinePct = 71,
                     },
@@ -15335,6 +17060,7 @@ ZugZugData = {
             },
             {
               spec = "Holy",
+              specId = 65,
               hero = "Lightsmith",
               label = "Bestow Light",
               importString = "CEEAAAAAAAAAAAAAAAAAAAAAAAAAAYBAMDAAsMmZmZGzMzCMGWGbzMLmZmhZZGzMDDz2YAYAYDsx2MzAAAAzMLbL2mZYjNGYDYGzAAmZAYGjxMA",
@@ -15345,6 +17071,7 @@ ZugZugData = {
             },
             {
               spec = "Holy",
+              specId = 65,
               hero = "Herald of the Sun",
               label = "Beacon of Virtue",
               importString = "CEEAAAAAAAAAAAAAAAAAAAAAAAAAAMLAgBAAsNmBzYmZWYMGzyYbmZxMzMMmxMzMGmtxAwAG2AbsMjZWmtZmZbGAAAgFWAsZGMjZwAAYmBjxwA",
@@ -15357,6 +17084,7 @@ ZugZugData = {
           ["20+"] = {
             {
               spec = "Holy",
+              specId = 65,
               hero = "Herald of the Sun",
               label = "Lightforged Blessing",
               importString = "CEEAAAAAAAAAAAAAAAAAAAAAAAAAAYBAMDAAsMmhZGzMzCjxYWGbzMLmZmhZZGzMDDz2YAYAYDsx2MzMLz2MzsNDAAAwCbMD2AmxAAAMzwMGDD",
@@ -15377,6 +17105,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Echoing Blessings",
+                      talentId = 115872,
                       dungeonPct = 42,
                       baselinePct = 29,
                     },
@@ -15384,6 +17113,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Unbound Freedom",
+                      talentId = 131438,
                       dungeonPct = 58,
                       baselinePct = 71,
                     },
@@ -15393,6 +17123,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Echoing Blessings",
+                      talentId = 115872,
                       dungeonPct = 41,
                       baselinePct = 29,
                     },
@@ -15400,6 +17131,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Unbound Freedom",
+                      talentId = 131438,
                       dungeonPct = 59,
                       baselinePct = 71,
                     },
@@ -15409,6 +17141,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Unbound Freedom",
+                      talentId = 131438,
                       dungeonPct = 89,
                       baselinePct = 71,
                     },
@@ -15416,6 +17149,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Echoing Blessings",
+                      talentId = 115872,
                       dungeonPct = 11,
                       baselinePct = 29,
                     },
@@ -15425,6 +17159,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Unbound Freedom",
+                      talentId = 131438,
                       dungeonPct = 87,
                       baselinePct = 71,
                     },
@@ -15432,6 +17167,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Echoing Blessings",
+                      talentId = 115872,
                       dungeonPct = 13,
                       baselinePct = 29,
                     },
@@ -15441,6 +17177,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Unbound Freedom",
+                      talentId = 131438,
                       dungeonPct = 97,
                       baselinePct = 71,
                     },
@@ -15448,6 +17185,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Echoing Blessings",
+                      talentId = 115872,
                       dungeonPct = 3,
                       baselinePct = 29,
                     },
@@ -15457,6 +17195,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Echoing Blessings",
+                      talentId = 115872,
                       dungeonPct = 45,
                       baselinePct = 29,
                     },
@@ -15464,6 +17203,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Unbound Freedom",
+                      talentId = 131438,
                       dungeonPct = 55,
                       baselinePct = 71,
                     },
@@ -15473,6 +17213,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Echoing Blessings",
+                      talentId = 115872,
                       dungeonPct = 42,
                       baselinePct = 29,
                     },
@@ -15480,6 +17221,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Unbound Freedom",
+                      talentId = 131438,
                       dungeonPct = 58,
                       baselinePct = 71,
                     },
@@ -15489,6 +17231,7 @@ ZugZugData = {
             },
             {
               spec = "Holy",
+              specId = 65,
               hero = "Lightsmith",
               label = "Bestow Light",
               importString = "CEEAAAAAAAAAAAAAAAAAAAAAAAAAAYBAMDAAsMmZmZGzMzCMGWGbzMLmZmhZZGzMDDz2YAYAYDsx2MzAAAAzMLbL2mZYjNGYDYGzAAmZAYGjxMA",
@@ -15499,6 +17242,7 @@ ZugZugData = {
             },
             {
               spec = "Holy",
+              specId = 65,
               hero = "Herald of the Sun",
               label = "Beacon of Virtue",
               importString = "CEEAAAAAAAAAAAAAAAAAAAAAAAAAAMLAgBAAsNmBzYmZWYMGzyYbmZxMzMMmxMzMGmtxAwAG2AbsMjZWmtZmZbGAAAgFWAsZGMjZwAAYmBjxwA",
@@ -15515,6 +17259,7 @@ ZugZugData = {
           heroic = {
             {
               spec = "Protection",
+              specId = 66,
               hero = "Templar",
               label = "Adjudication",
               importString = "CIEAAAAAAAAAAAAAAAAAAAAAAsZmZYWGLzMjZGbLjxYmFbzYAAGAAAAAAMmZmFzYmZMmZb2AwAGwgNAAwMzsNzsMDAwGYGAMmhxAAsMDwMDYA",
@@ -15535,6 +17280,7 @@ ZugZugData = {
             },
             {
               spec = "Protection",
+              specId = 66,
               hero = "Templar",
               label = "Final Stand",
               importString = "CIEAAAAAAAAAAAAAAAAAAAAAAsNjBzyYZMjZmZZbMzwsMLzYAAGAAAAAAMzMzsYGzMMMbzGAGYAzgNAAwMzsNzsMDAwmZwAgxMMGAglZAmZAD",
@@ -15544,6 +17290,7 @@ ZugZugData = {
             },
             {
               spec = "Protection",
+              specId = 66,
               hero = "Templar",
               label = "Ferren Marcus's Fervor",
               importString = "CIEAAAAAAAAAAAAAAAAAAAAAAsZGDzyMLzMjZGWgxMLWGGAAAAAAAAYMzMmZMzMmZmtZDADMgB2AAAzMz2MzyMAAbMMDgBzYGDAwyMgZmBMA",
@@ -15555,6 +17302,7 @@ ZugZugData = {
           mythic = {
             {
               spec = "Protection",
+              specId = 66,
               hero = "Templar",
               label = "Adjudication",
               importString = "CIEAAAAAAAAAAAAAAAAAAAAAAsZmZYWGLzMjZGbLjxYmFbzYAAGAAAAAAMmZmFzYmZMmZb2AwAGwgNAAwMzsNzsMDAwGYGAMmhxAAsMDwMDYA",
@@ -15575,6 +17323,7 @@ ZugZugData = {
             },
             {
               spec = "Protection",
+              specId = 66,
               hero = "Templar",
               label = "Final Stand",
               importString = "CIEAAAAAAAAAAAAAAAAAAAAAAsNjBzyYZMjZmZZbMzwsMLzYAAGAAAAAAMzMzsYGzMMMbzGAGYAzgNAAwMzsNzsMDAwmZwAgxMMGAglZAmZAD",
@@ -15584,6 +17333,7 @@ ZugZugData = {
             },
             {
               spec = "Protection",
+              specId = 66,
               hero = "Templar",
               label = "Ferren Marcus's Fervor",
               importString = "CIEAAAAAAAAAAAAAAAAAAAAAAsZGDzyMLzMjZGWgxMLWGGAAAAAAAAYMzMmZMzMmZmtZDADMgB2AAAzMz2MzyMAAbMMDgBzYGDAwyMgZmBMA",
@@ -15597,6 +17347,7 @@ ZugZugData = {
           all = {
             {
               spec = "Protection",
+              specId = 66,
               hero = "Lightsmith",
               label = "Lightbearer",
               importString = "CIEAAAAAAAAAAAAAAAAAAAAAAsNjBzyYbMjZmZZZMzwsMLDDAwAAAAAAgZmZmlZGzghZb2AwADYGsBAAAAzMLbLzyMjFzgBwYMDjBAzMAYmBMA",
@@ -15617,11 +17368,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 87,
                       baselinePct = 65,
                     },
                     {
                       name = "Blessing of Protection",
+                      talentId = 102604,
                       dungeonPct = 67,
                       baselinePct = 53,
                     },
@@ -15629,11 +17382,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Empyreal Ward",
+                      talentId = 128255,
                       dungeonPct = 60,
                       baselinePct = 69,
                     },
                     {
                       name = "Redoubt",
+                      talentId = 102462,
                       dungeonPct = 8,
                       baselinePct = 16,
                     },
@@ -15643,6 +17398,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Imbued Shield",
+                      talentId = 102463,
                       dungeonPct = 94,
                       baselinePct = 84,
                     },
@@ -15650,6 +17406,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 46,
                       baselinePct = 65,
                     },
@@ -15659,6 +17416,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 86,
                       baselinePct = 65,
                     },
@@ -15666,6 +17424,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Imbued Shield",
+                      talentId = 102463,
                       dungeonPct = 72,
                       baselinePct = 84,
                     },
@@ -15675,6 +17434,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Imbued Shield",
+                      talentId = 102463,
                       dungeonPct = 93,
                       baselinePct = 84,
                     },
@@ -15682,6 +17442,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 38,
                       baselinePct = 65,
                     },
@@ -15691,6 +17452,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 88,
                       baselinePct = 65,
                     },
@@ -15698,6 +17460,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Imbued Shield",
+                      talentId = 102463,
                       dungeonPct = 75,
                       baselinePct = 84,
                     },
@@ -15707,6 +17470,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Unbound Freedom",
+                      talentId = 115479,
                       dungeonPct = 99,
                       baselinePct = 92,
                     },
@@ -15714,6 +17478,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 37,
                       baselinePct = 65,
                     },
@@ -15723,6 +17488,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Empyreal Ward",
+                      talentId = 128255,
                       dungeonPct = 74,
                       baselinePct = 69,
                     },
@@ -15730,6 +17496,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 47,
                       baselinePct = 65,
                     },
@@ -15739,11 +17506,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 86,
                       baselinePct = 65,
                     },
                     {
                       name = "Avenging Wrath",
+                      talentId = 102448,
                       dungeonPct = 25,
                       baselinePct = 11,
                     },
@@ -15751,11 +17520,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Sentinel",
+                      talentId = 102447,
                       dungeonPct = 75,
                       baselinePct = 89,
                     },
                     {
                       name = "Imbued Shield",
+                      talentId = 102463,
                       dungeonPct = 71,
                       baselinePct = 84,
                     },
@@ -15765,6 +17536,7 @@ ZugZugData = {
             },
             {
               spec = "Protection",
+              specId = 66,
               hero = "Templar",
               label = "Improved Blessing of Protection",
               importString = "CIEAAAAAAAAAAAAAAAAAAAAAAsNjBzyYbMjZmZZZMzwsMLDDAwAAAAAAgZmZmlZGzMjhZb2AwADYgNAAwMzsNzsNDAwmZwAYwMMGAglZAmZAD",
@@ -15775,6 +17547,7 @@ ZugZugData = {
             },
             {
               spec = "Protection",
+              specId = 66,
               hero = "Lightsmith",
               label = "Seal of Reprisal",
               importString = "CIEAAAAAAAAAAAAAAAAAAAAAAsZYY2GbjZMzMLbjxYmlZZGDAwAAAAAAgZmZGzMmBzMz2sBgBGwAbAAAAwMzy2ysNzYhBDgBzwMDAmZAwMDYA",
@@ -15787,6 +17560,7 @@ ZugZugData = {
           ["15+"] = {
             {
               spec = "Protection",
+              specId = 66,
               hero = "Lightsmith",
               label = "Lightbearer",
               importString = "CIEAAAAAAAAAAAAAAAAAAAAAAsNjBzyYbMjZmZZZMzwsMLDDAwAAAAAAgZmZmlZGzghZb2AwADYGsBAAAAzMLbLzyMjFzgBwYMDjBAzMAYmBMA",
@@ -15807,11 +17581,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 87,
                       baselinePct = 65,
                     },
                     {
                       name = "Blessing of Protection",
+                      talentId = 102604,
                       dungeonPct = 67,
                       baselinePct = 53,
                     },
@@ -15819,11 +17595,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Empyreal Ward",
+                      talentId = 128255,
                       dungeonPct = 60,
                       baselinePct = 69,
                     },
                     {
                       name = "Redoubt",
+                      talentId = 102462,
                       dungeonPct = 8,
                       baselinePct = 16,
                     },
@@ -15833,6 +17611,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Imbued Shield",
+                      talentId = 102463,
                       dungeonPct = 94,
                       baselinePct = 84,
                     },
@@ -15840,6 +17619,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 46,
                       baselinePct = 65,
                     },
@@ -15849,6 +17629,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 86,
                       baselinePct = 65,
                     },
@@ -15856,6 +17637,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Imbued Shield",
+                      talentId = 102463,
                       dungeonPct = 72,
                       baselinePct = 84,
                     },
@@ -15865,6 +17647,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Imbued Shield",
+                      talentId = 102463,
                       dungeonPct = 93,
                       baselinePct = 84,
                     },
@@ -15872,6 +17655,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 38,
                       baselinePct = 65,
                     },
@@ -15881,6 +17665,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 88,
                       baselinePct = 65,
                     },
@@ -15888,6 +17673,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Imbued Shield",
+                      talentId = 102463,
                       dungeonPct = 75,
                       baselinePct = 84,
                     },
@@ -15897,6 +17683,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Unbound Freedom",
+                      talentId = 115479,
                       dungeonPct = 99,
                       baselinePct = 92,
                     },
@@ -15904,6 +17691,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 37,
                       baselinePct = 65,
                     },
@@ -15913,6 +17701,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Empyreal Ward",
+                      talentId = 128255,
                       dungeonPct = 74,
                       baselinePct = 69,
                     },
@@ -15920,6 +17709,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 47,
                       baselinePct = 65,
                     },
@@ -15929,11 +17719,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 86,
                       baselinePct = 65,
                     },
                     {
                       name = "Avenging Wrath",
+                      talentId = 102448,
                       dungeonPct = 25,
                       baselinePct = 11,
                     },
@@ -15941,11 +17733,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Sentinel",
+                      talentId = 102447,
                       dungeonPct = 75,
                       baselinePct = 89,
                     },
                     {
                       name = "Imbued Shield",
+                      talentId = 102463,
                       dungeonPct = 71,
                       baselinePct = 84,
                     },
@@ -15955,6 +17749,7 @@ ZugZugData = {
             },
             {
               spec = "Protection",
+              specId = 66,
               hero = "Templar",
               label = "Improved Blessing of Protection",
               importString = "CIEAAAAAAAAAAAAAAAAAAAAAAsNjBzyYbMjZmZZZMzwsMLDDAwAAAAAAgZmZmlZGzMjhZb2AwADYgNAAwMzsNzsNDAwmZwAYwMMGAglZAmZAD",
@@ -15965,6 +17760,7 @@ ZugZugData = {
             },
             {
               spec = "Protection",
+              specId = 66,
               hero = "Lightsmith",
               label = "Seal of Reprisal",
               importString = "CIEAAAAAAAAAAAAAAAAAAAAAAsZYY2GbjZMzMLbjxYmlZZGDAwAAAAAAgZmZGzMmBzMz2sBgBGwAbAAAAwMzy2ysNzYhBDgBzwMDAmZAwMDYA",
@@ -15977,6 +17773,7 @@ ZugZugData = {
           ["18+"] = {
             {
               spec = "Protection",
+              specId = 66,
               hero = "Lightsmith",
               label = "Lightbearer",
               importString = "CIEAAAAAAAAAAAAAAAAAAAAAAsNjBzyYbMjZmZZZMzwsMLDDAwAAAAAAgZmZmlZGzghZb2AwADYGsBAAAAzMLbLzyMjFzgBwYMDjBAzMAYmBMA",
@@ -15997,11 +17794,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 87,
                       baselinePct = 65,
                     },
                     {
                       name = "Blessing of Protection",
+                      talentId = 102604,
                       dungeonPct = 67,
                       baselinePct = 53,
                     },
@@ -16009,11 +17808,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Empyreal Ward",
+                      talentId = 128255,
                       dungeonPct = 60,
                       baselinePct = 69,
                     },
                     {
                       name = "Redoubt",
+                      talentId = 102462,
                       dungeonPct = 8,
                       baselinePct = 16,
                     },
@@ -16023,6 +17824,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Imbued Shield",
+                      talentId = 102463,
                       dungeonPct = 94,
                       baselinePct = 84,
                     },
@@ -16030,6 +17832,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 46,
                       baselinePct = 65,
                     },
@@ -16039,6 +17842,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 86,
                       baselinePct = 65,
                     },
@@ -16046,6 +17850,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Imbued Shield",
+                      talentId = 102463,
                       dungeonPct = 72,
                       baselinePct = 84,
                     },
@@ -16055,6 +17860,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Imbued Shield",
+                      talentId = 102463,
                       dungeonPct = 93,
                       baselinePct = 84,
                     },
@@ -16062,6 +17868,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 38,
                       baselinePct = 65,
                     },
@@ -16071,6 +17878,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 88,
                       baselinePct = 65,
                     },
@@ -16078,6 +17886,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Imbued Shield",
+                      talentId = 102463,
                       dungeonPct = 75,
                       baselinePct = 84,
                     },
@@ -16087,6 +17896,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Unbound Freedom",
+                      talentId = 115479,
                       dungeonPct = 99,
                       baselinePct = 92,
                     },
@@ -16094,6 +17904,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 37,
                       baselinePct = 65,
                     },
@@ -16103,6 +17914,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Empyreal Ward",
+                      talentId = 128255,
                       dungeonPct = 74,
                       baselinePct = 69,
                     },
@@ -16110,6 +17922,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 47,
                       baselinePct = 65,
                     },
@@ -16119,11 +17932,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 86,
                       baselinePct = 65,
                     },
                     {
                       name = "Avenging Wrath",
+                      talentId = 102448,
                       dungeonPct = 25,
                       baselinePct = 11,
                     },
@@ -16131,11 +17946,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Sentinel",
+                      talentId = 102447,
                       dungeonPct = 75,
                       baselinePct = 89,
                     },
                     {
                       name = "Imbued Shield",
+                      talentId = 102463,
                       dungeonPct = 71,
                       baselinePct = 84,
                     },
@@ -16145,6 +17962,7 @@ ZugZugData = {
             },
             {
               spec = "Protection",
+              specId = 66,
               hero = "Templar",
               label = "Improved Blessing of Protection",
               importString = "CIEAAAAAAAAAAAAAAAAAAAAAAsNjBzyYbMjZmZZZMzwsMLDDAwAAAAAAgZmZmlZGzMjhZb2AwADYgNAAwMzsNzsNDAwmZwAYwMMGAglZAmZAD",
@@ -16155,6 +17973,7 @@ ZugZugData = {
             },
             {
               spec = "Protection",
+              specId = 66,
               hero = "Lightsmith",
               label = "Seal of Reprisal",
               importString = "CIEAAAAAAAAAAAAAAAAAAAAAAsZYY2GbjZMzMLbjxYmlZZGDAwAAAAAAgZmZGzMmBzMz2sBgBGwAbAAAAwMzy2ysNzYhBDgBzwMDAmZAwMDYA",
@@ -16167,6 +17986,7 @@ ZugZugData = {
           ["20+"] = {
             {
               spec = "Protection",
+              specId = 66,
               hero = "Lightsmith",
               label = "Lightbearer",
               importString = "CIEAAAAAAAAAAAAAAAAAAAAAAsNjBzyYbMjZmZZZMzwsMLDDAwAAAAAAgZmZmlZGzghZb2AwADYGsBAAAAzMLbLzyMjFzgBwYMDjBAzMAYmBMA",
@@ -16187,11 +18007,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 87,
                       baselinePct = 65,
                     },
                     {
                       name = "Blessing of Protection",
+                      talentId = 102604,
                       dungeonPct = 67,
                       baselinePct = 53,
                     },
@@ -16199,11 +18021,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Empyreal Ward",
+                      talentId = 128255,
                       dungeonPct = 60,
                       baselinePct = 69,
                     },
                     {
                       name = "Redoubt",
+                      talentId = 102462,
                       dungeonPct = 8,
                       baselinePct = 16,
                     },
@@ -16213,6 +18037,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Imbued Shield",
+                      talentId = 102463,
                       dungeonPct = 94,
                       baselinePct = 84,
                     },
@@ -16220,6 +18045,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 46,
                       baselinePct = 65,
                     },
@@ -16229,6 +18055,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 86,
                       baselinePct = 65,
                     },
@@ -16236,6 +18063,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Imbued Shield",
+                      talentId = 102463,
                       dungeonPct = 72,
                       baselinePct = 84,
                     },
@@ -16245,6 +18073,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Imbued Shield",
+                      talentId = 102463,
                       dungeonPct = 93,
                       baselinePct = 84,
                     },
@@ -16252,6 +18081,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 38,
                       baselinePct = 65,
                     },
@@ -16261,6 +18091,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 88,
                       baselinePct = 65,
                     },
@@ -16268,6 +18099,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Imbued Shield",
+                      talentId = 102463,
                       dungeonPct = 75,
                       baselinePct = 84,
                     },
@@ -16277,6 +18109,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Unbound Freedom",
+                      talentId = 115479,
                       dungeonPct = 99,
                       baselinePct = 92,
                     },
@@ -16284,6 +18117,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 37,
                       baselinePct = 65,
                     },
@@ -16293,6 +18127,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Empyreal Ward",
+                      talentId = 128255,
                       dungeonPct = 74,
                       baselinePct = 69,
                     },
@@ -16300,6 +18135,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 47,
                       baselinePct = 65,
                     },
@@ -16309,11 +18145,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Cleanse Toxins",
+                      talentId = 102476,
                       dungeonPct = 86,
                       baselinePct = 65,
                     },
                     {
                       name = "Avenging Wrath",
+                      talentId = 102448,
                       dungeonPct = 25,
                       baselinePct = 11,
                     },
@@ -16321,11 +18159,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Sentinel",
+                      talentId = 102447,
                       dungeonPct = 75,
                       baselinePct = 89,
                     },
                     {
                       name = "Imbued Shield",
+                      talentId = 102463,
                       dungeonPct = 71,
                       baselinePct = 84,
                     },
@@ -16335,6 +18175,7 @@ ZugZugData = {
             },
             {
               spec = "Protection",
+              specId = 66,
               hero = "Templar",
               label = "Improved Blessing of Protection",
               importString = "CIEAAAAAAAAAAAAAAAAAAAAAAsNjBzyYbMjZmZZZMzwsMLDDAwAAAAAAgZmZmlZGzMjhZb2AwADYgNAAwMzsNzsNDAwmZwAYwMMGAglZAmZAD",
@@ -16345,6 +18186,7 @@ ZugZugData = {
             },
             {
               spec = "Protection",
+              specId = 66,
               hero = "Lightsmith",
               label = "Seal of Reprisal",
               importString = "CIEAAAAAAAAAAAAAAAAAAAAAAsZYY2GbjZMzMLbjxYmlZZGDAwAAAAAAgZmZGzMmBzMz2sBgBGwAbAAAAwMzy2ysNzYhBDgBzwMDAmZAwMDYA",
@@ -16363,6 +18205,7 @@ ZugZugData = {
           heroic = {
             {
               spec = "Shadow",
+              specId = 258,
               hero = "Archon",
               label = "Mastermind",
               importString = "CIQAAAAAAAAAAAAAAAAAAAAAAMMjZGAAAAAAAAAAAgxMMjxyMDzsNzwMsNzMmZmxGGzYxMzAMDwMbmhZzAwYMWAwMAjZmZMbjZ2WGgZwA",
@@ -16382,6 +18225,7 @@ ZugZugData = {
             },
             {
               spec = "Shadow",
+              specId = 258,
               hero = "Voidweaver",
               label = "Idol of Y'Shaarj",
               importString = "CIQAAAAAAAAAAAAAAAAAAAAAAMjZMGAAAAAAAAAAAAjZZmxYZmxMz2MDzw2MzYmZGbYMjFzMDwMzMAwAY2mtFwsxAADGzMzY2GzgZGMDGA",
@@ -16393,6 +18237,7 @@ ZugZugData = {
             },
             {
               spec = "Shadow",
+              specId = 258,
               hero = "Voidweaver",
               label = "Dark Evangelism",
               importString = "CIQAAAAAAAAAAAAAAAAAAAAAAMMjZGAAAAAAAAAAAgBLmxYZmxMzyMDzMz2MzYYGwYG2MzYGMzMDAMAmtZZBMbMAzMgxMzMzsNmBzMYGMA",
@@ -16404,6 +18249,7 @@ ZugZugData = {
           mythic = {
             {
               spec = "Shadow",
+              specId = 258,
               hero = "Archon",
               label = "Mastermind",
               importString = "CIQAAAAAAAAAAAAAAAAAAAAAAMMjZGAAAAAAAAAAAgxMMjxyMDzsNzwMsNzMmZmxGGzYxMzAMDwMbmhZzAwYMWAwMAjZmZMbjZ2WGgZwA",
@@ -16423,6 +18269,7 @@ ZugZugData = {
             },
             {
               spec = "Shadow",
+              specId = 258,
               hero = "Voidweaver",
               label = "Idol of Y'Shaarj",
               importString = "CIQAAAAAAAAAAAAAAAAAAAAAAMjZMGAAAAAAAAAAAAjZZmxYZmxMz2MDzw2MzYmZGbYMjFzMDwMzMAwAY2mtFwsxAADGzMzY2GzgZGMDGA",
@@ -16434,6 +18281,7 @@ ZugZugData = {
             },
             {
               spec = "Shadow",
+              specId = 258,
               hero = "Voidweaver",
               label = "Dark Evangelism",
               importString = "CIQAAAAAAAAAAAAAAAAAAAAAAMMjZGAAAAAAAAAAAgBLmxYZmxMzyMDzMz2MzYYGwYG2MzYGMzMDAMAmtZZBMbMAzMgxMzMzsNmBzMYGMA",
@@ -16447,6 +18295,7 @@ ZugZugData = {
           all = {
             {
               spec = "Shadow",
+              specId = 258,
               hero = "Voidweaver",
               label = "Idol of Y'Shaarj",
               importString = "CIQAAAAAAAAAAAAAAAAAAAAAAMjZMGAAAAAAAAAAAAjZZmxYZmxMz2MDDz2MzYmZGbYMsYmZMwMzMAwAY2mtNwsxAADGzMzY2GzgZGMDGA",
@@ -16467,6 +18316,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Angelic Bulwark",
+                      talentId = 103821,
                       dungeonPct = 62,
                       baselinePct = 42,
                     },
@@ -16474,6 +18324,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 31,
                       baselinePct = 58,
                     },
@@ -16483,6 +18334,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Angelic Bulwark",
+                      talentId = 103821,
                       dungeonPct = 57,
                       baselinePct = 42,
                     },
@@ -16490,6 +18342,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 41,
                       baselinePct = 58,
                     },
@@ -16499,11 +18352,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Purify Disease",
+                      talentId = 103854,
                       dungeonPct = 86,
                       baselinePct = 45,
                     },
                     {
                       name = "Angelic Bulwark",
+                      talentId = 103821,
                       dungeonPct = 54,
                       baselinePct = 42,
                     },
@@ -16511,11 +18366,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 39,
                       baselinePct = 58,
                     },
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 46,
                       baselinePct = 59,
                     },
@@ -16525,6 +18382,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 97,
                       baselinePct = 58,
                     },
@@ -16532,6 +18390,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Angelic Bulwark",
+                      talentId = 103821,
                       dungeonPct = 12,
                       baselinePct = 42,
                     },
@@ -16541,6 +18400,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 88,
                       baselinePct = 58,
                     },
@@ -16548,6 +18408,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Angelic Bulwark",
+                      talentId = 103821,
                       dungeonPct = 18,
                       baselinePct = 42,
                     },
@@ -16557,16 +18418,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Shackle Horror",
+                      talentId = 103843,
                       dungeonPct = 73,
                       baselinePct = 31,
                     },
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 100,
                       baselinePct = 58,
                     },
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 97,
                       baselinePct = 59,
                     },
@@ -16574,16 +18438,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Angelic Bulwark",
+                      talentId = 103821,
                       dungeonPct = 10,
                       baselinePct = 42,
                     },
                     {
                       name = "Psychic Voice",
+                      talentId = 103860,
                       dungeonPct = 24,
                       baselinePct = 46,
                     },
                     {
                       name = "Purify Disease",
+                      talentId = 103854,
                       dungeonPct = 31,
                       baselinePct = 45,
                     },
@@ -16593,6 +18460,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Angelic Bulwark",
+                      talentId = 103821,
                       dungeonPct = 60,
                       baselinePct = 42,
                     },
@@ -16600,6 +18468,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 36,
                       baselinePct = 58,
                     },
@@ -16609,6 +18478,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Angelic Bulwark",
+                      talentId = 103821,
                       dungeonPct = 54,
                       baselinePct = 42,
                     },
@@ -16616,6 +18486,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 39,
                       baselinePct = 58,
                     },
@@ -16625,6 +18496,7 @@ ZugZugData = {
             },
             {
               spec = "Shadow",
+              specId = 258,
               hero = "Archon",
               label = "Idol of C'Thun",
               importString = "CIQAAAAAAAAAAAAAAAAAAAAAAMMjZGAAAAAAAAAAAghZxMGLzMmZWmZYMzmZGzMzYDjhltZmBYGgZ2MDzmBgxYsAgZAGzMzY2GzstMAzgB",
@@ -16636,16 +18508,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Shackle Horror",
+                      talentId = 103843,
                       dungeonPct = 76,
                       baselinePct = 43,
                     },
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 98,
                       baselinePct = 79,
                     },
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 98,
                       baselinePct = 82,
                     },
@@ -16653,16 +18528,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Purify Disease",
+                      talentId = 103854,
                       dungeonPct = 28,
                       baselinePct = 50,
                     },
                     {
                       name = "Angelic Bulwark",
+                      talentId = 103821,
                       dungeonPct = 4,
                       baselinePct = 20,
                     },
                     {
                       name = "Tithe Evasion",
+                      talentId = 103863,
                       dungeonPct = 60,
                       baselinePct = 75,
                     },
@@ -16674,6 +18552,7 @@ ZugZugData = {
           ["15+"] = {
             {
               spec = "Shadow",
+              specId = 258,
               hero = "Voidweaver",
               label = "Idol of Y'Shaarj",
               importString = "CIQAAAAAAAAAAAAAAAAAAAAAAMjZMGAAAAAAAAAAAAjZZmxYZmxMz2MDDz2MzYmZGbYMsYmZMwMzMAwAY2mtNwsxAADGzMzY2GzgZGMDGA",
@@ -16694,6 +18573,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Angelic Bulwark",
+                      talentId = 103821,
                       dungeonPct = 62,
                       baselinePct = 42,
                     },
@@ -16701,6 +18581,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 31,
                       baselinePct = 58,
                     },
@@ -16710,6 +18591,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Angelic Bulwark",
+                      talentId = 103821,
                       dungeonPct = 57,
                       baselinePct = 42,
                     },
@@ -16717,6 +18599,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 41,
                       baselinePct = 58,
                     },
@@ -16726,11 +18609,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Purify Disease",
+                      talentId = 103854,
                       dungeonPct = 86,
                       baselinePct = 45,
                     },
                     {
                       name = "Angelic Bulwark",
+                      talentId = 103821,
                       dungeonPct = 54,
                       baselinePct = 42,
                     },
@@ -16738,11 +18623,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 39,
                       baselinePct = 58,
                     },
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 46,
                       baselinePct = 59,
                     },
@@ -16752,6 +18639,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 97,
                       baselinePct = 58,
                     },
@@ -16759,6 +18647,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Angelic Bulwark",
+                      talentId = 103821,
                       dungeonPct = 12,
                       baselinePct = 42,
                     },
@@ -16768,6 +18657,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 88,
                       baselinePct = 58,
                     },
@@ -16775,6 +18665,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Angelic Bulwark",
+                      talentId = 103821,
                       dungeonPct = 18,
                       baselinePct = 42,
                     },
@@ -16784,16 +18675,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Shackle Horror",
+                      talentId = 103843,
                       dungeonPct = 73,
                       baselinePct = 31,
                     },
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 100,
                       baselinePct = 58,
                     },
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 97,
                       baselinePct = 59,
                     },
@@ -16801,16 +18695,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Angelic Bulwark",
+                      talentId = 103821,
                       dungeonPct = 10,
                       baselinePct = 42,
                     },
                     {
                       name = "Psychic Voice",
+                      talentId = 103860,
                       dungeonPct = 24,
                       baselinePct = 46,
                     },
                     {
                       name = "Purify Disease",
+                      talentId = 103854,
                       dungeonPct = 31,
                       baselinePct = 45,
                     },
@@ -16820,6 +18717,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Angelic Bulwark",
+                      talentId = 103821,
                       dungeonPct = 60,
                       baselinePct = 42,
                     },
@@ -16827,6 +18725,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 36,
                       baselinePct = 58,
                     },
@@ -16836,6 +18735,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Angelic Bulwark",
+                      talentId = 103821,
                       dungeonPct = 54,
                       baselinePct = 42,
                     },
@@ -16843,6 +18743,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 39,
                       baselinePct = 58,
                     },
@@ -16852,6 +18753,7 @@ ZugZugData = {
             },
             {
               spec = "Shadow",
+              specId = 258,
               hero = "Archon",
               label = "Idol of C'Thun",
               importString = "CIQAAAAAAAAAAAAAAAAAAAAAAMMjZGAAAAAAAAAAAghZxMGLzMmZWmZYMzmZGzMzYDjhltZmBYGgZ2MDzmBgxYsAgZAGzMzY2GzstMAzgB",
@@ -16863,16 +18765,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Shackle Horror",
+                      talentId = 103843,
                       dungeonPct = 76,
                       baselinePct = 43,
                     },
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 98,
                       baselinePct = 79,
                     },
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 98,
                       baselinePct = 82,
                     },
@@ -16880,16 +18785,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Purify Disease",
+                      talentId = 103854,
                       dungeonPct = 28,
                       baselinePct = 50,
                     },
                     {
                       name = "Angelic Bulwark",
+                      talentId = 103821,
                       dungeonPct = 4,
                       baselinePct = 20,
                     },
                     {
                       name = "Tithe Evasion",
+                      talentId = 103863,
                       dungeonPct = 60,
                       baselinePct = 75,
                     },
@@ -16901,6 +18809,7 @@ ZugZugData = {
           ["18+"] = {
             {
               spec = "Shadow",
+              specId = 258,
               hero = "Voidweaver",
               label = "Idol of Y'Shaarj",
               importString = "CIQAAAAAAAAAAAAAAAAAAAAAAMjZMGAAAAAAAAAAAAjZZmxYZmxMz2MDDz2MzYmZGbYMsYmZMwMzMAwAY2mtNwsxAADGzMzY2GzgZGMDGA",
@@ -16921,6 +18830,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Angelic Bulwark",
+                      talentId = 103821,
                       dungeonPct = 62,
                       baselinePct = 42,
                     },
@@ -16928,6 +18838,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 31,
                       baselinePct = 58,
                     },
@@ -16937,6 +18848,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Angelic Bulwark",
+                      talentId = 103821,
                       dungeonPct = 57,
                       baselinePct = 42,
                     },
@@ -16944,6 +18856,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 41,
                       baselinePct = 58,
                     },
@@ -16953,11 +18866,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Purify Disease",
+                      talentId = 103854,
                       dungeonPct = 86,
                       baselinePct = 45,
                     },
                     {
                       name = "Angelic Bulwark",
+                      talentId = 103821,
                       dungeonPct = 54,
                       baselinePct = 42,
                     },
@@ -16965,11 +18880,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 39,
                       baselinePct = 58,
                     },
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 46,
                       baselinePct = 59,
                     },
@@ -16979,6 +18896,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 97,
                       baselinePct = 58,
                     },
@@ -16986,6 +18904,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Angelic Bulwark",
+                      talentId = 103821,
                       dungeonPct = 12,
                       baselinePct = 42,
                     },
@@ -16995,6 +18914,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 88,
                       baselinePct = 58,
                     },
@@ -17002,6 +18922,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Angelic Bulwark",
+                      talentId = 103821,
                       dungeonPct = 18,
                       baselinePct = 42,
                     },
@@ -17011,16 +18932,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Shackle Horror",
+                      talentId = 103843,
                       dungeonPct = 73,
                       baselinePct = 31,
                     },
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 100,
                       baselinePct = 58,
                     },
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 97,
                       baselinePct = 59,
                     },
@@ -17028,16 +18952,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Angelic Bulwark",
+                      talentId = 103821,
                       dungeonPct = 10,
                       baselinePct = 42,
                     },
                     {
                       name = "Psychic Voice",
+                      talentId = 103860,
                       dungeonPct = 24,
                       baselinePct = 46,
                     },
                     {
                       name = "Purify Disease",
+                      talentId = 103854,
                       dungeonPct = 31,
                       baselinePct = 45,
                     },
@@ -17047,6 +18974,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Angelic Bulwark",
+                      talentId = 103821,
                       dungeonPct = 60,
                       baselinePct = 42,
                     },
@@ -17054,6 +18982,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 36,
                       baselinePct = 58,
                     },
@@ -17063,6 +18992,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Angelic Bulwark",
+                      talentId = 103821,
                       dungeonPct = 54,
                       baselinePct = 42,
                     },
@@ -17070,6 +19000,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 39,
                       baselinePct = 58,
                     },
@@ -17079,6 +19010,7 @@ ZugZugData = {
             },
             {
               spec = "Shadow",
+              specId = 258,
               hero = "Archon",
               label = "Idol of C'Thun",
               importString = "CIQAAAAAAAAAAAAAAAAAAAAAAMMjZGAAAAAAAAAAAghZxMGLzMmZWmZYMzmZGzMzYDjhltZmBYGgZ2MDzmBgxYsAgZAGzMzY2GzstMAzgB",
@@ -17090,16 +19022,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Shackle Horror",
+                      talentId = 103843,
                       dungeonPct = 76,
                       baselinePct = 43,
                     },
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 98,
                       baselinePct = 79,
                     },
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 98,
                       baselinePct = 82,
                     },
@@ -17107,16 +19042,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Purify Disease",
+                      talentId = 103854,
                       dungeonPct = 28,
                       baselinePct = 50,
                     },
                     {
                       name = "Angelic Bulwark",
+                      talentId = 103821,
                       dungeonPct = 4,
                       baselinePct = 20,
                     },
                     {
                       name = "Tithe Evasion",
+                      talentId = 103863,
                       dungeonPct = 60,
                       baselinePct = 75,
                     },
@@ -17128,6 +19066,7 @@ ZugZugData = {
           ["20+"] = {
             {
               spec = "Shadow",
+              specId = 258,
               hero = "Voidweaver",
               label = "Idol of Y'Shaarj",
               importString = "CIQAAAAAAAAAAAAAAAAAAAAAAMjZMGAAAAAAAAAAAAjZZmxYZmxMz2MDDz2MzYmZGbYMsYmZMwMzMAwAY2mtNwsxAADGzMzY2GzgZGMDGA",
@@ -17148,6 +19087,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Angelic Bulwark",
+                      talentId = 103821,
                       dungeonPct = 62,
                       baselinePct = 42,
                     },
@@ -17155,6 +19095,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 31,
                       baselinePct = 58,
                     },
@@ -17164,6 +19105,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Angelic Bulwark",
+                      talentId = 103821,
                       dungeonPct = 57,
                       baselinePct = 42,
                     },
@@ -17171,6 +19113,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 41,
                       baselinePct = 58,
                     },
@@ -17180,11 +19123,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Purify Disease",
+                      talentId = 103854,
                       dungeonPct = 86,
                       baselinePct = 45,
                     },
                     {
                       name = "Angelic Bulwark",
+                      talentId = 103821,
                       dungeonPct = 54,
                       baselinePct = 42,
                     },
@@ -17192,11 +19137,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 39,
                       baselinePct = 58,
                     },
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 46,
                       baselinePct = 59,
                     },
@@ -17206,6 +19153,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 97,
                       baselinePct = 58,
                     },
@@ -17213,6 +19161,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Angelic Bulwark",
+                      talentId = 103821,
                       dungeonPct = 12,
                       baselinePct = 42,
                     },
@@ -17222,6 +19171,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 88,
                       baselinePct = 58,
                     },
@@ -17229,6 +19179,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Angelic Bulwark",
+                      talentId = 103821,
                       dungeonPct = 18,
                       baselinePct = 42,
                     },
@@ -17238,16 +19189,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Shackle Horror",
+                      talentId = 103843,
                       dungeonPct = 73,
                       baselinePct = 31,
                     },
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 100,
                       baselinePct = 58,
                     },
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 97,
                       baselinePct = 59,
                     },
@@ -17255,16 +19209,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Angelic Bulwark",
+                      talentId = 103821,
                       dungeonPct = 10,
                       baselinePct = 42,
                     },
                     {
                       name = "Psychic Voice",
+                      talentId = 103860,
                       dungeonPct = 24,
                       baselinePct = 46,
                     },
                     {
                       name = "Purify Disease",
+                      talentId = 103854,
                       dungeonPct = 31,
                       baselinePct = 45,
                     },
@@ -17274,6 +19231,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Angelic Bulwark",
+                      talentId = 103821,
                       dungeonPct = 60,
                       baselinePct = 42,
                     },
@@ -17281,6 +19239,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 36,
                       baselinePct = 58,
                     },
@@ -17290,6 +19249,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Angelic Bulwark",
+                      talentId = 103821,
                       dungeonPct = 54,
                       baselinePct = 42,
                     },
@@ -17297,6 +19257,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 39,
                       baselinePct = 58,
                     },
@@ -17306,6 +19267,7 @@ ZugZugData = {
             },
             {
               spec = "Shadow",
+              specId = 258,
               hero = "Archon",
               label = "Idol of C'Thun",
               importString = "CIQAAAAAAAAAAAAAAAAAAAAAAMMjZGAAAAAAAAAAAghZxMGLzMmZWmZYMzmZGzMzYDjhltZmBYGgZ2MDzmBgxYsAgZAGzMzY2GzstMAzgB",
@@ -17317,16 +19279,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Shackle Horror",
+                      talentId = 103843,
                       dungeonPct = 76,
                       baselinePct = 43,
                     },
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 98,
                       baselinePct = 79,
                     },
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 98,
                       baselinePct = 82,
                     },
@@ -17334,16 +19299,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Purify Disease",
+                      talentId = 103854,
                       dungeonPct = 28,
                       baselinePct = 50,
                     },
                     {
                       name = "Angelic Bulwark",
+                      talentId = 103821,
                       dungeonPct = 4,
                       baselinePct = 20,
                     },
                     {
                       name = "Tithe Evasion",
+                      talentId = 103863,
                       dungeonPct = 60,
                       baselinePct = 75,
                     },
@@ -17359,6 +19327,7 @@ ZugZugData = {
           heroic = {
             {
               spec = "Holy",
+              specId = 257,
               hero = "Archon",
               label = "Energy Compression",
               importString = "CEQAAAAAAAAAAAAAAAAAAAAAAwYAAAAAAAgZmlxYMzMDzMzYZGmBAAAwMmlZwMzMMDzAYmZGAYmFzwsYAgxgNzMzCgZGjxYYmZbZAmBG",
@@ -17376,6 +19345,7 @@ ZugZugData = {
             },
             {
               spec = "Discipline",
+              specId = 256,
               hero = "Oracle",
               label = "Indemnity",
               importString = "CAQAAAAAAAAAAAAAAAAAAAAAAADsAz2MzMYmhZbmtZmZmhZAAAAAAAAAAMDLzgZmZYGmBmZmZmZAmZBDDGzyAMGsAAAjxMjBzAMzMMDD",
@@ -17389,6 +19359,7 @@ ZugZugData = {
             },
             {
               spec = "Discipline",
+              specId = 256,
               hero = "Oracle",
               label = "Archangel",
               importString = "CAQAAAAAAAAAAAAAAAAAAAAAAADsYwyMjZmZGMbzYmZmZMzAAAAAAAAAAYMWmBzMzYzYmBbmZmhBYmNMMYMLDwYwCAAMmZmxgZAmZGgB",
@@ -17398,6 +19369,7 @@ ZugZugData = {
             },
             {
               spec = "Holy",
+              specId = 257,
               hero = "Archon",
               label = "Lightweaver",
               importString = "CEQAAAAAAAAAAAAAAAAAAAAAAwYAAAAAAgZzwYWGMmZmZMzMjlZmZAAAAYMWmBzMzYzYmxAmZGAwMbmhZzAAjBbGjNAzMmZMGmZ2WGgBMA",
@@ -17407,6 +19379,7 @@ ZugZugData = {
             },
             {
               spec = "Discipline",
+              specId = 256,
               hero = "Oracle",
               label = "Oracle",
               importString = "CAQAAAAAAAAAAAAAAAAAAAAAAADsAz2MjZmZmBmZbmZmBzAAAAAAAAAAYGzyMjZmZGYMDMzMzMGgZ2wwgxsMAjBLAAwYMGDmBYmZGzwA",
@@ -17416,6 +19389,7 @@ ZugZugData = {
             },
             {
               spec = "Holy",
+              specId = 257,
               hero = "Oracle",
               label = "Divine Service",
               importString = "CEQAAAAAAAAAAAAAAAAAAAAAAwYAAAAAAAgZmtxMjZGDzwYZmZmBAAAwMzsMzYGzMMGzAYmZGAzsghBjZZAGDsYmZWAYGjxYwMAzMzAD",
@@ -17427,6 +19401,7 @@ ZugZugData = {
           mythic = {
             {
               spec = "Holy",
+              specId = 257,
               hero = "Archon",
               label = "Energy Compression",
               importString = "CEQAAAAAAAAAAAAAAAAAAAAAAwYAAAAAAAgZmlxYMzMDzMzYZGmBAAAwMmlZwMzMMDzAYmZGAYmFzwsYAgxgNzMzCgZGjxYYmZbZAmBG",
@@ -17446,6 +19421,7 @@ ZugZugData = {
             },
             {
               spec = "Discipline",
+              specId = 256,
               hero = "Oracle",
               label = "Indemnity",
               importString = "CAQAAAAAAAAAAAAAAAAAAAAAAADsAz2MzMYmhZbmtZmZmhZAAAAAAAAAAMDLzgZmZYGmBmZmZmZAmZBDDGzyAMGsAAAjxMjBzAMzMMDD",
@@ -17457,6 +19433,7 @@ ZugZugData = {
             },
             {
               spec = "Discipline",
+              specId = 256,
               hero = "Oracle",
               label = "Archangel",
               importString = "CAQAAAAAAAAAAAAAAAAAAAAAAADsYwyMjZmZGMbzYmZmZMzAAAAAAAAAAYMWmBzMzYzYmBbmZmhBYmNMMYMLDwYwCAAMmZmxgZAmZGgB",
@@ -17466,6 +19443,7 @@ ZugZugData = {
             },
             {
               spec = "Holy",
+              specId = 257,
               hero = "Archon",
               label = "Lightweaver",
               importString = "CEQAAAAAAAAAAAAAAAAAAAAAAwYAAAAAAgZzwYWGMmZmZMzMjlZmZAAAAYMWmBzMzYzYmxAmZGAwMbmhZzAAjBbGjNAzMmZMGmZ2WGgBMA",
@@ -17475,6 +19453,7 @@ ZugZugData = {
             },
             {
               spec = "Discipline",
+              specId = 256,
               hero = "Oracle",
               label = "Oracle",
               importString = "CAQAAAAAAAAAAAAAAAAAAAAAAADsAz2MjZmZmBmZbmZmBzAAAAAAAAAAYGzyMjZmZGYMDMzMzMGgZ2wwgxsMAjBLAAwYMGDmBYmZGzwA",
@@ -17484,6 +19463,7 @@ ZugZugData = {
             },
             {
               spec = "Holy",
+              specId = 257,
               hero = "Oracle",
               label = "Divine Service",
               importString = "CEQAAAAAAAAAAAAAAAAAAAAAAwYAAAAAAAgZmtxMjZGDzwYZmZmBAAAwMzsMzYGzMMGzAYmZGAzsghBjZZAGDsYmZWAYGjxYwMAzMzAD",
@@ -17497,6 +19477,7 @@ ZugZugData = {
           all = {
             {
               spec = "Discipline",
+              specId = 256,
               hero = "Oracle",
               label = "Blaze of Light",
               importString = "CAQAAAAAAAAAAAAAAAAAAAAAAADsMzwyMjZmBMbzYmZMjZGAAAAAAAAAADzyMYmZGmxMDYmZGGgZWwwgxsMAjBLAAwYmZGDmBYmZGwA",
@@ -17517,16 +19498,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Psychic Scream",
+                      talentId = 103851,
                       dungeonPct = 64,
                       baselinePct = 42,
                     },
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 59,
                       baselinePct = 43,
                     },
                     {
                       name = "False Autonomy",
+                      talentId = 134841,
                       dungeonPct = 19,
                       baselinePct = 5,
                     },
@@ -17534,16 +19518,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 21,
                       baselinePct = 49,
                     },
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 10,
                       baselinePct = 28,
                     },
                     {
                       name = "Shackle Horror",
+                      talentId = 103843,
                       dungeonPct = 5,
                       baselinePct = 22,
                     },
@@ -17553,6 +19540,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Mental Agility",
+                      talentId = 134852,
                       dungeonPct = 36,
                       baselinePct = 19,
                     },
@@ -17560,6 +19548,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 23,
                       baselinePct = 49,
                     },
@@ -17569,6 +19558,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 92,
                       baselinePct = 28,
                     },
@@ -17576,6 +19566,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 20,
                       baselinePct = 43,
                     },
@@ -17585,11 +19576,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 99,
                       baselinePct = 49,
                     },
                     {
                       name = "Psychic Scream",
+                      talentId = 103851,
                       dungeonPct = 54,
                       baselinePct = 42,
                     },
@@ -17597,11 +19590,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Shackle Horror",
+                      talentId = 103843,
                       dungeonPct = 3,
                       baselinePct = 22,
                     },
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 10,
                       baselinePct = 28,
                     },
@@ -17611,11 +19606,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 80,
                       baselinePct = 28,
                     },
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 92,
                       baselinePct = 49,
                     },
@@ -17623,11 +19620,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Psychic Scream",
+                      talentId = 103851,
                       dungeonPct = 21,
                       baselinePct = 42,
                     },
                     {
                       name = "Mindpierce",
+                      talentId = 134845,
                       dungeonPct = 32,
                       baselinePct = 50,
                     },
@@ -17637,16 +19636,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Shackle Horror",
+                      talentId = 103843,
                       dungeonPct = 89,
                       baselinePct = 22,
                     },
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 98,
                       baselinePct = 43,
                     },
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 98,
                       baselinePct = 49,
                     },
@@ -17654,16 +19656,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 2,
                       baselinePct = 28,
                     },
                     {
                       name = "Psychic Scream",
+                      talentId = 103851,
                       dungeonPct = 21,
                       baselinePct = 42,
                     },
                     {
                       name = "Mindpierce",
+                      talentId = 134845,
                       dungeonPct = 33,
                       baselinePct = 50,
                     },
@@ -17673,11 +19678,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Body and Soul",
+                      talentId = 136185,
                       dungeonPct = 83,
                       baselinePct = 70,
                     },
                     {
                       name = "Angel's Mercy",
+                      talentId = 103831,
                       dungeonPct = 36,
                       baselinePct = 24,
                     },
@@ -17685,11 +19692,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 21,
                       baselinePct = 49,
                     },
                     {
                       name = "Shackle Horror",
+                      talentId = 103843,
                       dungeonPct = 3,
                       baselinePct = 22,
                     },
@@ -17699,16 +19708,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Angel's Mercy",
+                      talentId = 103831,
                       dungeonPct = 34,
                       baselinePct = 24,
                     },
                     {
                       name = "Psychic Scream",
+                      talentId = 103851,
                       dungeonPct = 51,
                       baselinePct = 42,
                     },
                     {
                       name = "Mindpierce",
+                      talentId = 134845,
                       dungeonPct = 58,
                       baselinePct = 50,
                     },
@@ -17716,16 +19728,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 20,
                       baselinePct = 49,
                     },
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 13,
                       baselinePct = 28,
                     },
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 30,
                       baselinePct = 43,
                     },
@@ -17735,6 +19750,7 @@ ZugZugData = {
             },
             {
               spec = "Holy",
+              specId = 257,
               hero = "Oracle",
               label = "Desperate Times",
               importString = "CEQAAAAAAAAAAAAAAAAAAAAAAwYAAAAAAAbGzY2GzwMjhZYsMzMzAAAAYYWmhZmZGmxMDgZmBgZWwwgxsMAjBWMzMAYGzMGDmBYmZGYA",
@@ -17746,11 +19762,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Angel's Mercy",
+                      talentId = 103831,
                       dungeonPct = 72,
                       baselinePct = 61,
                     },
                     {
                       name = "Psychic Scream",
+                      talentId = 103851,
                       dungeonPct = 82,
                       baselinePct = 72,
                     },
@@ -17758,11 +19776,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 46,
                       baselinePct = 65,
                     },
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 32,
                       baselinePct = 44,
                     },
@@ -17772,6 +19792,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Mental Agility",
+                      talentId = 134852,
                       dungeonPct = 30,
                       baselinePct = 23,
                     },
@@ -17779,6 +19800,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 49,
                       baselinePct = 65,
                     },
@@ -17788,6 +19810,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 87,
                       baselinePct = 44,
                     },
@@ -17795,6 +19818,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 53,
                       baselinePct = 65,
                     },
@@ -17804,6 +19828,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 96,
                       baselinePct = 65,
                     },
@@ -17811,6 +19836,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 28,
                       baselinePct = 44,
                     },
@@ -17820,11 +19846,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 86,
                       baselinePct = 44,
                     },
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 93,
                       baselinePct = 65,
                     },
@@ -17832,11 +19860,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Psychic Scream",
+                      talentId = 103851,
                       dungeonPct = 57,
                       baselinePct = 72,
                     },
                     {
                       name = "Angel's Mercy",
+                      talentId = 103831,
                       dungeonPct = 48,
                       baselinePct = 61,
                     },
@@ -17846,16 +19876,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 90,
                       baselinePct = 21,
                     },
                     {
                       name = "Shackle Horror",
+                      talentId = 103843,
                       dungeonPct = 64,
                       baselinePct = 12,
                     },
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 94,
                       baselinePct = 65,
                     },
@@ -17863,16 +19896,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 19,
                       baselinePct = 44,
                     },
                     {
                       name = "Dispel Magic",
+                      talentId = 103677,
                       dungeonPct = 76,
                       baselinePct = 93,
                     },
                     {
                       name = "Body and Soul",
+                      talentId = 136185,
                       dungeonPct = 39,
                       baselinePct = 56,
                     },
@@ -17882,6 +19918,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Angel's Mercy",
+                      talentId = 103831,
                       dungeonPct = 72,
                       baselinePct = 61,
                     },
@@ -17889,6 +19926,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 43,
                       baselinePct = 65,
                     },
@@ -17898,11 +19936,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Psychic Scream",
+                      talentId = 103851,
                       dungeonPct = 81,
                       baselinePct = 72,
                     },
                     {
                       name = "Restitution",
+                      talentId = 103773,
                       dungeonPct = 62,
                       baselinePct = 56,
                     },
@@ -17910,11 +19950,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 46,
                       baselinePct = 65,
                     },
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 9,
                       baselinePct = 21,
                     },
@@ -17924,6 +19966,7 @@ ZugZugData = {
             },
             {
               spec = "Holy",
+              specId = 257,
               hero = "Archon",
               label = "Crisis Management",
               importString = "CEQAAAAAAAAAAAAAAAAAAAAAAwYAAAAAAgZzwYWGMmZmZMzMjlZmBAAAADzyMMzMzwMmZAMzMAgZ2MDzmBAGD2MmZDwMjZGjBzstMAzAD",
@@ -17935,6 +19978,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Mental Agility",
+                      talentId = 134852,
                       dungeonPct = 37,
                       baselinePct = 27,
                     },
@@ -17942,6 +19986,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 59,
                       baselinePct = 71,
                     },
@@ -17951,6 +19996,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 92,
                       baselinePct = 53,
                     },
@@ -17958,6 +20004,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 6,
                       baselinePct = 20,
                     },
@@ -17967,6 +20014,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 97,
                       baselinePct = 71,
                     },
@@ -17974,6 +20022,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 8,
                       baselinePct = 20,
                     },
@@ -17983,6 +20032,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 85,
                       baselinePct = 53,
                     },
@@ -17990,6 +20040,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Psychic Scream",
+                      talentId = 103851,
                       dungeonPct = 68,
                       baselinePct = 81,
                     },
@@ -17999,16 +20050,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 81,
                       baselinePct = 20,
                     },
                     {
                       name = "Shackle Horror",
+                      talentId = 103843,
                       dungeonPct = 46,
                       baselinePct = 11,
                     },
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 95,
                       baselinePct = 71,
                     },
@@ -18016,16 +20070,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 28,
                       baselinePct = 53,
                     },
                     {
                       name = "Body and Soul",
+                      talentId = 136185,
                       dungeonPct = 23,
                       baselinePct = 38,
                     },
                     {
                       name = "Angel's Mercy",
+                      talentId = 103831,
                       dungeonPct = 47,
                       baselinePct = 60,
                     },
@@ -18035,11 +20092,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Angel's Mercy",
+                      talentId = 103831,
                       dungeonPct = 70,
                       baselinePct = 60,
                     },
                     {
                       name = "Psychic Scream",
+                      talentId = 103851,
                       dungeonPct = 89,
                       baselinePct = 81,
                     },
@@ -18047,11 +20106,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 55,
                       baselinePct = 71,
                     },
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 8,
                       baselinePct = 20,
                     },
@@ -18061,11 +20122,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Body and Soul",
+                      talentId = 136185,
                       dungeonPct = 46,
                       baselinePct = 38,
                     },
                     {
                       name = "Light's Resurgence",
+                      talentId = 103779,
                       dungeonPct = 46,
                       baselinePct = 39,
                     },
@@ -18073,11 +20136,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 55,
                       baselinePct = 71,
                     },
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 39,
                       baselinePct = 53,
                     },
@@ -18087,6 +20152,7 @@ ZugZugData = {
             },
             {
               spec = "Discipline",
+              specId = 256,
               hero = "Oracle",
               label = "Enduring Luminescence",
               importString = "CAQAAAAAAAAAAAAAAAAAAAAAAADsNDzyMjxMzMMbzsNzMmhZAAAAAAAAAAMMLzwMzMzwYmxYzMzMMAzshhBjZZAGDWAAgxMjxgZAmZGgB",
@@ -18097,6 +20163,7 @@ ZugZugData = {
             },
             {
               spec = "Holy",
+              specId = 257,
               hero = "Oracle",
               label = "Light of the Naaru",
               importString = "CEQAAAAAAAAAAAAAAAAAAAAAAwYAAAAAAghhZmlBMzMjZmZGbzMzMAAAAGzsMzYmZmZgZGshZmBgZWwwgxsMAjBWMDbAMjZGjBzAMzMgB",
@@ -18107,6 +20174,7 @@ ZugZugData = {
             },
             {
               spec = "Discipline",
+              specId = 256,
               hero = "Oracle",
               label = "Death's Torment",
               importString = "CAQAAAAAAAAAAAAAAAAAAAAAAADsZY2mZMzMzMMbDzMzMDzAAAAAAAAAAYYWmhZmZGmhZAzMzwAMzCGGMmlBYMYBAAGzMGDzMAzMzYGG",
@@ -18119,6 +20187,7 @@ ZugZugData = {
           ["15+"] = {
             {
               spec = "Discipline",
+              specId = 256,
               hero = "Oracle",
               label = "Blaze of Light",
               importString = "CAQAAAAAAAAAAAAAAAAAAAAAAADsMzwyMjZmBMbzYmZMjZGAAAAAAAAAADzyMYmZGmxMDYmZGGgZWwwgxsMAjBLAAwYmZGDmBYmZGwA",
@@ -18139,16 +20208,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Psychic Scream",
+                      talentId = 103851,
                       dungeonPct = 64,
                       baselinePct = 42,
                     },
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 59,
                       baselinePct = 43,
                     },
                     {
                       name = "False Autonomy",
+                      talentId = 134841,
                       dungeonPct = 19,
                       baselinePct = 5,
                     },
@@ -18156,16 +20228,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 21,
                       baselinePct = 49,
                     },
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 10,
                       baselinePct = 28,
                     },
                     {
                       name = "Shackle Horror",
+                      talentId = 103843,
                       dungeonPct = 5,
                       baselinePct = 22,
                     },
@@ -18175,6 +20250,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Mental Agility",
+                      talentId = 134852,
                       dungeonPct = 36,
                       baselinePct = 19,
                     },
@@ -18182,6 +20258,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 23,
                       baselinePct = 49,
                     },
@@ -18191,6 +20268,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 92,
                       baselinePct = 28,
                     },
@@ -18198,6 +20276,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 20,
                       baselinePct = 43,
                     },
@@ -18207,11 +20286,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 99,
                       baselinePct = 49,
                     },
                     {
                       name = "Psychic Scream",
+                      talentId = 103851,
                       dungeonPct = 54,
                       baselinePct = 42,
                     },
@@ -18219,11 +20300,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Shackle Horror",
+                      talentId = 103843,
                       dungeonPct = 3,
                       baselinePct = 22,
                     },
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 10,
                       baselinePct = 28,
                     },
@@ -18233,11 +20316,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 80,
                       baselinePct = 28,
                     },
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 92,
                       baselinePct = 49,
                     },
@@ -18245,11 +20330,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Psychic Scream",
+                      talentId = 103851,
                       dungeonPct = 21,
                       baselinePct = 42,
                     },
                     {
                       name = "Mindpierce",
+                      talentId = 134845,
                       dungeonPct = 32,
                       baselinePct = 50,
                     },
@@ -18259,16 +20346,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Shackle Horror",
+                      talentId = 103843,
                       dungeonPct = 89,
                       baselinePct = 22,
                     },
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 98,
                       baselinePct = 43,
                     },
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 98,
                       baselinePct = 49,
                     },
@@ -18276,16 +20366,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 2,
                       baselinePct = 28,
                     },
                     {
                       name = "Psychic Scream",
+                      talentId = 103851,
                       dungeonPct = 21,
                       baselinePct = 42,
                     },
                     {
                       name = "Mindpierce",
+                      talentId = 134845,
                       dungeonPct = 33,
                       baselinePct = 50,
                     },
@@ -18295,11 +20388,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Body and Soul",
+                      talentId = 136185,
                       dungeonPct = 83,
                       baselinePct = 70,
                     },
                     {
                       name = "Angel's Mercy",
+                      talentId = 103831,
                       dungeonPct = 36,
                       baselinePct = 24,
                     },
@@ -18307,11 +20402,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 21,
                       baselinePct = 49,
                     },
                     {
                       name = "Shackle Horror",
+                      talentId = 103843,
                       dungeonPct = 3,
                       baselinePct = 22,
                     },
@@ -18321,16 +20418,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Angel's Mercy",
+                      talentId = 103831,
                       dungeonPct = 34,
                       baselinePct = 24,
                     },
                     {
                       name = "Psychic Scream",
+                      talentId = 103851,
                       dungeonPct = 51,
                       baselinePct = 42,
                     },
                     {
                       name = "Mindpierce",
+                      talentId = 134845,
                       dungeonPct = 58,
                       baselinePct = 50,
                     },
@@ -18338,16 +20438,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 20,
                       baselinePct = 49,
                     },
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 13,
                       baselinePct = 28,
                     },
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 30,
                       baselinePct = 43,
                     },
@@ -18357,6 +20460,7 @@ ZugZugData = {
             },
             {
               spec = "Holy",
+              specId = 257,
               hero = "Oracle",
               label = "Desperate Times",
               importString = "CEQAAAAAAAAAAAAAAAAAAAAAAwYAAAAAAAbGzY2GzwMjhZYsMzMzAAAAYYWmhZmZGmxMDgZmBgZWwwgxsMAjBWMzMAYGzMGDmBYmZGYA",
@@ -18368,11 +20472,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Angel's Mercy",
+                      talentId = 103831,
                       dungeonPct = 72,
                       baselinePct = 61,
                     },
                     {
                       name = "Psychic Scream",
+                      talentId = 103851,
                       dungeonPct = 82,
                       baselinePct = 72,
                     },
@@ -18380,11 +20486,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 46,
                       baselinePct = 65,
                     },
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 32,
                       baselinePct = 44,
                     },
@@ -18394,6 +20502,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Mental Agility",
+                      talentId = 134852,
                       dungeonPct = 30,
                       baselinePct = 23,
                     },
@@ -18401,6 +20510,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 49,
                       baselinePct = 65,
                     },
@@ -18410,6 +20520,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 87,
                       baselinePct = 44,
                     },
@@ -18417,6 +20528,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 53,
                       baselinePct = 65,
                     },
@@ -18426,6 +20538,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 96,
                       baselinePct = 65,
                     },
@@ -18433,6 +20546,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 28,
                       baselinePct = 44,
                     },
@@ -18442,11 +20556,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 86,
                       baselinePct = 44,
                     },
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 93,
                       baselinePct = 65,
                     },
@@ -18454,11 +20570,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Psychic Scream",
+                      talentId = 103851,
                       dungeonPct = 57,
                       baselinePct = 72,
                     },
                     {
                       name = "Angel's Mercy",
+                      talentId = 103831,
                       dungeonPct = 48,
                       baselinePct = 61,
                     },
@@ -18468,16 +20586,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 90,
                       baselinePct = 21,
                     },
                     {
                       name = "Shackle Horror",
+                      talentId = 103843,
                       dungeonPct = 64,
                       baselinePct = 12,
                     },
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 94,
                       baselinePct = 65,
                     },
@@ -18485,16 +20606,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 19,
                       baselinePct = 44,
                     },
                     {
                       name = "Dispel Magic",
+                      talentId = 103677,
                       dungeonPct = 76,
                       baselinePct = 93,
                     },
                     {
                       name = "Body and Soul",
+                      talentId = 136185,
                       dungeonPct = 39,
                       baselinePct = 56,
                     },
@@ -18504,6 +20628,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Angel's Mercy",
+                      talentId = 103831,
                       dungeonPct = 72,
                       baselinePct = 61,
                     },
@@ -18511,6 +20636,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 43,
                       baselinePct = 65,
                     },
@@ -18520,11 +20646,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Psychic Scream",
+                      talentId = 103851,
                       dungeonPct = 81,
                       baselinePct = 72,
                     },
                     {
                       name = "Restitution",
+                      talentId = 103773,
                       dungeonPct = 62,
                       baselinePct = 56,
                     },
@@ -18532,11 +20660,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 46,
                       baselinePct = 65,
                     },
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 9,
                       baselinePct = 21,
                     },
@@ -18546,6 +20676,7 @@ ZugZugData = {
             },
             {
               spec = "Holy",
+              specId = 257,
               hero = "Archon",
               label = "Crisis Management",
               importString = "CEQAAAAAAAAAAAAAAAAAAAAAAwYAAAAAAgZzwYWGMmZmZMzMjlZmBAAAADzyMMzMzwMmZAMzMAgZ2MDzmBAGD2MmZDwMjZGjBzstMAzAD",
@@ -18557,6 +20688,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Mental Agility",
+                      talentId = 134852,
                       dungeonPct = 37,
                       baselinePct = 27,
                     },
@@ -18564,6 +20696,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 59,
                       baselinePct = 71,
                     },
@@ -18573,6 +20706,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 92,
                       baselinePct = 53,
                     },
@@ -18580,6 +20714,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 6,
                       baselinePct = 20,
                     },
@@ -18589,6 +20724,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 97,
                       baselinePct = 71,
                     },
@@ -18596,6 +20732,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 8,
                       baselinePct = 20,
                     },
@@ -18605,6 +20742,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 85,
                       baselinePct = 53,
                     },
@@ -18612,6 +20750,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Psychic Scream",
+                      talentId = 103851,
                       dungeonPct = 68,
                       baselinePct = 81,
                     },
@@ -18621,16 +20760,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 81,
                       baselinePct = 20,
                     },
                     {
                       name = "Shackle Horror",
+                      talentId = 103843,
                       dungeonPct = 46,
                       baselinePct = 11,
                     },
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 95,
                       baselinePct = 71,
                     },
@@ -18638,16 +20780,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 28,
                       baselinePct = 53,
                     },
                     {
                       name = "Body and Soul",
+                      talentId = 136185,
                       dungeonPct = 23,
                       baselinePct = 38,
                     },
                     {
                       name = "Angel's Mercy",
+                      talentId = 103831,
                       dungeonPct = 47,
                       baselinePct = 60,
                     },
@@ -18657,11 +20802,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Angel's Mercy",
+                      talentId = 103831,
                       dungeonPct = 70,
                       baselinePct = 60,
                     },
                     {
                       name = "Psychic Scream",
+                      talentId = 103851,
                       dungeonPct = 89,
                       baselinePct = 81,
                     },
@@ -18669,11 +20816,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 55,
                       baselinePct = 71,
                     },
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 8,
                       baselinePct = 20,
                     },
@@ -18683,11 +20832,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Body and Soul",
+                      talentId = 136185,
                       dungeonPct = 46,
                       baselinePct = 38,
                     },
                     {
                       name = "Light's Resurgence",
+                      talentId = 103779,
                       dungeonPct = 46,
                       baselinePct = 39,
                     },
@@ -18695,11 +20846,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 55,
                       baselinePct = 71,
                     },
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 39,
                       baselinePct = 53,
                     },
@@ -18709,6 +20862,7 @@ ZugZugData = {
             },
             {
               spec = "Discipline",
+              specId = 256,
               hero = "Oracle",
               label = "Enduring Luminescence",
               importString = "CAQAAAAAAAAAAAAAAAAAAAAAAADsNDzyMjxMzMMbzsNzMmhZAAAAAAAAAAMMLzwMzMzwYmxYzMzMMAzshhBjZZAGDWAAgxMjxgZAmZGgB",
@@ -18719,6 +20873,7 @@ ZugZugData = {
             },
             {
               spec = "Holy",
+              specId = 257,
               hero = "Oracle",
               label = "Light of the Naaru",
               importString = "CEQAAAAAAAAAAAAAAAAAAAAAAwYAAAAAAghhZmlBMzMjZmZGbzMzMAAAAGzsMzYmZmZgZGshZmBgZWwwgxsMAjBWMDbAMjZGjBzAMzMgB",
@@ -18729,6 +20884,7 @@ ZugZugData = {
             },
             {
               spec = "Discipline",
+              specId = 256,
               hero = "Oracle",
               label = "Death's Torment",
               importString = "CAQAAAAAAAAAAAAAAAAAAAAAAADsZY2mZMzMzMMbDzMzMDzAAAAAAAAAAYYWmhZmZGmhZAzMzwAMzCGGMmlBYMYBAAGzMGDzMAzMzYGG",
@@ -18741,6 +20897,7 @@ ZugZugData = {
           ["18+"] = {
             {
               spec = "Discipline",
+              specId = 256,
               hero = "Oracle",
               label = "Blaze of Light",
               importString = "CAQAAAAAAAAAAAAAAAAAAAAAAADsMzwyMjZmBMbzYmZMjZGAAAAAAAAAADzyMYmZGmxMDYmZGGgZWwwgxsMAjBLAAwYmZGDmBYmZGwA",
@@ -18761,16 +20918,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Psychic Scream",
+                      talentId = 103851,
                       dungeonPct = 64,
                       baselinePct = 42,
                     },
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 59,
                       baselinePct = 43,
                     },
                     {
                       name = "False Autonomy",
+                      talentId = 134841,
                       dungeonPct = 19,
                       baselinePct = 5,
                     },
@@ -18778,16 +20938,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 21,
                       baselinePct = 49,
                     },
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 10,
                       baselinePct = 28,
                     },
                     {
                       name = "Shackle Horror",
+                      talentId = 103843,
                       dungeonPct = 5,
                       baselinePct = 22,
                     },
@@ -18797,6 +20960,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Mental Agility",
+                      talentId = 134852,
                       dungeonPct = 36,
                       baselinePct = 19,
                     },
@@ -18804,6 +20968,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 23,
                       baselinePct = 49,
                     },
@@ -18813,6 +20978,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 92,
                       baselinePct = 28,
                     },
@@ -18820,6 +20986,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 20,
                       baselinePct = 43,
                     },
@@ -18829,11 +20996,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 99,
                       baselinePct = 49,
                     },
                     {
                       name = "Psychic Scream",
+                      talentId = 103851,
                       dungeonPct = 54,
                       baselinePct = 42,
                     },
@@ -18841,11 +21010,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Shackle Horror",
+                      talentId = 103843,
                       dungeonPct = 3,
                       baselinePct = 22,
                     },
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 10,
                       baselinePct = 28,
                     },
@@ -18855,11 +21026,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 80,
                       baselinePct = 28,
                     },
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 92,
                       baselinePct = 49,
                     },
@@ -18867,11 +21040,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Psychic Scream",
+                      talentId = 103851,
                       dungeonPct = 21,
                       baselinePct = 42,
                     },
                     {
                       name = "Mindpierce",
+                      talentId = 134845,
                       dungeonPct = 32,
                       baselinePct = 50,
                     },
@@ -18881,16 +21056,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Shackle Horror",
+                      talentId = 103843,
                       dungeonPct = 89,
                       baselinePct = 22,
                     },
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 98,
                       baselinePct = 43,
                     },
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 98,
                       baselinePct = 49,
                     },
@@ -18898,16 +21076,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 2,
                       baselinePct = 28,
                     },
                     {
                       name = "Psychic Scream",
+                      talentId = 103851,
                       dungeonPct = 21,
                       baselinePct = 42,
                     },
                     {
                       name = "Mindpierce",
+                      talentId = 134845,
                       dungeonPct = 33,
                       baselinePct = 50,
                     },
@@ -18917,11 +21098,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Body and Soul",
+                      talentId = 136185,
                       dungeonPct = 83,
                       baselinePct = 70,
                     },
                     {
                       name = "Angel's Mercy",
+                      talentId = 103831,
                       dungeonPct = 36,
                       baselinePct = 24,
                     },
@@ -18929,11 +21112,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 21,
                       baselinePct = 49,
                     },
                     {
                       name = "Shackle Horror",
+                      talentId = 103843,
                       dungeonPct = 3,
                       baselinePct = 22,
                     },
@@ -18943,16 +21128,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Angel's Mercy",
+                      talentId = 103831,
                       dungeonPct = 34,
                       baselinePct = 24,
                     },
                     {
                       name = "Psychic Scream",
+                      talentId = 103851,
                       dungeonPct = 51,
                       baselinePct = 42,
                     },
                     {
                       name = "Mindpierce",
+                      talentId = 134845,
                       dungeonPct = 58,
                       baselinePct = 50,
                     },
@@ -18960,16 +21148,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 20,
                       baselinePct = 49,
                     },
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 13,
                       baselinePct = 28,
                     },
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 30,
                       baselinePct = 43,
                     },
@@ -18979,6 +21170,7 @@ ZugZugData = {
             },
             {
               spec = "Holy",
+              specId = 257,
               hero = "Oracle",
               label = "Desperate Times",
               importString = "CEQAAAAAAAAAAAAAAAAAAAAAAwYAAAAAAAbGzY2GzwMjhZYsMzMzAAAAYYWmhZmZGmxMDgZmBgZWwwgxsMAjBWMzMAYGzMGDmBYmZGYA",
@@ -18990,11 +21182,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Angel's Mercy",
+                      talentId = 103831,
                       dungeonPct = 72,
                       baselinePct = 61,
                     },
                     {
                       name = "Psychic Scream",
+                      talentId = 103851,
                       dungeonPct = 82,
                       baselinePct = 72,
                     },
@@ -19002,11 +21196,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 46,
                       baselinePct = 65,
                     },
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 32,
                       baselinePct = 44,
                     },
@@ -19016,6 +21212,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Mental Agility",
+                      talentId = 134852,
                       dungeonPct = 30,
                       baselinePct = 23,
                     },
@@ -19023,6 +21220,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 49,
                       baselinePct = 65,
                     },
@@ -19032,6 +21230,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 87,
                       baselinePct = 44,
                     },
@@ -19039,6 +21238,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 53,
                       baselinePct = 65,
                     },
@@ -19048,6 +21248,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 96,
                       baselinePct = 65,
                     },
@@ -19055,6 +21256,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 28,
                       baselinePct = 44,
                     },
@@ -19064,11 +21266,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 86,
                       baselinePct = 44,
                     },
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 93,
                       baselinePct = 65,
                     },
@@ -19076,11 +21280,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Psychic Scream",
+                      talentId = 103851,
                       dungeonPct = 57,
                       baselinePct = 72,
                     },
                     {
                       name = "Angel's Mercy",
+                      talentId = 103831,
                       dungeonPct = 48,
                       baselinePct = 61,
                     },
@@ -19090,16 +21296,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 90,
                       baselinePct = 21,
                     },
                     {
                       name = "Shackle Horror",
+                      talentId = 103843,
                       dungeonPct = 64,
                       baselinePct = 12,
                     },
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 94,
                       baselinePct = 65,
                     },
@@ -19107,16 +21316,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 19,
                       baselinePct = 44,
                     },
                     {
                       name = "Dispel Magic",
+                      talentId = 103677,
                       dungeonPct = 76,
                       baselinePct = 93,
                     },
                     {
                       name = "Body and Soul",
+                      talentId = 136185,
                       dungeonPct = 39,
                       baselinePct = 56,
                     },
@@ -19126,6 +21338,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Angel's Mercy",
+                      talentId = 103831,
                       dungeonPct = 72,
                       baselinePct = 61,
                     },
@@ -19133,6 +21346,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 43,
                       baselinePct = 65,
                     },
@@ -19142,11 +21356,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Psychic Scream",
+                      talentId = 103851,
                       dungeonPct = 81,
                       baselinePct = 72,
                     },
                     {
                       name = "Restitution",
+                      talentId = 103773,
                       dungeonPct = 62,
                       baselinePct = 56,
                     },
@@ -19154,11 +21370,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 46,
                       baselinePct = 65,
                     },
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 9,
                       baselinePct = 21,
                     },
@@ -19168,6 +21386,7 @@ ZugZugData = {
             },
             {
               spec = "Holy",
+              specId = 257,
               hero = "Archon",
               label = "Crisis Management",
               importString = "CEQAAAAAAAAAAAAAAAAAAAAAAwYAAAAAAgZzwYWGMmZmZMzMjlZmBAAAADzyMMzMzwMmZAMzMAgZ2MDzmBAGD2MmZDwMjZGjBzstMAzAD",
@@ -19179,6 +21398,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Mental Agility",
+                      talentId = 134852,
                       dungeonPct = 37,
                       baselinePct = 27,
                     },
@@ -19186,6 +21406,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 59,
                       baselinePct = 71,
                     },
@@ -19195,6 +21416,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 92,
                       baselinePct = 53,
                     },
@@ -19202,6 +21424,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 6,
                       baselinePct = 20,
                     },
@@ -19211,6 +21434,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 97,
                       baselinePct = 71,
                     },
@@ -19218,6 +21442,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 8,
                       baselinePct = 20,
                     },
@@ -19227,6 +21452,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 85,
                       baselinePct = 53,
                     },
@@ -19234,6 +21460,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Psychic Scream",
+                      talentId = 103851,
                       dungeonPct = 68,
                       baselinePct = 81,
                     },
@@ -19243,16 +21470,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 81,
                       baselinePct = 20,
                     },
                     {
                       name = "Shackle Horror",
+                      talentId = 103843,
                       dungeonPct = 46,
                       baselinePct = 11,
                     },
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 95,
                       baselinePct = 71,
                     },
@@ -19260,16 +21490,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 28,
                       baselinePct = 53,
                     },
                     {
                       name = "Body and Soul",
+                      talentId = 136185,
                       dungeonPct = 23,
                       baselinePct = 38,
                     },
                     {
                       name = "Angel's Mercy",
+                      talentId = 103831,
                       dungeonPct = 47,
                       baselinePct = 60,
                     },
@@ -19279,11 +21512,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Angel's Mercy",
+                      talentId = 103831,
                       dungeonPct = 70,
                       baselinePct = 60,
                     },
                     {
                       name = "Psychic Scream",
+                      talentId = 103851,
                       dungeonPct = 89,
                       baselinePct = 81,
                     },
@@ -19291,11 +21526,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 55,
                       baselinePct = 71,
                     },
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 8,
                       baselinePct = 20,
                     },
@@ -19305,11 +21542,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Body and Soul",
+                      talentId = 136185,
                       dungeonPct = 46,
                       baselinePct = 38,
                     },
                     {
                       name = "Light's Resurgence",
+                      talentId = 103779,
                       dungeonPct = 46,
                       baselinePct = 39,
                     },
@@ -19317,11 +21556,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 55,
                       baselinePct = 71,
                     },
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 39,
                       baselinePct = 53,
                     },
@@ -19331,6 +21572,7 @@ ZugZugData = {
             },
             {
               spec = "Discipline",
+              specId = 256,
               hero = "Oracle",
               label = "Enduring Luminescence",
               importString = "CAQAAAAAAAAAAAAAAAAAAAAAAADsNDzyMjxMzMMbzsNzMmhZAAAAAAAAAAMMLzwMzMzwYmxYzMzMMAzshhBjZZAGDWAAgxMjxgZAmZGgB",
@@ -19341,6 +21583,7 @@ ZugZugData = {
             },
             {
               spec = "Holy",
+              specId = 257,
               hero = "Oracle",
               label = "Light of the Naaru",
               importString = "CEQAAAAAAAAAAAAAAAAAAAAAAwYAAAAAAghhZmlBMzMjZmZGbzMzMAAAAGzsMzYmZmZgZGshZmBgZWwwgxsMAjBWMDbAMjZGjBzAMzMgB",
@@ -19351,6 +21594,7 @@ ZugZugData = {
             },
             {
               spec = "Discipline",
+              specId = 256,
               hero = "Oracle",
               label = "Death's Torment",
               importString = "CAQAAAAAAAAAAAAAAAAAAAAAAADsZY2mZMzMzMMbDzMzMDzAAAAAAAAAAYYWmhZmZGmhZAzMzwAMzCGGMmlBYMYBAAGzMGDzMAzMzYGG",
@@ -19363,6 +21607,7 @@ ZugZugData = {
           ["20+"] = {
             {
               spec = "Discipline",
+              specId = 256,
               hero = "Oracle",
               label = "Blaze of Light",
               importString = "CAQAAAAAAAAAAAAAAAAAAAAAAADsMzwyMjZmBMbzYmZMjZGAAAAAAAAAADzyMYmZGmxMDYmZGGgZWwwgxsMAjBLAAwYmZGDmBYmZGwA",
@@ -19383,16 +21628,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Psychic Scream",
+                      talentId = 103851,
                       dungeonPct = 64,
                       baselinePct = 42,
                     },
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 59,
                       baselinePct = 43,
                     },
                     {
                       name = "False Autonomy",
+                      talentId = 134841,
                       dungeonPct = 19,
                       baselinePct = 5,
                     },
@@ -19400,16 +21648,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 21,
                       baselinePct = 49,
                     },
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 10,
                       baselinePct = 28,
                     },
                     {
                       name = "Shackle Horror",
+                      talentId = 103843,
                       dungeonPct = 5,
                       baselinePct = 22,
                     },
@@ -19419,6 +21670,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Mental Agility",
+                      talentId = 134852,
                       dungeonPct = 36,
                       baselinePct = 19,
                     },
@@ -19426,6 +21678,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 23,
                       baselinePct = 49,
                     },
@@ -19435,6 +21688,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 92,
                       baselinePct = 28,
                     },
@@ -19442,6 +21696,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 20,
                       baselinePct = 43,
                     },
@@ -19451,11 +21706,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 99,
                       baselinePct = 49,
                     },
                     {
                       name = "Psychic Scream",
+                      talentId = 103851,
                       dungeonPct = 54,
                       baselinePct = 42,
                     },
@@ -19463,11 +21720,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Shackle Horror",
+                      talentId = 103843,
                       dungeonPct = 3,
                       baselinePct = 22,
                     },
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 10,
                       baselinePct = 28,
                     },
@@ -19477,11 +21736,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 80,
                       baselinePct = 28,
                     },
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 92,
                       baselinePct = 49,
                     },
@@ -19489,11 +21750,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Psychic Scream",
+                      talentId = 103851,
                       dungeonPct = 21,
                       baselinePct = 42,
                     },
                     {
                       name = "Mindpierce",
+                      talentId = 134845,
                       dungeonPct = 32,
                       baselinePct = 50,
                     },
@@ -19503,16 +21766,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Shackle Horror",
+                      talentId = 103843,
                       dungeonPct = 89,
                       baselinePct = 22,
                     },
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 98,
                       baselinePct = 43,
                     },
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 98,
                       baselinePct = 49,
                     },
@@ -19520,16 +21786,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 2,
                       baselinePct = 28,
                     },
                     {
                       name = "Psychic Scream",
+                      talentId = 103851,
                       dungeonPct = 21,
                       baselinePct = 42,
                     },
                     {
                       name = "Mindpierce",
+                      talentId = 134845,
                       dungeonPct = 33,
                       baselinePct = 50,
                     },
@@ -19539,11 +21808,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Body and Soul",
+                      talentId = 136185,
                       dungeonPct = 83,
                       baselinePct = 70,
                     },
                     {
                       name = "Angel's Mercy",
+                      talentId = 103831,
                       dungeonPct = 36,
                       baselinePct = 24,
                     },
@@ -19551,11 +21822,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 21,
                       baselinePct = 49,
                     },
                     {
                       name = "Shackle Horror",
+                      talentId = 103843,
                       dungeonPct = 3,
                       baselinePct = 22,
                     },
@@ -19565,16 +21838,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Angel's Mercy",
+                      talentId = 103831,
                       dungeonPct = 34,
                       baselinePct = 24,
                     },
                     {
                       name = "Psychic Scream",
+                      talentId = 103851,
                       dungeonPct = 51,
                       baselinePct = 42,
                     },
                     {
                       name = "Mindpierce",
+                      talentId = 134845,
                       dungeonPct = 58,
                       baselinePct = 50,
                     },
@@ -19582,16 +21858,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 20,
                       baselinePct = 49,
                     },
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 13,
                       baselinePct = 28,
                     },
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 30,
                       baselinePct = 43,
                     },
@@ -19601,6 +21880,7 @@ ZugZugData = {
             },
             {
               spec = "Holy",
+              specId = 257,
               hero = "Oracle",
               label = "Desperate Times",
               importString = "CEQAAAAAAAAAAAAAAAAAAAAAAwYAAAAAAAbGzY2GzwMjhZYsMzMzAAAAYYWmhZmZGmxMDgZmBgZWwwgxsMAjBWMzMAYGzMGDmBYmZGYA",
@@ -19612,11 +21892,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Angel's Mercy",
+                      talentId = 103831,
                       dungeonPct = 72,
                       baselinePct = 61,
                     },
                     {
                       name = "Psychic Scream",
+                      talentId = 103851,
                       dungeonPct = 82,
                       baselinePct = 72,
                     },
@@ -19624,11 +21906,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 46,
                       baselinePct = 65,
                     },
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 32,
                       baselinePct = 44,
                     },
@@ -19638,6 +21922,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Mental Agility",
+                      talentId = 134852,
                       dungeonPct = 30,
                       baselinePct = 23,
                     },
@@ -19645,6 +21930,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 49,
                       baselinePct = 65,
                     },
@@ -19654,6 +21940,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 87,
                       baselinePct = 44,
                     },
@@ -19661,6 +21948,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 53,
                       baselinePct = 65,
                     },
@@ -19670,6 +21958,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 96,
                       baselinePct = 65,
                     },
@@ -19677,6 +21966,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 28,
                       baselinePct = 44,
                     },
@@ -19686,11 +21976,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 86,
                       baselinePct = 44,
                     },
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 93,
                       baselinePct = 65,
                     },
@@ -19698,11 +21990,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Psychic Scream",
+                      talentId = 103851,
                       dungeonPct = 57,
                       baselinePct = 72,
                     },
                     {
                       name = "Angel's Mercy",
+                      talentId = 103831,
                       dungeonPct = 48,
                       baselinePct = 61,
                     },
@@ -19712,16 +22006,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 90,
                       baselinePct = 21,
                     },
                     {
                       name = "Shackle Horror",
+                      talentId = 103843,
                       dungeonPct = 64,
                       baselinePct = 12,
                     },
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 94,
                       baselinePct = 65,
                     },
@@ -19729,16 +22026,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 19,
                       baselinePct = 44,
                     },
                     {
                       name = "Dispel Magic",
+                      talentId = 103677,
                       dungeonPct = 76,
                       baselinePct = 93,
                     },
                     {
                       name = "Body and Soul",
+                      talentId = 136185,
                       dungeonPct = 39,
                       baselinePct = 56,
                     },
@@ -19748,6 +22048,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Angel's Mercy",
+                      talentId = 103831,
                       dungeonPct = 72,
                       baselinePct = 61,
                     },
@@ -19755,6 +22056,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 43,
                       baselinePct = 65,
                     },
@@ -19764,11 +22066,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Psychic Scream",
+                      talentId = 103851,
                       dungeonPct = 81,
                       baselinePct = 72,
                     },
                     {
                       name = "Restitution",
+                      talentId = 103773,
                       dungeonPct = 62,
                       baselinePct = 56,
                     },
@@ -19776,11 +22080,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 46,
                       baselinePct = 65,
                     },
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 9,
                       baselinePct = 21,
                     },
@@ -19790,6 +22096,7 @@ ZugZugData = {
             },
             {
               spec = "Holy",
+              specId = 257,
               hero = "Archon",
               label = "Crisis Management",
               importString = "CEQAAAAAAAAAAAAAAAAAAAAAAwYAAAAAAgZzwYWGMmZmZMzMjlZmBAAAADzyMMzMzwMmZAMzMAgZ2MDzmBAGD2MmZDwMjZGjBzstMAzAD",
@@ -19801,6 +22108,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Mental Agility",
+                      talentId = 134852,
                       dungeonPct = 37,
                       baselinePct = 27,
                     },
@@ -19808,6 +22116,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 59,
                       baselinePct = 71,
                     },
@@ -19817,6 +22126,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 92,
                       baselinePct = 53,
                     },
@@ -19824,6 +22134,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 6,
                       baselinePct = 20,
                     },
@@ -19833,6 +22144,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 97,
                       baselinePct = 71,
                     },
@@ -19840,6 +22152,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 8,
                       baselinePct = 20,
                     },
@@ -19849,6 +22162,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 85,
                       baselinePct = 53,
                     },
@@ -19856,6 +22170,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Psychic Scream",
+                      talentId = 103851,
                       dungeonPct = 68,
                       baselinePct = 81,
                     },
@@ -19865,16 +22180,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 81,
                       baselinePct = 20,
                     },
                     {
                       name = "Shackle Horror",
+                      talentId = 103843,
                       dungeonPct = 46,
                       baselinePct = 11,
                     },
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 95,
                       baselinePct = 71,
                     },
@@ -19882,16 +22200,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 28,
                       baselinePct = 53,
                     },
                     {
                       name = "Body and Soul",
+                      talentId = 136185,
                       dungeonPct = 23,
                       baselinePct = 38,
                     },
                     {
                       name = "Angel's Mercy",
+                      talentId = 103831,
                       dungeonPct = 47,
                       baselinePct = 60,
                     },
@@ -19901,11 +22222,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Angel's Mercy",
+                      talentId = 103831,
                       dungeonPct = 70,
                       baselinePct = 60,
                     },
                     {
                       name = "Psychic Scream",
+                      talentId = 103851,
                       dungeonPct = 89,
                       baselinePct = 81,
                     },
@@ -19913,11 +22236,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 55,
                       baselinePct = 71,
                     },
                     {
                       name = "Dominate Mind",
+                      talentId = 103678,
                       dungeonPct = 8,
                       baselinePct = 20,
                     },
@@ -19927,11 +22252,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Body and Soul",
+                      talentId = 136185,
                       dungeonPct = 46,
                       baselinePct = 38,
                     },
                     {
                       name = "Light's Resurgence",
+                      talentId = 103779,
                       dungeonPct = 46,
                       baselinePct = 39,
                     },
@@ -19939,11 +22266,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Phantasm",
+                      talentId = 115883,
                       dungeonPct = 55,
                       baselinePct = 71,
                     },
                     {
                       name = "Improved Purify",
+                      talentId = 103855,
                       dungeonPct = 39,
                       baselinePct = 53,
                     },
@@ -19953,6 +22282,7 @@ ZugZugData = {
             },
             {
               spec = "Discipline",
+              specId = 256,
               hero = "Oracle",
               label = "Enduring Luminescence",
               importString = "CAQAAAAAAAAAAAAAAAAAAAAAAADsNDzyMjxMzMMbzsNzMmhZAAAAAAAAAAMMLzwMzMzwYmxYzMzMMAzshhBjZZAGDWAAgxMjxgZAmZGgB",
@@ -19963,6 +22293,7 @@ ZugZugData = {
             },
             {
               spec = "Holy",
+              specId = 257,
               hero = "Oracle",
               label = "Light of the Naaru",
               importString = "CEQAAAAAAAAAAAAAAAAAAAAAAwYAAAAAAghhZmlBMzMjZmZGbzMzMAAAAGzsMzYmZmZgZGshZmBgZWwwgxsMAjBWMDbAMjZGjBzAMzMgB",
@@ -19973,6 +22304,7 @@ ZugZugData = {
             },
             {
               spec = "Discipline",
+              specId = 256,
               hero = "Oracle",
               label = "Death's Torment",
               importString = "CAQAAAAAAAAAAAAAAAAAAAAAAADsZY2mZMzMzMMbDzMzMDzAAAAAAAAAAYYWmhZmZGmhZAzMzwAMzCGGMmlBYMYBAAGzMGDzMAzMzYGG",
@@ -19991,6 +22323,7 @@ ZugZugData = {
           heroic = {
             {
               spec = "Windwalker",
+              specId = 269,
               hero = "Shado-Pan",
               label = "Echo Technique",
               importString = "C0QAAAAAAAAAAAAAAAAAAAAAAMzYw2MGsNzMbzAAAAAAAAAAAAsMMGMjthBMjhZmZGmlhZYWmZAA2Mz2YYmZmBAwGAMLzyMzMzCAGYmBAWGDYAD",
@@ -20011,6 +22344,7 @@ ZugZugData = {
             },
             {
               spec = "Windwalker",
+              specId = 269,
               hero = "Shado-Pan",
               label = "Skyfire Heel",
               importString = "C0QAAAAAAAAAAAAAAAAAAAAAAMzYMYMYbmZ2mxAAAAAAAAAAAALDzMYGGGwwMmZmZY2wMMLzMAALmZbMMmZGAAbAwsMLzMzMLAjZgZGAGLDgBM",
@@ -20020,6 +22354,7 @@ ZugZugData = {
             },
             {
               spec = "Windwalker",
+              specId = 269,
               hero = "Shado-Pan",
               label = "Brawler's Intensity",
               importString = "C0QAAAAAAAAAAAAAAAAAAAAAAMzMD2mxgtZGbzAAAAAAAAAAAAsMMmZMDYgthZMzMzwsNMDWMDAwiZ2GDzMzMAA2AgZbWmZmZWAwAzMAMWmBGDYA",
@@ -20031,6 +22366,7 @@ ZugZugData = {
           mythic = {
             {
               spec = "Windwalker",
+              specId = 269,
               hero = "Shado-Pan",
               label = "Echo Technique",
               importString = "C0QAAAAAAAAAAAAAAAAAAAAAAMzYw2MGsNzMbzAAAAAAAAAAAAsMMGMjthBMjhZmZGmlhZYWmZAA2Mz2YYmZmBAwGAMLzyMzMzCAGYmBAWGDYAD",
@@ -20051,6 +22387,7 @@ ZugZugData = {
             },
             {
               spec = "Windwalker",
+              specId = 269,
               hero = "Shado-Pan",
               label = "Skyfire Heel",
               importString = "C0QAAAAAAAAAAAAAAAAAAAAAAMzYMYMYbmZ2mxAAAAAAAAAAAALDzMYGGGwwMmZmZY2wMMLzMAALmZbMMmZGAAbAwsMLzMzMLAjZgZGAGLDgBM",
@@ -20060,6 +22397,7 @@ ZugZugData = {
             },
             {
               spec = "Windwalker",
+              specId = 269,
               hero = "Shado-Pan",
               label = "Brawler's Intensity",
               importString = "C0QAAAAAAAAAAAAAAAAAAAAAAMzMD2mxgtZGbzAAAAAAAAAAAAsMMmZMDYgthZMzMzwsNMDWMDAwiZ2GDzMzMAA2AgZbWmZmZWAwAzMAMWmBGDYA",
@@ -20073,6 +22411,7 @@ ZugZugData = {
           all = {
             {
               spec = "Windwalker",
+              specId = 269,
               hero = "Shado-Pan",
               label = "Crane Vortex",
               importString = "C0QAAAAAAAAAAAAAAAAAAAAAAMzYMYMYbmx2MAAAAAAAAAAAALDzMzYGGGwwwMzMDzGmBLzMAALmZbMjZmZGAAbAwsMLzMzMbAjZgZGAGLDgBM",
@@ -20093,6 +22432,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Transcendence: Linked Spirits",
+                      talentId = 124972,
                       dungeonPct = 27,
                       baselinePct = 11,
                     },
@@ -20100,6 +22440,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Lighter Than Air",
+                      talentId = 124963,
                       dungeonPct = 76,
                       baselinePct = 89,
                     },
@@ -20109,6 +22450,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 57,
                       baselinePct = 32,
                     },
@@ -20116,6 +22458,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Transcendence: Linked Spirits",
+                      talentId = 124972,
                       dungeonPct = 4,
                       baselinePct = 11,
                     },
@@ -20125,6 +22468,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 57,
                       baselinePct = 32,
                     },
@@ -20132,6 +22476,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Diffuse Magic",
+                      talentId = 134029,
                       dungeonPct = 32,
                       baselinePct = 42,
                     },
@@ -20141,6 +22486,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Transcendence: Linked Spirits",
+                      talentId = 124972,
                       dungeonPct = 35,
                       baselinePct = 11,
                     },
@@ -20148,6 +22494,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Diffuse Magic",
+                      talentId = 134029,
                       dungeonPct = 27,
                       baselinePct = 42,
                     },
@@ -20157,6 +22504,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Diffuse Magic",
+                      talentId = 134029,
                       dungeonPct = 60,
                       baselinePct = 42,
                     },
@@ -20164,6 +22512,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 19,
                       baselinePct = 32,
                     },
@@ -20173,6 +22522,7 @@ ZugZugData = {
             },
             {
               spec = "Windwalker",
+              specId = 269,
               hero = "Shado-Pan",
               label = "Echo Technique",
               importString = "C0QAAAAAAAAAAAAAAAAAAAAAAMzYMghZZmZ2mxAAAAAAAAAAAALDzMYGGGwMGmZmZY2GmhZZmBAYzMbjhxMzAAYDAmlZZmZmZBYYgZGAYZMgBM",
@@ -20183,6 +22533,7 @@ ZugZugData = {
             },
             {
               spec = "Windwalker",
+              specId = 269,
               hero = "Shado-Pan",
               label = "Singularly Focused Jade",
               importString = "C0QAAAAAAAAAAAAAAAAAAAAAAMzMD2mxgtZGbzAAAAAAAAAAAAsMMGMDYADzYmZmhZbYGmlZGAgFzsNGmZmZAAsBAzysMzMzsAgBmZAYsMzAGwA",
@@ -20195,6 +22546,7 @@ ZugZugData = {
           ["15+"] = {
             {
               spec = "Windwalker",
+              specId = 269,
               hero = "Shado-Pan",
               label = "Crane Vortex",
               importString = "C0QAAAAAAAAAAAAAAAAAAAAAAMzYMYMYbmx2MAAAAAAAAAAAALDzMzYGGGwwwMzMDzGmBLzMAALmZbMjZmZGAAbAwsMLzMzMbAjZgZGAGLDgBM",
@@ -20215,6 +22567,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Transcendence: Linked Spirits",
+                      talentId = 124972,
                       dungeonPct = 27,
                       baselinePct = 11,
                     },
@@ -20222,6 +22575,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Lighter Than Air",
+                      talentId = 124963,
                       dungeonPct = 76,
                       baselinePct = 89,
                     },
@@ -20231,6 +22585,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 57,
                       baselinePct = 32,
                     },
@@ -20238,6 +22593,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Transcendence: Linked Spirits",
+                      talentId = 124972,
                       dungeonPct = 4,
                       baselinePct = 11,
                     },
@@ -20247,6 +22603,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 57,
                       baselinePct = 32,
                     },
@@ -20254,6 +22611,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Diffuse Magic",
+                      talentId = 134029,
                       dungeonPct = 32,
                       baselinePct = 42,
                     },
@@ -20263,6 +22621,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Transcendence: Linked Spirits",
+                      talentId = 124972,
                       dungeonPct = 35,
                       baselinePct = 11,
                     },
@@ -20270,6 +22629,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Diffuse Magic",
+                      talentId = 134029,
                       dungeonPct = 27,
                       baselinePct = 42,
                     },
@@ -20279,6 +22639,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Diffuse Magic",
+                      talentId = 134029,
                       dungeonPct = 60,
                       baselinePct = 42,
                     },
@@ -20286,6 +22647,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 19,
                       baselinePct = 32,
                     },
@@ -20295,6 +22657,7 @@ ZugZugData = {
             },
             {
               spec = "Windwalker",
+              specId = 269,
               hero = "Shado-Pan",
               label = "Echo Technique",
               importString = "C0QAAAAAAAAAAAAAAAAAAAAAAMzYMghZZmZ2mxAAAAAAAAAAAALDzMYGGGwMGmZmZY2GmhZZmBAYzMbjhxMzAAYDAmlZZmZmZBYYgZGAYZMgBM",
@@ -20305,6 +22668,7 @@ ZugZugData = {
             },
             {
               spec = "Windwalker",
+              specId = 269,
               hero = "Shado-Pan",
               label = "Singularly Focused Jade",
               importString = "C0QAAAAAAAAAAAAAAAAAAAAAAMzMD2mxgtZGbzAAAAAAAAAAAAsMMGMDYADzYmZmhZbYGmlZGAgFzsNGmZmZAAsBAzysMzMzsAgBmZAYsMzAGwA",
@@ -20317,6 +22681,7 @@ ZugZugData = {
           ["18+"] = {
             {
               spec = "Windwalker",
+              specId = 269,
               hero = "Shado-Pan",
               label = "Crane Vortex",
               importString = "C0QAAAAAAAAAAAAAAAAAAAAAAMzYMYMYbmx2MAAAAAAAAAAAALDzMzYGGGwwwMzMDzGmBLzMAALmZbMjZmZGAAbAwsMLzMzMbAjZgZGAGLDgBM",
@@ -20337,6 +22702,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Transcendence: Linked Spirits",
+                      talentId = 124972,
                       dungeonPct = 27,
                       baselinePct = 11,
                     },
@@ -20344,6 +22710,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Lighter Than Air",
+                      talentId = 124963,
                       dungeonPct = 76,
                       baselinePct = 89,
                     },
@@ -20353,6 +22720,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 57,
                       baselinePct = 32,
                     },
@@ -20360,6 +22728,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Transcendence: Linked Spirits",
+                      talentId = 124972,
                       dungeonPct = 4,
                       baselinePct = 11,
                     },
@@ -20369,6 +22738,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 57,
                       baselinePct = 32,
                     },
@@ -20376,6 +22746,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Diffuse Magic",
+                      talentId = 134029,
                       dungeonPct = 32,
                       baselinePct = 42,
                     },
@@ -20385,6 +22756,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Transcendence: Linked Spirits",
+                      talentId = 124972,
                       dungeonPct = 35,
                       baselinePct = 11,
                     },
@@ -20392,6 +22764,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Diffuse Magic",
+                      talentId = 134029,
                       dungeonPct = 27,
                       baselinePct = 42,
                     },
@@ -20401,6 +22774,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Diffuse Magic",
+                      talentId = 134029,
                       dungeonPct = 60,
                       baselinePct = 42,
                     },
@@ -20408,6 +22782,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 19,
                       baselinePct = 32,
                     },
@@ -20417,6 +22792,7 @@ ZugZugData = {
             },
             {
               spec = "Windwalker",
+              specId = 269,
               hero = "Shado-Pan",
               label = "Echo Technique",
               importString = "C0QAAAAAAAAAAAAAAAAAAAAAAMzYMghZZmZ2mxAAAAAAAAAAAALDzMYGGGwMGmZmZY2GmhZZmBAYzMbjhxMzAAYDAmlZZmZmZBYYgZGAYZMgBM",
@@ -20427,6 +22803,7 @@ ZugZugData = {
             },
             {
               spec = "Windwalker",
+              specId = 269,
               hero = "Shado-Pan",
               label = "Singularly Focused Jade",
               importString = "C0QAAAAAAAAAAAAAAAAAAAAAAMzMD2mxgtZGbzAAAAAAAAAAAAsMMGMDYADzYmZmhZbYGmlZGAgFzsNGmZmZAAsBAzysMzMzsAgBmZAYsMzAGwA",
@@ -20439,6 +22816,7 @@ ZugZugData = {
           ["20+"] = {
             {
               spec = "Windwalker",
+              specId = 269,
               hero = "Shado-Pan",
               label = "Crane Vortex",
               importString = "C0QAAAAAAAAAAAAAAAAAAAAAAMzYMYMYbmx2MAAAAAAAAAAAALDzMzYGGGwwwMzMDzGmBLzMAALmZbMjZmZGAAbAwsMLzMzMbAjZgZGAGLDgBM",
@@ -20459,6 +22837,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Transcendence: Linked Spirits",
+                      talentId = 124972,
                       dungeonPct = 27,
                       baselinePct = 11,
                     },
@@ -20466,6 +22845,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Lighter Than Air",
+                      talentId = 124963,
                       dungeonPct = 76,
                       baselinePct = 89,
                     },
@@ -20475,6 +22855,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 57,
                       baselinePct = 32,
                     },
@@ -20482,6 +22863,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Transcendence: Linked Spirits",
+                      talentId = 124972,
                       dungeonPct = 4,
                       baselinePct = 11,
                     },
@@ -20491,6 +22873,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 57,
                       baselinePct = 32,
                     },
@@ -20498,6 +22881,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Diffuse Magic",
+                      talentId = 134029,
                       dungeonPct = 32,
                       baselinePct = 42,
                     },
@@ -20507,6 +22891,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Transcendence: Linked Spirits",
+                      talentId = 124972,
                       dungeonPct = 35,
                       baselinePct = 11,
                     },
@@ -20514,6 +22899,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Diffuse Magic",
+                      talentId = 134029,
                       dungeonPct = 27,
                       baselinePct = 42,
                     },
@@ -20523,6 +22909,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Diffuse Magic",
+                      talentId = 134029,
                       dungeonPct = 60,
                       baselinePct = 42,
                     },
@@ -20530,6 +22917,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 19,
                       baselinePct = 32,
                     },
@@ -20539,6 +22927,7 @@ ZugZugData = {
             },
             {
               spec = "Windwalker",
+              specId = 269,
               hero = "Shado-Pan",
               label = "Echo Technique",
               importString = "C0QAAAAAAAAAAAAAAAAAAAAAAMzYMghZZmZ2mxAAAAAAAAAAAALDzMYGGGwMGmZmZY2GmhZZmBAYzMbjhxMzAAYDAmlZZmZmZBYYgZGAYZMgBM",
@@ -20549,6 +22938,7 @@ ZugZugData = {
             },
             {
               spec = "Windwalker",
+              specId = 269,
               hero = "Shado-Pan",
               label = "Singularly Focused Jade",
               importString = "C0QAAAAAAAAAAAAAAAAAAAAAAMzMD2mxgtZGbzAAAAAAAAAAAAsMMGMDYADzYmZmhZbYGmlZGAgFzsNGmZmZAAsBAzysMzMzsAgBmZAYsMzAGwA",
@@ -20565,6 +22955,7 @@ ZugZugData = {
           heroic = {
             {
               spec = "Mistweaver",
+              specId = 270,
               hero = "Conduit of the Celestials",
               label = "Spiritfont",
               importString = "C4QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAghx2MwmFzYmZZGbYmZYmltlZGLMjZGzAGMYMLzMzMMbDGsYGAAAAAAYxyMLz2MDAAMgBYGwYYsYMmBA",
@@ -20585,6 +22976,7 @@ ZugZugData = {
             },
             {
               spec = "Mistweaver",
+              specId = 270,
               hero = "Conduit of the Celestials",
               label = "Dance of Chi-Ji",
               importString = "C4QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAmxyMGzitZMzMLGbLLzYmNzsZZmxCzYmxMgBDwyMzMDz2ghZZmBAAAAAAWsNz2sMzAAADAwMgxwYxYMDA",
@@ -20594,6 +22986,7 @@ ZugZugData = {
             },
             {
               spec = "Mistweaver",
+              specId = 270,
               hero = "Master of Harmony",
               label = "Tranquil Tea",
               importString = "C4QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgxw2MM2sYGzMLzYbZbGzsZmttlZGLMjZGzAGMYMLzMzMMbDGsYGAAAAwsMzysMzysBAAAwAMzAAjhxCGA",
@@ -20605,6 +22998,7 @@ ZugZugData = {
           mythic = {
             {
               spec = "Mistweaver",
+              specId = 270,
               hero = "Conduit of the Celestials",
               label = "Spiritfont",
               importString = "C4QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAghx2MwmFzYmZZGbYmZYmltlZGLMjZGzAGMYMLzMzMMbDGsYGAAAAAAYxyMLz2MDAAMgBYGwYYsYMmBA",
@@ -20625,6 +23019,7 @@ ZugZugData = {
             },
             {
               spec = "Mistweaver",
+              specId = 270,
               hero = "Conduit of the Celestials",
               label = "Dance of Chi-Ji",
               importString = "C4QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAmxyMGzitZMzMLGbLLzYmNzsZZmxCzYmxMgBDwyMzMDz2ghZZmBAAAAAAWsNz2sMzAAADAwMgxwYxYMDA",
@@ -20634,6 +23029,7 @@ ZugZugData = {
             },
             {
               spec = "Mistweaver",
+              specId = 270,
               hero = "Master of Harmony",
               label = "Tranquil Tea",
               importString = "C4QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgxw2MM2sYGzMLzYbZbGzsZmttlZGLMjZGzAGMYMLzMzMMbDGsYGAAAAwsMzysMzysBAAAwAMzAAjhxCGA",
@@ -20647,6 +23043,7 @@ ZugZugData = {
           all = {
             {
               spec = "Mistweaver",
+              specId = 270,
               hero = "Conduit of the Celestials",
               label = "Rising Mist",
               importString = "C4QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAghxyMLjZx2MmZsYstsMjZ2Mz2yyMjFmxMjZADGAzMzMMbYGmlZGAAAAAAYx2MLz2MDAAMYAYGwYgFjxMA",
@@ -20667,16 +23064,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Fatal Touch",
+                      talentId = 124975,
                       dungeonPct = 87,
                       baselinePct = 50,
                     },
                     {
                       name = "Jade Infusion",
+                      talentId = 124958,
                       dungeonPct = 64,
                       baselinePct = 36,
                     },
                     {
                       name = "Improved Detox",
+                      talentId = 124866,
                       dungeonPct = 98,
                       baselinePct = 73,
                     },
@@ -20684,16 +23084,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Diffuse Magic",
+                      talentId = 134029,
                       dungeonPct = 12,
                       baselinePct = 48,
                     },
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 2,
                       baselinePct = 36,
                     },
                     {
                       name = "Gift of the Celestials",
+                      talentId = 124894,
                       dungeonPct = 14,
                       baselinePct = 30,
                     },
@@ -20703,6 +23106,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Diffuse Magic",
+                      talentId = 134029,
                       dungeonPct = 85,
                       baselinePct = 48,
                     },
@@ -20710,6 +23114,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 4,
                       baselinePct = 36,
                     },
@@ -20719,16 +23124,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Fatal Touch",
+                      talentId = 124975,
                       dungeonPct = 76,
                       baselinePct = 50,
                     },
                     {
                       name = "Improved Detox",
+                      talentId = 124866,
                       dungeonPct = 98,
                       baselinePct = 73,
                     },
                     {
                       name = "Jade Bond",
+                      talentId = 124895,
                       dungeonPct = 89,
                       baselinePct = 70,
                     },
@@ -20736,16 +23144,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 10,
                       baselinePct = 36,
                     },
                     {
                       name = "Gift of the Celestials",
+                      talentId = 124894,
                       dungeonPct = 11,
                       baselinePct = 30,
                     },
                     {
                       name = "Transcendence: Linked Spirits",
+                      talentId = 124972,
                       dungeonPct = 1,
                       baselinePct = 15,
                     },
@@ -20755,11 +23166,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 93,
                       baselinePct = 36,
                     },
                     {
                       name = "Diffuse Magic",
+                      talentId = 134029,
                       dungeonPct = 71,
                       baselinePct = 48,
                     },
@@ -20767,11 +23180,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Improved Detox",
+                      talentId = 124866,
                       dungeonPct = 46,
                       baselinePct = 73,
                     },
                     {
                       name = "Fatal Touch",
+                      talentId = 124975,
                       dungeonPct = 27,
                       baselinePct = 50,
                     },
@@ -20781,16 +23196,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 81,
                       baselinePct = 36,
                     },
                     {
                       name = "Improved Detox",
+                      talentId = 124866,
                       dungeonPct = 99,
                       baselinePct = 73,
                     },
                     {
                       name = "Gift of the Celestials",
+                      talentId = 124894,
                       dungeonPct = 50,
                       baselinePct = 30,
                     },
@@ -20798,16 +23216,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Jade Bond",
+                      talentId = 124895,
                       dungeonPct = 50,
                       baselinePct = 70,
                     },
                     {
                       name = "Stillstep Coil",
+                      talentId = 136518,
                       dungeonPct = 25,
                       baselinePct = 43,
                     },
                     {
                       name = "Jade Infusion",
+                      talentId = 124958,
                       dungeonPct = 23,
                       baselinePct = 36,
                     },
@@ -20817,16 +23238,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 92,
                       baselinePct = 36,
                     },
                     {
                       name = "Gift of the Celestials",
+                      talentId = 124894,
                       dungeonPct = 63,
                       baselinePct = 30,
                     },
                     {
                       name = "Disable",
+                      talentId = 124939,
                       dungeonPct = 35,
                       baselinePct = 8,
                     },
@@ -20834,16 +23258,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Jade Bond",
+                      talentId = 124895,
                       dungeonPct = 37,
                       baselinePct = 70,
                     },
                     {
                       name = "Improved Detox",
+                      talentId = 124866,
                       dungeonPct = 42,
                       baselinePct = 73,
                     },
                     {
                       name = "Diffuse Magic",
+                      talentId = 134029,
                       dungeonPct = 23,
                       baselinePct = 48,
                     },
@@ -20853,16 +23280,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Transcendence: Linked Spirits",
+                      talentId = 124972,
                       dungeonPct = 98,
                       baselinePct = 15,
                     },
                     {
                       name = "Windwalking",
+                      talentId = 124971,
                       dungeonPct = 89,
                       baselinePct = 17,
                     },
                     {
                       name = "Jade Bond",
+                      talentId = 124895,
                       dungeonPct = 88,
                       baselinePct = 70,
                     },
@@ -20870,16 +23300,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Diffuse Magic",
+                      talentId = 134029,
                       dungeonPct = 2,
                       baselinePct = 48,
                     },
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 1,
                       baselinePct = 36,
                     },
                     {
                       name = "Fatal Touch",
+                      talentId = 124975,
                       dungeonPct = 18,
                       baselinePct = 50,
                     },
@@ -20889,16 +23322,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Diffuse Magic",
+                      talentId = 134029,
                       dungeonPct = 91,
                       baselinePct = 48,
                     },
                     {
                       name = "Improved Detox",
+                      talentId = 124866,
                       dungeonPct = 94,
                       baselinePct = 73,
                     },
                     {
                       name = "Jade Bond",
+                      talentId = 124895,
                       dungeonPct = 89,
                       baselinePct = 70,
                     },
@@ -20906,16 +23342,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 4,
                       baselinePct = 36,
                     },
                     {
                       name = "Gift of the Celestials",
+                      talentId = 124894,
                       dungeonPct = 11,
                       baselinePct = 30,
                     },
                     {
                       name = "Stillstep Coil",
+                      talentId = 136518,
                       dungeonPct = 25,
                       baselinePct = 43,
                     },
@@ -20925,6 +23364,7 @@ ZugZugData = {
             },
             {
               spec = "Mistweaver",
+              specId = 270,
               hero = "Conduit of the Celestials",
               label = "Tear of Morning",
               importString = "C4QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMWmZZML2mxMjNjlllZMzmZ2WWmZswwMjZAjxAsMzYGmNbjhZZmBAAAAAAWsNz2sNzAAADAwMgBmZxYMDA",
@@ -20937,6 +23377,7 @@ ZugZugData = {
           ["15+"] = {
             {
               spec = "Mistweaver",
+              specId = 270,
               hero = "Conduit of the Celestials",
               label = "Rising Mist",
               importString = "C4QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAghxyMLjZx2MmZsYstsMjZ2Mz2yyMjFmxMjZADGAzMzMMbYGmlZGAAAAAAYx2MLz2MDAAMYAYGwYgFjxMA",
@@ -20957,16 +23398,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Fatal Touch",
+                      talentId = 124975,
                       dungeonPct = 87,
                       baselinePct = 50,
                     },
                     {
                       name = "Jade Infusion",
+                      talentId = 124958,
                       dungeonPct = 64,
                       baselinePct = 36,
                     },
                     {
                       name = "Improved Detox",
+                      talentId = 124866,
                       dungeonPct = 98,
                       baselinePct = 73,
                     },
@@ -20974,16 +23418,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Diffuse Magic",
+                      talentId = 134029,
                       dungeonPct = 12,
                       baselinePct = 48,
                     },
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 2,
                       baselinePct = 36,
                     },
                     {
                       name = "Gift of the Celestials",
+                      talentId = 124894,
                       dungeonPct = 14,
                       baselinePct = 30,
                     },
@@ -20993,6 +23440,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Diffuse Magic",
+                      talentId = 134029,
                       dungeonPct = 85,
                       baselinePct = 48,
                     },
@@ -21000,6 +23448,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 4,
                       baselinePct = 36,
                     },
@@ -21009,16 +23458,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Fatal Touch",
+                      talentId = 124975,
                       dungeonPct = 76,
                       baselinePct = 50,
                     },
                     {
                       name = "Improved Detox",
+                      talentId = 124866,
                       dungeonPct = 98,
                       baselinePct = 73,
                     },
                     {
                       name = "Jade Bond",
+                      talentId = 124895,
                       dungeonPct = 89,
                       baselinePct = 70,
                     },
@@ -21026,16 +23478,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 10,
                       baselinePct = 36,
                     },
                     {
                       name = "Gift of the Celestials",
+                      talentId = 124894,
                       dungeonPct = 11,
                       baselinePct = 30,
                     },
                     {
                       name = "Transcendence: Linked Spirits",
+                      talentId = 124972,
                       dungeonPct = 1,
                       baselinePct = 15,
                     },
@@ -21045,11 +23500,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 93,
                       baselinePct = 36,
                     },
                     {
                       name = "Diffuse Magic",
+                      talentId = 134029,
                       dungeonPct = 71,
                       baselinePct = 48,
                     },
@@ -21057,11 +23514,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Improved Detox",
+                      talentId = 124866,
                       dungeonPct = 46,
                       baselinePct = 73,
                     },
                     {
                       name = "Fatal Touch",
+                      talentId = 124975,
                       dungeonPct = 27,
                       baselinePct = 50,
                     },
@@ -21071,16 +23530,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 81,
                       baselinePct = 36,
                     },
                     {
                       name = "Improved Detox",
+                      talentId = 124866,
                       dungeonPct = 99,
                       baselinePct = 73,
                     },
                     {
                       name = "Gift of the Celestials",
+                      talentId = 124894,
                       dungeonPct = 50,
                       baselinePct = 30,
                     },
@@ -21088,16 +23550,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Jade Bond",
+                      talentId = 124895,
                       dungeonPct = 50,
                       baselinePct = 70,
                     },
                     {
                       name = "Stillstep Coil",
+                      talentId = 136518,
                       dungeonPct = 25,
                       baselinePct = 43,
                     },
                     {
                       name = "Jade Infusion",
+                      talentId = 124958,
                       dungeonPct = 23,
                       baselinePct = 36,
                     },
@@ -21107,16 +23572,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 92,
                       baselinePct = 36,
                     },
                     {
                       name = "Gift of the Celestials",
+                      talentId = 124894,
                       dungeonPct = 63,
                       baselinePct = 30,
                     },
                     {
                       name = "Disable",
+                      talentId = 124939,
                       dungeonPct = 35,
                       baselinePct = 8,
                     },
@@ -21124,16 +23592,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Jade Bond",
+                      talentId = 124895,
                       dungeonPct = 37,
                       baselinePct = 70,
                     },
                     {
                       name = "Improved Detox",
+                      talentId = 124866,
                       dungeonPct = 42,
                       baselinePct = 73,
                     },
                     {
                       name = "Diffuse Magic",
+                      talentId = 134029,
                       dungeonPct = 23,
                       baselinePct = 48,
                     },
@@ -21143,16 +23614,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Transcendence: Linked Spirits",
+                      talentId = 124972,
                       dungeonPct = 98,
                       baselinePct = 15,
                     },
                     {
                       name = "Windwalking",
+                      talentId = 124971,
                       dungeonPct = 89,
                       baselinePct = 17,
                     },
                     {
                       name = "Jade Bond",
+                      talentId = 124895,
                       dungeonPct = 88,
                       baselinePct = 70,
                     },
@@ -21160,16 +23634,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Diffuse Magic",
+                      talentId = 134029,
                       dungeonPct = 2,
                       baselinePct = 48,
                     },
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 1,
                       baselinePct = 36,
                     },
                     {
                       name = "Fatal Touch",
+                      talentId = 124975,
                       dungeonPct = 18,
                       baselinePct = 50,
                     },
@@ -21179,16 +23656,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Diffuse Magic",
+                      talentId = 134029,
                       dungeonPct = 91,
                       baselinePct = 48,
                     },
                     {
                       name = "Improved Detox",
+                      talentId = 124866,
                       dungeonPct = 94,
                       baselinePct = 73,
                     },
                     {
                       name = "Jade Bond",
+                      talentId = 124895,
                       dungeonPct = 89,
                       baselinePct = 70,
                     },
@@ -21196,16 +23676,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 4,
                       baselinePct = 36,
                     },
                     {
                       name = "Gift of the Celestials",
+                      talentId = 124894,
                       dungeonPct = 11,
                       baselinePct = 30,
                     },
                     {
                       name = "Stillstep Coil",
+                      talentId = 136518,
                       dungeonPct = 25,
                       baselinePct = 43,
                     },
@@ -21215,6 +23698,7 @@ ZugZugData = {
             },
             {
               spec = "Mistweaver",
+              specId = 270,
               hero = "Conduit of the Celestials",
               label = "Tear of Morning",
               importString = "C4QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMWmZZML2mxMjNjlllZMzmZ2WWmZswwMjZAjxAsMzYGmNbjhZZmBAAAAAAWsNz2sNzAAADAwMgBmZxYMDA",
@@ -21227,6 +23711,7 @@ ZugZugData = {
           ["18+"] = {
             {
               spec = "Mistweaver",
+              specId = 270,
               hero = "Conduit of the Celestials",
               label = "Rising Mist",
               importString = "C4QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAghxyMLjZx2MmZsYstsMjZ2Mz2yyMjFmxMjZADGAzMzMMbYGmlZGAAAAAAYx2MLz2MDAAMYAYGwYgFjxMA",
@@ -21247,16 +23732,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Fatal Touch",
+                      talentId = 124975,
                       dungeonPct = 87,
                       baselinePct = 50,
                     },
                     {
                       name = "Jade Infusion",
+                      talentId = 124958,
                       dungeonPct = 64,
                       baselinePct = 36,
                     },
                     {
                       name = "Improved Detox",
+                      talentId = 124866,
                       dungeonPct = 98,
                       baselinePct = 73,
                     },
@@ -21264,16 +23752,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Diffuse Magic",
+                      talentId = 134029,
                       dungeonPct = 12,
                       baselinePct = 48,
                     },
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 2,
                       baselinePct = 36,
                     },
                     {
                       name = "Gift of the Celestials",
+                      talentId = 124894,
                       dungeonPct = 14,
                       baselinePct = 30,
                     },
@@ -21283,6 +23774,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Diffuse Magic",
+                      talentId = 134029,
                       dungeonPct = 85,
                       baselinePct = 48,
                     },
@@ -21290,6 +23782,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 4,
                       baselinePct = 36,
                     },
@@ -21299,16 +23792,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Fatal Touch",
+                      talentId = 124975,
                       dungeonPct = 76,
                       baselinePct = 50,
                     },
                     {
                       name = "Improved Detox",
+                      talentId = 124866,
                       dungeonPct = 98,
                       baselinePct = 73,
                     },
                     {
                       name = "Jade Bond",
+                      talentId = 124895,
                       dungeonPct = 89,
                       baselinePct = 70,
                     },
@@ -21316,16 +23812,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 10,
                       baselinePct = 36,
                     },
                     {
                       name = "Gift of the Celestials",
+                      talentId = 124894,
                       dungeonPct = 11,
                       baselinePct = 30,
                     },
                     {
                       name = "Transcendence: Linked Spirits",
+                      talentId = 124972,
                       dungeonPct = 1,
                       baselinePct = 15,
                     },
@@ -21335,11 +23834,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 93,
                       baselinePct = 36,
                     },
                     {
                       name = "Diffuse Magic",
+                      talentId = 134029,
                       dungeonPct = 71,
                       baselinePct = 48,
                     },
@@ -21347,11 +23848,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Improved Detox",
+                      talentId = 124866,
                       dungeonPct = 46,
                       baselinePct = 73,
                     },
                     {
                       name = "Fatal Touch",
+                      talentId = 124975,
                       dungeonPct = 27,
                       baselinePct = 50,
                     },
@@ -21361,16 +23864,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 81,
                       baselinePct = 36,
                     },
                     {
                       name = "Improved Detox",
+                      talentId = 124866,
                       dungeonPct = 99,
                       baselinePct = 73,
                     },
                     {
                       name = "Gift of the Celestials",
+                      talentId = 124894,
                       dungeonPct = 50,
                       baselinePct = 30,
                     },
@@ -21378,16 +23884,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Jade Bond",
+                      talentId = 124895,
                       dungeonPct = 50,
                       baselinePct = 70,
                     },
                     {
                       name = "Stillstep Coil",
+                      talentId = 136518,
                       dungeonPct = 25,
                       baselinePct = 43,
                     },
                     {
                       name = "Jade Infusion",
+                      talentId = 124958,
                       dungeonPct = 23,
                       baselinePct = 36,
                     },
@@ -21397,16 +23906,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 92,
                       baselinePct = 36,
                     },
                     {
                       name = "Gift of the Celestials",
+                      talentId = 124894,
                       dungeonPct = 63,
                       baselinePct = 30,
                     },
                     {
                       name = "Disable",
+                      talentId = 124939,
                       dungeonPct = 35,
                       baselinePct = 8,
                     },
@@ -21414,16 +23926,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Jade Bond",
+                      talentId = 124895,
                       dungeonPct = 37,
                       baselinePct = 70,
                     },
                     {
                       name = "Improved Detox",
+                      talentId = 124866,
                       dungeonPct = 42,
                       baselinePct = 73,
                     },
                     {
                       name = "Diffuse Magic",
+                      talentId = 134029,
                       dungeonPct = 23,
                       baselinePct = 48,
                     },
@@ -21433,16 +23948,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Transcendence: Linked Spirits",
+                      talentId = 124972,
                       dungeonPct = 98,
                       baselinePct = 15,
                     },
                     {
                       name = "Windwalking",
+                      talentId = 124971,
                       dungeonPct = 89,
                       baselinePct = 17,
                     },
                     {
                       name = "Jade Bond",
+                      talentId = 124895,
                       dungeonPct = 88,
                       baselinePct = 70,
                     },
@@ -21450,16 +23968,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Diffuse Magic",
+                      talentId = 134029,
                       dungeonPct = 2,
                       baselinePct = 48,
                     },
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 1,
                       baselinePct = 36,
                     },
                     {
                       name = "Fatal Touch",
+                      talentId = 124975,
                       dungeonPct = 18,
                       baselinePct = 50,
                     },
@@ -21469,16 +23990,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Diffuse Magic",
+                      talentId = 134029,
                       dungeonPct = 91,
                       baselinePct = 48,
                     },
                     {
                       name = "Improved Detox",
+                      talentId = 124866,
                       dungeonPct = 94,
                       baselinePct = 73,
                     },
                     {
                       name = "Jade Bond",
+                      talentId = 124895,
                       dungeonPct = 89,
                       baselinePct = 70,
                     },
@@ -21486,16 +24010,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 4,
                       baselinePct = 36,
                     },
                     {
                       name = "Gift of the Celestials",
+                      talentId = 124894,
                       dungeonPct = 11,
                       baselinePct = 30,
                     },
                     {
                       name = "Stillstep Coil",
+                      talentId = 136518,
                       dungeonPct = 25,
                       baselinePct = 43,
                     },
@@ -21505,6 +24032,7 @@ ZugZugData = {
             },
             {
               spec = "Mistweaver",
+              specId = 270,
               hero = "Conduit of the Celestials",
               label = "Tear of Morning",
               importString = "C4QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMWmZZML2mxMjNjlllZMzmZ2WWmZswwMjZAjxAsMzYGmNbjhZZmBAAAAAAWsNz2sNzAAADAwMgBmZxYMDA",
@@ -21517,6 +24045,7 @@ ZugZugData = {
           ["20+"] = {
             {
               spec = "Mistweaver",
+              specId = 270,
               hero = "Conduit of the Celestials",
               label = "Rising Mist",
               importString = "C4QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAghxyMLjZx2MmZsYstsMjZ2Mz2yyMjFmxMjZADGAzMzMMbYGmlZGAAAAAAYx2MLz2MDAAMYAYGwYgFjxMA",
@@ -21537,16 +24066,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Fatal Touch",
+                      talentId = 124975,
                       dungeonPct = 87,
                       baselinePct = 50,
                     },
                     {
                       name = "Jade Infusion",
+                      talentId = 124958,
                       dungeonPct = 64,
                       baselinePct = 36,
                     },
                     {
                       name = "Improved Detox",
+                      talentId = 124866,
                       dungeonPct = 98,
                       baselinePct = 73,
                     },
@@ -21554,16 +24086,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Diffuse Magic",
+                      talentId = 134029,
                       dungeonPct = 12,
                       baselinePct = 48,
                     },
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 2,
                       baselinePct = 36,
                     },
                     {
                       name = "Gift of the Celestials",
+                      talentId = 124894,
                       dungeonPct = 14,
                       baselinePct = 30,
                     },
@@ -21573,6 +24108,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Diffuse Magic",
+                      talentId = 134029,
                       dungeonPct = 85,
                       baselinePct = 48,
                     },
@@ -21580,6 +24116,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 4,
                       baselinePct = 36,
                     },
@@ -21589,16 +24126,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Fatal Touch",
+                      talentId = 124975,
                       dungeonPct = 76,
                       baselinePct = 50,
                     },
                     {
                       name = "Improved Detox",
+                      talentId = 124866,
                       dungeonPct = 98,
                       baselinePct = 73,
                     },
                     {
                       name = "Jade Bond",
+                      talentId = 124895,
                       dungeonPct = 89,
                       baselinePct = 70,
                     },
@@ -21606,16 +24146,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 10,
                       baselinePct = 36,
                     },
                     {
                       name = "Gift of the Celestials",
+                      talentId = 124894,
                       dungeonPct = 11,
                       baselinePct = 30,
                     },
                     {
                       name = "Transcendence: Linked Spirits",
+                      talentId = 124972,
                       dungeonPct = 1,
                       baselinePct = 15,
                     },
@@ -21625,11 +24168,13 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 93,
                       baselinePct = 36,
                     },
                     {
                       name = "Diffuse Magic",
+                      talentId = 134029,
                       dungeonPct = 71,
                       baselinePct = 48,
                     },
@@ -21637,11 +24182,13 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Improved Detox",
+                      talentId = 124866,
                       dungeonPct = 46,
                       baselinePct = 73,
                     },
                     {
                       name = "Fatal Touch",
+                      talentId = 124975,
                       dungeonPct = 27,
                       baselinePct = 50,
                     },
@@ -21651,16 +24198,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 81,
                       baselinePct = 36,
                     },
                     {
                       name = "Improved Detox",
+                      talentId = 124866,
                       dungeonPct = 99,
                       baselinePct = 73,
                     },
                     {
                       name = "Gift of the Celestials",
+                      talentId = 124894,
                       dungeonPct = 50,
                       baselinePct = 30,
                     },
@@ -21668,16 +24218,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Jade Bond",
+                      talentId = 124895,
                       dungeonPct = 50,
                       baselinePct = 70,
                     },
                     {
                       name = "Stillstep Coil",
+                      talentId = 136518,
                       dungeonPct = 25,
                       baselinePct = 43,
                     },
                     {
                       name = "Jade Infusion",
+                      talentId = 124958,
                       dungeonPct = 23,
                       baselinePct = 36,
                     },
@@ -21687,16 +24240,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 92,
                       baselinePct = 36,
                     },
                     {
                       name = "Gift of the Celestials",
+                      talentId = 124894,
                       dungeonPct = 63,
                       baselinePct = 30,
                     },
                     {
                       name = "Disable",
+                      talentId = 124939,
                       dungeonPct = 35,
                       baselinePct = 8,
                     },
@@ -21704,16 +24260,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Jade Bond",
+                      talentId = 124895,
                       dungeonPct = 37,
                       baselinePct = 70,
                     },
                     {
                       name = "Improved Detox",
+                      talentId = 124866,
                       dungeonPct = 42,
                       baselinePct = 73,
                     },
                     {
                       name = "Diffuse Magic",
+                      talentId = 134029,
                       dungeonPct = 23,
                       baselinePct = 48,
                     },
@@ -21723,16 +24282,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Transcendence: Linked Spirits",
+                      talentId = 124972,
                       dungeonPct = 98,
                       baselinePct = 15,
                     },
                     {
                       name = "Windwalking",
+                      talentId = 124971,
                       dungeonPct = 89,
                       baselinePct = 17,
                     },
                     {
                       name = "Jade Bond",
+                      talentId = 124895,
                       dungeonPct = 88,
                       baselinePct = 70,
                     },
@@ -21740,16 +24302,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Diffuse Magic",
+                      talentId = 134029,
                       dungeonPct = 2,
                       baselinePct = 48,
                     },
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 1,
                       baselinePct = 36,
                     },
                     {
                       name = "Fatal Touch",
+                      talentId = 124975,
                       dungeonPct = 18,
                       baselinePct = 50,
                     },
@@ -21759,16 +24324,19 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Diffuse Magic",
+                      talentId = 134029,
                       dungeonPct = 91,
                       baselinePct = 48,
                     },
                     {
                       name = "Improved Detox",
+                      talentId = 124866,
                       dungeonPct = 94,
                       baselinePct = 73,
                     },
                     {
                       name = "Jade Bond",
+                      talentId = 124895,
                       dungeonPct = 89,
                       baselinePct = 70,
                     },
@@ -21776,16 +24344,19 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Swift Art",
+                      talentId = 124947,
                       dungeonPct = 4,
                       baselinePct = 36,
                     },
                     {
                       name = "Gift of the Celestials",
+                      talentId = 124894,
                       dungeonPct = 11,
                       baselinePct = 30,
                     },
                     {
                       name = "Stillstep Coil",
+                      talentId = 136518,
                       dungeonPct = 25,
                       baselinePct = 43,
                     },
@@ -21795,6 +24366,7 @@ ZugZugData = {
             },
             {
               spec = "Mistweaver",
+              specId = 270,
               hero = "Conduit of the Celestials",
               label = "Tear of Morning",
               importString = "C4QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMWmZZML2mxMjNjlllZMzmZ2WWmZswwMjZAjxAsMzYGmNbjhZZmBAAAAAAWsNz2sNzAAADAwMgBmZxYMDA",
@@ -21811,6 +24383,7 @@ ZugZugData = {
           heroic = {
             {
               spec = "Brewmaster",
+              specId = 268,
               hero = "Shado-Pan",
               label = "Windwalking",
               importString = "CwQAAAAAAAAAAAAAAAAAAAAAAAAAAwMbbGzYGWmxGmZMAAAAAAALLYMMzAzwMbMYmZmhZbYGzsMssZbbMjZBAA2AAAAz2sMzMzsYG2AYmhZGDAAYA",
@@ -21831,6 +24404,7 @@ ZugZugData = {
             },
             {
               spec = "Brewmaster",
+              specId = 268,
               hero = "Master of Harmony",
               label = "Vital Flame",
               importString = "CwQAAAAAAAAAAAAAAAAAAAAAAAAAAgZbzYGGzyMzGzMjBAAAAAAYZBmhZGYGmZzAzMzMMbMzYmlhltZZb2wsAAALzyMLz2MLDAAAghNwMDYmxAAAG",
@@ -21840,6 +24414,7 @@ ZugZugData = {
             },
             {
               spec = "Brewmaster",
+              specId = 268,
               hero = "Master of Harmony",
               label = "Charred Passions",
               importString = "CwQAAAAAAAAAAAAAAAAAAAAAAAAAAwMLbGzYG2mxGmZMAAAAAAALLYMMzAzwYzMGzMzMmZjZGzsgtFbbjZMLAAwysMzysNzyAAAAMDbgZGwMjBAAMA",
@@ -21851,6 +24426,7 @@ ZugZugData = {
           mythic = {
             {
               spec = "Brewmaster",
+              specId = 268,
               hero = "Shado-Pan",
               label = "Windwalking",
               importString = "CwQAAAAAAAAAAAAAAAAAAAAAAAAAAwMbbGzYGWmxGmZMAAAAAAALLYMMzAzwMbMYmZmhZbYGzsMssZbbMjZBAA2AAAAz2sMzMzsYG2AYmhZGDAAYA",
@@ -21871,6 +24447,7 @@ ZugZugData = {
             },
             {
               spec = "Brewmaster",
+              specId = 268,
               hero = "Master of Harmony",
               label = "Vital Flame",
               importString = "CwQAAAAAAAAAAAAAAAAAAAAAAAAAAgZbzYGGzyMzGzMjBAAAAAAYZBmhZGYGmZzAzMzMMbMzYmlhltZZb2wsAAALzyMLz2MLDAAAghNwMDYmxAAAG",
@@ -21880,6 +24457,7 @@ ZugZugData = {
             },
             {
               spec = "Brewmaster",
+              specId = 268,
               hero = "Master of Harmony",
               label = "Charred Passions",
               importString = "CwQAAAAAAAAAAAAAAAAAAAAAAAAAAwMLbGzYG2mxGmZMAAAAAAALLYMMzAzwYzMGzMzMmZjZGzsgtFbbjZMLAAwysMzysNzyAAAAMDbgZGwMjBAAMA",
@@ -21893,6 +24471,7 @@ ZugZugData = {
           all = {
             {
               spec = "Brewmaster",
+              specId = 268,
               hero = "Master of Harmony",
               label = "Aspect of Harmony",
               importString = "CwQAAAAAAAAAAAAAAAAAAAAAAAAAAgZbzYGGzyMzGzMjBAAAAAAYZBzMMzAzwYzAzMzMMb2mZMWGW2mltZDzCAAsMLzsMbzsMAAAAG2AzMgZGDAAYA",
@@ -21913,6 +24492,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Transcendence: Linked Spirits",
+                      talentId = 124972,
                       dungeonPct = 72,
                       baselinePct = 40,
                     },
@@ -21920,6 +24500,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Save Them All",
+                      talentId = 124949,
                       dungeonPct = 17,
                       baselinePct = 31,
                     },
@@ -21929,6 +24510,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Jade Walk",
+                      talentId = 124954,
                       dungeonPct = 69,
                       baselinePct = 62,
                     },
@@ -21936,6 +24518,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Transcendence: Linked Spirits",
+                      talentId = 124972,
                       dungeonPct = 26,
                       baselinePct = 40,
                     },
@@ -21945,6 +24528,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Detox",
+                      talentId = 124867,
                       dungeonPct = 99,
                       baselinePct = 91,
                     },
@@ -21952,6 +24536,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Transcendence: Linked Spirits",
+                      talentId = 124972,
                       dungeonPct = 28,
                       baselinePct = 40,
                     },
@@ -21961,6 +24546,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Transcendence: Linked Spirits",
+                      talentId = 124972,
                       dungeonPct = 55,
                       baselinePct = 40,
                     },
@@ -21968,6 +24554,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Detox",
+                      talentId = 124867,
                       dungeonPct = 85,
                       baselinePct = 91,
                     },
@@ -21977,6 +24564,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Detox",
+                      talentId = 124867,
                       dungeonPct = 99,
                       baselinePct = 91,
                     },
@@ -21984,6 +24572,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Transcendence: Linked Spirits",
+                      talentId = 124972,
                       dungeonPct = 26,
                       baselinePct = 40,
                     },
@@ -21993,6 +24582,7 @@ ZugZugData = {
             },
             {
               spec = "Brewmaster",
+              specId = 268,
               hero = "Shado-Pan",
               label = "Swift as a Coursing River",
               importString = "CwQAAAAAAAAAAAAAAAAAAAAAAAAAAwMbbGDGzyMzGzMjBAAAAAAYZBzMMzAzwMbGYmZmhZjZGjlhltZZb2wsAAAbAAAgZbWmZmZ2YYDgZGmZMAAgB",
@@ -22004,6 +24594,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Counterstrike",
+                      talentId = 124854,
                       dungeonPct = 85,
                       baselinePct = 69,
                     },
@@ -22011,6 +24602,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Peace and Prosperity",
+                      talentId = 124957,
                       dungeonPct = 5,
                       baselinePct = 23,
                     },
@@ -22020,6 +24612,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Save Them All",
+                      talentId = 124949,
                       dungeonPct = 64,
                       baselinePct = 58,
                     },
@@ -22027,6 +24620,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Counterstrike",
+                      talentId = 124854,
                       dungeonPct = 52,
                       baselinePct = 69,
                     },
@@ -22036,6 +24630,7 @@ ZugZugData = {
             },
             {
               spec = "Brewmaster",
+              specId = 268,
               hero = "Shado-Pan",
               label = "Black Ox Brew",
               importString = "CwQAAAAAAAAAAAAAAAAAAAAAAAAAAgZbzYGGzyMzGzMjBAAAAAAYZBMYGYGmhZMmZMDz2sZGzsMssNbbzGmFAAYDAAAMbzyMzMzGDLAMzwMjBMAgB",
@@ -22048,6 +24643,7 @@ ZugZugData = {
           ["15+"] = {
             {
               spec = "Brewmaster",
+              specId = 268,
               hero = "Master of Harmony",
               label = "Aspect of Harmony",
               importString = "CwQAAAAAAAAAAAAAAAAAAAAAAAAAAgZbzYGGzyMzGzMjBAAAAAAYZBzMMzAzwYzAzMzMMb2mZMWGW2mltZDzCAAsMLzsMbzsMAAAAG2AzMgZGDAAYA",
@@ -22068,6 +24664,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Transcendence: Linked Spirits",
+                      talentId = 124972,
                       dungeonPct = 72,
                       baselinePct = 40,
                     },
@@ -22075,6 +24672,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Save Them All",
+                      talentId = 124949,
                       dungeonPct = 17,
                       baselinePct = 31,
                     },
@@ -22084,6 +24682,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Jade Walk",
+                      talentId = 124954,
                       dungeonPct = 69,
                       baselinePct = 62,
                     },
@@ -22091,6 +24690,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Transcendence: Linked Spirits",
+                      talentId = 124972,
                       dungeonPct = 26,
                       baselinePct = 40,
                     },
@@ -22100,6 +24700,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Detox",
+                      talentId = 124867,
                       dungeonPct = 99,
                       baselinePct = 91,
                     },
@@ -22107,6 +24708,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Transcendence: Linked Spirits",
+                      talentId = 124972,
                       dungeonPct = 28,
                       baselinePct = 40,
                     },
@@ -22116,6 +24718,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Transcendence: Linked Spirits",
+                      talentId = 124972,
                       dungeonPct = 55,
                       baselinePct = 40,
                     },
@@ -22123,6 +24726,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Detox",
+                      talentId = 124867,
                       dungeonPct = 85,
                       baselinePct = 91,
                     },
@@ -22132,6 +24736,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Detox",
+                      talentId = 124867,
                       dungeonPct = 99,
                       baselinePct = 91,
                     },
@@ -22139,6 +24744,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Transcendence: Linked Spirits",
+                      talentId = 124972,
                       dungeonPct = 26,
                       baselinePct = 40,
                     },
@@ -22148,6 +24754,7 @@ ZugZugData = {
             },
             {
               spec = "Brewmaster",
+              specId = 268,
               hero = "Shado-Pan",
               label = "Swift as a Coursing River",
               importString = "CwQAAAAAAAAAAAAAAAAAAAAAAAAAAwMbbGDGzyMzGzMjBAAAAAAYZBzMMzAzwMbGYmZmhZjZGjlhltZZb2wsAAAbAAAgZbWmZmZ2YYDgZGmZMAAgB",
@@ -22159,6 +24766,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Counterstrike",
+                      talentId = 124854,
                       dungeonPct = 85,
                       baselinePct = 69,
                     },
@@ -22166,6 +24774,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Peace and Prosperity",
+                      talentId = 124957,
                       dungeonPct = 5,
                       baselinePct = 23,
                     },
@@ -22175,6 +24784,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Save Them All",
+                      talentId = 124949,
                       dungeonPct = 64,
                       baselinePct = 58,
                     },
@@ -22182,6 +24792,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Counterstrike",
+                      talentId = 124854,
                       dungeonPct = 52,
                       baselinePct = 69,
                     },
@@ -22191,6 +24802,7 @@ ZugZugData = {
             },
             {
               spec = "Brewmaster",
+              specId = 268,
               hero = "Shado-Pan",
               label = "Black Ox Brew",
               importString = "CwQAAAAAAAAAAAAAAAAAAAAAAAAAAgZbzYGGzyMzGzMjBAAAAAAYZBMYGYGmhZMmZMDz2sZGzsMssNbbzGmFAAYDAAAMbzyMzMzGDLAMzwMjBMAgB",
@@ -22203,6 +24815,7 @@ ZugZugData = {
           ["18+"] = {
             {
               spec = "Brewmaster",
+              specId = 268,
               hero = "Master of Harmony",
               label = "Aspect of Harmony",
               importString = "CwQAAAAAAAAAAAAAAAAAAAAAAAAAAgZbzYGGzyMzGzMjBAAAAAAYZBzMMzAzwYzAzMzMMb2mZMWGW2mltZDzCAAsMLzsMbzsMAAAAG2AzMgZGDAAYA",
@@ -22223,6 +24836,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Transcendence: Linked Spirits",
+                      talentId = 124972,
                       dungeonPct = 72,
                       baselinePct = 40,
                     },
@@ -22230,6 +24844,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Save Them All",
+                      talentId = 124949,
                       dungeonPct = 17,
                       baselinePct = 31,
                     },
@@ -22239,6 +24854,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Jade Walk",
+                      talentId = 124954,
                       dungeonPct = 69,
                       baselinePct = 62,
                     },
@@ -22246,6 +24862,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Transcendence: Linked Spirits",
+                      talentId = 124972,
                       dungeonPct = 26,
                       baselinePct = 40,
                     },
@@ -22255,6 +24872,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Detox",
+                      talentId = 124867,
                       dungeonPct = 99,
                       baselinePct = 91,
                     },
@@ -22262,6 +24880,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Transcendence: Linked Spirits",
+                      talentId = 124972,
                       dungeonPct = 28,
                       baselinePct = 40,
                     },
@@ -22271,6 +24890,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Transcendence: Linked Spirits",
+                      talentId = 124972,
                       dungeonPct = 55,
                       baselinePct = 40,
                     },
@@ -22278,6 +24898,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Detox",
+                      talentId = 124867,
                       dungeonPct = 85,
                       baselinePct = 91,
                     },
@@ -22287,6 +24908,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Detox",
+                      talentId = 124867,
                       dungeonPct = 99,
                       baselinePct = 91,
                     },
@@ -22294,6 +24916,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Transcendence: Linked Spirits",
+                      talentId = 124972,
                       dungeonPct = 26,
                       baselinePct = 40,
                     },
@@ -22303,6 +24926,7 @@ ZugZugData = {
             },
             {
               spec = "Brewmaster",
+              specId = 268,
               hero = "Shado-Pan",
               label = "Swift as a Coursing River",
               importString = "CwQAAAAAAAAAAAAAAAAAAAAAAAAAAwMbbGDGzyMzGzMjBAAAAAAYZBzMMzAzwMbGYmZmhZjZGjlhltZZb2wsAAAbAAAgZbWmZmZ2YYDgZGmZMAAgB",
@@ -22314,6 +24938,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Counterstrike",
+                      talentId = 124854,
                       dungeonPct = 85,
                       baselinePct = 69,
                     },
@@ -22321,6 +24946,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Peace and Prosperity",
+                      talentId = 124957,
                       dungeonPct = 5,
                       baselinePct = 23,
                     },
@@ -22330,6 +24956,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Save Them All",
+                      talentId = 124949,
                       dungeonPct = 64,
                       baselinePct = 58,
                     },
@@ -22337,6 +24964,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Counterstrike",
+                      talentId = 124854,
                       dungeonPct = 52,
                       baselinePct = 69,
                     },
@@ -22346,6 +24974,7 @@ ZugZugData = {
             },
             {
               spec = "Brewmaster",
+              specId = 268,
               hero = "Shado-Pan",
               label = "Black Ox Brew",
               importString = "CwQAAAAAAAAAAAAAAAAAAAAAAAAAAgZbzYGGzyMzGzMjBAAAAAAYZBMYGYGmhZMmZMDz2sZGzsMssNbbzGmFAAYDAAAMbzyMzMzGDLAMzwMjBMAgB",
@@ -22358,6 +24987,7 @@ ZugZugData = {
           ["20+"] = {
             {
               spec = "Brewmaster",
+              specId = 268,
               hero = "Master of Harmony",
               label = "Aspect of Harmony",
               importString = "CwQAAAAAAAAAAAAAAAAAAAAAAAAAAgZbzYGGzyMzGzMjBAAAAAAYZBzMMzAzwYzAzMzMMb2mZMWGW2mltZDzCAAsMLzsMbzsMAAAAG2AzMgZGDAAYA",
@@ -22378,6 +25008,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Transcendence: Linked Spirits",
+                      talentId = 124972,
                       dungeonPct = 72,
                       baselinePct = 40,
                     },
@@ -22385,6 +25016,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Save Them All",
+                      talentId = 124949,
                       dungeonPct = 17,
                       baselinePct = 31,
                     },
@@ -22394,6 +25026,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Jade Walk",
+                      talentId = 124954,
                       dungeonPct = 69,
                       baselinePct = 62,
                     },
@@ -22401,6 +25034,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Transcendence: Linked Spirits",
+                      talentId = 124972,
                       dungeonPct = 26,
                       baselinePct = 40,
                     },
@@ -22410,6 +25044,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Detox",
+                      talentId = 124867,
                       dungeonPct = 99,
                       baselinePct = 91,
                     },
@@ -22417,6 +25052,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Transcendence: Linked Spirits",
+                      talentId = 124972,
                       dungeonPct = 28,
                       baselinePct = 40,
                     },
@@ -22426,6 +25062,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Transcendence: Linked Spirits",
+                      talentId = 124972,
                       dungeonPct = 55,
                       baselinePct = 40,
                     },
@@ -22433,6 +25070,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Detox",
+                      talentId = 124867,
                       dungeonPct = 85,
                       baselinePct = 91,
                     },
@@ -22442,6 +25080,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Detox",
+                      talentId = 124867,
                       dungeonPct = 99,
                       baselinePct = 91,
                     },
@@ -22449,6 +25088,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Transcendence: Linked Spirits",
+                      talentId = 124972,
                       dungeonPct = 26,
                       baselinePct = 40,
                     },
@@ -22458,6 +25098,7 @@ ZugZugData = {
             },
             {
               spec = "Brewmaster",
+              specId = 268,
               hero = "Shado-Pan",
               label = "Swift as a Coursing River",
               importString = "CwQAAAAAAAAAAAAAAAAAAAAAAAAAAwMbbGDGzyMzGzMjBAAAAAAYZBzMMzAzwMbGYmZmhZjZGjlhltZZb2wsAAAbAAAgZbWmZmZ2YYDgZGmZMAAgB",
@@ -22469,6 +25110,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Counterstrike",
+                      talentId = 124854,
                       dungeonPct = 85,
                       baselinePct = 69,
                     },
@@ -22476,6 +25118,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Peace and Prosperity",
+                      talentId = 124957,
                       dungeonPct = 5,
                       baselinePct = 23,
                     },
@@ -22485,6 +25128,7 @@ ZugZugData = {
                   picks = {
                     {
                       name = "Save Them All",
+                      talentId = 124949,
                       dungeonPct = 64,
                       baselinePct = 58,
                     },
@@ -22492,6 +25136,7 @@ ZugZugData = {
                   drops = {
                     {
                       name = "Counterstrike",
+                      talentId = 124854,
                       dungeonPct = 52,
                       baselinePct = 69,
                     },
@@ -22501,6 +25146,7 @@ ZugZugData = {
             },
             {
               spec = "Brewmaster",
+              specId = 268,
               hero = "Shado-Pan",
               label = "Black Ox Brew",
               importString = "CwQAAAAAAAAAAAAAAAAAAAAAAAAAAgZbzYGGzyMzGzMjBAAAAAAYZBMYGYGmhZMmZMDz2sZGzsMssNbbzGmFAAYDAAAMbzyMzMzGDLAMzwMjBMAgB",
