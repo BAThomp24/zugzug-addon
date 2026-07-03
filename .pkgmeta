@@ -5,3 +5,5 @@ ignore:
   - README.md
   - ZugZug.zip
   - .github
+  - LEVELING_DESIGN.md
+  - ZugZug

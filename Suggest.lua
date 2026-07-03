@@ -87,7 +87,7 @@ local function findBestBuildForBoss(builds, bossName)
 
   -- Pass 1: same spec, lists this boss as "best for"
   for _, build in ipairs(builds) do
-    if build.spec == specName and build.bosses then
+    if ZZ:BuildMatchesSpec(build) and build.bosses then
       for _, b in ipairs(build.bosses) do
         if namesMatch(bossName, b) then return build end
       end
@@ -108,7 +108,7 @@ local function findBestBuildForBoss(builds, bossName)
   -- Pass 3: highest popularity same-spec build
   local best = nil
   for _, build in ipairs(builds) do
-    if build.spec == specName then
+    if ZZ:BuildMatchesSpec(build) then
       if not best or build.popularity > best.popularity then
         best = build
       end
@@ -127,7 +127,7 @@ local function findBestBuildForDungeon(builds, dungeonName)
 
   -- Pass 1: same spec, lists this dungeon
   for _, build in ipairs(builds) do
-    if build.spec == specName and build.dungeons then
+    if ZZ:BuildMatchesSpec(build) and build.dungeons then
       for _, d in ipairs(build.dungeons) do
         if namesMatch(dungeonName, d) then return build end
       end
@@ -148,7 +148,7 @@ local function findBestBuildForDungeon(builds, dungeonName)
   -- Pass 3: highest popularity same-spec build
   local best = nil
   for _, build in ipairs(builds) do
-    if build.spec == specName then
+    if ZZ:BuildMatchesSpec(build) then
       if not best or build.popularity > best.popularity then
         best = build
       end
@@ -238,10 +238,9 @@ local function suggestGenericRaid()
   local builds, diff = getRaidBuilds()
   if not builds then return end
 
-  local specName = ZZ.specName
   local best = nil
   for _, build in ipairs(builds) do
-    if build.spec == specName then
+    if ZZ:BuildMatchesSpec(build) then
       if not best or build.popularity > best.popularity then
         best = build
       end
@@ -292,6 +291,7 @@ local function createSuggestFrame()
   f:SetBackdropBorderColor(0.56, 0.75, 0.25, 0.8)
   f:EnableMouse(true)
   f:SetMovable(true)
+  f:SetClampedToScreen(true)
   f:RegisterForDrag("LeftButton")
   f:SetScript("OnDragStart", f.StartMoving)
   f:SetScript("OnDragStop", f.StopMovingOrSizing)
@@ -318,6 +318,14 @@ local function createSuggestFrame()
   swapHeader:SetTextColor(0.56, 0.75, 0.25)
   swapHeader:Hide()
   f.swapHeader = swapHeader
+
+  -- Truncation note when there are more swap pairs than visible rows —
+  -- Apply Swaps applies ALL of them, so say so instead of hiding it.
+  local swapMore = f:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")
+  swapMore:SetPoint("TOPLEFT", f, "TOPLEFT", 18, -58 - (MAX_SWAPS_SHOWN * 18))
+  swapMore:SetJustifyH("LEFT")
+  swapMore:Hide()
+  f.swapMore = swapMore
 
   -- Each swap line is a small container: arrow + spell icon (hoverable for tooltip) + label
   f.swapLines = {}
@@ -436,10 +444,10 @@ local function createSuggestFrame()
   applySwapsBtn:SetScript("OnClick", function()
     if f.currentSwaps and ZZ.ApplySwaps then
       local applied = ZZ:ApplySwaps(f.currentSwaps)
-      -- If ApplySwaps reported no progress at all, the swap is stuck
-      -- (an unsatisfiable prereq, almost always). Suppress this popup
-      -- for the rest of the session so the user isn't pestered each
-      -- time they re-enter the dungeon.
+      -- Three-state return: false = genuinely no progress (stuck or already
+      -- aligned) → suppress this dungeon's popup. nil = transient failure
+      -- (combat, API not ready, commit rejected) → do NOT suppress; the
+      -- next zone-in retries cleanly. true = applied.
       if applied == false and f.currentContentLabel then
         getSuppressedSwaps()[f.currentContentLabel] = true
       end
@@ -526,7 +534,7 @@ local SAME_BUILD_DIFF_THRESHOLD = 4
 --- variations within the same cluster still count as "on the build".
 local function isAlreadyOnBuild(build)
   if not build then return false end
-  if build.spec ~= ZZ.specName then return false end
+  if not ZZ:BuildMatchesSpec(build) then return false end
 
   -- If the build specifies a hero tree, the player must be on the same one.
   if build.hero and build.hero ~= "" then
@@ -689,6 +697,17 @@ showSuggestion = function(contentLabel, build, contentType, swapData)
       return cur == 0
     end
 
+    -- Evidence suffix: "(80% vs 68%)" = pick rate on this dungeon vs the
+    -- build's own baseline. This is WHY the swap is suggested — showing it
+    -- turns the popup from an oracle into a citation.
+    local function whySuffix(swap)
+      if swap and type(swap.dungeonPct) == "number" and type(swap.baselinePct) == "number" then
+        return string.format("  |cff888888(%d%% vs %d%%)|r",
+          math.floor(swap.dungeonPct + 0.5), math.floor(swap.baselinePct + 0.5))
+      end
+      return ""
+    end
+
     local picksList = picks or {}
     local dropsList = drops or {}
     local pairs_ = {}
@@ -740,7 +759,8 @@ showSuggestion = function(contentLabel, build, contentType, swapData)
           line.pickIcon:Show()
           line.text:SetText(
             "Swap to |cff5DCAA5" .. pair.pick.name .. "|r"
-            .. "  |cff888888(was " .. pair.drop.name .. ")|r")
+            .. "  |cff888888(was " .. pair.drop.name .. ")|r"
+            .. whySuffix(pair.pick))
           line:Show()
         elseif pair.drop and pair.pick then
           -- Standard refund-and-purchase pair: drop icon → pick icon
@@ -765,7 +785,8 @@ showSuggestion = function(contentLabel, build, contentType, swapData)
           line.text:SetText(
             "|cffE06B6B" .. pair.drop.name .. "|r"
             .. "  →  "
-            .. "|cff5DCAA5" .. pair.pick.name .. "|r")
+            .. "|cff5DCAA5" .. pair.pick.name .. "|r"
+            .. whySuffix(pair.pick))
           line:Show()
         elseif pair.pick then
           -- Lone pick — either no matched drop in the dataset, or the
@@ -782,7 +803,7 @@ showSuggestion = function(contentLabel, build, contentType, swapData)
             line.pickIcon:Hide()
           end
           line.text:SetText(
-            "Take |cff5DCAA5" .. pair.pick.name .. "|r")
+            "Take |cff5DCAA5" .. pair.pick.name .. "|r" .. whySuffix(pair.pick))
           line:Show()
         elseif pair.drop then
           -- Lone drop — either no matched pick, or the pick is already
@@ -799,17 +820,30 @@ showSuggestion = function(contentLabel, build, contentType, swapData)
             line.dropIcon:Hide()
           end
           line.text:SetText(
-            "Drop |cffE06B6B" .. pair.drop.name .. "|r")
+            "Drop |cffE06B6B" .. pair.drop.name .. "|r" .. whySuffix(pair.drop))
           line:Show()
         else
           line:Hide()
         end
       end
     end
+
+    -- More pairs than visible rows: Apply Swaps still applies ALL of them,
+    -- so surface the overflow instead of silently truncating.
+    local hiddenPairs = #pairs_ - MAX_SWAPS_SHOWN
+    if hiddenPairs > 0 then
+      f.swapMore:SetText(string.format(
+        "|cff888888…and %d more — Apply Swaps applies all %d|r", hiddenPairs, #pairs_))
+      f.swapMore:Show()
+      f:SetHeight(SUGGEST_HEIGHT_WITH_SWAPS + 14)
+    else
+      f.swapMore:Hide()
+    end
   else
     f:SetWidth(SUGGEST_WIDTH_BASE)
     f:SetHeight(SUGGEST_HEIGHT_BASE)
     f.swapHeader:Hide()
+    f.swapMore:Hide()
     for i = 1, MAX_SWAPS_SHOWN do
       f.swapLines[i]:Hide()
     end
@@ -822,8 +856,13 @@ end
 -- Event handlers
 ----------------------------------------------------------------------
 
-local suggestBossCooldown = false
+-- Timestamp-based cooldown: a stale C_Timer from an earlier suggest can't
+-- clear a newer cooldown early (the old boolean+timer pattern could).
+local suggestBossCooldownUntil = 0
 local lastSuggestDungeon = nil
+-- PLAYER_TARGET_CHANGED fires constantly; if its handler errors, warn once
+-- instead of spamming chat on every target swap.
+local warnedTargetError = false
 
 local eventFrame = CreateFrame("Frame")
 eventFrame:RegisterEvent("PLAYER_LOGIN")
@@ -856,7 +895,7 @@ eventFrame:SetScript("OnEvent", function(_, event, ...)
 
       if instanceType == "raid" and diff then
         currentRaidDiff = diff
-        suggestBossCooldown = false
+        suggestBossCooldownUntil = 0
         killedEncounters = {}
         -- Build boss order from Encounter Journal
         buildBossOrder()
@@ -864,15 +903,14 @@ eventFrame:SetScript("OnEvent", function(_, event, ...)
         if #raidBossOrder > 0 then
           local firstBoss = raidBossOrder[1].name
           suggestForBoss(firstBoss)
-          suggestBossCooldown = true
-          C_Timer.After(30, function() suggestBossCooldown = false end)
+          suggestBossCooldownUntil = GetTime() + 30
         end
       else
         -- Left raid — reset state
         raidBossOrder = {}
         killedEncounters = {}
         currentRaidDiff = nil
-        suggestBossCooldown = false
+        suggestBossCooldownUntil = 0
       end
     end)
     if not ok then
@@ -887,7 +925,7 @@ eventFrame:SetScript("OnEvent", function(_, event, ...)
       if not ZZ.data or not ZZ.classToken or not ZZ.role then return end
       if InCombatLockdown() then return end
       if not UnitExists("target") then return end
-      if suggestBossCooldown then return end
+      if GetTime() < suggestBossCooldownUntil then return end
 
       -- Must be in a mapped raid difficulty
       local difficultyID = select(3, GetInstanceInfo())
@@ -905,11 +943,11 @@ eventFrame:SetScript("OnEvent", function(_, event, ...)
         suggestGenericRaid()
       end
 
-      suggestBossCooldown = true
-      C_Timer.After(30, function() suggestBossCooldown = false end)
+      suggestBossCooldownUntil = GetTime() + 30
     end)
-    if not ok then
-      print("|cff00ccffZugZug:|r TARGET error: " .. tostring(err))
+    if not ok and not warnedTargetError then
+      warnedTargetError = true
+      print("|cff00ccffZugZug:|r TARGET error (further errors suppressed): " .. tostring(err))
     end
     return
   end
@@ -921,7 +959,7 @@ eventFrame:SetScript("OnEvent", function(_, event, ...)
       if encounterID then
         killedEncounters[encounterID] = true
       end
-      suggestBossCooldown = false
+      suggestBossCooldownUntil = 0
 
       -- Suggest build for the next boss
       local nextBoss = getNextBossName()
@@ -929,8 +967,7 @@ eventFrame:SetScript("OnEvent", function(_, event, ...)
         -- Small delay so it doesn't flash during loot
         C_Timer.After(3, function()
           suggestForBoss(nextBoss)
-          suggestBossCooldown = true
-          C_Timer.After(30, function() suggestBossCooldown = false end)
+          suggestBossCooldownUntil = GetTime() + 30
         end)
       end
     end)
@@ -958,22 +995,27 @@ eventFrame:SetScript("OnEvent", function(_, event, ...)
           if okC and type(activeID) == "number" and activeID > 0 then return end
         end
 
-        local _, instanceType, difficultyID = GetInstanceInfo()
-
-        local mapID = C_ChallengeMode.GetActiveChallengeMapID()
-        local dungeonName, level
-
-        if mapID then
-          dungeonName = C_ChallengeMode.GetMapUIInfo(mapID)
-          level = select(1, C_ChallengeMode.GetActiveKeystoneInfo()) or 0
-        elseif instanceType == "party" then
-          dungeonName = GetInstanceInfo()
-          level = 0
-        else
-          return
-        end
-
+        local _, instanceType = GetInstanceInfo()
+        if instanceType ~= "party" then return end
+        local dungeonName = GetInstanceInfo()
         if not dungeonName then return end
+
+        -- Key-level awareness: if the player's own keystone is for THIS
+        -- dungeon, suggest from the matching key-level bucket and label
+        -- the popup "+N". (The active-keystone APIs are useless here —
+        -- once a key is actually active, talents are locked and we've
+        -- already returned above.)
+        local level = 0
+        if C_MythicPlus and C_MythicPlus.GetOwnedKeystoneChallengeMapID then
+          local okK, ownedMapID = pcall(C_MythicPlus.GetOwnedKeystoneChallengeMapID)
+          if okK and type(ownedMapID) == "number" and ownedMapID > 0 then
+            local okN, ownedName = pcall(C_ChallengeMode.GetMapUIInfo, ownedMapID)
+            if okN and type(ownedName) == "string" and namesMatch(dungeonName, ownedName) then
+              local okL, lvl = pcall(C_MythicPlus.GetOwnedKeystoneLevel)
+              if okL and type(lvl) == "number" then level = lvl end
+            end
+          end
+        end
         -- Debouncer persists across /reload via saved variables so we
         -- don't re-pop the suggestion every time the user reloads inside
         -- the same dungeon. lastSuggestDungeon is reset on actual zone
@@ -994,7 +1036,18 @@ eventFrame:SetScript("OnEvent", function(_, event, ...)
         local best = findBestBuildForDungeon(builds, dungeonName)
         if best then
           local label = level > 0 and ("Best for " .. dungeonName .. " +" .. level) or ("Best for " .. dungeonName)
+          -- Swap tables are keyed by the DATA dungeon name, which doesn't
+          -- always match the in-game name exactly — fall back to the same
+          -- fuzzy matching used to find the build itself.
           local swaps = best.dungeonSwaps and best.dungeonSwaps[dungeonName] or nil
+          if not swaps and best.dungeonSwaps then
+            for dataName, s in pairs(best.dungeonSwaps) do
+              if namesMatch(dungeonName, dataName) then
+                swaps = s
+                break
+              end
+            end
+          end
           showSuggestion(label, best, "mp", swaps)
         end
       end)
@@ -1022,7 +1075,7 @@ resetFrame:SetScript("OnEvent", function(_, event)
   if event == "CHALLENGE_MODE_COMPLETED" then
     lastSuggestDungeon = nil
   elseif event == "ACTIVE_TALENT_GROUP_CHANGED" then
-    suggestBossCooldown = false
+    suggestBossCooldownUntil = 0
     -- Spec change → tree is different, anything we marked as
     -- "unsatisfiable" might now work. Wipe the (persistent) suppression.
     ZugZugDB.suppressedSwaps = {}

@@ -34,15 +34,35 @@ local TREND_ICONS = {
 
 local specIconCache = {}
 
-local function getSpecIcon(specName)
-  if not specName or specName == "" then return nil end
+-- The bare specialization globals were deprecated in 11.1.7 in favor of
+-- C_SpecializationInfo; prefer the namespaced versions so the addon
+-- survives the shims being removed.
+local GetNumSpecsForClass = (C_SpecializationInfo and C_SpecializationInfo.GetNumSpecializationsForClassID) or GetNumSpecializationsForClassID
+local GetSpecInfoForClass = (C_SpecializationInfo and C_SpecializationInfo.GetSpecializationInfoForClassID) or GetSpecializationInfoForClassID
+local GetNumSpecs = (C_SpecializationInfo and C_SpecializationInfo.GetNumSpecializations) or GetNumSpecializations
+local GetSpecInfo = (C_SpecializationInfo and C_SpecializationInfo.GetSpecializationInfo) or GetSpecializationInfo
 
+local GetSpecInfoByID = (C_SpecializationInfo and C_SpecializationInfo.GetSpecializationInfoByID) or GetSpecializationInfoByID
+
+local function getSpecIcon(specName, specId)
+  -- Fast path: numeric spec ID (locale-independent, ships with fresh data).
+  if specId and GetSpecInfoByID then
+    local cached = specIconCache["id:" .. specId]
+    if cached then return cached end
+    local ok, _, _, _, icon = pcall(GetSpecInfoByID, specId)
+    if ok and icon then
+      specIconCache["id:" .. specId] = icon
+      return icon
+    end
+  end
+
+  if not specName or specName == "" then return nil end
   if specIconCache[specName] then return specIconCache[specName] end
 
-  -- Scan all classes and specs to find the matching spec name
+  -- Fallback: scan all classes and specs to find the matching spec name
   for classIdx = 1, GetNumClasses() do
-    for specIdx = 1, GetNumSpecializationsForClassID(classIdx) do
-      local _, name, _, icon = GetSpecializationInfoForClassID(classIdx, specIdx)
+    for specIdx = 1, GetNumSpecsForClass(classIdx) do
+      local _, name, _, icon = GetSpecInfoForClass(classIdx, specIdx)
       if name == specName then
         specIconCache[specName] = icon
         return icon
@@ -395,44 +415,106 @@ local pendingBuild = nil -- { importString, label }
 
 --- Find the specIndex (1-based) for a given specID on the player's class.
 local function specIndexForID(targetSpecID)
-  for i = 1, GetNumSpecializations() do
-    local specID = GetSpecializationInfo(i)
+  for i = 1, GetNumSpecs() do
+    local specID = GetSpecInfo(i)
     if specID == targetSpecID then return i end
   end
   return nil
 end
 
---- Apply a parsed loadout to the player's active talent config.
-function ZZ:ApplyBuild(importString, label)
-  local parsed, err = parseImportString(importString)
-  if not parsed then
-    print("|cff00ccffZugZug:|r Failed to parse: " .. (err or "unknown error"))
+----------------------------------------------------------------------
+-- Dedicated "ZugZug" loadout + undo snapshot
+----------------------------------------------------------------------
+
+local LOADOUT_NAME = "ZugZug"
+
+--- Find this spec's saved loadout named "ZugZug", if any.
+local function findZugZugConfigID(specID)
+  if not (C_ClassTalents and C_ClassTalents.GetConfigIDsBySpecID) then return nil end
+  local ok, ids = pcall(C_ClassTalents.GetConfigIDsBySpecID, specID)
+  if not ok or type(ids) ~= "table" then return nil end
+  for _, id in ipairs(ids) do
+    local okI, info = pcall(C_Traits.GetConfigInfo, id)
+    if okI and info and info.name == LOADOUT_NAME then return id end
+  end
+  return nil
+end
+
+--- True when a C_ClassTalents.LoadConfig result means "accepted".
+local function loadConfigAccepted(result)
+  if result == nil or result == false then return false end
+  local errVal = (Enum and Enum.LoadConfigResult and Enum.LoadConfigResult.Error) or 0
+  return result ~= errVal
+end
+
+--- Snapshot the active tree (and which saved loadout was selected) so
+--- /zz undo can restore it after an apply/swap/reset. Persisted in the
+--- SavedVariables so it survives /reload.
+function ZZ:CaptureUndoSnapshot(configID, action)
+  if not (configID and C_Traits and C_Traits.GenerateImportString) then return end
+  local ok, str = pcall(C_Traits.GenerateImportString, configID)
+  if not ok or type(str) ~= "string" or str == "" then return end
+  local specID = PlayerUtil and PlayerUtil.GetCurrentSpecID and PlayerUtil.GetCurrentSpecID()
+  local selectedID
+  if specID and C_ClassTalents.GetLastSelectedSavedConfigID then
+    local okS, sel = pcall(C_ClassTalents.GetLastSelectedSavedConfigID, specID)
+    if okS then selectedID = sel end
+  end
+  ZugZugDB.undoSnapshot = {
+    importString = str,
+    specID = specID,
+    prevConfigID = selectedID,
+    action = action,
+    at = time(),
+  }
+end
+
+--- Import the build into a loadout named "ZugZug" and activate it, leaving
+--- the player's own loadouts untouched. Returns true on success; false on
+--- any failure so the caller can fall back to the in-place apply.
+local function tryApplyViaLoadout(importString, label)
+  if not (C_ClassTalents and C_ClassTalents.ImportLoadout and C_ClassTalents.LoadConfig) then
     return false
   end
+  local specID = PlayerUtil and PlayerUtil.GetCurrentSpecID and PlayerUtil.GetCurrentSpecID()
+  if not specID then return false end
 
-  -- If the build is for a different spec, switch first
-  local currentSpecID = PlayerUtil.GetCurrentSpecID()
-  if parsed.specID ~= currentSpecID then
-    local specIdx = specIndexForID(parsed.specID)
-    if not specIdx then
-      print("|cff00ccffZugZug:|r Could not find spec for this build.")
-      return false
-    end
-    pendingBuild = { importString = importString, label = label }
-    print("|cff00ccffZugZug:|r Switching spec to apply " .. (label or "build") .. "...")
-    if InCombatLockdown() then
-      print("|cff00ccffZugZug:|r Cannot switch spec in combat.")
-      pendingBuild = nil
-      return false
-    end
-    -- Close the talent frame — Blizzard blocks spec switches while it's open
-    if PlayerSpellsFrame and PlayerSpellsFrame:IsShown() then
-      HideUIPanel(PlayerSpellsFrame)
-    end
-    C_SpecializationInfo.SetSpecialization(specIdx)
-    return true
+  local existing = findZugZugConfigID(specID)
+
+  -- If the ZugZug loadout is the one currently selected, the in-place path
+  -- IS the update mechanism (Blizzard blocks deleting the active loadout).
+  if existing and C_ClassTalents.GetLastSelectedSavedConfigID then
+    local okS, sel = pcall(C_ClassTalents.GetLastSelectedSavedConfigID, specID)
+    if okS and sel == existing then return false end
   end
 
+  -- Replace any stale ZugZug loadout so copies never accumulate.
+  if existing and C_ClassTalents.DeleteConfig then
+    pcall(C_ClassTalents.DeleteConfig, existing)
+  end
+
+  local okImp, res = pcall(C_ClassTalents.ImportLoadout, importString, LOADOUT_NAME)
+  if not okImp or res == false or res == nil then return false end
+  -- ImportLoadout has returned a configID on some builds and a boolean on
+  -- others — rescan by name when it isn't a number.
+  local newID = (type(res) == "number") and res or findZugZugConfigID(specID)
+  if not newID then return false end
+
+  local okLoad, result = pcall(C_ClassTalents.LoadConfig, newID, true)
+  if not okLoad or not loadConfigAccepted(result) then return false end
+
+  if C_ClassTalents.UpdateLastSelectedSavedConfigID then
+    pcall(C_ClassTalents.UpdateLastSelectedSavedConfigID, specID, newID)
+  end
+  print(string.format(
+    "|cff00ccffZugZug:|r Applying %s to the \"%s\" loadout... |cff888888Your own loadouts are untouched; /zz undo reverts.|r",
+    label or "build", LOADOUT_NAME))
+  return true
+end
+
+--- Stage + commit a parsed loadout onto the ACTIVE config (tree wipe +
+--- rebuild). Shared by the in-place apply path and /zz undo.
+local function applyParsedInPlace(parsed, renameTo)
   local configID = C_ClassTalents.GetActiveConfigID()
   if not configID then
     print("|cff00ccffZugZug:|r No active talent config.")
@@ -495,16 +577,151 @@ function ZZ:ApplyBuild(importString, label)
   end
 
   if C_ClassTalents.CommitConfig(configID) then
-    print("|cff00ccffZugZug:|r Applying " .. (label or "build") .. "...")
+    print("|cff00ccffZugZug:|r Applying " .. (renameTo or "build") .. "...")
     -- Auto-rename the loadout to the build label
-    if label and C_ClassTalents.RenameConfig then
-      C_ClassTalents.RenameConfig(configID, label)
+    if renameTo and C_ClassTalents.RenameConfig then
+      C_ClassTalents.RenameConfig(configID, renameTo)
     end
     return true
   end
 
+  -- Roll back the staged reset+rebuild so we don't strand a phantom
+  -- uncommitted respec on the player's config.
+  if C_Traits.RollbackConfig then
+    pcall(C_Traits.RollbackConfig, configID)
+  end
   print("|cff00ccffZugZug:|r Failed to commit. Try with the talent frame open.")
   return false
+end
+
+--- Apply a build's import string: spec-switch if needed, then either the
+--- dedicated-loadout path (default) or an in-place stage+commit.
+function ZZ:ApplyBuild(importString, label)
+  local parsed, err = parseImportString(importString)
+  if not parsed then
+    print("|cff00ccffZugZug:|r Failed to parse: " .. (err or "unknown error"))
+    return false
+  end
+
+  -- If the build is for a different spec, switch first
+  local currentSpecID = PlayerUtil.GetCurrentSpecID()
+  if parsed.specID ~= currentSpecID then
+    local specIdx = specIndexForID(parsed.specID)
+    if not specIdx then
+      print("|cff00ccffZugZug:|r Could not find spec for this build.")
+      return false
+    end
+    pendingBuild = { importString = importString, label = label }
+    print("|cff00ccffZugZug:|r Switching spec to apply " .. (label or "build") .. "...")
+    if InCombatLockdown() then
+      print("|cff00ccffZugZug:|r Cannot switch spec in combat.")
+      pendingBuild = nil
+      return false
+    end
+    -- Close the talent frame — Blizzard blocks spec switches while it's open
+    if PlayerSpellsFrame and PlayerSpellsFrame:IsShown() then
+      HideUIPanel(PlayerSpellsFrame)
+    end
+    C_SpecializationInfo.SetSpecialization(specIdx)
+    return true
+  end
+
+  -- Same-spec apply stages a full tree wipe + rebuild — never start that
+  -- in combat (the commit would fail and strand the staged reset).
+  if InCombatLockdown() then
+    print("|cff00ccffZugZug:|r Cannot change talents in combat.")
+    return false
+  end
+
+  local configID = C_ClassTalents.GetActiveConfigID()
+  if not configID then
+    print("|cff00ccffZugZug:|r No active talent config.")
+    return false
+  end
+
+  -- Snapshot BEFORE anything mutates, so /zz undo can restore this exact state.
+  ZZ:CaptureUndoSnapshot(configID, label or "build")
+
+  -- Preferred path: import into the dedicated ZugZug loadout.
+  if ZugZugDB.useDedicatedLoadout ~= false and tryApplyViaLoadout(importString, label) then
+    return true
+  end
+
+  -- Fallback / legacy path: stage onto the active config.
+  local ok = applyParsedInPlace(parsed, label)
+  if ok then
+    print("|cff888888ZugZug: /zz undo reverts this apply.|r")
+  end
+  return ok
+end
+
+--- Restore the talents captured before the last apply/swap/reset.
+--- Toggles: undoing captures the current state first, so a second
+--- /zz undo redoes what you just reverted.
+function ZZ:UndoLastApply()
+  local snap = ZugZugDB.undoSnapshot
+  if not (snap and snap.importString) then
+    print("|cff00ccffZugZug:|r Nothing to undo.")
+    return false
+  end
+  if InCombatLockdown() then
+    print("|cff00ccffZugZug:|r Cannot change talents in combat.")
+    return false
+  end
+  local specID = PlayerUtil and PlayerUtil.GetCurrentSpecID and PlayerUtil.GetCurrentSpecID()
+  if snap.specID and specID and snap.specID ~= specID then
+    print("|cff00ccffZugZug:|r The undo snapshot is for another spec — switch back to use it.")
+    return false
+  end
+
+  -- Capture the CURRENT state so /zz undo toggles between the two.
+  local redo
+  local configID = C_ClassTalents.GetActiveConfigID()
+  if configID and C_Traits.GenerateImportString then
+    local okG, cur = pcall(C_Traits.GenerateImportString, configID)
+    if okG and type(cur) == "string" and cur ~= "" then redo = cur end
+  end
+
+  -- Prefer re-selecting the loadout that was active before the apply — it
+  -- restores name + contents wholesale (the dedicated-loadout path never
+  -- touched it). Fall back to an in-place restore from the snapshot string.
+  local restored = false
+  if snap.prevConfigID and C_ClassTalents.LoadConfig then
+    local okInfo, info = pcall(C_Traits.GetConfigInfo, snap.prevConfigID)
+    if okInfo and info then
+      local okLoad, result = pcall(C_ClassTalents.LoadConfig, snap.prevConfigID, true)
+      if okLoad and loadConfigAccepted(result) then
+        if specID and C_ClassTalents.UpdateLastSelectedSavedConfigID then
+          pcall(C_ClassTalents.UpdateLastSelectedSavedConfigID, specID, snap.prevConfigID)
+        end
+        restored = true
+      end
+    end
+  end
+  if not restored then
+    local parsed = parseImportString(snap.importString)
+    if parsed and parsed.specID == specID then
+      restored = applyParsedInPlace(parsed, nil) == true
+    end
+  end
+
+  if restored then
+    print("|cff00ccffZugZug:|r Restored your previous talents"
+      .. (snap.action and (" (before " .. snap.action .. ")") or "") .. ".")
+    if redo then
+      ZugZugDB.undoSnapshot = {
+        importString = redo,
+        specID = specID,
+        action = "undo",
+        at = time(),
+      }
+    else
+      ZugZugDB.undoSnapshot = nil
+    end
+  else
+    print("|cff00ccffZugZug:|r Could not restore — try with the talent frame open.")
+  end
+  return restored
 end
 
 --- Apply a pending build after a spec switch completes.
@@ -513,14 +730,15 @@ end
 --- Returns a table: { [talentName] = { spellID, iconID, nodeID, entryID, isChoice } }
 function ZZ:GetTalentLookup()
   local lookup = {}
+  local byEntry = {}
   local specID = PlayerUtil and PlayerUtil.GetCurrentSpecID and PlayerUtil.GetCurrentSpecID()
-  if not specID then return lookup end
+  if not specID then return lookup, byEntry end
   local configID = C_ClassTalents.GetActiveConfigID()
-  if not configID then return lookup end
+  if not configID then return lookup, byEntry end
   local treeID = C_ClassTalents.GetTraitTreeForSpec(specID)
-  if not treeID then return lookup end
+  if not treeID then return lookup, byEntry end
   local treeNodes = C_Traits.GetTreeNodes(treeID)
-  if not treeNodes then return lookup end
+  if not treeNodes then return lookup, byEntry end
 
   for _, nodeID in ipairs(treeNodes) do
     local nodeInfo = C_Traits.GetNodeInfo(configID, nodeID)
@@ -544,12 +762,17 @@ function ZZ:GetTalentLookup()
                 isChoice = isChoice,
               }
             end
+            -- entryID-keyed map: locale- and rename-proof matching for
+            -- swap data that carries WCL talent (entry) IDs.
+            if name and name ~= "" and not byEntry[entryID] then
+              byEntry[entryID] = lookup[name]
+            end
           end
         end
       end
     end
   end
-  return lookup
+  return lookup, byEntry
 end
 
 --- Returns true if every pick in swapData is already selected AND every
@@ -566,40 +789,13 @@ function ZZ:SwapsAlreadyApplied(swapData)
   -- return true (no popup) rather than false (popup), so we don't show a
   -- "Apply Swaps" call-to-action we can't verify is meaningful. A real
   -- swap-needed state will re-trigger the next zone change or spec switch.
-  local specID = PlayerUtil and PlayerUtil.GetCurrentSpecID and PlayerUtil.GetCurrentSpecID()
-  if not specID then return true end
   local configID = C_ClassTalents.GetActiveConfigID()
   if not configID then return true end
-  local treeID = C_ClassTalents.GetTraitTreeForSpec(specID)
-  if not treeID then return true end
 
-  local treeNodes = C_Traits.GetTreeNodes(treeID)
-  if not treeNodes then return true end
-
-  -- name → { nodeID, entryID, isChoice }
-  local lookup = {}
-  for _, nodeID in ipairs(treeNodes) do
-    local nodeInfo = C_Traits.GetNodeInfo(configID, nodeID)
-    if nodeInfo and nodeInfo.entryIDs then
-      local isChoice = #nodeInfo.entryIDs > 1
-      for _, entryID in ipairs(nodeInfo.entryIDs) do
-        local entryInfo = C_Traits.GetEntryInfo(configID, entryID)
-        if entryInfo and entryInfo.definitionID then
-          local defInfo = C_Traits.GetDefinitionInfo(entryInfo.definitionID)
-          if defInfo then
-            local name = defInfo.overrideName
-            if (not name or name == "") and defInfo.spellID and C_Spell and C_Spell.GetSpellInfo then
-              local spell = C_Spell.GetSpellInfo(defInfo.spellID)
-              name = spell and spell.name
-            end
-            if name and name ~= "" and not lookup[name] then
-              lookup[name] = { nodeID = nodeID, entryID = entryID, isChoice = isChoice }
-            end
-          end
-        end
-      end
-    end
-  end
+  -- Shared lookup builder (same one ApplySwaps uses). Empty result means
+  -- the talent API hasn't settled yet — stay optimistic per the note above.
+  local lookup, byEntry = ZZ:GetTalentLookup()
+  if not next(lookup) then return true end
 
   -- Pure, READ-ONLY comparison. A swap is "already applied" iff every
   -- pick is at its target state — a selected choice entry, or a
@@ -621,7 +817,7 @@ function ZZ:SwapsAlreadyApplied(swapData)
   -- in Suggest.lua — set when Apply Swaps reports no progress — so we
   -- never need to simulate it here.
   for _, p in ipairs(picks) do
-    local t = lookup[p.name]
+    local t = (p.talentId and byEntry[p.talentId]) or lookup[p.name]
     if t then
       local ni = C_Traits.GetNodeInfo(configID, t.nodeID)
       if ni then
@@ -644,11 +840,18 @@ end
 ---   1. Refund all non-choice drops first (frees talent points).
 ---   2. For each pick:
 ---      - Choice node:  SetSelection on the entry (no point cost).
----      - Non-choice:   PurchaseRank. If it fails because we're out of points,
----                      refund the next-best non-choice drop to free one, then retry.
+---      - Non-choice:   PurchaseRank.
+---   3. Re-purchase any refunds the picks didn't consume.
 ---
 --- For choice nodes among the drops, we skip — picking the alternative entry
 --- via the corresponding "pick" already deselects them.
+---
+--- Returns three states (callers decide whether to suppress the popup):
+---   true  — swaps committed.
+---   false — genuinely no progress (already aligned / nothing to stage);
+---           safe to treat as "this swap set is stuck or satisfied".
+---   nil   — transient failure (combat lockdown, talent API not ready,
+---           commit rejected); DO NOT suppress — retry later works.
 function ZZ:ApplySwaps(swapData)
   if not swapData then return false end
   local picks = swapData.picks or {}
@@ -656,76 +859,25 @@ function ZZ:ApplySwaps(swapData)
   if #picks == 0 and #drops == 0 then return false end
   if InCombatLockdown() then
     print("|cff00ccffZugZug:|r Cannot change talents in combat.")
-    return false
-  end
-
-  local specID = PlayerUtil and PlayerUtil.GetCurrentSpecID and PlayerUtil.GetCurrentSpecID()
-  if not specID then return false end
-  local configID = C_ClassTalents.GetActiveConfigID()
-  if not configID then return false end
-  local treeID = C_ClassTalents.GetTraitTreeForSpec(specID)
-  if not treeID then return false end
-
-  local treeNodes = C_Traits.GetTreeNodes(treeID)
-  if not treeNodes then return false end
-
-  -- Build a talent-name → (nodeID, entryID, isChoice) lookup by walking the tree.
-  local lookup = {}
-  for _, nodeID in ipairs(treeNodes) do
-    local nodeInfo = C_Traits.GetNodeInfo(configID, nodeID)
-    if nodeInfo and nodeInfo.entryIDs then
-      local isChoice = #nodeInfo.entryIDs > 1
-      for _, entryID in ipairs(nodeInfo.entryIDs) do
-        local entryInfo = C_Traits.GetEntryInfo(configID, entryID)
-        if entryInfo and entryInfo.definitionID then
-          local defInfo = C_Traits.GetDefinitionInfo(entryInfo.definitionID)
-          if defInfo then
-            local name = defInfo.overrideName
-            if (not name or name == "") and defInfo.spellID and C_Spell and C_Spell.GetSpellInfo then
-              local spell = C_Spell.GetSpellInfo(defInfo.spellID)
-              name = spell and spell.name
-            end
-            if name and name ~= "" and not lookup[name] then
-              lookup[name] = { nodeID = nodeID, entryID = entryID, isChoice = isChoice }
-            end
-          end
-        end
-      end
-    end
-  end
-
-  -- Helper: try to refund one rank from any non-choice drop that's currently
-  -- purchased. Returns the refunded key (so caller can undo) or nil.
-  local refundedDrops = {}
-  local function tryRefundOneDrop()
-    for _, d in ipairs(drops) do
-      local key = d.name
-      if not refundedDrops[key] then
-        local target = lookup[key]
-        if target and not target.isChoice then
-          local ni = C_Traits.GetNodeInfo(configID, target.nodeID)
-          if ni and (ni.currentRank or 0) > 0 and C_Traits.RefundRank then
-            if C_Traits.RefundRank(configID, target.nodeID) then
-              refundedDrops[key] = true
-              return key
-            end
-          end
-        end
-      end
-    end
     return nil
   end
 
-  -- Undo a refund (re-purchase the drop) if the pick we freed the point
-  -- for couldn't actually be purchased. Keeps the player's loadout
-  -- stable instead of leaving a stray unspent point.
-  local function undoRefund(key)
-    if not key then return end
-    local target = lookup[key]
-    if target and C_Traits.PurchaseRank then
-      C_Traits.PurchaseRank(configID, target.nodeID)
-    end
-    refundedDrops[key] = nil
+  local configID = C_ClassTalents.GetActiveConfigID()
+  if not configID then return nil end
+
+  -- Talent lookups from the active tree: by display name and by entry ID.
+  local lookup, byEntry = ZZ:GetTalentLookup()
+  if not next(lookup) then return nil end
+
+  -- Swap data ships WCL entry IDs when fresh; resolve by ID first so
+  -- localized clients and renamed talents still match.
+  local function resolveTarget(swap)
+    return (swap.talentId and byEntry[swap.talentId]) or lookup[swap.name]
+  end
+
+  -- Snapshot the pre-swap tree so /zz undo can revert this.
+  if ZZ.CaptureUndoSnapshot then
+    ZZ:CaptureUndoSnapshot(configID, "talent swaps")
   end
 
   local applied = 0
@@ -738,7 +890,7 @@ function ZZ:ApplySwaps(swapData)
   -- We record what we refunded so we can roll back orphans afterwards.
   local refundedTargets = {}  -- ordered list of refunded {key, nodeID}
   for _, d in ipairs(drops) do
-    local target = lookup[d.name]
+    local target = resolveTarget(d)
     if target and not target.isChoice then
       local ni = C_Traits.GetNodeInfo(configID, target.nodeID)
       if ni and (ni.currentRank or 0) > 0
@@ -753,7 +905,7 @@ function ZZ:ApplySwaps(swapData)
   -- Phase 2 — purchase every pick that's reachable.
   local nonChoicePurchases = 0
   for _, p in ipairs(picks) do
-    local target = lookup[p.name]
+    local target = resolveTarget(p)
     if not target then
       table.insert(skipped, p.name)
     else
@@ -803,15 +955,21 @@ function ZZ:ApplySwaps(swapData)
   end
 
   if C_ClassTalents.CommitConfig(configID) then
-    print(string.format("|cff00ccffZugZug:|r Applied %d talent swap%s.", applied, applied == 1 and "" or "s"))
+    print(string.format("|cff00ccffZugZug:|r Applied %d talent swap%s. |cff888888/zz undo reverts.|r", applied, applied == 1 and "" or "s"))
     if #skipped > 0 then
       print("|cff00ccffZugZug:|r Couldn't find: " .. table.concat(skipped, ", "))
     end
     return true
   end
 
+  -- Commit rejected (restriction, transient state) — roll back the staged
+  -- refunds/purchases so nothing dangles, and report transient (nil) so the
+  -- caller doesn't suppress the popup for this dungeon.
+  if C_Traits.RollbackConfig then
+    pcall(C_Traits.RollbackConfig, configID)
+  end
   print("|cff00ccffZugZug:|r Failed to commit talent changes.")
-  return false
+  return nil
 end
 
 function ZZ:ApplyPendingBuild()
@@ -976,7 +1134,7 @@ end
 
 local function populateDropdownItem(item, build, contentType, sectionColor, isCurrentSpec)
   -- Set spec icon
-  local icon = getSpecIcon(build.spec)
+  local icon = getSpecIcon(build.spec, build.specId)
   if icon then
     item.specIcon:SetTexture(icon)
     item.specIcon:Show()
@@ -1575,8 +1733,8 @@ function ZZ:PopulateDropdown(contentType)
       local aFav = favs[a.importString] and true or false
       local bFav = favs[b.importString] and true or false
       if aFav ~= bFav then return aFav end
-      local aSpec = (a.spec == specName)
-      local bSpec = (b.spec == specName)
+      local aSpec = ZZ:BuildMatchesSpec(a)
+      local bSpec = ZZ:BuildMatchesSpec(b)
       if aSpec ~= bSpec then return aSpec end
       return (a.popularity or 0) > (b.popularity or 0)
     end)
@@ -1641,7 +1799,7 @@ function ZZ:PopulateDropdown(contentType)
       hf:ClearAllPoints()
       hf:SetPoint("TOPLEFT", menu, "TOPLEFT", 0, yOffset)
       hf:SetPoint("TOPRIGHT", menu, "TOPRIGHT", 0, yOffset)
-      local isCurr = (build.spec == ZZ.specName)
+      local isCurr = ZZ:BuildMatchesSpec(build)
       if isCurr then
         local cr, cg, cb = getClassColor()
         hf.accent:SetColorTexture(cr, cg, cb, 1)
@@ -1668,7 +1826,7 @@ function ZZ:PopulateDropdown(contentType)
     item:SetPoint("TOPLEFT", menu, "TOPLEFT", 0, yOffset)
     item:SetPoint("TOPRIGHT", menu, "TOPRIGHT", 0, yOffset)
 
-    local isCurrentSpec = (build.spec == ZZ.specName)
+    local isCurrentSpec = ZZ:BuildMatchesSpec(build)
     populateDropdownItem(item, build, contentType, sectionColor, isCurrentSpec)
     yOffset = yOffset - DROPDOWN_ITEM_HEIGHT
   end
@@ -1697,7 +1855,7 @@ local function topBuildLabel(builds, preferSpec)
   if not builds or #builds == 0 then return "" end
   local best = nil
   for _, b in ipairs(builds) do
-    if not preferSpec or b.spec == preferSpec then
+    if not preferSpec or ZZ:BuildMatchesSpec(b) then
       if not best or (b.popularity or 0) > (best.popularity or 0) then
         best = b
       end
@@ -1885,11 +2043,14 @@ local function showCastBar()
 end
 
 local castEventFrame = CreateFrame("Frame")
-castEventFrame:RegisterEvent("UNIT_SPELLCAST_START")
-castEventFrame:RegisterEvent("UNIT_SPELLCAST_STOP")
-castEventFrame:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
-castEventFrame:RegisterEvent("UNIT_SPELLCAST_FAILED")
-castEventFrame:RegisterEvent("UNIT_SPELLCAST_INTERRUPTED")
+-- Unit-filtered registration: the plain RegisterEvent variant fires for
+-- EVERY unit's casts (thousands per minute in raid combat) just to be
+-- discarded by the unit check below.
+castEventFrame:RegisterUnitEvent("UNIT_SPELLCAST_START", "player")
+castEventFrame:RegisterUnitEvent("UNIT_SPELLCAST_STOP", "player")
+castEventFrame:RegisterUnitEvent("UNIT_SPELLCAST_SUCCEEDED", "player")
+castEventFrame:RegisterUnitEvent("UNIT_SPELLCAST_FAILED", "player")
+castEventFrame:RegisterUnitEvent("UNIT_SPELLCAST_INTERRUPTED", "player")
 castEventFrame:SetScript("OnEvent", function(_, event, unit, _, spellID)
   if unit ~= "player" then return end
   if event == "UNIT_SPELLCAST_START" then
@@ -1968,14 +2129,16 @@ initFrame:SetScript("OnEvent", function()
     cmd = cmd:lower()
 
     if cmd == "show" or cmd == "toggle" then
-      if bar then
-        if bar:IsShown() then
-          bar:Hide()
-        else
-          applyBarPosition(barAttachedTo)
-          bar:Show()
-          ZZ:RefreshUI()
-        end
+      -- Create on demand — the bar otherwise only exists after the talent
+      -- frame (load-on-demand) has been opened once this session, which
+      -- made /zz show a silent no-op on fresh logins.
+      local b = ZZ:GetOrCreateBar()
+      if b:IsShown() then
+        b:Hide()
+      else
+        applyBarPosition(barAttachedTo)
+        b:Show()
+        ZZ:RefreshUI()
       end
       return
     end

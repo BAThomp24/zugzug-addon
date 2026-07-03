@@ -23,6 +23,8 @@ const API_URL = "https://zugzug-cron.zugzugio.workers.dev/api/data";
 interface Build {
   id: string;
   spec: string;
+  /** WoW specialization ID (locale-independent) — present on fresh blobs. */
+  specId?: number;
   hero: string;
   label: string;
   importString: string;
@@ -48,6 +50,7 @@ interface BossResult {
 }
 
 interface TalentSwap {
+  /** WCL talent entry ID — matches C_Traits entry IDs in-game. */
   talentId: number;
   name: string;
   dungeonPct: number;
@@ -154,6 +157,8 @@ function toLua(value: unknown, depth = 0): string {
 
 interface AddonSwap {
   name: string;
+  /** Entry ID for locale-proof in-game node matching (name is the fallback). */
+  talentId?: number;
   dungeonPct: number;
   baselinePct: number;
 }
@@ -167,6 +172,8 @@ interface AddonDungeonSwap {
 
 interface AddonBuild {
   spec: string;
+  /** WoW specialization ID — lets the addon match specs without English names. */
+  specId?: number;
   hero: string;
   label: string;
   importString: string;
@@ -189,13 +196,18 @@ function extractRaidBuilds(
   const builds = classData.raid.builds.filter((b) => b.id !== "other" && b.importString);
   const bosses = classData.raid.bosses;
 
+  // Boss count arrays and bestBuildIndex are parallel to the ORIGINAL builds
+  // array (including "other" and import-less builds), so map each filtered
+  // build back to its original index before reading them.
+  const origIndexes = builds.map((b) => classData.raid.builds.indexOf(b));
+
   // Compute per-difficulty popularity from boss counts
   const totalsByBuild = builds.map(() => 0);
   let grandTotal = 0;
   for (const boss of bosses) {
     const counts = boss.buildCountsByDifficulty?.[difficulty] ?? [];
     for (let i = 0; i < builds.length; i++) {
-      const n = counts[i] ?? 0;
+      const n = counts[origIndexes[i]!] ?? 0;
       totalsByBuild[i]! += n;
       grandTotal += n;
     }
@@ -203,13 +215,14 @@ function extractRaidBuilds(
 
   return builds.map((build, buildIdx) => {
     const bestFor = bosses
-      .filter((boss) => boss.bestBuildIndexByDifficulty?.[difficulty] === buildIdx)
+      .filter((boss) => boss.bestBuildIndexByDifficulty?.[difficulty] === origIndexes[buildIdx])
       .map((boss) => boss.name);
 
     const pop = grandTotal > 0 ? Math.round(((totalsByBuild[buildIdx] ?? 0) / grandTotal) * 100) : 0;
 
     return {
       spec: build.spec,
+      specId: build.specId,
       hero: build.hero,
       label: build.label,
       importString: build.importString,
@@ -231,13 +244,18 @@ function extractMpBuilds(
   const builds = allBuilds.filter((b) => b.id !== "other" && b.importString);
   const dungeons = classData.mythicPlus.dungeons;
 
+  // Dungeon count arrays and bestBuildIndex are parallel to the ORIGINAL
+  // builds array (see DungeonResult in shared/src/types.ts), so map each
+  // filtered build back to its original index before reading them.
+  const origIndexes = builds.map((b) => allBuilds.indexOf(b));
+
   // Compute per-bucket popularity from dungeon counts
   const totalsByBuild = builds.map(() => 0);
   let grandTotal = 0;
   for (const dungeon of dungeons) {
     const counts = dungeon.buildCountsByBucket?.[bucket] ?? [];
     for (let i = 0; i < builds.length; i++) {
-      const n = counts[i] ?? 0;
+      const n = counts[origIndexes[i]!] ?? 0;
       totalsByBuild[i]! += n;
       grandTotal += n;
     }
@@ -245,18 +263,17 @@ function extractMpBuilds(
 
   return builds.map((build, buildIdx) => {
     const bestFor = dungeons
-      .filter((dg) => dg.bestBuildIndexByBucket?.[bucket] === buildIdx)
+      .filter((dg) => dg.bestBuildIndexByBucket?.[bucket] === origIndexes[buildIdx])
       .map((dg) => dg.name);
 
     const pop = grandTotal > 0 ? Math.round(((totalsByBuild[buildIdx] ?? 0) / grandTotal) * 100) : 0;
 
-    // Per-dungeon talent swaps for this build. swapsByBuild on the website is
-    // parallel to the ORIGINAL builds array (including "other"), so use the
-    // original index, not the filtered-array index.
+    // Per-dungeon talent swaps for this build — also parallel to the
+    // ORIGINAL builds array.
     //
     // The website's worker writes the new split shape (picks + drops), but
     // older blobs only had a flat `swaps` array — handle both transparently.
-    const origIdx = allBuilds.indexOf(build);
+    const origIdx = origIndexes[buildIdx]!;
     const dungeonSwaps: Record<string, AddonDungeonSwap> = {};
     for (const dungeon of dungeons) {
       const entry = dungeon.swapsByBuild?.[origIdx];
@@ -275,11 +292,13 @@ function extractMpBuilds(
       dungeonSwaps[dungeon.name] = {
         picks: picks.map((s) => ({
           name: s.name,
+          talentId: s.talentId,
           dungeonPct: s.dungeonPct,
           baselinePct: s.baselinePct,
         })),
         drops: drops.map((s) => ({
           name: s.name,
+          talentId: s.talentId,
           dungeonPct: s.dungeonPct,
           baselinePct: s.baselinePct,
         })),
@@ -288,6 +307,7 @@ function extractMpBuilds(
 
     return {
       spec: build.spec,
+      specId: build.specId,
       hero: build.hero,
       label: build.label,
       importString: build.importString,

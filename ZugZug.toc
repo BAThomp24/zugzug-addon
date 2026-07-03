@@ -5,6 +5,7 @@
 ## Version: @project-version@
 ## SavedVariables: ZugZugDB
 ## DefaultState: enabled
+## IconTexture: Interface\AddOns\ZugZug\icon.png
 ## X-Website: https://zugzug.info
 ## X-Curse-Project-ID: zugzug-companion
 ## X-Category: Class

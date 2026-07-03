@@ -38,7 +38,9 @@ local DEFAULTS = {
   barPosition = nil,               -- { point, relativePoint, x, y, clamped }; nil = default anchor
   levelingEnabled = true,          -- show leveling guide banner + bar button below max level
   levelingAtMax = false,           -- keep showing the leveling guide at max level (for open world / delves)
+  useDedicatedLoadout = true,      -- apply builds into a "ZugZug" loadout instead of overwriting the active config
 }
+ZZ.DEFAULTS = DEFAULTS -- read by Settings.lua for Settings API default values
 
 local function ensureDefaults()
   for k, v in pairs(DEFAULTS) do
@@ -49,65 +51,44 @@ local function ensureDefaults()
 end
 
 ----------------------------------------------------------------------
--- Spec role detection
-----------------------------------------------------------------------
-
-local HEALER_SPEC_IDS = {
-  -- Druid: Restoration
-  [105] = true,
-  -- Evoker: Preservation
-  [1468] = true,
-  -- Monk: Mistweaver
-  [270] = true,
-  -- Paladin: Holy
-  [65] = true,
-  -- Priest: Discipline, Holy
-  [256] = true, [257] = true,
-  -- Shaman: Restoration
-  [264] = true,
-}
-
-local TANK_SPEC_IDS = {
-  -- Death Knight: Blood
-  [250] = true,
-  -- Demon Hunter: Vengeance
-  [581] = true,
-  -- Druid: Guardian
-  [104] = true,
-  -- Monk: Brewmaster
-  [268] = true,
-  -- Paladin: Protection
-  [66] = true,
-  -- Warrior: Protection
-  [73] = true,
-}
-
-local function detectRole(specId)
-  if HEALER_SPEC_IDS[specId] then return "healer" end
-  if TANK_SPEC_IDS[specId] then return "tank" end
-  return "dps"
-end
-
-----------------------------------------------------------------------
 -- Refresh current player info
 ----------------------------------------------------------------------
+
+local ROLE_MAP = { DAMAGER = "dps", HEALER = "healer", TANK = "tank" }
+
+-- The bare specialization globals were deprecated in 11.1.7 in favor of
+-- C_SpecializationInfo; prefer the namespaced versions so a future shim
+-- removal can't brick spec detection (and with it the whole addon).
+local GetSpec = (C_SpecializationInfo and C_SpecializationInfo.GetSpecialization) or GetSpecialization
+local GetSpecInfo = (C_SpecializationInfo and C_SpecializationInfo.GetSpecializationInfo) or GetSpecializationInfo
 
 local function refreshPlayerInfo()
   local _, classToken = UnitClass("player")
   ZZ.classToken = classToken
 
-  local specIndex = GetSpecialization()
+  local specIndex = GetSpec()
   if specIndex then
-    local specId, specName = GetSpecializationInfo(specIndex)
+    local specId, specName, _, _, role = GetSpecInfo(specIndex)
     ZZ.specId = specId
     ZZ.specName = specName
-    ZZ.role = detectRole(specId)
+    ZZ.role = ROLE_MAP[role] or "dps"
   end
 end
 
 ----------------------------------------------------------------------
 -- Get builds for current class + settings
 ----------------------------------------------------------------------
+
+--- Locale-proof build↔player spec matching: prefer the numeric specId the
+--- data pipeline ships; fall back to English-name equality for data
+--- generated before specIds existed (or specs whose ID isn't mapped yet).
+function ZZ:BuildMatchesSpec(build)
+  if not build then return false end
+  if build.specId and self.specId then
+    return build.specId == self.specId
+  end
+  return build.spec == self.specName
+end
 
 function ZZ:GetCurrentBuilds()
   if not self.data or not self.classToken then return nil, nil end
@@ -138,9 +119,10 @@ local function handleSlashCommand(msg)
   local cmd, arg = msg:match("^(%S+)%s*(.*)")
   if not cmd then cmd = msg end
   cmd = cmd:lower()
+  -- Normalize the argument once so "/zz key ALL" and trailing spaces work.
+  arg = strtrim((arg or ""):lower())
 
   if cmd == "difficulty" or cmd == "diff" then
-    arg = arg:lower()
     if VALID_DIFFICULTIES[arg] then
       ZugZugDB.raidDifficulty = arg
       print("|cff00ccffZugZug:|r Raid difficulty set to " .. arg)
@@ -212,6 +194,15 @@ local function handleSlashCommand(msg)
     return
   end
 
+  if cmd == "undo" then
+    if ZZ.UndoLastApply then
+      ZZ:UndoLastApply()
+    else
+      print("|cff00ccffZugZug:|r Undo not loaded — try /reload.")
+    end
+    return
+  end
+
   if cmd == "settings" or cmd == "options" or cmd == "config" then
     local ok, err = pcall(function()
       if ZZ.settingsCategory then
@@ -233,6 +224,7 @@ local function handleSlashCommand(msg)
   print("  /zugzug diff <heroic|mythic> — set raid difficulty")
   print("  /zugzug key <all|15+|18+|20+> — set M+ key level filter")
   print("  /zugzug suggest — toggle smart suggest on/off")
+  print("  /zugzug undo — revert the last build/swap apply")
 end
 
 ----------------------------------------------------------------------
@@ -264,6 +256,13 @@ frame:SetScript("OnEvent", function(_, event, arg1)
 
   if event == "PLAYER_LOGIN" then
     refreshPlayerInfo()
+    -- Boss/dungeon detection matches against English names from the data
+    -- pipeline; on other locales the suggest popups may not fire. Say so
+    -- once instead of failing silently.
+    if GetLocale and GetLocale() ~= "enUS" and not ZugZugDB.localeNoticeShown then
+      ZugZugDB.localeNoticeShown = true
+      print("|cff00ccffZugZug:|r Non-English client detected — build browsing works fully, but boss/dungeon auto-suggestions may be limited (encounter names are matched in English).")
+    end
     if ZZ.data then
       local raidBuilds, mpBuilds = ZZ:GetCurrentBuilds()
       local rCount = raidBuilds and #raidBuilds or 0

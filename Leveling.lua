@@ -22,7 +22,7 @@ local COLORS = {
 -- State
 ----------------------------------------------------------------------
 
-local MAX_LEVEL = GetMaxPlayerLevel and GetMaxPlayerLevel() or 90
+local MAX_LEVEL = GetMaxPlayerLevel and GetMaxPlayerLevel() or 80
 local levelingOrder = nil      -- current spec's pick order (array)
 local currentIndex = 0         -- how far through the order we are
 local bannerFrame = nil        -- the UI frame
@@ -155,35 +155,28 @@ end
 -- Purchase a talent node
 ----------------------------------------------------------------------
 
---- Stage a talent purchase (no commit). Returns true if the rank was staged.
+--- Stage a talent purchase (no commit). Returns true if anything was staged.
 local function stageNode(configID, pick)
+  local selectionStaged = false
   -- For choice nodes, select the correct entry first
   if pick.choiceIndex ~= nil then
     local info = C_Traits.GetNodeInfo(configID, pick.nodeID)
     if info and info.entryIDs then
       local targetEntryID = info.entryIDs[pick.choiceIndex + 1] -- 0-indexed → 1-indexed
       if targetEntryID then
-        C_Traits.SetSelection(configID, pick.nodeID, targetEntryID)
+        local active = info.activeEntry and info.activeEntry.entryID
+        if active ~= targetEntryID and C_Traits.SetSelection(configID, pick.nodeID, targetEntryID) then
+          selectionStaged = true
+        end
       end
     end
   end
 
-  return C_Traits.PurchaseRank(configID, pick.nodeID)
-end
-
---- Stage + commit a single talent purchase.
-local function purchaseNode(pick)
-  local specID = PlayerUtil and PlayerUtil.GetCurrentSpecID and PlayerUtil.GetCurrentSpecID()
-  if not specID then return false end
-
-  local configID = C_ClassTalents.GetActiveConfigID()
-  if not configID then return false end
-
-  local ok = stageNode(configID, pick)
-  if ok then
-    C_ClassTalents.CommitConfig(configID)
-  end
-  return ok
+  -- PurchaseRank returns false for a choice node whose selection was just
+  -- staged via SetSelection — count the staged selection itself as progress
+  -- or "Pick All" skips the commit when the only pick is a choice node.
+  local purchased = C_Traits.PurchaseRank(configID, pick.nodeID)
+  return purchased or selectionStaged
 end
 
 ----------------------------------------------------------------------
@@ -401,11 +394,18 @@ local function createBanner()
   pickAllBtn:SetPoint("BOTTOMLEFT", f, "BOTTOM", -85, 12)
   pickAllBtn:SetScript("OnClick", function()
     if not levelingOrder then return end
+    if InCombatLockdown() then
+      print("|cff00ccffZugZug:|r Cannot change talents in combat.")
+      return
+    end
 
     local specID = PlayerUtil and PlayerUtil.GetCurrentSpecID and PlayerUtil.GetCurrentSpecID()
     if not specID then return end
     local configID = C_ClassTalents.GetActiveConfigID()
     if not configID then return end
+
+    -- Snapshot for /zz undo before staging anything.
+    if ZZ.CaptureUndoSnapshot then ZZ:CaptureUndoSnapshot(configID, "pick all") end
 
     -- Walk the order directly, staging all purchasable nodes without committing.
     -- The staging config updates in-place so subsequent PurchaseRank calls see
@@ -429,10 +429,22 @@ local function createBanner()
       end
     end
 
-    if staged > 0 then
-      C_ClassTalents.CommitConfig(configID)
-      print("|cff00ccffZugZug:|r Picked " .. staged .. " talents.")
-      C_Timer.After(0.5, function() ZZ:RefreshLeveling() end)
+    -- Trust the config's own staged state over our counter (belt and braces
+    -- for any staging path that doesn't report progress), and never leave
+    -- staged-but-uncommitted changes dangling on a failed commit.
+    local hasStaged = C_Traits.ConfigHasStagedChanges and C_Traits.ConfigHasStagedChanges(configID)
+    if staged > 0 or hasStaged then
+      if C_ClassTalents.CommitConfig(configID) then
+        print("|cff00ccffZugZug:|r Picked "
+          .. (staged > 0 and (staged .. " talent" .. (staged == 1 and "" or "s")) or "talents")
+          .. ".")
+        C_Timer.After(0.5, function() ZZ:RefreshLeveling() end)
+      else
+        if C_Traits.RollbackConfig then
+          pcall(C_Traits.RollbackConfig, configID)
+        end
+        print("|cff00ccffZugZug:|r Failed to commit talent picks.")
+      end
     else
       print("|cff00ccffZugZug:|r No talents available to pick.")
     end
@@ -450,19 +462,29 @@ local function createBanner()
       print("|cff00ccffZugZug:|r Reset is only available below max level.")
       return
     end
+    if InCombatLockdown() then
+      print("|cff00ccffZugZug:|r Cannot change talents in combat.")
+      return
+    end
 
     local specID = PlayerUtil and PlayerUtil.GetCurrentSpecID and PlayerUtil.GetCurrentSpecID()
     if not specID then return end
     local configID = C_ClassTalents.GetActiveConfigID()
     if not configID then return end
 
+    -- Snapshot for /zz undo — a full tree reset is exactly the click you
+    -- want to be able to take back.
+    if ZZ.CaptureUndoSnapshot then ZZ:CaptureUndoSnapshot(configID, "leveling reset") end
+
     local ok = C_Traits.ResetTree(configID, C_ClassTalents.GetTraitTreeForSpec(specID))
-    if ok then
-      C_ClassTalents.CommitConfig(configID)
-    
+    if ok and C_ClassTalents.CommitConfig(configID) then
       print("|cff00ccffZugZug:|r Talents reset. Pick order restarted.")
       C_Timer.After(0.5, function() ZZ:RefreshLeveling() end)
     else
+      if ok and C_Traits.RollbackConfig then
+        -- Reset staged but commit refused — undo the staged wipe.
+        pcall(C_Traits.RollbackConfig, configID)
+      end
       print("|cff00ccffZugZug:|r Could not reset talents.")
     end
   end)
