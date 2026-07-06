@@ -115,29 +115,13 @@ end
 
 --- Point ZZ.data at the configured dataset. Both files ship in the addon:
 --- Data.lua (ZugZugData, the zugzug.info pipeline) and DataRIO.lua
---- (ZugZugDataRIO, Raider.IO spec statistics). The RIO file stores dungeon
---- swaps once per spec (ZugZugDataRIO.swaps) instead of duplicating the
---- table across every build — stitch shared references onto builds here so
---- consumers see the same build.dungeonSwaps shape either way.
+--- (ZugZugDataRIO, Raider.IO spec statistics). The RIO file also carries
+--- per-dungeon top builds (ZugZugDataRIO.dungeonBuilds — complete import
+--- strings per spec/bucket/dungeon); Suggest.lua reads them straight off
+--- ZZ.data, no stitching needed.
 function ZZ.SelectDataSource()
   local want = ZugZugDB.dataSource or "zugzug"
   if want == "raiderio" and ZugZugDataRIO then
-    if not ZugZugDataRIO.__stitched then
-      local swaps = ZugZugDataRIO.swaps or {}
-      for token, roles in pairs(ZugZugDataRIO.classes or {}) do
-        for role, sections in pairs(roles) do
-          local perSpec = swaps[token] and swaps[token][role]
-          if perSpec and sections.mythicPlus then
-            for _, builds in pairs(sections.mythicPlus) do
-              for _, b in ipairs(builds) do
-                b.dungeonSwaps = perSpec[b.spec]
-              end
-            end
-          end
-        end
-      end
-      ZugZugDataRIO.__stitched = true
-    end
     ZZ.data = ZugZugDataRIO
   else
     if want == "raiderio" then
@@ -231,10 +215,25 @@ local function handleSlashCommand(msg)
   end
 
   if cmd == "dump" then
-    if ZZ.DumpLastSwapState then
-      ZZ:DumpLastSwapState()
-    else
-      print("|cff00ccffZugZug Specs:|r DumpLastSwapState not loaded — try /reload")
+    -- Print the diff rows the last suggest popup computed (current talents
+    -- vs the recommended build) so popup decisions are inspectable.
+    local rows = ZZ.lastDiffPairs
+    if rows == nil then
+      print("|cff00ccffZugZug Specs:|r no captured diff. Trigger the suggest popup first (zone into a dungeon).")
+      return
+    end
+    print(string.format("|cff00ccffZugZug Specs:|r last build diff — %d change%s vs current talents%s",
+      #rows, #rows == 1 and "" or "s", ZZ.lastOnBuild and " (counted as on-build)" or ""))
+    for _, r in ipairs(rows) do
+      local drop = r.drop and r.drop.name
+      local pick = r.pick and r.pick.name
+      if drop and pick then
+        print(string.format("  |cffE06B6B%s|r → |cff5DCAA5%s|r", drop, pick))
+      elseif pick then
+        print(string.format("  take |cff5DCAA5%s|r%s", pick, r.pick.note and (" (" .. r.pick.note .. ")") or ""))
+      elseif drop then
+        print(string.format("  drop |cffE06B6B%s|r", drop))
+      end
     end
     return
   end

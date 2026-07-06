@@ -10,10 +10,10 @@
  *    per-spec build variants with import strings, run counts, key-level stats,
  *    RIO's recommendation verdicts, confidence tiers, and semantic themes.
  *    Queried per key bracket (all/15+/18+/20+ — matches the addon's existing
- *    keystoneToBucket), per dungeon (zone_id → dungeon swaps), and per raid
- *    difficulty. Non-default brackets are lazily materialized server-side
- *    ("generating") — a warm pass requests everything first, then the main
- *    pass polls until built.
+ *    keystoneToBucket), per dungeon×bracket (zone_id → per-dungeon top
+ *    builds), and per raid difficulty. Non-default brackets are lazily
+ *    materialized server-side ("generating") — a warm pass requests
+ *    everything first, then the main pass polls until built.
  *  - raider.io documented /api/v1/mythic-plus/static-data: season dungeon ids.
  *  - Raidbots talents.json: spec list, talent-pool tags (class/spec/hero —
  *    RIO flattens trees so pools aren't derivable from its payload alone),
@@ -23,9 +23,11 @@
  * .mythicPlus[bucket] with the same build fields) so the addon can swap
  * sources through one accessor, plus RIO-only extensions per build:
  *   recommended, confidence, players, keyAvg, themes
- * and a spec-level swaps table (stitched onto builds at load, so the file
- * doesn't duplicate swap tables across 8 builds):
- *   ZugZugDataRIO.swaps[TOKEN][role][specName][dungeonName] = {picks,drops}
+ * and a spec-level per-dungeon top-build table (complete import strings —
+ * NOT talent-delta "swaps"; deltas proved unapplyable when they crossed a
+ * tree point-gate, e.g. Aug's Twin Guardian req23 funded by an above-gate
+ * drop). The dungeon-entry popup recommends this build whole:
+ *   ZugZugDataRIO.dungeonBuilds[TOKEN][role][specName][bucket][dungeonName] = Build
  */
 
 import { writeFileSync, existsSync } from "node:fs";
@@ -42,8 +44,7 @@ const UA = "zugzug-addon data generator (github.com/BAThomp24/zugzug-addon; bath
 
 const PACE_MS = 700;
 const MAX_BUILDS = 8;
-const SWAP_THRESHOLD_PP = 12; // pp delta for a dungeon pick/drop, like the zugzug pipeline
-const SWAP_MAX_PAIRS = 3;
+const MIN_DUNGEON_SAMPLE = 100; // runs; below this a dungeon×bracket top build is noise
 
 /** Buckets mirror Suggest.lua's keystoneToBucket exactly. */
 const BRACKETS = [
@@ -69,6 +70,13 @@ async function rioFetch(url: string): Promise<any> {
     if (res.status === 429 && attempt < 2) {
       console.warn(`  429 — backing off 65s (${url.slice(0, 90)}…)`);
       await sleep(65_000);
+      continue;
+    }
+    // Transient upstream hiccups (502/503/504) cost a whole spec when they
+    // hit the overall aggregate — retry a couple of times before giving up.
+    if (res.status >= 500 && attempt < 2) {
+      console.warn(`  ${res.status} — retrying in 10s (${url.slice(0, 90)}…)`);
+      await sleep(10_000);
       continue;
     }
     if (!res.ok) throw new Error(`${res.status} ${url.slice(0, 120)}`);
@@ -326,77 +334,6 @@ function buildsFromAgg(
   return out;
 }
 
-// ─── per-dungeon swap derivation (usage-share deltas, pool-paired) ────────────
-
-/** entryId → share (0-100) of listed runs whose build includes that talent. */
-function usageShares(data: any): { pct: Map<number, number>; total: number } {
-  const counts = new Map<number, number>();
-  let total = 0;
-  for (const v of (data.variants ?? []) as RioVariant[]) {
-    if (!v.chosenNodes) continue;
-    total += v.quantity || 0;
-    const seen = new Set<number>();
-    for (const cn of v.chosenNodes) {
-      const entry = cn.node?.entries?.[cn.entryIndex ?? 0];
-      const id = entry?.id;
-      if (!id || seen.has(id)) continue;
-      seen.add(id);
-      counts.set(id, (counts.get(id) ?? 0) + (v.quantity || 0));
-    }
-  }
-  const pct = new Map<number, number>();
-  if (total > 0) for (const [id, c] of counts) pct.set(id, (c / total) * 100);
-  return { pct, total };
-}
-
-interface SwapSide {
-  name: string;
-  talentId: number;
-  dungeonPct: number;
-  baselinePct: number;
-}
-
-/** Same contract the addon expects: picks[i]/drops[i] are same-pool pairs. */
-function dungeonSwapEntry(
-  overall: { pct: Map<number, number> },
-  dungeon: { pct: Map<number, number>; total: number },
-  pools: PoolInfo,
-): { picks: SwapSide[]; drops: SwapSide[] } | null {
-  if (dungeon.total < 500) return null; // thin dungeon sample — skip
-  type D = SwapSide & { delta: number; pool: string };
-  const byPool = new Map<string, { up: D[]; down: D[] }>();
-  const ids = new Set([...overall.pct.keys(), ...dungeon.pct.keys()]);
-  for (const id of ids) {
-    const o = overall.pct.get(id) ?? 0;
-    const d = dungeon.pct.get(id) ?? 0;
-    const delta = d - o;
-    if (Math.abs(delta) < SWAP_THRESHOLD_PP) continue;
-    const pool = pools.entryPool.get(id);
-    const name = pools.entryName.get(id);
-    if (!pool || !name) continue; // unknown pool never pairs (same rule as the worker)
-    const bucket = byPool.get(pool) ?? { up: [], down: [] };
-    byPool.set(pool, bucket);
-    const row: D = { name, talentId: id, dungeonPct: Math.round(d), baselinePct: Math.round(o), delta, pool };
-    (delta > 0 ? bucket.up : bucket.down).push(row);
-  }
-  const picks: SwapSide[] = [];
-  const drops: SwapSide[] = [];
-  for (const bucket of byPool.values()) {
-    bucket.up.sort((a, b) => b.delta - a.delta);
-    bucket.down.sort((a, b) => a.delta - b.delta);
-    const pairs = Math.min(bucket.up.length, bucket.down.length);
-    for (let i = 0; i < pairs && picks.length < SWAP_MAX_PAIRS; i++) {
-      picks.push(strip(bucket.up[i]!));
-      drops.push(strip(bucket.down[i]!));
-    }
-  }
-  return picks.length ? { picks, drops } : null;
-
-  function strip(d: D): SwapSide {
-    return { name: d.name, talentId: d.talentId, dungeonPct: d.dungeonPct, baselinePct: d.baselinePct };
-  }
-}
-
 // ─── trends from weekly popularity ────────────────────────────────────────────
 
 async function fetchTrends(spec: SpecDef, loadouts: string[]): Promise<Map<string, string>> {
@@ -463,15 +400,21 @@ async function main() {
 
   // Warm pass: request every lazily-materialized aggregate once so the
   // server can build snapshots while we work through the main pass.
+  // Dungeon×bracket aggregates are included — they're the bulk of the run.
   console.log("Warm pass (trigger snapshot generation)…");
   for (const spec of targets) {
     for (const b of BRACKETS.slice(1)) {
       try { await rioFetch(aggUrl(spec, { bracket: b })); } catch {}
     }
+    for (const d of dungeons) {
+      for (const b of BRACKETS) {
+        try { await rioFetch(aggUrl(spec, { zoneId: d.id, bracket: b })); } catch {}
+      }
+    }
   }
 
   const classes: Record<string, Record<string, any>> = {};
-  const swaps: Record<string, Record<string, Record<string, any>>> = {};
+  const dungeonBuilds: Record<string, Record<string, Record<string, any>>> = {};
   let ok = 0;
   const failed: string[] = [];
 
@@ -499,17 +442,26 @@ async function main() {
         if (agg) mythicPlus[b.key] = buildsFromAgg(spec, agg, pools, trends);
       }
 
-      // Per-dungeon swaps (spec-level) + per-build "best dungeons" list.
-      const overallShares = usageShares(overall);
-      const specSwaps: Record<string, any> = {};
+      // Per-dungeon top builds (spec-level, one per key bucket) + per-build
+      // "best dungeons" list. Complete import strings, not talent deltas —
+      // the addon recommends and applies these whole.
+      const specDungeonBuilds: Record<string, Record<string, Build>> = {}; // bucket → dungeonName → build
       const dungeonTopGroup = new Map<string, string>(); // dungeonName → top variant group id
       for (const d of dungeons) {
-        const agg = await fetchAgg(spec, { zoneId: d.id });
-        if (!agg) continue;
-        const entry = dungeonSwapEntry(overallShares, usageShares(agg), pools);
-        if (entry) specSwaps[d.name] = entry;
-        const top = (agg.variants ?? []).slice().sort((a: RioVariant, b: RioVariant) => (b.quantity || 0) - (a.quantity || 0))[0];
-        if (top?.specHeroGroup?.id) dungeonTopGroup.set(d.name, top.specHeroGroup.id);
+        for (const b of BRACKETS) {
+          const agg = await fetchAgg(spec, { zoneId: d.id, bracket: b });
+          if (!agg) continue;
+          const total = (agg.variants ?? []).reduce((s: number, v: RioVariant) => s + (v.quantity || 0), 0);
+          if (total < MIN_DUNGEON_SAMPLE) continue; // top-of-noise isn't a recommendation
+          const top = buildsFromAgg(spec, agg, pools, new Map())[0];
+          if (!top) continue;
+          delete top.dungeons; // per-dungeon entry — the tag list is meaningless here
+          (specDungeonBuilds[b.key] ??= {})[d.name] = top;
+          if (b.key === "all") {
+            const topV = (agg.variants ?? []).slice().sort((a: RioVariant, x: RioVariant) => (x.quantity || 0) - (a.quantity || 0))[0];
+            if (topV?.specHeroGroup?.id) dungeonTopGroup.set(d.name, topV.specHeroGroup.id);
+          }
+        }
       }
       // Tag each "all" build with dungeons where it is the top group.
       const groupOf = new Map<string, string>();
@@ -536,10 +488,10 @@ async function main() {
       for (const [k, v] of Object.entries(raid)) slot.raid[k] = [...(slot.raid[k] ?? []), ...v];
       for (const [k, v] of Object.entries(mythicPlus)) slot.mythicPlus[k] = [...(slot.mythicPlus[k] ?? []), ...v];
 
-      if (Object.keys(specSwaps).length) {
-        swaps[spec.token] = swaps[spec.token] ?? {};
-        swaps[spec.token][role] = swaps[spec.token][role] ?? {};
-        swaps[spec.token][role][spec.specName] = specSwaps;
+      if (Object.keys(specDungeonBuilds).length) {
+        dungeonBuilds[spec.token] = dungeonBuilds[spec.token] ?? {};
+        dungeonBuilds[spec.token][role] = dungeonBuilds[spec.token][role] ?? {};
+        dungeonBuilds[spec.token][role][spec.specName] = specDungeonBuilds;
       }
       ok++;
     } catch (err) {
@@ -577,7 +529,7 @@ async function main() {
     `  source = "raider.io",`,
     `  season = ${luaStr(SEASON)},`,
     `  classes = ${luaVal(classes, "  ")},`,
-    `  swaps = ${luaVal(swaps, "  ")},`,
+    `  dungeonBuilds = ${luaVal(dungeonBuilds, "  ")},`,
     "}",
     "",
   ].join("\n");

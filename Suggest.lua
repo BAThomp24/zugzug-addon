@@ -264,17 +264,6 @@ local SUGGEST_HEIGHT_BASE = 72
 local SUGGEST_HEIGHT_WITH_SWAPS = 158
 local MAX_SWAPS_SHOWN = 3
 
--- Persistent suppression set: labels for which Apply Swaps reported no
--- progress (a genuinely-stuck build — an unsatisfiable prereq). Stored in
--- the saved variables so it survives /reload, so the user isn't re-popped
--- for the same stuck dungeon every reload. Cleared on spec/loadout change
--- (ACTIVE_TALENT_GROUP_CHANGED), since a respec can make it applicable.
-local function getSuppressedSwaps()
-  ZugZugDB = ZugZugDB or {}
-  ZugZugDB.suppressedSwaps = ZugZugDB.suppressedSwaps or {}
-  return ZugZugDB.suppressedSwaps
-end
-
 local function createSuggestFrame()
   if suggestFrame then return suggestFrame end
 
@@ -312,22 +301,23 @@ local function createSuggestFrame()
   buildText:SetWordWrap(false)
   f.buildText = buildText
 
-  -- Swap section (only shown when dungeon swaps are present)
+  -- Diff section (shown when the recommended build differs from the
+  -- player's current talents — each row is one change Apply Build makes)
   local swapHeader = f:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
   swapHeader:SetPoint("TOPLEFT", f, "TOPLEFT", 10, -46)
   swapHeader:SetTextColor(0.56, 0.75, 0.25)
   swapHeader:Hide()
   f.swapHeader = swapHeader
 
-  -- Truncation note when there are more swap pairs than visible rows —
-  -- Apply Swaps applies ALL of them, so say so instead of hiding it.
+  -- Truncation note when there are more changes than visible rows —
+  -- Apply Build applies ALL of them, so say so instead of hiding it.
   local swapMore = f:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")
   swapMore:SetPoint("TOPLEFT", f, "TOPLEFT", 18, -58 - (MAX_SWAPS_SHOWN * 18))
   swapMore:SetJustifyH("LEFT")
   swapMore:Hide()
   f.swapMore = swapMore
 
-  -- Each swap line is a small container: arrow + spell icon (hoverable for tooltip) + label
+  -- Each diff line is a small container: arrow + spell icon (hoverable for tooltip) + label
   f.swapLines = {}
   for i = 1, MAX_SWAPS_SHOWN do
     local row = CreateFrame("Frame", nil, f)
@@ -336,11 +326,10 @@ local function createSuggestFrame()
     row:SetPoint("RIGHT", f, "RIGHT", -10, 0)
     row:Hide()
 
-    -- A swap row pairs a drop talent on the left with a pick talent on
-    -- the right, separated by an arrow. For choice-node swaps (same node,
-    -- different entry) the drop icon is hidden and the row reads as
-    -- "Swap to <pick>" — visually unmistakable from a refund-and-purchase
-    -- swap, since those show both icons.
+    -- A diff row pairs a dropped talent on the left with a picked talent
+    -- on the right, separated by an arrow. For choice-node changes (same
+    -- node, different entry) the drop icon is hidden and the row reads as
+    -- "Swap to <pick>"; lone additions/removals show a single icon.
 
     local function buildIconBtn()
       local btn = CreateFrame("Frame", nil, row)
@@ -421,41 +410,6 @@ local function createSuggestFrame()
     f:Hide()
   end)
   f.applyBtn = applyBtn
-
-  -- Apply Swaps button (shown only when dungeon swaps are present)
-  local applySwapsBtn = CreateFrame("Button", nil, f, "BackdropTemplate")
-  applySwapsBtn:SetSize(110, 22)
-  applySwapsBtn:SetBackdrop({
-    bgFile = "Interface\\Buttons\\WHITE8x8",
-    edgeFile = "Interface\\Buttons\\WHITE8x8",
-    edgeSize = 1,
-  })
-  applySwapsBtn:SetBackdropColor(0.30, 0.55, 0.85, 0.25)
-  applySwapsBtn:SetBackdropBorderColor(0.40, 0.65, 0.95, 0.7)
-  local applySwapsText = applySwapsBtn:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-  applySwapsText:SetPoint("CENTER")
-  applySwapsText:SetText("|cff80c8ffApply Swaps|r")
-  applySwapsBtn:SetScript("OnEnter", function(self)
-    self:SetBackdropColor(0.30, 0.55, 0.85, 0.40)
-  end)
-  applySwapsBtn:SetScript("OnLeave", function(self)
-    self:SetBackdropColor(0.30, 0.55, 0.85, 0.25)
-  end)
-  applySwapsBtn:SetScript("OnClick", function()
-    if f.currentSwaps and ZZ.ApplySwaps then
-      local applied = ZZ:ApplySwaps(f.currentSwaps)
-      -- Three-state return: false = genuinely no progress (stuck or already
-      -- aligned) → suppress this dungeon's popup. nil = transient failure
-      -- (combat, API not ready, commit rejected) → do NOT suppress; the
-      -- next zone-in retries cleanly. true = applied.
-      if applied == false and f.currentContentLabel then
-        getSuppressedSwaps()[f.currentContentLabel] = true
-      end
-    end
-    f:Hide()
-  end)
-  applySwapsBtn:Hide()
-  f.applySwapsBtn = applySwapsBtn
 
   -- Dismiss button
   local dismissBtn = CreateFrame("Button", nil, f, "BackdropTemplate")
@@ -554,101 +508,64 @@ local function isAlreadyOnBuild(build)
   return true
 end
 
--- (suppressedSwaps is defined above createSuggestFrame — see comment there.)
-
-showSuggestion = function(contentLabel, build, contentType, swapData)
+showSuggestion = function(contentLabel, build, contentType)
   if not build or not build.importString or build.importString == "" then return end
   if InCombatLockdown() then return end
   if not ZugZugDB.suggestEnabled then return end
-  if getSuppressedSwaps()[contentLabel] then return end
 
-  local onBuild = isAlreadyOnBuild(build)
-  local picks = swapData and swapData.picks or nil
-  local drops = swapData and swapData.drops or nil
-  local hasSwaps = (picks and #picks > 0) or (drops and #drops > 0)
+  -- Structured diff vs the player's CURRENT talents: exactly what Apply
+  -- Build will change. nil = build is for another spec (or unparseable) —
+  -- fall back to the spec/hero cluster heuristic for the "on it" decision.
+  local diffPairs = ZZ.DiffAgainstCurrent and ZZ:DiffAgainstCurrent(build.importString) or nil
+  local onBuild
+  if diffPairs then
+    if contentType == "raid" then
+      -- Raid builds cluster: small variations are the same build. Keep the
+      -- historical threshold so boss popups don't nag over 1-2 tweaks.
+      onBuild = #diffPairs < SAME_BUILD_DIFF_THRESHOLD
+    else
+      -- Dungeon suggestions are EXACT by design — the per-dungeon build
+      -- often differs from the overall one by only 1-3 talents, which is
+      -- precisely what we're here to surface.
+      onBuild = #diffPairs == 0
+    end
+  else
+    onBuild = isAlreadyOnBuild(build)
+  end
+  local hasDiff = diffPairs ~= nil and #diffPairs > 0
+
   -- Stash for /run inspection so the user can poke at the same data
   -- the popup decision saw.
-  ZZ.lastBuild      = build
-  ZZ.lastSwapData   = swapData
-  ZZ.lastOnBuild    = onBuild
-  ZZ.lastHasSwaps   = hasSwaps
-  -- SwapsAlreadyApplied is now a pure read-only comparison (no talent
-  -- staging), so it can't error out and swallow the popup.
-  local alreadyApplied = ZZ.SwapsAlreadyApplied and ZZ:SwapsAlreadyApplied(swapData)
-  ZZ.lastSwapsAlreadyApplied = alreadyApplied
+  ZZ.lastBuild     = build
+  ZZ.lastDiffPairs = diffPairs
+  ZZ.lastOnBuild   = onBuild
 
   if ZugZugDB.suggestDebug then
     print(string.format(
-      "|cff00ccffZugZug suggest:|r contentLabel=%q onBuild=%s hasSwaps=%s alreadyApplied=%s picks=%d drops=%d",
-      tostring(contentLabel), tostring(onBuild), tostring(hasSwaps),
-      tostring(alreadyApplied), picks and #picks or 0, drops and #drops or 0))
-    -- Auto-dump per-pick/drop state so the user doesn't have to type
-    -- anything to see why the check returned what it did.
-    if ZZ.DumpLastSwapState then
-      ZZ:DumpLastSwapState()
-    else
-      print("|cff00ccffZugZug Specs:|r DumpLastSwapState is nil — UI.lua hasn't reloaded with the new function")
-    end
+      "|cff00ccffZugZug suggest:|r contentLabel=%q onBuild=%s diffs=%s",
+      tostring(contentLabel), tostring(onBuild),
+      diffPairs and tostring(#diffPairs) or "nil"))
   end
 
-  -- Already on the right build → nothing to do unless there are still
-  -- swap recommendations the player hasn't applied yet.
-  if onBuild then
-    if not hasSwaps then return end
-    if alreadyApplied then return end
-  end
+  -- Already on this setup → nothing to suggest.
+  if onBuild then return end
 
   local f = createSuggestFrame()
   f.currentBuild = build
-  f.currentSwaps = swapData
   f.currentContentLabel = contentLabel
 
   local typeColor = contentType == "raid" and "|cffFFBF33" or "|cff66DD66"
-  -- If they're already on the recommended build, frame the popup as "tweaks for this dungeon"
-  -- so it doesn't read like a redundant suggestion. Otherwise use the original "Best for X" label.
-  if onBuild and hasSwaps then
-    f.header:SetText("|cff8fbf3fZugZug|r " .. typeColor .. "Dungeon tweaks: " .. contentLabel:gsub("^Best for ", "") .. "|r")
-  else
-    f.header:SetText("|cff8fbf3fZugZug|r " .. typeColor .. contentLabel .. "|r")
-  end
+  f.header:SetText("|cff8fbf3fZugZug|r " .. typeColor .. contentLabel .. "|r")
 
-  -- Configure button layout based on state. We never show both action
-  -- buttons at once — that produced confusing popups where Apply Build
-  -- and Apply Swaps offered ambiguously different paths.
-  -- States:
-  --   not on build               → [Apply Build] [Dismiss]
-  --                                (import the recommended build; dungeon
-  --                                 tweaks come along for the ride)
-  --   on build  + has swaps      → [Apply Swaps] [Dismiss]
-  --                                (already on the build, just need the
-  --                                 dungeon-specific tweaks)
-  --   on build  + no swaps       → [Apply] [Dismiss]
-  --                                (only reachable for non-swap builds —
-  --                                 raid bosses without per-boss tweaks)
-  if hasSwaps and onBuild then
-    f.applyBtn:Hide()
-    f.applySwapsBtn:Show()
-    f.applySwapsBtn:ClearAllPoints()
-    f.applySwapsBtn:SetPoint("BOTTOMLEFT", f, "BOTTOMLEFT", 10, 8)
-    f.dismissBtn:ClearAllPoints()
-    f.dismissBtn:SetPoint("LEFT", f.applySwapsBtn, "RIGHT", 6, 0)
-  elseif hasSwaps then
-    f.applyBtn:Show()
-    f.applyBtn.text:SetText("|cff8fbf3fApply Build|r")
-    f.applySwapsBtn:Hide()
-    f.applyBtn:ClearAllPoints()
-    f.applyBtn:SetPoint("BOTTOMLEFT", f, "BOTTOMLEFT", 10, 8)
-    f.dismissBtn:ClearAllPoints()
-    f.dismissBtn:SetPoint("LEFT", f.applyBtn, "RIGHT", 6, 0)
-  else
-    f.applyBtn:Show()
-    f.applyBtn.text:SetText("|cff8fbf3fApply|r")
-    f.applySwapsBtn:Hide()
-    f.applyBtn:ClearAllPoints()
-    f.applyBtn:SetPoint("BOTTOMLEFT", f, "BOTTOMLEFT", 10, 8)
-    f.dismissBtn:ClearAllPoints()
-    f.dismissBtn:SetPoint("LEFT", f.applyBtn, "RIGHT", 6, 0)
-  end
+  -- One action: Apply Build imports the recommended build whole. The
+  -- dedicated-loadout path validates the final tree as a unit — no
+  -- incremental talent moves, no point-gate hazards.
+  f.applyBtn:Show()
+  f.applyBtn.text:SetText(hasDiff and "|cff8fbf3fApply Build|r" or "|cff8fbf3fApply|r")
+  f.applyBtn:ClearAllPoints()
+  f.applyBtn:SetPoint("BOTTOMLEFT", f, "BOTTOMLEFT", 10, 8)
+  f.dismissBtn:ClearAllPoints()
+  f.dismissBtn:SetPoint("LEFT", f.applyBtn, "RIGHT", 6, 0)
 
   local specHero = build.spec
   if build.hero and build.hero ~= "" then
@@ -656,79 +573,28 @@ showSuggestion = function(contentLabel, build, contentType, swapData)
   end
   f.buildText:SetText("|cffffffff" .. build.label .. "|r  |cff888888" .. specHero .. "  " .. build.popularity .. "%|r")
 
-  -- Swap section: pair each drop[i] with pick[i] so the user can see the
-  -- exact "Apply Swaps" action plan. After the pool-aware fix in the
-  -- dataset assembler, picks and drops are 1:1 pool-paired, so this works
-  -- out of the box. For choice nodes (same talent node, different entry)
-  -- we collapse to a single "swap to <new>" row.
-  if hasSwaps then
+  -- Diff section: one row per change Apply Build will make, computed from
+  -- the player's CURRENT talents vs the build's import string (so every
+  -- row is real — nothing already-aligned is listed). Same-node choice
+  -- changes render "Swap to X (was Y)"; others are lone Take/Drop rows.
+  if hasDiff then
     f:SetWidth(SUGGEST_WIDTH_WIDE)
     f:SetHeight(SUGGEST_HEIGHT_WITH_SWAPS)
-    f.swapHeader:SetText("Changes Apply Swaps will make:")
+    f.swapHeader:SetText("Changes from your current talents:")
     f.swapHeader:Show()
 
     local lookup = (ZZ.GetTalentLookup and ZZ:GetTalentLookup()) or {}
 
-    -- Per-side alignment check. A drop is "aligned" if it's already at
-    -- rank 0 (or for a choice node, not the active entry) — meaning the
-    -- user has already dropped it and doesn't need to do anything to
-    -- get rid of it. A pick is "aligned" if it's already at maxRanks
-    -- (or the chosen choice entry). When BOTH sides are aligned, the
-    -- pair is omitted entirely. When only the drop is aligned, the row
-    -- collapses to "Take X" (no need to drop something that's already
-    -- gone). When only the pick is aligned, it collapses to "Drop Y"
-    -- (the talent the user still has but the build doesn't want).
-    local configID = C_ClassTalents and C_ClassTalents.GetActiveConfigID
-                      and C_ClassTalents.GetActiveConfigID()
-    local function sideAligned(name, isPick)
-      if not configID then return false end
-      local t = name and lookup[name]
-      if not t then return false end
-      local ni = C_Traits.GetNodeInfo(configID, t.nodeID)
-      if not ni then return false end
-      if t.isChoice then
-        local active = ni.activeEntry and ni.activeEntry.entryID
-        if isPick then return active == t.entryID end
-        return active ~= t.entryID
-      end
-      local cur = ni.currentRank or 0
-      local mx  = ni.maxRanks or 1
-      if isPick then return cur >= mx end
-      return cur == 0
-    end
-
-    -- Evidence suffix: "(80% vs 68%)" = pick rate on this dungeon vs the
-    -- build's own baseline. This is WHY the swap is suggested — showing it
-    -- turns the popup from an oracle into a citation.
-    local function whySuffix(swap)
-      if swap and type(swap.dungeonPct) == "number" and type(swap.baselinePct) == "number" then
-        return string.format("  |cff888888(%d%% vs %d%%)|r",
-          math.floor(swap.dungeonPct + 0.5), math.floor(swap.baselinePct + 0.5))
+    -- Rank note: "(1/2)" when the build takes a different rank count of a
+    -- talent the player already has.
+    local function whySuffix(side)
+      if side and side.note then
+        return "  |cff888888(" .. side.note .. ")|r"
       end
       return ""
     end
 
-    local picksList = picks or {}
-    local dropsList = drops or {}
-    local pairs_ = {}
-    local maxLen = math.max(#picksList, #dropsList)
-    for i = 1, maxLen do
-      local drop, pick = dropsList[i], picksList[i]
-      local dropAligned = not drop or sideAligned(drop.name, false)
-      local pickAligned = not pick or sideAligned(pick.name, true)
-      if dropAligned and pickAligned then
-        -- Both sides already in target state — omit entirely.
-      elseif dropAligned then
-        -- Only the pick needs action — show as lone pick.
-        pairs_[#pairs_ + 1] = { pick = pick }
-      elseif pickAligned then
-        -- Only the drop needs action — show as lone drop.
-        pairs_[#pairs_ + 1] = { drop = drop }
-      else
-        -- Both sides need action — show as paired swap.
-        pairs_[#pairs_ + 1] = { drop = drop, pick = pick }
-      end
-    end
+    local pairs_ = diffPairs
 
     for i = 1, MAX_SWAPS_SHOWN do
       local line  = f.swapLines[i]
@@ -739,9 +605,8 @@ showSuggestion = function(contentLabel, build, contentType, swapData)
         local dropInfo = pair.drop and lookup[pair.drop.name]
         local pickInfo = pair.pick and lookup[pair.pick.name]
 
-        -- Detect a choice-node swap (same node, both choice entries) so
-        -- the row reads "Swap to X" instead of "Drop X for Y" — that's
-        -- what ApplySwaps will actually do (SetSelection, no refund).
+        -- Detect a choice-node change (same node, both choice entries) so
+        -- the row reads "Swap to X" instead of "Drop X for Y".
         local isChoiceSwap =
           pair.drop and pair.pick
           and dropInfo and pickInfo
@@ -828,12 +693,12 @@ showSuggestion = function(contentLabel, build, contentType, swapData)
       end
     end
 
-    -- More pairs than visible rows: Apply Swaps still applies ALL of them,
-    -- so surface the overflow instead of silently truncating.
+    -- More changes than visible rows: Apply Build still applies ALL of
+    -- them, so surface the overflow instead of silently truncating.
     local hiddenPairs = #pairs_ - MAX_SWAPS_SHOWN
     if hiddenPairs > 0 then
       f.swapMore:SetText(string.format(
-        "|cff888888…and %d more — Apply Swaps applies all %d|r", hiddenPairs, #pairs_))
+        "|cff888888…and %d more — Apply Build changes all %d|r", hiddenPairs, #pairs_))
       f.swapMore:Show()
       f:SetHeight(SUGGEST_HEIGHT_WITH_SWAPS + 14)
     else
@@ -980,8 +845,8 @@ eventFrame:SetScript("OnEvent", function(_, event, ...)
   -- ── M+/Dungeon: suggest when zoning into a dungeon ──
   -- On PLAYER_ENTERING_WORLD (especially after /reload) the talent API
   -- can take a beat to populate. We delay the dungeon check by 1.5s so
-  -- isAlreadyOnBuild / SwapsAlreadyApplied see settled data and don't
-  -- false-positive a "needs swap" suggestion that ApplySwaps then no-ops.
+  -- the current-talents diff sees settled data and doesn't false-positive
+  -- a suggestion the player is already on.
   if event == "ZONE_CHANGED_NEW_AREA" or event == "PLAYER_ENTERING_WORLD" then
     local delay = (event == "PLAYER_ENTERING_WORLD") and 1.5 or 0
     local function runDungeonSuggest()
@@ -1027,28 +892,63 @@ eventFrame:SetScript("OnEvent", function(_, event, ...)
 
         local bucket = level > 0 and keystoneToBucket(level) or (ZugZugDB.suggestMpBucket or "all")
 
-        local classEntry = ZZ.data.classes[ZZ.classToken]
-        if not classEntry then return end
-        local roleData = classEntry[ZZ.role]
-        if not roleData or not roleData.mythicPlus then return end
-        local builds = roleData.mythicPlus[bucket]
-
-        local best = findBestBuildForDungeon(builds, dungeonName)
-        if best then
-          local label = level > 0 and ("Best for " .. dungeonName .. " +" .. level) or ("Best for " .. dungeonName)
-          -- Swap tables are keyed by the DATA dungeon name, which doesn't
-          -- always match the in-game name exactly — fall back to the same
-          -- fuzzy matching used to find the build itself.
-          local swaps = best.dungeonSwaps and best.dungeonSwaps[dungeonName] or nil
-          if not swaps and best.dungeonSwaps then
-            for dataName, s in pairs(best.dungeonSwaps) do
-              if namesMatch(dungeonName, dataName) then
-                swaps = s
-                break
+        -- Preferred: the per-dungeon top build (RIO data) — a complete
+        -- import string for THIS dungeon at this key bucket, recommended
+        -- and applied whole. Buckets whose sample was too thin weren't
+        -- emitted; fall back to progressively shallower ones.
+        local best
+        local db = ZZ.data.dungeonBuilds
+        local specID = PlayerUtil and PlayerUtil.GetCurrentSpecID and PlayerUtil.GetCurrentSpecID()
+        if db and specID then
+          local perRole = db[ZZ.classToken] and db[ZZ.classToken][ZZ.role]
+          local perSpec
+          for _, buckets in pairs(perRole or {}) do
+            -- Entries are keyed by spec NAME; identify the player's by
+            -- probing any contained build's specId.
+            local probe
+            for _, byDungeon in pairs(buckets) do
+              for _, b in pairs(byDungeon) do probe = b break end
+              if probe then break end
+            end
+            if probe and probe.specId == specID then perSpec = buckets break end
+          end
+          if perSpec then
+            local FALLBACK = {
+              ["20+"] = { "20+", "18+", "15+", "all" },
+              ["18+"] = { "18+", "15+", "all" },
+              ["15+"] = { "15+", "all" },
+              ["all"] = { "all" },
+            }
+            for _, bk in ipairs(FALLBACK[bucket] or { "all" }) do
+              local byDungeon = perSpec[bk]
+              if byDungeon then
+                best = byDungeon[dungeonName]
+                if not best then
+                  -- Data dungeon names don't always match the in-game name
+                  -- exactly — reuse the fuzzy matcher.
+                  for dataName, b in pairs(byDungeon) do
+                    if namesMatch(dungeonName, dataName) then best = b break end
+                  end
+                end
+                if best then break end
               end
             end
           end
-          showSuggestion(label, best, "mp", swaps)
+        end
+
+        -- Fallback (zugzug/WCL source, or no per-dungeon data): the best
+        -- overall build for this dungeon from the bucket's build list.
+        if not best then
+          local classEntry = ZZ.data.classes[ZZ.classToken]
+          if not classEntry then return end
+          local roleData = classEntry[ZZ.role]
+          if not roleData or not roleData.mythicPlus then return end
+          best = findBestBuildForDungeon(roleData.mythicPlus[bucket], dungeonName)
+        end
+
+        if best then
+          local label = level > 0 and ("Best for " .. dungeonName .. " +" .. level) or ("Best for " .. dungeonName)
+          showSuggestion(label, best, "mp")
         end
       end)
       if not ok then
@@ -1076,8 +976,5 @@ resetFrame:SetScript("OnEvent", function(_, event)
     lastSuggestDungeon = nil
   elseif event == "ACTIVE_TALENT_GROUP_CHANGED" then
     suggestBossCooldownUntil = 0
-    -- Spec change → tree is different, anything we marked as
-    -- "unsatisfiable" might now work. Wipe the (persistent) suppression.
-    ZugZugDB.suppressedSwaps = {}
   end
 end)
