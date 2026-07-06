@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------
--- ZugZug — UI
+-- ZugZug Specs — UI
 -- Talent frame integration: two dropdown selectors (Raid & M+) that
 -- list builds for your class. Click a build to copy its import string.
 ----------------------------------------------------------------------
@@ -167,7 +167,7 @@ end
 
 function ZZ:CopyImportString(importString, label)
   local popup = createCopyPopup()
-  popup.title:SetText("ZugZug — " .. label .. "  |cff888888Ctrl+C to copy|r")
+  popup.title:SetText("ZugZug Specs — " .. label .. "  |cff888888Ctrl+C to copy|r")
   popup.editBox:SetText(importString)
   popup:Show()
   popup.editBox:SetFocus()
@@ -282,14 +282,14 @@ function ZZ:DumpLastSwapState()
   local function out(msg) DEFAULT_CHAT_FRAME:AddMessage(msg) end
   out("|cffff8800ZZ:DumpLastSwapState ENTRY|r")
   local sw = self.lastSwapData
-  if not sw then out("|cff00ccffZugZug:|r no captured swap data") return end
-  out("|cff00ccffZugZug:|r sw has " .. (sw.picks and #sw.picks or 0) .. " picks, "
+  if not sw then out("|cff00ccffZugZug Specs:|r no captured swap data") return end
+  out("|cff00ccffZugZug Specs:|r sw has " .. (sw.picks and #sw.picks or 0) .. " picks, "
     .. (sw.drops and #sw.drops or 0) .. " drops")
   local specID = PlayerUtil and PlayerUtil.GetCurrentSpecID and PlayerUtil.GetCurrentSpecID()
   local configID = C_ClassTalents.GetActiveConfigID()
   local treeID = specID and C_ClassTalents.GetTraitTreeForSpec(specID)
   if not (specID and configID and treeID) then
-    print("|cff00ccffZugZug:|r talent API not ready")
+    print("|cff00ccffZugZug Specs:|r talent API not ready")
     return
   end
   local treeNodes = C_Traits.GetTreeNodes(treeID)
@@ -469,15 +469,172 @@ function ZZ:CaptureUndoSnapshot(configID, action)
   }
 end
 
+-- Loadout serialization bit widths (match Blizzard_ClassTalentImportExport).
+local BIT_VERSION, BIT_SPECID, BIT_RANKS = 8, 16, 6
+
+--- Parse an import string into per-node "indexInfo" aligned to the tree's
+--- GetTreeNodes(treeID) order — the exact shape Blizzard's
+--- ConvertToImportLoadoutEntryInfo consumes. Returns nil on any mismatch.
+local function parseLoadoutContent(importString, treeID)
+  if not (ExportUtil and ExportUtil.MakeImportDataStream) then return nil end
+  local stream = ExportUtil.MakeImportDataStream(importString)
+  if not stream then return nil end
+  local version = stream:ExtractValue(BIT_VERSION)
+  local cur = C_Traits.GetLoadoutSerializationVersion and C_Traits.GetLoadoutSerializationVersion()
+  if cur and version ~= cur then return nil end
+  stream:ExtractValue(BIT_SPECID)             -- specID
+  for _ = 1, 16 do stream:ExtractValue(8) end -- 128-bit tree hash
+  local treeNodes = C_Traits.GetTreeNodes(treeID)
+  if not treeNodes or #treeNodes == 0 then return nil end
+  local content = {}
+  for i = 1, #treeNodes do
+    local isSelected = stream:ExtractValue(1) == 1
+    local isPurchased, isPartial, partialRanks, isChoice, choiceSel = false, false, 0, false, 0
+    if isSelected then
+      isPurchased = stream:ExtractValue(1) == 1
+      if isPurchased then
+        isPartial = stream:ExtractValue(1) == 1
+        if isPartial then partialRanks = stream:ExtractValue(BIT_RANKS) end
+        isChoice = stream:ExtractValue(1) == 1
+        if isChoice then choiceSel = stream:ExtractValue(2) end
+      end
+    end
+    content[i] = {
+      isNodeSelected = isSelected,
+      isNodeGranted = isSelected and not isPurchased,
+      isPartiallyRanked = isPartial,
+      partialRanksPurchased = partialRanks,
+      isChoiceNode = isChoice,
+      choiceNodeSelection = choiceSel + 1, -- back to 1-based
+    }
+  end
+  return content, treeNodes
+end
+
+--- Port of CreateImportLoadoutEntryInfoFromSingleNode.
+local function entryFromSingleNode(results, treeNodeInfo, indexInfo)
+  if not (treeNodeInfo and indexInfo and indexInfo.isNodeSelected) then return end
+  local r = { nodeID = treeNodeInfo.ID }
+  r.ranksGranted = indexInfo.isNodeGranted and 1 or 0
+  if indexInfo.isNodeSelected and not indexInfo.isNodeGranted then
+    r.ranksPurchased = indexInfo.isPartiallyRanked and indexInfo.partialRanksPurchased or treeNodeInfo.maxRanks
+  else
+    r.ranksPurchased = 0
+  end
+  local entryIDs = treeNodeInfo.entryIDs
+  if indexInfo.isChoiceNode and indexInfo.choiceNodeSelection and entryIDs then
+    r.selectionEntryID = entryIDs[indexInfo.choiceNodeSelection]
+  elseif treeNodeInfo.activeEntry then
+    r.selectionEntryID = treeNodeInfo.activeEntry.entryID
+  end
+  if not r.selectionEntryID and entryIDs then r.selectionEntryID = entryIDs[1] end
+  if r.selectionEntryID ~= nil then table.insert(results, r) end
+end
+
+--- Port of CreateImportLoadoutEntryInfoFromTieredNode (multi-entry nodes:
+--- ranks fill each entryID in order).
+local function entryFromTieredNode(results, configID, treeNodeInfo, indexInfo)
+  if not (treeNodeInfo and indexInfo and indexInfo.isNodeSelected) then return end
+  local total = 0
+  if not indexInfo.isNodeGranted then
+    total = indexInfo.isPartiallyRanked and indexInfo.partialRanksPurchased or treeNodeInfo.maxRanks
+  end
+  local remaining = total
+  for index, entryID in ipairs(treeNodeInfo.entryIDs or {}) do
+    local entryInfo = C_Traits.GetEntryInfo(configID, entryID)
+    if entryInfo then
+      local ranksForThis = math.min(remaining, entryInfo.maxRanks or 0)
+      local isGranted = indexInfo.isNodeGranted and (index == 1)
+      if ranksForThis > 0 or isGranted then
+        table.insert(results, {
+          nodeID = treeNodeInfo.ID,
+          ranksGranted = isGranted and 1 or 0,
+          ranksPurchased = ranksForThis,
+          selectionEntryID = entryID,
+        })
+      end
+      remaining = remaining - ranksForThis
+    end
+  end
+end
+
+--- Port of ConvertToImportLoadoutEntryInfo.
+local function convertToImportEntryInfo(configID, treeID, content)
+  local results = {}
+  local treeNodes = C_Traits.GetTreeNodes(treeID)
+  for index, nodeID in ipairs(treeNodes) do
+    local indexInfo = content[index]
+    local nodeInfo = C_Traits.GetNodeInfo(configID, nodeID)
+    if nodeInfo then
+      if Enum and Enum.TraitNodeType and nodeInfo.type == Enum.TraitNodeType.Tiered then
+        entryFromTieredNode(results, configID, nodeInfo, indexInfo)
+      else
+        entryFromSingleNode(results, nodeInfo, indexInfo)
+      end
+    end
+  end
+  return results
+end
+
+-- The saved-loadout create is async: C_ClassTalents.ImportLoadout fires
+-- TRAIT_CONFIG_CREATED, and a config with purchased ranks may not be
+-- loadable until a later TRAIT_CONFIG_UPDATED (the "populated" check).
+-- This waiter drives create → populate → load → select, mirroring what the
+-- talents frame does, so we never depend on that frame being open.
+local loadoutWaiter
+local pendingLoad -- { specID, label, awaitID }
+
+local function finishLoadoutLoad(configID)
+  if not pendingLoad then return end
+  local specID, label = pendingLoad.specID, pendingLoad.label
+  pendingLoad = nil
+  local okLoad, result = pcall(C_ClassTalents.LoadConfig, configID, true)
+  if okLoad and loadConfigAccepted(result) then
+    if specID and C_ClassTalents.UpdateLastSelectedSavedConfigID then
+      pcall(C_ClassTalents.UpdateLastSelectedSavedConfigID, specID, configID)
+    end
+  else
+    print(string.format(
+      "|cff00ccffZugZug Specs:|r Created the \"%s\" loadout for %s but couldn't auto-switch to it — select it in your talent frame.",
+      LOADOUT_NAME, label or "build"))
+  end
+end
+
+local function ensureLoadoutWaiter()
+  if loadoutWaiter then return end
+  loadoutWaiter = CreateFrame("Frame")
+  loadoutWaiter:RegisterEvent("TRAIT_CONFIG_CREATED")
+  loadoutWaiter:RegisterEvent("TRAIT_CONFIG_UPDATED")
+  loadoutWaiter:SetScript("OnEvent", function(_, event, arg1)
+    if not pendingLoad then return end
+    if event == "TRAIT_CONFIG_CREATED" and type(arg1) == "table" and arg1.ID then
+      if Enum and Enum.TraitConfigType and arg1.type ~= Enum.TraitConfigType.Combat then return end
+      if C_ClassTalents.IsConfigPopulated and not C_ClassTalents.IsConfigPopulated(arg1.ID) then
+        pendingLoad.awaitID = arg1.ID           -- wait for it to populate
+      else
+        finishLoadoutLoad(arg1.ID)
+      end
+    elseif event == "TRAIT_CONFIG_UPDATED" and pendingLoad.awaitID and arg1 == pendingLoad.awaitID then
+      finishLoadoutLoad(arg1)
+    end
+  end)
+end
+
 --- Import the build into a loadout named "ZugZug" and activate it, leaving
---- the player's own loadouts untouched. Returns true on success; false on
---- any failure so the caller can fall back to the in-place apply.
+--- the player's own loadouts untouched. Returns true once the create is
+--- accepted (the load completes asynchronously); false on any failure so
+--- the caller can fall back to the in-place apply.
 local function tryApplyViaLoadout(importString, label)
-  if not (C_ClassTalents and C_ClassTalents.ImportLoadout and C_ClassTalents.LoadConfig) then
+  if not (C_ClassTalents and C_ClassTalents.ImportLoadout and C_ClassTalents.LoadConfig
+      and C_ClassTalents.GetActiveConfigID and C_Traits and C_Traits.GetTreeNodes) then
     return false
   end
   local specID = PlayerUtil and PlayerUtil.GetCurrentSpecID and PlayerUtil.GetCurrentSpecID()
   if not specID then return false end
+  local treeID = C_ClassTalents.GetTraitTreeForSpec and C_ClassTalents.GetTraitTreeForSpec(specID)
+  if not treeID then return false end
+  local configID = C_ClassTalents.GetActiveConfigID()
+  if not configID then return false end
 
   local existing = findZugZugConfigID(specID)
 
@@ -493,21 +650,30 @@ local function tryApplyViaLoadout(importString, label)
     pcall(C_ClassTalents.DeleteConfig, existing)
   end
 
-  local okImp, res = pcall(C_ClassTalents.ImportLoadout, importString, LOADOUT_NAME)
-  if not okImp or res == false or res == nil then return false end
-  -- ImportLoadout has returned a configID on some builds and a boolean on
-  -- others — rescan by name when it isn't a number.
-  local newID = (type(res) == "number") and res or findZugZugConfigID(specID)
-  if not newID then return false end
+  local content = parseLoadoutContent(importString, treeID)
+  if not content then return false end
+  local entryInfo = convertToImportEntryInfo(configID, treeID, content)
+  if not entryInfo or #entryInfo == 0 then return false end
 
-  local okLoad, result = pcall(C_ClassTalents.LoadConfig, newID, true)
-  if not okLoad or not loadConfigAccepted(result) then return false end
-
-  if C_ClassTalents.UpdateLastSelectedSavedConfigID then
-    pcall(C_ClassTalents.UpdateLastSelectedSavedConfigID, specID, newID)
+  ensureLoadoutWaiter()
+  pendingLoad = { specID = specID, label = label }
+  local ok, success = pcall(C_ClassTalents.ImportLoadout, configID, entryInfo, LOADOUT_NAME, importString)
+  if not ok or not success then
+    pendingLoad = nil
+    return false
   end
+
+  -- Safety net: if the create events never resolve (e.g. the name already
+  -- existed and it updated in place), find + load the loadout after a beat.
+  C_Timer.After(3, function()
+    if pendingLoad then
+      local id = findZugZugConfigID(specID)
+      if id then finishLoadoutLoad(id) else pendingLoad = nil end
+    end
+  end)
+
   print(string.format(
-    "|cff00ccffZugZug:|r Applying %s to the \"%s\" loadout... |cff888888Your own loadouts are untouched; /zz undo reverts.|r",
+    "|cff00ccffZugZug Specs:|r Applying %s to the \"%s\" loadout... |cff888888Your own loadouts are untouched; /zz undo reverts.|r",
     label or "build", LOADOUT_NAME))
   return true
 end
@@ -517,13 +683,13 @@ end
 local function applyParsedInPlace(parsed, renameTo)
   local configID = C_ClassTalents.GetActiveConfigID()
   if not configID then
-    print("|cff00ccffZugZug:|r No active talent config.")
+    print("|cff00ccffZugZug Specs:|r No active talent config.")
     return false
   end
 
   -- Reset the tree
   if not C_Traits.ResetTree(configID, parsed.treeID) then
-    print("|cff00ccffZugZug:|r Failed to reset talent tree.")
+    print("|cff00ccffZugZug Specs:|r Failed to reset talent tree.")
     return false
   end
 
@@ -572,12 +738,12 @@ local function applyParsedInPlace(parsed, renameTo)
 
   -- Commit
   if not C_Traits.ConfigHasStagedChanges(configID) then
-    print("|cff00ccffZugZug:|r Build is already active (no changes needed).")
+    print("|cff00ccffZugZug Specs:|r Build is already active (no changes needed).")
     return true
   end
 
   if C_ClassTalents.CommitConfig(configID) then
-    print("|cff00ccffZugZug:|r Applying " .. (renameTo or "build") .. "...")
+    print("|cff00ccffZugZug Specs:|r Applying " .. (renameTo or "build") .. "...")
     -- Auto-rename the loadout to the build label
     if renameTo and C_ClassTalents.RenameConfig then
       C_ClassTalents.RenameConfig(configID, renameTo)
@@ -590,7 +756,7 @@ local function applyParsedInPlace(parsed, renameTo)
   if C_Traits.RollbackConfig then
     pcall(C_Traits.RollbackConfig, configID)
   end
-  print("|cff00ccffZugZug:|r Failed to commit. Try with the talent frame open.")
+  print("|cff00ccffZugZug Specs:|r Failed to commit. Try with the talent frame open.")
   return false
 end
 
@@ -599,7 +765,7 @@ end
 function ZZ:ApplyBuild(importString, label)
   local parsed, err = parseImportString(importString)
   if not parsed then
-    print("|cff00ccffZugZug:|r Failed to parse: " .. (err or "unknown error"))
+    print("|cff00ccffZugZug Specs:|r Failed to parse: " .. (err or "unknown error"))
     return false
   end
 
@@ -608,13 +774,13 @@ function ZZ:ApplyBuild(importString, label)
   if parsed.specID ~= currentSpecID then
     local specIdx = specIndexForID(parsed.specID)
     if not specIdx then
-      print("|cff00ccffZugZug:|r Could not find spec for this build.")
+      print("|cff00ccffZugZug Specs:|r Could not find spec for this build.")
       return false
     end
     pendingBuild = { importString = importString, label = label }
-    print("|cff00ccffZugZug:|r Switching spec to apply " .. (label or "build") .. "...")
+    print("|cff00ccffZugZug Specs:|r Switching spec to apply " .. (label or "build") .. "...")
     if InCombatLockdown() then
-      print("|cff00ccffZugZug:|r Cannot switch spec in combat.")
+      print("|cff00ccffZugZug Specs:|r Cannot switch spec in combat.")
       pendingBuild = nil
       return false
     end
@@ -629,13 +795,13 @@ function ZZ:ApplyBuild(importString, label)
   -- Same-spec apply stages a full tree wipe + rebuild — never start that
   -- in combat (the commit would fail and strand the staged reset).
   if InCombatLockdown() then
-    print("|cff00ccffZugZug:|r Cannot change talents in combat.")
+    print("|cff00ccffZugZug Specs:|r Cannot change talents in combat.")
     return false
   end
 
   local configID = C_ClassTalents.GetActiveConfigID()
   if not configID then
-    print("|cff00ccffZugZug:|r No active talent config.")
+    print("|cff00ccffZugZug Specs:|r No active talent config.")
     return false
   end
 
@@ -661,16 +827,16 @@ end
 function ZZ:UndoLastApply()
   local snap = ZugZugDB.undoSnapshot
   if not (snap and snap.importString) then
-    print("|cff00ccffZugZug:|r Nothing to undo.")
+    print("|cff00ccffZugZug Specs:|r Nothing to undo.")
     return false
   end
   if InCombatLockdown() then
-    print("|cff00ccffZugZug:|r Cannot change talents in combat.")
+    print("|cff00ccffZugZug Specs:|r Cannot change talents in combat.")
     return false
   end
   local specID = PlayerUtil and PlayerUtil.GetCurrentSpecID and PlayerUtil.GetCurrentSpecID()
   if snap.specID and specID and snap.specID ~= specID then
-    print("|cff00ccffZugZug:|r The undo snapshot is for another spec — switch back to use it.")
+    print("|cff00ccffZugZug Specs:|r The undo snapshot is for another spec — switch back to use it.")
     return false
   end
 
@@ -706,7 +872,7 @@ function ZZ:UndoLastApply()
   end
 
   if restored then
-    print("|cff00ccffZugZug:|r Restored your previous talents"
+    print("|cff00ccffZugZug Specs:|r Restored your previous talents"
       .. (snap.action and (" (before " .. snap.action .. ")") or "") .. ".")
     if redo then
       ZugZugDB.undoSnapshot = {
@@ -719,7 +885,7 @@ function ZZ:UndoLastApply()
       ZugZugDB.undoSnapshot = nil
     end
   else
-    print("|cff00ccffZugZug:|r Could not restore — try with the talent frame open.")
+    print("|cff00ccffZugZug Specs:|r Could not restore — try with the talent frame open.")
   end
   return restored
 end
@@ -858,7 +1024,7 @@ function ZZ:ApplySwaps(swapData)
   local drops = swapData.drops or {}
   if #picks == 0 and #drops == 0 then return false end
   if InCombatLockdown() then
-    print("|cff00ccffZugZug:|r Cannot change talents in combat.")
+    print("|cff00ccffZugZug Specs:|r Cannot change talents in combat.")
     return nil
   end
 
@@ -945,19 +1111,19 @@ function ZZ:ApplySwaps(swapData)
   end
 
   if applied == 0 then
-    print("|cff00ccffZugZug:|r No swaps needed — already aligned.")
+    print("|cff00ccffZugZug Specs:|r No swaps needed — already aligned.")
     return false
   end
 
   if not C_Traits.ConfigHasStagedChanges(configID) then
-    print("|cff00ccffZugZug:|r No staged changes after swap pass.")
+    print("|cff00ccffZugZug Specs:|r No staged changes after swap pass.")
     return false
   end
 
   if C_ClassTalents.CommitConfig(configID) then
-    print(string.format("|cff00ccffZugZug:|r Applied %d talent swap%s. |cff888888/zz undo reverts.|r", applied, applied == 1 and "" or "s"))
+    print(string.format("|cff00ccffZugZug Specs:|r Applied %d talent swap%s. |cff888888/zz undo reverts.|r", applied, applied == 1 and "" or "s"))
     if #skipped > 0 then
-      print("|cff00ccffZugZug:|r Couldn't find: " .. table.concat(skipped, ", "))
+      print("|cff00ccffZugZug Specs:|r Couldn't find: " .. table.concat(skipped, ", "))
     end
     return true
   end
@@ -968,7 +1134,7 @@ function ZZ:ApplySwaps(swapData)
   if C_Traits.RollbackConfig then
     pcall(C_Traits.RollbackConfig, configID)
   end
-  print("|cff00ccffZugZug:|r Failed to commit talent changes.")
+  print("|cff00ccffZugZug Specs:|r Failed to commit talent changes.")
   return nil
 end
 
@@ -976,7 +1142,7 @@ function ZZ:ApplyPendingBuild()
   if not pendingBuild then return end
   local build = pendingBuild
   pendingBuild = nil
-  print("|cff00ccffZugZug:|r Spec switched — applying " .. (build.label or "build") .. "...")
+  print("|cff00ccffZugZug Specs:|r Spec switched — applying " .. (build.label or "build") .. "...")
   ZZ:ApplyBuild(build.importString, build.label)
 end
 
@@ -1122,7 +1288,7 @@ local function createDropdownItem(parent, index)
   item:RegisterForClicks("LeftButtonUp")
   item:SetScript("OnClick", function(self)
     if not self.importString or self.importString == "" then
-      print("|cff00ccffZugZug:|r No import string for this build.")
+      print("|cff00ccffZugZug Specs:|r No import string for this build.")
       return
     end
     if IsShiftKeyDown() then
@@ -1557,7 +1723,7 @@ local function createBar(parent)
         Settings.OpenToCategory("ZugZug")
       end
     end)
-    if not ok then print("|cff00ccffZugZug:|r Could not open settings.") end
+    if not ok then print("|cff00ccffZugZug Specs:|r Could not open settings.") end
   end)
   bar.cogBtn = cogBtn
 

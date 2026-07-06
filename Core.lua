@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------
--- ZugZug — Core
+-- ZugZug Specs — Core
 -- Initialization, saved variables, slash commands, class/spec detection.
 ----------------------------------------------------------------------
 
@@ -141,7 +141,7 @@ function ZZ.SelectDataSource()
     ZZ.data = ZugZugDataRIO
   else
     if want == "raiderio" then
-      print("|cff00ccffZugZug:|r Raider.IO data file missing — falling back to ZugZug data.")
+      print("|cff00ccffZugZug Specs:|r Raider.IO data file missing — falling back to ZugZug data.")
     end
     ZZ.data = ZugZugData
   end
@@ -170,10 +170,10 @@ local function handleSlashCommand(msg)
   if cmd == "difficulty" or cmd == "diff" then
     if VALID_DIFFICULTIES[arg] then
       ZugZugDB.raidDifficulty = arg
-      print("|cff00ccffZugZug:|r Raid difficulty set to " .. arg)
+      print("|cff00ccffZugZug Specs:|r Raid difficulty set to " .. arg)
       if ZZ.RefreshUI then ZZ:RefreshUI() end
     else
-      print("|cff00ccffZugZug:|r Valid difficulties: heroic, mythic")
+      print("|cff00ccffZugZug Specs:|r Valid difficulties: heroic, mythic")
     end
     return
   end
@@ -181,10 +181,10 @@ local function handleSlashCommand(msg)
   if cmd == "keylevel" or cmd == "key" or cmd == "bucket" then
     if VALID_BUCKETS[arg] then
       ZugZugDB.mpBucket = arg
-      print("|cff00ccffZugZug:|r M+ key level set to " .. arg)
+      print("|cff00ccffZugZug Specs:|r M+ key level set to " .. arg)
       if ZZ.RefreshUI then ZZ:RefreshUI() end
     else
-      print("|cff00ccffZugZug:|r Valid key levels: all, 15+, 18+, 20+")
+      print("|cff00ccffZugZug Specs:|r Valid key levels: all, 15+, 18+, 20+")
     end
     return
   end
@@ -195,11 +195,11 @@ local function handleSlashCommand(msg)
     if want then
       ZugZugDB.dataSource = want
       ZZ.SelectDataSource()
-      print("|cff00ccffZugZug:|r Data source set to "
+      print("|cff00ccffZugZug Specs:|r Data source set to "
         .. (ZZ.data == ZugZugDataRIO and "|cff8fbf3fRaider.IO|r" or "|cff8fbf3fZugZug|r"))
       if ZZ.RefreshUI then ZZ:RefreshUI() end
     else
-      print("|cff00ccffZugZug:|r Valid sources: zugzug, raiderio")
+      print("|cff00ccffZugZug Specs:|r Valid sources: zugzug, raiderio")
     end
     return
   end
@@ -207,15 +207,15 @@ local function handleSlashCommand(msg)
   if cmd == "suggest" then
     ZugZugDB.suggestEnabled = not ZugZugDB.suggestEnabled
     if ZugZugDB.suggestEnabled then
-      print("|cff00ccffZugZug:|r Smart suggest |cff4DFF4Denabled|r")
+      print("|cff00ccffZugZug Specs:|r Smart suggest |cff4DFF4Denabled|r")
     else
-      print("|cff00ccffZugZug:|r Smart suggest |cffFF6666disabled|r")
+      print("|cff00ccffZugZug Specs:|r Smart suggest |cffFF6666disabled|r")
     end
     return
   end
 
   if cmd == "status" then
-    print("|cff00ccffZugZug:|r Status")
+    print("|cff00ccffZugZug Specs:|r Status")
     print("  Class: " .. (ZZ.classToken or "unknown"))
     print("  Spec: " .. (ZZ.specName or "unknown") .. " (" .. (ZZ.role or "?") .. ")")
     print("  Raid difficulty: " .. (ZugZugDB.raidDifficulty or "mythic"))
@@ -234,7 +234,7 @@ local function handleSlashCommand(msg)
     if ZZ.DumpLastSwapState then
       ZZ:DumpLastSwapState()
     else
-      print("|cff00ccffZugZug:|r DumpLastSwapState not loaded — try /reload")
+      print("|cff00ccffZugZug Specs:|r DumpLastSwapState not loaded — try /reload")
     end
     return
   end
@@ -246,10 +246,10 @@ local function handleSlashCommand(msg)
     -- The string is written to its own chat line for easy click-drag-copy.
     local b = ZZ.lastBuild
     if not (b and b.importString) then
-      print("|cff00ccffZugZug:|r no active build cached. Trigger the dungeon-suggest popup first (zone into a dungeon).")
+      print("|cff00ccffZugZug Specs:|r no active build cached. Trigger the dungeon-suggest popup first (zone into a dungeon).")
       return
     end
-    print("|cff00ccffZugZug:|r last build import string (paste into the in-game Import dialog) —")
+    print("|cff00ccffZugZug Specs:|r last build import string (paste into the in-game Import dialog) —")
     print(string.format("  build: %s  spec: %s", tostring(b.name or b.id or "?"), tostring(b.spec or "?")))
     print(b.importString)
     return
@@ -259,7 +259,7 @@ local function handleSlashCommand(msg)
     if ZZ.UndoLastApply then
       ZZ:UndoLastApply()
     else
-      print("|cff00ccffZugZug:|r Undo not loaded — try /reload.")
+      print("|cff00ccffZugZug Specs:|r Undo not loaded — try /reload.")
     end
     return
   end
@@ -273,19 +273,20 @@ local function handleSlashCommand(msg)
       end
     end)
     if not ok then
-      print("|cff00ccffZugZug:|r Settings error: " .. tostring(err))
+      print("|cff00ccffZugZug Specs:|r Settings error: " .. tostring(err))
     end
     return
   end
 
   -- Default: show help
-  print("|cff00ccffZugZug|r — ZUGZUG.info talent builds")
-  print("  /zugzug status — show current settings")
-  print("  /zugzug settings — open settings panel")
-  print("  /zugzug diff <heroic|mythic> — set raid difficulty")
-  print("  /zugzug key <all|15+|18+|20+> — set M+ key level filter")
-  print("  /zugzug suggest — toggle smart suggest on/off")
-  print("  /zugzug undo — revert the last build/swap apply")
+  print("|cff00ccffZugZug Specs|r — ZUGZUG.info talent builds")
+  print("  /zz status — show current settings")
+  print("  /zz settings — open settings panel")
+  print("  /zz source <zugzug|raiderio> — choose the build data source")
+  print("  /zz diff <heroic|mythic> — set raid difficulty")
+  print("  /zz key <all|15+|18+|20+> — set M+ key level filter")
+  print("  /zz suggest — toggle smart suggest on/off")
+  print("  /zz undo — revert the last build/swap apply")
 end
 
 ----------------------------------------------------------------------
@@ -304,7 +305,7 @@ frame:SetScript("OnEvent", function(_, event, arg1)
     -- Link the configured data table (Data.lua / DataRIO.lua).
     ZZ.SelectDataSource()
     if not ZZ.data then
-      print("|cff00ccffZugZug:|r Warning — no build data loaded. Run the update script.")
+      print("|cff00ccffZugZug Specs:|r Warning — no build data loaded. Run the update script.")
     end
 
     SLASH_ZUGZUG1 = "/zugzug"
@@ -321,21 +322,21 @@ frame:SetScript("OnEvent", function(_, event, arg1)
     -- once instead of failing silently.
     if GetLocale and GetLocale() ~= "enUS" and not ZugZugDB.localeNoticeShown then
       ZugZugDB.localeNoticeShown = true
-      print("|cff00ccffZugZug:|r Non-English client detected — build browsing works fully, but boss/dungeon auto-suggestions may be limited (encounter names are matched in English).")
+      print("|cff00ccffZugZug Specs:|r Non-English client detected — build browsing works fully, but boss/dungeon auto-suggestions may be limited (encounter names are matched in English).")
     end
     if ZZ.data then
       local raidBuilds, mpBuilds = ZZ:GetCurrentBuilds()
       local rCount = raidBuilds and #raidBuilds or 0
       local mCount = mpBuilds and #mpBuilds or 0
       print(string.format(
-        "|cff00ccffZugZug:|r Loaded %d raid + %d M+ builds for %s %s. Type /zz for help.",
+        "|cff00ccffZugZug Specs:|r Loaded %d raid + %d M+ builds for %s %s. Type /zz for help.",
         rCount, mCount, ZZ.specName or "?", ZZ.role or "?"
       ))
 
       -- Notify if build data was updated since last session
       local currentVersion = ZZ.data.lastUpdate
       if currentVersion and ZugZugDB.lastDataVersion and ZugZugDB.lastDataVersion ~= currentVersion then
-        print("|cff00ccffZugZug:|r |cff8fbf3fBuild data updated!|r Meta may have shifted — check your builds.")
+        print("|cff00ccffZugZug Specs:|r |cff8fbf3fBuild data updated!|r Meta may have shifted — check your builds.")
       end
       ZugZugDB.lastDataVersion = currentVersion
     end

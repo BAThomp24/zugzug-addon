@@ -1,6 +1,6 @@
 ## Interface: 120007
-## Title: ZugZug Talent Builds & Leveling Guide
-## Notes: Leveling talent guide + top raid & Mythic+ builds from WarcraftLogs — one-click import in your talent frame. Daily updates from zugzug.info.
+## Title: ZugZug Specs
+## Notes: Top raid & Mythic+ talent builds (WarcraftLogs or Raider.IO) + a leveling guide — one-click import in your talent frame. Companion to ZugZug Keys.
 ## Author: ZUGZUG.io
 ## Version: @project-version@
 ## SavedVariables: ZugZugDB

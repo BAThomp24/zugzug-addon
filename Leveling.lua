@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------
--- ZugZug — Leveling
+-- ZugZug Specs — Leveling
 -- Shows a "next talent to pick" suggestion as the player levels,
 -- guiding them through a recommended talent order.
 ----------------------------------------------------------------------
@@ -395,7 +395,7 @@ local function createBanner()
   pickAllBtn:SetScript("OnClick", function()
     if not levelingOrder then return end
     if InCombatLockdown() then
-      print("|cff00ccffZugZug:|r Cannot change talents in combat.")
+      print("|cff00ccffZugZug Specs:|r Cannot change talents in combat.")
       return
     end
 
@@ -435,7 +435,7 @@ local function createBanner()
     local hasStaged = C_Traits.ConfigHasStagedChanges and C_Traits.ConfigHasStagedChanges(configID)
     if staged > 0 or hasStaged then
       if C_ClassTalents.CommitConfig(configID) then
-        print("|cff00ccffZugZug:|r Picked "
+        print("|cff00ccffZugZug Specs:|r Picked "
           .. (staged > 0 and (staged .. " talent" .. (staged == 1 and "" or "s")) or "talents")
           .. ".")
         C_Timer.After(0.5, function() ZZ:RefreshLeveling() end)
@@ -443,10 +443,10 @@ local function createBanner()
         if C_Traits.RollbackConfig then
           pcall(C_Traits.RollbackConfig, configID)
         end
-        print("|cff00ccffZugZug:|r Failed to commit talent picks.")
+        print("|cff00ccffZugZug Specs:|r Failed to commit talent picks.")
       end
     else
-      print("|cff00ccffZugZug:|r No talents available to pick.")
+      print("|cff00ccffZugZug Specs:|r No talents available to pick.")
     end
   end)
   f.pickAllBtn = pickAllBtn
@@ -459,11 +459,11 @@ local function createBanner()
   resetBtn:SetScript("OnClick", function()
     local level = UnitLevel("player")
     if level and level >= MAX_LEVEL and not (ZugZugDB and ZugZugDB.levelingAtMax) then
-      print("|cff00ccffZugZug:|r Reset is only available below max level.")
+      print("|cff00ccffZugZug Specs:|r Reset is only available below max level.")
       return
     end
     if InCombatLockdown() then
-      print("|cff00ccffZugZug:|r Cannot change talents in combat.")
+      print("|cff00ccffZugZug Specs:|r Cannot change talents in combat.")
       return
     end
 
@@ -478,14 +478,14 @@ local function createBanner()
 
     local ok = C_Traits.ResetTree(configID, C_ClassTalents.GetTraitTreeForSpec(specID))
     if ok and C_ClassTalents.CommitConfig(configID) then
-      print("|cff00ccffZugZug:|r Talents reset. Pick order restarted.")
+      print("|cff00ccffZugZug Specs:|r Talents reset. Pick order restarted.")
       C_Timer.After(0.5, function() ZZ:RefreshLeveling() end)
     else
       if ok and C_Traits.RollbackConfig then
         -- Reset staged but commit refused — undo the staged wipe.
         pcall(C_Traits.RollbackConfig, configID)
       end
-      print("|cff00ccffZugZug:|r Could not reset talents.")
+      print("|cff00ccffZugZug Specs:|r Could not reset talents.")
     end
   end)
   f.resetBtn = resetBtn
@@ -684,12 +684,12 @@ end
 --- Explicit toggle from the Leveling button on the builds bar.
 function ZZ:ToggleLevelingBanner()
   if ZugZugDB.levelingEnabled == false then
-    print("|cff00ccffZugZug:|r Leveling guide is disabled in settings.")
+    print("|cff00ccffZugZug Specs:|r Leveling guide is disabled in settings.")
     return
   end
   local level = UnitLevel("player")
   if level and level >= MAX_LEVEL and not ZugZugDB.levelingAtMax then
-    print("|cff00ccffZugZug:|r Leveling guide is hidden at max level (enable in settings).")
+    print("|cff00ccffZugZug Specs:|r Leveling guide is hidden at max level (enable in settings).")
     return
   end
 
@@ -704,7 +704,7 @@ function ZZ:ToggleLevelingBanner()
   end
 
   if not levelingOrder then
-    print("|cff00ccffZugZug:|r No leveling data for your spec.")
+    print("|cff00ccffZugZug Specs:|r No leveling data for your spec.")
     return
   end
 
@@ -719,7 +719,7 @@ end
 --- needing to go through Reset → Pick All on the banner.
 function ZZ:ApplyLevelingBuild()
   if InCombatLockdown() then
-    print("|cff00ccffZugZug:|r Cannot change talents in combat.")
+    print("|cff00ccffZugZug Specs:|r Cannot change talents in combat.")
     return false
   end
 
@@ -727,7 +727,7 @@ function ZZ:ApplyLevelingBuild()
     loadOrderForCurrentSpec()
   end
   if not levelingOrder then
-    print("|cff00ccffZugZug:|r No leveling data for your spec.")
+    print("|cff00ccffZugZug Specs:|r No leveling data for your spec.")
     return false
   end
 
@@ -740,7 +740,7 @@ function ZZ:ApplyLevelingBuild()
 
   -- Stage the reset (frees all points but doesn't commit yet)
   if not C_Traits.ResetTree(configID, treeID) then
-    print("|cff00ccffZugZug:|r Failed to reset talent tree.")
+    print("|cff00ccffZugZug Specs:|r Failed to reset talent tree.")
     return false
   end
 
@@ -768,11 +768,11 @@ function ZZ:ApplyLevelingBuild()
   end
 
   if not C_ClassTalents.CommitConfig(configID) then
-    print("|cff00ccffZugZug:|r Failed to commit leveling build.")
+    print("|cff00ccffZugZug Specs:|r Failed to commit leveling build.")
     return false
   end
 
-  print(string.format("|cff00ccffZugZug:|r Leveling build applied (%d talents).", staged))
+  print(string.format("|cff00ccffZugZug Specs:|r Leveling build applied (%d talents).", staged))
   C_Timer.After(0.5, function() ZZ:RefreshLeveling() end)
   return true
 end

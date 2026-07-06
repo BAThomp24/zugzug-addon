@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------
--- ZugZug — Smart Suggest
+-- ZugZug Specs — Smart Suggest
 -- Detects raid bosses and M+ dungeons, suggests the best build.
 ----------------------------------------------------------------------
 
@@ -186,7 +186,7 @@ local function buildBossOrder()
   end)
 
   if not ok then
-    print("|cff00ccffZugZug:|r Failed to read encounter journal: " .. tostring(err))
+    print("|cff00ccffZugZug Specs:|r Failed to read encounter journal: " .. tostring(err))
   end
 end
 
@@ -587,7 +587,7 @@ showSuggestion = function(contentLabel, build, contentType, swapData)
     if ZZ.DumpLastSwapState then
       ZZ:DumpLastSwapState()
     else
-      print("|cff00ccffZugZug:|r DumpLastSwapState is nil — UI.lua hasn't reloaded with the new function")
+      print("|cff00ccffZugZug Specs:|r DumpLastSwapState is nil — UI.lua hasn't reloaded with the new function")
     end
   end
 
@@ -914,7 +914,7 @@ eventFrame:SetScript("OnEvent", function(_, event, ...)
       end
     end)
     if not ok then
-      print("|cff00ccffZugZug:|r ENTERING_WORLD error: " .. tostring(err))
+      print("|cff00ccffZugZug Specs:|r ENTERING_WORLD error: " .. tostring(err))
     end
     -- Fall through to dungeon detection below
   end
@@ -947,7 +947,7 @@ eventFrame:SetScript("OnEvent", function(_, event, ...)
     end)
     if not ok and not warnedTargetError then
       warnedTargetError = true
-      print("|cff00ccffZugZug:|r TARGET error (further errors suppressed): " .. tostring(err))
+      print("|cff00ccffZugZug Specs:|r TARGET error (further errors suppressed): " .. tostring(err))
     end
     return
   end
@@ -972,7 +972,7 @@ eventFrame:SetScript("OnEvent", function(_, event, ...)
       end
     end)
     if not ok then
-      print("|cff00ccffZugZug:|r BOSS_KILL error: " .. tostring(err))
+      print("|cff00ccffZugZug Specs:|r BOSS_KILL error: " .. tostring(err))
     end
     return
   end
@@ -1052,7 +1052,7 @@ eventFrame:SetScript("OnEvent", function(_, event, ...)
         end
       end)
       if not ok then
-        print("|cff00ccffZugZug:|r ZONE error: " .. tostring(err))
+        print("|cff00ccffZugZug Specs:|r ZONE error: " .. tostring(err))
       end
     end
     if delay > 0 then
