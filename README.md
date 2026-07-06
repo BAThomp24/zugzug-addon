@@ -1,17 +1,17 @@
 # ZugZug — WoW Talent Builds for Leveling, Raid & Mythic+
 
-**Talent guidance from level 10 to 80 — a step-by-step leveling talent picker, plus top raid and Mythic+ builds from WarcraftLogs, all in your talent frame. One-click import. Updated daily.**
+**Talent guidance from level 10 to 80 — a step-by-step leveling talent picker, plus top raid and Mythic+ builds from Raider.IO spec statistics, all in your talent frame. One-click import. Updated daily.**
 
-Stop alt-tabbing to Wowhead, Icy Veins, or Raidbots to find the right talents. ZugZug brings level-by-level talent guidance for every spec and the most popular endgame talent builds from [zugzug.info](https://zugzug.info) — sourced from thousands of top WarcraftLogs parses — directly into your in-game talent UI.
+Stop alt-tabbing to Wowhead, Icy Veins, or Raidbots to find the right talents. ZugZug Specs brings level-by-level talent guidance for every spec and the most popular endgame talent builds — sourced from [Raider.IO](https://raider.io/specs)'s statistics over tens of thousands of real runs — directly into your in-game talent UI.
 
-> *Keywords: WoW leveling guide, talent builds, World of Warcraft leveling addon, Mythic+ builds, raid builds, talent loadouts, WarcraftLogs builds, talent import strings, Midnight builds, leveling talents, talent calculator alternative*
+> *Keywords: WoW leveling guide, talent builds, World of Warcraft leveling addon, Mythic+ builds, raid builds, talent loadouts, Raider.IO builds, talent import strings, Midnight builds, leveling talents, talent calculator alternative*
 
 ## What It Does
 
 ZugZug guides your talent choices through your **entire character lifecycle**:
 
 - 🌱 **Leveling (10–79):** A floating banner shows the next talent to pick at every level, following a curated build order through your class, spec, and hero trees
-- 🏰 **Raid (80):** Per-boss talent build recommendations from top WarcraftLogs parses, with one-click import
+- 🏰 **Raid (80):** Heroic and Mythic raid build recommendations from Raider.IO statistics, with one-click import
 - ⚔️ **Mythic+ (80):** Per-dungeon and per-key-level build recommendations, also one-click import
 
 Click any build to apply it instantly — no copy/paste of import strings, no leaving the game.
@@ -38,9 +38,9 @@ Every WoW class and spec is supported — 39 specs total, all with hand-tuned le
 
 | Compared to... | ZugZug advantage |
 |---|---|
-| Wowhead / Icy Veins guides | Always current — data refreshed daily from live WarcraftLogs rankings, not written once a patch |
+| Wowhead / Icy Veins guides | Always current — data refreshed daily from live Raider.IO statistics, not written once a patch |
 | Manually pasting import strings | No alt-tabbing — apply with one click directly from the talent frame |
-| Raidbots Top Gear | Real builds played by real top parsers, not theorycraft simulations |
+| Raidbots Top Gear | Real builds played in real keys and raid kills, not theorycraft simulations |
 
 ## Features
 
@@ -75,15 +75,10 @@ Every WoW class and spec is supported — 39 specs total, all with hand-tuned le
 
 ## Data Source
 
-Build data comes from **[ZUGZUG.io](https://zugzug.info)** — a web companion that analyzes top WarcraftLogs V2 rankings across every spec, clusters players by talent fingerprint, and identifies the dominant builds for every raid boss and Mythic+ dungeon. Data refreshes daily, and the addon ships with each day's snapshot bundled in.
-
-You can also browse the same builds on the web:
-- **Raid builds:** [zugzug.info/warlock/raid](https://zugzug.info/warlock/raid), [/mage/raid](https://zugzug.info/mage/raid), etc.
-- **Mythic+ builds:** [zugzug.info/warlock/mythic-plus](https://zugzug.info/warlock/mythic-plus), etc.
+Build data comes from **[Raider.IO spec statistics](https://raider.io/specs)** — build variants with popularity, key-level brackets (all / 15+ / 18+ / 20+), recommendation verdicts, and per-dungeon top builds, aggregated from tens of thousands of real Mythic+ runs and raid kills. Data refreshes daily, and the addon ships with each day's snapshot bundled in.
 
 ## Links
 
-- 🌐 Website: **[zugzug.info](https://zugzug.info)**
-- 📦 CurseForge: **[zugzug-companion](https://www.curseforge.com/wow/addons/zugzug-companion)**
+- 📦 CurseForge: **[zugzug-specs](https://www.curseforge.com/wow/addons/zugzug-specs)**
 - 🐛 Issues / feedback: [GitHub Issues](https://github.com/BAThomp24/zugzug-addon/issues)
 - ☕ Support: [Buy me a coffee](https://buymeacoffee.com/bathomp24)

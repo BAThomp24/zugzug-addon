@@ -2,15 +2,19 @@ name: Update build data & release
 
 # Three triggers, all routed through one job:
 #
-#   * schedule (cron) — daily Data.lua refresh. Releases only if Data.lua
-#     actually changed (skipping the release tag on data-stable days).
+#   * schedule (cron) — daily DataRIO.lua refresh. Releases only if the
+#     data actually changed (skipping the release tag on stable days).
 #   * push to main   — code-only changes ship the same day, no waiting
 #     for the next cron. Matches zugzug-keys' release flow.
 #   * workflow_dispatch — manual trigger, mirrors the cron behaviour
 #     (runs the data update + releases if anything changed).
+#
+# The old Data.lua path (zugzug.info worker /api/data, WCL pipeline) was
+# retired when the website was decommissioned — Raider.IO is the sole
+# data source.
 on:
   schedule:
-    # Daily at 16:00 UTC (noon EDT) — well after the WCL cron pipeline finishes
+    # Daily at 16:00 UTC (noon EDT)
     - cron: "0 16 * * *"
   push:
     branches: [main]
@@ -38,15 +42,11 @@ jobs:
         with:
           node-version: 22
 
-      - name: Fetch API and regenerate Data.lua
-        if: github.event_name != 'push'
-        run: npx tsx scripts/update-data.ts
-
-      # Raider.IO dataset (the addon's optional second data source). Slow
-      # (~40 min: paced internal-API pulls + lazily-materialized bracket
+      # Raider.IO dataset (the addon's sole data source). Slow (~40 min:
+      # paced internal-API pulls + lazily-materialized bracket/dungeon
       # snapshots) and non-fatal: if RIO changes shape or throttles, the
-      # previous committed DataRIO.lua keeps shipping and the zugzug data
-      # release is unaffected.
+      # previous committed DataRIO.lua keeps shipping and today's release
+      # is simply skipped.
       - name: Regenerate DataRIO.lua (Raider.IO)
         if: github.event_name != 'push'
         continue-on-error: true
@@ -73,7 +73,7 @@ jobs:
         id: diff
         if: github.event_name != 'push'
         run: |
-          if git diff --quiet Data.lua DataRIO.lua; then
+          if git diff --quiet DataRIO.lua; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
@@ -84,7 +84,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add Data.lua DataRIO.lua
+          git add DataRIO.lua
           git commit -m "data: update builds ${{ steps.version.outputs.tag }}"
           git push
 
@@ -96,7 +96,7 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "schedule" ] && [ "${{ steps.diff.outputs.changed }}" != "true" ]; then
             echo "release=false" >> "$GITHUB_OUTPUT"
-            echo "Cron with unchanged Data.lua — skipping release."
+            echo "Cron with unchanged DataRIO.lua — skipping release."
           else
             echo "release=true" >> "$GITHUB_OUTPUT"
           fi
@@ -117,7 +117,6 @@ jobs:
           sed -i "s/@project-version@/${{ steps.version.outputs.tag }}/" ZugZug.toc
           mkdir -p stage/ZugZug
           cp ZugZug.toc \
-             Data.lua \
              DataRIO.lua \
              LevelingData.lua \
              Core.lua \
@@ -138,7 +137,7 @@ jobs:
           tag_name: ${{ steps.version.outputs.tag }}
           name: ZugZug ${{ steps.version.outputs.tag }}
           body: |
-            Talent build data + ZugZug.io companion addon.
+            Top raid & M+ talent builds (Raider.IO) with one-click import.
 
             Download `ZugZug.zip` and extract into your
             `Interface/AddOns/` folder, or install via CurseForge/WoWUp.

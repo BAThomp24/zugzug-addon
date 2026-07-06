@@ -15,7 +15,7 @@ local ZZ = {
   specId = nil,       -- WoW spec ID (e.g. 265)
   specName = nil,     -- e.g. "Affliction"
   role = nil,         -- "dps" | "healer" | "tank"
-  data = nil,         -- reference to ZugZugData once loaded
+  data = nil,         -- reference to ZugZugDataRIO once loaded
 }
 
 -- Expose for other files
@@ -26,7 +26,6 @@ _G.ZugZug = ZZ
 ----------------------------------------------------------------------
 
 local DEFAULTS = {
-  dataSource = "zugzug",           -- "zugzug" | "raiderio" — which dataset drives builds/suggestions
   raidDifficulty = "mythic",       -- "heroic" | "mythic"
   mpBucket = "all",                -- "all" | "15+" | "18+" | "20+"
   suggestEnabled = true,           -- master toggle
@@ -110,31 +109,20 @@ function ZZ:GetCurrentBuilds()
 end
 
 ----------------------------------------------------------------------
--- Data source selection
+-- Data selection
 ----------------------------------------------------------------------
 
---- Point ZZ.data at the configured dataset. Both files ship in the addon:
---- Data.lua (ZugZugData, the zugzug.info pipeline) and DataRIO.lua
---- (ZugZugDataRIO, Raider.IO spec statistics). The RIO file also carries
+--- Point ZZ.data at the dataset. Raider.IO (DataRIO.lua) is the sole
+--- source: builds + key-level brackets + recommendation verdicts, plus
 --- per-dungeon top builds (ZugZugDataRIO.dungeonBuilds — complete import
---- strings per spec/bucket/dungeon); Suggest.lua reads them straight off
---- ZZ.data, no stitching needed.
+--- strings per spec/bucket/dungeon) that Suggest.lua reads straight off
+--- ZZ.data. The old zugzug.info WarcraftLogs pipeline (Data.lua) was
+--- retired when the website was decommissioned.
 function ZZ.SelectDataSource()
-  local want = ZugZugDB.dataSource or "zugzug"
-  if want == "raiderio" and ZugZugDataRIO then
-    ZZ.data = ZugZugDataRIO
-  else
-    if want == "raiderio" then
-      print("|cff00ccffZugZug Specs:|r Raider.IO data file missing — falling back to ZugZug data.")
-    end
-    ZZ.data = ZugZugData
+  ZZ.data = ZugZugDataRIO
+  if not ZZ.data then
+    print("|cff00ccffZugZug Specs:|r DataRIO.lua missing — builds unavailable. Reinstall the addon.")
   end
-end
-
---- Settings dropdown hook (Settings.lua wires SetValueChangedCallback here).
-function ZZ.OnDataSourceChanged()
-  ZZ.SelectDataSource()
-  if ZZ.RefreshUI then ZZ:RefreshUI() end
 end
 
 ----------------------------------------------------------------------
@@ -173,21 +161,6 @@ local function handleSlashCommand(msg)
     return
   end
 
-  if cmd == "source" or cmd == "data" then
-    local want = (arg == "rio" or arg == "raiderio") and "raiderio"
-      or (arg == "zugzug" or arg == "zz") and "zugzug" or nil
-    if want then
-      ZugZugDB.dataSource = want
-      ZZ.SelectDataSource()
-      print("|cff00ccffZugZug Specs:|r Data source set to "
-        .. (ZZ.data == ZugZugDataRIO and "|cff8fbf3fRaider.IO|r" or "|cff8fbf3fZugZug|r"))
-      if ZZ.RefreshUI then ZZ:RefreshUI() end
-    else
-      print("|cff00ccffZugZug Specs:|r Valid sources: zugzug, raiderio")
-    end
-    return
-  end
-
   if cmd == "suggest" then
     ZugZugDB.suggestEnabled = not ZugZugDB.suggestEnabled
     if ZugZugDB.suggestEnabled then
@@ -205,7 +178,7 @@ local function handleSlashCommand(msg)
     print("  Raid difficulty: " .. (ZugZugDB.raidDifficulty or "mythic"))
     print("  M+ key level: " .. (ZugZugDB.mpBucket or "all"))
     print("  Smart suggest: " .. (ZugZugDB.suggestEnabled and "|cff4DFF4Don|r" or "|cffFF6666off|r"))
-    print("  Data source: " .. (ZZ.data == ZugZugDataRIO and "Raider.IO" or "ZugZug"))
+    print("  Data source: Raider.IO")
     if ZZ.data then
       print("  Data: loaded (" .. (ZZ.data.lastUpdate or "?") .. ")")
     else
@@ -281,7 +254,6 @@ local function handleSlashCommand(msg)
   print("|cff00ccffZugZug Specs|r — ZUGZUG.info talent builds")
   print("  /zz status — show current settings")
   print("  /zz settings — open settings panel")
-  print("  /zz source <zugzug|raiderio> — choose the build data source")
   print("  /zz diff <heroic|mythic> — set raid difficulty")
   print("  /zz key <all|15+|18+|20+> — set M+ key level filter")
   print("  /zz suggest — toggle smart suggest on/off")

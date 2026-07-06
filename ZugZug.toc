@@ -1,16 +1,15 @@
 ## Interface: 120007
 ## Title: ZugZug Specs
-## Notes: Top raid & Mythic+ talent builds (WarcraftLogs or Raider.IO) + a leveling guide — one-click import in your talent frame. Companion to ZugZug Keys.
+## Notes: Top raid & Mythic+ talent builds (Raider.IO) + a leveling guide — one-click import in your talent frame. Companion to ZugZug Keys.
 ## Author: ZUGZUG.io
 ## Version: @project-version@
 ## SavedVariables: ZugZugDB
 ## DefaultState: enabled
 ## IconTexture: Interface\AddOns\ZugZug\icon.png
-## X-Website: https://zugzug.info
+## X-Website: https://www.curseforge.com/wow/addons/zugzug-specs
 ## X-Curse-Project-ID: zugzug-companion
 ## X-Category: Class
 
-Data.lua
 DataRIO.lua
 LevelingData.lua
 Core.lua

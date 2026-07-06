@@ -245,19 +245,6 @@ local function CreateSettingsPanel()
   endSection(comp, 12)
 
   ------------------------------------------------------------------
-  -- Data Source
-  ------------------------------------------------------------------
-  local ds = beginSection("Build Data Source", 34)
-  local dsNote = CreateNote(ds,
-    "Where builds and suggestions come from. Raider.IO uses much larger samples with key-level brackets and recommendation verdicts; ZugZug is zugzug.info's WarcraftLogs pipeline.")
-  place(dsNote, IND_ITEM, 6)
-  CreateRadioGroup(ds, "dataSource", {
-    { value = "zugzug",   label = "ZugZug", subtitle = "(zugzug.info — WarcraftLogs)" },
-    { value = "raiderio", label = "Raider.IO", subtitle = "(raider.io/specs — larger samples, brackets, verdicts)" },
-  }, IND_SUB, function() if ZZ.OnDataSourceChanged then ZZ.OnDataSourceChanged() end end)
-  endSection(ds, 12)
-
-  ------------------------------------------------------------------
   -- Smart Suggest
   ------------------------------------------------------------------
   local ss = beginSection("Smart Suggest", 34)
@@ -375,7 +362,7 @@ local function CreateSettingsPanel()
   local footer = panel:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")
   footer:SetPoint("RIGHT", panel, "RIGHT", -CARD_MARGIN, 0)
   footer:SetJustifyH("LEFT")
-  footer:SetText("|cff555555Type|r |cff" .. BLUE_HEX .. "/zz|r|cff555555 for commands  ·  zugzug.info|r")
+  footer:SetText("|cff555555Type|r |cff" .. BLUE_HEX .. "/zz|r|cff555555 for commands  ·  data: raider.io|r")
   place(footer, CARD_MARGIN, 18)
 
   ------------------------------------------------------------------
