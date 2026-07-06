@@ -988,6 +988,10 @@ local activeDropdown = nil -- track which dropdown is open
 
 local function closeActiveDropdown()
   if activeDropdown then
+    -- Collapse the expand-state so the next open starts compact again
+    -- (top 5 of the current spec; other specs folded away).
+    activeDropdown.expandedSpecs = nil
+    activeDropdown.showOthers = nil
     activeDropdown:Hide()
     activeDropdown = nil
   end
@@ -1736,7 +1740,6 @@ function ZZ:PopulateDropdown(contentType)
   -- Sort: starred first, then current spec, then by popularity descending
   if builds and #builds > 0 then
     local favs = ZugZugDB.favorites or {}
-    local specName = ZZ.specName
     local sorted = {}
     for _, b in ipairs(builds) do sorted[#sorted + 1] = b end
     table.sort(sorted, function(a, b)
@@ -1771,74 +1774,164 @@ function ZZ:PopulateDropdown(contentType)
     menu.separators = {}
   end
 
-  -- Reset section headers
+  -- Reset section headers + expander rows
   menu.headers = menu.headers or {}
   for _, h in ipairs(menu.headers) do h.frame:Hide() end
+  menu.expanders = menu.expanders or {}
+  for _, e in ipairs(menu.expanders) do e:Hide() end
+  -- Expansion state is per-menu and session-only; a fresh open starts
+  -- compact (cleared by the dropdown's OnHide).
+  menu.expandedSpecs = menu.expandedSpecs or {}
 
   local DROPDOWN_MENU_WIDTH = 430
   local SECTION_HEADER_HEIGHT = 20
+  local EXPANDER_HEIGHT = 22
+  -- RIO ships up to 8 builds per spec per bucket — the flat list got long.
+  -- Show the top N per spec; the rest sit behind a per-spec expander, and
+  -- other specs' groups sit behind one collapsed master expander.
+  local MAX_VISIBLE = 5
 
   local yOffset = -4
-  local lastSpec = nil
   local headerIdx = 0
+  local expanderIdx = 0
+  local itemIdx = 0
 
-  for i, build in ipairs(builds) do
-    -- Add a section header when the spec changes
-    if build.spec ~= lastSpec then
-      headerIdx = headerIdx + 1
-      if not menu.headers[headerIdx] then
-        local hf = CreateFrame("Frame", nil, menu)
-        hf:SetHeight(SECTION_HEADER_HEIGHT)
-        local bg = hf:CreateTexture(nil, "BACKGROUND")
-        bg:SetAllPoints()
-        bg:SetColorTexture(0.04, 0.04, 0.06, 0.95)
-        hf.bg = bg
-        local accent = hf:CreateTexture(nil, "OVERLAY")
-        accent:SetSize(3, SECTION_HEADER_HEIGHT)
-        accent:SetPoint("LEFT", hf, "LEFT", 0, 0)
-        hf.accent = accent
-        local label = hf:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-        label:SetPoint("LEFT", hf, "LEFT", 12, 0)
-        hf.label = label
-        local tag = hf:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")
-        tag:SetPoint("LEFT", label, "RIGHT", 8, 0)
-        hf.tag = tag
-        menu.headers[headerIdx] = { frame = hf }
-      end
-      local hf = menu.headers[headerIdx].frame
-      hf:ClearAllPoints()
-      hf:SetPoint("TOPLEFT", menu, "TOPLEFT", 0, yOffset)
-      hf:SetPoint("TOPRIGHT", menu, "TOPRIGHT", 0, yOffset)
-      local isCurr = ZZ:BuildMatchesSpec(build)
-      if isCurr then
-        local cr, cg, cb = getClassColor()
-        hf.accent:SetColorTexture(cr, cg, cb, 1)
-        hf.label:SetText(build.spec or "")
-        hf.label:SetTextColor(cr, cg, cb)
-        hf.tag:SetText("CURRENT SPEC")
-        hf.tag:SetTextColor(0.5, 0.5, 0.55)
-      else
-        hf.accent:SetColorTexture(0.25, 0.25, 0.30, 1)
-        hf.label:SetText(build.spec or "")
-        hf.label:SetTextColor(0.45, 0.45, 0.5)
-        hf.tag:SetText("")
-      end
-      hf:Show()
-      yOffset = yOffset - SECTION_HEADER_HEIGHT
+  local function placeHeader(spec, isCurr)
+    headerIdx = headerIdx + 1
+    if not menu.headers[headerIdx] then
+      local hf = CreateFrame("Frame", nil, menu)
+      hf:SetHeight(SECTION_HEADER_HEIGHT)
+      local bg = hf:CreateTexture(nil, "BACKGROUND")
+      bg:SetAllPoints()
+      bg:SetColorTexture(0.04, 0.04, 0.06, 0.95)
+      hf.bg = bg
+      local accent = hf:CreateTexture(nil, "OVERLAY")
+      accent:SetSize(3, SECTION_HEADER_HEIGHT)
+      accent:SetPoint("LEFT", hf, "LEFT", 0, 0)
+      hf.accent = accent
+      local label = hf:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+      label:SetPoint("LEFT", hf, "LEFT", 12, 0)
+      hf.label = label
+      local tag = hf:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")
+      tag:SetPoint("LEFT", label, "RIGHT", 8, 0)
+      hf.tag = tag
+      menu.headers[headerIdx] = { frame = hf }
     end
-    lastSpec = build.spec
+    local hf = menu.headers[headerIdx].frame
+    hf:ClearAllPoints()
+    hf:SetPoint("TOPLEFT", menu, "TOPLEFT", 0, yOffset)
+    hf:SetPoint("TOPRIGHT", menu, "TOPRIGHT", 0, yOffset)
+    if isCurr then
+      local cr, cg, cb = getClassColor()
+      hf.accent:SetColorTexture(cr, cg, cb, 1)
+      hf.label:SetText(spec or "")
+      hf.label:SetTextColor(cr, cg, cb)
+      hf.tag:SetText("CURRENT SPEC")
+      hf.tag:SetTextColor(0.5, 0.5, 0.55)
+    else
+      hf.accent:SetColorTexture(0.25, 0.25, 0.30, 1)
+      hf.label:SetText(spec or "")
+      hf.label:SetTextColor(0.45, 0.45, 0.5)
+      hf.tag:SetText("")
+    end
+    hf:Show()
+    yOffset = yOffset - SECTION_HEADER_HEIGHT
+  end
 
-    if not menu.items[i] then
-      menu.items[i] = createDropdownItem(menu, i)
+  --- A slim clickable row ("Show 3 more ▾" / "Other specs · 12 builds ▸").
+  local function placeExpander(text, onClick)
+    expanderIdx = expanderIdx + 1
+    if not menu.expanders[expanderIdx] then
+      local btn = CreateFrame("Button", nil, menu)
+      btn:SetHeight(EXPANDER_HEIGHT)
+      local bg = btn:CreateTexture(nil, "BACKGROUND")
+      bg:SetAllPoints()
+      bg:SetColorTexture(0.08, 0.08, 0.11, 0.9)
+      btn.bg = bg
+      local label = btn:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+      label:SetPoint("CENTER")
+      btn.label = label
+      btn:SetScript("OnEnter", function(self) self.bg:SetColorTexture(0.13, 0.13, 0.17, 0.95) end)
+      btn:SetScript("OnLeave", function(self) self.bg:SetColorTexture(0.08, 0.08, 0.11, 0.9) end)
+      menu.expanders[expanderIdx] = btn
     end
-    local item = menu.items[i]
+    local btn = menu.expanders[expanderIdx]
+    btn:ClearAllPoints()
+    btn:SetPoint("TOPLEFT", menu, "TOPLEFT", 0, yOffset)
+    btn:SetPoint("TOPRIGHT", menu, "TOPRIGHT", 0, yOffset)
+    btn.label:SetText(text)
+    btn.label:SetTextColor(0.55, 0.60, 0.68)
+    btn:SetScript("OnClick", onClick)
+    btn:Show()
+    yOffset = yOffset - EXPANDER_HEIGHT
+  end
+
+  local function placeBuild(build)
+    itemIdx = itemIdx + 1
+    if not menu.items[itemIdx] then
+      menu.items[itemIdx] = createDropdownItem(menu, itemIdx)
+    end
+    local item = menu.items[itemIdx]
     item:ClearAllPoints()
     item:SetPoint("TOPLEFT", menu, "TOPLEFT", 0, yOffset)
     item:SetPoint("TOPRIGHT", menu, "TOPRIGHT", 0, yOffset)
-
-    local isCurrentSpec = ZZ:BuildMatchesSpec(build)
-    populateDropdownItem(item, build, contentType, sectionColor, isCurrentSpec)
+    populateDropdownItem(item, build, contentType, sectionColor, ZZ:BuildMatchesSpec(build))
     yOffset = yOffset - DROPDOWN_ITEM_HEIGHT
+  end
+
+  --- One spec's group: header, top MAX_VISIBLE builds, per-spec expander.
+  local function placeSpecGroup(spec, list, isCurr)
+    placeHeader(spec, isCurr)
+    local expanded = menu.expandedSpecs[spec]
+    local limit = expanded and #list or math.min(MAX_VISIBLE, #list)
+    for i = 1, limit do placeBuild(list[i]) end
+    if #list > MAX_VISIBLE then
+      local text = expanded
+        and "Show less \226\150\180"
+        or string.format("Show %d more \226\150\190", #list - MAX_VISIBLE)
+      placeExpander(text, function()
+        menu.expandedSpecs[spec] = not menu.expandedSpecs[spec] or nil
+        ZZ:PopulateDropdown(contentType)
+      end)
+    end
+  end
+
+  -- Split into current-spec builds and everything else, preserving order.
+  local currentList, otherSpecs, otherOrder = {}, {}, {}
+  for _, build in ipairs(builds) do
+    if ZZ:BuildMatchesSpec(build) then
+      currentList[#currentList + 1] = build
+    else
+      local s = build.spec or "?"
+      if not otherSpecs[s] then otherSpecs[s] = {}; otherOrder[#otherOrder + 1] = s end
+      local g = otherSpecs[s]
+      g[#g + 1] = build
+    end
+  end
+
+  if #currentList > 0 then
+    placeSpecGroup(currentList[1].spec, currentList, true)
+  end
+
+  local otherCount = 0
+  for _, s in ipairs(otherOrder) do otherCount = otherCount + #otherSpecs[s] end
+  if otherCount > 0 then
+    if menu.showOthers then
+      placeExpander("Hide other specs \226\150\180", function()
+        menu.showOthers = false
+        ZZ:PopulateDropdown(contentType)
+      end)
+      for _, s in ipairs(otherOrder) do
+        placeSpecGroup(s, otherSpecs[s], false)
+      end
+    else
+      placeExpander(
+        string.format("Other specs \194\183 %d build%s \226\150\190", otherCount, otherCount == 1 and "" or "s"),
+        function()
+          menu.showOthers = true
+          ZZ:PopulateDropdown(contentType)
+        end)
+    end
   end
 
   menu:SetSize(DROPDOWN_MENU_WIDTH, -yOffset + 4)
