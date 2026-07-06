@@ -11,6 +11,7 @@
 ## X-Category: Class
 
 Data.lua
+DataRIO.lua
 LevelingData.lua
 Core.lua
 Settings.lua

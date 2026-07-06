@@ -1160,8 +1160,18 @@ local function populateDropdownItem(item, build, contentType, sectionColor, isCu
     item.specText:SetTextColor(COLORS.muted.r, COLORS.muted.g, COLORS.muted.b)
   end
 
-  -- Bottom row: just the build label (popularity moved to pill)
-  item.metaText:SetText(build.label or "")
+  -- Bottom row: just the build label (popularity moved to pill).
+  -- Raider.IO-sourced builds carry a recommendation verdict — mark those
+  -- with a gold star so "what the data endorses" reads at a glance.
+  local labelText = build.label or ""
+  if build.recommended then
+    labelText = "|cffffd100\226\152\133|r " .. labelText
+  end
+  -- RIO semantic themes ("Passive Damage · Mitigation") ride along muted.
+  if build.themes and build.themes ~= "" then
+    labelText = labelText .. "  |cff63666d" .. build.themes .. "|r"
+  end
+  item.metaText:SetText(labelText)
   if isCurrentSpec then
     item.metaText:SetTextColor(0.78, 0.78, 0.82)
   else

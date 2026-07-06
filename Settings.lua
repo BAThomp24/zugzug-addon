@@ -35,7 +35,7 @@ local function CreateSettingsPanel()
   end
 
   --- Register a string setting + dropdown row. options = { {value, label}, ... }
-  local function AddDropdown(key, label, tooltip, options)
+  local function AddDropdown(key, label, tooltip, options, changedHandler)
     local setting = Settings.RegisterAddOnSetting(
       category, "ZUGZUG_" .. key, key, ZugZugDB, "string", label, default(key, options[1].value))
     local function GetOptions()
@@ -46,6 +46,9 @@ local function CreateSettingsPanel()
       return container:GetData()
     end
     Settings.CreateDropdown(category, setting, GetOptions, tooltip)
+    if changedHandler and setting.SetValueChangedCallback then
+      setting:SetValueChangedCallback(onChanged(changedHandler))
+    end
     return setting
   end
 
@@ -65,6 +68,14 @@ local function CreateSettingsPanel()
       layout:AddInitializer(CreateSettingsListSectionHeaderInitializer(text))
     end
   end
+
+  -- ── Data Source ────────────────────────────────────────────────────
+  AddHeader("Data Source")
+  AddDropdown("dataSource", "Build Data Source",
+    "Where builds and suggestions come from. ZugZug = zugzug.info's WarcraftLogs pipeline. Raider.IO = raider.io/specs statistics (much larger samples, key-level brackets, recommendation verdicts).", {
+      { value = "zugzug",   label = "ZugZug (zugzug.info)" },
+      { value = "raiderio", label = "Raider.IO (raider.io/specs)" },
+    }, "OnDataSourceChanged")
 
   -- ── Smart Suggest ──────────────────────────────────────────────────
   AddHeader("Smart Suggest")

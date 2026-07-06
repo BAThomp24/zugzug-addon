@@ -42,6 +42,17 @@ jobs:
         if: github.event_name != 'push'
         run: npx tsx scripts/update-data.ts
 
+      # Raider.IO dataset (the addon's optional second data source). Slow
+      # (~40 min: paced internal-API pulls + lazily-materialized bracket
+      # snapshots) and non-fatal: if RIO changes shape or throttles, the
+      # previous committed DataRIO.lua keeps shipping and the zugzug data
+      # release is unaffected.
+      - name: Regenerate DataRIO.lua (Raider.IO)
+        if: github.event_name != 'push'
+        continue-on-error: true
+        timeout-minutes: 75
+        run: npx tsx scripts/update-data-rio.ts
+
       - name: Compute version tag
         id: version
         # CurseForge only re-syncs on a *new* release tag; updating the
@@ -58,22 +69,22 @@ jobs:
             echo "tag=v$(date -u +%Y.%m.%d.%H%M)" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Did Data.lua actually change?
+      - name: Did the data actually change?
         id: diff
         if: github.event_name != 'push'
         run: |
-          if git diff --quiet Data.lua; then
+          if git diff --quiet Data.lua DataRIO.lua; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Commit Data.lua update
+      - name: Commit data update
         if: github.event_name != 'push' && steps.diff.outputs.changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add Data.lua
+          git add Data.lua DataRIO.lua
           git commit -m "data: update builds ${{ steps.version.outputs.tag }}"
           git push
 
@@ -107,6 +118,7 @@ jobs:
           mkdir -p stage/ZugZug
           cp ZugZug.toc \
              Data.lua \
+             DataRIO.lua \
              LevelingData.lua \
              Core.lua \
              Settings.lua \
