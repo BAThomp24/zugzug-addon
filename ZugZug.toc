@@ -1,4 +1,4 @@
-## Interface: 120007
+## Interface: 120100
 ## Title: ZugZug Specs
 ## Notes: Top raid & Mythic+ talent builds (Raider.IO) + a leveling guide — one-click import in your talent frame. Companion to ZugZug Keys.
 ## Author: ZUGZUG.io
