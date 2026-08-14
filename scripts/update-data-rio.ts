@@ -35,8 +35,12 @@ import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const RIO = "https://raider.io";
-const SEASON = process.env.RIO_SEASON || "season-mn-1";
-const RAID = process.env.RIO_RAID || "tier-mn-1";
+// Resolved from RIO's own static data at startup unless pinned by env —
+// a hardcoded season silently starves the dataset the moment Blizzard
+// rolls one over (season-mn-1 → season-mn-2 on 2026-08-18), because
+// every aggregate for a finished season decays to nothing.
+let SEASON = process.env.RIO_SEASON || "";
+let RAID = process.env.RIO_RAID || "";
 const EXPANSION = Number(process.env.RIO_EXPANSION || 11);
 const SPEC_FILTER = (process.env.SPEC_FILTER || "").toLowerCase();
 const SCOPE = "last-3-resets";
@@ -99,6 +103,99 @@ interface PoolInfo {
   entryPool: Map<number, "class" | "spec" | "hero">;
   entryName: Map<number, string>;
   heroName: Map<number, string>; // traitSubTreeId → hero tree name
+  trees: Map<number, TreeDef>; // specId → live tree shape (import-string fitness)
+}
+
+/**
+ * The live shape of one spec's talent tree, straight from Raidbots'
+ * `live` dump (which tracks the shipped build):
+ *   order  — C_Traits.GetTreeNodes order; loadout strings are POSITIONAL
+ *            against exactly this list
+ *   owned  — the node IDs this spec may actually select
+ *   nodes  — per-node rank/entry limits
+ */
+interface TreeDef {
+  order: number[];
+  owned: Set<number>;
+  nodes: Map<number, { maxRanks: number; entries: number }>;
+}
+
+// ─── import-string fitness ────────────────────────────────────────────────────
+
+const EXPORT_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+
+/** Blizzard's ExportUtil stream: 6 bits per character, LSB first. */
+function bitReader(s: string) {
+  const bits: number[] = [];
+  for (const ch of s) {
+    const v = EXPORT_CHARS.indexOf(ch);
+    if (v < 0) continue;
+    for (let i = 0; i < 6; i++) bits.push((v >> i) & 1);
+  }
+  let p = 0;
+  return {
+    total: bits.length,
+    read(w: number) {
+      let v = 0;
+      for (let i = 0; i < w; i++) v |= (bits[p++] ?? 0) << i;
+      return v;
+    },
+    pos: () => p,
+    restNonZero() {
+      for (let q = p; q < bits.length; q++) if (bits[q]) return true;
+      return false;
+    },
+  };
+}
+
+/**
+ * Why this exists: a loadout string identifies nothing about the nodes it
+ * describes — bit n is node n of the tree, and every exporter (RIO
+ * included) zeroes the 128-bit tree hash that would otherwise catch a
+ * mismatch. When a patch reshapes a tree, yesterday's strings still
+ * decode cleanly and silently select the WRONG talents from the first
+ * changed node onward. Patch 12.1 reworked 40 specs and RIO kept serving
+ * pre-patch strings for ten of them, which is how a build ended up
+ * applying correctly "halfway through" and then wandering into other
+ * specs' talents in-game.
+ *
+ * Returns null when the string fits the live tree, else a short reason.
+ */
+function importFitsTree(importString: string, specId: number, tree: TreeDef): string | null {
+  const r = bitReader(importString);
+  const version = r.read(8);
+  if (version !== 2) return `loadout format v${version}`;
+  const sid = r.read(16);
+  if (sid !== specId) return `encodes spec ${sid}`;
+  for (let i = 0; i < 16; i++) r.read(8); // tree hash (zeroed by exporters)
+
+  let foreign = 0;
+  let bad = 0;
+  for (let i = 0; i < tree.order.length; i++) {
+    if (r.pos() >= r.total) return `covers ${i} of ${tree.order.length} nodes (older, smaller tree)`;
+    if (r.read(1) === 1) {
+      let ranks: number | null = null;
+      let choice: number | null = null;
+      if (r.read(1) === 1) {
+        if (r.read(1) === 1) ranks = r.read(6);
+        if (r.read(1) === 1) choice = r.read(2);
+      }
+      const id = tree.order[i]!;
+      if (!tree.owned.has(id)) {
+        foreign++;
+      } else {
+        const meta = tree.nodes.get(id);
+        if (meta) {
+          if (ranks != null && ranks > meta.maxRanks) bad++;
+          if (choice != null && choice >= meta.entries) bad++;
+        }
+      }
+    }
+  }
+  if (foreign > 0) return `${foreign} node(s) belong to another spec (tree drift)`;
+  if (bad > 0) return `${bad} out-of-range rank/choice`;
+  if (r.restNonZero()) return "extra set bits past the tree (newer, larger tree)";
+  return null;
 }
 
 async function loadRaidbots(): Promise<{ specs: SpecDef[]; pools: PoolInfo }> {
@@ -113,9 +210,21 @@ async function loadRaidbots(): Promise<{ specs: SpecDef[]; pools: PoolInfo }> {
   const entryPool = new Map<number, "class" | "spec" | "hero">();
   const entryName = new Map<number, string>();
   const heroName = new Map<number, string>();
+  const treeDefs = new Map<number, TreeDef>();
 
   for (const t of trees) {
     if (!t.className || !t.specName || !t.specId) continue;
+    if (Array.isArray(t.fullNodeOrder)) {
+      const owned = new Set<number>();
+      const nodes = new Map<number, { maxRanks: number; entries: number }>();
+      for (const arr of [t.classNodes, t.specNodes, t.heroNodes, t.subTreeNodes]) {
+        for (const n of arr ?? []) {
+          owned.add(n.id);
+          nodes.set(n.id, { maxRanks: n.maxRanks ?? 1, entries: (n.entries ?? []).length });
+        }
+      }
+      treeDefs.set(t.specId, { order: t.fullNodeOrder, owned, nodes });
+    }
     specs.push({
       className: t.className,
       specName: t.specName,
@@ -141,16 +250,58 @@ async function loadRaidbots(): Promise<{ specs: SpecDef[]; pools: PoolInfo }> {
     take(t.heroNodes, "hero");
     take(t.subTreeNodes, "hero");
   }
-  console.log(`  ${specs.length} specs, ${entryPool.size} pooled entries, ${heroName.size} hero names`);
-  return { specs, pools: { entryPool, entryName, heroName } };
+  console.log(`  ${specs.length} specs, ${entryPool.size} pooled entries, ${heroName.size} hero names,`
+    + ` ${treeDefs.size} live trees`);
+  return { specs, pools: { entryPool, entryName, heroName, trees: treeDefs } };
 }
 
 // ─── RIO static data: this season's dungeons ─────────────────────────────────
 
+/** Started, not an event variant ("…-break-the-meta"), newest first. */
+function pickCurrentSeason(seasons: any[]): any | undefined {
+  const now = Date.now();
+  return seasons
+    .filter((s: any) => /^season-[a-z]+-\d+$/.test(s.slug ?? ""))
+    .filter((s: any) => {
+      const start = Date.parse(s.starts?.us ?? "");
+      return Number.isFinite(start) && start <= now;
+    })
+    .sort((a: any, b: any) => Date.parse(b.starts.us) - Date.parse(a.starts.us))[0];
+}
+
+/** Raid tiers running right now; the combined "tier-*" slug wins. */
+function pickCurrentRaid(raids: any[]): any | undefined {
+  const now = Date.now();
+  const live = raids
+    .filter((r: any) => {
+      const start = Date.parse(r.starts?.us ?? "");
+      const end = Date.parse(r.ends?.us ?? "");
+      return Number.isFinite(start) && start <= now && (!Number.isFinite(end) || end > now);
+    })
+    .sort((a: any, b: any) => Date.parse(b.starts.us) - Date.parse(a.starts.us));
+  return live.find((r: any) => /^tier-/.test(r.slug ?? "")) ?? live[0];
+}
+
+async function resolveRaid(): Promise<void> {
+  if (RAID) {
+    console.log(`Raid tier pinned by RIO_RAID: ${RAID}`);
+    return;
+  }
+  const j = await rioFetch(`${RIO}/api/v1/raiding/static-data?expansion_id=${EXPANSION}`);
+  const raid = pickCurrentRaid(j.raids ?? []);
+  if (!raid) throw new Error("no active raid tier in static-data — pin one with RIO_RAID");
+  RAID = raid.slug;
+  console.log(`Raid tier: ${RAID} (${raid.name}) — auto-detected`);
+}
+
 async function loadDungeons(): Promise<{ id: number; name: string }[]> {
   const j = await rioFetch(`${RIO}/api/v1/mythic-plus/static-data?expansion_id=${EXPANSION}`);
-  const season = (j.seasons ?? []).find((s: any) => s.slug === SEASON);
-  if (!season) throw new Error(`season ${SEASON} not in static-data`);
+  let season = SEASON ? (j.seasons ?? []).find((s: any) => s.slug === SEASON) : pickCurrentSeason(j.seasons ?? []);
+  if (!season) throw new Error(`season ${SEASON || "(auto)"} not in static-data`);
+  if (!SEASON) {
+    SEASON = season.slug;
+    console.log(`Season: ${SEASON} — auto-detected (started ${season.starts?.us})`);
+  }
   const ds = (season.dungeons ?? []).map((d: any) => ({ id: d.id, name: d.name }));
   console.log(`Season ${SEASON}: ${ds.map((d: any) => d.name).join(", ")}`);
   return ds;
@@ -288,14 +439,29 @@ interface Build {
   dungeons?: string[];
 }
 
+/** Every variant rejected by importFitsTree this run, for the summary. */
+const dropped: { spec: string; why: string }[] = [];
+
 function buildsFromAgg(
   spec: SpecDef,
   data: any,
   pools: PoolInfo,
   trendByLoadout: Map<string, string>,
 ): Build[] {
-  const variants: RioVariant[] = data.variants ?? [];
-  const listedTotal = variants.reduce((s, v) => s + (v.quantity || 0), 0) || 1;
+  const all: RioVariant[] = data.variants ?? [];
+  // Drop anything that doesn't fit the live tree BEFORE ranking, so a
+  // stale variant can't occupy one of the MAX_BUILDS slots. Popularity
+  // shares stay computed over everything RIO listed — the percentages
+  // describe what players ran, not what survived this filter.
+  const tree = pools.trees.get(spec.specId);
+  const variants = tree
+    ? all.filter((v) => {
+        const why = v.loadoutText ? importFitsTree(v.loadoutText, spec.specId, tree) : "no loadout";
+        if (why) dropped.push({ spec: `${spec.specName} ${spec.className}`, why });
+        return !why;
+      })
+    : all;
+  const listedTotal = all.reduce((s, v) => s + (v.quantity || 0), 0) || 1;
   const sorted = variants
     .slice()
     .sort((a, b) => {
@@ -392,6 +558,7 @@ function luaVal(v: any, indent: string): string {
 async function main() {
   const { specs, pools } = await loadRaidbots();
   const dungeons = await loadDungeons();
+  await resolveRaid();
 
   const targets = specs.filter(
     (s) => !SPEC_FILTER || `${s.classSlug} ${s.specSlug}`.includes(SPEC_FILTER),
@@ -515,6 +682,24 @@ async function main() {
   console.log(`\n${ok}/${targets.length} specs OK${failed.length ? `; failed: ${failed.join(", ")}` : ""}`);
   if (!SPEC_FILTER && ok < targets.length * 0.75) {
     throw new Error(`only ${ok}/${targets.length} specs succeeded — refusing to write a degraded DataRIO.lua`);
+  }
+
+  // Tree-fitness summary. A spec listed here is one RIO is still serving
+  // pre-patch loadout strings for; shipping those would apply the wrong
+  // talents in-game, so they're simply absent until RIO re-exports.
+  if (dropped.length) {
+    const bySpec = new Map<string, { n: number; why: string }>();
+    for (const d of dropped) {
+      const e = bySpec.get(d.spec) ?? { n: 0, why: d.why };
+      e.n++;
+      bySpec.set(d.spec, e);
+    }
+    console.log(`\nDropped ${dropped.length} variant(s) that don't fit the live talent tree:`);
+    for (const [spec, e] of [...bySpec.entries()].sort((a, b) => b[1].n - a[1].n)) {
+      console.log(`  ${spec}: ${e.n} (${e.why})`);
+    }
+  } else {
+    console.log("\nAll variants fit the live talent tree.");
   }
 
   const now = new Date().toISOString();

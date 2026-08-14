@@ -181,6 +181,153 @@ end
 local SERIALIZATION_VERSION = 2
 
 ----------------------------------------------------------------------
+-- Import-string fitness
+--
+-- A loadout string is POSITIONAL: bit n describes node n of
+-- C_Traits.GetTreeNodes(treeID). Nothing in the string identifies which
+-- nodes those were — exporters (Raider.IO, Wowhead, Raidbots) zero the
+-- 128-bit tree hash, so Blizzard's own hash check is a no-op on them.
+--
+-- When a patch adds or removes talent nodes (12.1 reworked 40 specs),
+-- a string exported against the OLD tree still decodes without error on
+-- the new one: every bit after the first inserted node lands on the
+-- wrong node. The result is a build that applies correctly up to that
+-- point and then wanders into other specs' talents — "it breaks
+-- halfway through". Silent, and unfixable after the fact.
+--
+-- So fitness is checked BEFORE anything is staged:
+--   * the stream must cover exactly this tree's node count (running out
+--     early = exported against a smaller tree; leftover non-zero bits =
+--     a larger one)
+--   * every node it selects must exist, with an in-range choice index
+--     and rank
+--   * every node it selects must belong to THIS spec — a node the
+--     current spec cannot see (and that isn't merely an unpicked hero
+--     tree) proves the indices have drifted
+----------------------------------------------------------------------
+
+--- Sub-tree (hero talent) IDs this spec may choose between. Nodes in an
+--- unpicked hero tree are legitimately invisible, so they must not count
+--- as drift evidence.
+local function availableSubTrees(configID, specID)
+  local out = {}
+  if not (C_ClassTalents and C_ClassTalents.GetHeroTalentSpecsForClassSpec) then return out, false end
+  local ok, ids = pcall(C_ClassTalents.GetHeroTalentSpecsForClassSpec, configID, specID)
+  if not ok or type(ids) ~= "table" or #ids == 0 then return out, false end
+  for _, id in ipairs(ids) do out[id] = true end
+  -- Second return gates the whole "foreign node" test: with no reliable
+  -- sub-tree list (low level, API missing) an invisible hero node isn't
+  -- evidence of drift, so the check is skipped rather than guessed.
+  return out, true
+end
+
+--- Returns true when the string fits this character's live talent tree,
+--- else false plus a short human reason.
+function ZZ:ValidateImportString(importString)
+  if type(importString) ~= "string" or importString == "" then return false, "empty build" end
+  if not (ExportUtil and ExportUtil.MakeImportDataStream) then return true end -- can't tell; don't block
+
+  local stream = ExportUtil.MakeImportDataStream(importString)
+  if not stream then return false, "unreadable import string" end
+
+  local totalBits = stream.GetNumberOfBits and stream:GetNumberOfBits() or nil
+  local used = 0
+  local function take(w)
+    used = used + w
+    return stream:ExtractValue(w)
+  end
+
+  local version = take(8)
+  local live = C_Traits.GetLoadoutSerializationVersion and C_Traits.GetLoadoutSerializationVersion()
+    or SERIALIZATION_VERSION
+  if version ~= live then
+    return false, string.format("built for loadout format v%d, this client uses v%d", version, live)
+  end
+
+  local specID = take(16)
+  for _ = 1, 16 do take(8) end -- tree hash (zeroed by every exporter)
+
+  local treeID = C_ClassTalents.GetTraitTreeForSpec and C_ClassTalents.GetTraitTreeForSpec(specID)
+  if not treeID then return false, "no talent tree for that spec" end
+  local configID = C_ClassTalents.GetActiveConfigID and C_ClassTalents.GetActiveConfigID()
+  if not configID then return true end -- nothing to check against yet
+  local treeNodes = C_Traits.GetTreeNodes(treeID)
+  if not treeNodes or #treeNodes == 0 then return true end
+
+  local currentSpecID = PlayerUtil and PlayerUtil.GetCurrentSpecID and PlayerUtil.GetCurrentSpecID()
+  local subTrees, haveSubTrees
+  if specID == currentSpecID then
+    subTrees, haveSubTrees = availableSubTrees(configID, specID)
+  end
+
+  local foreign, badEntry = 0, 0
+  for i = 1, #treeNodes do
+    if totalBits and used >= totalBits then
+      return false, string.format("built for a smaller talent tree (%d of %d nodes)", i - 1, #treeNodes)
+    end
+    if take(1) == 1 then
+      local purchased = take(1) == 1
+      local ranks, choice
+      if purchased then
+        if take(1) == 1 then ranks = take(6) end
+        if take(1) == 1 then choice = take(2) end
+      end
+      local nodeInfo = C_Traits.GetNodeInfo(configID, treeNodes[i])
+      if not nodeInfo or nodeInfo.ID == 0 then
+        badEntry = badEntry + 1
+      else
+        if choice and not (nodeInfo.entryIDs and nodeInfo.entryIDs[choice + 1]) then
+          badEntry = badEntry + 1
+        end
+        if ranks and nodeInfo.maxRanks and ranks > nodeInfo.maxRanks then
+          badEntry = badEntry + 1
+        end
+        -- Drift detector: this spec cannot see the node at all, and it
+        -- isn't sitting in one of its selectable hero trees.
+        if haveSubTrees and nodeInfo.isVisible == false then
+          local st = nodeInfo.subTreeID
+          if not (st and subTrees[st]) then foreign = foreign + 1 end
+        end
+      end
+    end
+  end
+
+  if badEntry > 0 then
+    return false, string.format("%d talent%s don't fit this tree", badEntry, badEntry == 1 and "" or "s")
+  end
+  if foreign > 0 then
+    return false, string.format("%d talent%s belong to another spec — exported before a talent-tree change",
+      foreign, foreign == 1 and "" or "s")
+  end
+  if totalBits and used < totalBits then
+    -- Anything left must be zero padding to the next 6-bit character.
+    local leftover = totalBits - used
+    local extra = 0
+    for _ = 1, leftover do extra = extra + stream:ExtractValue(1) end
+    if extra > 0 then
+      return false, string.format("built for a larger talent tree (%d extra bits set)", leftover)
+    end
+  end
+  return true
+end
+
+--- Cached ValidateImportString. Keyed by spec so a spec change (a
+--- different tree) re-checks rather than reusing a stale verdict.
+local fitCache = {}
+function ZZ:BuildFits(importString)
+  if type(importString) ~= "string" or importString == "" then return false, "empty build" end
+  local specID = (PlayerUtil and PlayerUtil.GetCurrentSpecID and PlayerUtil.GetCurrentSpecID()) or 0
+  local key = specID .. "|" .. importString
+  local hit = fitCache[key]
+  if hit == nil then
+    local ok, why = ZZ:ValidateImportString(importString)
+    hit = { ok = ok and true or false, why = why }
+    fitCache[key] = hit
+  end
+  return hit.ok, hit.why
+end
+
+----------------------------------------------------------------------
 -- Build diff — count how many talents differ from current loadout
 ----------------------------------------------------------------------
 
@@ -701,6 +848,25 @@ local function tryApplyViaLoadout(importString, label)
   return true
 end
 
+--- Best-effort display name for a node, for "couldn't learn X" messages.
+local function talentNameForNode(configID, nodeInfo)
+  local entryID = (nodeInfo.activeEntry and nodeInfo.activeEntry.entryID)
+    or (nodeInfo.entryIDs and nodeInfo.entryIDs[1])
+  if not entryID then return "talent " .. tostring(nodeInfo.ID) end
+  local ok, entryInfo = pcall(C_Traits.GetEntryInfo, configID, entryID)
+  if ok and entryInfo and entryInfo.definitionID then
+    local okD, def = pcall(C_Traits.GetDefinitionInfo, entryInfo.definitionID)
+    if okD and def then
+      if def.overrideName then return def.overrideName end
+      if def.spellID then
+        local info = C_Spell and C_Spell.GetSpellInfo and C_Spell.GetSpellInfo(def.spellID)
+        if info and info.name then return info.name end
+      end
+    end
+  end
+  return "talent " .. tostring(nodeInfo.ID)
+end
+
 --- Stage + commit a parsed loadout onto the ACTIVE config (tree wipe +
 --- rebuild). Shared by the in-place apply path and /zz undo.
 local function applyParsedInPlace(parsed, renameTo)
@@ -759,6 +925,36 @@ local function applyParsedInPlace(parsed, renameTo)
     if progressThisPass == 0 then break end
   end
 
+  -- Verify BEFORE committing: every purchased entry must have reached
+  -- its target rank. Committing a tree that only partly applied is the
+  -- worst outcome — the player ends up with a half-build and no signal
+  -- that anything went wrong — so an incomplete stage is rolled back.
+  local missing = {}
+  for _, entry in ipairs(parsed.entries) do
+    if entry.isPurchased then
+      local nodeInfo = C_Traits.GetNodeInfo(configID, entry.nodeID)
+      if not nodeInfo or nodeInfo.ID == 0 then
+        table.insert(missing, "unknown talent")
+      else
+        local target = entry.ranksPurchased > 0 and entry.ranksPurchased or nodeInfo.maxRanks
+        if (nodeInfo.currentRank or 0) < (target or 1) then
+          table.insert(missing, talentNameForNode(configID, nodeInfo))
+        end
+      end
+    end
+  end
+  if #missing > 0 then
+    if C_Traits.RollbackConfig then pcall(C_Traits.RollbackConfig, configID) end
+    local shown = {}
+    for i = 1, math.min(3, #missing) do shown[i] = missing[i] end
+    print(string.format(
+      "|cff00ccffZugZug Specs:|r Reverted — %d talent%s in this build couldn't be learned (%s%s).",
+      #missing, #missing == 1 and "" or "s", table.concat(shown, ", "),
+      #missing > #shown and ", …" or ""))
+    print("|cff888888Your talents were left exactly as they were. This build was almost certainly exported before a talent-tree change.|r")
+    return false
+  end
+
   -- Commit
   if not C_Traits.ConfigHasStagedChanges(configID) then
     print("|cff00ccffZugZug Specs:|r Build is already active (no changes needed).")
@@ -789,6 +985,16 @@ function ZZ:ApplyBuild(importString, label)
   local parsed, err = parseImportString(importString)
   if not parsed then
     print("|cff00ccffZugZug Specs:|r Failed to parse: " .. (err or "unknown error"))
+    return false
+  end
+
+  -- Refuse strings that don't fit this client's talent tree BEFORE any
+  -- staging: applying one produces a build that is right up to the
+  -- first drifted node and wrong after it.
+  local fits, why = ZZ:ValidateImportString(importString)
+  if not fits then
+    print(string.format("|cff00ccffZugZug Specs:|r Not applying %s — %s.", label or "this build", why))
+    print("|cff888888Your talents are untouched. Raider.IO re-exports builds as players log runs on the new patch; the data refreshes daily.|r")
     return false
   end
 
@@ -1087,6 +1293,15 @@ local function createDropdownItem(parent, index)
     GameTooltip:SetText("Click to apply build", COLORS.text.r, COLORS.text.g, COLORS.text.b)
     GameTooltip:AddLine("Shift+click to copy import string", COLORS.muted.r, COLORS.muted.g, COLORS.muted.b)
     GameTooltip:AddLine("Click star to pin/unpin", COLORS.muted.r, COLORS.muted.g, COLORS.muted.b)
+    -- Warn on hover when the build predates a talent-tree change, so
+    -- the refusal on click isn't a surprise. Checked lazily (one build,
+    -- on hover) and cached.
+    local fits, why = ZZ:BuildFits(self.importString)
+    if not fits then
+      GameTooltip:AddLine(" ")
+      GameTooltip:AddLine("|cffff5555Can't be applied|r", 1, 0.33, 0.33)
+      GameTooltip:AddLine("|cff888888" .. (why or "doesn't fit the current talent tree") .. "|r", 0.6, 0.6, 0.6, true)
+    end
     -- Show talent diff count for same-spec builds
     local diff = countTalentDiff(self.importString)
     if diff then
@@ -1747,13 +1962,18 @@ function ZZ:PopulateDropdown(contentType)
   end
 
   if not builds or #builds == 0 then
-    menu:SetSize(DROPDOWN_WIDTH, 30)
+    menu:SetSize(DROPDOWN_WIDTH, 44)
     if not menu.emptyText then
       menu.emptyText = menu:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
       menu.emptyText:SetPoint("CENTER")
+      menu.emptyText:SetWidth(DROPDOWN_WIDTH - 20)
+      menu.emptyText:SetSpacing(2)
       menu.emptyText:SetTextColor(COLORS.muted.r, COLORS.muted.g, COLORS.muted.b)
     end
-    menu.emptyText:SetText("No builds available")
+    -- An empty list right after a class patch is expected, not a fault:
+    -- builds exported against the previous talent tree are withheld
+    -- rather than applied wrongly. Say so, so it doesn't read as broken.
+    menu.emptyText:SetText("No builds available\n|cff888888Raider.IO re-exports after a talent change; data refreshes daily.|r")
     menu.emptyText:Show()
     return
   end

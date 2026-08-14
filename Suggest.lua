@@ -513,6 +513,19 @@ showSuggestion = function(contentLabel, build, contentType)
   if InCombatLockdown() then return end
   if not ZugZugDB.suggestEnabled then return end
 
+  -- Never propose a build the apply path would refuse: a string exported
+  -- against an older talent tree can't be applied without landing on the
+  -- wrong nodes, so it isn't a suggestion — it's a trap.
+  if ZZ.BuildFits then
+    local fits, why = ZZ:BuildFits(build.importString)
+    if not fits then
+      if ZugZugDB.suggestDebug then
+        print("|cff00ccffZugZug suggest:|r skipping " .. tostring(build.label) .. " — " .. tostring(why))
+      end
+      return
+    end
+  end
+
   -- Structured diff vs the player's CURRENT talents: exactly what Apply
   -- Build will change. nil = build is for another spec (or unparseable) —
   -- fall back to the spec/hero cluster heuristic for the "on it" decision.
