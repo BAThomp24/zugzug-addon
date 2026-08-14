@@ -1922,6 +1922,95 @@ local function createBar(parent)
 end
 
 ----------------------------------------------------------------------
+-- "Why is there nothing here?" copy
+--
+-- An empty list is normal in the first weeks of a season and right after
+-- a class patch, and the two have different causes:
+--   * Raider.IO hasn't logged enough runs yet, or
+--   * it HAS builds for this spec but they were exported against the
+--     previous talent tree, so they're withheld rather than applied
+--     wrongly (the generator ships the count per spec).
+-- Saying which one it is — with the data date — keeps an empty dropdown
+-- from reading as a broken addon.
+----------------------------------------------------------------------
+
+local function dataAgeLine()
+  local d = ZZ.data
+  local stamp = d and d.lastUpdate
+  if type(stamp) ~= "string" or stamp == "" then return "" end
+  return "Data: " .. stamp:sub(1, 10)
+end
+
+--- Whole seconds since the season started, or nil if unknown.
+local function seasonAge()
+  local d = ZZ.data
+  local s = d and d.seasonStart
+  if type(s) ~= "string" or #s < 10 then return nil end
+  local y, mo, dy = s:match("^(%d+)-(%d+)-(%d+)")
+  if not y then return nil end
+  local startT = time({ year = tonumber(y), month = tonumber(mo), day = tonumber(dy), hour = 12 })
+  if not startT then return nil end
+  return time() - startT
+end
+
+--- headline, detail — why this spec has no builds right now.
+function ZZ:MissingBuildsReason()
+  local specID = PlayerUtil and PlayerUtil.GetCurrentSpecID and PlayerUtil.GetCurrentSpecID()
+  -- GetSpecInfoByID is the 12.0-safe alias defined at the top of this
+  -- file (the bare global moved into C_SpecializationInfo).
+  local specName
+  if specID and GetSpecInfoByID then
+    local ok, _, nm = pcall(GetSpecInfoByID, specID)
+    if ok then specName = nm end
+  end
+  local who = specName and ("for " .. specName) or "for your spec"
+
+  local withheldTable = ZZ.data and ZZ.data.withheld
+  local withheld = withheldTable and specID and withheldTable[specID]
+  if withheld and withheld > 0 then
+    return string.format("No usable builds %s yet", who),
+      string.format(
+        "Raider.IO has %d build%s for this spec, but %s exported before the current talent-tree change — applying %s would pick the wrong talents, so %s held back.\n\nNew exports appear as players log runs on this patch. Rechecked daily. %s",
+        withheld, withheld == 1 and "" or "s",
+        withheld == 1 and "it was" or "they were",
+        withheld == 1 and "it" or "them",
+        withheld == 1 and "it is" or "they are",
+        dataAgeLine())
+  end
+
+  -- Any withheld build anywhere in the dataset means a talent-tree
+  -- change just landed — worth saying even for a spec with none, since
+  -- that is why the whole dataset is thin.
+  local patchNote = ""
+  if withheldTable then
+    for _, n in pairs(withheldTable) do
+      if (n or 0) > 0 then
+        patchNote = "\n\nA recent talent-tree change invalidated a lot of Raider.IO's exports — the whole dataset is rebuilding."
+        break
+      end
+    end
+  end
+
+  local age = seasonAge()
+  if age and age < 0 then
+    return string.format("No builds %s yet", who),
+      "The season hasn't started — Raider.IO has nothing to rank yet. Builds appear once players start logging runs."
+      .. patchNote .. "\n\n" .. dataAgeLine()
+  end
+  if age and age < 14 * 24 * 60 * 60 then
+    local week = math.max(1, math.floor(age / (7 * 24 * 60 * 60)) + 1)
+    return string.format("No builds %s yet", who),
+      string.format(
+        "It's week %d of the season — Raider.IO needs a few hundred logged runs before a build is worth recommending.%s\n\nThe list fills in on its own; rechecked daily. %s",
+        week, patchNote, dataAgeLine())
+  end
+
+  return string.format("No builds %s", who),
+    "Raider.IO hasn't logged enough runs at this content level for a recommendation."
+    .. patchNote .. "\n\n" .. dataAgeLine()
+end
+
+----------------------------------------------------------------------
 -- Populate a dropdown with builds
 ----------------------------------------------------------------------
 
@@ -1962,19 +2051,17 @@ function ZZ:PopulateDropdown(contentType)
   end
 
   if not builds or #builds == 0 then
-    menu:SetSize(DROPDOWN_WIDTH, 44)
     if not menu.emptyText then
       menu.emptyText = menu:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-      menu.emptyText:SetPoint("CENTER")
+      menu.emptyText:SetPoint("TOPLEFT", menu, "TOPLEFT", 10, -10)
       menu.emptyText:SetWidth(DROPDOWN_WIDTH - 20)
-      menu.emptyText:SetSpacing(2)
-      menu.emptyText:SetTextColor(COLORS.muted.r, COLORS.muted.g, COLORS.muted.b)
+      menu.emptyText:SetJustifyH("LEFT")
+      menu.emptyText:SetSpacing(3)
     end
-    -- An empty list right after a class patch is expected, not a fault:
-    -- builds exported against the previous talent tree are withheld
-    -- rather than applied wrongly. Say so, so it doesn't read as broken.
-    menu.emptyText:SetText("No builds available\n|cff888888Raider.IO re-exports after a talent change; data refreshes daily.|r")
+    local headline, detail = ZZ:MissingBuildsReason()
+    menu.emptyText:SetText(string.format("|cffffd166%s|r\n\n|cff9a9a9a%s|r", headline, detail))
     menu.emptyText:Show()
+    menu:SetSize(DROPDOWN_WIDTH, math.max(44, menu.emptyText:GetStringHeight() + 22))
     return
   end
   if menu.emptyText then menu.emptyText:Hide() end
@@ -2108,6 +2195,35 @@ function ZZ:PopulateDropdown(contentType)
     end
   end
 
+  --- A boxed explanation at the top of the list. Used when the class has
+  --- builds but the player's own spec has none — otherwise the menu looks
+  --- full while offering nothing usable.
+  local function placeNotice(headline, detail)
+    if not menu.notice then
+      local nf = CreateFrame("Frame", nil, menu)
+      local bg = nf:CreateTexture(nil, "BACKGROUND")
+      bg:SetAllPoints()
+      bg:SetColorTexture(0.12, 0.09, 0.03, 0.95)
+      local txt = nf:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+      txt:SetPoint("TOPLEFT", nf, "TOPLEFT", 12, -7)
+      txt:SetWidth(DROPDOWN_MENU_WIDTH - 24)
+      txt:SetJustifyH("LEFT")
+      txt:SetSpacing(3)
+      nf.text = txt
+      menu.notice = nf
+    end
+    local nf = menu.notice
+    nf.text:SetText(string.format("|cffffd166%s|r\n|cff9a9a9a%s|r", headline, detail))
+    nf:ClearAllPoints()
+    nf:SetPoint("TOPLEFT", menu, "TOPLEFT", 0, yOffset)
+    nf:SetPoint("TOPRIGHT", menu, "TOPRIGHT", 0, yOffset)
+    local h = nf.text:GetStringHeight() + 16
+    nf:SetHeight(h)
+    nf:Show()
+    yOffset = yOffset - h - 2
+  end
+  if menu.notice then menu.notice:Hide() end
+
   -- Split into current-spec builds and everything else, preserving order.
   local currentList, otherSpecs, otherOrder = {}, {}, {}
   for _, build in ipairs(builds) do
@@ -2123,6 +2239,8 @@ function ZZ:PopulateDropdown(contentType)
 
   if #currentList > 0 then
     placeSpecGroup(currentList[1].spec, currentList, true)
+  else
+    placeNotice(ZZ:MissingBuildsReason())
   end
 
   local otherCount = 0
@@ -2203,13 +2321,24 @@ function ZZ:RefreshUI()
   local bucket = ZugZugDB.mpBucket or "all"
   bar.mpBtn.settingText:SetText(bucket)
 
-  -- Current top-build labels (bottom row of each section button)
+  -- Current top-build labels (bottom row of each section button). With
+  -- nothing for THIS spec, say so rather than falling back to another
+  -- spec's build — an off-spec label on the bar reads as a
+  -- recommendation for you, which it isn't.
   local raidBuilds, mpBuilds = ZZ:GetCurrentBuilds()
+  local function sectionLabel(list)
+    local mine = {}
+    for _, b in ipairs(list or {}) do
+      if ZZ:BuildMatchesSpec(b) then mine[#mine + 1] = b end
+    end
+    if #mine == 0 then return "|cff8a7a4ano builds yet \226\128\162 click for why|r" end
+    return topBuildLabel(mine, nil)
+  end
   if bar.raidBtn.buildText then
-    bar.raidBtn.buildText:SetText(topBuildLabel(raidBuilds, ZZ.specName))
+    bar.raidBtn.buildText:SetText(sectionLabel(raidBuilds))
   end
   if bar.mpBtn.buildText then
-    bar.mpBtn.buildText:SetText(topBuildLabel(mpBuilds, ZZ.specName))
+    bar.mpBtn.buildText:SetText(sectionLabel(mpBuilds))
   end
 
   -- Show leveling button below max level (always when enabled) or at max level

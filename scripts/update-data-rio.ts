@@ -41,6 +41,8 @@ const RIO = "https://raider.io";
 // every aggregate for a finished season decays to nothing.
 let SEASON = process.env.RIO_SEASON || "";
 let RAID = process.env.RIO_RAID || "";
+/** ISO start of the resolved season — shipped so the addon can say "week 1". */
+let SEASON_START = "";
 const EXPANSION = Number(process.env.RIO_EXPANSION || 11);
 const SPEC_FILTER = (process.env.SPEC_FILTER || "").toLowerCase();
 const SCOPE = "last-3-resets";
@@ -298,6 +300,7 @@ async function loadDungeons(): Promise<{ id: number; name: string }[]> {
   const j = await rioFetch(`${RIO}/api/v1/mythic-plus/static-data?expansion_id=${EXPANSION}`);
   let season = SEASON ? (j.seasons ?? []).find((s: any) => s.slug === SEASON) : pickCurrentSeason(j.seasons ?? []);
   if (!season) throw new Error(`season ${SEASON || "(auto)"} not in static-data`);
+  SEASON_START = season.starts?.us ?? "";
   if (!SEASON) {
     SEASON = season.slug;
     console.log(`Season: ${SEASON} — auto-detected (started ${season.starts?.us})`);
@@ -441,6 +444,13 @@ interface Build {
 
 /** Every variant rejected by importFitsTree this run, for the summary. */
 const dropped: { spec: string; why: string }[] = [];
+/**
+ * specId → the DISTINCT loadout strings withheld for that spec. Shipped
+ * to the addon so an empty build list can say why it is empty ("RIO has
+ * 5 builds for your spec, all exported before the talent change") rather
+ * than looking like the addon lost its data.
+ */
+const withheldBySpec = new Map<number, Set<string>>();
 
 function buildsFromAgg(
   spec: SpecDef,
@@ -457,7 +467,14 @@ function buildsFromAgg(
   const variants = tree
     ? all.filter((v) => {
         const why = v.loadoutText ? importFitsTree(v.loadoutText, spec.specId, tree) : "no loadout";
-        if (why) dropped.push({ spec: `${spec.specName} ${spec.className}`, why });
+        if (why) {
+          dropped.push({ spec: `${spec.specName} ${spec.className}`, why });
+          if (v.loadoutText) {
+            let set = withheldBySpec.get(spec.specId);
+            if (!set) { set = new Set(); withheldBySpec.set(spec.specId, set); }
+            set.add(v.loadoutText);
+          }
+        }
         return !why;
       })
     : all;
@@ -713,6 +730,13 @@ async function main() {
     `  lastUpdate = ${luaStr(now)},`,
     `  source = "raider.io",`,
     `  season = ${luaStr(SEASON)},`,
+    `  seasonStart = ${luaStr(SEASON_START)},`,
+    // specId → how many DISTINCT builds RIO offered for that spec that
+    // were withheld as unfittable. Drives the addon's empty-list copy.
+    `  withheld = {${[...withheldBySpec.entries()]
+      .sort((a, b) => a[0] - b[0])
+      .map(([specId, set]) => ` [${specId}] = ${set.size},`)
+      .join("")}${withheldBySpec.size ? " " : ""}},`,
     `  classes = ${luaVal(classes, "  ")},`,
     `  dungeonBuilds = ${luaVal(dungeonBuilds, "  ")},`,
     "}",
