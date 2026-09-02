@@ -118,7 +118,25 @@ interface PoolInfo {
  */
 interface TreeDef {
   order: number[];
+  /**
+   * Every node this spec may legitimately select. NOT simply the four
+   * arrays Raidbots publishes for it - those have gaps, and the gaps
+   * were rejecting every build 11 specs had:
+   *
+   *   - the CLASS tree is shared by every spec of a class, but Raidbots
+   *     omitted "Remove Corruption" from Restoration Druid's classNodes
+   *     while listing it for Balance and Feral;
+   *   - a HERO tree belongs to each spec that can choose it, but
+   *     "Holy Armaments" was filed only under Protection Paladin even
+   *     though Holy takes Lightsmith too.
+   *
+   * So a spec also owns its class's whole class tree, and every node of
+   * any hero sub-tree it can actually pick.
+   */
   owned: Set<number>;
+  /** Every id any spec of this class defines - lets "another spec's
+   *  node" be told apart from one Raidbots never categorised. */
+  known: Set<number>;
   nodes: Map<number, { maxRanks: number; entries: number }>;
 }
 
@@ -172,6 +190,7 @@ function importFitsTree(importString: string, specId: number, tree: TreeDef): st
   for (let i = 0; i < 16; i++) r.read(8); // tree hash (zeroed by exporters)
 
   let foreign = 0;
+  let unknown = 0;
   let bad = 0;
   for (let i = 0; i < tree.order.length; i++) {
     if (r.pos() >= r.total) return `covers ${i} of ${tree.order.length} nodes (older, smaller tree)`;
@@ -184,7 +203,12 @@ function importFitsTree(importString: string, specId: number, tree: TreeDef): st
       }
       const id = tree.order[i]!;
       if (!tree.owned.has(id)) {
-        foreign++;
+        // Drift means a node belonging to a DIFFERENT spec. An id that
+        // Raidbots lists in fullNodeOrder but never categorises anywhere
+        // (Paladin's 103853) is unknown, not foreign - it still sits at
+        // the right index, so the string still fits the tree.
+        if (tree.known.has(id)) foreign++;
+        else unknown++;
       } else {
         const meta = tree.nodes.get(id);
         if (meta) {
@@ -194,8 +218,14 @@ function importFitsTree(importString: string, specId: number, tree: TreeDef): st
       }
     }
   }
-  if (foreign > 0) return `${foreign} node(s) belong to another spec (tree drift)`;
-  if (bad > 0) return `${bad} out-of-range rank/choice`;
+  // `unknown` never rejects on its own - a node Raidbots hasn't
+  // categorised still sits at the right INDEX, so the string still fits
+  // the tree - but it's worth naming when something else does reject.
+  const aside = unknown > 0 ? ` (+${unknown} uncategorised)` : "";
+  if (foreign > 0) {
+    return `${foreign} node(s) belong to another spec (tree drift)${aside}`;
+  }
+  if (bad > 0) return `${bad} out-of-range rank/choice${aside}`;
   if (r.restNonZero()) return "extra set bits past the tree (newer, larger tree)";
   return null;
 }
@@ -213,6 +243,8 @@ async function loadRaidbots(): Promise<{ specs: SpecDef[]; pools: PoolInfo }> {
   const entryName = new Map<number, string>();
   const heroName = new Map<number, string>();
   const treeDefs = new Map<number, TreeDef>();
+  const treeClass = new Map<number, string>();
+  const treeRaw = new Map<number, any>();
 
   for (const t of trees) {
     if (!t.className || !t.specName || !t.specId) continue;
@@ -225,7 +257,14 @@ async function loadRaidbots(): Promise<{ specs: SpecDef[]; pools: PoolInfo }> {
           nodes.set(n.id, { maxRanks: n.maxRanks ?? 1, entries: (n.entries ?? []).length });
         }
       }
-      treeDefs.set(t.specId, { order: t.fullNodeOrder, owned, nodes });
+      treeDefs.set(t.specId, {
+        order: t.fullNodeOrder,
+        owned,
+        known: new Set<number>(), // both filled in below, once every spec is read
+        nodes,
+      });
+      treeClass.set(t.specId, t.className);
+      treeRaw.set(t.specId, t);
     }
     specs.push({
       className: t.className,
@@ -254,6 +293,43 @@ async function loadRaidbots(): Promise<{ specs: SpecDef[]; pools: PoolInfo }> {
   }
   console.log(`  ${specs.length} specs, ${entryPool.size} pooled entries, ${heroName.size} hero names,`
     + ` ${treeDefs.size} live trees`);
+
+  // Second pass: widen ownership to what the game actually allows, and
+  // record what the class defines at all. Raidbots' per-spec arrays are
+  // the wrong shape for this on their own - see TreeDef.
+  // Snapshot first: the loop widens `owned`, and reading a set that is
+  // being grown in the same pass would make the result depend on which
+  // spec happened to be visited first.
+  const baseOwned = new Map<number, Set<number>>();
+  for (const [specId, def] of treeDefs) baseOwned.set(specId, new Set(def.owned));
+
+  for (const [specId, def] of treeDefs) {
+    const cls = treeClass.get(specId);
+    const mine = new Set<number>(
+      ((treeRaw.get(specId)?.heroNodes ?? []) as any[])
+        .map((n) => n.subTreeId)
+        .filter((id) => id != null),
+    );
+    for (const otherId of treeDefs.keys()) {
+      if (otherId === specId || treeClass.get(otherId) !== cls) continue;
+      for (const id of baseOwned.get(otherId) ?? []) def.known.add(id);
+      const raw = treeRaw.get(otherId);
+      for (const n of (raw?.classNodes ?? []) as any[]) {
+        def.owned.add(n.id); // the class tree is shared by the whole class
+        if (!def.nodes.has(n.id)) {
+          def.nodes.set(n.id, { maxRanks: n.maxRanks ?? 1, entries: (n.entries ?? []).length });
+        }
+      }
+      for (const n of (raw?.heroNodes ?? []) as any[]) {
+        if (!mine.has(n.subTreeId)) continue; // a hero tree this spec can't pick
+        def.owned.add(n.id);
+        if (!def.nodes.has(n.id)) {
+          def.nodes.set(n.id, { maxRanks: n.maxRanks ?? 1, entries: (n.entries ?? []).length });
+        }
+      }
+    }
+  }
+
   return { specs, pools: { entryPool, entryName, heroName, trees: treeDefs } };
 }
 
