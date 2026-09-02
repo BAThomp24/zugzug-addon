@@ -21,6 +21,140 @@ local COLORS = {
   selected  = { r = 0.2, g = 0.22, b = 0.26, a = 1 },
 }
 
+----------------------------------------------------------------------
+-- Choice-node preferences
+--
+-- A few choice nodes offer the SAME spell twice, differing only in how
+-- it is cast -- Elemental's Earthquake (at your target vs placed at the
+-- cursor) is the usual example. Which one is better is taste, not maths,
+-- but Raider.IO reports whatever the logged players happened to run, so
+-- an import can quietly move you onto the cast style you do not play.
+--
+-- A pin here is honoured at import time. It is deliberately restricted
+-- to nodes whose entries resolve to the same spell name: swapping one of
+-- those is always point-legal and never changes what the build does,
+-- whereas pinning a genuine either/or talent would be editing somebody's
+-- build behind their back. If Blizzard later reworks a pinned node into
+-- a real decision, the same-name test stops matching and the pin goes
+-- quietly dormant rather than corrupting the import.
+----------------------------------------------------------------------
+local ChoicePrefs = {}
+
+--- The display name behind one choice entry, or nil if it can't be read.
+function ChoicePrefs.entryName(configID, entryID)
+  if not (entryID and C_Traits and C_Traits.GetEntryInfo) then return nil end
+  local ok, entryInfo = pcall(C_Traits.GetEntryInfo, configID, entryID)
+  if not (ok and type(entryInfo) == "table") then return nil end
+  local defID = entryInfo.definitionID
+  if not (defID and C_Traits.GetDefinitionInfo) then return nil end
+  local ok2, def = pcall(C_Traits.GetDefinitionInfo, defID)
+  if not (ok2 and type(def) == "table") then return nil end
+  if def.overrideName and def.overrideName ~= "" then return def.overrideName end
+  -- 12.0 removed the global GetSpellInfo; the C_Spell version takes a
+  -- numeric id and answers a table.
+  if def.spellID and C_Spell and C_Spell.GetSpellInfo then
+    local ok3, info = pcall(C_Spell.GetSpellInfo, def.spellID)
+    if ok3 and type(info) == "table" and info.name and info.name ~= "" then
+      return info.name
+    end
+  end
+  return nil
+end
+
+--- The tooltip text behind one choice entry -- the only thing that
+--- actually distinguishes two entries sharing a name.
+function ChoicePrefs.entryDescription(configID, entryID)
+  if not (entryID and C_Traits and C_Traits.GetEntryInfo) then return nil end
+  local ok, entryInfo = pcall(C_Traits.GetEntryInfo, configID, entryID)
+  if not (ok and type(entryInfo) == "table" and entryInfo.definitionID) then return nil end
+  local ok2, def = pcall(C_Traits.GetDefinitionInfo, entryInfo.definitionID)
+  if not (ok2 and type(def) == "table") then return nil end
+  if def.overrideDescription and def.overrideDescription ~= "" then
+    return def.overrideDescription
+  end
+  if def.spellID and C_Spell and C_Spell.GetSpellDescription then
+    local ok3, desc = pcall(C_Spell.GetSpellDescription, def.spellID)
+    if ok3 and type(desc) == "string" and desc ~= "" then return desc end
+  end
+  return nil
+end
+
+--- True when a two-entry choice node is the same spell under two cast
+--- behaviours, which is the only shape a pin may act on.
+function ChoicePrefs.isSameSpellNode(configID, nodeInfo)
+  local ids = nodeInfo and nodeInfo.entryIDs
+  if not (ids and #ids == 2) then return false end
+  local a = ChoicePrefs.entryName(configID, ids[1])
+  local b = ChoicePrefs.entryName(configID, ids[2])
+  return a ~= nil and a == b
+end
+
+--- Map a 0-based choice index out of an import string to the 0-based
+--- index we should actually use. Every decoder routes through this, so
+--- the diff popup, the "already matches" check and the import itself can
+--- never disagree about which entry is being taken.
+---
+--- Bails out unchanged whenever it can't tell the two entries apart, so
+--- an unrecognised node keeps whatever Raider.IO shipped rather than
+--- being guessed at.
+function ChoicePrefs.resolve(configID, nodeID, choiceIndex)
+  if choiceIndex == nil then return nil end
+  local want = ZugZugDB and ZugZugDB.castStyle
+  if want ~= "location" and want ~= "target" then return choiceIndex end
+  local ok, nodeInfo = pcall(C_Traits.GetNodeInfo, configID, nodeID)
+  if not (ok and type(nodeInfo) == "table") then return choiceIndex end
+  if not ChoicePrefs.isSameSpellNode(configID, nodeInfo) then return choiceIndex end
+  local ids = nodeInfo.entryIDs
+  local first = ChoicePrefs.entryStyle(configID, ids[1])
+  local second = ChoicePrefs.entryStyle(configID, ids[2])
+  if first == second then return choiceIndex end
+  if first == want then return 0 end
+  if second == want then return 1 end
+  return choiceIndex
+end
+
+--- Which cast style an entry's tooltip describes: "location" for the
+--- place-it-yourself version, "target" for the one that lands on your
+--- current target, nil when the wording decides neither.
+---
+--- Location is tested first and wins outright, because the target
+--- version's own text ("at your target's location") contains the word
+--- location and would otherwise match both.
+local LOCATION_MARKERS = {
+  "selected location", "location you select", "location you choose",
+  "chosen location", "targeted location", "select a location",
+  "cursor", "ground you select",
+}
+local TARGET_MARKERS = {
+  "your target", "the target", "current target", "target's location",
+}
+
+function ChoicePrefs.classify(desc)
+  if type(desc) ~= "string" or desc == "" then return nil end
+  local d = desc:lower()
+  for _, m in ipairs(LOCATION_MARKERS) do
+    if d:find(m, 1, true) then return "location" end
+  end
+  for _, m in ipairs(TARGET_MARKERS) do
+    if d:find(m, 1, true) then return "target" end
+  end
+  return nil
+end
+
+-- Descriptions are looked up once per entry per session; resolve() runs
+-- for every choice node in the tree each time a diff is computed.
+ChoicePrefs.styleCache = {}
+
+function ChoicePrefs.entryStyle(configID, entryID)
+  local cached = ChoicePrefs.styleCache[entryID]
+  if cached ~= nil then return cached or nil end
+  local style = ChoicePrefs.classify(ChoicePrefs.entryDescription(configID, entryID))
+  ChoicePrefs.styleCache[entryID] = style or false
+  return style
+end
+
+if ZZ then ZZ.ChoicePrefs = ChoicePrefs end
+
 local TREND_ICONS = {
   new  = "|cff4DD8FF NEW|r",
   up   = "|cff4DFF4D \226\150\178|r",
@@ -382,7 +516,7 @@ local function countTalentDiff(importString)
         end
         local isChoice = importStream:ExtractValue(1) == 1
         if isChoice then
-          choiceIndex = importStream:ExtractValue(2)
+          choiceIndex = ChoicePrefs.resolve(configID, nodeID, importStream:ExtractValue(2))
         end
       end
 
@@ -470,7 +604,9 @@ function ZZ:DiffAgainstCurrent(importString)
           ranksPurchased = nodeInfo and nodeInfo.maxRanks or 1
         end
         local isChoice = importStream:ExtractValue(1) == 1
-        if isChoice then choiceIndex = importStream:ExtractValue(2) end
+        if isChoice then
+          choiceIndex = ChoicePrefs.resolve(configID, nodeID, importStream:ExtractValue(2))
+        end
       end
 
       if isPurchased and nodeInfo then
@@ -541,6 +677,10 @@ local function parseImportString(importString)
 
   local treeNodes = C_Traits.GetTreeNodes(treeID)
   if not treeNodes or #treeNodes == 0 then return nil, "No tree nodes" end
+  -- Needed so cast-style preferences reach the in-place apply path too:
+  -- this decoder feeds C_Traits.SetSelection directly, and was the one
+  -- site still handing Raider.IO's raw choice straight through.
+  local activeConfigID = C_ClassTalents.GetActiveConfigID and C_ClassTalents.GetActiveConfigID()
 
   local entries = {}
   for _, nodeID in ipairs(treeNodes) do
@@ -557,7 +697,7 @@ local function parseImportString(importString)
         end
         local isChoice = importStream:ExtractValue(1) == 1
         if isChoice then
-          choiceIndex = importStream:ExtractValue(2) -- 0-indexed
+          choiceIndex = ChoicePrefs.resolve(activeConfigID, nodeID, importStream:ExtractValue(2))
         end
       end
 
@@ -645,7 +785,7 @@ local BIT_VERSION, BIT_SPECID, BIT_RANKS = 8, 16, 6
 --- Parse an import string into per-node "indexInfo" aligned to the tree's
 --- GetTreeNodes(treeID) order — the exact shape Blizzard's
 --- ConvertToImportLoadoutEntryInfo consumes. Returns nil on any mismatch.
-local function parseLoadoutContent(importString, treeID)
+local function parseLoadoutContent(importString, treeID, configID)
   if not (ExportUtil and ExportUtil.MakeImportDataStream) then return nil end
   local stream = ExportUtil.MakeImportDataStream(importString)
   if not stream then return nil end
@@ -666,7 +806,9 @@ local function parseLoadoutContent(importString, treeID)
         isPartial = stream:ExtractValue(1) == 1
         if isPartial then partialRanks = stream:ExtractValue(BIT_RANKS) end
         isChoice = stream:ExtractValue(1) == 1
-        if isChoice then choiceSel = stream:ExtractValue(2) end
+        if isChoice then
+          choiceSel = ChoicePrefs.resolve(configID, treeNodes[i], stream:ExtractValue(2)) or 0
+        end
       end
     end
     content[i] = {
@@ -820,7 +962,7 @@ local function tryApplyViaLoadout(importString, label)
     pcall(C_ClassTalents.DeleteConfig, existing)
   end
 
-  local content = parseLoadoutContent(importString, treeID)
+  local content = parseLoadoutContent(importString, treeID, configID)
   if not content then return false end
   local entryInfo = convertToImportEntryInfo(configID, treeID, content)
   if not entryInfo or #entryInfo == 0 then return false end
@@ -2592,3 +2734,50 @@ initFrame:SetScript("OnEvent", function()
     end
   end
 end)
+
+--- Dump every two-entry choice node on the current spec with the wording
+--- the cast-style matcher actually sees. The matcher keys off tooltip
+--- text because the API exposes no targeting flag, so when a preference
+--- doesn't apply this shows which of the two assumptions broke: the
+--- entries not resolving to one spell, or the wording not classifying.
+function ZZ.DumpCastStyles()
+  local specID = GetSpecInfo and GetSpecInfo(GetSpecialization and GetSpecialization() or 0)
+  local treeID = specID and C_ClassTalents.GetTraitTreeForSpec and C_ClassTalents.GetTraitTreeForSpec(specID)
+  local configID = C_ClassTalents.GetActiveConfigID and C_ClassTalents.GetActiveConfigID()
+  print("|cff00ccffZugZug Specs:|r cast-style scan")
+  print("  setting: |cffffd078" .. tostring(ZugZugDB.castStyle) .. "|r  spec=" .. tostring(specID)
+    .. " tree=" .. tostring(treeID) .. " config=" .. tostring(configID))
+  if not (treeID and configID) then
+    print("  |cffff5555talent tree not available|r — open your talent frame once and retry.")
+    return
+  end
+  local nodes = C_Traits.GetTreeNodes(treeID)
+  local found = 0
+  for _, nodeID in ipairs(nodes or {}) do
+    local ok, info = pcall(C_Traits.GetNodeInfo, configID, nodeID)
+    if ok and type(info) == "table" and info.entryIDs and #info.entryIDs == 2 then
+      local n1 = ChoicePrefs.entryName(configID, info.entryIDs[1])
+      local n2 = ChoicePrefs.entryName(configID, info.entryIDs[2])
+      if n1 and n1 == n2 then
+        found = found + 1
+        print(("  |cff8fbf3f%s|r (node %d)  sameSpell=%s"):format(
+          n1, nodeID, tostring(ChoicePrefs.isSameSpellNode(configID, info))))
+        for i = 1, 2 do
+          local d = ChoicePrefs.entryDescription(configID, info.entryIDs[i]) or "(no description)"
+          d = d:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", ""):gsub("\n", " ")
+          print(("    [%d] style=%s :: %s"):format(
+            i, tostring(ChoicePrefs.classify(d)), d:sub(1, 150)))
+        end
+        -- What resolve() actually returns for each possible input, which
+        -- is the thing that decides the import.
+        local r0 = ChoicePrefs.resolve(configID, nodeID, 0)
+        local r1 = ChoicePrefs.resolve(configID, nodeID, 1)
+        print(("    resolve: build says [1] -> use [%d] | build says [2] -> use [%d]"):format(
+          (r0 or 0) + 1, (r1 or 1) + 1))
+      end
+    end
+  end
+  if found == 0 then
+    print("  no same-name two-entry choice nodes found on this spec.")
+  end
+end

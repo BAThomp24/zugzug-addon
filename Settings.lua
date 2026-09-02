@@ -357,6 +357,19 @@ local function CreateSettingsPanel()
   endSection(lv, 12)
 
   ------------------------------------------------------------------
+  -- Cast-style preferences
+  ------------------------------------------------------------------
+  local cs = beginSection("Cast-style preferences", 34)
+  local csNote = CreateNote(cs, "A few talents are the same spell twice and differ only in how you cast it — Earthquake placed at a location vs cast at your target. Raider.IO reports whichever the logged players ran, so an import can move you off the one you play. Pick your style and imports will keep it.")
+  place(csNote, IND_SUBNOTE, 10)
+  CreateRadioGroup(cs, "castStyle", {
+    { value = "auto",     label = "Follow Raider.IO", subtitle = "(whatever the build ships)" },
+    { value = "location", label = "Cast at selected location" },
+    { value = "target",   label = "Cast at your target" },
+  }, IND_SUB2)
+  endSection(cs, 14)
+
+  ------------------------------------------------------------------
   -- Footer
   ------------------------------------------------------------------
   local footer = panel:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")

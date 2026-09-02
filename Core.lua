@@ -39,6 +39,7 @@ local DEFAULTS = {
   levelingEnabled = true,          -- show leveling guide banner + bar button below max level
   levelingAtMax = false,           -- keep showing the leveling guide at max level (for open world / delves)
   useDedicatedLoadout = true,      -- apply builds into a "ZugZug" loadout instead of overwriting the active config
+  castStyle = "auto",              -- "auto" | "location" | "target"; for talents that are the same spell cast two ways
 }
 ZZ.DEFAULTS = DEFAULTS -- read by Settings.lua for Settings API default values
 
@@ -161,6 +162,23 @@ local function handleSlashCommand(msg)
     return
   end
 
+  if cmd == "castdebug" then
+    if ZZ.DumpCastStyles then ZZ.DumpCastStyles() end
+    return
+  end
+
+  if cmd == "cast" or cmd == "caststyle" then
+    local styles = { auto = "Follow Raider.IO", location = "Cast at selected location", target = "Cast at your target" }
+    if styles[arg] then
+      ZugZugDB.castStyle = arg
+      print("|cff00ccffZugZug Specs:|r Cast style set to " .. styles[arg])
+    else
+      print("|cff00ccffZugZug Specs:|r Cast style is " .. (styles[ZugZugDB.castStyle or "auto"] or "Follow Raider.IO"))
+      print("  /zz cast <auto|location|target>")
+    end
+    return
+  end
+
   if cmd == "suggest" then
     ZugZugDB.suggestEnabled = not ZugZugDB.suggestEnabled
     if ZugZugDB.suggestEnabled then
@@ -257,6 +275,7 @@ local function handleSlashCommand(msg)
   print("  /zz diff <heroic|mythic> — set raid difficulty")
   print("  /zz key <all|15+|18+|20+> — set M+ key level filter")
   print("  /zz suggest — toggle smart suggest on/off")
+  print("  /zz cast <auto|location|target> — cast style for same-spell talents")
   print("  /zz undo — revert the last build/swap apply")
 end
 
