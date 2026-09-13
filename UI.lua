@@ -418,7 +418,17 @@ function ZZ:ValidateImportString(importString)
         end
         -- Drift detector: this spec cannot see the node at all, and it
         -- isn't sitting in one of its selectable hero trees.
-        if haveSubTrees and nodeInfo.isVisible == false then
+        --
+        -- Only a PURCHASED rank counts. Exports also flag free, granted
+        -- nodes, and some of those are another spec's copy of a shared
+        -- hero tree's entry node: Paladin's Lightsmith has two Holy
+        -- Armaments (110257 for Holy, 95234 for Protection), a Holy
+        -- export grants both, and Holy's client can't see Protection's.
+        -- That single granted node was rejecting every Holy build as
+        -- "belongs to another spec". Nothing is spent on a granted node,
+        -- and real index drift lands purchased ranks on foreign nodes
+        -- too, so this still catches the thing it exists to catch.
+        if haveSubTrees and purchased and nodeInfo.isVisible == false then
           local st = nodeInfo.subTreeID
           if not (st and subTrees[st]) then foreign = foreign + 1 end
         end
